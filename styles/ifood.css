@@ -7,7 +7,7 @@
     --font3: "Roboto";
 }
 
-* { /* Sowwyz */
+* { 
     margin: 0;
     padding: 0;
     list-style: none;
@@ -15,12 +15,11 @@
 }
 
 #banner {
-    border: black 0.0001px solid;
+    
     background: black;
     background-position: center center;
     background-size: cover;
 }
-    /* Sowwyz */
 
 #banner a {
     color: white;
@@ -117,7 +116,7 @@
                         padding: 0 10%;
                     }
                 }
-/* Sowwyz */
+
     #banner footer {
         border-top: var(--red) 2px solid;
         margin: 0 5%;

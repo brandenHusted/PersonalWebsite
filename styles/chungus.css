@@ -1,13 +1,4 @@
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
+
 :root {
     --blue: #4392f1;
     --grey: #fafafa;
@@ -16,16 +7,16 @@
     --font3: "Roboto";
     --horizontal_margin: 7.5%;
 }
-/* Sowwyz */
+
 * {
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
 }
-/* Sowwyz */
+
 #hero {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1)), url(../images/chungus.gif);
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1)), url(../images/cyber-attack.gif);
     background-position: center center;
     background-size: cover;
 }
@@ -68,7 +59,7 @@
             #playlists #playliststitle a:hover {
                 text-decoration: underline;
             }
-/* Sowwyz */
+
     #playlistsplayer {
         display: flex;
         top: 0;
@@ -77,7 +68,7 @@
         right: 0;
         width: 50%;
     }
-/* Sowwyz */
+
     @media (max-width: 800px) {
         #playlists {
             display: block;
@@ -104,13 +95,13 @@
             width: 100%;
         }
     }
-/* Sowwyz */
+
 #books{
     padding: 100px 200px 0px 200px;
     display: flex;
     background-color: black;
 }
-    /* Sowwyz */
+    
     #books #bookstitle{
         width: 50%;
         margin-bottom: 50px;
@@ -128,7 +119,7 @@
             font-family: var(--font3);
             color: white;
         }
-/* Sowwyz */
+
     .demo-container {
         display: flex;
         top: 0;
@@ -137,7 +128,7 @@
         right: 0;
         width: 50%;
     }
-/* Sowwyz */
+
         .carousel {
             overflow-x: auto;
             white-space: nowrap;
@@ -217,7 +208,7 @@
             width: 100%;
         }
     }
-/* Sowwyz */
+
 #shorts {
     padding: 100px 200px 0px 200px;
     background-color: black;
@@ -236,7 +227,7 @@
         color: white;
         
     }
-    /* Sowwyz */
+    
     #shorts .list {
         display: flex;
         width: 100%;
@@ -288,37 +279,3 @@
                 }
 
     }
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
-/* Sowwyz */
