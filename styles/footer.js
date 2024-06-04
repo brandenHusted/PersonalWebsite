@@ -6,17 +6,17 @@ function footer(){
             <div id="footer">\
                 <div id="footer-infos">\
                     <div>\
-                        <h2>Sowwyz</h2>\
+                        <h2>Branden</h2>\
                         <p>\
                            <br>\
-                            Sowwyz#1337<br>\
+                            Hello World!<br>\
                             
                         </p>\
                     </div>\
                     <div id="footer-icons">\
                       
                      </br>
-                        <a href="https://github.com/Sowwyz" target="_blank" class="fa fa-github"></a>\
+                        <a href="https://github.com/brandenHusted" target="_blank" class="fa fa-github"></a>\
                       
                     </div>\
                 </div>\
