@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Chatbot</title>
+  <style>
+    body {
+      background: grey;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: 600;
+      border: 3px solid #fff;
+      padding: 10px 20px;
+      margin-bottom: 40px;
+      color: #fff;
+    }
+
+    h3 {
+      font-size: 40px;
+      font-weight: 600;
+      padding: 10px 20px;
+      margin-bottom: 40px;
+      color: #fff;
+    }
+
+    .flex {
+      display: flex;
+      justify-content: center;
+      flex-flow: column;
+      align-items: center;
+      /* width: 30vw; */
+      height: 100vh;
+      /* background-color: yellow; */
+      margin: auto;
+      border-radius: 30px;
+    }
+
+    #result {
+      font-size: 36px;
+      color: red;
+    }
+
+    #ans {
+      color: #fff;
+      padding: 20px;
+      font-size: 26px;
+      background: transparent;
+      border: 0;
+    }
+
+    #ans:focus {
+      outline: 0;
+      outline-offset: 0;
+    }
+
+    .btn {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="flex">
+    <div>
+      <h1>My Personal Chatbot</h1>
+    </div>
+    <div id="result">
+        <textarea></textarea>
+    </div>
+    <div class="input">
+      <input type="text" id="ans" placeholder="Enter your response" required />
+      <button class="btn" id="submitButton">Ask</button>
+    </div>
+  </div>
+
+  <script src="styles/chat.js"></script>
+</body>
+</html>
+
