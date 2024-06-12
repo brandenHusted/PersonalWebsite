@@ -21,6 +21,24 @@
     background-size: cover;
 }
 
+#info {
+    padding: 100px;
+    background-color: #fafafa; 
+    color: #333; 
+    font-family: var(--font3);
+}
+
+#info h2 {
+    font-family: var(--font1);
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#info p {
+    font-family: var(--font3);
+    font-size: 16px;
+}
+
 #playlists {
     padding: 100px 200px 0px 200px;
     display: flex;
