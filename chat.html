@@ -31,9 +31,7 @@
       justify-content: center;
       flex-flow: column;
       align-items: center;
-      /* width: 30vw; */
       height: 100vh;
-      /* background-color: yellow; */
       margin: auto;
       border-radius: 30px;
     }
@@ -44,10 +42,11 @@
     }
 
     #ans {
-      color: #fff;
+      color: black;
       padding: 20px;
       font-size: 26px;
       background: transparent;
+      background-color: #fff;
       border: 0;
     }
 
@@ -69,6 +68,16 @@
       cursor: pointer;
       border-radius: 5px;
     }
+
+    textarea {
+      width: 500px;
+      height: 200px;
+    }
+
+    .input {
+      margin-bottom: 30px; /* Adds space below the input box */
+    }
+
   </style>
 </head>
 <body>
@@ -77,16 +86,15 @@
     <div>
       <h1>My Personal Chatbot</h1>
     </div>
-    <div id="result">
-        <textarea></textarea>
-    </div>
     <div class="input">
       <input type="text" id="ans" placeholder="Enter your response" required />
       <button class="btn" id="submitButton">Ask</button>
+    </div>
+    <div id="result">
+        <textarea></textarea>
     </div>
   </div>
 
   <script src="chat.js"></script>
 </body>
 </html>
-
