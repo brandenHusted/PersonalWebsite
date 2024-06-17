@@ -26,8 +26,49 @@ html {
     background-size: cover;
 }
 
+footer {
+    background-color: black;
+    padding: 20px;
+    text-align: center; /* Center align the content */
+}
+
+/* Style for each project item */
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Style for project names and images */
+footer p {
+    color: white;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+footer img {
+    display: block;
+    margin: 0 auto; /* Center align images */
+    border-radius: 50%; /* Rounded corners for images */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for images */
+footer img:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
 #contact {
-    margin-bottom: 20px;
+    margin-bottom: -200px;
 }
 
 #actual {
