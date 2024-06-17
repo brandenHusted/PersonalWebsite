@@ -26,6 +26,10 @@ html {
     background-size: cover;
 }
 
+#contact {
+    margin-bottom: 20px;
+}
+
 #actual {
     display: flex;
     padding-top: 100px;
