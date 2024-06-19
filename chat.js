@@ -54,7 +54,11 @@ const responses = [
       "I understand you with an algorithm called Levenshtein distance. This algorithm matches what you type into the closest response the chatbot has in its database."
     ];
 
-    // Function to calculate the Levenshtein distance
+    /* Function to calculate the Levenshtein distance (think of it like a grid like   c a t
+                                                                                    f
+                                                                                    a
+                                                                                    t
+                                                                                    */
     function levenshteinDistance(a, b) {
       const an = a.length;
       const bn = b.length;
