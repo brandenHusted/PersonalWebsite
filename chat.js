@@ -66,7 +66,8 @@ const responses = [
 
       // Initialize the matrix
       for (let i = 0; i <= an; i++) {
-        matrix[i] = [i];
+        matrix[i] = [];       // Initialize an empty row
+        matrix[i][0] = i;     // Set the first column value
       }
       for (let j = 1; j <= bn; j++) {
         matrix[0][j] = j;
