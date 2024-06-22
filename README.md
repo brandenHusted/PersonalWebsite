@@ -1,9 +1,5 @@
 
 
-# Links
-
-# Website
-- file:///C:/Users/state/OneDrive/personalWebsite/index.html
 
 # LinkedIn
 - https://www.linkedin.com/in/branden131/
