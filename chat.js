@@ -109,7 +109,8 @@ const questions = [
   "What's your favorite type of music?",
   "How do I find a job?",
   "What's your favorite type of movie?",
-  "How do I become successful?"
+  "How do I become successful?",
+  "why was this made?"
 ];
 
 const responses = [
@@ -217,7 +218,8 @@ const responses = [
   "Many people enjoy a variety of music, from classical to modern pop.",
   "Update your resume, network with professionals, and apply to job listings that match your skills.",
   "Many people enjoy action, comedy, and drama movies for their entertainment value.",
-  "Set clear goals, work hard, and never give up on your dreams."
+  "Set clear goals, work hard, and never give up on your dreams.",
+  "This was made to demonstrate my skills to potental employers how I write AI."
 ];
 
 
@@ -268,6 +270,7 @@ const responses = [
       const userInput = userInputField.value.trim(); // Remove leading/trailing whitespace
       let closestMatchIndex = -1;
       let smallestDistance = Infinity;
+      const threshold = 50;
 
       // Find the closest matching question based on Levenshtein distance
       questions.forEach((question, index) => {
@@ -278,8 +281,8 @@ const responses = [
         }
       });
 
-      // Get the corresponding response (should not happen in this state)
-      const chatbotResponse = closestMatchIndex !== -1 ? responses[closestMatchIndex] : "I'm sorry, I didn't quite understand your question. Could you please rephrase or ask something else?";
+      // Get the corresponding response 
+      const chatbotResponse = (closestMatchIndex !== -1 && smallestDistance <= threshold) ? responses[closestMatchIndex] : "I'm sorry, I didn't quite understand your question. Could you please rephrase or ask something else?";
 
       // Display the response in the text area
       textArea.value = userInput + "\nChatbot: " + chatbotResponse;
