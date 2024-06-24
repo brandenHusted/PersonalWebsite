@@ -110,7 +110,8 @@ const questions = [
   "How do I find a job?",
   "What's your favorite type of movie?",
   "How do I become successful?",
-  "why was this made?"
+  "why was this made?",
+  "why are you the way you are?"
 ];
 
 const responses = [
@@ -219,7 +220,8 @@ const responses = [
   "Update your resume, network with professionals, and apply to job listings that match your skills.",
   "Many people enjoy action, comedy, and drama movies for their entertainment value.",
   "Set clear goals, work hard, and never give up on your dreams.",
-  "This was made to demonstrate my skills to potental employers how I write AI."
+  "This was made to demonstrate my skills to potental employers how I write AI.",
+  "I was built to try and match what you would want as close as can. If I am not good enough for you my cousin ChatGTP can help."
 ];
 
 
@@ -270,7 +272,7 @@ const responses = [
       const userInput = userInputField.value.trim(); // Remove leading/trailing whitespace
       let closestMatchIndex = -1;
       let smallestDistance = Infinity;
-      const threshold = 50;
+      const threshold = 10;
 
       // Find the closest matching question based on Levenshtein distance
       questions.forEach((question, index) => {
