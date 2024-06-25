@@ -111,7 +111,9 @@ const questions = [
   "What's your favorite type of movie?",
   "How do I become successful?",
   "why was this made?",
-  "why are you the way you are?"
+  "why are you the way you are?",
+  "how are you able to help me?",
+  "I would like to interview Branden"
 ];
 
 const responses = [
@@ -221,7 +223,9 @@ const responses = [
   "Many people enjoy action, comedy, and drama movies for their entertainment value.",
   "Set clear goals, work hard, and never give up on your dreams.",
   "This was made to demonstrate my skills to potental employers how I write AI.",
-  "I was built to try and match what you would want as close as can. If I am not good enough for you my cousin ChatGTP can help."
+  "I was built to try and match what you would want as close as can. If I am not good enough for you my cousin ChatGTP can help.",
+  "I can help by giving you a estimated guess on what you may be looking for. Would you like to know more about Branden or ask him for an potential interview?",
+  "If you would like to interview Branden his email is statefan1324@gmail.com."
 ];
 
 
