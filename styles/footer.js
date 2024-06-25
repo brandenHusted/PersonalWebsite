@@ -23,8 +23,7 @@ function footer(){
                     
                         <a href="https://www.instagram.com/brandenhusted21/" target="_blank" class="fa fa-instagram"></a>\
 
-                        
-                        <button onclick="window.location.href='mailto:statefan1324@gmail.com'">Send me an email</button>
+                        <a href="mailto:statefan1324@gmail.com" target="_blank" class="fa fa-envelope"></a>\
         
                       
                     </div>\
