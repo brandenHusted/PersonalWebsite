@@ -1,0 +1,5 @@
+.env
+EMAIL_USER=statefan1324@gmail.com
+EMAIL_PASS= Guitar300!
+PORT=3000
+node_modules/

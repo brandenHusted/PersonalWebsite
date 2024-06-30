@@ -1,0 +1,24 @@
+name: Send Email on Push
+
+on:
+  push:
+    branches:
+      - main  # Adjust branch name as needed
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Send Email with Mailgun
+      run: |
+        curl -s --user "api:${{ secrets.MAILGUN_API_KEY }}" \
+          "https://api.mailgun.net/v3/${{ secrets.MAILGUN_DOMAIN }}/messages" \
+          -F from="your-email@${{ secrets.MAILGUN_DOMAIN }}" \
+          -F to=recipient@example.com \
+          -F subject="GitHub Actions Email" \
+          -F text="This is a test email from GitHub Actions."
+

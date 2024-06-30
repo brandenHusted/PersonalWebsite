@@ -3,6 +3,7 @@ const resultDiv = document.getElementById("result");
 const textArea = resultDiv.querySelector("textarea");
 const submitButton = document.getElementById("submitButton");
 
+
 // Pre-defined questions and responses
 const questions = [
   "hi",
