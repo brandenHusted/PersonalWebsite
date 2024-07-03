@@ -114,7 +114,10 @@ const questions = [
   "why was this made?",
   "why are you the way you are?",
   "how are you able to help me?",
-  "I would like to interview Branden"
+  "I would like to interview Branden",
+  "What is breadth-first search?",
+  "Can you write me some c++ code?",
+  "What is FizzBuzz?"
 ];
 
 const responses = [
@@ -226,7 +229,36 @@ const responses = [
   "This was made to demonstrate my skills to potental employers how I write AI.",
   "I was built to try and match what you would want as close as can. If I am not good enough for you my cousin ChatGTP can help.",
   "I can help by giving you a estimated guess on what you may be looking for. Would you like to know more about Branden or ask him for an potential interview?",
-  "If you would like to interview Branden his email is statefan1324@gmail.com."
+  "If you would like to interview Branden his email is statefan1324@gmail.com.",
+  "Breadth-first search (BFS) is a algorithm that searches a tree or graph structure for a node. It starts at the root of the tree and explores downward to all nodes at the current depth level.",
+  `
+#include <iostream>
+
+int main() {
+    // Loop through numbers from 1 to 100
+    for (int i = 1; i <= 100; ++i) {
+        // Check if the number is divisible by both 3 and 5
+        if (i % 3 == 0 && i % 5 == 0) {
+            std::cout << "FizzBuzz" << std::endl;
+        }
+        // Check if the number is divisible by 3
+        else if (i % 3 == 0) {
+            std::cout << "Fizz" << std::endl;
+        }
+        // Check if the number is divisible by 5
+        else if (i % 5 == 0) {
+            std::cout << "Buzz" << std::endl;
+        }
+        // If the number is not divisible by either 3 or 5, print the number
+        else {
+            std::cout << i << std::endl;
+        }
+    }
+    return 0;
+}
+`,
+"FizzBuzz is a common coding task during interviews to teach children the basics of division. If divisible by 3 print Fizz, if divisible by 5 print Buzz and divisible by 3 and 5 print FizzBuzz!"
+
 ];
 
 
