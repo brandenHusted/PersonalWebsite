@@ -18,7 +18,8 @@ app.post('/register', async (req, res) => {
   const userExists = users.find(user => user.email === email);
   if (userExists) {
     console.log('Email already registered'); // Debugging
-    return res.status(400).json({ success: false, message: 'Email already registered.' });
+    // 400 bad request
+    return res.status(400).json({ success: false, message: 'Email already registered.' }); 
   }
 
   // Hash the password before storing it
@@ -57,6 +58,7 @@ app.post('/login', async (req, res) => {
     }
   } catch (error) {
     console.error('Error comparing password:', error); // Debugging
+    // internal server error
     res.status(500).json({ success: false, message: 'Server error' });
   }
 });
