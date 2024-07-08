@@ -55,7 +55,7 @@
       align-items: center;
       background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1)), url('../images/calvin.jpg');
       font-family: var(--font2);
-    }
+    } 
     header #home {
       margin-left: var(--horizontal_margin);
       left: 0;
@@ -104,14 +104,34 @@
     <h2>Login</h2>
     <input type="text" id="email" placeholder="Enter your email address">
     <input type="password" id="password" placeholder="Enter your password">
-    <input type="text" id="code" placeholder="Enter your code if you already have logged in before">
+    <h2>Or</h2>
+    <input type="text" id="code" placeholder="Enter your code if you already have logged in">
     <button id="login">Login</button>
     <button id="createAccount">Create Account</button>
   </div>
   <script>
+    const MAX_ATTEMPTS = 3;
+    const LOCKOUT_TIME = 30000; // 30 seconds
+
     function validateEmail(email) {
       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return re.test(email);
+    }
+
+    function handleLockout() {
+      const lockoutEndTime = Date.now() + LOCKOUT_TIME;
+      localStorage.setItem('lockoutEndTime', lockoutEndTime);
+      alert('Too many failed login attempts. Please try again later.');
+      window.location.href = 'index.html';
+    }
+
+    function checkLockout() {
+      const lockoutEndTime = localStorage.getItem('lockoutEndTime');
+      if (lockoutEndTime && Date.now() < lockoutEndTime) {
+        alert('You are temporarily locked out. Please try again later.');
+        return true;
+      }
+      return false;
     }
 
     document.getElementById('createAccount').addEventListener('click', function() {
@@ -119,54 +139,46 @@
     });
 
     document.getElementById('login').addEventListener('click', function() {
+      if (checkLockout()) return;
+
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
       const code = document.getElementById('code').value;
 
-      if (code) {
-        // Code login
-        fetch('http://localhost:3000/code-login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ email, code })
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.success) {
-            alert('Login successful!');
-            window.location.href = 'chat.html';
-          } else {
-            alert('Invalid login code.');
-          }
-        });
-      } else {
-        // Email and password login
-        if (!validateEmail(email)) {
-          alert('Please enter a valid email address.');
-          return;
-        }
+      if (!validateEmail(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
 
-        fetch('http://localhost:3000/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ email, password })
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.success) {
-            alert(`Login successful! Your login code is: ${data.code}`);
-            window.location.href = 'chat.html';
+      let failedAttempts = localStorage.getItem('failedAttempts') || 0;
+
+      fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password, code })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert('Login successful! Your login code is in your terminal where you started the server.');
+          localStorage.removeItem('failedAttempts');
+          localStorage.removeItem('lockoutEndTime');
+          window.location.href = 'chat.html';
+        } else {
+          failedAttempts++;
+          localStorage.setItem('failedAttempts', failedAttempts);
+          if (failedAttempts >= MAX_ATTEMPTS) {
+            handleLockout();
           } else {
             alert('Failed to login.');
           }
-        });
-      }
+        }
+      });
     });
   </script>
 </body>
 </html>
+
 
