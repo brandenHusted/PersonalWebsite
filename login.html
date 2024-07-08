@@ -38,13 +38,12 @@
       background-color: #45a049;
     }
     a {
-    color: white;
-    transition: 0.2s
+      color: white;
+      transition: 0.2s;
     }
-
-a:hover {
-    color: var(--blue);
-    transition: 0.2s;
+    a:hover {
+      color: var(--blue);
+      transition: 0.2s;
     }
     header {
       z-index: 1;
@@ -56,98 +55,118 @@ a:hover {
       align-items: center;
       background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1)), url('../images/calvin.jpg');
       font-family: var(--font2);
-    } 
-    
+    }
     header #home {
-        margin-left: var(--horizontal_margin);
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        position: absolute;
-        font-size: 150%;
+      margin-left: var(--horizontal_margin);
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+      font-size: 150%;
     }
-    
-
     header #pages {
-        margin-right: var(--horizontal_margin);
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        position: absolute;
-        display: flex;
+      margin-right: var(--horizontal_margin);
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+      display: flex;
     }
-
-        header #pages li {
-            text-align: center;
-            margin-left: 2vh;
-            list-style-type: none;
-        }
-
+    header #pages li {
+      text-align: center;
+      margin-left: 2vh;
+      list-style-type: none;
+    }
     @media (max-width: 800px) {
-        header {
-            height: 10vh;
-        }
-        header #home {
-            font-size: 120%;
-        }
-        header #pages li {
-            font-size: 80%;
-        }
+      header {
+        height: 10vh;
+      }
+      header #home {
+        font-size: 120%;
+      }
+      header #pages li {
+        font-size: 80%;
+      }
     }
   </style>
 </head>
 <body>
-    <header>
-        <div id="home">
-            <a style="color:white;" href="">Branden</a>
-        </div>
-        <ul id="pages">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="connect.html">About</a></li>
-        </ul>
-    </header>
+  <header>
+    <div id="home">
+      <a style="color:white;" href="">Branden</a>
+    </div>
+    <ul id="pages">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="connect.html">About</a></li>
+    </ul>
+  </header>
   <div class="container">
     <h2>Login</h2>
     <input type="text" id="email" placeholder="Enter your email address">
     <input type="password" id="password" placeholder="Enter your password">
+    <input type="text" id="code" placeholder="Enter your code if you already have logged in before">
     <button id="login">Login</button>
     <button id="createAccount">Create Account</button>
   </div>
   <script>
     function validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
     }
+
     document.getElementById('createAccount').addEventListener('click', function() {
-    window.location.href = 'security.html';
-});
+      window.location.href = 'security.html';
+    });
 
     document.getElementById('login').addEventListener('click', function() {
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
+      const code = document.getElementById('code').value;
 
-      if (!validateEmail(email)) {
-        alert('Please enter a valid email address.');
-        return;
-      }
-      
-      fetch('http://localhost:3000/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email, password })
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.success) {
-          alert('Login successful!');
-          window.location.href = 'chat.html';
-        } else {
-          alert('Failed to login.');
+      if (code) {
+        // Code login
+        fetch('http://localhost:3000/code-login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email, code })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert('Login successful!');
+            window.location.href = 'chat.html';
+          } else {
+            alert('Invalid login code.');
+          }
+        });
+      } else {
+        // Email and password login
+        if (!validateEmail(email)) {
+          alert('Please enter a valid email address.');
+          return;
         }
-      });
+
+        fetch('http://localhost:3000/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email, password })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert(`Login successful! Your login code is: ${data.code}`);
+            window.location.href = 'chat.html';
+          } else {
+            alert('Failed to login.');
+          }
+        });
+      }
     });
   </script>
 </body>
 </html>
+
