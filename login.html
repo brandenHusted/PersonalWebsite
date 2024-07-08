@@ -179,7 +179,7 @@
           if (failedAttempts >= MAX_ATTEMPTS) {
             handleLockout();
           } else {
-            alert('Failed to login.');
+            alert('Failed to login. Password must be at least 3 characters long and contain at least one special character.');
           }
         }
       });

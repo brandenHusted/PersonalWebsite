@@ -16,15 +16,28 @@ app.use(cors());
 
 let users = [];
 let loginCodes = {};
+
+// Function to validate the password
+function validatePassword(password) {
+  // Regular expression to check for at least 3 characters and at least one special character
+  const regex = /^(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{3,}$/;
+  return regex.test(password);
+}
+
 // async documentation https://www.w3schools.com/Js/js_async.asp
 app.post('/register', async (req, res) => {
   const { email, password } = req.body;
   console.log('Received registration request:', { email, password }); // Debugging
-  
+
   const userExists = users.find(user => user.email === email);
   if (userExists) {
     console.log('Email already registered'); // Debugging
-    return res.status(400).json({ success: false, message: 'Email already registered.' }); 
+    return res.status(400).json({ success: false, message: 'Email already registered.' });
+  }
+
+  if (!validatePassword(password)) {
+    console.log("Password is invalid"); // Debugging
+    return res.status(400).json({ success: false, message: 'Password must be at least 3 characters long and contain at least one special character.' });
   }
 
   try {
@@ -60,6 +73,12 @@ app.post('/login', async (req, res) => {
       console.log('Invalid code'); // Debugging
       return res.status(400).json({ success: false, message: 'Invalid code.' });
     }
+  }
+
+  // Validate password
+  if (!validatePassword(password)) {
+    console.log("Password is invalid"); // Debugging
+    return res.status(400).json({ success: false, message: 'Password must be at least 3 characters long and contain at least one special character.' });
   }
 
   try {
