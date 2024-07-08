@@ -6,7 +6,7 @@
   <title>Simple Chatbot</title>
   <style>
     body {
-      background: grey;
+      background: rgb(75, 63, 63);
     }
 
     a {
@@ -70,6 +70,10 @@ a:hover {
       border: 3px solid #fff;
       padding: 10px 20px;
       margin-bottom: 40px;
+      color: #fff;
+    }
+    h2 {
+      font-size: 20px;
       color: #fff;
     }
 
@@ -143,6 +147,7 @@ a:hover {
     <ul id="pages">
         <li><a href="index.html">Home</a></li>
         <li><a href="connect.html">About</a></li>
+        <li><a href="login.html">Login</a></li>
     </ul>
   </header>
   <div class="flex">
@@ -152,10 +157,13 @@ a:hover {
     <div class="input">
       <input type="text" id="ans" placeholder="Enter your response" required />
       <button class="btn" id="submitButton">Ask</button>
+      <button class="btn" id="hintButton">Hints</button>
     </div>
     <div id="result">
         <textarea></textarea>
     </div>
+    <h2>Warning:</h2>
+    <h2>This chatbot was made to automate simple processes that I struggle with and streamline the development process.</h2>
   </div>
 
   <script src="chat.js"></script>

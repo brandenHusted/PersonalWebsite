@@ -117,7 +117,9 @@ const questions = [
   "I would like to interview Branden",
   "What is breadth-first search?",
   "Can you write me some c++ code?",
-  "What is FizzBuzz?"
+  "What is FizzBuzz?",
+  "How to make a react application with two pages",
+  "What is 2 + 2?"
 ];
 
 const responses = [
@@ -257,8 +259,116 @@ int main() {
     return 0;
 }
 `,
-"FizzBuzz is a common coding task during interviews to teach children the basics of division. If divisible by 3 print Fizz, if divisible by 5 print Buzz and divisible by 3 and 5 print FizzBuzz!"
+"FizzBuzz is a common coding task during interviews to teach children the basics of division. If divisible by 3 print Fizz, if divisible by 5 print Buzz and divisible by 3 and 5 print FizzBuzz!",
+`
 
+To create a simple React application with two pages, you can use create-react-app along with react-router-dom for routing. Here are the steps:
+
+Set up the React app:
+
+Open your terminal and run the following commands to create a new React app:
+
+npx create-react-app my-react-app
+cd my-react-app
+npm install react-router-dom
+
+Create the page components:
+
+Create two simple components for your pages. You can put these components in a components folder.
+
+src/components/Home.js:
+
+import React from 'react';
+
+const Home = () => {
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <p>Welcome to the Home Page!</p>
+    </div>
+  );
+};
+
+export default Home;
+
+src/components/About.js:
+
+import React from 'react';
+
+const About = () => {
+  return (
+    <div>
+      <h1>About Page</h1>
+      <p>Welcome to the About Page!</p>
+    </div>
+  );
+};
+
+export default About;
+
+Set up routing:
+
+Use react-router-dom to set up routing in your app. Update your src/App.js file as follows:
+
+src/App.js:
+
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+      <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+    </Router>
+    </div>
+  );
+}
+
+export default App;
+
+Run your React app:
+
+In your terminal, run the following command to start your React app:
+
+npm start
+
+That should be all the changes needed to be successful at having two pages in a react-native application!
+`,
+"2 + 2 is 4"
 ];
 
 
@@ -303,7 +413,34 @@ int main() {
 
       return matrix[an][bn];
     }
-
+    // hints for the user if they do not know what to type
+    hintButton.addEventListener("click", function(){
+      alert(`Here are some prompts to get you started: 
+        
+  "hi",
+  "How to make a react application with two pages",
+  "Yes",
+  "What is your name?",
+  "How can I help you today?",
+  "Do you have any other questions?",
+  "Can you help me with programming?",
+  "I am working on Python",
+  "I am working on C++",
+  "I am working on Java",
+  "I am working on JavaScript",
+  "I am working on CSS",
+  "I am working on html",
+  "I am working on C",
+  "Can you tell me more about Branden?",
+  "How do I contact Branden?",
+  "How did Branden make this project?",
+  "what is pystage",
+  "I would like to interview Branden",
+  "What is breadth-first search?",
+  "Can you write me some c++ code?",
+  "What is FizzBuzz?"
+        `)
+    })
     // Event listener for the submit button
     submitButton.addEventListener("click", function() {
       const userInput = userInputField.value.trim(); // Remove leading/trailing whitespace
