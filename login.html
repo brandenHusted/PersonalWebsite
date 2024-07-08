@@ -63,6 +63,12 @@
       transform: translateY(-50%);
       position: absolute;
       font-size: 150%;
+      display: flex;
+      flex-direction: column;
+    }
+    header #node {
+      margin-top: 10px; /* Adjust the margin as needed */
+      font-size: 80%;
     }
     header #pages {
       margin-right: var(--horizontal_margin);
@@ -94,6 +100,7 @@
   <header>
     <div id="home">
       <a style="color:white;" href="">Branden</a>
+      <div id="node">Type 'node security.js' in terminal to start server.</div>
     </div>
     <ul id="pages">
       <li><a href="index.html">Home</a></li>
@@ -180,5 +187,3 @@
   </script>
 </body>
 </html>
-
-
