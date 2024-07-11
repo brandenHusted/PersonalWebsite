@@ -118,7 +118,25 @@ a:hover {
     document.getElementById('register').addEventListener('click', function() {
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
-      window.location.href = 'login.html';
+
+      // Regular expression to check for at least 3 characters and at least one special character
+      const passwordRegex = /^(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{3,}$/;
+      
+      if (!passwordRegex.test(password)) {
+            alert('Password must be at least 3 characters long and contain at least one special character.');
+            return; // Do not proceed if the password is invalid
+            }
+
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    if (!validateEmail(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+            
       console.log('Email:', email); // Debugging
       console.log('Password:', password); // Debugging
       fetch('http://localhost:3000/register', {
@@ -133,6 +151,7 @@ a:hover {
         console.log('Response:', data); // Debugging
         if (data.success) {
           alert('Registration successful!');
+          window.location.href = 'login.html';
         } else {
           alert('Failed to register.');
         }
