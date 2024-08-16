@@ -15,6 +15,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Oswald:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="images/guitar.jpg" type="image/x-icon">
 </head>
+<style>
+    button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: var(--main-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--font3);
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+</style>
 <body>
     <header>
         <div id="home">
@@ -105,10 +120,13 @@
         <div class="centerpicture">
             <img src="images/chatbot.jpg" alt="chatbot Logo" style="width:100px;height: auto;">   
         </div>
+        <div class = "end">
+            Click here to play the Bible Quiz game I have created with javascript, hope you enjoy!
+            <button id ="button" onclick="window.location.href = 'bibleQuiz/index.html'">Bible quiz</button>
+        </div>
 
     </div>    
     </div>
-
     <script>footer()</script>
 
 </body>
