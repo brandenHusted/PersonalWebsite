@@ -1,0 +1,3 @@
+[submodule "bibleQuiz"]
+	path = bibleQuiz
+	url = https://github.com/brandenHusted/bibleQuiz
