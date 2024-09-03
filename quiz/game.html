@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outreach Christian Church Community Game!</title>
+  <link rel="stylesheet" href="styles/community.css">
+  <script defer src="game.js"></script>
+  <style>
+    #progress-container {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f3f3f3;
+    }
+    #progress-bar {
+      width: 0;
+      height: 20px;
+      background-color: #4caf50;
+      text-align: center;
+      color: white;
+    }
+    #play-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s;
+    }
+    #play-button:hover {
+      background-color: #0056b3;
+    }
+    #dropup-content {
+      display: none;
+      position: fixed;
+      bottom: 60px; /* Position above the button */
+      right: 20px;
+      background-color: #f9f9f9;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 9;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    #dropup-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    #dropup-content a:hover {
+      background-color: #f1f1f1;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    .container {
+      width: 80%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #007bff;
+    }
+    .flex-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    #difficulty-mode {
+      color: white;
+    }
+    label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    select {
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #fff;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: green;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-right: 35px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    p {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+  </style>
+</head>
+<body>
+  <audio id="background-music" autoplay loop>
+    Your browser does not support the audio element.
+  </audio>
+  <button id="play-button">Play Music</button>
+  <div id="dropup-content">
+    <a href="#" data-song="songs/Christian.mp3">Christian</a>
+    <a href="#" data-song="songs/positiveDay.mp3">Family Friendly</a>
+    <a href="#" data-song="songs/Dubstep.mp3">Dubstep</a>
+    <a href="#" data-song="songs/Calm.mp3">Low Sci-Fi</a>
+    <a href="#" data-song="songs/Jazz.mp3">Jazz</a>
+    <a href="#" data-song="songs/rock.mp3">Indie-Rock</a>
+    <a href="#" data-song="">No Music</a>
+  </div>
+  <p id="difficulty-mode"></p>
+  <div id="quiz-container">
+    <p id="question-text">Loading...</p>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <img id="question-image" src="" alt="Question Image" style="display: none; width: 80%; max-width: 300px;">
+    </div>
+    <audio id="correct-sound" src="sounds/correct.mp3"></audio>
+    <audio id="incorrect-sound" src="sounds/incorrect.mp3"></audio>
+      <div id="fireworks-container"></div>
+    <div id="reason"></div>
+    <div id="answers-container"></div>
+    <button id="next-button">Next</button>
+    <p id="explanation-text" style="display: none;"></p>
+  </div>
+  <div id="progress-container">
+    <div id="progress-bar">0%</div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+

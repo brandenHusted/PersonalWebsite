@@ -1,0 +1,150 @@
+:root {
+  --grey: #fafafa;
+  --font1: "Oswald", sans-serif;
+  --font2: "Montserrat", sans-serif;
+  --font3: "Roboto", sans-serif;
+  --main-color: white;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: var(--font2);
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/outreach.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: var(--main-color);
+  }
+
+  header {
+    background-color: green;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 60;
+    z-index: 1000; /* Ensure header is above other elements */
+  }
+  
+  header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+  
+  header li {
+    display: inline-block;
+  }
+  
+  header a {
+    text-decoration: none;
+    color: var(--main-color);
+    font-family: var(--font1);
+  }
+
+  h1 {
+    margin-bottom: 20px;
+    font-family: var(--font1);
+  }
+
+  #answered-questions {
+    border: 2px solid #333; /* Border color and width */
+    padding: 15px; /* Space inside the border */
+    border-radius: 8px; /* Optional: Rounded corners */
+    margin-top: 20px; /* Optional: Space above the section */
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: var(--main-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--font3);
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  p {
+    text-align: center;
+    margin-top: 10px;
+    font-family: var(--font3);
+  }
+  #fireworks-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+  }
+  
+  .firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: radial-gradient(circle, yellow, red, white);
+    border-radius: 50%;
+    animation: firework-animation 1000ms ease-out forwards;
+  }
+  
+  @keyframes firework-animation {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+  #score-container {
+    margin-top: 20px;
+  }
+
+  #quiz-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    color: black;
+  }
+  
+  #answers-container button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+  }
+  #reason {
+    display: none;
+  }
+  
+  #next-button {
+    margin-top: -1000px; /* brings next button up so user doesn't have to scroll down */
+  }
+
+  
+  main {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  

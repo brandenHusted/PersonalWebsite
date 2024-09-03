@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bible quiz!</title>
+  <link rel="stylesheet" href="styles/community.css">
+  <script defer src="complete.js"></script>
+</head>
+<body>
+  <header>
+    <ul id="pages">
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </header>
+  <main>
+    <section id="game-info">
+      <h1>Thanks for playing!</h1>
+      <p>The purpose of this quiz is for the Bible to be taught and players to go and preach the word.</p>
+      <p>Press play again to play again!</p>
+      <button id="startNewGameButton" onclick="window.location.href = 'community.html'">Play again</button>
+    </section>
+    <section id="score-container">
+      <p>Your score is: <span id="score-percentage"></span>%</p>
+    </section>
+    <br>
+    <section id="answered-questions">
+      <h2>Questions and Answers:</h2>
+      <!-- Answered questions will be dynamically inserted here -->
+    </section>
+  </main>
+</body>
+</html>
