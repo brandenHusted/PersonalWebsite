@@ -11,6 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "Christian Life based in the Bible"
       },
       {
+        question: "Does fitness matter if you want to have a good spiritual life?",
+        answers: ["Yes", "No"],
+        correct: "Yes",
+        reason: "Fitness does matter if you want to have a good spiritual life based on 1 Timothy 4:8.",
+        mode: "easy",
+        category: "Christian Life based in the Bible"
+      },
+      {
         question: "What does God give us to help us remain strong in our faith and to become holy?",
         answers: ["The Guardian Angel", "The Holy Spirit", "The prophets", "The Bible"],
         correct: "The Holy Spirit",
@@ -87,6 +95,14 @@ document.addEventListener('DOMContentLoaded', () => {
         answers: ["Bethlehem", "Jerusalem", "Israel", "Nazareth"],
         correct: "Bethlehem",
         reason: "In Matthew 2:1-2 it states that Jesus was born in Bethlehem.",
+        mode: "easy",
+        category: "History in the Bible"
+      },
+      {
+        question: "At what event did Jesus turn water into wine?",
+        answers: ["Wedding at Cana", "Noah and the flood", "David becomes king", "The last supper"],
+        correct: "Wedding at Cana",
+        reason: "In John 2:1-11 Jesus turned water into wine at the wedding at Cana.",
         mode: "easy",
         category: "History in the Bible"
       },
@@ -187,6 +203,14 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "Common Facts about Bible"
       },
       {
+        question: "Who was dead for 4 days and emitting an odor when Jesus brought him back to life?",
+        answers: ["Lazarus", "Andrew", "Judas", "Jehoram"],
+        correct: "Lazarus",
+        reason: "Lazarus was dead for 4 days and emitting an odor when Jesus brought him back to life in John 11:38-44.",
+        mode: "easy",
+        category: "Common Facts about Bible"
+      },
+      {
         question: "What was the first miracle performed by Christ?",
         answers: ["Healing of a blind man","Feeding of the five thousand", "Water turned into wine", "Jesus walking on water"],
         correct: "Water turned into wine",
@@ -219,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "Common Facts about Bible"
       },
       {
-        question: "which books are the Gospels?",
+        question: "Which books are the Gospels?",
         answers: ["Matthew, Mark, Luke, John", "Matthew, Mark, Luke, John, Peter", "Numbers", "All of them"],
         correct: "Matthew, Mark, Luke, John",
         reason: "The Gospels are the records we have of Jesus' life. Matthew, Mark, Luke, John wrote down the teachings of Jesus.",
@@ -362,6 +386,14 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "Common Facts about Bible"
       },
       {
+        question: "What magnificent structure did Noah build?",
+        answers: ["House", "Ark", "Synagogue", "Pyramid"],
+        correct: "Ark",
+        reason: "Noah built an ark in Genesis 6:13-14.",
+        mode: "medium",
+        category: "Common Facts about Bible"
+      },
+      {
         question: "What was God's sign to Noah that he would never destroy the earth again?",
         answers: ["A Rainbow", "A Dove", "A Flood", "A Son"],
         correct: "A Rainbow",
@@ -438,6 +470,14 @@ document.addEventListener('DOMContentLoaded', () => {
         answers: ["3 Days", "4 Days", "10 days", "30 days"],
         correct: "3 Days",
         reason: "God blinded Saul on the road to Damascus for 3 days in Acts 9:9 in the Bible.",
+        mode: "medium",
+        category: "History in the Bible"
+      },
+      {
+        question: "What happened after Jesus walked on water?",
+        answers: ["The wind stopped", "Jesus fell asleep", "It began to rain", "Lightning struck"],
+        correct: "The wind stopped",
+        reason: "The wind stopped after Jesus walked on water in Matthew 14:22-32 in the Bible.",
         mode: "medium",
         category: "History in the Bible"
       },
@@ -520,6 +560,22 @@ document.addEventListener('DOMContentLoaded', () => {
         reason: "They were angered because because He proclaimed that he was the one sent to be Lord in Luke 4:23.",
         mode: "medium",
         category: "History in the Bible"
+      },
+      {
+        question: "What day was the Sabbath in the bible?",
+        answers: ["Sunday", "Saturday", "Friday", "Sabbath doesn't matter"],
+        correct: "Saturday",
+        reason: "The Sabbath was viewed on Saturday the 7th day of the week. The 1st day of the week is Sunday so the last would be Saturday.",
+        mode: "medium",
+        category: "Christian Life based in the Bible"
+      },
+      {
+        question: "In my name they will cast out demons, they will speak with new tongues... who is quoted here?",
+        answers: ["God the father", "Holy Spirit", "Jesus", "The writer"],
+        correct: "Jesus",
+        reason: "In Mark 16:17 Jesus is quoted here.",
+        mode: "medium",
+        category: "Christian Life based in the Bible"
       },
       {
         question: "What day was the Sabbath in the bible?",
@@ -691,6 +747,15 @@ document.addEventListener('DOMContentLoaded', () => {
         image: "images/Cherubim.jpg",
         category: "Questions with images"
       },
+      {
+        question: "What mountain did Noah's ark rest upon after the flood waters receded?",
+        answers: ["Mt. Sinai", "Mt. Ararat", "Mt Moriah", "Mt. Pimple Hill"],
+        correct: "Mt. Ararat",
+        reason: "Noah's ark rested upon Mt. Ararat in Genesis 8:4.",
+        mode: "medium",
+        image: "images/noahs-ark.jpg",
+        category: "Questions with images"
+      },
     ],
     hard: [
       {
@@ -706,6 +771,14 @@ document.addEventListener('DOMContentLoaded', () => {
         answers: ["If something bad happens, it is not from God","No, everything is not God's will", "Yes, everything is from God and is God's will", "If something good happens it is from the devil"],
         correct: "No, everything is not God's will",
         reason: "Their is human ideas and God's ideas and not everything you do is beneficial that is why it is important to pray and get close to God. This is stated in 1 Corinthians 10:23.",
+        mode: "hard",
+        category: "Christian Life based in the Bible"
+      },
+      {
+        question: "What should be the 3 attitudes of Jesus' followers?",
+        answers: ["Change your life, help those in need and learn to forgive","Repent, consecrate yourself and read the Bible", "Follow him, offer all your resources and preach to the crowds", "Deny yourself, take up your cross daily and follow him"],
+        correct: "Deny yourself, take up your cross daily and follow him",
+        reason: "The 3 attitudes should be deny yourself, take up your cross daily and follow him stated in Luke 9:23.",
         mode: "hard",
         category: "Christian Life based in the Bible"
       },
@@ -782,6 +855,14 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "Common Facts about Bible"
       },
       {
+        question: "The story of the growing seed is only found in which gospel?",
+        answers: ["Acts", "Mark", "Luke", "John", "Matthew"],
+        correct: "Mark",
+        reason: "The story of the growing seed is only found specifically in Mark 4:26-29.",
+        mode: "hard",
+        category: "Common Facts about Bible"
+      },
+      {
         question: "The Lord tells Judah via Habakkuk that the earth will be filled with what?",
         answers: ["The knowledge of the glory of the Lord", "The awe of the glory of the Lord", "The light of the glory of the Lord", "The power of the glory of the Lord"],
         correct: "The knowledge of the glory of the Lord",
@@ -802,6 +883,14 @@ document.addEventListener('DOMContentLoaded', () => {
         answers: ["Sycamore Tree", "Fig Tree", "Olive Tree", "Acacia Tree", "Tamarisk Tree"],
         correct: "Sycamore Tree",
         reason: "Zacchaeus climbed up a Sycamore tree in Luke 19:4-8.",
+        mode: "hard",
+        category: "Common Facts about Bible"
+      },
+      {
+        question: "What did God give Moses when he was on the mountain?",
+        answers: ["The 10 commadments", "A template", "A sacrifice", "The holy spirit"],
+        correct: "The 10 commadments",
+        reason: "Moses got the 10 commandments in Exodus 19-24.",
         mode: "hard",
         category: "Common Facts about Bible"
       },
@@ -858,6 +947,14 @@ document.addEventListener('DOMContentLoaded', () => {
         answers: ["Hosea", "Isaiah", "Barnabas", "Enoch"],
         correct: "Hosea",
         reason: "In Hosea 1:2-4 in the Bible. Hosea was told by God to marry a prostitute.",
+        mode: "hard",
+        category: "History in the Bible"
+      },
+      {
+        question: "What did Delilah tell the Philistines to do in order to diminish Samson's strength?",
+        answers: ["Cut his hair", "To become less prideful", "Take his horse", "Trust in the Lord and he will provide"],
+        correct: "Cut his hair",
+        reason: "In Judges 16:17-20 in the Bible Delilah tell the Philistines in order to diminish Samson's strength they need to cut his hair.",
         mode: "hard",
         category: "History in the Bible"
       },
@@ -1023,9 +1120,100 @@ document.addEventListener('DOMContentLoaded', () => {
         image: "images/exodus.jpg",
         category: "Questions with images"
       },
+      {
+        question: "Who is Jeroboam's wife?",
+        answers: ["Nora", "Rebecca", "Ano", "Zeruah"],
+        correct: "Ano",
+        reason: "Jeroboam's wife is Ano in 1 Kings 14:1-18. She was unnamed in the Bible but she appears in the Septuagint as an Egyptian princess which links her to the story in the Bible.",
+        mode: "hard",
+        image: "images/wife.jpg",
+        category: "Questions with images"
+      },
       
     ],
     all: [
+      {
+        question: "At what event did Jesus turn water into wine?",
+        answers: ["Wedding at Cana", "Noah and the flood", "David becomes king", "The last supper"],
+        correct: "Wedding at Cana",
+        reason: "In John 2:1-11 Jesus turned water into wine at the wedding at Cana.",
+        mode: "easy",
+        category: "History in the Bible"
+      },
+      {
+        question: "Who was dead for 4 days and emitting an odor when Jesus brought him back to life?",
+        answers: ["Lazarus", "Andrew", "Judas", "Jehoram"],
+        correct: "Lazarus",
+        reason: "Lazarus was dead for 4 days and emitting an odor when Jesus brought him back to life in John 11:38-44.",
+        mode: "easy",
+        category: "Common Facts about Bible"
+      },
+      {
+        question: "What magnificent structure did Noah build?",
+        answers: ["House", "Ark", "Synagogue", "Pyramid"],
+        correct: "Ark",
+        reason: "Noah built an ark in Genesis 6:13-14.",
+        mode: "medium",
+        category: "Common Facts about Bible"
+      },
+      {
+        question: "What happened after Jesus walked on water?",
+        answers: ["The wind stopped", "Jesus fell asleep", "It began to rain", "Lightning struck"],
+        correct: "The wind stopped",
+        reason: "The wind stopped after Jesus walked on water in Matthew 14:22-32 in the Bible.",
+        mode: "medium",
+        category: "History in the Bible"
+      },
+      {
+        question: "In my name they will cast out demons, they will speak with new tongues... who is quoted here?",
+        answers: ["God the father", "Holy Spirit", "Jesus", "The writer"],
+        correct: "Jesus",
+        reason: "In Mark 16:17 Jesus is quoted here.",
+        mode: "medium",
+        category: "Christian Life based in the Bible"
+      },
+      {
+        question: "What mountain did Noah's ark rest upon after the flood waters receded?",
+        answers: ["Mt. Sinai", "Mt. Ararat", "Mt Moriah", "Mt. Pimple Hill"],
+        correct: "Mt. Ararat",
+        reason: "Noah's ark rested upon Mt. Ararat in Genesis 8:4.",
+        mode: "medium",
+        image: "images/noahs-ark.jpg",
+        category: "Questions with images"
+      },
+      {
+        question: "What should be the 3 attitudes of Jesus' followers?",
+        answers: ["Change your life, help those in need and learn to forgive","Repent, consecrate yourself and read the Bible", "Follow him, offer all your resources and preach to the crowds", "Deny yourself, take up your cross daily and follow him"],
+        correct: "Deny yourself, take up your cross daily and follow him",
+        reason: "The 3 attitudes should be deny yourself, take up your cross daily and follow him stated in Luke 9:23.",
+        mode: "hard",
+        category: "Christian Life based in the Bible"
+      },
+      {
+        question: "What did Delilah tell the Philistines to do in order to diminish Samson's strength?",
+        answers: ["Cut his hair", "To become less prideful", "Take his horse", "Trust in the Lord and he will provide"],
+        correct: "Cut his hair",
+        reason: "In Judges 16:17-20 in the Bible Delilah tell the Philistines in order to diminish Samson's strength they need to cut his hair.",
+        mode: "hard",
+        category: "History in the Bible"
+      },
+      {
+        question: "What did God give Moses when he was on the mountain?",
+        answers: ["The 10 commadments", "A template", "A sacrifice", "The holy spirit"],
+        correct: "The 10 commadments",
+        reason: "Moses got the 10 commandments in Exodus 19-24.",
+        mode: "hard",
+        category: "Common Facts about Bible"
+      },
+      {
+        question: "Who is Jeroboam's wife?",
+        answers: ["Nora", "Rebecca", "Ano", "Zeruah"],
+        correct: "Ano",
+        reason: "Jeroboam's wife is Ano in 1 Kings 14:1-18. She was unnamed in the Bible but she appears in the Septuagint as an Egyptian princess which links her to the story in the Bible.",
+        mode: "hard",
+        image: "images/wife.jpg",
+        category: "Questions with images"
+      },
       {
         question: "On what three occasions are we told that Jesus wept?",
         answers: ["In Gethsemane and twice in Bethlehem","In Jerusalem and twice in Nazareth", "At the grave of Lazarus, over Jerusalem and in Gethsemane", "At the grave of Lazarus, over Bethlehem and in Gethsemane"],
@@ -1319,6 +1507,14 @@ document.addEventListener('DOMContentLoaded', () => {
         mode: "easy",
         image: "images/peter.jpg",
         category: "Questions with images"
+      },
+      {
+        question: "Does fitness matter if you want to have a good spiritual life?",
+        answers: ["Yes", "No"],
+        correct: "Yes",
+        reason: "Fitness does matter if you want to have a good spiritual life based on 1 Timothy 4:8.",
+        mode: "easy",
+        category: "Christian Life based in the Bible"
       },
       {
         question: "When Jesus was born, he was placed in a ___?",
