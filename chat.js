@@ -119,7 +119,9 @@ const questions = [
   "Can you write me some c++ code?",
   "What is FizzBuzz?",
   "How to make a react application with two pages",
-  "What is 2 + 2?"
+  "What is 2 + 2?",
+  "What is the build fellowship",
+  "Should I use you to write me a paper?"
 ];
 
 const responses = [
@@ -368,7 +370,9 @@ npm start
 
 That should be all the changes needed to be successful at having two pages in a react-native application!
 `,
-"2 + 2 is 4"
+"2 + 2 is 4",
+"The build Fellowship Linkedin page is right here: https://www.linkedin.com/company/thebuildfellowship/posts/?feedView=all The Build Fellowship by Open Avenues is a nationwide, cap-exempt H-1B visa fellowship offered to foreign national innovators, experts, and talent seeking to grow careers and companies in the United States. Build Fellows are employed by Build Fellowship non-profit partners part-time and sponsored for cap-exempt H-1B visas. Build Fellows contribute to the missions of non-profit partners and to the social and economic success of the United States by opening career pathways for the future U.S. workforce.",
+"No"
 ];
 
 
