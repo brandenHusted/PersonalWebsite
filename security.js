@@ -1,3 +1,4 @@
+//This is kept but not used anymore for the website
 // Imports the express library which is used to make a web server.
 const express = require('express');
 // Import the body-parser library, which is used to parse incoming request bodies in a middleware.
