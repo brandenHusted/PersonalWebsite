@@ -719,12 +719,47 @@ That should be all the changes needed to be successful at having two pages in a 
         }
       });
 
-      // Get the corresponding response 
-      const chatbotResponse = (closestMatchIndex !== -1 && smallestDistance <= threshold) ? responses[closestMatchIndex] : "I'm sorry, I didn't quite understand your question. Could you please rephrase or ask something else?";
+    // make ask button highlighted to show user where to click
+    const askButton = document.getElementById("submitButton");  
+    // Get the chatbot response
+    const chatbotResponse = (closestMatchIndex !== -1 && smallestDistance <= threshold) ? responses[closestMatchIndex] : "I'm sorry, I didn't quite understand your question. Could you please provide an answer for this?";
+
+    // Handle the case when the chatbot doesn't understand the question
+      if (chatbotResponse === "I'm sorry, I didn't quite understand your question. Could you please provide an answer for this?") {
+      // Add the question to the database
+        questions.push(userInput);
+
+      // Ask the user for a response
+        const userResponse = prompt(
+          "I'm sorry, I didn't quite understand your question. Could you please provide an answer for this? You then can ask again and your answer will go into the database!"
+        );
+
+        if (userResponse) {
+          // Thank the user and return acknowledgment
+          userInputField.innerHTML += `<p><b>You:</b> ${userInput}</p>`;
+          userInputField.innerHTML += `<p><b>Chatbot:</b></p>`;
+        
+          askButton.style.border = "2px solid red";
+
+          // Save the response to the database
+          responses.push(userResponse);
+          if (userResponse == undefined) {
+            userInputField.innerHTML += `<p><b> This appears to be undefined can you please refresh the page and try again.</b></p>`;
+          }
+          // Update the chatbot response
+          chatbotResponse = "Thank you! I'll remember that.";
+          
+        }
+        }
+
+      // Append chatbot response to the chatbox
+      userInputField.innerHTML += `<p><b>You:</b> ${userInput}</p>`;
+      userInputField.innerHTML += `<p><b>Chatbot:</b> ${chatbotResponse}</p>`;
 
       // Display the response in the text area
       textArea.value = userInput + "\nChatbot: " + chatbotResponse;
 
       // Clear the input field after submitting
       userInputField.value = "";
+      askButton.style.border = "none";
     });
