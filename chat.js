@@ -731,7 +731,7 @@ That should be all the changes needed to be successful at having two pages in a 
 
       // Ask the user for a response
         const userResponse = prompt(
-          "I'm sorry, I didn't quite understand your question. Could you please provide an answer for this? You then can ask again and your answer will go into the database!"
+          "I'm sorry, I didn't quite understand your question. Could you please provide an answer to your question here?"
         );
 
         if (userResponse) {
