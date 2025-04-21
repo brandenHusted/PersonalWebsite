@@ -4,6 +4,7 @@
 # LinkedIn
 - https://www.linkedin.com/in/branden131/
 
+Check out the github user Sowwyz for some fun templates for instresting website ideas
 
 Double click index.html to open website/ reload
 
