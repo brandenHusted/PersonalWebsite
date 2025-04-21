@@ -11,7 +11,7 @@ This website is a brief overview of who I am and how I can be a great employee a
 I hope you enjoy the AI built on the website and my humor sprinkled through out the About Me section!
 
 website link:
-http://brandenhusted.me/PersonalWebsite/
+https://brandenhustedpersonalwebsite.netlify.app/
 
 
 
