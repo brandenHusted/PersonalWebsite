@@ -14,6 +14,12 @@ I hope you enjoy the AI built on the website and my humor sprinkled through out 
 website link:
 https://brandenhustedpersonalwebsite.netlify.app/
 
+# What to add later
+
+Add function to AI where you give the AI answers and it will give you the corresponding question.
+
+Update visual look of website
+
 
 
 
