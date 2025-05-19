@@ -13,6 +13,7 @@ I hope you enjoy the AI built on the website and my humor sprinkled through out 
 
 website link:
 https://brandenhustedpersonalwebsite.netlify.app/
+https://incandescent-cucurucho-6eea28.netlify.app/
 
 # What to add later
 
