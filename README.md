@@ -12,7 +12,7 @@ This website is a brief overview of who I am and how I can be a great employee a
 I hope you enjoy the AI built on the website and my humor sprinkled through out the About Me section!
 
 website link:
-https://brandenhustedpersonalwebsite.netlify.app/
+https://incandescent-cucurucho-6eea28.netlify.app/
 
 # What to add later
 
