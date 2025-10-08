@@ -69,7 +69,7 @@
     <div id="funActivities">
         <div id="form1">
         <h3 class="greeting">Fun Activites Branden Enjoys</h3>
-        <div class = "end">I played Guitar in my High School's Jazz band for 7 years and I really enjoyed it! I challenged myself to learn complicated chords and I took lessons outside of class. I also had a few solos to rock hard during concerts!
+        <div class = "end">I played Guitar in my high school's jazz band for 7 years and I really enjoyed it! I challenged myself to learn complicated chords and I took lessons outside of class. I also had a few solos to rock hard during concerts!
         My love for playing Guitar led me to love technology because of the experimental nature and constant leaning Jazz Band had instilled in me.</div>
         <div class="centerpicture">
             <img src="images/guitar.jpg" alt="guitar Logo" style="width:150px;height:auto;">
@@ -159,7 +159,7 @@
         </div>
 
         <div id="form11" style="display:none;">
-        <div class = "end">I worked on a React project that has two ways to use AI. This is what caused my to want to do a Build Project and get a certification. You can tell the AI your answers to your questions or you can use a standard built in database.
+        <div class = "end">I worked on a React project that has two ways to use AI. This is what caused my to want to do a build project and get a certification. (Now I am working on my Network+ Cert) You can tell the AI answers to your questions or you can use a standard built in database.
         This option was created becuase I felt as if AI was making problem solving skills go extinct. Now you can still ask questions and have answers for later but you have to work to solve your question. You can find all my work on github, my username is brandenHusted.</div>
         <div class="centerpicture">
             <img src="images/chatbot.jpg" alt="chatbot Logo" style="width:100px;height: auto;">   
@@ -177,20 +177,27 @@
         </div>
 
         <div id="form13" style="display:none;">
-            <div class = "end">After I graduated college from Calvin University I decided to dive into the information technology world. I feel like the makes me unique in that I have knowledge about programming and the practical knowledge now with help desk jobs. My job at Pridgeon and Clay was my first internship after college where I worked on the help desk and contributed to a massive project involving coding and communicating with an arduino to a PLC using C++. Pridgeon and Clay is a worldwide company that is developing their talent through award-winning training and education programs, and fostering a positive work environment that embraces diversity and recognizes employee contributions.</div>
+            <div class = "end">After I graduated college from Calvin University I decided to dive into the information technology world. I feel like this makes me unique in that I have knowledge about programming and the practical knowledge now with help desk jobs. My job at Pridgeon and Clay was my first internship after college where I worked on the help desk and contributed to a massive project involving coding and communicating with an arduino to a PLC using C++. Pridgeon and Clay is a worldwide company that is developing their talent through award-winning training and education programs, and fostering a positive work environment that embraces diversity and recognizes employee contributions.</div>
+            <div class="centerpicture">
+                <img src = "images/pc.jpg" alt="audio Logo" style="width:200px;height: auto;"> 
+            </div>
             <button id = "next13">Next</button>
             </div>
 
         <div id="form14" style="display:none;">
         <div class = "end">I have also shown this worth ethic during school on my senior project KnightCite which is a live PHP-based/MySQL
             website aimed at helping students generate citations for their research papers in mla, apa, and chicago style by consistently showing up to our weekly tech meetings. Also me and my partner Caden shown this work ethic on our project the Audio Spectrum Visualizer which you can read more about on my resume or github. We spent all night working on this project connecting hardware to software.</div>
-        <img src = "images/audio.png" alt="audio Logo" style="width:200px;height: auto;"> 
+        <div class="centerpicture">
+            <img src = "images/audio.png" alt="audio Logo" style="width:200px;height: auto;"> 
+        </div>
         <button id = "next14">Next</button>
         </div>
 
         <div id="form15" style="display:none;">
-            <div class = "end">After Pridgeon and Clay I got hired at MCPC to work with Corwell Health and help their IT team with their massive windows 11 update project. This is a contract position and I am very excited and what the future will bring me, thanks for reading!</div>
-            <img src = "images/audio.png" alt="audio Logo" style="width:200px;height: auto;"> 
+            <div class = "end">After Pridgeon and Clay I got hired at MCPC to work with Corewell Health and help their IT team with their massive windows 11 update project. This is a contract position and I am very excited and what the future will bring me, thanks for reading!</div>
+            <div class="centerpicture">
+                <img src = "images/corewell.png" alt="audio Logo" style="width:200px;height: auto;"> 
+            </div>
             <button id = "next15">Next</button>
             </div>
 
@@ -210,7 +217,8 @@
         const containerNext11 = document.getElementById('next11'); 
         const containerNext12 = document.getElementById('next12');
         const containerNext13 = document.getElementById('next13'); 
-        const containerNext14 = document.getElementById('next14');  
+        const containerNext14 = document.getElementById('next14');
+        const containerNext15 = document.getElementById('next15');  
         
 
         const section1 = document.getElementById('form1');
@@ -227,6 +235,7 @@
         const section12 = document.getElementById('form12');
         const section13 = document.getElementById('form13');
         const section14 = document.getElementById('form14');
+        const section15 = document.getElementById('form15');
         
 
         
@@ -311,6 +320,11 @@
 
         containerNext14.addEventListener('click', () => {
             section14.style.display = 'none';
+            section15.style.display = 'block';
+        });
+
+        containerNext15.addEventListener('click', () => {
+            section15.style.display = 'none';
             section1.style.display = 'block';
         });
 
