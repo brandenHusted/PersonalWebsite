@@ -176,6 +176,15 @@
         <button id = "next12">Next</button>
         </div>
 
+        <div id="form13" style="display:none;">
+            <div class = "end">After I graduated college from Calvin University I decided to dive into the information technology world. I feel like the makes me unique in that I have knowledge about programming and the practical knowledge now with help desk jobs that most people do not have. </div>
+            <div class = "end">
+                Click here to play the bible quiz game I have created with javascript, hope you enjoy!
+                <button id ="button" onclick="window.location.href = 'quiz/index.html'">Bible quiz</button>
+            </div>
+            <button id = "next13">Next</button>
+            </div>
+
     </div>    
     </div>
     <script>
@@ -190,7 +199,8 @@
         const containerNext9 = document.getElementById('next9'); 
         const containerNext10 = document.getElementById('next10'); 
         const containerNext11 = document.getElementById('next11'); 
-        const containerNext12 = document.getElementById('next12'); 
+        const containerNext12 = document.getElementById('next12');
+        const containerNext13 = document.getElementById('next13');  
         
 
         const section1 = document.getElementById('form1');
@@ -205,6 +215,7 @@
         const section10 = document.getElementById('form10');
         const section11 = document.getElementById('form11');
         const section12 = document.getElementById('form12');
+        const section13 = document.getElementById('form13');
 
         
         containerNext1.addEventListener('click', () => {
@@ -278,6 +289,11 @@
 
         containerNext12.addEventListener('click', () => {
             section12.style.display = 'none';
+            section13.style.display = 'block';
+        });
+
+        containerNext13.addEventListener('click', () => {
+            section13.style.display = 'none';
             section1.style.display = 'block';
         });
 
