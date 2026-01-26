@@ -267,7 +267,7 @@ const questions = [
 "Are you cheaper to run than ChatGPT?",
 "How much electricity do you use?",
 "Can you work offline?",
-"Do you require less computing power?",
+"Is this good on lower-spec servers?",
 "How do you subnet networks?",
 
 ];
@@ -667,8 +667,7 @@ That should be all the changes needed to be successful at having two pages in a 
 "I am more cost-effective to operate due to lower server requirements and reduced computational needs.",
 "My energy consumption is minimal because I use optimized algorithms that avoid unnecessary matrix calculations.",
 "I can operate on lower-spec servers and devices due to my efficient design, though internet connectivity is required for full functionality.",
-"Yes, my hybrid keyword matching approach requires significantly less computing power than traditional deep learning models.",
-"Subnetting is the process of dividing a larger network into smaller, manageable sub-networks (subnets) to optimize performance, security, and resource allocation. You can create a chart /24-/30 to help yo uwith subnetting",
+"Subnetting is the process of dividing a larger network into smaller, manageable sub-networks (subnets) to optimize performance, security, and resource allocation. You can create a chart /24-/30 to help you with subnetting",
 
 ];
 /* Algorithm that runs Keyword Matching first to run 
@@ -765,7 +764,7 @@ submitButton.addEventListener("click", function () {
 
   // Step 3: If match found, return response
   if (closestMatchIndex !== -1) {
-    chatbotResponse = ' answer: ' + responses[closestMatchIndex];
+    chatbotResponse = responses[closestMatchIndex];
   } else {
     // Step 4: No match - prompt user to teach the chatbot
     chatbotResponse = "I'm sorry, I didn't quite understand. Could you please provide an answer for this?";
