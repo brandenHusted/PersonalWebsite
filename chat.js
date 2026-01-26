@@ -250,6 +250,11 @@ const questions = [
 "What is the role of a Security Information and Event Management (SIEM) system?", 
 "What are the key differences between the security models of cloud computing providers like AWS and Azure?", 
 "How does a penetration test help identify vulnerabilities in a system?",
+"Can you explain Dynamic vs Static NAT?",
+"Who is Branden Husted?",
+"Who came first the chicken or the egg?",
+"What is a SDN (Software-Defined Networking)?",
+"Are you better then ChatGPT? Do you use less water?",
 
 ];
 
@@ -630,6 +635,11 @@ That should be all the changes needed to be successful at having two pages in a 
 "A SIEM system collects and analyzes security data from various sources in real-time, helping organizations detect, monitor, and respond to security threats and breaches effectively through centralized logs and alerts.", 
 "Cloud security models vary between providers. AWS and Azure both offer strong security frameworks, but key differences include their specific compliance certifications, encryption methods, and access controls tailored to each platform's unique environment.", 
 "Penetration testing involves ethical hackers simulating attacks on a system to identify vulnerabilities. It helps organizations understand their security weaknesses, so they can patch them before malicious hackers can exploit them.",
+"Dynamic NAT translates private IP addresses to public IP addresses on-the-fly from a pool of available public addresses, while Static NAT maps a specific private IP address to a specific public IP address permanently. Dynamic NAT is more flexible for multiple users, whereas Static NAT is useful for hosting services that require consistent external access.",
+"Branden Husted is a software developer and computer science student known for creating AI chatbots and web applications. He has experience in various programming languages and frameworks, and is passionate about technology and innovation.",
+"Both the chicken and the egg are part of a continuous cycle of life. From a biological perspective, eggs existed long before chickens as they were laid by ancestral bird species. However, in the context of chickens specifically, a chicken would have hatched from an egg laid by a bird that was not quite a chicken yet, making it a bit of a paradox. Both are essential to each other's existence.",
+"SDN (Software-Defined Networking) is an approach to networking that uses software-based controllers to manage and configure network devices, allowing for more flexible and dynamic network management compared to traditional hardware-based networking.",
+"While I strive to provide accurate and helpful responses, I am not necessarily better than ChatGPT because I have a smaller database and more prone for wrong answers. However, I am designed to be more efficient in terms of resource usage, which can lead to lower energy consumption and a smaller environmental footprint.",
 
 ];
 
