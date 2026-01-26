@@ -673,7 +673,6 @@ That should be all the changes needed to be successful at having two pages in a 
           if (a[i - 1] === b[j - 1]) {
             matrix[i][j] = matrix[i - 1][j - 1];
           } else {
-            // I want to study how substitution, insertion and deletion works here
             matrix[i][j] = Math.min(
               matrix[i - 1][j - 1] + 1, // substitution
               Math.min(matrix[i][j - 1] + 1, // insertion
@@ -714,62 +713,87 @@ That should be all the changes needed to be successful at having two pages in a 
         `)
     })
     // Event listener for the submit button
-    submitButton.addEventListener("click", function() {
+    submitButton.addEventListener("click", function () {
       const userInput = userInputField.value.trim(); // Remove leading/trailing whitespace
       let closestMatchIndex = -1;
       let smallestDistance = Infinity;
       const threshold = 10;
+      let isQuestion = false; // Flag to determine if the input matches a question or response
 
-      // Find the closest matching question based on Levenshtein distance
+      // Check if the user input matches a question
       questions.forEach((question, index) => {
         const distance = levenshteinDistance(userInput.toLowerCase(), question.toLowerCase());
         if (distance < smallestDistance) {
           smallestDistance = distance;
           closestMatchIndex = index;
+          isQuestion = true; // Input matches a question
         }
       });
 
-    // make ask button highlighted to show user where to click
-    const askButton = document.getElementById("submitButton");  
-    // Get the chatbot response
-    const chatbotResponse = (closestMatchIndex !== -1 && smallestDistance <= threshold) ? responses[closestMatchIndex] : "I'm sorry, I didn't quite understand your question. Could you please provide an answer for this?";
+      // Check if the user input matches a response
+      responses.forEach((response, index) => {
+        const distance = levenshteinDistance(userInput.toLowerCase(), response.toLowerCase());
+        if (distance < smallestDistance) {
+          smallestDistance = distance;
+          closestMatchIndex = index;
+          isQuestion = false; // Input matches a response
+        }
+      });
 
-    // Handle the case when the chatbot doesn't understand the question
-      if (chatbotResponse === "I'm sorry, I didn't quite understand your question. Could you please provide an answer for this?") {
-      // Add the question to the database
-        questions.push(userInput);
+      let chatbotResponse;
 
-      // Ask the user for a response
-        const userResponse = prompt(
-          "I'm sorry, I didn't quite understand your question. Could you please provide an answer to your question here?"
-        );
+      if (closestMatchIndex !== -1 && smallestDistance <= threshold) {
+        // If the input matches a question, return the corresponding response
+        // If the input matches a response, return the corresponding question
+        chatbotResponse = isQuestion
+          ? ' answer: ' + responses[closestMatchIndex]
+          : ' question: ' + questions[closestMatchIndex];
+      } else {
+        // If no match is found, handle as a new question
+        chatbotResponse = "I'm sorry, I didn't quite understand. Could you please provide an answer for this?";
+      }
+         // Handle the case when the chatbot doesn't understand the question
+      if (chatbotResponse === "I'm sorry, I didn't quite understand. Could you please provide an answer for this?") {
+        // Add the question to the database
+          questions.push(userInput);
+  
+        // Ask the user for a response
+          const userResponse = prompt(
+            "I'm sorry this is not in the database, please type your question or answer here."
+          );
 
-        if (userResponse) {
-          // Thank the user and return acknowledgment
-          userInputField.innerHTML += `<p><b>You:</b> ${userInput}</p>`;
-          userInputField.innerHTML += `<p><b>Chatbot:</b></p>`;
-        
-          askButton.style.border = "2px solid red";
-
-          // Save the response to the database
-          responses.push(userResponse);
-          if (userResponse == undefined) {
-            userInputField.innerHTML += `<p><b> This appears to be undefined can you please refresh the page and try again.</b></p>`;
-          }
-          // Update the chatbot response
-          chatbotResponse = "Thank you! I'll remember that.";
+          if (userResponse && userResponse.trim() !== "") {
+            // Save the response to the database
+            responses.push(userResponse.trim());
+            chatbotResponse = "Thank you! I'll remember that.";
+        } else {
+            // Handle the case where the user provides no input or cancels the prompt
+            chatbotResponse = "It seems you didn't provide an answer. Please try again.";
+        }
+  
+            // Thank the user and return acknowledgment
+            userInputField.innerHTML += `<p><b>You:</b> ${userInput}</p>`;
+            userInputField.innerHTML += `<p><b>Chatbot:</b></p>`;
           
-        }
-        }
+            askButton.style.border = "2px solid red";
+  
+            // Save the response to the database
+            responses.push(userResponse);
+            if (userResponse == undefined) {
+              userInputField.innerHTML += `<p><b> This appears to be undefined can you please refresh the page and try again.</b></p>`;
+            }
+            // Update the chatbot response
+            chatbotResponse = "Thank you! I'll remember that.";
+            
+      }
 
       // Append chatbot response to the chatbox
       userInputField.innerHTML += `<p><b>You:</b> ${userInput}</p>`;
-      userInputField.innerHTML += `<p><b>Chatbot:</b> ${chatbotResponse}</p>`;
+      userInputField.innerHTML += `<p><b>Chatbot</b> ${chatbotResponse}</p>`;
 
       // Display the response in the text area
-      textArea.value = userInput + "\nChatbot: " + chatbotResponse;
+      textArea.value = userInput + "\nChatbot" + chatbotResponse;
 
       // Clear the input field after submitting
       userInputField.value = "";
-      askButton.style.border = "none";
     });

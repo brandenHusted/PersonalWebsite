@@ -72,6 +72,15 @@
             </li>
             </ul>
         </div>
+        <div class="project">
+            <ul>
+                <li><a href="https://github.com/brandenHusted/AudioSpectrumVisualizer" target="_blank">
+                    <p>Audio Spectrum Visualizer</p>
+                </a>
+                <img src="images/audio.png" alt="audio Logo" style="width:70px;height:70px;">
+            </li>
+            </ul>
+        </div>
         </footer>
 
     </div>
@@ -281,11 +290,67 @@
             <p class="description">
                     Students are introduced to key project management concepts and competencies, including the fundamentals of project management encompassed in the Project Management Institute’s (PMI’s) Project Management Body of Knowledge (PMBOK); Lean / Agile methodologies; and design thinking.  Application of knowledge and development of skills and abilities are honed through case studies and simulations.  Conceptual coverage is intended to contribute to students’ preparation to sit for the PMI Certified Associate in Project Management (PMI-CAPM) exam.
             </p>
-        </div>
-
-    </div>
     <div id="getInTouch">
-    <script>footer()</script>
+    <script>
+function triggerFireworks() {
+  const container = document.getElementById('title');
+  const centerX = container.offsetWidth / 2;
+  const centerY = container.offsetHeight / 2;
+
+  for (let i = 0; i < 20; i++) {
+    const firework = document.createElement('div');
+    firework.className = 'firework';
+
+    // Random angle and distance for burst effect
+    const angle = Math.random() * 2 * Math.PI;
+    const distance = Math.random() * 100;
+
+    const x = Math.cos(angle) * distance;
+    const y = Math.sin(angle) * distance;
+
+    firework.style.left = `${centerX}px`;
+    firework.style.top = `${centerY}px`;
+
+    // Use transform for animation direction
+    firework.style.setProperty('--x', `${x}px`);
+    firework.style.setProperty('--y', `${y}px`);
+
+    container.appendChild(firework);
+
+    setTimeout(() => {
+      firework.remove();
+    }, 1000);
+  }
+}
+
+// Trigger automatically when the page loads
+window.onload = () => {
+    setInterval(triggerFireworks, 3000); // Trigger every 1 seconds
+};
+    footer()</script>
+    
+<style>
+
+.firework {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: yellow;
+  border-radius: 50%;
+  animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x), var(--y));
+    opacity: 0;
+  }
+}
+    </style>
     </div>
 
 </body>
