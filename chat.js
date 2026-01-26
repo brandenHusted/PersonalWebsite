@@ -269,6 +269,7 @@ const questions = [
 "Can you work offline?",
 "Is this good on lower-spec servers?",
 "How do you subnet networks?",
+"What is your favorite coding language?",
 
 ];
 
@@ -668,6 +669,7 @@ That should be all the changes needed to be successful at having two pages in a 
 "My energy consumption is minimal because I use optimized algorithms that avoid unnecessary matrix calculations.",
 "I can operate on lower-spec servers and devices due to my efficient design, though internet connectivity is required for full functionality.",
 "Subnetting is the process of dividing a larger network into smaller, manageable sub-networks (subnets) to optimize performance, security, and resource allocation. You can create a chart /24-/30 to help you with subnetting",
+"My favorite coding langauge is Javascript that is what this website is running on although I am begining to like C# and python is always a good choice.",
 
 ];
 /* Algorithm that runs Keyword Matching first to run 
