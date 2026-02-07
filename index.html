@@ -94,7 +94,71 @@
         </div>
 
     </div>
+    <!-- I asked  AI how skillful he thinks I am -->
 
+    <div id="skills-section">
+        <h2>Technical Skills</h2>
+        
+        <div class="skill">
+            <label>
+                <span>JavaScript</span>
+                <span class="skill-percent">75%</span>
+            </label>
+            <div class="progress-bar">
+                <div class="progress" style="width: 75%;"></div>
+            </div>
+        </div>
+    
+        <div class="skill">
+            <label>
+                <span>React</span>
+                <span class="skill-percent">70%</span>
+            </label>
+            <div class="progress-bar">
+                <div class="progress" style="width: 70%;"></div>
+            </div>
+        </div>
+    
+        <div class="skill">
+            <label>
+                <span>Python</span>
+                <span class="skill-percent">80%</span>
+            </label>
+            <div class="progress-bar">
+                <div class="progress" style="width: 80%;"></div>
+            </div>
+        </div>
+    
+        <div class="skill">
+            <label>
+                <span>C++/C#</span>
+                <span class="skill-percent">75%</span>
+            </label>
+            <div class="progress-bar">
+                <div class="progress" style="width: 75%;"></div>
+            </div>
+        </div>
+    
+        <div class="skill">
+            <label>
+                <span>SQL</span>
+                <span class="skill-percent">65%</span>
+            </label>
+            <div class="progress-bar">
+                <div class="progress" style="width: 65%;"></div>
+            </div>
+        </div>
+    
+        <div class="skill">
+            <label>
+                <span>Networking</span>
+                <span class="skill-percent">85%</span>
+            </label>
+            <div class="progress-bar">
+                <div class="progress" style="width: 85%;"></div>
+            </div>
+        </div>
+    </div>
 
     <div id="resume">
         <p>Download my <a href="res/Resume.docx" download>resume</a>.</p>
@@ -338,6 +402,60 @@ window.onload = () => {
   background-color: yellow;
   border-radius: 50%;
   animation: explode 1s ease-out forwards;
+}
+
+#skills-section {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+#skills-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.skill {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill label {
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #00ff00, #00cc00);
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.skill-percent {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Hover effect */
+.skill:hover .progress {
+  background: linear-gradient(90deg, #00ff88, #00ff00);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
 @keyframes explode {
