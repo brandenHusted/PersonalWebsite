@@ -26,9 +26,33 @@
     font-family: var(--font3);
   }
 
-  button:hover {
+    button:hover {
     background-color: #45a049;
   }
+  /* Modern Header */
+    header {
+    background: rgba(10, 14, 39, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+  header #home a {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: transform 0.3s ease;
+}
+
+  header #home a:hover {
+  transform: scale(1.05);
+}
 </style>
 <body>
     <header>

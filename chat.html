@@ -4,85 +4,131 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simple Chatbot</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Oswald:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">
   <style>
+    /* Modern color scheme */
+    :root {
+      --primary: #00ff00;
+      --primary-dark: #00cc00;
+      --bg-dark: #0a0e27;
+      --bg-darker: #050812;
+      --text-light: #e0e0e0;
+      --text-muted: #a0a0a0;
+      --accent: #00ff88;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background: rgb(75, 63, 63);
+      background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+      color: var(--text-light);
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
     }
 
-    a {
-    color: white;
-    transition: 0.2s
-    }
-
-a:hover {
-    color: var(--blue);
-    transition: 0.2s;
-    }
+    /* Modern Header - Matches index.html */
     header {
-    z-index: 1;
-    position: fixed;
-    height: 10vh;
-    width: 100%;
-    display: flex;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1)), url(../images/calvin.jpg);
-    font-family: var(--font2);
-    } 
-    
-    header #home {
-        margin-left: var(--horizontal_margin);
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        position: absolute;
-        font-size: 150%;
+      background: rgba(10, 14, 39, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      padding: 0 30px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    
+
+    header #home a {
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transition: transform 0.3s ease;
+      text-decoration: none;
+    }
+
+    header #home a:hover {
+      transform: scale(1.05);
+    }
 
     header #pages {
-        margin-right: var(--horizontal_margin);
-        right: 35px;
-        top: 50%;
-        transform: translateY(-50%);
-        position: absolute;
-        display: flex;
+      display: flex;
+      gap: 30px;
+      list-style: none;
     }
 
-        header #pages li {
-            text-align: center;
-            margin-left: 2vh;
-        }
-
-    @media (max-width: 800px) {
-        header {
-            height: 10vh;
-        }
-        header #home {
-            font-size: 120%;
-        }
-        header #pages li {
-            font-size: 80%;
-        }
+    header #pages li {
+      list-style: none;
     }
 
+    header #pages a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    header #pages a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    header #pages a:hover {
+      color: var(--primary);
+    }
+
+    header #pages a:hover::after {
+      width: 100%;
+    }
+
+    /* Chatbot Content */
     h1 {
       font-size: 40px;
       font-weight: 600;
-      border: 3px solid #fff;
+      border: 3px solid var(--primary);
       padding: 10px 20px;
       margin-bottom: 40px;
-      color: #fff;
+      color: var(--primary);
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      border: 2px solid var(--primary);
     }
+
     h2 {
-      font-size: 20px;
-      color: #fff;
+      font-size: 18px;
+      color: var(--text-light);
+      margin: 15px 0;
+      max-width: 600px;
+      text-align: center;
+      line-height: 1.6;
     }
 
     h3 {
-      font-size: 40px;
+      font-size: 32px;
       font-weight: 600;
       padding: 10px 20px;
       margin-bottom: 40px;
-      color: #fff;
+      color: var(--primary);
     }
 
     .flex {
@@ -90,83 +136,207 @@ a:hover {
       justify-content: center;
       flex-flow: column;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+      padding: 80px 20px 40px 20px;
       margin: auto;
-      border-radius: 30px;
     }
 
     #result {
       font-size: 36px;
-      color: red;
+      color: var(--primary);
+      margin-top: 30px;
     }
 
     #ans {
-      color: black;
-      padding: 20px;
-      font-size: 26px;
-      background: transparent;
-      background-color: #fff;
-      border: 0;
+      color: var(--bg-dark);
+      padding: 15px 20px;
+      font-size: 16px;
+      background: var(--text-light);
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+      width: 100%;
+      max-width: 500px;
+      transition: all 0.3s ease;
+      font-family: 'Roboto', sans-serif;
     }
 
     #ans:focus {
       outline: 0;
       outline-offset: 0;
+      background: var(--text-light);
+      box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+      border-color: var(--accent);
+    }
+
+    #ans::placeholder {
+      color: var(--text-muted);
     }
 
     .btn {
-      background-color: #4CAF50; /* Green */
+      background: linear-gradient(135deg, var(--primary), var(--accent));
       border: none;
-      color: white;
-      padding: 15px 32px;
+      color: var(--bg-dark);
+      padding: 12px 30px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
+      font-size: 15px;
+      margin: 10px 5px;
       cursor: pointer;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 255, 0, 0.3);
+    }
+
+    .btn:active {
+      transform: translateY(-1px);
     }
 
     textarea {
-      width: 500px;
-      height: 200px;
+      width: 100%;
+      max-width: 600px;
+      height: 250px;
+      padding: 15px;
+      background: rgba(20, 25, 50, 0.6);
+      color: var(--text-light);
+      border: 1px solid rgba(0, 255, 0, 0.2);
+      border-radius: 8px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      resize: vertical;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
     }
 
     .input {
-      margin-bottom: 30px; /* Adds space below the input box */
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      width: 100%;
     }
 
+    .button-group {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Warning section */
+    .warning-section {
+      background: rgba(255, 165, 0, 0.1);
+      border: 1px solid rgba(255, 165, 0, 0.3);
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 40px;
+      max-width: 600px;
+      backdrop-filter: blur(5px);
+    }
+
+    .warning-section h2 {
+      color: #ffaa00;
+      margin-bottom: 10px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        padding: 0 15px;
+        height: 60px;
+      }
+
+      header #home a {
+        font-size: 18px;
+      }
+
+      header #pages {
+        gap: 15px;
+      }
+
+      header #pages a {
+        font-size: 14px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 14px;
+      }
+
+      .flex {
+        padding: 70px 15px 20px 15px;
+      }
+
+      #ans {
+        max-width: 100%;
+      }
+
+      textarea {
+        max-width: 100%;
+        height: 200px;
+      }
+
+      .button-group {
+        width: 100%;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div id="home">
-        <a style="color:white;" href="index.html">Branden</a>
+      <a href="index.html">Branden</a>
     </div>
     <ul id="pages">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="connect.html">About</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="connect.html">About</a></li>
     </ul>
   </header>
+
   <div class="flex">
     <div>
       <h1>My Personal Chatbot</h1>
     </div>
+
     <div class="input">
-      <input type="text" id="ans" placeholder="Enter your response" required />
-      <button class="btn" id="submitButton">Ask</button>
-      <button class="btn" id="hintButton">Hints</button>
+      <input type="text" id="ans" placeholder="Ask me something or give me an answer..." required />
+      <div class="button-group">
+        <button class="btn" id="submitButton">Ask</button>
+        <button class="btn" id="hintButton">Hints</button>
+      </div>
     </div>
+
     <div id="result">
-        <textarea></textarea>
+      <textarea placeholder="Responses will appear here..." readonly></textarea>
     </div>
-    <h2>Warning:</h2>
-    <h2>This chatbot was made to automate simple processes that I struggle and help with school. Do not use this to cheat on school assignments I repeat do not.</h2>
-    <h2>If you give the chatbot a question it will give you an answer and if you give the chatbot an answer it will give you a question.</h2>
+
+    <div class="warning-section">
+      <h2>⚠️ Warning:</h2>
+      <h2>This chatbot was made to automate simple processes that I struggle with and help with school. <strong>Do not use this to cheat on school assignments.</strong></h2>
+      <h2>If you give the chatbot a question it will give you an answer and if you give the chatbot an answer it will give you a question.</h2>
+    </div>
   </div>
 
   <script src="chat.js"></script>
 </body>
 </html>
-
