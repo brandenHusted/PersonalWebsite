@@ -16,124 +16,124 @@
     <link rel="shortcut icon" href="images/guitar.jpg" type="image/x-icon">
 </head>
 <style>
-    /* CSS Variables */
-    :root {
-      --primary: #00ff00;
-      --primary-dark: #00cc00;
-      --bg-dark: #0a0e27;
-      --bg-darker: #050812;
-      --text-light: #e0e0e0;
-      --text-muted: #a0a0a0;
-      --accent: #00ff88;
-    }
-  
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-  
-    body {
-      background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
-      color: var(--text-light);
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-    }
-  
-    /* Modern Header */
-    header {
-      background: rgba(10, 14, 39, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0, 255, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      padding: 0 30px;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-  
-    header #home {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-  
-    header #home a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 24px;
-      font-weight: 700;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      transition: transform 0.3s ease;
-      text-decoration: none;
-    }
-  
-    header #home h4 {
-      font-size: 24px;
-      font-weight: 700;
-      background: linear-gradient(135deg, #00ff00, #00ff88);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin: 0;
-    }
-  
-    header #home img {
-      width: 30px;
-      height: 30px;
-      margin-left: 10px;
-    }
-  
-    header #home a:hover {
-      transform: scale(1.05);
-    }
-  
-    header #pages {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-    }
-  
-    header #pages li {
-      list-style: none;
-    }
-  
-    header #pages a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-  
-    header #pages a:hover {
-      color: var(--primary);
-    }
-  
-    /* Buttons */
-    button {
-      padding: 10px 20px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: var(--bg-dark);
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-family: 'Roboto', sans-serif;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-  
-    button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
-    }
+  /* CSS Variables */
+  :root {
+    --primary: #00ff00;
+    --primary-dark: #00cc00;
+    --bg-dark: #0a0e27;
+    --bg-darker: #050812;
+    --text-light: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --accent: #00ff88;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+    color: var(--text-light);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+  }
+
+  /* Modern Header */
+  header {
+    background: rgba(10, 14, 39, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 0 30px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header #home {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  header #home a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+  }
+
+  header #home h4 {
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #00ff00, #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+  }
+
+  header #home img {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+  }
+
+  header #home a:hover {
+    transform: scale(1.05);
+  }
+
+  header #pages {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+  }
+
+  header #pages li {
+    list-style: none;
+  }
+
+  header #pages a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  header #pages a:hover {
+    color: var(--primary);
+  }
+
+  /* Buttons */
+  button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: var(--bg-dark);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+  }
 </style>
 <body>
     <header>

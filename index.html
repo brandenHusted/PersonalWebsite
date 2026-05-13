@@ -23,10 +23,12 @@
 <body>
 
     <header>
-        <div id="home">
-            <a style="color:white;" href="">Branden: CompTIA Network+ Certified</a>
-            <img src="images/OIP.webp" alt="Network Logo" style="width:30px;height:30px;"> </img>
-        </div>
+      <div id="home">
+        <a href="index.html">
+            <h4>Branden: CompTIA Network+ Certified</h4>
+        </a>
+        <img src="images/OIP.webp" alt="Network Logo" style="width:30px; height:30px; margin-left:10px;">
+    </div>
         <ul id="pages">
             <li><a href="#getInTouch">Contact</a></li>
             <li><a href="#resume">Courses</a></li>
@@ -491,30 +493,118 @@ body {
   line-height: 1.6;
 }
 
-/* Modern Header */
 header {
-  background: rgba(10, 14, 39, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 255, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
+      background: rgba(10, 14, 39, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      padding: 0 30px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    header #home {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    header #home a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transition: transform 0.3s ease;
+      text-decoration: none;
+    }
+  
+    header #home h4 {
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #00ff00, #00ff88);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0;
+    }
+  
+    header #home img {
+      width: 30px;
+      height: 30px;
+      margin-left: 10px;
+    }
+  
+    header #home a:hover {
+      transform: scale(1.05);
+    }
+  
+    header #pages {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+  
+    header #pages li {
+      list-style: none;
+    }
+  
+    header #pages a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+  
+    header #pages a:hover {
+      color: var(--primary);
+    }
 
-header #home a {
-  font-size: 24px;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: transform 0.3s ease;
-}
+    header #pages {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
 
-header #home a:hover {
-  transform: scale(1.05);
-}
+    header #pages li {
+      list-style: none;
+    }
+
+    header #pages a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    header #pages a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    header #pages a:hover {
+      color: var(--primary);
+    }
+
+    header #pages a:hover::after {
+      width: 100%;
+    }
 
 #pages {
   display: flex;
@@ -569,6 +659,7 @@ header #home a:hover {
   background-clip: text;
   margin: 0;
   animation: fadeInDown 0.8s ease-out;
+  margin-bottom: 30px;
 }
 
 #title p {
