@@ -31,7 +31,6 @@
       line-height: 1.6;
     }
 
-    /* Modern Header - Matches index.html */
     header {
       background: rgba(10, 14, 39, 0.95);
       backdrop-filter: blur(10px);
@@ -46,8 +45,17 @@
       align-items: center;
       justify-content: space-between;
     }
-
+  
+    header #home {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  
     header #home a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-size: 24px;
       font-weight: 700;
       background: linear-gradient(135deg, var(--primary), var(--accent));
@@ -57,9 +65,46 @@
       transition: transform 0.3s ease;
       text-decoration: none;
     }
-
+  
+    header #home h4 {
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #00ff00, #00ff88);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0;
+    }
+  
+    header #home img {
+      width: 30px;
+      height: 30px;
+      margin-left: 10px;
+    }
+  
     header #home a:hover {
       transform: scale(1.05);
+    }
+  
+    header #pages {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+  
+    header #pages li {
+      list-style: none;
+    }
+  
+    header #pages a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+  
+    header #pages a:hover {
+      color: var(--primary);
     }
 
     header #pages {
@@ -305,8 +350,11 @@
 <body>
   <header>
     <div id="home">
-      <a href="index.html">Branden</a>
-    </div>
+      <a href="index.html">
+          <h4>Branden: CompTIA Network+ Certified</h4>
+      </a>
+      <img src="images/OIP.webp" alt="Network Logo" style="width:30px; height:30px; margin-left:10px;">
+  </div>
     <ul id="pages">
       <li><a href="index.html">Home</a></li>
       <li><a href="connect.html">About</a></li>

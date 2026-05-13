@@ -24,7 +24,8 @@
 
     <header>
         <div id="home">
-            <a style="color:white;" href="">Branden</a>
+            <a style="color:white;" href="">Branden: CompTIA Network+ Certified</a>
+            <img src="images/OIP.webp" alt="Network Logo" style="width:30px;height:30px;"> </img>
         </div>
         <ul id="pages">
             <li><a href="#getInTouch">Contact</a></li>
@@ -43,7 +44,7 @@
             </p>
         </div>
         <footer id="contact">
-            <h3 style="color: white;">Personal Projects on GitHub</h3>
+            
             <div class="project">
             <ul>
                 <li>
@@ -82,17 +83,6 @@
             </ul>
         </div>
         </footer>
-
-    </div>
-
-    <div id="actual">
-
-        <div id="actual-title">
-            <ul>
-                <li><a href="https://www.linkedin.com/in/branden131/" target="_blank"><h2>LinkedIn</h2></a></li>
-            </ul>
-        </div>
-
     </div>
     <!-- I asked  AI how skillful he thinks I am -->
 
@@ -587,11 +577,15 @@ header #home a:hover {
   margin: 10px 0 0 0;
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
-
 /* Project Cards - Modern Grid */
 #contact {
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
 }
 
 #contact h3 {
@@ -599,16 +593,20 @@ header #home a:hover {
   font-size: 32px;
   margin: 60px 0 40px;
   color: var(--primary);
+  grid-column: 1 / -1;
 }
 
 .project {
   background: rgba(20, 25, 50, 0.6);
   border: 1px solid rgba(0, 255, 0, 0.2);
   border-radius: 12px;
-  padding: 20px;
-  margin: 20px 0;
+  padding: 15px 20px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
 }
 
 .project:hover {
@@ -622,6 +620,11 @@ header #home a:hover {
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 100%;
+}
+
+.project li {
+  list-style: none;
 }
 
 .project a {
@@ -631,6 +634,8 @@ header #home a:hover {
   color: var(--text-light);
   text-decoration: none;
   transition: color 0.3s ease;
+  gap: 15px;
+  width: 100%;
 }
 
 .project a:hover {
@@ -639,19 +644,53 @@ header #home a:hover {
 
 .project p {
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
+  flex: 1;
 }
 
 .project img {
   border-radius: 8px;
   transition: transform 0.3s ease;
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
 }
 
 .project:hover img {
   transform: scale(1.1);
 }
 
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  #contact {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  #contact {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .project {
+    padding: 12px 15px;
+  }
+
+  .project p {
+    font-size: 14px;
+  }
+
+  .project img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .project a {
+    gap: 10px;
+  }
+}
 /* Skills Section - Modern */
 #skills-section {
   max-width: 700px;
