@@ -555,13 +555,11 @@ header #pages {
   list-style: none;
   flex-wrap: wrap;
   justify-content: flex-end;
-  align-items: center;
 }
 
 header #pages li {
   list-style: none;
   white-space: nowrap;
-  flex-shrink: 0;
 }
 
 header #pages a {
@@ -571,7 +569,6 @@ header #pages a {
   position: relative;
   transition: color 0.3s ease;
   font-size: 14px;
-  display: inline-block;
 }
 
 header #pages a::after {
@@ -593,36 +590,6 @@ header #pages a:hover::after {
   width: 100%;
 }
 
-/* Responsive - Keep on one row until very small */
-@media (max-width: 900px) {
-  header #pages {
-    gap: 20px;
-  }
-
-  header #pages a {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 700px) {
-  header #pages {
-    gap: 15px;
-  }
-  header #pages a {
-    font-size: 12px;
-    padding: 5px 10px;
-  }
-}
-
-@media (max-width: 500px) {
-  header #pages {
-    gap: 10px;
-  }
-
-  header #pages a {
-    font-size: 11px;
-  }
-}
 /* Mobile Menu - Hamburger */
 .menu-toggle {
   display: none;
