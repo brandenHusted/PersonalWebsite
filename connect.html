@@ -147,14 +147,17 @@
             <li><a href="index.html">Home</a></li>
         </ul>
     </header>
-
+    <div id="passwordPrompt" style="display: block; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--bg-dark); padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);">
+        <label for="password" style="color: var(--text-light); font-size: 16px;">Enter Password:</label>
+        <input id="password" type="password" style="margin: 10px 0; padding: 5px; border: 1px solid var(--primary); border-radius: 5px;">
+        <button onclick="checkPassword()" style="padding: 10px 20px; background: var(--primary); color: var(--bg-dark); border: none; border-radius: 5px; cursor: pointer;">Unlock Content</button>
+    </div>
     <div id="hero">
-        <div id="title">
-            
+        <div id="title">  
         </div>
     <div id = "info">
         <h3>Why Branden Husted?</h3>
-            <div class="greeting">Dear future employer,</div>
+            <div class="greeting">Dear future employer, </div>
             <div class = "end">I am writing to express my keen interest in the opportunity to contribute to your business.
             I love to go running, play music on guitar, and I love to code and solve problems, all of which have given me a strong foundation of discipline, creativity, and technical skills.
             I have a strong foundation in technical skills and I find creative ways to use my skills from the classroom in the real world like my student grader position for computer science I have on my resume. I learn to have a passion for continuous learning, and a commitment to excellence and I believe these traits could be a valuable asset to your business.</div>
@@ -434,6 +437,23 @@
             section15.style.display = 'none';
             section1.style.display = 'block';
         });
+
+        // encrypt this page and require a password to practice encryption and 
+        // decryption skills. The password is "BrandenHusted123" and it will 
+        // be required to view the content of this page. 
+        // You can use a simple prompt to ask for the password and if the user enters 
+        // the correct password, they will be able to view the content of the page. 
+        // If they enter the wrong password, they will be redirected to a different page or shown an error message.
+
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === "BrandenHusted123") {
+                document.getElementById('passwordPrompt').style.display = 'none';
+            } else {
+                alert('Incorrect password. Please try again.');
+            }
+        }
+
 
         
         </script>
