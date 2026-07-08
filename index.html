@@ -41,7 +41,7 @@
         <div id="title">
             <h1>Branden</h1>
             <p>
-                Husted<br>
+                <br>
                 <br>
             </p>
         </div>
@@ -51,9 +51,8 @@
             <ul>
                 <li>
                     <a href="https://github.com/pystage/pystage" target="_blank">
-                        <p>PyStage</p>
-                    </a>
-                    <img src="images/pystage.png" alt="PyStage Logo" style="width:70px;height:70px;">
+                      <p>PyStage</p>
+                    </a>    <img src="images/pystage.png" alt="PyStage Logo" style="width:70px;height:70px;">
                 </li>
             </ul>
         </div>
@@ -150,11 +149,7 @@
                 <div class="progress" style="width: 85%;"></div>
             </div>
         </div>
-    </div>
-
-    <div id="resume">
-        <p>Download my <a href="res/Resume.docx" download>RESUME</a></p>
-        
+    </div>  
         <h2>Computer Science Courses</h2>
         <h3>Class Experience from Calvin University</h3>
         
@@ -370,7 +365,6 @@
                 </p>
             </div>
         </div>
-    </div>
     <div id="getInTouch">
     <script>
 function triggerFireworks() {
@@ -509,6 +503,8 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 header #home {
@@ -567,6 +563,8 @@ header #pages {
   list-style: none;
   flex-wrap: wrap;
   justify-content: flex-end;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 header #pages li {
@@ -637,11 +635,12 @@ header #pages a:hover::after {
 
 /* Modern Hero Section */
 #hero {
-  min-height: 100vh;
+  min-height: 1vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  align-items: flex-start;
   background: radial-gradient(circle at 20% 50%, rgba(0, 255, 0, 0.1) 0%, transparent 50%);
   padding: 60px 20px;
 }
@@ -666,13 +665,14 @@ header #pages a:hover::after {
 }
 /* Project Cards - Modern Grid */
 #contact {
-  width: 100%;
-  max-width: 1200px;
+  width: 100vw;
+  max-width: 100%;
   margin: 0 auto;
+  justify-content: center;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 #contact h3 {
@@ -832,62 +832,11 @@ header #pages a:hover::after {
   box-shadow: 0 0 20px rgba(0, 255, 0, 0.6);
 }
 
-/* Resume/Courses Section - Clean & Modern */
-#resume {
-  max-width: 1200px;
-  margin: 100px auto;
-  padding: 40px 20px;
-}
-
-#resume > p {
-  text-align: center;
-  font-size: 16px;
-  margin-bottom: 50px;
-}
-
-#resume > p a {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  padding: 10px 20px;
-  border: 2px solid var(--primary);
-  border-radius: 6px;
-  display: inline-block;
-}
-
-#resume > p a:hover {
-  background: var(--primary);
-  color: var(--bg-dark);
-  transform: scale(1.05);
-}
-
-#resume h2 {
-  font-size: 32px;
-  color: var(--primary);
-  border-bottom: 3px solid var(--primary);
-  padding-bottom: 15px;
-  margin: 80px 0 10px 0;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 700;
-}
-
-#resume h3 {
-  color: var(--accent);
-  font-size: 16px;
-  margin: 0 0 30px 0;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
 /* Courses Grid - Modern 2-Column Layout */
 .courses-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(450px, 100%), 1fr));
   gap: 25px;
-  margin-bottom: 60px;
 }
 
 /* Individual Course Card */

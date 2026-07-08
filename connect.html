@@ -134,6 +134,57 @@
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
   }
+
+/* Resume/Courses Section - Clean & Modern */
+#resume {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 40px 20px;
+}
+
+#resume > p {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+
+#resume > p a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  border: 2px solid var(--primary);
+  border-radius: 6px;
+  display: inline-block;
+}
+
+#resume > p a:hover {
+  background: var(--primary);
+  color: var(--bg-dark);
+  transform: scale(1.05);
+}
+
+#resume h2 {
+  font-size: 32px;
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+  padding-bottom: 15px;
+  margin: 80px 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+#resume h3 {
+  color: var(--accent);
+  font-size: 16px;
+  margin: 0 0 30px 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 </style>
 <body>
     <header>
@@ -174,6 +225,9 @@
 
             <h3>Sincerely,</h3>
             <div class = "signoff">Branden Husted</div>
+            <div id="resume">
+                <p>Download my <a href="res/Resume.docx" download>RESUME</a></p>
+            </div>
         </div>
 
 
@@ -441,32 +495,59 @@
         // encrypt this page and require a password to practice encryption and 
         // decryption skills. The password is "BrandenHusted123" and it will 
         // be required to view the content of this page. 
-        // You can use a simple prompt to ask for the password and if the user enters 
-        // the correct password, they will be able to view the content of the page. 
-        // If they enter the wrong password, they will be redirected to a different page or shown an error message.
-
         const PASSWORD_HASH = "e17b62adfeff1d78c79f4d087ba9c503d5459ee4c2f37547901b29ecdea900a8"; // SHA-256 hash of "BrandenHusted123"
+        const MAX_ATTEMPTS = 3; // after 3 failed attempts, the user will be locked out for 30 minutes
+        const LOCKOUT_TIME = 30 * 60 * 1000; // 30 minutes in milliseconds
         // Async function is used like a .then() function in javascript. It is used to wait for the 
         // result of a promise before continuing with the execution of the code. 
         // This is useful when you want to perform an asynchronous operation, 
         // such as fetching data from an API or reading a file, and you want to wait for the result before proceeding with the rest of your code.
         async function checkPassword() {
-            const password = document.getElementById('password').value
+            const lockoutUntil = localStorage.getItem("lockoutUntil");
+
+            // Check if user is currently locked out
+            if (lockoutUntil && Date.now() < Number(lockoutUntil)) {
+                alert("Too many failed attempts. Try again later.");
+                window.location.href = "index.html";
+                return;
+         }
+
+            const password = document.getElementById('password').value;
 
             const encoder = new TextEncoder();
             const data = encoder.encode(password);
-            //  using the Web Crypto API to compute a SHA‑256 hash
+            //  using the Web Crypto API to compute a SHA‑256 hash: https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest
             const hashBuffer = await crypto.subtle.digest('SHA-256', data);
             const hashArray = Array.from(new Uint8Array(hashBuffer));
-            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string and join all hex values into one continuous string
 
             if (hashHex === PASSWORD_HASH) {
+                // Reset failed attempts on successful login. localStorage remains even after refeshing the page
+                localStorage.removeItem("wrongPasswordCount");
+                localStorage.removeItem("lockoutUntil");
+
                 document.getElementById('passwordPrompt').style.display = 'none';
                 document.getElementById('hero').style.display = 'block';
+
             } else {
-                alert('Incorrect password. Please try again.');
-            }
+                // fancy way of || (start and initalize at 0) and then increment when this else statement is ran
+                let wrongPasswordCount = Number(localStorage.getItem("wrongPasswordCount")) || 0;
+                wrongPasswordCount++;
+
+                localStorage.setItem("wrongPasswordCount", wrongPasswordCount);
+
+            if (wrongPasswordCount >= MAX_ATTEMPTS) {
+                const lockoutTime = Date.now() + LOCKOUT_TIME;
+
+                localStorage.setItem("lockoutUntil", lockoutTime);
+
+                alert("Too many incorrect attempts. You are locked out for 30 minutes.");
+                window.location.href = "index.html";
+            } else {
+                alert(`Incorrect password. Attempt ${wrongPasswordCount}/${MAX_ATTEMPTS}`);
         }
+    }
+}
         </script>
 
 </body>
