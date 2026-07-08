@@ -318,6 +318,7 @@
     </div>    
     </div>
     <script>
+        // Get references to the "Next" buttons and form sections
         const containerNext1 = document.getElementById('next1'); 
         const containerNext2 = document.getElementById('next2'); 
         const containerNext3 = document.getElementById('next3'); 
@@ -443,9 +444,9 @@
         });
 
         // encrypt this page and require a password to practice encryption and 
-        // decryption skills. The password is "BrandenHusted123" and it will 
+        // decryption skills. The password is "BrandenHusted1324" and it will 
         // be required to view the content of this page. 
-        const PASSWORD_HASH = "e17b62adfeff1d78c79f4d087ba9c503d5459ee4c2f37547901b29ecdea900a8"; // SHA-256 hash of "BrandenHusted123"
+        const PASSWORD_HASH = "09444bb0f3d18b608a0e5e92a1eb15bf8b960e59d5de14f8e02c59541274375c"; // SHA-256 hash of "BrandenHusted123"
         const MAX_ATTEMPTS = 3; // after 3 failed attempts, the user will be locked out for 30 minutes
         const LOCKOUT_TIME = 30 * 60 * 1000; // 30 minutes in milliseconds
         // Async function is used like a .then() function in javascript. It is used to wait for the 
