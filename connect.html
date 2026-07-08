@@ -152,7 +152,7 @@
         <input id="password" type="password" style="margin: 10px 0; padding: 5px; border: 1px solid var(--primary); border-radius: 5px;">
         <button onclick="checkPassword()" style="padding: 10px 20px; background: var(--primary); color: var(--bg-dark); border: none; border-radius: 5px; cursor: pointer;">Unlock Content</button>
     </div>
-    <div id="hero">
+    <div id="hero" style="display:none;">
         <div id="title">  
         </div>
     <div id = "info">
@@ -445,17 +445,28 @@
         // the correct password, they will be able to view the content of the page. 
         // If they enter the wrong password, they will be redirected to a different page or shown an error message.
 
-        function checkPassword() {
-            const password = document.getElementById('password').value;
-            if (password === "BrandenHusted123") {
+        const PASSWORD_HASH = "e17b62adfeff1d78c79f4d087ba9c503d5459ee4c2f37547901b29ecdea900a8"; // SHA-256 hash of "BrandenHusted123"
+        // Async function is used like a .then() function in javascript. It is used to wait for the 
+        // result of a promise before continuing with the execution of the code. 
+        // This is useful when you want to perform an asynchronous operation, 
+        // such as fetching data from an API or reading a file, and you want to wait for the result before proceeding with the rest of your code.
+        async function checkPassword() {
+            const password = document.getElementById('password').value
+
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            //  using the Web Crypto API to compute a SHA‑256 hash
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+            if (hashHex === PASSWORD_HASH) {
                 document.getElementById('passwordPrompt').style.display = 'none';
+                document.getElementById('hero').style.display = 'block';
             } else {
                 alert('Incorrect password. Please try again.');
             }
         }
-
-
-        
         </script>
 
 </body>
