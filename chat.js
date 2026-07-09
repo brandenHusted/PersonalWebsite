@@ -1099,32 +1099,3 @@ submitButton.addEventListener("click", function () {
   textArea.value = userInput + "\n\nChatbot: " + chatbotResponse;
   userInputField.value = "";
 });
-
-    // hints for the user if they do not know what to type
-hintButton.addEventListener("click", function(){
-  alert(`Here are some prompts to get you started: 
-        
-  "hi",
-  "How to make a react application with two pages",
-  "Yes",
-  "What is your name?",
-  "How can I help you today?",
-  "Do you have any other questions?",
-  "Why is Calvin the best college ever",
-  "I am working on Python",
-  "What is a zero-day exploit and how can it affect system security?",
-  "How does memory allocation in a heap differ from memory allocation on a stack?",
-  "I am working on JavaScript",
-  "Should I get involved in community service?",
-  "Should I focus on creating passive income streams?",
-  "What is KnightCite",
-  "Can you tell me more about Branden?",
-  "How do I contact Branden?",
-  "How did Branden make this project?",
-  "what is pystage",
-  "I would like to interview Branden",
-  "What is breadth-first search?",
-  "Can you write me some c++ code?",
-  "What is FizzBuzz?",
-        `)
-    });
