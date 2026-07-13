@@ -4,13 +4,126 @@
         <title>Security Training Modules</title>
     </head>
     <body>
-        <p> ____________________________________________________________________________________________________________________________________</p>
-        <p>Welcome to module one of my security training modules. Here we will learn the basics of security in the world of IT.</p>
-        <p>Why do people care about security? Why is security such a hot topic right now in our world? I know criminals are bad and all, although I feel like there is this</p>
-        <p>inclination that we as every day people may not understand the scope and the actual dangers that not having security can cause to others around us. And learning how to "count our costs"</p>
-        <p>will help us better understand the risks and the benefits that come with security to our home and our work life.</p>
+        <div id="M1Page1">
+            <img src="images/awareness.png"></img>
+            <p> ____________________________________________________________________________________________________________________________________</p>
+            <p id="introText">Welcome to module one of my security training modules. Here we will learn the basics of security in the world of IT.</p>
+            <p id="reasonText">Why do people care about security? Why is security such a hot topic right now in our world? I know criminals are bad and all, although I feel like there is this</p>
+            <p id="scopeText">inclination that we as every day people may not understand the scope and the actual dangers that not having security can cause to others around us. And learning how to "count our costs"</p>
+            <p id="benefitsText">will help us better understand the risks and the benefits that come with security to our home and our work life.</p>
+            <img src="images/BasicCyberSecurityIMG.png"></img>
+            <div>
+            <button id="readAloud1">Read Aloud</button>
+            <button id="next1">Next</button>
+            </div>  
+        </div>
+
+        <div id="M1Page2" style="display:none;">
+            <p> ____________________________________________________________________________________________________________________________________</p>
+            <p id="cyberAttackText1">To better understand the risks we are dealing with, I want to share with you an example of a cyber attack on the United Nations official website.</p>
+            <p id="cyberAttackText2">This message was seen in the section of the site reserved for statements by Secretary-General Ban Ki-moon.</p>
+            <p id="cyberAttackText3">After the hack was successful, a message appeared on the website:</p>
+            <p id="cyberAttackText4"><i>"Hacked By kerem125 M0sted and Gsy That is CyberProtest Hey Ysrail and Usa dont kill children and other people Peace for ever No war"</i></p>
+            <p id="cyberAttackText5">The hacker group called themselves CyberProtest. They were a three-member group kerem125, m0sted, and gsy.</p>
+            <p id="cyberAttackText6">This was luckily shortly restored back to normal. Such attacks like this one are commonly referred to as hacktivism, where political or social motivations drive unlawful activity in cyberspace.</p>
+            <p id="cyberAttackText7">This shows how companies need robust security practices, including strong encryption, regular software updates, and employee awareness training.</p>
+            <button id="readAloud2">Read Aloud</button>
+            <button id="next2">Next</button>
+        </div>
+
+        <div id="M1Page3" style="display:none;">
+            <p> ____________________________________________________________________________________________________________________________________</p>
+            <p>Ransomware is a type of malicious software designed to block access to a computer system or data until a sum of money is paid. It is one of the most common and dangerous forms of cyberattacks today.</p>
+            <p>During my time as an IT intern at Pridgeon and Clay, a manufacturer of metal components for the automotive industry, I learned about a ransomware attack that occurred the year before I joined. The attackers used a brute force method to guess the password to the company's servers, gaining unauthorized access.</p>
+            <p>The ransomware encrypted critical company files, making them inaccessible. This attack disrupted operations and highlighted the importance of robust cybersecurity measures. Fortunately, the company did not pay the ransom. Instead, they rebuilt their systems from scratch, which was a costly but necessary step to ensure security.</p>
+            <p>Since the attack, the company has implemented stronger security practices, such as hardening server defenses, educating employees about phishing and email scams, and enforcing strict policies like locking computers when unattended.</p>
+            <p>This experience underscores the importance of proactive measures to prevent ransomware attacks. Organizations should regularly update software, use strong passwords, enable multi-factor authentication, and maintain secure backups to recover data without paying ransoms.</p>
+            <p>Ransomware attacks can happen to anyone, and being prepared with a solid cybersecurity strategy is the best defense against such threats.</p>
+            <button id="next3">Next</button>
+        </div>
+
+        <div id="M1Page4" style="display:none;">
+            <p> ____________________________________________________________________________________________________________________________________</p>
+            <p>Here are different types of attacks that can happen to anyone online:</p>
+            <p>Ransomeware (Malicious software designed to block access to a computer system or data until a sum of money is paid).</p>
+            <p>Trojan (Cyber Threat in which malicious software pretends to be legitimate, harmless software to trick users into installing or executing it).</p>
+            <p>Worm (Malicious software that self-replicates itself like a worm without the need of humans).</p>
+            <p>Keylogger (Malicious Software records every keystroke you type on your keyboard).</p>
+            <p>Rootkit (Gives unauthorized/privileged access to a computer while concealing its presence).</p>
+            <p>Logic Bomb (Malicious code that remains hidden until a condition triggers it like a bomb).</p>
+            <p>Bloatware (Unwanted preinstalled, or bundled software is used to steal personal data).</p>
+            <p>Virus (Malicious software embeds itself into a system, replicating by modifying other programs/executing harmful actions).</p>
+            <p>SpyWare (Secretly infects your machine to monitor your activity, this includes your screen/passwords everything digital).</p>
+            <button id="next4">Next</button>
+        </div>
+
+        <div id="M1Page5" style="display:none;">
+            <p> ____________________________________________________________________________________________________________________________________</p>
+            <a href="https://niccs.cisa.gov/audience/cybersecurity-beginners" target="_blank">Visit Cybersecurity Beginners Guide</a>
+            <button id="next5">Next</button>
+        </div>
     </body>
 </html>
 <script>
-    // just starting out will add more when I have time.
+    // Get references to the "Next" button and sections
+    const nextButton1 = document.getElementById('next1');
+    const nextButton2 = document.getElementById('next2');
+    const nextButton3 = document.getElementById('next3');
+    const nextButton4 = document.getElementById('next4');
+    const nextButton5 = document.getElementById('next5');
+
+    //read aloud
+    const readAloudButton1 = document.getElementById('readAloud1');
+    const readAloudButton2 = document.getElementById('readAloud2');
+    const readAloudButton3 = document.getElementById('readAloud3');
+    
+    // element for each page section
+    const section1 = document.getElementById('M1Page1');
+    const section2 = document.getElementById('M1Page2');
+    const section3 = document.getElementById('M1Page3');
+    const section4 = document.getElementById('M1Page4');
+    const section5 = document.getElementById('M1Page5');
+
+    // Hide section1 and show section2 when "Next" is clicked
+    nextButton1.addEventListener('click', () => {
+        section1.style.display = 'none';
+        section2.style.display = 'block';
+    });
+
+    nextButton2.addEventListener('click', () => {
+        section2.style.display = 'none';
+        section3.style.display = 'block';
+    });
+
+    nextButton3.addEventListener('click', () => {
+        section3.style.display = 'none';
+        section4.style.display = 'block';
+    });
+
+    nextButton4.addEventListener('click', () => {
+        section4.style.display = 'none';
+        section5.style.display = 'block';
+    });
+
+    // Read aloud functionality
+    readAloudButton1.addEventListener('click', () => {
+        const textToRead = document.getElementById('introText').innerText + ' ' +
+                           document.getElementById('reasonText').innerText + ' ' +
+                           document.getElementById('scopeText').innerText + ' ' +
+                           document.getElementById('benefitsText').innerText;
+        const speech = new SpeechSynthesisUtterance(textToRead);
+        window.speechSynthesis.speak(speech);
+    });
+
+    readAloudButton2.addEventListener('click', () => {
+        const textToRead = document.getElementById('cyberAttackText1').innerText + ' ' +
+                           document.getElementById('cyberAttackText2').innerText + ' ' +
+                           document.getElementById('cyberAttackText3').innerText + ' ' +
+                           document.getElementById('cyberAttackText4').innerText + ' ' +
+                           document.getElementById('cyberAttackText5').innerText + ' ' +
+                           document.getElementById('cyberAttackText6').innerText + ' ' +
+                           document.getElementById('cyberAttackText7').innerText;
+        const speech = new SpeechSynthesisUtterance(textToRead);
+        window.speechSynthesis.speak(speech);
+    });
 </script>
