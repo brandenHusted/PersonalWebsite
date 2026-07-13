@@ -68,8 +68,28 @@
 
         <div id="M1Page6" style="display:none;">
             <p> ____________________________________________________________________________________________________________________________________</p>
+            <p>Compare and contrast various types of security controls</p>
+            <button id="next6">Next</button>
+        </div>
+
+        <div id="M1Page7" style="display:none;">
+            <p> ____________________________________________________________________________________________________________________________________</p>
+            <p>Explain the importance of using cryptographic solutions</p>
+            <button id="next7">Next</button>
+        </div>
+
+        <div id="M1Page8" style="display:none;">
+            <p> ____________________________________________________________________________________________________________________________________</p>
+            <p>Importance of change management processes and the impact on security</p>
+            <button id="next8">Next</button>
+        </div>
+
+        <div id="M1Page9" style="display:none;">
+            <p> ____________________________________________________________________________________________________________________________________</p>
+            <p>Thanks for reading through module 1 of my security awareness module. You can click this link</p>
+            <p>if you want to dive deeper into the broader aspects of security and click finish to go to module 2.</p>
             <a href="https://niccs.cisa.gov/audience/cybersecurity-beginners" target="_blank">Visit Cybersecurity Beginners Guide</a>
-            <button id="next5">Next</button>
+            <button id="next9" onclick="window.location.href='Security_quiz.html';">Next</button>
         </div>
     </body>
 </html>
@@ -80,6 +100,10 @@
     const nextButton3 = document.getElementById('next3');
     const nextButton4 = document.getElementById('next4');
     const nextButton5 = document.getElementById('next5');
+    const nextButton6 = document.getElementById('next6');
+    const nextButton7 = document.getElementById('next7');
+    const nextButton8 = document.getElementById('next8');
+    const nextButton9 = document.getElementById('next9');
 
     //read aloud
     const readAloudButton1 = document.getElementById('readAloud1');
@@ -92,6 +116,10 @@
     const section3 = document.getElementById('M1Page3');
     const section4 = document.getElementById('M1Page4');
     const section5 = document.getElementById('M1Page5');
+    const section6 = document.getElementById('M1Page6');
+    const section7 = document.getElementById('M1Page7');
+    const section8 = document.getElementById('M1Page8');
+    const section9 = document.getElementById('M1Page9');
 
     // Hide section1 and show section2 when "Next" is clicked
     nextButton1.addEventListener('click', () => {
@@ -112,6 +140,26 @@
     nextButton4.addEventListener('click', () => {
         section4.style.display = 'none';
         section5.style.display = 'block';
+    });
+
+    nextButton5.addEventListener('click', () => {
+        section5.style.display = 'none';
+        section6.style.display = 'block';
+    });
+
+    nextButton6.addEventListener('click', () => {
+        section6.style.display = 'none';
+        section7.style.display = 'block';
+    });
+
+    nextButton7.addEventListener('click', () => {
+        section7.style.display = 'none';
+        section8.style.display = 'block';
+    });
+
+    nextButton8.addEventListener('click', () => {
+        section8.style.display = 'none';
+        section9.style.display = 'block';
     });
 
     // Read aloud functionality
