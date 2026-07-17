@@ -1,12 +1,1320 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <title>Security Training Modules</title>
-    </head>
-    <body>
-        <p>Welcome to module one of my security training modules. Here we will learn the basics of security in the world of IT.</p>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cybersecurity Awareness Training</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Roboto',sans-serif;
+
+background:#edf2f7;
+
+color:#333;
+
+padding:40px;
+
+}
+
+.module{
+
+max-width:950px;
+
+margin:auto;
+
+background:white;
+
+padding:40px;
+
+border-radius:15px;
+
+box-shadow:0 10px 35px rgba(0,0,0,.15);
+
+animation:fadeIn .5s ease;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+transform:translateY(15px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+header{
+
+margin-bottom:35px;
+text-align:center;
+
+}
+
+header h1{
+
+font-size:34px;
+
+color:#003366;
+
+margin-bottom:10px;
+
+}
+
+header h3{
+
+font-weight:400;
+color:#666;
+
+}
+
+hr{
+
+border:none;
+
+height:2px;
+
+background:#d8dde5;
+
+margin:30px 0;
+
+}
+
+h2{
+
+color:#005792;
+
+margin-bottom:20px;
+
+}
+
+p{
+
+margin-bottom:18px;
+
+font-size:17px;
+
+line-height:1.8;
+
+}
+
+img{
+
+display:block;
+
+margin:25px auto;
+
+max-width:100%;
+
+border-radius:10px;
+
+box-shadow:0 6px 20px rgba(0,0,0,.15);
+
+}
+
+.infoBox{
+
+background:#eef7ff;
+
+border-left:6px solid #0078D4;
+
+padding:18px;
+
+margin:25px 0;
+
+border-radius:8px;
+
+}
+
+.progress{
+
+margin-top:15px;
+
+}
+
+progress{
+
+width:100%;
+height:18px;
+
+}
+
+.buttons{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-top:35px;
+
+}
+
+button{
+
+background:#005792;
+
+color:white;
+
+padding:12px 28px;
+
+font-size:16px;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+background:#003b66;
+
+transform:translateY(-2px);
+
+}
+
+a{
+
+color:#005792;
+
+font-weight:bold;
+
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+margin-top:25px;
+
+}
+
+th{
+
+background:#005792;
+
+color:white;
+
+padding:14px;
+
+}
+
+td{
+
+padding:14px;
+
+border-bottom:1px solid #ddd;
+
+}
+
+tr:nth-child(even){
+
+background:#f7f9fc;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="M1Page1" class="module">
+
+<header>
+
+<h1>Cybersecurity Awareness Training</h1>
+
+<h3>Module 7 • How AI can Effect your Security Enviroment</h3>
+
+<div class="progress">
+
+<progress value="1" max="9"></progress>
+
+<p>Page 1 of 9</p>
+
+</div>
+
+</header>
+
+<img src="images/awareness.png" alt="Cybersecurity Awareness">
+
+<hr>
+
+<h2>Welcome</h2>
+
+<p id="welcomeText">
+Welcome to Module One of the Cybersecurity Awareness Training course.
+In this module you'll learn the foundations of cybersecurity, why organizations invest heavily in protecting their information, and how everyday users play an important role in defending against cyber threats.
+</p>
+
+<p id="cybersecurityScope">
+Cybersecurity is much more than protecting computers. It protects people, businesses, governments, and critical services that we rely on every day.
+</p>
+
+<p id="humanMistakes">
+Many cyberattacks begin with simple human mistakes such as clicking a malicious email, using weak passwords, or failing to update software. By understanding common threats and following security best practices, everyone can contribute to a safer digital environment.
+</p>
+
+<div class="infoBox">
+
+<strong>Learning Objective</strong>
+
+<br id="learningObjectiveBreak"><br>
+
+Understand why cybersecurity matters and recognize the role each person plays in protecting information and systems.
+
+</div>
+
+<img src="images/BasicCyberSecurityIMG.png" alt="Basic Cybersecurity">
+
+<div class="buttons">
+
+<button id="readAloud1">
+🔊 Read Aloud
+</button>
+
+<button id="next1">
+Next →
+</button>
+
+</div>
+
+</div>
+
+<!-- ====================================================== -->
+
+<div id="M1Page2" class="module" style="display:none;">
+
+<header>
+
+<h1>Cybersecurity Awareness Training</h1>
+
+<h3>Module 1 • Security Fundamentals</h3>
+
+<div class="progress">
+
+<progress value="2" max="9"></progress>
+
+<p>Page 2 of 9</p>
+
+</div>
+
+</header>
+
+<hr>
+
+<h2 id="realWorldExampleTitle">Real-World Example: United Nations Website Defacement</h2>
+
+<p id="realWorldExampleIntro">
+One example of the importance of cybersecurity involved the official United Nations website.
+Attackers successfully compromised part of the website and replaced official content with unauthorized political messages.
+</p>
+
+<p id="realWorldExampleDetails">
+The message appeared within the section reserved for statements made by Secretary-General Ban Ki-moon.
+Although the website was restored shortly afterward, the incident demonstrated how even well-known organizations can become victims of cyberattacks.
+</p>
+
+<div class="infoBox" id="hacktivismInfoBox">
+<strong id="hacktivismTerm">Cybersecurity Term:</strong>
+<p id="hacktivismDefinition">
+Hacktivism is the use of hacking techniques to promote political or social causes. While motivations vary, unauthorized access to computer systems remains illegal.
+</p>
+</div>
+
+<p id="realWorldExampleConclusion">
+This event highlights why organizations must implement strong cybersecurity practices such as:
+</p>
+
+<ul id="cybersecurityPracticesList" style="margin-left:30px; line-height:2; margin-bottom:25px;">
+    <li id="practiceStrongAuthentication">Strong authentication</li>
+    <li id="practiceRegularUpdates">Regular software updates</li>
+    <li id="practiceEncryption">Encryption of sensitive data</li>
+    <li id="practiceMonitoring">Continuous monitoring</li>
+    <li id="practiceAwarenessTraining">Employee security awareness training</li>
+</ul>
+
+</ul>
+
+<div class="buttons">
+
+<button id="readAloud2">
+
+🔊 Read Aloud
+
+</button>
+
+<button id="next2">
+
+Next →
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ====================================================== -->
+<!-- PAGE 3 -->
+
+<div id="M1Page3" class="module" style="display:none;">
+
+    <header>
+    
+    <h1>Cybersecurity Awareness Training</h1>
+    
+    <h3>Module 1 • Security Fundamentals</h3>
+    
+    <div class="progress">
+    
+    <progress value="3" max="9"></progress>
+    
+    <p>Page 3 of 9</p>
+    
+    </div>
+    
+    </header>
+    
+    <hr>
+    
+    <h2 id="introRansomeware">Case Study: Ransomware Attack</h2>
+    
+    <p id="ransomwareIntro"></p>
+    Ransomware is malicious software that encrypts files or locks computer systems until a ransom is paid. It is one of the most damaging forms of cybercrime because it can completely disrupt business operations.
+    </p>
+    
+    <p id="internshipExperience">
+    During my internship at <strong>Pridgeon & Clay</strong>, I learned about a ransomware incident that had occurred the year before I joined the company. The attackers reportedly gained access after successfully brute-forcing a server password.
+    </p>
+    
+    <p id="incidentDetails">
+    Once inside the network, the attackers encrypted important company files, preventing employees from accessing critical business information. Instead of paying the ransom, the company rebuilt affected systems from backups and strengthened its overall security posture.
+    </p>
+    
+    <div class="infoBox">
+    
+    <strong>Lessons Learned</strong>
+    
+    <ul style="margin-top:15px; margin-left:25px; line-height:2;">
+    
+    <li>Use strong passwords.</li>
+    
+    <li>Enable Multi-Factor Authentication (MFA).</li>
+    
+    <li>Maintain secure offline backups.</li>
+    
+    <li>Keep systems fully updated.</li>
+    
+    <li>Educate employees about phishing attacks.</li>
+    
+    </ul>
+    
+    </div>
+    
+    <p id="cybersecurityAwareness">
+    Cybersecurity is not only about technology—it also depends on user awareness and following good security practices every day.
+    </p>
+    
+    <div class="buttons">
+    <button id="readAloud3">
+            🔊 Read Aloud
+    </button>
+    <div></div>
+    
+    <button id="next3">
+    
+    Next →
+    
+    </button>
+    
+    </div>
+    
+    </div>
+    
+    <!-- ====================================================== -->
+    <!-- PAGE 4 -->
+    
+    <div id="M1Page4" class="module" style="display:none;">
+    
+    <header>
+    
+    <h1>Cybersecurity Awareness Training</h1>
+    
+    <h3>Module 1 • Security Fundamentals</h3>
+    
+    <div class="progress">
+    
+    <progress value="4" max="9"></progress>
+    
+    <p>Page 4 of 9</p>
+    
+    </div>
+    
+    </header>
+    
+    <hr>
+    
+    <h2 id="commonMalwareTypes">Common Malware Types</h2>
+    
+    <p id="malwareIntro">
+    Cybercriminals use many different forms of malware to compromise computers, steal information, or disrupt services. Understanding these threats is the first step toward defending against them.
+    </p>
+    
+    <table>
+    
+    <tr>
+    
+    <th id="threatHeader">Threat</th>
+    <th id="descriptionHeader">Description</th>
+    </tr>
+    
+    <tr>
+    <td id="ransomwareThreat">Ransomware</td>
+    <td id="ransomwareDescription">Encrypts files or systems until a ransom is demanded.</td>
+    </tr>
+    
+    <tr>
+    <td id="trojanHorseThreat">Trojan Horse</td>
+    <td id="trojanHorseDescription">Disguises itself as legitimate software to trick users into installing malware.</td>
+    </tr>
+    
+    <tr>
+    <td id="virusThreat">Virus</td>
+    <td id="virusDescription">Infects programs and spreads when infected files are executed.</td>
+    </tr>
+    
+    <tr>
+    <td id="wormThreat">Worm</td>
+    <td id="wormDescription">Self-replicates across networks without user interaction.</td>
+    </tr>
+    
+    <tr>
+    <td id="spywareThreat">Spyware</td>
+    <td id="spywareDescription">Secretly monitors user activity and collects sensitive information.</td>
+    </tr>
+    
+    <tr>
+    <td id="keyloggerThreat">Keylogger</td>
+    <td id="keyloggerDescription">Records every keystroke to steal passwords and personal information.</td>
+    </tr>
+    
+    <tr>
+    <td id="rootkitThreat">Rootkit</td>
+    <td id="rootkitDescription">Provides attackers with hidden administrative access to a system.</td>
+    </tr>
+    
+    <tr>
+    <td id="logicBombThreat">Logic Bomb</td>
+    <td id="logicBombDescription">Malicious code that activates only when specific conditions are met.</td>
+    </tr>
+    
+    <tr>
+    <td id="bloatwareThreat">Bloatware</td>
+    <td id="bloatwareDescription">Unwanted software that consumes resources and may introduce security risks.</td>
+    </tr>
+    
+    </tr>
+    
+    </table>
+    
+    <div class="infoBox">
+    
+    <strong>Remember:</strong>
+    
+    <p id="malwareProtectionTips"></p>
+    The best protection against malware is keeping software updated, avoiding suspicious downloads, using antivirus software, and maintaining secure backups.
+    </p>
+    
+    </div>
+    
+    <div class="buttons">
+    <button id="readAloud4">
+
+            🔊 Read Aloud
+    </button>
+    <div></div>
+    
+    <button id="next4">
+    
+    Next →
+    
+    </button>
+    
+    </div>
+    
+    </div>
+    
+    <!-- ====================================================== -->
+    <!-- PAGE 5 -->
+    
+    <div id="M1Page5" class="module" style="display:none;">
+
+    <header>
+
+    <h1>Cybersecurity Awareness Training</h1>
+
+    <h3>Module 1 • Security Fundamentals</h3>
+
+    <div class="progress">
+
+    <progress value="5" max="9"></progress>
+
+    <p>Page 5 of 9</p>
+
+    </div>
+
+    </header>
+
+    <hr>
+
+    <h2 id="findingSecurityRisksTitle">Finding Potential Security Risks</h2>
+
+    <p id="findingSecurityRisksIntro">
+    Several free online tools can help identify suspicious websites, malicious files, and unusual network activity.
+    </p>
+
+    <table id="securityToolsTable">
+
+    <tr id="securityToolsHeaderRow">
+        <th id="toolHeader">Tool</th>
+        <th id="purposeHeader">Purpose</th>
+    </tr>
+
+    <tr id="virusTotalRow">
+        <td id="virusTotalTool">VirusTotal</td>
+        <td id="virusTotalPurpose">Scans files and URLs using dozens of antivirus engines.</td>
+    </tr>
+
+    <tr id="urlReputationRow">
+        <td id="urlReputationTool">URL Reputation Services</td>
+        <td id="urlReputationPurpose">Checks whether websites are considered safe before visiting them.</td>
+    </tr>
+
+    <tr id="networkMonitoringRow">
+        <td id="networkMonitoringTool">Network Monitoring</td>
+        <td id="networkMonitoringPurpose">Helps identify applications making unexpected network connections.</td>
+    </tr>
+
+    </table>
+
+    <div class="infoBox" id="securityTipBox">
+        <strong id="securityTipTitle">Security Tip</strong>
+        <ul id="securityTipList" style="margin-top:15px; margin-left:25px; line-height:2;">
+            <li id="verifyWebsiteTip">Verify website addresses before logging in.</li>
+            <li id="scanDownloadsTip">Scan unknown downloads before opening them.</li>
+            <li id="monitorNetworkTip">Monitor unusual network activity.</li>
+            <li id="updateSoftwareTip">Keep browsers and antivirus software updated.</li>
+            <li id="browserWarningsTip">Never ignore browser security warnings.</li>
+        </ul>
+    </div>
+
+    <p>
+
+    Useful Resources:
+
+    </p>
+
+    <ul style="margin-left:30px; line-height:2;">
+
+    <li><a href="https://www.virustotal.com/" target="_blank">VirusTotal</a></li>
+
+    <li><a href="https://transparencyreport.google.com/safe-browsing/search" target="_blank">Google Safe Browsing</a></li>
+
+    <li><a href="https://www.cisa.gov/" target="_blank">CISA Cybersecurity Resources</a></li>
+
+    </ul>
+
+    <div class="buttons">
+        <button id="readAloud5">
+            🔊 Read Aloud
+        </button>
+        <button id="next5">
+            Next →
+        </button>
+    </div>
+
+    </div>
+
+<!-- ====================================================== -->
+<!-- PAGE 6 -->
+
+<div id="M1Page6" class="module" style="display:none;">
+
+    <header>
+    
+    <h1>Cybersecurity Awareness Training</h1>
+    
+    <h3>Module 1 • Security Fundamentals</h3>
+    
+    <div class="progress">
+    
+    <progress value="6" max="9"></progress>
+    
+    <p>Page 6 of 9</p>
+    
+    </div>
+    
+    </header>
+    
+    <hr>
+    
+    <h2 id="securityControlsTitle">Types of Security Controls</h2>
+    
+    <p id="securityControlsIntro">
+    Organizations use several layers of security controls to reduce cyber risk. No single control can stop every attack, so companies combine multiple approaches to create a strong defense.
+    </p>
+    
+    <table id="securityControlsTable">
+    
+    <tr id="securityControlsHeaderRow">
+        <th id="controlTypeHeader">Control Type</th>
+        <th id="examplesHeader">Examples</th>
+        <th id="purposeHeader">Purpose</th>
+    </tr>
+    
+    <tr id="technicalControlRow">
+        <td id="technicalControlType"><strong>Technical</strong></td>
+        <td id="technicalExamples">Firewalls, Antivirus, Encryption, MFA</td>
+        <td id="technicalPurpose">Protect systems using technology.</td>
+    </tr>
+    
+    <tr id="managerialControlRow">
+        <td id="managerialControlType"><strong>Managerial</strong></td>
+        <td id="managerialExamples">Security Policies, Risk Assessments, Audits</td>
+        <td id="managerialPurpose">Guide security planning and governance.</td>
+    </tr>
+    
+    <tr id="operationalControlRow">
+        <td id="operationalControlType"><strong>Operational</strong></td>
+        <td id="operationalExamples">Security Awareness Training, Incident Response</td>
+        <td id="operationalPurpose">Improve daily security procedures.</td>
+    </tr>
+    
+    <tr id="physicalControlRow">
+        <td id="physicalControlType"><strong>Physical</strong></td>
+        <td id="physicalExamples">Badge Readers, Cameras, Locks, Biometrics</td>
+        <td id="physicalPurpose">Protect facilities and equipment.</td>
+    </tr>
+    
+    </table>
+    
+    <div class="infoBox" id="defenseInDepthBox">
+        <strong id="defenseInDepthTitle">Defense in Depth</strong>
+        <p id="defenseInDepthDescription" style="margin-top:12px;">
+        Good cybersecurity relies on multiple layers of protection rather than a single security solution.
+        </p>
+    </div>
+    
+    <div class="buttons">
+        <button id="readAloud6">🔊 Read Aloud</button>
+        <button id="next6">Next →</button>
+    </div>
+    
+</div>
+
+<!-- ====================================================== -->
+<!-- PAGE 7 -->
+
+<div id="M1Page7" class="module" style="display:none;">
+
+    <header>
+    
+    <h1>Cybersecurity Awareness Training</h1>
+    
+    <h3>Module 1 • Security Fundamentals</h3>
+    
+    <div class="progress">
+    
+    <progress value="7" max="9"></progress>
+    
+    <p>Page 7 of 9</p>
+    
+    </div>
+    
+    </header>
+    
+    <hr>
+    
+    <h2 id="cryptographyTitle">Cryptography and Public Key Infrastructure (PKI)</h2>
+    
+    <p id="cryptographyIntro">
+    Encryption protects sensitive information by converting readable data into an unreadable format that only authorized users can access.
+    </p>
+    
+    <p id="pkiIntro">
+    One of the most widely used cryptographic systems is <strong>Public Key Infrastructure (PKI)</strong>, which uses two mathematically related keys.
+    </p>
+    
+    <table id="pkiTable">
+    
+    <tr id="pkiTableHeaderRow">
+        <th id="keyHeader">Key</th>
+        <th id="purposeHeader">Purpose</th>
+    </tr>
+    
+    <tr id="publicKeyRow">
+        <td id="publicKey">Public Key</td>
+        <td id="publicKeyPurpose">Encrypts data and verifies digital signatures. It can be shared freely.</td>
+    </tr>
+    
+    <tr id="privateKeyRow">
+        <td id="privateKey">Private Key</td>
+        <td id="privateKeyPurpose">Decrypts encrypted data and creates digital signatures. It must remain secret.</td>
+    </tr>
+    
+    </table>
+    
+    <div class="infoBox" id="pkiTechnologiesBox">
+        <strong id="pkiTechnologiesTitle">Common PKI Technologies</strong>
+        <ul id="pkiTechnologiesList" style="margin-top:15px; margin-left:25px; line-height:2;">
+            <li id="digitalCertificates">Digital Certificates</li>
+            <li id="certificateAuthorities">Certificate Authorities (CA)</li>
+            <li id="hardwareSecurityModules">Hardware Security Modules (HSM)</li>
+            <li id="trustedPlatformModules">Trusted Platform Modules (TPM)</li>
+        </ul>
+    </div>
+    
+    <p id="pkiUsage">
+    PKI helps secure websites, email communication, VPN connections, software updates, and many other everyday technologies.
+    </p>
+    
+    <div class="buttons">
+        <button id="readAloud7">🔊 Read Aloud</button>
+        <button id="next7">Next →</button>
+    </div>
+    
+</div>
+<!-- ====================================================== -->
+<!-- PAGE 6 -->
+
+<div id="M1Page6" class="module" style="display:none;">
+
+    <header>
+    
+    <h1>Cybersecurity Awareness Training</h1>
+    
+    <h3>Module 1 • Security Fundamentals</h3>
+    
+    <div class="progress">
+    
+    <progress value="6" max="9"></progress>
+    
+    <p>Page 6 of 9</p>
+    
+    </div>
+    
+    </header>
+    
+    <hr>
+    
+    <h2 id="securityControlsTitle">Types of Security Controls</h2>
+    
+    <p id="securityControlsIntro"></p>
+    Organizations use several layers of security controls to reduce cyber risk. No single control can stop every attack, so companies combine multiple approaches to create a strong defense.
+    </p>
+    
+    <table id="securityControlsTable">
+    
+    <tr id="securityControlsHeaderRow">
+        <th id="controlTypeHeader">Control Type</th>
+        <th id="examplesHeader">Examples</th>
+        <th id="purposeHeader">Purpose</th>
+    </tr>
+    
+    <tr id="technicalControlRow">
+        <td id="technicalControlType"><strong>Technical</strong></td>
+        <td id="technicalExamples">Firewalls, Antivirus, Encryption, MFA</td>
+        <td id="technicalPurpose">Protect systems using technology.</td>
+    </tr>
+    
+    <tr id="managerialControlRow">
+        <td id="managerialControlType"><strong>Managerial</strong></td>
+        <td id="managerialExamples">Security Policies, Risk Assessments, Audits</td>
+        <td id="managerialPurpose">Guide security planning and governance.</td>
+    </tr>
+    
+    <tr id="operationalControlRow">
+        <td id="operationalControlType"><strong>Operational</strong></td>
+        <td id="operationalExamples">Security Awareness Training, Incident Response</td>
+        <td id="operationalPurpose">Improve daily security procedures.</td>
+    </tr>
+    
+    <tr id="physicalControlRow">
+        <td id="physicalControlType"><strong>Physical</strong></td>
+        <td id="physicalExamples">Badge Readers, Cameras, Locks, Biometrics</td>
+        <td id="physicalPurpose">Protect facilities and equipment.</td>
+    </tr>
+    
+    </table>
+    
+    <div class="infoBox" id="defenseInDepthBox">
+        <strong id="defenseInDepthTitle">Defense in Depth</strong>
+        <p id="defenseInDepthDescription" style="margin-top:12px;">
+        Good cybersecurity relies on multiple layers of protection rather than a single security solution.
+        </p>
+    
+    </div>
+    
+    <div class="buttons">
+    
+    <div></div>
+    
+    <button id="next6">
+    Next →
+    </button>
+    
+    </div>
+    
+    </div>
+    
+    <!-- ====================================================== -->
+    <!-- PAGE 7 -->
+    
+    <div id="M1Page7" class="module" style="display:none;">
+    
+    <header>
+    
+    <h1>Cybersecurity Awareness Training</h1>
+    
+    <h3>Module 1 • Security Fundamentals</h3>
+    
+    <div class="progress">
+    
+    <progress value="7" max="9"></progress>
+    
+    <p>Page 7 of 9</p>
+    
+    </div>
+    
+    </header>
+    
+    <hr>
+    
+    <h2 id="cryptographyTitle">Cryptography and Public Key Infrastructure (PKI)</h2>
+    
+    <p id="cryptographyIntro">
+    Encryption protects sensitive information by converting readable data into an unreadable format that only authorized users can access.
+    </p>
+    
+    <p id="pkiIntro">
+    One of the most widely used cryptographic systems is <strong id="pkiStrong">Public Key Infrastructure (PKI)</strong>, which uses two mathematically related keys.
+    </p>
+    
+    <table id="pkiTable">
+    
+    <tr id="pkiTableHeaderRow">
+        <th id="keyHeader">Key</th>
+        <th id="purposeHeader">Purpose</th>
+    </tr>
+    
+    <tr id="publicKeyRow">
+        <td id="publicKey">Public Key</td>
+        <td id="publicKeyPurpose">Encrypts data and verifies digital signatures. It can be shared freely.</td>
+    </tr>
+    
+    <tr id="privateKeyRow">
+        <td id="privateKey">Private Key</td>
+        <td id="privateKeyPurpose">Decrypts encrypted data and creates digital signatures. It must remain secret.</td>
+    </tr>
+    
+    </table>
+    
+    <div class="infoBox" id="pkiTechnologiesBox">
+        <strong id="pkiTechnologiesTitle">Common PKI Technologies</strong>
+        <ul id="pkiTechnologiesList" style="margin-top:15px; margin-left:25px; line-height:2;">
+            <li id="digitalCertificates">Digital Certificates</li>
+            <li id="certificateAuthorities">Certificate Authorities (CA)</li>
+            <li id="hardwareSecurityModules">Hardware Security Modules (HSM)</li>
+            <li id="trustedPlatformModules">Trusted Platform Modules (TPM)</li>
+        </ul>
+    </div>
+    
+    <p id="pkiUsage">
+    PKI helps secure websites, email communication, VPN connections, software updates, and many other everyday technologies.
+    </p>
+    
+    <div class="buttons">
+    
+    <div></div>
+    
+    <button id="next7">
+    Next →
+    </button>
+    
+    </div>
+    
+    </div>
+    
+    <!-- ====================================================== -->
+    <!-- PAGE 8 -->
+    
+    <div id="M1Page8" class="module" style="display:none;">
+    
+    <header>
+    
+    <h1>Cybersecurity Awareness Training</h1>
+    
+    <h3>Module 1 • Security Fundamentals</h3>
+    
+    <div class="progress">
+    
+    <progress value="8" max="9"></progress>
+    
+    <p>Page 8 of 9</p>
+    
+    </div>
+    
+    </header>
+    
+    <hr>
+    
+    <h2 id="changeManagementTitle">Change Management</h2>
+    
+    <p id="changeManagementIntro">
+    Every modification to software, hardware, or network infrastructure should follow a formal change management process.
+    </p>
+    
+    <p id="changeManagementBenefits">
+    Proper planning reduces downtime, prevents configuration mistakes, and minimizes security risks caused by unauthorized or poorly tested changes.
+    </p>
+    
+    <table id="changeManagementTable">
+    
+    <tr id="changeManagementHeaderRow">
+        <th id="stepHeader">Step</th>
+        <th id="descriptionHeader">Description</th>
+    </tr>
+    
+    <tr id="requestRow">
+        <td id="requestStep">Request</td>
+        <td id="requestDescription">Document the proposed change.</td>
+    </tr>
+    
+    <tr id="reviewRow">
+        <td id="reviewStep">Review</td>
+        <td id="reviewDescription">Assess security and business impact.</td>
+    </tr>
+    
+    <tr id="approvalRow">
+        <td id="approvalStep">Approval</td>
+        <td id="approvalDescription">Receive management authorization.</td>
+    </tr>
+    
+    <tr id="implementationRow">
+        <td id="implementationStep">Implementation</td>
+        <td id="implementationDescription">Deploy the approved change.</td>
+    </tr>
+    
+    <tr id="verificationRow">
+        <td id="verificationStep">Verification</td>
+        <td id="verificationDescription">Confirm the change was successful.</td>
+    </tr>
+    
+    <tr id="documentationRow">
+        <td id="documentationStep">Documentation</td>
+        <td id="documentationDescription">Record the completed work.</td>
+    </tr>
+    
+    </table>
+    
+    <div class="infoBox" id="changeManagementInfoBox">
+        <strong id="whyItMattersTitle">Why It Matters</strong>
+        <p id="whyItMattersDescription" style="margin-top:12px;">
+        Structured change management improves security, accountability, system stability, and compliance.
+        </p>
+    </div>
+    
+    <div class="buttons"></div>
+        <button id="readAloud8">🔊 Read Aloud</button>
+        <button id="next8">Next →</button>
+    </div>
+    
+    </div>
+    
+    <!-- ====================================================== -->
+    <!-- PAGE 9 -->
+    
+    <div id="M1Page9" class="module" style="display:none;">
+    
+    <header>
+    
+    <h1>🎉 Module Complete</h1>
+    
+    <h3>Cybersecurity Awareness Training</h3>
+    
+    <div class="progress">
+    
+    <progress value="9" max="9"></progress>
+    
+    <p>Page 9 of 9</p>
+    
+    </div>
+    
+    </header>
+    
+    <hr>
+    
+    <div class="infoBox">
+    
+    <h2 id="congratulationsTitle" style="margin-bottom:15px;">Congratulations!</h2>
+    
+    <p id="completionMessage">
+    You have successfully completed <strong>Module 1: Security Fundamentals.</strong>
+    </p>
+    
+    <p id="understandingIntro">
+    You now understand:
+    </p>
+    
+    <ul id="understandingList" style="margin-left:30px; line-height:2;">
+        <li id="cybersecurityImportance">Why cybersecurity is important</li>
+        <li id="commonThreats">Common cyber threats</li>
+        <li id="ransomwareAttacks">Ransomware attacks</li>
+        <li id="malwareTypes">Types of malware</li>
+        <li id="securityControls">Security controls</li>
+        <li id="cryptographyAndPKI">Cryptography and PKI</li>
+        <li id="changeManagement">Change management</li>
+    </ul>
+    
+    <h2 id="continueLearningTitle">Continue Learning</h2>
+    
+    <p id="continueLearningMessage">
+    Cybersecurity is constantly evolving. Continue building your knowledge through trusted learning resources.
+    </p>
+    <p>
+    
+    <a href="https://niccs.cisa.gov/audience/cybersecurity-beginners" target="_blank">
+    
+    Cybersecurity Beginner Resources (CISA)
+    
+    </a>
+    
+    </p>
+    
+    <div class="buttons">
+    
+    <div></div>
+    
+    <button id="next9" onclick="window.location.href='Security_quiz.html';">
+    
+    End
+    
+    </button>
+    
+    </div>
+    
+    </div>
+    
     </body>
-</html>
+    
+    </html>           
 <script>
-    // just starting out will add more when I have time.
+    // Get references to the "Next" button and sections
+    const nextButton1 = document.getElementById('next1');
+    const nextButton2 = document.getElementById('next2');
+    const nextButton3 = document.getElementById('next3');
+    const nextButton4 = document.getElementById('next4');
+    const nextButton5 = document.getElementById('next5');
+    const nextButton6 = document.getElementById('next6');
+    const nextButton7 = document.getElementById('next7');
+    const nextButton8 = document.getElementById('next8');
+    const nextButton9 = document.getElementById('next9');
+
+    //read aloud
+    const readAloudButton1 = document.getElementById('readAloud1');
+    const readAloudButton2 = document.getElementById('readAloud2');
+    const readAloudButton3 = document.getElementById('readAloud3');
+    const readAloudButton4 = document.getElementById('readAloud4');
+    const readAloudButton5 = document.getElementById('readAloud5');
+    const readAloudButton6 = document.getElementById('readAloud6');
+    const readAloudButton7 = document.getElementById('readAloud7');
+    const readAloudButton8 = document.getElementById('readAloud8');
+    const readAloudButton9 = document.getElementById('readAloud9');
+    
+    // element for each page section
+    const section1 = document.getElementById('M1Page1');
+    const section2 = document.getElementById('M1Page2');
+    const section3 = document.getElementById('M1Page3');
+    const section4 = document.getElementById('M1Page4');
+    const section5 = document.getElementById('M1Page5');
+    const section6 = document.getElementById('M1Page6');
+    const section7 = document.getElementById('M1Page7');
+    const section8 = document.getElementById('M1Page8');
+    const section9 = document.getElementById('M1Page9');
+
+    // Hide section1 and show section2 when "Next" is clicked
+    nextButton1.addEventListener('click', () => {
+        section1.style.display = 'none';
+        section2.style.display = 'block';
+    });
+
+    nextButton2.addEventListener('click', () => {
+        section2.style.display = 'none';
+        section3.style.display = 'block';
+    });
+
+    nextButton3.addEventListener('click', () => {
+        section3.style.display = 'none';
+        section4.style.display = 'block';
+    });
+
+    nextButton4.addEventListener('click', () => {
+        section4.style.display = 'none';
+        section5.style.display = 'block';
+    });
+
+    nextButton5.addEventListener('click', () => {
+        section5.style.display = 'none';
+        section6.style.display = 'block';
+    });
+
+    nextButton6.addEventListener('click', () => {
+        section6.style.display = 'none';
+        section7.style.display = 'block';
+    });
+
+    nextButton7.addEventListener('click', () => {
+        section7.style.display = 'none';
+        section8.style.display = 'block';
+    });
+
+    nextButton8.addEventListener('click', () => {
+        section8.style.display = 'none';
+        section9.style.display = 'block';
+    });
+
+    // Read aloud functionality
+    readAloudButton1.addEventListener('click', () => {
+        const textToRead = document.getElementById('welcomeText').innerText + ' ' +
+                           document.getElementById('cybersecurityScope').innerText + ' ' +
+                           document.getElementById('humanMistakes').innerText + ' ' +
+                           document.getElementById('learningObjectiveBreak').innerText;
+        const speech = new SpeechSynthesisUtterance(textToRead);
+        window.speechSynthesis.speak(speech);
+    });
+
+    readAloudButton2.addEventListener('click', () => {
+        const textToRead = document.getElementById('realWorldExampleTitle').innerText + ' ' +
+                   document.getElementById('realWorldExampleIntro').innerText + ' ' +
+                   document.getElementById('realWorldExampleDetails').innerText + ' ' +
+                   document.getElementById('hacktivismTerm').innerText + ' ' +
+                   document.getElementById('hacktivismDefinition').innerText + ' ' +
+                   document.getElementById('realWorldExampleConclusion').innerText; + ' ' +
+                   document.getElementById('practiceStrongAuthentication').innerText; + ' ' +
+                   document.getElementById('practiceRegularUpdates').innerText; + ' ' +
+                   document.getElementById('practiceEncryption').innerText; + ' ' +
+                   document.getElementById('practiceMonitoring').innerText; + ' ' +
+                   document.getElementById('practiceAwarenessTraining').innerText;
+        const speech = new SpeechSynthesisUtterance(textToRead);
+        window.speechSynthesis.speak(speech);
+    });
+
+    readAloudButton3.addEventListener('click', () => {
+        const textToRead = document.getElementById('introRansomeware').innerText + ' ' +
+                   document.getElementById('ransomwareIntro').innerText + ' ' +
+                   document.getElementById('internshipExperience').innerText + ' ' +
+                   document.getElementById('incidentDetails').innerText + ' ' +
+                   document.getElementById('cybersecurityAwareness').innerText;
+        const speech = new SpeechSynthesisUtterance(textToRead);
+        window.speechSynthesis.speak(speech);
+    });
+
+    readAloudButton4.addEventListener('click', () => {
+        const textToRead = document.getElementById('commonMalwareTypes').innerText + ' ' +
+                   document.getElementById('malwareIntro').innerText + ' ' +
+                   document.getElementById('threatHeader').innerText + ' ' +
+                   document.getElementById('descriptionHeader').innerText + ' ' +
+                   document.getElementById('malwareProtectionTips').innerText;
+        const speech = new SpeechSynthesisUtterance(textToRead);
+        window.speechSynthesis.speak(speech);
+    });
+
+    readAloudButton5.addEventListener('click', () => {
+        const textToRead = document.getElementById('findingSecurityRisksTitle').innerText + ' ' +
+                   document.getElementById('findingSecurityRisksIntro').innerText + ' ' +
+                   document.getElementById('toolHeader').innerText + ' ' +
+                   document.getElementById('purposeHeader').innerText + ' ' +
+                   document.getElementById('securityTipBox').innerText;
+        const speech = new SpeechSynthesisUtterance(textToRead);
+        window.speechSynthesis.speak(speech);
+    });
+
+    readAloudButton6.addEventListener('click', () => {
+        const textToRead = document.getElementById('securityControlsTitle').innerText + ' ' +
+                   document.getElementById('securityControlsIntro').innerText + ' ' +
+                   document.getElementById('controlTypeHeader').innerText + ' ' +
+                   document.getElementById('examplesHeader').innerText + ' ' +
+                   document.getElementById('purposeHeader').innerText + ' ' +
+                   document.getElementById('defenseInDepthDescription').innerText;
+        const speech = new SpeechSynthesisUtterance(textToRead);
+        window.speechSynthesis.speak(speech);
+    });
+
+    readAloudButton7.addEventListener('click', () => {
+        const textToRead = document.getElementById('cryptographyTitle').innerText + ' ' +
+                   document.getElementById('cryptographyIntro').innerText + ' ' +
+                   document.getElementById('pkiIntro').innerText + ' ' +
+                   document.getElementById('keyHeader').innerText + ' ' +
+                   document.getElementById('purposeHeader').innerText + ' ' +
+                   document.getElementById('pkiTechnologiesTitle').innerText + ' ' +
+                   document.getElementById('pkiTechnologiesList').innerText + ' ' +
+                   document.getElementById('pkiUsage').innerText;
+        const speech = new SpeechSynthesisUtterance(textToRead);
+        window.speechSynthesis.speak(speech);
+    });
+
+    readAloudButton8.addEventListener('click', () => {
+        const textToRead = document.getElementById('changeManagementTitle').innerText + ' ' +
+                   document.getElementById('changeManagementIntro').innerText + ' ' +
+                   document.getElementById('changeManagementBenefits').innerText + ' ' +
+                   document.getElementById('stepHeader').innerText + ' ' +
+                   document.getElementById('descriptionHeader').innerText + ' ' +
+                   document.getElementById('whyItMattersTitle').innerText + ' ' +
+                   document.getElementById('whyItMattersDescription').innerText;
+        const speech = new SpeechSynthesisUtterance(textToRead);
+        window.speechSynthesis.speak(speech);
+    });
+
+    readAloudButton9.addEventListener('click', () => {
+        const textToRead = document.getElementById('congratulationsTitle').innerText + ' ' +
+                   document.getElementById('completionMessage').innerText + ' ' +
+                   document.getElementById('understandingIntro').innerText + ' ' +
+                   Array.from(document.getElementById('understandingList').children).map(item => item.innerText).join(' ') + ' ' +
+                   document.getElementById('continueLearningTitle').innerText + ' ' +
+                   document.getElementById('continueLearningMessage').innerText;
+        const speech = new SpeechSynthesisUtterance(textToRead);
+        window.speechSynthesis.speak(speech);
+    });
 </script>
