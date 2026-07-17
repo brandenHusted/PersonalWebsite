@@ -95,11 +95,13 @@
             <p>Thank you for completing the quiz!</p>
             <button onclick="prevPage()">Back</button>
         </div>
+        <button id="endButton" style="display: none;" onclick="window.location.href='Security_quiz.html';">
+            End
+        </button>
     </div>
-
     <script>
         let currentPage = 1;
-
+        // go from one question to the next and back
         function showPage(pageNumber) {
             document.querySelectorAll('.page').forEach((page, index) => {
                 page.classList.remove('active');
@@ -122,6 +124,18 @@
                 showPage(currentPage);
             }
         }
+
+        // Show the end button when reaching the last page
+        function nextPage() {
+            if (currentPage < 3) {
+            currentPage++;
+            showPage(currentPage);
+            if (currentPage === 3) {
+                document.getElementById('endButton').style.display = 'block';
+            }
+            }
+        }
+
     </script>
 </body>
 </html>
