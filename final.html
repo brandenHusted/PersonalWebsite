@@ -1,12 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <title>Security Training Modules</title>
-    </head>
-    <body>
-        <p>Welcome to module one of my security training modules. Here we will learn the basics of security in the world of IT.</p>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Training Modules</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background: #007BFF;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        button {
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0.5rem 0;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        form {
+            margin: 1rem 0;
+        }
+
+        input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Security Training Modules</h1>
+    </header>
+    <div class="container">
+        <div id="page1" class="page active">
+            <p>Welcome to module one of our security training modules. Here, we will learn the basics of security in the world of IT.</p>
+            <button onclick="nextPage()">Next</button>
+        </div>
+
+        <div id="page2" class="page">
+            <p><strong>Question 1:</strong> What does HTTPS stand for?</p>
+            <form>
+                <label>
+                    <input type="radio" name="answer" value="1">
+                    HyperText Transfer Protocol Secure
+                </label><br>
+                <label>
+                    <input type="radio" name="answer" value="2">
+                    HyperText Transfer Protocol Standard
+                </label><br>
+                <label>
+                    <input type="radio" name="answer" value="3">
+                    High Transfer Protocol Secure
+                </label>
+            </form>
+            <button onclick="prevPage()">Back</button>
+            <button onclick="nextPage()">Next</button>
+        </div>
+
+        <div id="page3" class="page">
+            <p>Thank you for completing the quiz!</p>
+            <button onclick="prevPage()">Back</button>
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 1;
+
+        function showPage(pageNumber) {
+            document.querySelectorAll('.page').forEach((page, index) => {
+                page.classList.remove('active');
+                if (index + 1 === pageNumber) {
+                    page.classList.add('active');
+                }
+            });
+        }
+
+        function nextPage() {
+            if (currentPage < 3) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        }
+    </script>
+</body>
 </html>
-<script>
-    // this is security_quiz final exam.
-</script>
