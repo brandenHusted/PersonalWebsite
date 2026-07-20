@@ -2,7 +2,7 @@ import pandas as pd
 import yfinance as yf
 import pyodbc
 
-# Connect to the SQL Server database and add stock market data for Apple (AAPL) from 2020-01-01 to 2023-01-01 to the DailySTOCKDATA table. Then, query the database for any days where the stock price dropped by 5% or more compared to the previous day.
+# Connect to SQL Server
 connect = pyodbc.connect(
     'Driver={ODBC Driver 18 for SQL Server};'
     'Server=localhost;'
@@ -13,27 +13,46 @@ connect = pyodbc.connect(
 
 cursor = connect.cursor()
 
-connect.commit()
+# Download Apple stock data
+data = yf.download(
+    "AAPL",
+    start="2020-01-01",
+    end="2023-01-01"
+)
 
-data = yf.download("AAPL", start="2020-01-01", end="2023-01-01")
+# Fix yfinance MultiIndex columns
+if isinstance(data.columns, pd.MultiIndex):
+    data.columns = data.columns.get_level_values(0)
 
+# Save CSV
 data.to_csv("AAPL_stock_data.csv")
 
 print("Data downloaded and saved to AAPL_stock_data.csv")
 
+
+# Insert stock data into SQL Server
 for index, row in data.iterrows():
-    cursor.execute("""INSERT INTO DailySTOCKDATA (TradeDate, Ticker, OpenPrice, HighPrice, LowPrice, ClosePrice, Volume)
-    VALUES (?, ?, ?, ?, ?, ?, ?)""",
-    index.date(),
-    "AAPL",
-    float(row['Open']),
-    float(row['High']),
-    float(row['Low']),
-    float(row['Close']),
-    int(row['Volume']))
+
+    cursor.execute("""
+        INSERT INTO DailySTOCKDATA 
+        (TradeDate, Ticker, OpenPrice, HighPrice, LowPrice, ClosePrice, Volume)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+    """,
+    (
+        index.date(),
+        "AAPL",
+        float(row["Open"]),
+        float(row["High"]),
+        float(row["Low"]),
+        float(row["Close"]),
+        int(row["Volume"])
+    ))
+
 
 connect.commit()
 
+
+# Find stock drops greater than 5%
 query = """
 SELECT *
 FROM
@@ -59,6 +78,8 @@ FROM
 WHERE Percent_Change <= -5;
 """
 
+
+# Read SQL results
 results = pd.read_sql(query, connect)
 
 print(results)
