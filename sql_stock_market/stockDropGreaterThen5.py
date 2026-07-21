@@ -76,7 +76,7 @@ WHERE Percent_Change <= -5;
 """
 
 # Read SQL results
-results = pd.read_sql(query, connect)
+results = pd.read_sql_query(query, connect)
 
 # Plot the results
 plt.figure(figsize=(10, 6))
