@@ -1,6 +1,7 @@
 import pandas as pd
 import yfinance as yf
 import pyodbc
+import matplotlib.pyplot as plt
 
 # Connect to SQL Server
 connect = pyodbc.connect(
@@ -29,10 +30,8 @@ data.to_csv("AAPL_stock_data.csv")
 
 print("Data downloaded and saved to AAPL_stock_data.csv")
 
-
 # Insert stock data into SQL Server
 for index, row in data.iterrows():
-
     cursor.execute("""
         INSERT INTO DailySTOCKDATA 
         (TradeDate, Ticker, OpenPrice, HighPrice, LowPrice, ClosePrice, Volume)
@@ -48,9 +47,7 @@ for index, row in data.iterrows():
         int(row["Volume"])
     ))
 
-
 connect.commit()
-
 
 # Find stock drops greater than 5%
 query = """
@@ -78,10 +75,18 @@ FROM
 WHERE Percent_Change <= -5;
 """
 
-
 # Read SQL results
 results = pd.read_sql(query, connect)
 
-print(results)
+# Plot the results
+plt.figure(figsize=(10, 6))
+plt.plot(results['TradeDate'], results['ClosePrice'], marker='o', linestyle='-', color='red')
+plt.title('Stock Drops Greater Than 5%')
+plt.xlabel('Trade Date')
+plt.ylabel('Close Price')
+plt.xticks(rotation=45)
+plt.grid()
+plt.tight_layout()
+plt.show()
 
 connect.close()
