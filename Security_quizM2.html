@@ -599,7 +599,7 @@ Next →
     <h2 id="securityControlsTitle">More attack surfaces</h2>
     
     <p id="securityControlsIntro">
-    Some more attack surfaces are Unsupported systems and applications, open service ports, default credentials, managed service providers, and unsecure networks like wireless, wired, and bluetooth.
+    Some more attack surfaces are unsupported systems and applications, open service ports, default credentials, managed service providers, and unsecure networks like wireless, wired, and bluetooth.
     </p>
     
     <p id = "securitycon"> In cybersecurity agent based systems are  modeled on a pull communication style. The client is the central server that pulls data from agents on demmand. Agentless Security is the same but without agents or bots carring out the scanning of the network for you, this operates in a push communication style. You push associated software to a remote system on a periodic basis. </p>
@@ -634,47 +634,18 @@ Next →
     
     <hr>
     
-    <h2 id="cryptographyTitle">Cryptography and Public Key Infrastructure (PKI)</h2>
+    <h2 id="cryptographyTitle">Purpose of mitigation techniques used to secure an enterprise</h2>
     
     <p id="cryptographyIntro">
-    Encryption protects sensitive information by converting readable data into an unreadable format that only authorized users can access.
+    You can divide the network into segments to stop attacks from having full access to your network via segmentation. You can impliment an access control list, allow list and ecrypt your network to block out attackers.
     </p>
     
     <p id="pkiIntro">
-    One of the most widely used cryptographic systems is <strong>Public Key Infrastructure (PKI)</strong>, which uses two mathematically related keys.
+    Least privilege technique is a technique that give users only the permissions that they need to do their job and nothing more.Also decommissioning devices is a good way to keep devices up to date when updates become unavilable. 
     </p>
     
-    <table id="pkiTable">
-    
-    <tr id="pkiTableHeaderRow">
-        <th id="keyHeader">Key</th>
-        <th id="purposeHeader">Purpose</th>
-    </tr>
-    
-    <tr id="publicKeyRow">
-        <td id="publicKey">Public Key</td>
-        <td id="publicKeyPurpose">Encrypts data and verifies digital signatures. It can be shared freely.</td>
-    </tr>
-    
-    <tr id="privateKeyRow">
-        <td id="privateKey">Private Key</td>
-        <td id="privateKeyPurpose">Decrypts encrypted data and creates digital signatures. It must remain secret.</td>
-    </tr>
-    
-    </table>
-    
-    <div class="infoBox" id="pkiTechnologiesBox">
-        <strong id="pkiTechnologiesTitle">Common PKI Technologies</strong>
-        <ul id="pkiTechnologiesList" style="margin-top:15px; margin-left:25px; line-height:2;">
-            <li id="digitalCertificates">Digital Certificates</li>
-            <li id="certificateAuthorities">Certificate Authorities (CA)</li>
-            <li id="hardwareSecurityModules">Hardware Security Modules (HSM)</li>
-            <li id="trustedPlatformModules">Trusted Platform Modules (TPM)</li>
-        </ul>
-    </div>
-    
     <p id="pkiUsage">
-    PKI helps secure websites, email communication, VPN connections, software updates, and many other everyday technologies.
+    You can also use host-based firewalls, HIPS (host based intrusion prevention) to block unwanted atttackers. Disable unused ports, change passwords regularly, and remove unnesscessary software.
     </p>
     
     <div class="buttons">
@@ -706,7 +677,7 @@ Next →
     
     <hr>
     
-    <h2 id="securityControlsTitle">Types of Security Controls</h2>
+    <h2 id="securityControlsTitle">Given an scenario, analyze indicators of malicious activity.</h2>
     
     <p id="securityControlsIntro"></p>
     Organizations use several layers of security controls to reduce cyber risk. No single control can stop every attack, so companies combine multiple approaches to create a strong defense.
@@ -715,41 +686,36 @@ Next →
     <table id="securityControlsTable">
     
     <tr id="securityControlsHeaderRow">
-        <th id="controlTypeHeader">Control Type</th>
+        <th id="controlTypeHeader">Attacks</th>
         <th id="examplesHeader">Examples</th>
-        <th id="purposeHeader">Purpose</th>
     </tr>
     
     <tr id="technicalControlRow">
-        <td id="technicalControlType"><strong>Technical</strong></td>
-        <td id="technicalExamples">Firewalls, Antivirus, Encryption, MFA</td>
-        <td id="technicalPurpose">Protect systems using technology.</td>
+        <td id="technicalControlType"><strong>Physical attacks</strong></td>
+        <td id="technicalExamples">Brute force, radio frequency indentification, and enviromental</td>
     </tr>
     
     <tr id="managerialControlRow">
-        <td id="managerialControlType"><strong>Managerial</strong></td>
-        <td id="managerialExamples">Security Policies, Risk Assessments, Audits</td>
-        <td id="managerialPurpose">Guide security planning and governance.</td>
+        <td id="managerialControlType"><strong>Network Attacks</strong></td>
+        <td id="managerialExamples">Distributed denial-of-service, amplified, reflected, DNS attacks, wireless, On-path, credential replay, and malicious code.</td>
     </tr>
     
     <tr id="operationalControlRow">
-        <td id="operationalControlType"><strong>Operational</strong></td>
-        <td id="operationalExamples">Security Awareness Training, Incident Response</td>
-        <td id="operationalPurpose">Improve daily security procedures.</td>
+        <td id="operationalControlType"><strong>Application attacks</strong></td>
+        <td id="operationalExamples">Injection, Buffer overflow, Replay, Privilege escalation, forgery, and directory traversal.</td>
     </tr>
     
     <tr id="physicalControlRow">
-        <td id="physicalControlType"><strong>Physical</strong></td>
-        <td id="physicalExamples">Badge Readers, Cameras, Locks, Biometrics</td>
-        <td id="physicalPurpose">Protect facilities and equipment.</td>
+        <td id="physicalControlType"><strong>Cryptographic and password attacks</strong></td>
+        <td id="physicalExamples">Downgrade, Collision, Birthday, Spraying, and brute force.</td>
     </tr>
     
     </table>
     
     <div class="infoBox" id="defenseInDepthBox">
-        <strong id="defenseInDepthTitle">Defense in Depth</strong>
+        <strong id="defenseInDepthTitle">indicators in Depth</strong>
         <p id="defenseInDepthDescription" style="margin-top:12px;">
-        Good cybersecurity relies on multiple layers of protection rather than a single security solution.
+        Indicators of attack are, account lockout, concurrent session usage, blocked content, out of cycle logging, resource consumption, etc.
         </p>
     
     </div>
@@ -828,9 +794,7 @@ Next →
         </ul>
     </div>
     
-    <p id="pkiUsage">
-    PKI helps secure websites, email communication, VPN connections, software updates, and many other everyday technologies.
-    </p>
+    
     
     <div class="buttons">
     
@@ -1147,10 +1111,6 @@ Next →
         const textToRead = document.getElementById('cryptographyTitle').innerText + ' ' +
                    document.getElementById('cryptographyIntro').innerText + ' ' +
                    document.getElementById('pkiIntro').innerText + ' ' +
-                   document.getElementById('keyHeader').innerText + ' ' +
-                   document.getElementById('purposeHeader').innerText + ' ' +
-                   document.getElementById('pkiTechnologiesTitle').innerText + ' ' +
-                   document.getElementById('pkiTechnologiesList').innerText + ' ' +
                    document.getElementById('pkiUsage').innerText;
         const speech = new SpeechSynthesisUtterance(textToRead);
         window.speechSynthesis.speak(speech);
