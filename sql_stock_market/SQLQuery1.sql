@@ -21,7 +21,7 @@ CREATE TABLE PriceAnomalies (
     VolumeChangePrecent DECIMAL(12,2),
     AnomalyType VARCHAR(50)
 
-);
+);*/
 
 SELECT *
 FROM
@@ -94,38 +94,4 @@ GROUP BY
     MONTH(TradeDate),
     Ticker
 
-ORDER BY Month;*/
--- wow factor anomaly detection view on apple stock market
-CREATE VIEW Stock_Anomaly_Alerts AS
-
-SELECT
-    TradeDate,
-    Ticker,
-    ClosePrice,
-
-    LAG(ClosePrice) OVER(
-        PARTITION BY Ticker
-        ORDER BY TradeDate
-    ) AS Previous_Close,
-
-
-    ((ClosePrice -
-        LAG(ClosePrice) OVER(
-            PARTITION BY Ticker
-            ORDER BY TradeDate
-        ))
-    /
-        LAG(ClosePrice) OVER(
-            PARTITION BY Ticker
-            ORDER BY TradeDate
-        )) * 100 AS Percent_Change,
-
-
-    AVG(ClosePrice) OVER(
-        PARTITION BY Ticker
-        ORDER BY TradeDate
-        ROWS BETWEEN 29 PRECEDING AND CURRENT ROW
-    ) AS Moving_Average_30_Day
-
-
-FROM DailySTOCKDATA;
+ORDER BY Month;
