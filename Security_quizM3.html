@@ -489,63 +489,48 @@ Next →
     
     <hr>
     
-    <h2 id="commonMalwareTypes">Common Malware Types</h2>
+    <h2 id="commonMalwareTypes">Compare and contrast concepts and strategies to protect data.</h2>
     
     <p id="malwareIntro">
-    Cybercriminals use many different forms of malware to compromise computers, steal information, or disrupt services. Understanding these threats is the first step toward defending against them.
+    To compare and contrast strategies to protect data, you need to know the different types of data. You can have data that is regulated in your organization, like HIPAA. You can have trade secrets that are protected by intellectual property laws. Legal information is protected by attorney-client privilege. You can have personal data that is protected by privacy laws. You can have financial data that is protected by financial regulations. You can have operational data that is protected by internal policies. You can have public data that is not protected by any laws or regulations. Data can also be human readable and non-human readable like cipher text.
     </p>
     
     <table>
     
     <tr>
     
-    <th id="threatHeader">Threat</th>
+    <th id="threatHeader">Data classifications</th>
     <th id="descriptionHeader">Description</th>
     </tr>
     
     <tr>
-    <td id="ransomwareThreat">Ransomware</td>
-    <td id="ransomwareDescription">Encrypts files or systems until a ransom is demanded.</td>
+    <td id="ransomwareThreat">Sensitive</td>
+    <td id="ransomwareDescription">Confidential information that requires protection because unauthorized access or exposure can cause harm like financial records, health information or passwords.</td>
     </tr>
     
     <tr>
-    <td id="trojanHorseThreat">Trojan Horse</td>
-    <td id="trojanHorseDescription">Disguises itself as legitimate software to trick users into installing malware.</td>
+    <td id="trojanHorseThreat">Confidential</td>
+    <td id="trojanHorseDescription">Private information restricted to authorized individuals because its exposure causes financial loss or legal trouble, this could be business secrets and or login keys.</td>
     </tr>
     
     <tr>
-    <td id="virusThreat">Virus</td>
-    <td id="virusDescription">Infects programs and spreads when infected files are executed.</td>
+    <td id="virusThreat">Public</td>
+    <td id="virusDescription">Information that is legally available to everyone.</td>
     </tr>
     
     <tr>
-    <td id="wormThreat">Worm</td>
-    <td id="wormDescription">Self-replicates across networks without user interaction.</td>
+    <td id="wormThreat">Restricted</td>
+    <td id="wormDescription">Highly sensitive information that requires strict access controls like Social Security numbers.</td>
     </tr>
     
     <tr>
-    <td id="spywareThreat">Spyware</td>
-    <td id="spywareDescription">Secretly monitors user activity and collects sensitive information.</td>
+    <td id="spywareThreat">Private</td>
+    <td id="spywareDescription">Information that is hidden to the public like Company trade secrets.</td>
     </tr>
     
     <tr>
-    <td id="keyloggerThreat">Keylogger</td>
-    <td id="keyloggerDescription">Records every keystroke to steal passwords and personal information.</td>
-    </tr>
-    
-    <tr>
-    <td id="rootkitThreat">Rootkit</td>
-    <td id="rootkitDescription">Provides attackers with hidden administrative access to a system.</td>
-    </tr>
-    
-    <tr>
-    <td id="logicBombThreat">Logic Bomb</td>
-    <td id="logicBombDescription">Malicious code that activates only when specific conditions are met.</td>
-    </tr>
-    
-    <tr>
-    <td id="bloatwareThreat">Bloatware</td>
-    <td id="bloatwareDescription">Unwanted software that consumes resources and may introduce security risks.</td>
+    <td id="keyloggerThreat">Critical</td>
+    <td id="keyloggerDescription">Any information vital to an organization's operations, decision-making, regulatory compliance, or financial success. This could be supply chain data or financial pricing information to name a few examples.</td>
     </tr>
     
     </tr>
@@ -557,7 +542,7 @@ Next →
     <strong>Remember:</strong>
     
     <p id="malwareProtectionTips"></p>
-    The best protection against malware is keeping software updated, avoiding suspicious downloads, using antivirus software, and maintaining secure backups.
+    Data protection strategies include encryption, access controls, regular backups, and employee training. Implementing these measures helps safeguard sensitive information from unauthorized access, loss, or corruption.
     </p>
     
     </div>
@@ -602,62 +587,46 @@ Next →
 
     <hr>
 
-    <h2 id="findingSecurityRisksTitle">Finding Potential Security Risks</h2>
+    <h2 id="findingSecurityRisksTitle">General Data Considerations</h2>
 
     <p id="findingSecurityRisksIntro">
-    Several free online tools can help identify suspicious websites, malicious files, and unusual network activity.
+    Data usually comes in three different states: at rest, in transit, and in use. Data at rest is stored on a device or server. Data in transit is being transmitted over a network. Data in use is being processed by an application or system. Each state has different security considerations and requires different protection measures.
     </p>
 
     <table id="securityToolsTable">
 
     <tr id="securityToolsHeaderRow">
-        <th id="toolHeader">Tool</th>
-        <th id="purposeHeader">Purpose</th>
+        <th id="toolHeader">State</th>
+        <th id="purposeHeader">What it does</th>
     </tr>
 
     <tr id="virusTotalRow">
-        <td id="virusTotalTool">VirusTotal</td>
-        <td id="virusTotalPurpose">Scans files and URLs using dozens of antivirus engines.</td>
+        <td id="virusTotalTool">Data at rest</td>
+        <td id="virusTotalPurpose">Data at rest is stored in a server or device waiting to be used.</td>
     </tr>
 
     <tr id="urlReputationRow">
-        <td id="urlReputationTool">URL Reputation Services</td>
-        <td id="urlReputationPurpose">Checks whether websites are considered safe before visiting them.</td>
+        <td id="urlReputationTool">Data in transit</td>
+        <td id="urlReputationPurpose">This data is moving across the network like as soon as use send an email the data is traversing through the network to a router for example.</td>
     </tr>
 
     <tr id="networkMonitoringRow">
-        <td id="networkMonitoringTool">Network Monitoring</td>
-        <td id="networkMonitoringPurpose">Helps identify applications making unexpected network connections.</td>
+        <td id="networkMonitoringTool">Data in use</td>
+        <td id="networkMonitoringPurpose">Data in use is data in an application like playing candy crush on your phone.</td>
     </tr>
 
     </table>
 
     <div class="infoBox" id="securityTipBox">
-        <strong id="securityTipTitle">Security Tip</strong>
+        <strong id="securityTipTitle">Data Tips to secure data</strong>
         <ul id="securityTipList" style="margin-top:15px; margin-left:25px; line-height:2;">
-            <li id="verifyWebsiteTip">Verify website addresses before logging in.</li>
-            <li id="scanDownloadsTip">Scan unknown downloads before opening them.</li>
-            <li id="monitorNetworkTip">Monitor unusual network activity.</li>
-            <li id="updateSoftwareTip">Keep browsers and antivirus software updated.</li>
-            <li id="browserWarningsTip">Never ignore browser security warnings.</li>
+            <li id="verifyWebsiteTip">Have geographic restrictions.</li>
+            <li id="scanDownloadsTip">Encrypt/hash your data.</li>
+            <li id="monitorNetworkTip">Use Tokenization, obfuscation (make something confusing on purpose), and or masking (hide your true self).</li>
+            <li id="updateSoftwareTip">Segment your network.</li>
+            <li id="browserWarningsTip">Have permission restrictions.</li>
         </ul>
     </div>
-
-    <p>
-
-    Useful Resources:
-
-    </p>
-
-    <ul style="margin-left:30px; line-height:2;">
-
-    <li><a href="https://www.virustotal.com/" target="_blank">VirusTotal</a></li>
-
-    <li><a href="https://transparencyreport.google.com/safe-browsing/search" target="_blank">Google Safe Browsing</a></li>
-
-    <li><a href="https://www.cisa.gov/" target="_blank">CISA Cybersecurity Resources</a></li>
-
-    </ul>
 
     <div class="buttons">
         <button id="readAloud5">
@@ -693,50 +662,55 @@ Next →
     
     <hr>
     
-    <h2 id="securityControlsTitle">Types of Security Controls</h2>
+    <h2 id="securityControlsTitle">Given a scenario, apply security principles to secure enterprise infranstructure.</h2>
     
     <p id="securityControlsIntro">
-    Organizations use several layers of security controls to reduce cyber risk. No single control can stop every attack, so companies combine multiple approaches to create a strong defense.
+    To secure enterprise infranstructure, you need to understand where devices are placed, security zones, and analyze attack surfaces which are all entry points on your network. You should always monitor all devices connected to your infranstructure.
     </p>
     
     <table id="securityControlsTable">
     
     <tr id="securityControlsHeaderRow">
-        <th id="controlTypeHeader">Control Type</th>
+        <th id="controlTypeHeader">Infrastructure consideration</th>
         <th id="examplesHeader">Examples</th>
         <th id="purposeHeader">Purpose</th>
     </tr>
     
     <tr id="technicalControlRow">
-        <td id="technicalControlType"><strong>Technical</strong></td>
-        <td id="technicalExamples">Firewalls, Antivirus, Encryption, MFA</td>
-        <td id="technicalPurpose">Protect systems using technology.</td>
+        <td id="technicalControlType"><strong>Failure modes</strong></td>
+        <td id="technicalExamples">Fail-open and fail-close</td>
+        <td id="technicalPurpose">Fail-open is when an error occurs like loss of power access or flow of data will continue while fail-close blocks and denies traffic.</td>
     </tr>
     
     <tr id="managerialControlRow">
-        <td id="managerialControlType"><strong>Managerial</strong></td>
-        <td id="managerialExamples">Security Policies, Risk Assessments, Audits</td>
-        <td id="managerialPurpose">Guide security planning and governance.</td>
+        <td id="managerialControlType"><strong>Device attributes</strong></td>
+        <td id="managerialExamples">Active, passive, Inline, and tap/monitor</td>
+        <td id="managerialPurpose">Active devices require external power and can generate power while passive devices do not and only consume power. Inline devices make all data pass through them to monitor data and tap/monitor sit out-of-band. They receive a copy or exact of network traffic to analyze for threats.</td>
     </tr>
     
     <tr id="operationalControlRow">
-        <td id="operationalControlType"><strong>Operational</strong></td>
-        <td id="operationalExamples">Security Awareness Training, Incident Response</td>
-        <td id="operationalPurpose">Improve daily security procedures.</td>
+        <td id="operationalControlType"><strong>Network applications</strong></td>
+        <td id="operationalExamples">Jump Server, Proxy Server, IPS/IDS, load balancer, and sensors</td>
+        <td id="operationalPurpose">A jump server is a secure server used to manage and access devices in a separate security zone, reducing the risk of unauthorized access. Proxy server acts as an intermediary between your device and the internet. IPS prevents intruders on your network and IDS detects and monitors intruders on your network. Load balancers distribute network traffic across multiple servers to ensure no single server becomes overwhelmed, improving performance and reliability. Sensors monitor network activity and collect data to detect and respond to potential security threats.</td>
     </tr>
     
     <tr id="physicalControlRow">
-        <td id="physicalControlType"><strong>Physical</strong></td>
-        <td id="physicalExamples">Badge Readers, Cameras, Locks, Biometrics</td>
-        <td id="physicalPurpose">Protect facilities and equipment.</td>
+        <td id="physicalControlType"><strong>Port security and firewall types</strong></td>
+        <td id="physicalExamples">802.1X, EAP, WAF, UTM, NGFW, layer 4/7</td>
+        <td id="physicalPurpose"><strong>802.1X:</strong> A network access control protocol that authenticates devices before granting access.<br>
+            <strong>EAP:</strong> Extensible Authentication Protocol, used for secure communication in wireless networks.<br>
+            <strong>WAF:</strong> Web Application Firewall, protects web applications by filtering and monitoring HTTP traffic.<br>
+            <strong>UTM:</strong> Unified Threat Management, integrates multiple security features like firewall, antivirus, and intrusion prevention.<br>
+            <strong>NGFW:</strong> Next-Generation Firewall, provides advanced features like application awareness and intrusion prevention.<br>
+            <strong>Layer 4/7:</strong> Refers to network layers; Layer 4 handles transport protocols (e.g., TCP/UDP), and Layer 7 focuses on application-level data.</td>
     </tr>
     
     </table>
     
     <div class="infoBox" id="defenseInDepthBox">
-        <strong id="defenseInDepthTitle">Defense in Depth</strong>
+        <strong id="defenseInDepthTitle">Network Infrastructure</strong>
         <p id="defenseInDepthDescription" style="margin-top:12px;">
-        Good cybersecurity relies on multiple layers of protection rather than a single security solution.
+        Select effective controls to have a network infranstructure that is secure under VPNs, tunneling under TLS (encapsulating one data packet inside another data packet), using IPSec, a software defined wide area network (SD-WAN), and use SASE which means secure access service edge which is a cloud based framework that combines network and security into a single unified platform.
         </p>
     </div>
     
@@ -756,7 +730,7 @@ Next →
     
     <h1>Cybersecurity Awareness Training</h1>
     
-    <h3>Module 1 • Security Fundamentals</h3>
+    <h3>Module 3 • Securing/protecting your own Device</h3>
     
     <div class="progress">
     
@@ -770,47 +744,28 @@ Next →
     
     <hr>
     
-    <h2 id="cryptographyTitle">Cryptography and Public Key Infrastructure (PKI)</h2>
+    <h2 id="cryptographyTitle">Explain the importance of resilience and recovery in security architecture.</h2>
     
     <p id="cryptographyIntro">
-    Encryption protects sensitive information by converting readable data into an unreadable format that only authorized users can access.
+    Data should have high availability, integrity, and confidentiality. You can offer high availability by load balancing, clustering, and failover. You can offer integrity by hashing, checksums, and digital signatures. You can offer confidentiality by encrypting data at rest and in transit.
     </p>
     
     <p id="pkiIntro">
-    One of the most widely used cryptographic systems is <strong>Public Key Infrastructure (PKI)</strong>, which uses two mathematically related keys.
+    Data centers play a critical role in ensuring data availability and operational continuity. To enhance redundancy and minimize downtime, data centers should be strategically located in geographically diverse regions. Implementing a hot site—a fully operational backup facility capable of immediate activation in the event of a primary site failure—is essential for maintaining seamless business operations. Alternatively, a warm site offers partial readiness and requires some preparation to become fully functional, while a cold site necessitates significant effort and time to achieve operational status.
     </p>
     
-    <table id="pkiTable">
-    
-    <tr id="pkiTableHeaderRow">
-        <th id="keyHeader">Key</th>
-        <th id="purposeHeader">Purpose</th>
-    </tr>
-    
-    <tr id="publicKeyRow">
-        <td id="publicKey">Public Key</td>
-        <td id="publicKeyPurpose">Encrypts data and verifies digital signatures. It can be shared freely.</td>
-    </tr>
-    
-    <tr id="privateKeyRow">
-        <td id="privateKey">Private Key</td>
-        <td id="privateKeyPurpose">Decrypts encrypted data and creates digital signatures. It must remain secret.</td>
-    </tr>
-    
-    </table>
-    
     <div class="infoBox" id="pkiTechnologiesBox">
-        <strong id="pkiTechnologiesTitle">Common PKI Technologies</strong>
+        <strong id="pkiTechnologiesTitle">Resilience and recovery</strong>
         <ul id="pkiTechnologiesList" style="margin-top:15px; margin-left:25px; line-height:2;">
-            <li id="digitalCertificates">Digital Certificates</li>
-            <li id="certificateAuthorities">Certificate Authorities (CA)</li>
-            <li id="hardwareSecurityModules">Hardware Security Modules (HSM)</li>
-            <li id="trustedPlatformModules">Trusted Platform Modules (TPM)</li>
+            <li id="digitalCertificates">Simulations/fail overs</li>
+            <li id="certificateAuthorities">Capacity planning</li>
+            <li id="hardwareSecurityModules">Backups for hardware and software</li>
+            <li id="trustedPlatformModules">Efficient Power</li>
         </ul>
     </div>
     
     <p id="pkiUsage">
-    PKI helps secure websites, email communication, VPN connections, software updates, and many other everyday technologies.
+    Platfrom diversity is essential for resilience and recovery in security architecture. By using a variety of platforms, organizations can reduce the risk of a single point of failure and ensure that critical systems remain operational even in the event of an attack or outage. This approach enhances overall system reliability and helps maintain business continuity.
     </p>
     
     <div class="buttons">
@@ -820,180 +775,19 @@ Next →
     
 </div>
 <!-- ====================================================== -->
-<!-- PAGE 6 -->
+<!-- PAGE 8 -->
 
-<div id="M1Page6" class="module" style="display:none;">
+<div id="M1Page8" class="module" style="display:none;">
 
     <header>
     
     <h1>Cybersecurity Awareness Training</h1>
     
-    <h3>Module 1 • Security Fundamentals</h3>
+    <h3>Module 3 • Securing/protecting your own Device</h3>
     
     <div class="progress">
     
     <progress value="6" max="9"></progress>
-    
-    <p>Page 6 of 9</p>
-    
-    </div>
-    
-    </header>
-    
-    <hr>
-    
-    <h2 id="securityControlsTitle">Types of Security Controls</h2>
-    
-    <p id="securityControlsIntro"></p>
-    Organizations use several layers of security controls to reduce cyber risk. No single control can stop every attack, so companies combine multiple approaches to create a strong defense.
-    </p>
-    
-    <table id="securityControlsTable">
-    
-    <tr id="securityControlsHeaderRow">
-        <th id="controlTypeHeader">Control Type</th>
-        <th id="examplesHeader">Examples</th>
-        <th id="purposeHeader">Purpose</th>
-    </tr>
-    
-    <tr id="technicalControlRow">
-        <td id="technicalControlType"><strong>Technical</strong></td>
-        <td id="technicalExamples">Firewalls, Antivirus, Encryption, MFA</td>
-        <td id="technicalPurpose">Protect systems using technology.</td>
-    </tr>
-    
-    <tr id="managerialControlRow">
-        <td id="managerialControlType"><strong>Managerial</strong></td>
-        <td id="managerialExamples">Security Policies, Risk Assessments, Audits</td>
-        <td id="managerialPurpose">Guide security planning and governance.</td>
-    </tr>
-    
-    <tr id="operationalControlRow">
-        <td id="operationalControlType"><strong>Operational</strong></td>
-        <td id="operationalExamples">Security Awareness Training, Incident Response</td>
-        <td id="operationalPurpose">Improve daily security procedures.</td>
-    </tr>
-    
-    <tr id="physicalControlRow">
-        <td id="physicalControlType"><strong>Physical</strong></td>
-        <td id="physicalExamples">Badge Readers, Cameras, Locks, Biometrics</td>
-        <td id="physicalPurpose">Protect facilities and equipment.</td>
-    </tr>
-    
-    </table>
-    
-    <div class="infoBox" id="defenseInDepthBox">
-        <strong id="defenseInDepthTitle">Defense in Depth</strong>
-        <p id="defenseInDepthDescription" style="margin-top:12px;">
-        Good cybersecurity relies on multiple layers of protection rather than a single security solution.
-        </p>
-    
-    </div>
-    
-    <div class="buttons">
-    
-    <div></div>
-    
-    <button id="next6">
-    Next →
-    </button>
-    
-    </div>
-    
-    </div>
-    
-    <!-- ====================================================== -->
-    <!-- PAGE 7 -->
-    
-    <div id="M1Page7" class="module" style="display:none;">
-    
-    <header>
-    
-    <h1>Cybersecurity Awareness Training</h1>
-    
-    <h3>Module 1 • Security Fundamentals</h3>
-    
-    <div class="progress">
-    
-    <progress value="7" max="9"></progress>
-    
-    <p>Page 7 of 9</p>
-    
-    </div>
-    
-    </header>
-    
-    <hr>
-    
-    <h2 id="cryptographyTitle">Cryptography and Public Key Infrastructure (PKI)</h2>
-    
-    <p id="cryptographyIntro">
-    Encryption protects sensitive information by converting readable data into an unreadable format that only authorized users can access.
-    </p>
-    
-    <p id="pkiIntro">
-    One of the most widely used cryptographic systems is <strong id="pkiStrong">Public Key Infrastructure (PKI)</strong>, which uses two mathematically related keys.
-    </p>
-    
-    <table id="pkiTable">
-    
-    <tr id="pkiTableHeaderRow">
-        <th id="keyHeader">Key</th>
-        <th id="purposeHeader">Purpose</th>
-    </tr>
-    
-    <tr id="publicKeyRow">
-        <td id="publicKey">Public Key</td>
-        <td id="publicKeyPurpose">Encrypts data and verifies digital signatures. It can be shared freely.</td>
-    </tr>
-    
-    <tr id="privateKeyRow">
-        <td id="privateKey">Private Key</td>
-        <td id="privateKeyPurpose">Decrypts encrypted data and creates digital signatures. It must remain secret.</td>
-    </tr>
-    
-    </table>
-    
-    <div class="infoBox" id="pkiTechnologiesBox">
-        <strong id="pkiTechnologiesTitle">Common PKI Technologies</strong>
-        <ul id="pkiTechnologiesList" style="margin-top:15px; margin-left:25px; line-height:2;">
-            <li id="digitalCertificates">Digital Certificates</li>
-            <li id="certificateAuthorities">Certificate Authorities (CA)</li>
-            <li id="hardwareSecurityModules">Hardware Security Modules (HSM)</li>
-            <li id="trustedPlatformModules">Trusted Platform Modules (TPM)</li>
-        </ul>
-    </div>
-    
-    <p id="pkiUsage">
-    PKI helps secure websites, email communication, VPN connections, software updates, and many other everyday technologies.
-    </p>
-    
-    <div class="buttons">
-    
-    <div></div>
-    
-    <button id="next7">
-    Next →
-    </button>
-    
-    </div>
-    
-    </div>
-    
-    <!-- ====================================================== -->
-    <!-- PAGE 8 -->
-    
-    <div id="M1Page8" class="module" style="display:none;">
-    
-    <header>
-    
-    <h1>Cybersecurity Awareness Training</h1>
-    
-    <h3>Module 1 • Security Fundamentals</h3>
-    
-    <div class="progress">
-    
-    <progress value="8" max="9"></progress>
     
     <p>Page 8 of 9</p>
     
@@ -1003,65 +797,32 @@ Next →
     
     <hr>
     
-    <h2 id="changeManagementTitle">Change Management</h2>
+    <h2 id="securityControlsTitle1">How security architecture can relate to securing your own device.</h2>
     
-    <p id="changeManagementIntro">
-    Every modification to software, hardware, or network infrastructure should follow a formal change management process.
+    <p id="securityControlsIntro"></p>
+    Multi-cloud platforms are a combination of public and private cloud services from different providers. They offer flexibility, scalability, and redundancy for organizations. However, they also introduce security challenges, such as inconsistent security policies, increased attack surfaces, and complex management. To secure multi-cloud environments, organizations should implement unified security policies, use encryption and access controls, monitor for threats across all platforms, and ensure compliance with relevant regulations.
+    </p>
+    <p id="personalApp">Knowing these security vulnerabilities can inform you of how to protect your device. For instance, you might consider installing a reliable anti-virus tool on your phone to detect and prevent malware. Additionally, enabling two-factor authentication (2FA) can add an extra layer of security to your accounts, making it harder for unauthorized users to gain access. Regularly updating your device's operating system and applications ensures that you have the latest security patches to protect against known vulnerabilities. Lastly, being cautious about the apps you download and the permissions you grant can significantly reduce the risk of exposing your device to potential threats.</p>
+    <p id="archandInfra">
+    Just as security architecture involves layers of protection, your device benefits from multiple security measures like firewalls, antivirus software, and regular updates. By understanding concepts like network segmentation, encryption, and access controls, you can apply these strategies to secure your personal devices effectively.
     </p>
     
-    <p id="changeManagementBenefits">
-    Proper planning reduces downtime, prevents configuration mistakes, and minimizes security risks caused by unauthorized or poorly tested changes.
-    </p>
-    
-    <table id="changeManagementTable">
-    
-    <tr id="changeManagementHeaderRow">
-        <th id="stepHeader">Step</th>
-        <th id="descriptionHeader">Description</th>
-    </tr>
-    
-    <tr id="requestRow">
-        <td id="requestStep">Request</td>
-        <td id="requestDescription">Document the proposed change.</td>
-    </tr>
-    
-    <tr id="reviewRow">
-        <td id="reviewStep">Review</td>
-        <td id="reviewDescription">Assess security and business impact.</td>
-    </tr>
-    
-    <tr id="approvalRow">
-        <td id="approvalStep">Approval</td>
-        <td id="approvalDescription">Receive management authorization.</td>
-    </tr>
-    
-    <tr id="implementationRow">
-        <td id="implementationStep">Implementation</td>
-        <td id="implementationDescription">Deploy the approved change.</td>
-    </tr>
-    
-    <tr id="verificationRow">
-        <td id="verificationStep">Verification</td>
-        <td id="verificationDescription">Confirm the change was successful.</td>
-    </tr>
-    
-    <tr id="documentationRow">
-        <td id="documentationStep">Documentation</td>
-        <td id="documentationDescription">Record the completed work.</td>
-    </tr>
-    
-    </table>
-    
-    <div class="infoBox" id="changeManagementInfoBox">
-        <strong id="whyItMattersTitle">Why It Matters</strong>
-        <p id="whyItMattersDescription" style="margin-top:12px;">
-        Structured change management improves security, accountability, system stability, and compliance.
+    <div class="infoBox" id="defenseInDepthBox">
+        <strong id="defenseInDepthTitle">Security Architecture</strong>
+        <p id="defenseInDepthDescription1" style="margin-top:12px;">
+        Security architecture principles can be applied to personal devices by implementing a multi-layered security approach. This includes using strong passwords, enabling biometric authentication, keeping software up to date, and being cautious of phishing attempts. By combining these measures, you create a robust defense against potential threats.
         </p>
+    
     </div>
     
-    <div class="buttons"></div>
-        <button id="readAloud8">🔊 Read Aloud</button>
-        <button id="next8">Next →</button>
+    <div class="buttons">
+    
+    <button id="readAloud8">🔊 Read Aloud</button>
+    
+    <button id="next8">
+    Next →
+    </button>
+    
     </div>
     
     </div>
@@ -1275,12 +1036,11 @@ Next →
     });
 
     readAloudButton6.addEventListener('click', () => {
-        const textToRead = document.getElementById('securityControlsTitle').innerText + ' ' +
+        const textToRead = document.getElementById('securityControlsTitle1').innerText + ' ' +
                    document.getElementById('securityControlsIntro').innerText + ' ' +
-                   document.getElementById('controlTypeHeader').innerText + ' ' +
-                   document.getElementById('examplesHeader').innerText + ' ' +
-                   document.getElementById('purposeHeader').innerText + ' ' +
-                   document.getElementById('defenseInDepthDescription').innerText;
+                   document.getElementById('personalApp').innerText + ' ' +
+                   document.getElementById('archandInfra').innerText + ' ' +
+                   document.getElementById('defenseInDepthDescription1').innerText;
         const speech = new SpeechSynthesisUtterance(textToRead);
         window.speechSynthesis.speak(speech);
     });
