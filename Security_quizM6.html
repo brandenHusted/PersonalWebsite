@@ -333,40 +333,29 @@ Next →
 
 </header>
 
-<hr>
-
 <h2 id="realWorldExampleTitle">Explain security alerting and monitoring concepts and tools.</h2>
 
-<p id="realWorldExampleIntro">
-One example of the importance of cybersecurity involved the official United Nations website.
-Attackers successfully compromised part of the website and replaced official content with unauthorized political messages.
+<h2 id="monitoringComputingResources">Monitoring Computing Resources</h2>
+
+<p id="whatGetsMonitored">
+Effective monitoring covers several layers of an organization's technology environment. Systems monitoring tracks the health and behavior of individual devices, such as servers and workstations. Applications monitoring tracks the performance and security of the software running on those systems, catching issues like unusual access patterns or errors that could indicate a problem. Infrastructure monitoring covers the underlying network and hardware that everything else depends on, such as switches, routers, and cloud resources.
 </p>
 
-<p id="realWorldExampleDetails">
-The message appeared within the section reserved for statements made by Secretary-General Ban Ki-moon.
-Although the website was restored shortly afterward, the incident demonstrated how even well-known organizations can become victims of cyberattacks.
+<h2 id="monitoringActivities">Monitoring Activities</h2>
+
+<p id="coreMonitoringActivities">
+Several activities make up the day-to-day work of monitoring. Log aggregation collects log data from many different sources into a central location, making it easier to search and correlate events across the environment. Alerting notifies security personnel automatically when monitoring tools detect something that matches a defined rule or threshold. Scanning actively checks systems for vulnerabilities, misconfigurations, or malware. Reporting summarizes monitoring data and findings for stakeholders, supporting both day-to-day decisions and long-term planning. Archiving retains historical log and monitoring data for a defined period, which supports investigations and compliance requirements even after the data is no longer actively needed.
 </p>
 
-<div class="infoBox" id="hacktivismInfoBox">
-<strong id="hacktivismTerm">Cybersecurity Term:</strong>
-<p id="hacktivismDefinition">
-Hacktivism is the use of hacking techniques to promote political or social causes. While motivations vary, unauthorized access to computer systems remains illegal.
-</p>
-</div>
-
-<p id="realWorldExampleConclusion">
-This event highlights why organizations must implement strong cybersecurity practices such as:
+<p id="alertResponse">
+Alert response and remediation involves acting on and validating alerts once they are generated. Quarantine isolates an affected system or file to prevent a threat from spreading further while it is investigated. Alert tuning adjusts the rules and thresholds that generate alerts, reducing false positives and ensuring the team's attention stays focused on legitimate threats rather than noise.
 </p>
 
-<ul id="cybersecurityPracticesList" style="margin-left:30px; line-height:2; margin-bottom:25px;">
-    <li id="practiceStrongAuthentication">Strong authentication</li>
-    <li id="practiceRegularUpdates">Regular software updates</li>
-    <li id="practiceEncryption">Encryption of sensitive data</li>
-    <li id="practiceMonitoring">Continuous monitoring</li>
-    <li id="practiceAwarenessTraining">Employee security awareness training</li>
-</ul>
+<h2 id="monitoringTools">Tools</h2>
 
-</ul>
+<p id="monitoringToolsOverview">
+A variety of tools support monitoring activities. The Security Content Automation Protocol (SCAP) is a standardized way to automate vulnerability management and policy compliance checks. Benchmarks provide standardized configuration guidelines, such as those from CIS, that systems can be measured against. Agents and agentless approaches refer to whether monitoring software is installed directly on a device (agent-based) or checks the device remotely without local software (agentless), each with different tradeoffs in visibility and overhead. Security information and event management (SIEM) platforms aggregate and correlate log data from across the environment to detect and alert on potential threats in near real time. Antivirus software detects and blocks known malicious software. Data loss prevention (DLP) tools monitor and restrict the movement of sensitive data to prevent it from leaving the organization improperly. Simple Network Management Protocol (SNMP) traps are automatic alerts sent by network devices when a significant event occurs, without needing to be polled first. NetFlow captures metadata about network traffic patterns, helping identify unusual or suspicious communication between systems. Vulnerability scanners automatically check systems for known weaknesses, tying this section back into the identification methods covered earlier in vulnerability management.
+</p>
 
 <div class="buttons">
 
@@ -411,40 +400,76 @@ Next →
     
     <h2 id="introRansomeware">Given a scenario, modify enterprise capabilities to enhance security.</h2>
     
-    <p id="ransomwareIntro"></p>
-    Ransomware is malicious software that encrypts files or locks computer systems until a ransom is paid. It is one of the most damaging forms of cybercrime because it can completely disrupt business operations.
+    <h2 id="firewalls">Firewall</h2>
+
+    <p id="firewallComponents">
+    Firewalls control traffic entering and leaving a network based on defined criteria. Rules specify what traffic is allowed or denied, typically evaluated in order from most to least specific. Access lists (ACLs) define which specific IP addresses, networks, or users are permitted or denied access. Ports and protocols determine which types of traffic are allowed through, such as blocking unused ports to reduce the attack surface. Screened subnets, often called DMZs, place public-facing systems like web servers on a separate network segment, isolating them from the internal network so that if they are compromised, the attacker doesn't gain direct access to internal resources.
     </p>
     
-    <p id="internshipExperience">
-    During my internship at <strong>Pridgeon & Clay</strong>, I learned about a ransomware incident that had occurred the year before I joined the company. The attackers reportedly gained access after successfully brute-forcing a server password.
+    <h2 id="idsIps">IDS/IPS</h2>
+    
+    <p id="idsIpsDetails">
+    Intrusion detection systems (IDS) and intrusion prevention systems (IPS) monitor network traffic for malicious activity, with IPS able to actively block detected threats rather than only alerting on them. Trend-based detection looks for patterns of behavior over time that deviate from the norm, which can catch novel or previously unseen attacks. Signature-based detection compares traffic against a database of known attack patterns, making it fast and reliable against known threats but less effective against new ones.
     </p>
     
-    <p id="incidentDetails">
-    Once inside the network, the attackers encrypted important company files, preventing employees from accessing critical business information. Instead of paying the ransom, the company rebuilt affected systems from backups and strengthened its overall security posture.
+    <h2 id="webFilter">Web Filter</h2>
+    
+    <p id="webFilterMethods">
+    Web filtering controls what websites and content users can access. Agent-based filtering installs software directly on a device to enforce filtering rules regardless of network location. Centralized proxy filtering routes all web traffic through a central point where filtering rules are applied before traffic reaches the user. URL scanning checks web addresses against known malicious sites before allowing access. Content categorization sorts websites into categories, such as social media or gambling, so policies can be applied by category rather than listing individual sites. Block rules explicitly deny access to specific sites or categories. Reputation-based filtering blocks sites based on a known history of malicious activity, similar to how threat intelligence feeds are used elsewhere in security operations.
     </p>
     
-    <div class="infoBox">
+    <h2 id="operatingSystemSecurity">Operating System Security</h2>
     
-    <strong>Lessons Learned</strong>
+    <p id="osSecurityTools">
+    Operating system security tools help enforce configuration and access controls directly at the OS level. Group Policy, used primarily in Windows environments, allows administrators to centrally configure and enforce security settings across many devices at once. SELinux (Security-Enhanced Linux) adds mandatory access controls to Linux systems, restricting what processes and users can do beyond standard file permissions.
+    </p>
     
-    <ul style="margin-top:15px; margin-left:25px; line-height:2;">
+    <h2 id="secureProtocols">Implementation of Secure Protocols</h2>
     
-    <li>Use strong passwords.</li>
+    <p id="secureProtocolImplementation">
+    Implementing secure protocols involves several deliberate choices. Protocol selection means choosing secure versions of communication protocols, such as using HTTPS instead of HTTP. Port selection involves configuring services to run on appropriate, often non-default, ports to reduce exposure to automated attacks. Transport method refers to how data is actually carried between systems, and ensuring that method includes encryption so data can't be easily intercepted in transit.
+    </p>
     
-    <li>Enable Multi-Factor Authentication (MFA).</li>
+    <h2 id="dnsFiltering">DNS Filtering</h2>
     
-    <li>Maintain secure offline backups.</li>
+    <p id="dnsFilteringDetails">
+    DNS filtering blocks access to malicious or unwanted domains at the DNS resolution stage, preventing a user's device from ever connecting to a dangerous site even before a web filter would catch it.
+    </p>
     
-    <li>Keep systems fully updated.</li>
+    <h2 id="emailSecurity">Email Security</h2>
     
-    <li>Educate employees about phishing attacks.</li>
+    <p id="emailSecurityProtocols">
+    Several protocols work together to prevent email spoofing and phishing. Domain-based Message Authentication, Reporting, and Conformance (DMARC) tells receiving mail servers what to do with messages that fail authentication checks, and provides reporting back to the domain owner. DomainKeys Identified Mail (DKIM) adds a digital signature to outgoing email, allowing the receiving server to verify the message wasn't altered in transit. Sender Policy Framework (SPF) specifies which mail servers are authorized to send email on behalf of a domain, helping receiving servers detect spoofed sender addresses. An email gateway sits between the internet and an organization's mail server, filtering spam, malware, and phishing attempts before they reach user inboxes.
+    </p>
     
-    </ul>
+    <h2 id="fileIntegrityMonitoring">File Integrity Monitoring</h2>
     
-    </div>
+    <p id="fileIntegrityMonitoringDetails">
+    File integrity monitoring (FIM) tracks changes to critical files and system configurations, alerting administrators when unauthorized or unexpected modifications occur, which can indicate a compromise or misconfiguration.
+    </p>
     
-    <p id="cybersecurityAwareness">
-    Cybersecurity is not only about technology—it also depends on user awareness and following good security practices every day.
+    <h2 id="dlp">Data Loss Prevention (DLP)</h2>
+    
+    <p id="dlpDetails">
+    Data loss prevention (DLP) tools monitor, detect, and block sensitive data from leaving the organization improperly, whether through email, removable media, or cloud uploads, helping prevent both accidental leaks and intentional data theft.
+    </p>
+    
+    <h2 id="nac">Network Access Control (NAC)</h2>
+    
+    <p id="nacDetails">
+    Network access control (NAC) verifies that a device meets security requirements, such as having up-to-date antivirus or patches, before allowing it to connect to the network, helping prevent unsecured or compromised devices from gaining access.
+    </p>
+    
+    <h2 id="edrXdr">EDR/XDR</h2>
+    
+    <p id="edrXdrDetails">
+    Endpoint detection and response (EDR) monitors individual devices for suspicious activity and can respond automatically, such as isolating a compromised endpoint. Extended detection and response (XDR) expands on this by correlating data across endpoints, networks, and other sources for broader visibility into an attack that might span multiple systems.
+    </p>
+    
+    <h2 id="userBehaviorAnalytics">User Behavior Analytics</h2>
+    
+    <p id="userBehaviorAnalyticsDetails">
+    User behavior analytics (UBA) establishes a baseline of normal user activity and then flags deviations from that baseline, such as a user suddenly accessing systems or data they never have before, which can indicate a compromised account or insider threat.
     </p>
     
     <div class="buttons">
@@ -486,78 +511,41 @@ Next →
     
     <hr>
     
-    <h2 id="commonMalwareTypes">Explain the importance of automation and orchestration related to secure operations.</h2>
-    
-    <p id="malwareIntro">
-    Cybercriminals use many different forms of malware to compromise computers, steal information, or disrupt services. Understanding these threats is the first step toward defending against them.
-    </p>
-    
-    <table>
-    
-    <tr>
-    
-    <th id="threatHeader">Threat</th>
-    <th id="descriptionHeader">Description</th>
-    </tr>
-    
-    <tr>
-    <td id="ransomwareThreat">Ransomware</td>
-    <td id="ransomwareDescription">Encrypts files or systems until a ransom is demanded.</td>
-    </tr>
-    
-    <tr>
-    <td id="trojanHorseThreat">Trojan Horse</td>
-    <td id="trojanHorseDescription">Disguises itself as legitimate software to trick users into installing malware.</td>
-    </tr>
-    
-    <tr>
-    <td id="virusThreat">Virus</td>
-    <td id="virusDescription">Infects programs and spreads when infected files are executed.</td>
-    </tr>
-    
-    <tr>
-    <td id="wormThreat">Worm</td>
-    <td id="wormDescription">Self-replicates across networks without user interaction.</td>
-    </tr>
-    
-    <tr>
-    <td id="spywareThreat">Spyware</td>
-    <td id="spywareDescription">Secretly monitors user activity and collects sensitive information.</td>
-    </tr>
-    
-    <tr>
-    <td id="keyloggerThreat">Keylogger</td>
-    <td id="keyloggerDescription">Records every keystroke to steal passwords and personal information.</td>
-    </tr>
-    
-    <tr>
-    <td id="rootkitThreat">Rootkit</td>
-    <td id="rootkitDescription">Provides attackers with hidden administrative access to a system.</td>
-    </tr>
-    
-    <tr>
-    <td id="logicBombThreat">Logic Bomb</td>
-    <td id="logicBombDescription">Malicious code that activates only when specific conditions are met.</td>
-    </tr>
-    
-    <tr>
-    <td id="bloatwareThreat">Bloatware</td>
-    <td id="bloatwareDescription">Unwanted software that consumes resources and may introduce security risks.</td>
-    </tr>
-    
-    </tr>
-    
-    </table>
-    
-    <div class="infoBox">
-    
-    <strong>Remember:</strong>
-    
-    <p id="malwareProtectionTips"></p>
-    The best protection against malware is keeping software updated, avoiding suspicious downloads, using antivirus software, and maintaining secure backups.
-    </p>
-    
-    </div>
+    <h2 id="commonMalwareTypes">Explain appropiate incident response activities.</h2>
+
+<p id="irProcessSteps">
+Incident response typically follows a defined set of phases. Preparation involves establishing the plans, tools, and training needed before an incident occurs, so the team isn't figuring things out for the first time during a real event. Detection involves identifying that a security incident may be occurring, often through monitoring tools or user reports. Analysis involves investigating the detected activity to confirm it is a genuine incident and understand its scope and impact. Containment involves limiting the spread of the incident to prevent further damage, such as isolating an affected system. Eradication involves removing the root cause of the incident, such as deleting malware or closing the vulnerability that was exploited. Recovery involves restoring affected systems and services back to normal operation. Lessons learned involves reviewing the incident afterward to identify what worked, what didn't, and what changes should be made to prevent a similar incident in the future.
+</p>
+
+<h2 id="incidentResponseTraining">Training</h2>
+
+<p id="irTrainingDetails">
+Training ensures that everyone involved in incident response, from technical staff to leadership, understands their role and responsibilities before an actual incident occurs, reducing confusion and delays when a real event happens.
+</p>
+
+<h2 id="incidentResponseTesting">Testing</h2>
+
+<p id="irTestingMethods">
+Testing validates that an incident response plan actually works in practice. A tabletop exercise is a discussion-based session where participants walk through how they would respond to a hypothetical scenario, without actually taking real technical action. A simulation goes a step further by actually carrying out response actions in a controlled environment, providing a more realistic test of the plan and the team's readiness.
+</p>
+
+<h2 id="rootCauseAnalysis">Root Cause Analysis</h2>
+
+<p id="rootCauseAnalysisDetails">
+Root cause analysis identifies the underlying reason an incident occurred, rather than just addressing its immediate symptoms, so the organization can fix the actual weakness and prevent the same type of incident from happening again.
+</p>
+
+<h2 id="threatHunting">Threat Hunting</h2>
+
+<p id="threatHuntingDetails">
+Threat hunting involves proactively searching for signs of malicious activity that may have gone undetected by automated tools, rather than waiting for an alert to trigger. This assumes that some threats may already be present in the environment and looks for subtle indicators that confirm or rule that out.
+</p>
+
+<h2 id="digitalForensics">Digital Forensics</h2>
+
+<p id="digitalForensicsProcess">
+Digital forensics involves collecting and analyzing digital evidence in a way that preserves its integrity and legal validity. A legal hold requires preserving relevant data because it may be needed for litigation or investigation, preventing it from being deleted or altered in the normal course of business. Chain of custody documents who has handled evidence and when, from collection through final use, ensuring it can be trusted and admissible if needed for legal proceedings. Acquisition is the process of collecting evidence, such as creating a forensic image of a hard drive, in a way that doesn't alter the original data. Reporting documents the findings of a forensic investigation in a clear, defensible format. Preservation ensures evidence remains unaltered and protected from damage or loss throughout the investigation. E-discovery refers to the process of identifying, collecting, and producing electronic evidence in response to a legal request, such as during litigation.
+</p>
     
     <div class="buttons">
     <button id="readAloud4">

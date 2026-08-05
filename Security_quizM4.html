@@ -396,39 +396,19 @@ Next →
     <h2 id="introRansomeware">Explain various activites associated with vunerability management.</h2>
     
     <p id="ransomwareIntro"></p>
-    Ransomware is malicious software that encrypts files or locks computer systems until a ransom is paid. It is one of the most damaging forms of cybercrime because it can completely disrupt business operations.
+    Software can be used to automatically inspect computers, networks, code, and web apps for security flaws and misconfigurations.
     </p>
     
     <p id="internshipExperience">
-    During my internship at <strong>Pridgeon & Clay</strong>, I learned about a ransomware incident that had occurred the year before I joined the company. The attackers reportedly gained access after successfully brute-forcing a server password.
+    If you were to examine the code while processes on the computer are running, then that is called dynamic analysis. If you were to examine the code without running the processes, then that is called static analysis. Both methods are used to identify vulnerabilities in software and systems. Package monitoring refers to the continuous monitoring of software packages and dependencies for known vulnerabilities. This helps organizations stay informed about potential security risks and take appropriate action to mitigate them.
     </p>
     
     <p id="incidentDetails">
-    Once inside the network, the attackers encrypted important company files, preventing employees from accessing critical business information. Instead of paying the ransom, the company rebuilt affected systems from backups and strengthened its overall security posture.
+        Threat feeds supply external intelligence about emerging threats and vulnerabilities. Open-source intelligence (OSINT) involves gathering information from publicly available sources such as forums, social media, and security advisories. Proprietary and third-party feeds are paid intelligence services that often provide more curated or timely data than open sources. Information-sharing organizations, such as ISACs, allow organizations within the same industry to pool threat data. Dark web monitoring tracks hidden forums and marketplaces where stolen data or exploit discussions surface, since attackers often sell access or credentials there before an organization even knows it has been breached. A tool I have used at a past job for this kind of monitoring and scanning was Rapid7. 
     </p>
     
-    <div class="infoBox">
-    
-    <strong>Lessons Learned</strong>
-    
-    <ul style="margin-top:15px; margin-left:25px; line-height:2;">
-    
-    <li>Use strong passwords.</li>
-    
-    <li>Enable Multi-Factor Authentication (MFA).</li>
-    
-    <li>Maintain secure offline backups.</li>
-    
-    <li>Keep systems fully updated.</li>
-    
-    <li>Educate employees about phishing attacks.</li>
-    
-    </ul>
-    
-    </div>
-    
     <p id="cybersecurityAwareness">
-    Cybersecurity is not only about technology—it also depends on user awareness and following good security practices every day.
+    People on the dark web (hidden part of the internet that search engines do not index) may try to find vulnerabilities and steal company information and it is very hard to track these people down. To prevent this practice swift detection and damage control. Hackers can hack into OSINTs.
     </p>
     
     <div class="buttons">
@@ -470,78 +450,21 @@ Next →
     
     <hr>
     
-    <h2 id="commonMalwareTypes">Given a scenerio, apply common security techniques to computing resources.</h2>
+    <h2 id="commonMalwareTypes">Explain various activites associated with vunerability management.</h2>
     
     <p id="malwareIntro">
-    Cybercriminals use many different forms of malware to compromise computers, steal information, or disrupt services. Understanding these threats is the first step toward defending against them.
+    Penetration testing is a simulated cyber attack against your computer system to check for exploitable vulnerabilities. In the context of web application security, penetration testing is commonly used to augment a web application firewall (WAF).
+    Here is a video that explains Penetration Testing: <a href="https://www.youtube.com/watch?v=TA0TbzyU8GY" target="_blank">Penetration Testing Video</a>
     </p>
     
-    <table>
-    
-    <tr>
-    
-    <th id="threatHeader">Threat</th>
-    <th id="descriptionHeader">Description</th>
-    </tr>
-    
-    <tr>
-    <td id="ransomwareThreat">Ransomware</td>
-    <td id="ransomwareDescription">Encrypts files or systems until a ransom is demanded.</td>
-    </tr>
-    
-    <tr>
-    <td id="trojanHorseThreat">Trojan Horse</td>
-    <td id="trojanHorseDescription">Disguises itself as legitimate software to trick users into installing malware.</td>
-    </tr>
-    
-    <tr>
-    <td id="virusThreat">Virus</td>
-    <td id="virusDescription">Infects programs and spreads when infected files are executed.</td>
-    </tr>
-    
-    <tr>
-    <td id="wormThreat">Worm</td>
-    <td id="wormDescription">Self-replicates across networks without user interaction.</td>
-    </tr>
-    
-    <tr>
-    <td id="spywareThreat">Spyware</td>
-    <td id="spywareDescription">Secretly monitors user activity and collects sensitive information.</td>
-    </tr>
-    
-    <tr>
-    <td id="keyloggerThreat">Keylogger</td>
-    <td id="keyloggerDescription">Records every keystroke to steal passwords and personal information.</td>
-    </tr>
-    
-    <tr>
-    <td id="rootkitThreat">Rootkit</td>
-    <td id="rootkitDescription">Provides attackers with hidden administrative access to a system.</td>
-    </tr>
-    
-    <tr>
-    <td id="logicBombThreat">Logic Bomb</td>
-    <td id="logicBombDescription">Malicious code that activates only when specific conditions are met.</td>
-    </tr>
-    
-    <tr>
-    <td id="bloatwareThreat">Bloatware</td>
-    <td id="bloatwareDescription">Unwanted software that consumes resources and may introduce security risks.</td>
-    </tr>
-    
-    </tr>
-    
-    </table>
-    
-    <div class="infoBox">
-    
-    <strong>Remember:</strong>
+    <p>System and process audits are structured reviews of systems or workflows against a defined standard, such as internal policy or a compliance framework. These audits can catch configuration or process gaps that automated scans might miss.</p>
     
     <p id="malwareProtectionTips"></p>
-    The best protection against malware is keeping software updated, avoiding suspicious downloads, using antivirus software, and maintaining secure backups.
+    Responsible disclosure programs provide a formal channel for outside researchers or ethical hackers to report vulnerabilities they discover, rather than exposing them publicly or selling them. Bug bounty programs are a common form of this, where organizations pay researchers for verified findings, which incentivizes responsible reporting over public disclosure or exploitation.
     </p>
-    
-    </div>
+    <p>Once a vulnerability is identified, it must be confirmed before action is taken. A false positive occurs when a scanner flags something as vulnerable when it is not, which wastes remediation effort if not caught. A false negative occurs when a scanner misses an actual vulnerability, which is more dangerous because it creates false confidence in the security of a system.</p>
+
+    <p>Not every vulnerability can be remediated immediately, so organizations prioritize based on several factors. The Common Vulnerability Scoring System (CVSS) provides a standardized severity score from 0 to 10 based on factors like attack vector and potential impact. The Common Vulnerabilities and Exposures (CVE) system assigns a standardized identifier to each known vulnerability so it can be referenced consistently across different tools and organizations.</p>
     
     <div class="buttons">
     <button id="readAloud4">
@@ -569,7 +492,7 @@ Next →
 
     <h1>Cybersecurity Awareness Training</h1>
 
-    <h3>Module 1 • Security Fundamentals</h3>
+    <h3>Module 4 • How to Develop/Code Secure Platforms</h3>
 
     <div class="progress">
 
@@ -583,62 +506,27 @@ Next →
 
     <hr>
 
-    <h2 id="findingSecurityRisksTitle">Finding Potential Security Risks</h2>
+    <h2 id="findingSecurityRisksTitle">Explain various activites associated with vunerability management.</h2>
 
     <p id="findingSecurityRisksIntro">
-    Several free online tools can help identify suspicious websites, malicious files, and unusual network activity.
+        Vulnerability classification groups vulnerabilities by type, such as injection flaws, misconfigurations, or outdated software. Exposure factor measures how much value an asset would lose if the vulnerability were exploited. Environmental variables account for factors specific to an organization's own environment, such as whether a vulnerable system is internet-facing or holds sensitive data, which can adjust a generic CVSS score to reflect actual risk. Industry and organizational impact considers how a breach would affect a specific business or sector, since different industries face different stakes. Risk tolerance reflects how much risk an organization's leadership is willing to accept before requiring action.
     </p>
 
-    <table id="securityToolsTable">
-
-    <tr id="securityToolsHeaderRow">
-        <th id="toolHeader">Tool</th>
-        <th id="purposeHeader">Purpose</th>
-    </tr>
-
-    <tr id="virusTotalRow">
-        <td id="virusTotalTool">VirusTotal</td>
-        <td id="virusTotalPurpose">Scans files and URLs using dozens of antivirus engines.</td>
-    </tr>
-
-    <tr id="urlReputationRow">
-        <td id="urlReputationTool">URL Reputation Services</td>
-        <td id="urlReputationPurpose">Checks whether websites are considered safe before visiting them.</td>
-    </tr>
-
-    <tr id="networkMonitoringRow">
-        <td id="networkMonitoringTool">Network Monitoring</td>
-        <td id="networkMonitoringPurpose">Helps identify applications making unexpected network connections.</td>
-    </tr>
-
-    </table>
-
-    <div class="infoBox" id="securityTipBox">
-        <strong id="securityTipTitle">Security Tip</strong>
-        <ul id="securityTipList" style="margin-top:15px; margin-left:25px; line-height:2;">
-            <li id="verifyWebsiteTip">Verify website addresses before logging in.</li>
-            <li id="scanDownloadsTip">Scan unknown downloads before opening them.</li>
-            <li id="monitorNetworkTip">Monitor unusual network activity.</li>
-            <li id="updateSoftwareTip">Keep browsers and antivirus software updated.</li>
-            <li id="browserWarningsTip">Never ignore browser security warnings.</li>
-        </ul>
-    </div>
-
-    <p>
-
-    Useful Resources:
-
-    </p>
-
-    <ul style="margin-left:30px; line-height:2;">
-
-    <li><a href="https://www.virustotal.com/" target="_blank">VirusTotal</a></li>
-
-    <li><a href="https://transparencyreport.google.com/safe-browsing/search" target="_blank">Google Safe Browsing</a></li>
-
-    <li><a href="https://www.cisa.gov/" target="_blank">CISA Cybersecurity Resources</a></li>
-
-    </ul>
+    <p id="remediationOptions">
+        Patching involves applying vendor-released fixes to close a vulnerability. Insurance, specifically cyber insurance, can offset financial impact when a risk is knowingly accepted rather than eliminated. Segmentation isolates vulnerable systems on separate network segments to limit how far an attacker could move if the vulnerability were exploited. Compensating controls are alternative safeguards used when the primary fix is not immediately possible, such as a firewall rule blocking access to an unpatched service. Exceptions and exemptions are formally documented and approved decisions not to remediate a specific vulnerability, typically including a justification and a scheduled review date.
+        </p>
+        
+        <h2 id="validationOfRemediation">Validation of Remediation</h2>
+        
+        <p id="validationSteps">
+        Rescanning involves running the vulnerability scan again to confirm the issue has actually been resolved. An audit is a formal review confirming that remediation met policy or compliance requirements. Verification is a manual confirmation, sometimes including a targeted retest, that the fix works as intended rather than simply that the scanner stopped flagging it.
+        </p>
+        
+        <h2 id="reporting">Reporting</h2>
+        
+        <p id="reportingSummary">
+        Reporting documents findings, remediation actions, and any residual risk for stakeholders. This closes the loop on the vulnerability management process, creates an audit trail, and feeds back into future risk prioritization decisions.
+        </p>
 
     <div class="buttons">
         <button id="readAloud5">
@@ -660,7 +548,7 @@ Next →
     
     <h1>Cybersecurity Awareness Training</h1>
     
-    <h3>Module 1 • Security Fundamentals</h3>
+    <h3>Module 4 • How to Develop/Code Secure Platforms</h3>
     
     <div class="progress">
     
@@ -674,50 +562,56 @@ Next →
     
     <hr>
     
-    <h2 id="securityControlsTitle">Types of Security Controls</h2>
+    <h2 id="securityControlsTitle">Given a scenerio, apply common security techniques to computing resources.</h2>
     
     <p id="securityControlsIntro">
-    Organizations use several layers of security controls to reduce cyber risk. No single control can stop every attack, so companies combine multiple approaches to create a strong defense.
+        A secure baseline is a defined set of security configurations that a system should meet before it is considered acceptable for use. Establishing a baseline means determining what those secure settings should be, often based on vendor guidance, industry standards, or frameworks like CIS Benchmarks. Deploying the baseline means applying those configurations consistently across all relevant systems, often through automated tools rather than manual setup. Maintaining the baseline means continuously monitoring systems to ensure they have not drifted from the approved configuration over time, and correcting any deviations that are found.
     </p>
-    
-    <table id="securityControlsTable">
-    
-    <tr id="securityControlsHeaderRow">
-        <th id="controlTypeHeader">Control Type</th>
-        <th id="examplesHeader">Examples</th>
-        <th id="purposeHeader">Purpose</th>
-    </tr>
-    
-    <tr id="technicalControlRow">
-        <td id="technicalControlType"><strong>Technical</strong></td>
-        <td id="technicalExamples">Firewalls, Antivirus, Encryption, MFA</td>
-        <td id="technicalPurpose">Protect systems using technology.</td>
-    </tr>
-    
-    <tr id="managerialControlRow">
-        <td id="managerialControlType"><strong>Managerial</strong></td>
-        <td id="managerialExamples">Security Policies, Risk Assessments, Audits</td>
-        <td id="managerialPurpose">Guide security planning and governance.</td>
-    </tr>
-    
-    <tr id="operationalControlRow">
-        <td id="operationalControlType"><strong>Operational</strong></td>
-        <td id="operationalExamples">Security Awareness Training, Incident Response</td>
-        <td id="operationalPurpose">Improve daily security procedures.</td>
-    </tr>
-    
-    <tr id="physicalControlRow">
-        <td id="physicalControlType"><strong>Physical</strong></td>
-        <td id="physicalExamples">Badge Readers, Cameras, Locks, Biometrics</td>
-        <td id="physicalPurpose">Protect facilities and equipment.</td>
-    </tr>
-    
-    </table>
+
+<h2 id="hardeningTargets">Hardening Targets</h2>
+
+<p id="hardeningTargetsOverview">
+Hardening refers to reducing a system's attack surface by disabling unnecessary services, closing unused ports, and applying secure configurations. Different types of devices require different hardening approaches. Mobile devices need protections like screen locks, encryption, and remote wipe capability. Workstations need endpoint protection, restricted user privileges, and disabled unnecessary local services. Switches and routers need secure management interfaces, disabled default accounts, and restricted administrative access. Cloud infrastructure requires proper configuration of access controls and storage permissions, since misconfigured cloud resources are a common source of breaches. Servers need minimized running services and strict patching schedules given their critical role. ICS/SCADA systems, which control industrial processes, often cannot be patched as frequently, so they rely heavily on network isolation instead. Embedded systems and RTOS (Real-Time Operating Systems) have limited resources and often can't run traditional security software, making secure design at the manufacturing stage important. IoT devices are frequently hardened by changing default credentials and isolating them on separate network segments, since they are common targets due to weak default security.
+</p>
+
+<h2 id="wirelessDevices">Wireless Devices</h2>
+
+<p id="installationConsiderations">
+Before deploying wireless access points, organizations should account for installation considerations that affect both coverage and security. A site survey involves physically assessing a location to determine optimal access point placement, signal strength, and potential sources of interference. A heat map visually represents wireless signal strength across a physical space, helping identify coverage gaps or areas of unwanted signal bleed outside the building where it could be intercepted.
+</p>
+
+<h2 id="mobileSolutions">Mobile Solutions</h2>
+
+<p id="mdmAndDeploymentModels">
+Mobile device management (MDM) is software that allows organizations to enforce security policies, push configurations, and remotely wipe mobile devices used to access company resources. Organizations typically choose from a few deployment models. Bring your own device (BYOD) allows employees to use personal devices for work, which is cost-effective but harder to secure and manage. Corporate-owned, personally enabled (COPE) provides company-owned devices that employees can also use personally, giving the organization more control. Choose your own device (CYOD) lets employees pick a device from an approved list, balancing some flexibility with easier standardization.
+</p>
+
+<p id="connectionMethods">
+Mobile devices connect to networks and other devices through several methods, each with its own security considerations. Cellular connections rely on carrier networks and are generally harder to intercept than open wireless. Wi-Fi connections are convenient but require strong encryption and authentication settings to remain secure. Bluetooth connections are used for short-range device pairing but can be vulnerable to attacks if left discoverable or paired with untrusted devices.
+</p>
+
+<h2 id="wirelessSecuritySettings">Wireless Security Settings</h2>
+
+<p id="wirelessSecurityConfig">
+Wi-Fi Protected Access 3 (WPA3) is the current standard for securing wireless networks, offering stronger encryption and protection against offline password-guessing attacks compared to older standards. AAA, often implemented through RADIUS (Remote Authentication Dial-In User Service), provides centralized authentication, authorization, and accounting for users connecting to a network. Cryptographic protocols define how data is encrypted as it travels across the wireless network, while authentication protocols define how users and devices prove their identity before being granted access.
+</p>
+
+<h2 id="applicationSecurity">Application Security</h2>
+
+<p id="appSecurityPractices">
+Input validation ensures that data entered into an application matches expected formats before it is processed, which helps prevent attacks like SQL injection or cross-site scripting. Secure cookies are configured with attributes, such as marking them as HTTPS-only, so they cannot be intercepted or accessed through insecure channels or client-side scripts. Static code analysis examines an application's source code without running it, catching insecure coding patterns before deployment. Code signing uses a digital signature to verify that software comes from a trusted source and has not been tampered with since it was published.
+</p>
+
+<h2 id="sandboxingAndMonitoring">Sandboxing and Monitoring</h2>
+
+<p id="sandboxingAndMonitoringDetails">
+Sandboxing involves running an application or piece of code in an isolated environment, separate from the main system, so that if it is malicious or behaves unexpectedly, it cannot affect production systems or data. Monitoring involves continuously observing systems, applications, and networks for unusual behavior or signs of compromise, allowing security teams to detect and respond to issues in near real time rather than discovering them after damage has occurred.
+</p>
     
     <div class="infoBox" id="defenseInDepthBox">
-        <strong id="defenseInDepthTitle">Defense in Depth</strong>
+        <strong id="defenseInDepthTitle">Remember:</strong>
         <p id="defenseInDepthDescription" style="margin-top:12px;">
-        Good cybersecurity relies on multiple layers of protection rather than a single security solution.
+            Wi-Fi Protected Access 3 (WPA3) is the current standard for securing wireless networks.
         </p>
     </div>
     
@@ -737,7 +631,7 @@ Next →
     
     <h1>Cybersecurity Awareness Training</h1>
     
-    <h3>Module 1 • Security Fundamentals</h3>
+    <h3>Module 4 • How to Develop/Code Secure Platforms</h3>
     
     <div class="progress">
     
@@ -751,49 +645,27 @@ Next →
     
     <hr>
     
-    <h2 id="cryptographyTitle">Cryptography and Public Key Infrastructure (PKI)</h2>
+    <h2 id="cryptographyTitle">Relating Secure Baselines to Secure Platform Development</h2>
     
     <p id="cryptographyIntro">
-    Encryption protects sensitive information by converting readable data into an unreadable format that only authorized users can access.
+        The same idea behind a secure baseline for a server or workstation applies to writing code: instead of configuring a secure baseline after a system is built, you can build security into the platform from the start. This is often called "secure by design." Just as an organization establishes a baseline configuration and deploys it consistently, a development team establishes secure coding standards (such as input validation rules, approved libraries, and authentication requirements) and applies them consistently across every part of the application, not just patched in after the fact.
     </p>
     
     <p id="pkiIntro">
-    One of the most widely used cryptographic systems is <strong>Public Key Infrastructure (PKI)</strong>, which uses two mathematically related keys.
+        Hardening a device by disabling unnecessary services has a direct equivalent in code: minimizing the attack surface of an application by removing unused endpoints, disabling debug modes in production, and restricting default permissions so that no part of the platform grants more access than it needs. This is sometimes called the principle of least privilege, and it applies equally to a server's user accounts and to an application's internal functions or API routes.
     </p>
-    
-    <table id="pkiTable">
-    
-    <tr id="pkiTableHeaderRow">
-        <th id="keyHeader">Key</th>
-        <th id="purposeHeader">Purpose</th>
-    </tr>
-    
-    <tr id="publicKeyRow">
-        <td id="publicKey">Public Key</td>
-        <td id="publicKeyPurpose">Encrypts data and verifies digital signatures. It can be shared freely.</td>
-    </tr>
-    
-    <tr id="privateKeyRow">
-        <td id="privateKey">Private Key</td>
-        <td id="privateKeyPurpose">Decrypts encrypted data and creates digital signatures. It must remain secret.</td>
-    </tr>
-    
-    </table>
-    
-    <div class="infoBox" id="pkiTechnologiesBox">
-        <strong id="pkiTechnologiesTitle">Common PKI Technologies</strong>
-        <ul id="pkiTechnologiesList" style="margin-top:15px; margin-left:25px; line-height:2;">
-            <li id="digitalCertificates">Digital Certificates</li>
-            <li id="certificateAuthorities">Certificate Authorities (CA)</li>
-            <li id="hardwareSecurityModules">Hardware Security Modules (HSM)</li>
-            <li id="trustedPlatformModules">Trusted Platform Modules (TPM)</li>
-        </ul>
-    </div>
     
     <p id="pkiUsage">
-    PKI helps secure websites, email communication, VPN connections, software updates, and many other everyday technologies.
+        Input validation, secure cookies, and static code analysis are really the application-layer version of hardening. Where hardening a router means closing unused ports, validating input means closing off unexpected or malicious data before it ever reaches your application logic. Static code analysis plays the same role during development that a vulnerability scan plays on a live system: it looks for weaknesses before they can be exploited, just earlier in the lifecycle, which is generally cheaper and safer than finding the same issue after deployment.
     </p>
     
+    <p id="maintainingSecurePlatforms">
+        Maintaining a secure baseline over time is mirrored in secure development by practices like package monitoring and regular dependency updates, since a platform's dependencies can drift out of a secure state the same way a server's configuration can. Code signing then acts as a form of validation, similar to rescanning or auditing a remediated system, confirming that the software running in production is exactly what was built and tested, and has not been altered.
+    </p>
+        
+    <p id="sandboxingInDevelopment">
+        Sandboxing ties directly into secure development as well. Running new code, third-party libraries, or user-submitted content in an isolated environment prevents an untrusted or unverified component from affecting the rest of the platform, the same logic used when isolating ICS/SCADA systems or IoT devices on separate network segments. In both cases, the goal is to contain a potential compromise rather than assume every component can be fully trusted.
+    </p>
     <div class="buttons">
         <button id="readAloud7">🔊 Read Aloud</button>
         <button id="next7">Next →</button>
@@ -809,7 +681,7 @@ Next →
     
     <h1>Cybersecurity Awareness Training</h1>
     
-    <h3>Module 1 • Security Fundamentals</h3>
+    <h3>Module 4 • How to Develop/Code Secure Platforms</h3>
     
     <div class="progress">
     

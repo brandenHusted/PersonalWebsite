@@ -335,38 +335,25 @@ Next →
 
 <hr>
 
-<h2 id="realWorldExampleTitle">Real-World Example: United Nations Website Defacement</h2>
+<h2 id="realWorldExampleTitle">Explain the importance of automation and orchestration related to secure operations</h2>
 
-<p id="realWorldExampleIntro">
-One example of the importance of cybersecurity involved the official United Nations website.
-Attackers successfully compromised part of the website and replaced official content with unauthorized political messages.
+<h2 id="automationUseCases">Use Cases of Automation and Scripting</h2>
+
+<p id="automationUseCasesList">
+Automation and scripting support a wide range of security and IT operations tasks. User provisioning automates the creation and configuration of user accounts, ensuring new employees get consistent access without manual setup errors. Resource provisioning automates the deployment of infrastructure, such as servers or cloud resources, according to predefined, secure configurations. Guard rails are automated controls that prevent users or systems from taking risky actions, such as blocking a misconfigured deployment before it goes live. Security groups can be automatically applied to control access to resources based on defined rules rather than manual assignment. Ticket creation can be automated so that alerts or detected issues automatically generate a record for tracking, reducing the chance something gets missed. Escalation processes can automatically route unresolved issues to the appropriate team or level of authority based on severity or time elapsed. Enabling and disabling services and access can be automated, such as instantly revoking access when an employee is offboarded. Continuous integration and testing automates the process of testing code changes as they are made, catching security issues earlier in development. Integrations and application programming interfaces (APIs) allow different security tools to communicate and share data automatically, enabling coordinated responses across systems.
 </p>
 
-<p id="realWorldExampleDetails">
-The message appeared within the section reserved for statements made by Secretary-General Ban Ki-moon.
-Although the website was restored shortly afterward, the incident demonstrated how even well-known organizations can become victims of cyberattacks.
+<h2 id="automationBenefits">Benefits</h2>
+
+<p id="automationBenefitsList">
+Automation offers several advantages over manual processes. Efficiency and time savings come from eliminating repetitive manual tasks, freeing staff to focus on more complex work. Enforcing baselines ensures configurations stay consistent across systems without relying on manual checks. Standard infrastructure configurations reduce the chance of human error introducing misconfigurations. Scaling in a secure manner allows an organization to grow its infrastructure without a proportional increase in security risk or manual oversight. Employee retention can improve when automation removes repetitive, low-value tasks that contribute to burnout. Reaction time improves because automated systems can respond to threats far faster than a human could. Automation also acts as a workforce multiplier, allowing a smaller security team to accomplish what would otherwise require significantly more staff.
 </p>
 
-<div class="infoBox" id="hacktivismInfoBox">
-<strong id="hacktivismTerm">Cybersecurity Term:</strong>
-<p id="hacktivismDefinition">
-Hacktivism is the use of hacking techniques to promote political or social causes. While motivations vary, unauthorized access to computer systems remains illegal.
+<h2 id="automationConsiderations">Other Considerations</h2>
+
+<p id="automationConsiderationsList">
+Automation isn't without tradeoffs. Complexity increases as automated systems and scripts are added, which can make troubleshooting more difficult when something goes wrong. Cost includes the investment needed to build, license, and maintain automation tools and scripts. A single point of failure can be introduced if too much relies on one automated system or script that isn't properly monitored or maintained. Technical debt can accumulate when automation scripts are written quickly without proper documentation or long-term planning, making them harder to maintain later. Ongoing supportability requires that someone continues to understand, maintain, and update automated processes over time, since automation that no one can maintain eventually becomes a liability rather than a benefit.
 </p>
-</div>
-
-<p id="realWorldExampleConclusion">
-This event highlights why organizations must implement strong cybersecurity practices such as:
-</p>
-
-<ul id="cybersecurityPracticesList" style="margin-left:30px; line-height:2; margin-bottom:25px;">
-    <li id="practiceStrongAuthentication">Strong authentication</li>
-    <li id="practiceRegularUpdates">Regular software updates</li>
-    <li id="practiceEncryption">Encryption of sensitive data</li>
-    <li id="practiceMonitoring">Continuous monitoring</li>
-    <li id="practiceAwarenessTraining">Employee security awareness training</li>
-</ul>
-
-</ul>
 
 <div class="buttons">
 
@@ -409,44 +396,19 @@ Next →
     
     <hr>
     
-    <h2 id="introRansomeware">Case Study: Ransomware Attack</h2>
+    <h2 id="introRansomeware">Given a scenario, use data sources to support an investigation.</h2>
     
-    <p id="ransomwareIntro"></p>
-    Ransomware is malicious software that encrypts files or locks computer systems until a ransom is paid. It is one of the most damaging forms of cybercrime because it can completely disrupt business operations.
-    </p>
-    
-    <p id="internshipExperience">
-    During my internship at <strong>Pridgeon & Clay</strong>, I learned about a ransomware incident that had occurred the year before I joined the company. The attackers reportedly gained access after successfully brute-forcing a server password.
-    </p>
-    
-    <p id="incidentDetails">
-    Once inside the network, the attackers encrypted important company files, preventing employees from accessing critical business information. Instead of paying the ransom, the company rebuilt affected systems from backups and strengthened its overall security posture.
-    </p>
-    
-    <div class="infoBox">
-    
-    <strong>Lessons Learned</strong>
-    
-    <ul style="margin-top:15px; margin-left:25px; line-height:2;">
-    
-    <li>Use strong passwords.</li>
-    
-    <li>Enable Multi-Factor Authentication (MFA).</li>
-    
-    <li>Maintain secure offline backups.</li>
-    
-    <li>Keep systems fully updated.</li>
-    
-    <li>Educate employees about phishing attacks.</li>
-    
-    </ul>
-    
-    </div>
-    
-    <p id="cybersecurityAwareness">
-    Cybersecurity is not only about technology—it also depends on user awareness and following good security practices every day.
-    </p>
-    
+    <h2 id="logData">Log Data</h2>
+
+<p id="logDataTypes">
+Different systems generate different types of logs, each providing a different view into the security posture of an environment. Firewall logs record allowed and denied traffic based on firewall rules, useful for identifying blocked attacks or misconfigured rules. Application logs record events within a specific application, such as errors, user actions, or authentication attempts, helping identify issues at the software level. Endpoint logs capture activity on individual devices, such as processes running or files accessed, which can reveal signs of compromise on a specific machine. OS-specific security logs record security-relevant events at the operating system level, such as login attempts, privilege escalations, or policy changes. IPS/IDS logs record traffic and events flagged by intrusion detection and prevention systems, providing detail on potential attacks that were detected or blocked. Network logs capture broader traffic and connection data across the network, useful for tracing how an attacker moved between systems. Metadata refers to data about the data itself, such as timestamps, file sizes, or sender information, which can provide useful context even when the content of a log entry doesn't tell the whole story.
+</p>
+
+<h2 id="dataSources">Data Sources</h2>
+
+<p id="dataSourcesTypes">
+Beyond raw logs, several other data sources support security monitoring and investigation. Vulnerability scans provide point-in-time snapshots of known weaknesses across systems, feeding into the broader vulnerability management process. Automated reports compile data from various tools into a regular, digestible format, saving analysts from manually pulling information every time. Dashboards provide a real-time, visual summary of security data, allowing teams to quickly spot trends or anomalies without digging through raw logs. Packet captures record the actual data traveling across the network at a granular level, which is especially useful during a deep investigation when logs alone don't provide enough detail about what happened.
+</p>
     <div class="buttons">
     <button id="readAloud3">
             🔊 Read Aloud
