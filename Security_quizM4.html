@@ -289,7 +289,7 @@ You will learn how to identify potential security risks, implement appropriate s
 
 <br id="learningObjectiveBreak"><br>
 
-Understand why cybersecurity matters and recognize the role each person plays in protecting information and systems.
+When you complete this module, you will be able to explain the security implications of proper hardware, software, and data asset management, as well as identify and implement appropriate security controls in software development.
 
 </div>
 
@@ -331,16 +331,88 @@ Next →
 
 <hr>
 
-<h2 id="realWorldExampleTitle">Explain the security implications of proper hardware, software, and data asset management.</h2>
+<h2 id="realWorldExampleTitle">Explain the security implications of proper hardware, software, and data asset management. (part 1)</h2>
 
 <p id="realWorldExampleIntro">
 To obtain proper hardware we use the acquisition/procurement process to ensure that the hardware is secure and meets the organization's security requirements. This includes evaluating the security features of the hardware, such as encryption capabilities, secure boot processes, and firmware integrity checks. Additionally, organizations should establish policies for the secure disposal of hardware to prevent data breaches from discarded devices.
 </p>
 
 <p id="realWorldExampleDetails">
-For security reasons companies should have ways to track ownership of data and protect/classify data. We can track assets through tools like ServiceNow, Samanage or any ticketing software.
+For security reasons companies should have ways to track ownership of data and protect/classify data. We can track assets through tools like ServiceNow, Samanage or any ticketing software. Knowing how to solve tickets is equally important to knowing how to track assets. When a ticket is created, it is important to follow the proper steps to resolve the issue and ensure that the asset is properly tracked and managed. This includes identifying the asset, documenting its location and status, and updating the asset management system accordingly.
 </p>
+<p>If you were given a ticket, what would be the first 5 steps you would do?</p>
 
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <h3>5 Steps to Solve a Problem</h3>
+            <p>Click to see details</p>
+        </div>
+        <div class="flip-card-back">
+            <ol>
+                <li>Identify the problem</li>
+                <li>Establish a theory of probable cause</li>
+                <li>Test the theory to determine the cause</li>
+                <li>Establish a plan of action and implement the solution</li>
+                <li>Verify full system functionality and document findings</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<style>
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.flip-card-front {
+    background-color: #005792;
+    color: white;
+}
+
+.flip-card-back {
+    background-color: #eef7ff;
+    color: #333;
+    transform: rotateY(180deg);
+}
+</style>
+
+<script>
+    const flipCard = document.querySelector('.flip-card');
+    const flipCardInner = document.querySelector('.flip-card-inner');
+
+    flipCard.addEventListener('click', () => {
+        flipCardInner.style.transform = 
+            flipCardInner.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
+    });
+</script>
 <div class="infoBox" id="hacktivismInfoBox">
 <strong id="hacktivismTerm">Cybersecurity Term:</strong>
 <p id="hacktivismDefinition">
@@ -393,7 +465,7 @@ Next →
     
     <hr>
     
-    <h2 id="introRansomeware">Explain various activites associated with vunerability management.</h2>
+    <h2 id="introRansomeware">Explain various activites associated with vunerability management. (part 2)</h2>
     
     <p id="ransomwareIntro"></p>
     Software can be used to automatically inspect computers, networks, code, and web apps for security flaws and misconfigurations.
@@ -404,11 +476,11 @@ Next →
     </p>
     
     <p id="incidentDetails">
-        Threat feeds supply external intelligence about emerging threats and vulnerabilities. Open-source intelligence (OSINT) involves gathering information from publicly available sources such as forums, social media, and security advisories. Proprietary and third-party feeds are paid intelligence services that often provide more curated or timely data than open sources. Information-sharing organizations, such as ISACs, allow organizations within the same industry to pool threat data. Dark web monitoring tracks hidden forums and marketplaces where stolen data or exploit discussions surface, since attackers often sell access or credentials there before an organization even knows it has been breached. A tool I have used at a past job for this kind of monitoring and scanning was Rapid7. 
+        Threat feeds supply external intelligence about emerging threats and vulnerabilities. Open-source intelligence (OSINT) involves gathering information from publicly available sources such as forums, social media, and security advisories. Proprietary and third-party feeds are paid intelligence services that often provide more curated or timely data than open sources. Information-sharing organizations, such as ISACs, allow organizations within the same industry to pool threat data. Dark web monitoring tracks hidden forums and marketplaces where stolen data or exploit discussions surface, since attackers often sell access or credentials there before an organization even knows it has been breached. With this in mind, a tool I have used at a past job for this kind of monitoring and scanning was Rapid7. 
     </p>
     
     <p id="cybersecurityAwareness">
-    People on the dark web (hidden part of the internet that search engines do not index) may try to find vulnerabilities and steal company information and it is very hard to track these people down. To prevent this practice swift detection and damage control. Hackers can hack into OSINTs.
+    People on the dark web (hidden part of the internet that search engines do not index) may try to find vulnerabilities and steal company information and it is very hard to track these people down. To prevent this practice you can use swift detection and damage control. Hackers can hack into OSINTs so swiftly taking finding any malicous behaviour and eliminating risk is the way to safe guard your company.
     </p>
     
     <div class="buttons">
@@ -416,7 +488,9 @@ Next →
             🔊 Read Aloud
     </button>
     <div></div>
-    
+    <button id="back2">
+        Back
+    </button>
     <button id="next3">
     
     Next →
@@ -454,7 +528,7 @@ Next →
     
     <p id="malwareIntro">
     Penetration testing is a simulated cyber attack against your computer system to check for exploitable vulnerabilities. In the context of web application security, penetration testing is commonly used to augment a web application firewall (WAF).
-    Here is a video that explains Penetration Testing: <a href="https://www.youtube.com/watch?v=TA0TbzyU8GY" target="_blank">Penetration Testing Video</a>
+    Here is a video that explains Penetration Testing: <b><a href="https://www.youtube.com/watch?v=TA0TbzyU8GY" target="_blank">Penetration Testing Video</a></b>
     </p>
     
     <p>System and process audits are structured reviews of systems or workflows against a defined standard, such as internal policy or a compliance framework. These audits can catch configuration or process gaps that automated scans might miss.</p>
@@ -513,7 +587,7 @@ Next →
     </p>
 
     <p id="remediationOptions">
-        Patching involves applying vendor-released fixes to close a vulnerability. Insurance, specifically cyber insurance, can offset financial impact when a risk is knowingly accepted rather than eliminated. Segmentation isolates vulnerable systems on separate network segments to limit how far an attacker could move if the vulnerability were exploited. Compensating controls are alternative safeguards used when the primary fix is not immediately possible, such as a firewall rule blocking access to an unpatched service. Exceptions and exemptions are formally documented and approved decisions not to remediate a specific vulnerability, typically including a justification and a scheduled review date.
+        Patching involves installing fixes provided by vendors to address vulnerabilities. Cyber insurance helps reduce financial losses when a risk is accepted instead of being eliminated. Segmentation separates vulnerable systems into isolated network segments, limiting an attacker's movement if the vulnerability is exploited. Compensating controls are temporary safeguards, like firewall rules, used when the primary fix cannot be applied immediately. Exceptions and exemptions are documented decisions to delay or skip fixing a vulnerability, including reasons and a scheduled review date.
         </p>
         
         <h2 id="validationOfRemediation">Validation of Remediation</h2>
@@ -1008,6 +1082,8 @@ Sandboxing involves running an application or piece of code in an isolated envir
     const nextButton8 = document.getElementById('next8');
     const nextButton9 = document.getElementById('next9');
 
+    //back buttons
+    const backButton2 = document.getElementById('back2');
     //read aloud
     const readAloudButton1 = document.getElementById('readAloud1');
     const readAloudButton2 = document.getElementById('readAloud2');
@@ -1069,6 +1145,11 @@ Sandboxing involves running an application or piece of code in an isolated envir
     nextButton8.addEventListener('click', () => {
         section8.style.display = 'none';
         section9.style.display = 'block';
+    });
+
+    backButton2.addEventListener('click', () => {
+        section3.style.display = 'none';
+        section2.style.display = 'block';
     });
 
     // Read aloud functionality
