@@ -354,7 +354,7 @@ Alert response and remediation involves acting on and validating alerts once the
 <h2 id="monitoringTools">Tools</h2>
 
 <p id="monitoringToolsOverview">
-A variety of tools support monitoring activities. The Security Content Automation Protocol (SCAP) is a standardized way to automate vulnerability management and policy compliance checks. Benchmarks provide standardized configuration guidelines, such as those from CIS, that systems can be measured against. Agents and agentless approaches refer to whether monitoring software is installed directly on a device (agent-based) or checks the device remotely without local software (agentless), each with different tradeoffs in visibility and overhead. Security information and event management (SIEM) platforms aggregate and correlate log data from across the environment to detect and alert on potential threats in near real time. Antivirus software detects and blocks known malicious software. Data loss prevention (DLP) tools monitor and restrict the movement of sensitive data to prevent it from leaving the organization improperly. Simple Network Management Protocol (SNMP) traps are automatic alerts sent by network devices when a significant event occurs, without needing to be polled first. NetFlow captures metadata about network traffic patterns, helping identify unusual or suspicious communication between systems. Vulnerability scanners automatically check systems for known weaknesses, tying this section back into the identification methods covered earlier in vulnerability management.
+A variety of tools support monitoring activities. The Security Content Automation Protocol (SCAP) is a standardized way to automate vulnerability management and policy compliance checks. Benchmarks provide standardized configuration guidelines, such as those from CIS, that systems can be measured against. Agents and agentless approaches refer to whether monitoring software is installed directly on a device (agent-based) or checks the device remotely without local software (agentless), each with different tradeoffs in visibility and overhead. Security information and event management (SIEM) platforms aggregate and correlate log data from across the environment to detect and alert on potential threats in near real time. Antivirus software detects and blocks known malicious software. Data loss prevention (DLP) tools monitor and restrict the movement of sensitive data to prevent it from leaving the organization improperly. Simple Network Management Protocol (SNMP) traps are automatic alerts sent by network devices when a significant event occurs, without needing to be polled first. NetFlow captures metadata about network traffic patterns, helping identify unusual or suspicious communication between systems. Vulnerability scanners automatically check systems for known weaknesses.
 </p>
 
 <div class="buttons">
@@ -544,7 +544,8 @@ Threat hunting involves proactively searching for signs of malicious activity th
 <h2 id="digitalForensics">Digital Forensics</h2>
 
 <p id="digitalForensicsProcess">
-Digital forensics involves collecting and analyzing digital evidence in a way that preserves its integrity and legal validity. A legal hold requires preserving relevant data because it may be needed for litigation or investigation, preventing it from being deleted or altered in the normal course of business. Chain of custody documents who has handled evidence and when, from collection through final use, ensuring it can be trusted and admissible if needed for legal proceedings. Acquisition is the process of collecting evidence, such as creating a forensic image of a hard drive, in a way that doesn't alter the original data. Reporting documents the findings of a forensic investigation in a clear, defensible format. Preservation ensures evidence remains unaltered and protected from damage or loss throughout the investigation. E-discovery refers to the process of identifying, collecting, and producing electronic evidence in response to a legal request, such as during litigation.
+    Digital forensics involves collecting, preserving, and analyzing digital evidence in a way that maintains its integrity and legal validity. A legal hold requires relevant data to be preserved because it may be needed for litigation or an investigation, preventing it from being deleted or altered during normal business operations. Preservation ensures that evidence remains unaltered and protected from damage or loss throughout the investigation, while acquisition is the process of collecting evidence, such as creating a forensic image of a hard drive, without modifying the original data. Chain of custody documents who has handled the evidence and when, from initial collection through its final use, helping ensure the evidence can be trusted and remains admissible if needed for legal proceedings. E-discovery is the process of identifying, collecting, and producing electronic evidence in response to a legal request, such as during litigation. Finally, reportings document the findings of the forensic investigation in a clear, accurate, and defensible format.
+
 </p>
     
     <div class="buttons">
@@ -564,250 +565,10 @@ Digital forensics involves collecting and analyzing digital evidence in a way th
     
     </div>
     
-    <!-- ====================================================== -->
-    <!-- PAGE 5 -->
-    
-    <div id="M1Page5" class="module" style="display:none;">
-
-    <header>
-
-    <h1>Cybersecurity Awareness Training</h1>
-
-    <h3>Module 6 • Incident Reporting and Response</h3>
-
-    <div class="progress">
-
-    <progress value="5" max="9"></progress>
-
-    <p>Page 5 of 9</p>
-
-    </div>
-
-    </header>
-
-    <hr>
-
-    <h2 id="findingSecurityRisksTitle">Explain appropiate incident response activities.</h2>
-
-    <p id="findingSecurityRisksIntro">
-    Several free online tools can help identify suspicious websites, malicious files, and unusual network activity.
-    </p>
-
-    <table id="securityToolsTable">
-
-    <tr id="securityToolsHeaderRow">
-        <th id="toolHeader">Tool</th>
-        <th id="purposeHeader">Purpose</th>
-    </tr>
-
-    <tr id="virusTotalRow">
-        <td id="virusTotalTool">VirusTotal</td>
-        <td id="virusTotalPurpose">Scans files and URLs using dozens of antivirus engines.</td>
-    </tr>
-
-    <tr id="urlReputationRow">
-        <td id="urlReputationTool">URL Reputation Services</td>
-        <td id="urlReputationPurpose">Checks whether websites are considered safe before visiting them.</td>
-    </tr>
-
-    <tr id="networkMonitoringRow">
-        <td id="networkMonitoringTool">Network Monitoring</td>
-        <td id="networkMonitoringPurpose">Helps identify applications making unexpected network connections.</td>
-    </tr>
-
-    </table>
-
-    <div class="infoBox" id="securityTipBox">
-        <strong id="securityTipTitle">Security Tip</strong>
-        <ul id="securityTipList" style="margin-top:15px; margin-left:25px; line-height:2;">
-            <li id="verifyWebsiteTip">Verify website addresses before logging in.</li>
-            <li id="scanDownloadsTip">Scan unknown downloads before opening them.</li>
-            <li id="monitorNetworkTip">Monitor unusual network activity.</li>
-            <li id="updateSoftwareTip">Keep browsers and antivirus software updated.</li>
-            <li id="browserWarningsTip">Never ignore browser security warnings.</li>
-        </ul>
-    </div>
-
-    <p>
-
-    Useful Resources:
-
-    </p>
-
-    <ul style="margin-left:30px; line-height:2;">
-
-    <li><a href="https://www.virustotal.com/" target="_blank">VirusTotal</a></li>
-
-    <li><a href="https://transparencyreport.google.com/safe-browsing/search" target="_blank">Google Safe Browsing</a></li>
-
-    <li><a href="https://www.cisa.gov/" target="_blank">CISA Cybersecurity Resources</a></li>
-
-    </ul>
-
-    <div class="buttons">
-        <button id="readAloud5">
-            🔊 Read Aloud
-        </button>
-        <button id="next5">
-            Next →
-        </button>
-    </div>
-
-    </div>
-
 <!-- ====================================================== -->
-<!-- PAGE 6 -->
+<!-- PAGE 5 -->
 
-<div id="M1Page6" class="module" style="display:none;">
-
-    <header>
-    
-    <h1>Given an scenerio, use data sources to support an investigation.</h1>
-    
-    <h3>Module 1 • Security Fundamentals</h3>
-    
-    <div class="progress">
-    
-    <progress value="6" max="9"></progress>
-    
-    <p>Page 6 of 9</p>
-    
-    </div>
-    
-    </header>
-    
-    <hr>
-    
-    <h2 id="securityControlsTitle">Types of Security Controls</h2>
-    
-    <p id="securityControlsIntro">
-    Organizations use several layers of security controls to reduce cyber risk. No single control can stop every attack, so companies combine multiple approaches to create a strong defense.
-    </p>
-    
-    <table id="securityControlsTable">
-    
-    <tr id="securityControlsHeaderRow">
-        <th id="controlTypeHeader">Control Type</th>
-        <th id="examplesHeader">Examples</th>
-        <th id="purposeHeader">Purpose</th>
-    </tr>
-    
-    <tr id="technicalControlRow">
-        <td id="technicalControlType"><strong>Technical</strong></td>
-        <td id="technicalExamples">Firewalls, Antivirus, Encryption, MFA</td>
-        <td id="technicalPurpose">Protect systems using technology.</td>
-    </tr>
-    
-    <tr id="managerialControlRow">
-        <td id="managerialControlType"><strong>Managerial</strong></td>
-        <td id="managerialExamples">Security Policies, Risk Assessments, Audits</td>
-        <td id="managerialPurpose">Guide security planning and governance.</td>
-    </tr>
-    
-    <tr id="operationalControlRow">
-        <td id="operationalControlType"><strong>Operational</strong></td>
-        <td id="operationalExamples">Security Awareness Training, Incident Response</td>
-        <td id="operationalPurpose">Improve daily security procedures.</td>
-    </tr>
-    
-    <tr id="physicalControlRow">
-        <td id="physicalControlType"><strong>Physical</strong></td>
-        <td id="physicalExamples">Badge Readers, Cameras, Locks, Biometrics</td>
-        <td id="physicalPurpose">Protect facilities and equipment.</td>
-    </tr>
-    
-    </table>
-    
-    <div class="infoBox" id="defenseInDepthBox">
-        <strong id="defenseInDepthTitle">Defense in Depth</strong>
-        <p id="defenseInDepthDescription" style="margin-top:12px;">
-        Good cybersecurity relies on multiple layers of protection rather than a single security solution.
-        </p>
-    </div>
-    
-    <div class="buttons">
-        <button id="readAloud6">🔊 Read Aloud</button>
-        <button id="next6">Next →</button>
-    </div>
-    
-</div>
-
-<!-- ====================================================== -->
-<!-- PAGE 7 -->
-
-<div id="M1Page7" class="module" style="display:none;">
-
-    <header>
-    
-    <h1>Cybersecurity Awareness Training</h1>
-    
-    <h3>Module 1 • Security Fundamentals</h3>
-    
-    <div class="progress">
-    
-    <progress value="7" max="9"></progress>
-    
-    <p>Page 7 of 9</p>
-    
-    </div>
-    
-    </header>
-    
-    <hr>
-    
-    <h2 id="cryptographyTitle">Cryptography and Public Key Infrastructure (PKI)</h2>
-    
-    <p id="cryptographyIntro">
-    Encryption protects sensitive information by converting readable data into an unreadable format that only authorized users can access.
-    </p>
-    
-    <p id="pkiIntro">
-    One of the most widely used cryptographic systems is <strong>Public Key Infrastructure (PKI)</strong>, which uses two mathematically related keys.
-    </p>
-    
-    <table id="pkiTable">
-    
-    <tr id="pkiTableHeaderRow">
-        <th id="keyHeader">Key</th>
-        <th id="purposeHeader">Purpose</th>
-    </tr>
-    
-    <tr id="publicKeyRow">
-        <td id="publicKey">Public Key</td>
-        <td id="publicKeyPurpose">Encrypts data and verifies digital signatures. It can be shared freely.</td>
-    </tr>
-    
-    <tr id="privateKeyRow">
-        <td id="privateKey">Private Key</td>
-        <td id="privateKeyPurpose">Decrypts encrypted data and creates digital signatures. It must remain secret.</td>
-    </tr>
-    
-    </table>
-    
-    <div class="infoBox" id="pkiTechnologiesBox">
-        <strong id="pkiTechnologiesTitle">Common PKI Technologies</strong>
-        <ul id="pkiTechnologiesList" style="margin-top:15px; margin-left:25px; line-height:2;">
-            <li id="digitalCertificates">Digital Certificates</li>
-            <li id="certificateAuthorities">Certificate Authorities (CA)</li>
-            <li id="hardwareSecurityModules">Hardware Security Modules (HSM)</li>
-            <li id="trustedPlatformModules">Trusted Platform Modules (TPM)</li>
-        </ul>
-    </div>
-    
-    <p id="pkiUsage">
-    PKI helps secure websites, email communication, VPN connections, software updates, and many other everyday technologies.
-    </p>
-    
-    <div class="buttons">
-        <button id="readAloud7">🔊 Read Aloud</button>
-        <button id="next7">Next →</button>
-    </div>
-    
-</div>
-<!-- ====================================================== -->
-<!-- PAGE 6 -->
-
-<div id="M1Page6" class="module" style="display:none;">
+<div id="M1Page5" class="module" style="display:none;">
 
     <header>
     
@@ -827,59 +588,541 @@ Digital forensics involves collecting and analyzing digital evidence in a way th
     
     <hr>
     
-    <h2 id="securityControlsTitle">Types of Security Controls</h2>
+    <h2 id="securityControlsTitle">Ticket Practice</h2>
     
     <p id="securityControlsIntro"></p>
-    Organizations use several layers of security controls to reduce cyber risk. No single control can stop every attack, so companies combine multiple approaches to create a strong defense.
+    In this lab you will be given a ticket from the IT Security team and you will have to figure out how to help this unfortunate user.
     </p>
-    
-    <table id="securityControlsTable">
-    
-    <tr id="securityControlsHeaderRow">
-        <th id="controlTypeHeader">Control Type</th>
-        <th id="examplesHeader">Examples</th>
-        <th id="purposeHeader">Purpose</th>
-    </tr>
-    
-    <tr id="technicalControlRow">
-        <td id="technicalControlType"><strong>Technical</strong></td>
-        <td id="technicalExamples">Firewalls, Antivirus, Encryption, MFA</td>
-        <td id="technicalPurpose">Protect systems using technology.</td>
-    </tr>
-    
-    <tr id="managerialControlRow">
-        <td id="managerialControlType"><strong>Managerial</strong></td>
-        <td id="managerialExamples">Security Policies, Risk Assessments, Audits</td>
-        <td id="managerialPurpose">Guide security planning and governance.</td>
-    </tr>
-    
-    <tr id="operationalControlRow">
-        <td id="operationalControlType"><strong>Operational</strong></td>
-        <td id="operationalExamples">Security Awareness Training, Incident Response</td>
-        <td id="operationalPurpose">Improve daily security procedures.</td>
-    </tr>
-    
-    <tr id="physicalControlRow">
-        <td id="physicalControlType"><strong>Physical</strong></td>
-        <td id="physicalExamples">Badge Readers, Cameras, Locks, Biometrics</td>
-        <td id="physicalPurpose">Protect facilities and equipment.</td>
-    </tr>
-    
-    </table>
+    <title>SOC Investigation Lab</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .soc-lab {
+             background: #0b1120;
+             color: #e5e7eb;
+}
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 35px 20px;
+        }
+
+        .header {
+            background: #111827;
+            border: 1px solid #374151;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        .lab-label {
+            display: inline-block;
+            background: #7f1d1d;
+            color: #fecaca;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: 32px;
+        }
+
+        .subtitle {
+            color: #9ca3af;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .ticket {
+            background: #111827;
+            border: 1px solid #374151;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .ticket-header {
+            padding: 20px 25px;
+            background: #1f2937;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .ticket-id {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .severity {
+            background: #7f1d1d;
+            color: #fecaca;
+            padding: 7px 13px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .ticket-body {
+            padding: 25px;
+        }
+
+        .ticket-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .field {
+            background: #0b1120;
+            padding: 15px;
+            border-radius: 9px;
+        }
+
+        .field-label {
+            color: #6b7280;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .field-value {
+            font-weight: bold;
+        }
+
+        .instruction {
+            background: #172554;
+            border-left: 4px solid #3b82f6;
+            padding: 18px;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+
+        .section {
+            background: #111827;
+            border: 1px solid #374151;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 23px;
+        }
+
+        .log-container {
+            background: #050914;
+            border: 1px solid #374151;
+            border-radius: 10px;
+            overflow: auto;
+        }
+
+        .log {
+            margin: 0;
+            padding: 20px;
+            font-family: Consolas, monospace;
+            font-size: 13px;
+            line-height: 1.7;
+            white-space: pre-wrap;
+            color: #d1d5db;
+        }
+
+        .question {
+            margin-bottom: 22px;
+        }
+
+        .question label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #4b5563;
+            background: #0b1120;
+            color: white;
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        button {
+            border: none;
+            border-radius: 8px;
+            padding: 13px 22px;
+            background: #2563eb;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 18px;
+            border-radius: 9px;
+            display: none;
+            line-height: 1.6;
+        }
+
+        .correct {
+            display: block;
+            background: #064e3b;
+            color: #a7f3d0;
+        }
+
+        .incorrect {
+            display: block;
+            background: #7f1d1d;
+            color: #fecaca;
+        }
+
+        .hint {
+            margin-top: 15px;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        .footer-note {
+            color: #6b7280;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 700px) {
+            .ticket-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ticket-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+<div class="soc-lab">
+
+<div class="container">
+
+    <!-- LAB INTRO -->
+    <div class="header">
+        <span class="lab-label">SOC INVESTIGATION LAB</span>
+
+        <h1>Suspicious Script Execution</h1>
+
+        <p class="subtitle">
+            In this lab, you are a member of the IT Security team.
+            You have received a security ticket involving suspicious
+            script activity on a company workstation. Review the ticket
+            and SIEM log evidence, determine what happened, and decide
+            how the incident should be handled.
+        </p>
+    </div>
+
+
+    <!-- TICKET -->
+    <div class="ticket">
+
+        <div class="ticket-header">
+            <div class="ticket-id">
+                Ticket #SEC-2026-0817
+            </div>
+
+            <div class="severity">
+                MEDIUM
+            </div>
+        </div>
+
+        <div class="ticket-body">
+
+            <div class="ticket-grid">
+
+                <div class="field">
+                    <div class="field-label">Reported By</div>
+                    <div class="field-value">
+                        Branden Husted
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="field-label">Source</div>
+                    <div class="field-value">
+                        Rapid7 SIEM
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="field-label">Affected User</div>
+                    <div class="field-value">
+                        Patrick Alpers
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="field-label">Affected Host</div>
+                    <div class="field-value">
+                        WIN-IT-0427
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="field-label">Detection Time</div>
+                    <div class="field-value">
+                        2026-08-07 10:42:17 AM
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="field-label">Detection</div>
+                    <div class="field-value">
+                        Suspicious Script Execution
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="instruction">
+                <strong>Your task:</strong><br>
+                Investigate the available evidence and determine what
+                security issue may have occurred. Identify the suspicious
+                behavior, determine whether the activity appears malicious,
+                and recommend an appropriate response.
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- SIEM LOG -->
+    <div class="section">
+
+        <h2>📋 Rapid7 SIEM Event</h2>
+
+        <p>
+            The following event was collected from the endpoint and
+            correlated by the SIEM.
+        </p>
+
+        <div class="log-container">
+<pre class="log">{
+  "timestamp": "2026-08-07T10:42:17.394Z",
+  "product": "RAPID7_SIEM",
+  "event_type": "SuspiciousScriptExecution",
+  "severity": "Medium",
+  "title": "Suspicious PowerShell Script Execution",
+  "source": {
+      "hostname": "WIN-IT-0427",
+      "ip_address": "10.20.14.27",
+      "username": "D.PALPERS",
+      "domain": "IBCP"
+  },
+
+  "process": {
+      "name": "powershell.exe",
+      "pid": 4812,
+      "parent_process": "Cursor.exe",
+      "parent_pid": 3920,
+
+      "command_line":
+      "powershell.exe -ExecutionPolicy Bypass -File
+      C:\\Users\\D.PALPERS\\AppData\\Local\\Temp\\
+      ps-script-b1a79e44-d942-43cc-83bb-7f3f20175cf0.ps1"
+  },
+
+  "file": {
+      "name":
+      "ps-script-b1a79e44-d942-43cc-83bb-7f3f20175cf0.ps1",
+
+      "path":
+      "C:\\Users\\D.PALPERS\\AppData\\Local\\Temp\\",
+
+      "extension": ".ps1",
+
+      "sha256":
+      "7b4e91f8c4e2a1d98a7d3b9c6f1e55a91f8c9d3e7a2b6c4d8e1f0a9b5c3d7e2f"
+  },
+
+  "behavior": {
+      "execution_policy_bypass": true,
+      "temporary_directory_execution": true,
+      "script_download_detected": true,
+      "encoded_command_detected": false,
+      "network_connection_detected": true
+  },
+
+  "network": {
+      "destination_ip": "185.199.108.153",
+      "destination_port": 443,
+      "protocol": "HTTPS"
+  },
+
+  "defender": {
+      "detection":
+      "Suspicious PowerShell activity",
+
+      "action":
+      "Detected"
+  },
+
+  "analyst": {
+      "reported_by": "Branden Husted",
+      "status": "Open",
+      "investigation_required": true
+  }
+}</pre>
+        </div>
+
+        <p class="footer-note">
+            Note: This is a simulated SIEM event created for training purposes.
+        </p>
+
+    </div>
+
+
+    <!-- INVESTIGATION -->
+    <div class="section">
+
+        <h2>🔎 Investigation</h2>
+
+        <p>
+            Use the evidence above to answer the following questions.
+            Do not simply look for a keyword—consider how the different
+            pieces of evidence relate to one another.
+        </p>
+
+        <div class="question">
+
+            <label for="issue">
+                1. What is the primary security issue?
+            </label>
+
+            <select id="issue">
+                <option value="">Select an answer...</option>
+                <option value="malware">
+                    Suspicious PowerShell execution potentially associated
+                    with malware
+                </option>
+
+                <option value="update">
+                    A normal Windows update
+                </option>
+
+                <option value="network">
+                    A network connectivity problem
+                </option>
+
+                <option value="password">
+                    A password expiration issue
+                </option>
+            </select>
+
+        </div>
+
+
+        <div class="question">
+
+            <label for="indicators">
+                2. Which indicators are most concerning?
+            </label>
+
+            <textarea id="indicators"
+                placeholder="Explain which log entries make the activity suspicious..."></textarea>
+
+        </div>
+
+
+        <div class="question">
+
+            <label for="response">
+                3. What should the security team consider doing next?
+            </label>
+
+            <textarea id="response"
+                placeholder="Describe the appropriate security response..."></textarea>
+
+        </div>
+
+
+        <button onclick="checkInvestigation()">
+            Submit Investigation
+        </button>
+
+        <div id="result" class="result"></div>
+
+    </div>
+
+
+    <!-- HINT -->
+    <div class="section">
+
+        <h2>💡 Need a Hint?</h2>
+
+        <p>
+            Look closely at the relationship between:
+        </p>
+
+        <ul>
+            <li>PowerShell</li>
+            <li>Execution Policy Bypass</li>
+            <li>The temporary directory</li>
+            <li>The script file</li>
+            <li>Cursor.exe as the parent process</li>
+            <li>The outbound HTTPS connection</li>
+        </ul>
+
+        <button onclick="showHint()">
+            Reveal Hint
+        </button>
+
+        <div id="hint" class="result">
+            The individual indicators may not prove malicious activity
+            by themselves. However, the combination of a script executing
+            from a user's temporary directory, an execution-policy bypass,
+            and an outbound network connection should cause the analyst
+            to investigate whether the script was downloaded or executed
+            as part of potentially malicious activity.
+        </div>
+
+    </div>
+
+</div>
+
+
     
     <div class="infoBox" id="defenseInDepthBox">
         <strong id="defenseInDepthTitle">Defense in Depth</strong>
         <p id="defenseInDepthDescription" style="margin-top:12px;">
-        Good cybersecurity relies on multiple layers of protection rather than a single security solution.
+        Watch for small details that can tell you where a compromise or alert was generated at.
         </p>
     
     </div>
+</div>
     
     <div class="buttons">
     
-    <div></div>
-    
-    <button id="next6">
+    <button id="next5">
     Next →
     </button>
     
@@ -887,174 +1130,11 @@ Digital forensics involves collecting and analyzing digital evidence in a way th
     
     </div>
     
-    <!-- ====================================================== -->
-    <!-- PAGE 7 -->
-    
-    <div id="M1Page7" class="module" style="display:none;">
-    
-    <header>
-    
-    <h1>Cybersecurity Awareness Training</h1>
-    
-    <h3>Module 1 • Security Fundamentals</h3>
-    
-    <div class="progress">
-    
-    <progress value="7" max="9"></progress>
-    
-    <p>Page 7 of 9</p>
-    
-    </div>
-    
-    </header>
-    
-    <hr>
-    
-    <h2 id="cryptographyTitle">Cryptography and Public Key Infrastructure (PKI)</h2>
-    
-    <p id="cryptographyIntro">
-    Encryption protects sensitive information by converting readable data into an unreadable format that only authorized users can access.
-    </p>
-    
-    <p id="pkiIntro">
-    One of the most widely used cryptographic systems is <strong id="pkiStrong">Public Key Infrastructure (PKI)</strong>, which uses two mathematically related keys.
-    </p>
-    
-    <table id="pkiTable">
-    
-    <tr id="pkiTableHeaderRow">
-        <th id="keyHeader">Key</th>
-        <th id="purposeHeader">Purpose</th>
-    </tr>
-    
-    <tr id="publicKeyRow">
-        <td id="publicKey">Public Key</td>
-        <td id="publicKeyPurpose">Encrypts data and verifies digital signatures. It can be shared freely.</td>
-    </tr>
-    
-    <tr id="privateKeyRow">
-        <td id="privateKey">Private Key</td>
-        <td id="privateKeyPurpose">Decrypts encrypted data and creates digital signatures. It must remain secret.</td>
-    </tr>
-    
-    </table>
-    
-    <div class="infoBox" id="pkiTechnologiesBox">
-        <strong id="pkiTechnologiesTitle">Common PKI Technologies</strong>
-        <ul id="pkiTechnologiesList" style="margin-top:15px; margin-left:25px; line-height:2;">
-            <li id="digitalCertificates">Digital Certificates</li>
-            <li id="certificateAuthorities">Certificate Authorities (CA)</li>
-            <li id="hardwareSecurityModules">Hardware Security Modules (HSM)</li>
-            <li id="trustedPlatformModules">Trusted Platform Modules (TPM)</li>
-        </ul>
-    </div>
-    
-    <p id="pkiUsage">
-    PKI helps secure websites, email communication, VPN connections, software updates, and many other everyday technologies.
-    </p>
-    
-    <div class="buttons">
-    
-    <div></div>
-    
-    <button id="next7">
-    Next →
-    </button>
-    
-    </div>
-    
-    </div>
     
     <!-- ====================================================== -->
-    <!-- PAGE 8 -->
+    <!-- PAGE 6 -->
     
-    <div id="M1Page8" class="module" style="display:none;">
-    
-    <header>
-    
-    <h1>Cybersecurity Awareness Training</h1>
-    
-    <h3>Module 1 • Security Fundamentals</h3>
-    
-    <div class="progress">
-    
-    <progress value="8" max="9"></progress>
-    
-    <p>Page 8 of 9</p>
-    
-    </div>
-    
-    </header>
-    
-    <hr>
-    
-    <h2 id="changeManagementTitle">Change Management</h2>
-    
-    <p id="changeManagementIntro">
-    Every modification to software, hardware, or network infrastructure should follow a formal change management process.
-    </p>
-    
-    <p id="changeManagementBenefits">
-    Proper planning reduces downtime, prevents configuration mistakes, and minimizes security risks caused by unauthorized or poorly tested changes.
-    </p>
-    
-    <table id="changeManagementTable">
-    
-    <tr id="changeManagementHeaderRow">
-        <th id="stepHeader">Step</th>
-        <th id="descriptionHeader">Description</th>
-    </tr>
-    
-    <tr id="requestRow">
-        <td id="requestStep">Request</td>
-        <td id="requestDescription">Document the proposed change.</td>
-    </tr>
-    
-    <tr id="reviewRow">
-        <td id="reviewStep">Review</td>
-        <td id="reviewDescription">Assess security and business impact.</td>
-    </tr>
-    
-    <tr id="approvalRow">
-        <td id="approvalStep">Approval</td>
-        <td id="approvalDescription">Receive management authorization.</td>
-    </tr>
-    
-    <tr id="implementationRow">
-        <td id="implementationStep">Implementation</td>
-        <td id="implementationDescription">Deploy the approved change.</td>
-    </tr>
-    
-    <tr id="verificationRow">
-        <td id="verificationStep">Verification</td>
-        <td id="verificationDescription">Confirm the change was successful.</td>
-    </tr>
-    
-    <tr id="documentationRow">
-        <td id="documentationStep">Documentation</td>
-        <td id="documentationDescription">Record the completed work.</td>
-    </tr>
-    
-    </table>
-    
-    <div class="infoBox" id="changeManagementInfoBox">
-        <strong id="whyItMattersTitle">Why It Matters</strong>
-        <p id="whyItMattersDescription" style="margin-top:12px;">
-        Structured change management improves security, accountability, system stability, and compliance.
-        </p>
-    </div>
-    
-    <div class="buttons"></div>
-        <button id="readAloud8">🔊 Read Aloud</button>
-        <button id="next8">Next →</button>
-    </div>
-    
-    </div>
-    
-    <!-- ====================================================== -->
-    <!-- PAGE 9 -->
-    
-    <div id="M1Page9" class="module" style="display:none;">
+    <div id="M1Page6" class="module" style="display:none;">
     
     <header>
     
@@ -1188,20 +1268,73 @@ Digital forensics involves collecting and analyzing digital evidence in a way th
         section6.style.display = 'block';
     });
 
-    nextButton6.addEventListener('click', () => {
-        section6.style.display = 'none';
-        section7.style.display = 'block';
-    });
+function checkInvestigation() {
 
-    nextButton7.addEventListener('click', () => {
-        section7.style.display = 'none';
-        section8.style.display = 'block';
-    });
+    const issue = document.getElementById("issue").value;
+    const indicators =
+        document.getElementById("indicators").value.trim();
 
-    nextButton8.addEventListener('click', () => {
-        section8.style.display = 'none';
-        section9.style.display = 'block';
-    });
+    const response =
+        document.getElementById("response").value.trim();
+
+    const result =
+        document.getElementById("result");
+
+    if (!issue || !indicators || !response) {
+
+        result.className = "result incorrect";
+
+        result.innerHTML =
+            "<strong>Investigation incomplete.</strong><br>" +
+            "Answer all three questions before submitting.";
+
+        return;
+    }
+
+    if (issue === "malware") {
+
+        result.className = "result correct";
+
+        result.innerHTML =
+            "<strong>✓ Investigation Complete</strong><br><br>" +
+
+            "You correctly identified the primary issue as " +
+            "suspicious PowerShell execution that may be associated " +
+            "with malicious activity.<br><br>" +
+
+            "<strong>Key indicators:</strong> Execution Policy Bypass, " +
+            "script execution from a temporary directory, script " +
+            "download activity, and an outbound HTTPS connection.<br><br>" +
+
+            "<strong>Analyst takeaway:</strong> These indicators do not " +
+            "automatically prove that malware was installed, but they " +
+            "provide enough evidence to justify further investigation " +
+            "and containment if malicious activity is confirmed.";
+    }
+
+    else {
+
+        result.className = "result incorrect";
+
+        result.innerHTML =
+            "<strong>⚠ Re-evaluate the evidence.</strong><br><br>" +
+
+            "Review the PowerShell command line and the behavioral " +
+            "indicators in the SIEM event. Pay particular attention " +
+            "to the Execution Policy Bypass and the script's location.";
+    }
+}
+
+
+function showHint() {
+
+    const hint = document.getElementById("hint");
+
+    hint.className = "result correct";
+
+}
+
+
 
     // Read aloud functionality
     readAloudButton1.addEventListener('click', () => {
