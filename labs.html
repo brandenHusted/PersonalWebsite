@@ -238,7 +238,7 @@
 
 <header>
     <h1>Security+ Interactive Labs</h1>
-    <p>5 Randomly Selected Hands-On Labs (from a pool of 20)</p>
+    <p>5 Randomly Selected Hands-On Labs (from a pool of 23)</p>
 </header>
 
 <div class="container">
@@ -1397,6 +1397,156 @@ sha256sum invoice_updated.exe
 
 
     <!-- ================================================= -->
+    <!-- LAB 21 - FIREWALL CONFIGURATION -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab21">
+
+        <div class="lab-number" id="labNum21">LAB</div>
+
+        <h2>Firewall Configuration: Blocking Inbound RDP</h2>
+
+        <div class="instructions">
+            <strong>Scenario:</strong>
+            A Linux server is exposed to the internet. HTTPS (443) is a
+            required public service, but inbound RDP (3389) should never
+            be reachable from outside the network. Use the host firewall
+            to close it off.
+        </div>
+
+        <div class="terminal">
+Firewall status: active
+
+To                Action   From
+--                ------   ----
+443/tcp           ALLOW    Anywhere
+3389/tcp          ALLOW    Anywhere
+
+Type a command below to block inbound RDP. Try:
+
+ufw deny 3389/tcp
+        </div>
+
+        <input id="cmdInput21" class="terminal-input" placeholder="Enter your firewall command...">
+
+        <button onclick="runCommand(21)">Run Command</button>
+
+        <div id="cmdOutput21" class="terminal command-result"></div>
+
+        <p>
+            Why should inbound RDP typically be blocked from the
+            public internet in a scenario like this?
+        </p>
+
+        <input id="answerInput21" class="terminal-input" placeholder="Type your answer...">
+
+        <button onclick="checkOpenAnswer(21, ['brute force', 'attack surface', 'unauthorized access', 'exploit'])">Submit Answer</button>
+
+        <div id="feedback21" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 22 - WINDOWS VULNERABILITY SCAN -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab22">
+
+        <div class="lab-number" id="labNum22">LAB</div>
+
+        <h2>Vulnerability Scanning: Windows Server</h2>
+
+        <div class="instructions">
+            <strong>Scenario:</strong>
+            You are performing an authorized vulnerability assessment
+            of a Windows file server. Run a vulnerability scan against
+            the target to identify exploitable weaknesses.
+        </div>
+
+        <div class="terminal">
+Target: 10.10.10.15 (Windows Server 2016)
+
+Type a vulnerability scan command below. Try:
+
+nmap --script vuln 10.10.10.15
+        </div>
+
+        <input id="cmdInput22" class="terminal-input" placeholder="Enter your vulnerability scan command...">
+
+        <button onclick="runCommand(22)">Run Command</button>
+
+        <div id="cmdOutput22" class="terminal command-result"></div>
+
+        <p>
+            Based on the scan results, what should be done to remediate
+            this critical vulnerability?
+        </p>
+
+        <input id="answerInput22" class="terminal-input" placeholder="Type the remediation action...">
+
+        <button onclick="checkOpenAnswer(22, ['patch', 'update', 'disable smbv1', 'disable smb v1'])">Submit Answer</button>
+
+        <div id="feedback22" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 23 - LINUX VULNERABILITY SCAN -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab23">
+
+        <div class="lab-number" id="labNum23">LAB</div>
+
+        <h2>Vulnerability Scanning: Linux Web Server</h2>
+
+        <div class="instructions">
+            <strong>Scenario:</strong>
+            You are performing an authorized vulnerability assessment
+            of a Linux web server. Run a vulnerability scan against
+            the target to identify exploitable weaknesses.
+        </div>
+
+        <div class="terminal">
+Target: 10.10.10.22 (Ubuntu 18.04, running Apache)
+
+Type a vulnerability scan command below. Try:
+
+nmap --script vuln 10.10.10.22
+        </div>
+
+        <input id="cmdInput23" class="terminal-input" placeholder="Enter your vulnerability scan command...">
+
+        <button onclick="runCommand(23)">Run Command</button>
+
+        <div id="cmdOutput23" class="terminal command-result"></div>
+
+        <p>
+            Based on the scan results, what is the most direct way to
+            remediate this vulnerability?
+        </p>
+
+        <input id="answerInput23" class="terminal-input" placeholder="Type the remediation action...">
+
+        <button onclick="checkOpenAnswer(23, ['patch', 'update', 'upgrade apache', 'update apache'])">Submit Answer</button>
+
+        <div id="feedback23" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
     <!-- RESULTS -->
     <!-- ================================================= -->
 
@@ -1421,7 +1571,7 @@ sha256sum invoice_updated.exe
 
 <script>
 
-const TOTAL_LAB_POOL = 20;
+const TOTAL_LAB_POOL = 23;
 const LABS_PER_SESSION = 5;
 
 let score = 0;
@@ -1489,7 +1639,16 @@ const explanations = {
     "An expired certificate causes browsers to display trust warnings even though the underlying key pair may still be valid. Renewing the certificate resolves the warning.",
 
     20:
-    "A file hash that matches a known-malicious entry in a threat intelligence feed is a strong indicator of compromise, and the file should be treated as malicious until proven otherwise."
+    "A file hash that matches a known-malicious entry in a threat intelligence feed is a strong indicator of compromise, and the file should be treated as malicious until proven otherwise.",
+
+    21:
+    "Remote-access services like RDP are frequently targeted by brute-force and credential-stuffing attacks when exposed to the internet. Blocking inbound RDP at the firewall while leaving only required services (like HTTPS) open reduces the attack surface without affecting legitimate traffic.",
+
+    22:
+    "MS17-010 (EternalBlue) is a critical SMBv1 remote code execution vulnerability. Remediation involves applying the vendor security patch and/or disabling the outdated SMBv1 protocol so the flaw can no longer be exploited.",
+
+    23:
+    "Outdated web server software can carry known, publicly documented vulnerabilities (CVEs). Updating or patching Apache to a fixed version removes the vulnerable code path and closes off the exploit."
 };
 
 
@@ -1571,6 +1730,81 @@ Hint:
 Try:
 
 sha256sum invoice_updated.exe`
+    },
+
+    21: {
+        accepted: ["ufw deny 3389/tcp", "ufw deny 3389"],
+        success:
+`Rule updated
+Firewall reloaded
+
+Firewall status: active
+
+To                Action   From
+--                ------   ----
+443/tcp           ALLOW    Anywhere
+3389/tcp          DENY     Anywhere
+
+Inbound RDP is now blocked. HTTPS remains reachable.`,
+        hint:
+`Command not recognized.
+
+Hint:
+Try:
+
+ufw deny 3389/tcp`
+    },
+
+    22: {
+        accepted: ["nmap --script vuln 10.10.10.15"],
+        success:
+`Starting vulnerability scan...
+
+Nmap scan report for 10.10.10.15 (Windows Server 2016)
+
+PORT     STATE  SERVICE
+445/tcp  open   microsoft-ds
+
+VULNERABLE:
+MS17-010 (EternalBlue) - SMBv1 Remote Code Execution
+CVE-2017-0144
+State: VULNERABLE
+Risk factor: CRITICAL
+
+Scan complete.`,
+        hint:
+`Command not recognized.
+
+Hint:
+Try:
+
+nmap --script vuln 10.10.10.15`
+    },
+
+    23: {
+        accepted: ["nmap --script vuln 10.10.10.22"],
+        success:
+`Starting vulnerability scan...
+
+Nmap scan report for 10.10.10.22 (Ubuntu 18.04)
+
+PORT    STATE  SERVICE
+80/tcp  open   http
+
+VULNERABLE:
+Apache 2.4.29 - mod_cgi Remote Code Execution
+CVE-2019-0211
+State: VULNERABLE
+Risk factor: HIGH
+
+Scan complete.`,
+        hint:
+`Command not recognized.
+
+Hint:
+Try:
+
+nmap --script vuln 10.10.10.22`
     }
 
 };
