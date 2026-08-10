@@ -1,0 +1,1993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security+ Interactive Labs</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        color: #222;
+    }
+
+    header {
+        background: #007BFF;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        margin: 0 0 8px 0;
+    }
+
+    .container {
+        max-width: 950px;
+        margin: 30px auto;
+        padding: 25px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    }
+
+    .lab {
+        display: none;
+    }
+
+    .lab.active {
+        display: block;
+    }
+
+    .lab-number {
+        color: #007BFF;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    h2 {
+        margin-top: 8px;
+    }
+
+    .instructions {
+        background: #eef6ff;
+        border-left: 5px solid #007BFF;
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .terminal {
+        background: #111;
+        color: #00ff66;
+        padding: 20px;
+        border-radius: 8px;
+        font-family: Consolas, monospace;
+        margin: 20px 0;
+        min-height: 180px;
+        white-space: pre-wrap;
+    }
+
+    .terminal-input {
+        width: 100%;
+        padding: 12px;
+        background: #222;
+        color: #00ff66;
+        border: 1px solid #555;
+        font-family: Consolas, monospace;
+        border-radius: 4px;
+    }
+
+    button {
+        background: #007BFF;
+        color: white;
+        border: none;
+        padding: 11px 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+        font-size: 15px;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+
+    button.secondary {
+        background: #6c757d;
+    }
+
+    button.success {
+        background: #198754;
+    }
+
+    button.danger {
+        background: #dc3545;
+    }
+
+    .answer-area {
+        margin-top: 20px;
+    }
+
+    .answer-option {
+        display: block;
+        padding: 12px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .answer-option:hover {
+        background: #f1f7ff;
+    }
+
+    .answer-option input {
+        margin-right: 10px;
+    }
+
+    .feedback {
+        display: none;
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 6px;
+    }
+
+    .correct {
+        background: #d1e7dd;
+        border: 1px solid #198754;
+        color: #0f5132;
+    }
+
+    .incorrect {
+        background: #f8d7da;
+        border: 1px solid #dc3545;
+        color: #842029;
+    }
+
+    .log-box {
+        background: #1e1e1e;
+        color: #ddd;
+        padding: 20px;
+        border-radius: 7px;
+        font-family: Consolas, monospace;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        margin: 15px 0;
+    }
+
+    .email-box {
+        border: 1px solid #ccc;
+        border-radius: 7px;
+        padding: 20px;
+        background: #fafafa;
+    }
+
+    .email-header {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    .score {
+        text-align: center;
+        font-size: 28px;
+        margin: 25px 0;
+    }
+
+    .progress {
+        width: 100%;
+        height: 12px;
+        background: #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    .progress-bar {
+        height: 100%;
+        background: #007BFF;
+        width: 10%;
+        transition: width 0.3s;
+    }
+
+    .command-result {
+        margin-top: 15px;
+        color: #00ff66;
+    }
+
+    .config-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+
+    .config-table th,
+    .config-table td {
+        border: 1px solid #ccc;
+        padding: 12px;
+        text-align: left;
+    }
+
+    .config-table th {
+        background: #f1f1f1;
+    }
+
+    .result-screen {
+        display: none;
+        text-align: center;
+    }
+
+    .result-screen h2 {
+        font-size: 32px;
+    }
+
+    .small {
+        color: #666;
+        font-size: 14px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Security+ Interactive Labs</h1>
+    <p>5 Randomly Selected Hands-On Labs (from a pool of 20)</p>
+</header>
+
+<div class="container">
+
+    <div class="progress">
+        <div id="progressBar" class="progress-bar"></div>
+    </div>
+
+    <!-- ================================================= -->
+    <!-- LAB 1 - WIRESHARK -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab1">
+
+        <div class="lab-number" id="labNum1">LAB</div>
+
+        <h2>Wireshark Packet Analysis</h2>
+
+        <div class="instructions">
+            <strong>Scenario:</strong>
+            You are investigating a packet capture from a workstation.
+            The capture contains both encrypted and unencrypted traffic.
+            Examine the simulated packet information below.
+        </div>
+
+        <div class="log-box">
+Packet #1024
+Source: 192.168.1.25
+Destination: 10.10.10.20
+Protocol: HTTP
+Destination Port: 80
+
+GET /login HTTP/1.1
+Host: example.local
+
+username=admin
+password=Password123!
+
+---------------------------------
+
+Packet #1025
+Source: 192.168.1.25
+Destination: 10.10.10.20
+Protocol: HTTPS
+Destination Port: 443
+TLSv1.3
+        </div>
+
+        <p><strong>What is the primary security issue?</strong></p>
+
+        <div class="answer-area">
+            <label class="answer-option">
+                <input type="radio" name="q1" value="wrong">
+                HTTPS is using port 443.
+            </label>
+
+            <label class="answer-option">
+                <input type="radio" name="q1" value="correct">
+                Credentials are being transmitted over unencrypted HTTP.
+            </label>
+
+            <label class="answer-option">
+                <input type="radio" name="q1" value="wrong">
+                TLS 1.3 is insecure.
+            </label>
+
+            <label class="answer-option">
+                <input type="radio" name="q1" value="wrong">
+                The source IP address is private.
+            </label>
+        </div>
+
+        <button onclick="checkAnswer(1)">Check Answer</button>
+
+        <div id="feedback1" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 2 - FIREWALL -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab2">
+
+        <div class="lab-number" id="labNum2">LAB</div>
+
+        <h2>Windows Firewall Configuration</h2>
+
+        <div class="instructions">
+            Configure the workstation so that Telnet is blocked while HTTPS
+            remains available.
+        </div>
+
+        <table class="config-table">
+
+            <tr>
+                <th>Protocol</th>
+                <th>Port</th>
+                <th>Current State</th>
+            </tr>
+
+            <tr>
+                <td>HTTP</td>
+                <td>80</td>
+                <td>Allowed</td>
+            </tr>
+
+            <tr>
+                <td>HTTPS</td>
+                <td>443</td>
+                <td>Allowed</td>
+            </tr>
+
+            <tr>
+                <td>Telnet</td>
+                <td>23</td>
+                <td>Allowed</td>
+            </tr>
+
+        </table>
+
+        <p>
+            Which firewall rule should you create?
+        </p>
+
+        <div class="answer-area">
+
+            <label class="answer-option">
+                <input type="radio" name="q2" value="wrong">
+                Allow TCP 23 inbound.
+            </label>
+
+            <label class="answer-option">
+                <input type="radio" name="q2" value="correct">
+                Block TCP 23 inbound.
+            </label>
+
+            <label class="answer-option">
+                <input type="radio" name="q2" value="wrong">
+                Block TCP 443 inbound.
+            </label>
+
+            <label class="answer-option">
+                <input type="radio" name="q2" value="wrong">
+                Block UDP 443 inbound.
+            </label>
+
+        </div>
+
+        <button onclick="checkAnswer(2)">Check Answer</button>
+
+        <div id="feedback2" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 3 - LINUX PERMISSIONS -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab3">
+
+        <div class="lab-number" id="labNum3">LAB</div>
+
+        <h2>Linux File Permissions</h2>
+
+        <div class="instructions">
+            A configuration file currently has these permissions:
+        </div>
+
+        <div class="terminal">
+$ ls -l /var/www/html/config.txt
+
+-rwxrwxrwx 1 root webadmin 2048 Aug 10 config.txt
+        </div>
+
+        <p>
+            The required permissions are:
+        </p>
+
+        <ul>
+            <li>Owner: Read + Write</li>
+            <li>Group: Read</li>
+            <li>Everyone else: No access</li>
+        </ul>
+
+        <p>
+            Which command correctly applies these permissions?
+        </p>
+
+        <div class="answer-area">
+
+            <label class="answer-option">
+                <input type="radio" name="q3" value="wrong">
+                chmod 777 config.txt
+            </label>
+
+            <label class="answer-option">
+                <input type="radio" name="q3" value="correct">
+                chmod 640 config.txt
+            </label>
+
+            <label class="answer-option">
+                <input type="radio" name="q3" value="wrong">
+                chmod 755 config.txt
+            </label>
+
+            <label class="answer-option">
+                <input type="radio" name="q3" value="wrong">
+                chmod 600 config.txt
+            </label>
+
+        </div>
+
+        <button onclick="checkAnswer(3)">Check Answer</button>
+
+        <div id="feedback3" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 4 - HASH -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab4">
+
+        <div class="lab-number" id="labNum4">LAB</div>
+
+        <h2>File Hash Verification</h2>
+
+        <div class="instructions">
+            You downloaded a software installer from a vendor.
+            The vendor published the following SHA-256 hash:
+        </div>
+
+        <div class="terminal">
+Vendor SHA-256:
+
+9F86D081884C7D659A2FEAA0C55AD015
+A3BF4F1B2B0B822CD15D6C15B0F00A08
+        </div>
+
+        <p>
+            Your calculated hash is:
+        </p>
+
+        <div class="terminal">
+9F86D081884C7D659A2FEAA0C55AD015
+A3BF4F1B2B0B822CD15D6C15B0F00A08
+        </div>
+
+        <p>
+            What should you conclude?
+        </p>
+
+        <label class="answer-option">
+            <input type="radio" name="q4" value="correct">
+            The hashes match, so the file has integrity based on this check.
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q4" value="wrong">
+            The file definitely contains no malware.
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q4" value="wrong">
+            The file was encrypted.
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q4" value="wrong">
+            The file must be deleted.
+        </label>
+
+        <button onclick="checkAnswer(4)">Check Answer</button>
+
+        <div id="feedback4" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 5 - PHISHING -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab5">
+
+        <div class="lab-number" id="labNum5">LAB</div>
+
+        <h2>Phishing Email Investigation</h2>
+
+        <div class="instructions">
+            Investigate the following email.
+        </div>
+
+        <div class="email-box">
+
+            <div class="email-header">
+
+                <strong>From:</strong>
+                Microsoft Security &lt;security-alert@micros0ft-support.example&gt;
+
+                <br><br>
+
+                <strong>Subject:</strong>
+                URGENT: Your Microsoft Account Will Be Disabled
+
+            </div>
+
+            <p>
+                Your account has been identified as suspicious.
+                You must verify your credentials immediately.
+            </p>
+
+            <p>
+                <strong>
+                    http://microsoft-account-security.example/login
+                </strong>
+            </p>
+
+            <p>
+                Failure to verify your account within 30 minutes
+                will result in permanent account suspension.
+            </p>
+
+        </div>
+
+        <p>
+            Which indicator most strongly suggests phishing?
+        </p>
+
+        <label class="answer-option">
+            <input type="radio" name="q5" value="wrong">
+            The message contains a greeting.
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q5" value="correct">
+            The sender/domain is suspicious and the message uses urgency to request credentials.
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q5" value="wrong">
+            The email contains text.
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q5" value="wrong">
+            The email has a subject line.
+        </label>
+
+        <button onclick="checkAnswer(5)">Check Answer</button>
+
+        <div id="feedback5" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 6 - POWERSHELL -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab6">
+
+        <div class="lab-number" id="labNum6">LAB</div>
+
+        <h2>PowerShell Investigation</h2>
+
+        <div class="instructions">
+            Microsoft Defender generated the following alert:
+        </div>
+
+        <div class="terminal">
+Alert: Suspicious PowerShell Execution
+
+Process:
+powershell.exe
+
+Command:
+powershell.exe -ExecutionPolicy Bypass
+-File C:\Users\Patrick\AppData\Local\Temp\update.ps1
+
+Parent Process:
+Cursor.exe
+
+File Location:
+C:\Users\Patrick\AppData\Local\Temp\
+        </div>
+
+        <p>
+            What should the security analyst investigate first?
+        </p>
+
+        <label class="answer-option">
+            <input type="radio" name="q6" value="wrong">
+            Ignore the alert because PowerShell is a legitimate Windows tool.
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q6" value="correct">
+            Investigate the script, command line, parent process, file hash, and related activity.
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q6" value="wrong">
+            Immediately uninstall PowerShell from Windows.
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q6" value="wrong">
+            Delete all Windows event logs.
+        </label>
+
+        <button onclick="checkAnswer(6)">Check Answer</button>
+
+        <div id="feedback6" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 7 - NMAP -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab7">
+
+        <div class="lab-number" id="labNum7">LAB</div>
+
+        <h2>Nmap Network Investigation</h2>
+
+        <div class="instructions">
+            You are performing an authorized security assessment.
+            The target is:
+        </div>
+
+        <div class="terminal">
+Target: 192.168.1.50
+
+Type an Nmap command below.
+Try:
+
+nmap 192.168.1.50
+        </div>
+
+        <input
+            id="nmapInput"
+            class="terminal-input"
+            placeholder="Enter your Nmap command..."
+        >
+
+        <button onclick="runNmap()">Run Command</button>
+
+        <div id="nmapOutput" class="terminal command-result">
+        </div>
+
+        <p>
+            After running the scan, which service presents
+            the greatest concern?
+        </p>
+
+        <label class="answer-option">
+            <input type="radio" name="q7" value="wrong">
+            HTTPS
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q7" value="correct">
+            Telnet
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q7" value="wrong">
+            SSH
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q7" value="wrong">
+            DNS
+        </label>
+
+        <button onclick="checkAnswer(7)">Check Answer</button>
+
+        <div id="feedback7" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 8 - ACTIVE DIRECTORY -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab8">
+
+        <div class="lab-number" id="labNum8">LAB</div>
+
+        <h2>Active Directory Investigation</h2>
+
+        <div class="instructions">
+            A user reports that their account may have been compromised.
+            Examine the Windows Security events below.
+        </div>
+
+        <div class="log-box">
+Event ID: 4625
+Account: jsmith
+Source IP: 10.10.20.45
+Result: Failed Logon
+
+Event ID: 4625
+Account: jsmith
+Source IP: 10.10.20.45
+Result: Failed Logon
+
+Event ID: 4625
+Account: jsmith
+Source IP: 10.10.20.45
+Result: Failed Logon
+
+Event ID: 4625
+Account: jsmith
+Source IP: 10.10.20.45
+Result: Failed Logon
+
+Event ID: 4624
+Account: jsmith
+Source IP: 10.10.20.45
+Result: Successful Logon
+        </div>
+
+        <p>
+            What attack pattern should be investigated?
+        </p>
+
+        <label class="answer-option">
+            <input type="radio" name="q8" value="wrong">
+            Data destruction
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q8" value="correct">
+            Brute-force or password-guessing activity
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q8" value="wrong">
+            SQL injection
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q8" value="wrong">
+            DNS poisoning
+        </label>
+
+        <button onclick="checkAnswer(8)">Check Answer</button>
+
+        <div id="feedback8" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 9 - WEB LOG -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab9">
+
+        <div class="lab-number" id="labNum9">LAB</div>
+
+        <h2>Web Server Log Analysis</h2>
+
+        <div class="instructions">
+            Analyze the following Apache web server requests.
+        </div>
+
+        <div class="log-box">
+10.0.0.15 GET /../../etc/passwd HTTP/1.1
+
+10.0.0.16 GET /products?id=' OR '1'='1 HTTP/1.1
+
+10.0.0.17 GET /search?q=&lt;script&gt;alert(1)&lt;/script&gt; HTTP/1.1
+
+10.0.0.18 GET /index.html HTTP/1.1
+        </div>
+
+        <p>
+            Which attack types are represented in the suspicious requests?
+        </p>
+
+        <label class="answer-option">
+            <input type="radio" name="q9" value="correct">
+            Path traversal, SQL injection, and XSS
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q9" value="wrong">
+            DDoS, phishing, and ransomware
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q9" value="wrong">
+            Password spraying and DNS poisoning
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q9" value="wrong">
+            ARP poisoning and brute force
+        </label>
+
+        <button onclick="checkAnswer(9)">Check Answer</button>
+
+        <div id="feedback9" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 10 - INCIDENT RESPONSE -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab10">
+
+        <div class="lab-number" id="labNum10">LAB</div>
+
+        <h2>Incident Response</h2>
+
+        <div class="instructions">
+            A workstation has been identified communicating with
+            a known malicious IP address.
+        </div>
+
+        <div class="terminal">
+Alert:
+
+Host: WORKSTATION-22
+Destination: 185.XXX.XXX.50
+Reputation: Known malicious infrastructure
+Connection: Established
+        </div>
+
+        <p>
+            Which phase should occur immediately after identifying
+            the incident?
+        </p>
+
+        <label class="answer-option">
+            <input type="radio" name="q10" value="wrong">
+            Recovery
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q10" value="correct">
+            Containment
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q10" value="wrong">
+            Eradication
+        </label>
+
+        <label class="answer-option">
+            <input type="radio" name="q10" value="wrong">
+            Retirement
+        </label>
+
+        <button onclick="checkAnswer(10)">Check Answer</button>
+
+        <div id="feedback10" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 11 - PACKET SNIFFING -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab11">
+
+        <div class="lab-number" id="labNum11">LAB</div>
+
+        <h2>Packet Sniffing: Intercepting FTP Traffic</h2>
+
+        <div class="instructions">
+            <strong>Scenario:</strong>
+            An internal FTP server is suspected of transmitting login
+            credentials in cleartext. Use a packet sniffing command to
+            capture traffic on the FTP control port and inspect it.
+        </div>
+
+        <div class="terminal">
+Interface: eth0
+Target Port: 21 (FTP)
+
+Type a capture command below. Try:
+
+tcpdump -i eth0 port 21
+        </div>
+
+        <input id="cmdInput11" class="terminal-input" placeholder="Enter your packet capture command...">
+
+        <button onclick="runCommand(11)">Run Command</button>
+
+        <div id="cmdOutput11" class="terminal command-result"></div>
+
+        <p>Based on the captured traffic, what password was used to authenticate to the FTP server?</p>
+
+        <input id="answerInput11" class="terminal-input" placeholder="Type the password you found...">
+
+        <button onclick="checkOpenAnswer(11, ['summerintern24!'])">Submit Answer</button>
+
+        <div id="feedback11" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 12 - CRYPTOGRAPHY -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab12">
+
+        <div class="lab-number" id="labNum12">LAB</div>
+
+        <h2>Cryptography: Decoding a Substitution Cipher</h2>
+
+        <div class="instructions">
+            <strong>Scenario:</strong>
+            A message was intercepted that was encrypted using ROT13,
+            a simple substitution cipher that shifts each letter 13
+            positions through the alphabet. Decrypt the message below.
+        </div>
+
+        <div class="terminal">
+Ciphertext (ROT13):
+
+PBATENGF LBH PENPXRQ VG
+        </div>
+
+        <p>
+            Hint: ROT13 is its own inverse — applying the same shift
+            again reverses it. Each letter maps to the letter 13 places
+            further along the alphabet (A&harr;N, B&harr;O, and so on).
+        </p>
+
+        <p>Type the decrypted plaintext message:</p>
+
+        <input id="answerInput12" class="terminal-input" placeholder="Type the decoded message...">
+
+        <button onclick="checkOpenAnswer(12, ['congrats you cracked it'])">Submit Answer</button>
+
+        <div id="feedback12" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 13 - PASSWORD CRACKING -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab13">
+
+        <div class="lab-number" id="labNum13">LAB</div>
+
+        <h2>Password Cracking: Offline Hash Attack</h2>
+
+        <div class="instructions">
+            <strong>Scenario:</strong>
+            You obtained a leaked password hash during an authorized
+            penetration test. Use a password cracking tool with a
+            wordlist to attempt to recover the plaintext password.
+        </div>
+
+        <div class="terminal">
+Hash file: hash.txt
+Hash type: MD5
+Wordlist: rockyou.txt
+
+Type a cracking command below. Try:
+
+hashcat -m 0 -a 0 hash.txt rockyou.txt
+        </div>
+
+        <input id="cmdInput13" class="terminal-input" placeholder="Enter your password cracking command...">
+
+        <button onclick="runCommand(13)">Run Command</button>
+
+        <div id="cmdOutput13" class="terminal command-result"></div>
+
+        <p>What plaintext password was recovered from the hash?</p>
+
+        <input id="answerInput13" class="terminal-input" placeholder="Type the cracked password...">
+
+        <button onclick="checkOpenAnswer(13, ['summer2023!'])">Submit Answer</button>
+
+        <div id="feedback13" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 14 - INTRUSION PREVENTION SYSTEM -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab14">
+
+        <div class="lab-number" id="labNum14">LAB</div>
+
+        <h2>Configuring an Intrusion Prevention System</h2>
+
+        <div class="instructions">
+            <strong>Scenario:</strong>
+            Your IPS has detected a pattern of traffic matching a
+            known attack signature.
+        </div>
+
+        <div class="log-box">
+IPS Alert:
+
+Signature: SYN Flood Detected
+Source: 203.0.113.44
+Destination: 10.10.10.5:443
+Packets: 12,400 SYN packets in 8 seconds
+Signature Confidence: High
+Current Rule Action: Alert (log only)
+        </div>
+
+        <p>
+            The IPS is currently only logging this signature match.
+            What action should the rule be changed to so the IPS
+            actively stops this traffic in real time?
+        </p>
+
+        <input id="answerInput14" class="terminal-input" placeholder="Type the IPS rule action...">
+
+        <button onclick="checkOpenAnswer(14, ['block', 'drop', 'deny'])">Submit Answer</button>
+
+        <div id="feedback14" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 15 - VPN / IPSEC -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab15">
+
+        <div class="lab-number" id="labNum15">LAB</div>
+
+        <h2>Site-to-Site VPN Configuration</h2>
+
+        <div class="instructions">
+            <strong>Scenario:</strong>
+            Two branch offices need a permanent, encrypted tunnel
+            between their networks over the public internet. The
+            solution must provide confidentiality, integrity, and
+            peer authentication at the network layer.
+        </div>
+
+        <table class="config-table">
+            <tr>
+                <th>Requirement</th>
+                <th>Needed</th>
+            </tr>
+            <tr>
+                <td>Confidentiality</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Integrity</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Peer Authentication</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Operates at</td>
+                <td>Network Layer (L3)</td>
+            </tr>
+        </table>
+
+        <p>Which protocol suite should be configured for this site-to-site tunnel?</p>
+
+        <input id="answerInput15" class="terminal-input" placeholder="Type the protocol suite...">
+
+        <button onclick="checkOpenAnswer(15, ['ipsec'])">Submit Answer</button>
+
+        <div id="feedback15" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 16 - ACCESS CONTROL LISTS -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab16">
+
+        <div class="lab-number" id="labNum16">LAB</div>
+
+        <h2>Access Control List Behavior</h2>
+
+        <div class="instructions">
+            <strong>Scenario:</strong>
+            A router's ACL contains three explicit rules. A packet
+            arrives that does not match any of them.
+        </div>
+
+        <div class="terminal">
+ACL 101:
+
+10 permit tcp any host 10.10.10.5 eq 443
+20 permit tcp any host 10.10.10.5 eq 22
+30 permit udp any host 10.10.10.6 eq 53
+
+Incoming packet: TCP any -> 10.10.10.7:3389
+Matches rule: none
+        </div>
+
+        <p>
+            By default, what principle determines how this unmatched
+            packet is handled at the end of the ACL?
+        </p>
+
+        <input id="answerInput16" class="terminal-input" placeholder="Type the governing principle...">
+
+        <button onclick="checkOpenAnswer(16, ['implicit deny'])">Submit Answer</button>
+
+        <div id="feedback16" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 17 - WIRELESS SECURITY -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab17">
+
+        <div class="lab-number" id="labNum17">LAB</div>
+
+        <h2>Wireless Network Hardening</h2>
+
+        <div class="instructions">
+            <strong>Scenario:</strong>
+            A site survey of a small office finds the wireless access
+            point still using its original encryption setting.
+        </div>
+
+        <div class="log-box">
+SSID: OfficeNet
+Encryption: WEP
+Authentication: Open
+Signal visible from: Parking lot, adjacent building
+        </div>
+
+        <p>
+            WEP is cryptographically broken and can be cracked in
+            minutes. Which modern wireless security standard should
+            this access point be reconfigured to use instead?
+        </p>
+
+        <input id="answerInput17" class="terminal-input" placeholder="Type the recommended standard...">
+
+        <button onclick="checkOpenAnswer(17, ['wpa3', 'wpa2'])">Submit Answer</button>
+
+        <div id="feedback17" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 18 - MULTI-FACTOR AUTHENTICATION -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab18">
+
+        <div class="lab-number" id="labNum18">LAB</div>
+
+        <h2>Designing Multi-Factor Authentication</h2>
+
+        <div class="instructions">
+            <strong>Scenario:</strong>
+            You are designing a login flow that requires a user to
+            enter their password and then approve a push notification
+            on their registered smartphone.
+        </div>
+
+        <div class="log-box">
+Step 1: User enters username + password
+Step 2: Push notification sent to user's enrolled mobile device
+Step 3: User taps "Approve" on the device
+Step 4: Access granted
+        </div>
+
+        <p>
+            This design combines two different authentication factor
+            categories. Name both categories represented above
+            (for example: "something you ___" and "something you ___").
+        </p>
+
+        <input id="answerInput18" class="terminal-input" placeholder="Type both factor categories...">
+
+        <button onclick="checkMFA(18)">Submit Answer</button>
+
+        <div id="feedback18" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 19 - PKI / DIGITAL CERTIFICATES -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab19">
+
+        <div class="lab-number" id="labNum19">LAB</div>
+
+        <h2>PKI: Inspecting a Digital Certificate</h2>
+
+        <div class="instructions">
+            <strong>Scenario:</strong>
+            Users report a browser warning when visiting an internal
+            HTTPS portal. Inspect the site's certificate to determine
+            the cause.
+        </div>
+
+        <div class="terminal">
+Target: portal.internal.example:443
+
+Type a command below to inspect the certificate. Try:
+
+openssl x509 -in cert.pem -text -noout
+        </div>
+
+        <input id="cmdInput19" class="terminal-input" placeholder="Enter your certificate inspection command...">
+
+        <button onclick="runCommand(19)">Run Command</button>
+
+        <div id="cmdOutput19" class="terminal command-result"></div>
+
+        <p>Based on the certificate details, what is the underlying problem?</p>
+
+        <input id="answerInput19" class="terminal-input" placeholder="Type the problem you identified...">
+
+        <button onclick="checkOpenAnswer(19, ['expired'])">Submit Answer</button>
+
+        <div id="feedback19" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 20 - MALWARE / IOC ANALYSIS -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab20">
+
+        <div class="lab-number" id="labNum20">LAB</div>
+
+        <h2>Malware Analysis: Hashing a Suspicious File</h2>
+
+        <div class="instructions">
+            <strong>Scenario:</strong>
+            An email attachment was flagged by a user as suspicious.
+            Generate a hash of the file and check it against known
+            indicators of compromise (IOCs).
+        </div>
+
+        <div class="terminal">
+File: invoice_updated.exe
+
+Type a command below to hash the file. Try:
+
+sha256sum invoice_updated.exe
+        </div>
+
+        <input id="cmdInput20" class="terminal-input" placeholder="Enter your hashing command...">
+
+        <button onclick="runCommand(20)">Run Command</button>
+
+        <div id="cmdOutput20" class="terminal command-result"></div>
+
+        <p>The generated hash matches an entry in a threat intelligence feed. What should you conclude about this file?</p>
+
+        <input id="answerInput20" class="terminal-input" placeholder="Type your conclusion...">
+
+        <button onclick="checkOpenAnswer(20, ['malicious', 'malware'])">Submit Answer</button>
+
+        <div id="feedback20" class="feedback"></div>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- RESULTS -->
+    <!-- ================================================= -->
+
+    <div id="results" class="result-screen">
+
+        <h2>Labs Complete!</h2>
+
+        <div class="score">
+            <span id="finalScore">0</span> / <span id="totalLabs">5</span>
+        </div>
+
+        <p id="resultMessage"></p>
+
+        <button onclick="location.reload()">
+            Restart Labs
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const TOTAL_LAB_POOL = 20;
+const LABS_PER_SESSION = 5;
+
+let score = 0;
+let answered = {};
+let selectedLabs = [];
+let currentIndex = 0;
+
+const explanations = {
+
+    1:
+    "HTTP does not encrypt traffic. The username and password can therefore be exposed to anyone able to capture the traffic. HTTPS should be used for authentication traffic.",
+
+    2:
+    "Telnet uses TCP port 23 and transmits communication without encryption. Blocking inbound TCP 23 reduces the exposure of the insecure service.",
+
+    3:
+    "Linux permissions use owner/group/other. 640 means owner read/write (6), group read (4), and everyone else no permissions (0).",
+
+    4:
+    "Matching hashes provide evidence that the downloaded file matches the vendor's published file. Hash verification does not prove the file is malware-free.",
+
+    5:
+    "The suspicious sender/domain, credential request, malicious-looking URL, and artificial urgency are strong phishing indicators.",
+
+    6:
+    "PowerShell itself is legitimate, but execution-policy bypass, a script in a temporary directory, and the process chain are suspicious and should be investigated.",
+
+    7:
+    "Telnet is an insecure remote-access protocol because it does not provide encryption. SSH is normally preferred for secure remote administration.",
+
+    8:
+    "Repeated Event ID 4625 failures followed by a successful 4624 login can indicate password guessing or brute-force activity.",
+
+    9:
+    "The first request attempts path traversal, the second resembles SQL injection, and the third contains a cross-site scripting payload.",
+
+    10:
+    "After identifying an active security incident, containment is used to limit the attacker's ability to continue operating or spreading.",
+
+    11:
+    "Telnet and FTP transmit credentials in cleartext. A packet sniffer such as tcpdump or Wireshark can reveal usernames and passwords sent over unencrypted protocols.",
+
+    12:
+    "ROT13 shifts each letter 13 places through the alphabet. Applying the same 13-place shift a second time returns the original text, since 13 + 13 = 26 (a full rotation).",
+
+    13:
+    "Offline password cracking tools like Hashcat or John the Ripper compare a wordlist against a stolen hash. Weak, dictionary-based passwords are recovered quickly this way, which is why complex, unique passwords matter.",
+
+    14:
+    "An IPS that only logs (alerts) does not stop malicious traffic. Changing the rule action to block/drop/deny causes the device to actively reject packets matching the signature.",
+
+    15:
+    "IPsec provides confidentiality, integrity, and peer authentication at the network layer, making it the standard choice for site-to-site VPN tunnels.",
+
+    16:
+    "Most ACLs end with an implicit deny: any traffic that does not match an explicit permit rule is dropped by default.",
+
+    17:
+    "WEP uses a broken encryption scheme that can be cracked in minutes. WPA2 (or WPA3 where supported) should replace it on any modern access point.",
+
+    18:
+    "The password represents 'something you know,' while the registered mobile device approving the push notification represents 'something you have.' Combining factor categories is what makes authentication multi-factor.",
+
+    19:
+    "An expired certificate causes browsers to display trust warnings even though the underlying key pair may still be valid. Renewing the certificate resolves the warning.",
+
+    20:
+    "A file hash that matches a known-malicious entry in a threat intelligence feed is a strong indicator of compromise, and the file should be treated as malicious until proven otherwise."
+};
+
+
+const commandTasks = {
+
+    11: {
+        accepted: ["tcpdump -i eth0 port 21"],
+        success:
+`Listening on eth0...
+
+10.0.0.12.51422 > 10.0.0.5.21: FTP: USER intern_backup
+10.0.0.12.51422 > 10.0.0.5.21: FTP: PASS SummerIntern24!
+10.0.0.12.51422 > 10.0.0.5.21: FTP: 230 Login successful
+
+Capture complete.`,
+        hint:
+`Command not recognized.
+
+Hint:
+Try:
+
+tcpdump -i eth0 port 21`
+    },
+
+    13: {
+        accepted: ["hashcat -m 0 -a 0 hash.txt rockyou.txt"],
+        success:
+`hashcat (v6.2.6) starting...
+
+Hash.Type........: MD5
+Hash.Target.......: hash.txt
+
+5f4dcc3b5aa765d61d8327deb882cf99:Summer2023!
+
+Session completed. 1/1 hash recovered.`,
+        hint:
+`Command not recognized.
+
+Hint:
+Try:
+
+hashcat -m 0 -a 0 hash.txt rockyou.txt`
+    },
+
+    19: {
+        accepted: ["openssl x509 -in cert.pem -text -noout"],
+        success:
+`Certificate:
+    Subject: CN=portal.internal.example
+    Issuer: CN=Internal Issuing CA
+    Validity
+        Not Before: Jan  4 00:00:00 2025 GMT
+        Not After : Jan  4 00:00:00 2026 GMT
+
+Current date: Aug 10 2026
+Status: This certificate's validity period has passed.`,
+        hint:
+`Command not recognized.
+
+Hint:
+Try:
+
+openssl x509 -in cert.pem -text -noout`
+    },
+
+    20: {
+        accepted: ["sha256sum invoice_updated.exe"],
+        success:
+`a1b2c3d4e5f60718293a4b5c6d7e8f90
+1a2b3c4d5e6f708192a3b4c5d6e7f809  invoice_updated.exe
+
+Threat Intel Lookup: MATCH FOUND
+Source: Known ransomware dropper campaign
+Confidence: High`,
+        hint:
+`Command not recognized.
+
+Hint:
+Try:
+
+sha256sum invoice_updated.exe`
+    }
+
+};
+
+
+function shuffleArray(array) {
+
+    let arr = array.slice();
+
+    for (let i = arr.length - 1; i > 0; i--) {
+
+        const j = Math.floor(Math.random() * (i + 1));
+
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+
+    }
+
+    return arr;
+
+}
+
+
+function pickRandomLabs(count, poolSize) {
+
+    const pool = [];
+
+    for (let i = 1; i <= poolSize; i++) {
+        pool.push(i);
+    }
+
+    return shuffleArray(pool).slice(0, count);
+
+}
+
+
+function initLabs() {
+
+    selectedLabs = pickRandomLabs(LABS_PER_SESSION, TOTAL_LAB_POOL);
+
+    document.getElementById("totalLabs").textContent = selectedLabs.length;
+
+    selectedLabs.forEach(function(labId, i) {
+
+        const labNumEl = document.getElementById("labNum" + labId);
+
+        if (labNumEl) {
+            labNumEl.textContent =
+                "LAB " + (i + 1) + " OF " + selectedLabs.length;
+        }
+
+    });
+
+    showLabAtIndex(0);
+
+}
+
+
+function showLabAtIndex(index) {
+
+    document.querySelectorAll(".lab").forEach(function(lab) {
+        lab.classList.remove("active");
+    });
+
+    const labId = selectedLabs[index];
+
+    document.getElementById("lab" + labId).classList.add("active");
+
+    currentIndex = index;
+
+    let progress = ((index + 1) / selectedLabs.length) * 100;
+
+    document.getElementById("progressBar").style.width =
+        progress + "%";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+function goNext() {
+
+    if (currentIndex < selectedLabs.length - 1) {
+
+        showLabAtIndex(currentIndex + 1);
+
+    } else {
+
+        finishQuiz();
+
+    }
+
+}
+
+
+function goBack() {
+
+    if (currentIndex > 0) {
+
+        showLabAtIndex(currentIndex - 1);
+
+    }
+
+}
+
+
+function checkAnswer(questionNumber) {
+
+    let selected = document.querySelector(
+        'input[name="q' + questionNumber + '"]:checked'
+    );
+
+    let feedback = document.getElementById(
+        "feedback" + questionNumber
+    );
+
+    if (!selected) {
+
+        feedback.style.display = "block";
+        feedback.className = "feedback incorrect";
+
+        feedback.innerHTML =
+            "<strong>Please select an answer first.</strong>";
+
+        return;
+    }
+
+
+    if (answered[questionNumber]) {
+
+        return;
+
+    }
+
+
+    answered[questionNumber] = true;
+
+
+    if (selected.value === "correct") {
+
+        score++;
+
+        feedback.className = "feedback correct";
+
+        feedback.innerHTML =
+            "<strong>Correct!</strong><br><br>" +
+            explanations[questionNumber];
+
+    } else {
+
+        feedback.className = "feedback incorrect";
+
+        feedback.innerHTML =
+            "<strong>Incorrect.</strong><br><br>" +
+            explanations[questionNumber];
+
+    }
+
+    feedback.style.display = "block";
+
+}
+
+
+function runNmap() {
+
+    const input =
+        document.getElementById("nmapInput").value
+        .trim()
+        .toLowerCase();
+
+    const output =
+        document.getElementById("nmapOutput");
+
+
+    if (
+        input === "nmap 192.168.1.50" ||
+        input === "nmap 192.168.1.50 "
+    ) {
+
+        output.textContent =
+`Starting Nmap scan...
+
+Nmap scan report for 192.168.1.50
+
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+23/tcp   open     telnet
+53/tcp   open     domain
+80/tcp   open     http
+443/tcp  open     https
+
+Nmap scan completed.`;
+
+    } else {
+
+        output.textContent =
+`Command not recognized.
+
+Hint:
+Try:
+
+nmap 192.168.1.50`;
+
+    }
+
+}
+
+
+function runCommand(labId) {
+
+    const task = commandTasks[labId];
+
+    const inputEl = document.getElementById("cmdInput" + labId);
+    const outputEl = document.getElementById("cmdOutput" + labId);
+
+    const val = inputEl.value.trim().toLowerCase();
+
+    const matched = task.accepted.some(function(a) {
+        return val === a.toLowerCase();
+    });
+
+    outputEl.textContent = matched ? task.success : task.hint;
+
+}
+
+
+function checkOpenAnswer(labId, acceptedAnswers) {
+
+    const inputEl = document.getElementById("answerInput" + labId);
+    const feedback = document.getElementById("feedback" + labId);
+
+    const val = inputEl.value.trim().toLowerCase();
+
+    if (!val) {
+
+        feedback.style.display = "block";
+        feedback.className = "feedback incorrect";
+
+        feedback.innerHTML =
+            "<strong>Please enter an answer first.</strong>";
+
+        return;
+    }
+
+
+    if (answered[labId]) {
+
+        return;
+
+    }
+
+
+    answered[labId] = true;
+
+    const isCorrect = acceptedAnswers.some(function(a) {
+        return val.includes(a.toLowerCase());
+    });
+
+    if (isCorrect) {
+
+        score++;
+
+        feedback.className = "feedback correct";
+
+        feedback.innerHTML =
+            "<strong>Correct!</strong><br><br>" +
+            explanations[labId];
+
+    } else {
+
+        feedback.className = "feedback incorrect";
+
+        feedback.innerHTML =
+            "<strong>Not quite.</strong><br><br>" +
+            explanations[labId];
+
+    }
+
+    feedback.style.display = "block";
+
+}
+
+
+function checkMFA(labId) {
+
+    const inputEl = document.getElementById("answerInput" + labId);
+    const feedback = document.getElementById("feedback" + labId);
+
+    const val = inputEl.value.trim().toLowerCase();
+
+    if (!val) {
+
+        feedback.style.display = "block";
+        feedback.className = "feedback incorrect";
+
+        feedback.innerHTML =
+            "<strong>Please enter an answer first.</strong>";
+
+        return;
+    }
+
+
+    if (answered[labId]) {
+
+        return;
+
+    }
+
+
+    answered[labId] = true;
+
+    const hasKnow = val.includes("know");
+    const hasHave = val.includes("have");
+
+    const isCorrect = hasKnow && hasHave;
+
+    if (isCorrect) {
+
+        score++;
+
+        feedback.className = "feedback correct";
+
+        feedback.innerHTML =
+            "<strong>Correct!</strong><br><br>" +
+            explanations[labId];
+
+    } else {
+
+        feedback.className = "feedback incorrect";
+
+        feedback.innerHTML =
+            "<strong>Not quite.</strong><br><br>" +
+            explanations[labId];
+
+    }
+
+    feedback.style.display = "block";
+
+}
+
+
+function finishQuiz() {
+
+    const lastLabId = selectedLabs[selectedLabs.length - 1];
+
+    if (!answered[lastLabId]) {
+
+        alert("Please check your answer before finishing.");
+
+        return;
+
+    }
+
+
+    document.querySelectorAll(".lab").forEach(function(lab) {
+
+        lab.classList.remove("active");
+
+    });
+
+
+    document.getElementById("results").style.display =
+        "block";
+
+
+    document.getElementById("finalScore").textContent =
+        score;
+
+    document.getElementById("totalLabs").textContent =
+        selectedLabs.length;
+
+
+    let message =
+        document.getElementById("resultMessage");
+
+    const total = selectedLabs.length;
+
+    if (score === total) {
+
+        message.textContent =
+            "Excellent! You completed every lab correctly.";
+
+    } else if (score >= Math.ceil(total * 0.8)) {
+
+        message.textContent =
+            "Great job! You have a strong understanding of these security concepts.";
+
+    } else if (score >= Math.ceil(total * 0.6)) {
+
+        message.textContent =
+            "Good start. Review the explanations for the labs you missed.";
+
+    } else {
+
+        message.textContent =
+            "Keep practicing. Review the concepts and try the labs again.";
+
+    }
+
+
+    document.getElementById("progressBar").style.width =
+        "100%";
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+initLabs();
+
+</script>
+
+</body>
+</html>
