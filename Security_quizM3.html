@@ -542,9 +542,11 @@ Next →
     <strong>Remember:</strong>
     
     <p id="malwareProtectionTips"></p>
-    Data protection strategies include encryption, access controls, regular backups, and employee training. Implementing these measures helps safeguard sensitive information from unauthorized access, loss, or corruption.
+    Data protection strategies include encryption, access controls, regular backups, and employee training. Implementing these measures helps safeguard sensitive information from unauthorized access, loss, or corruption. To change the permissions of a file named config.txt you would use the following command in the terminal:
+    chmod 640 config.txt
+    This command sets the permissions to allow the owner (user) to read and write the file, the group to read and execute, and others to read and execute. The 640 permission set is commonly used for configuration files where the owner needs read access, while the group and others should have read access only. This ensures that the file remains secure while allowing necessary access for the group and others to make changes.
     </p>
-    
+    <p>chmod 755 in the terminal means the owner can read, write, and execute; group and others can only read and execute and chmod 600 means only the owner can read and write; group and others have no access.</p>
     </div>
     
     <div class="buttons">

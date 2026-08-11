@@ -1004,6 +1004,11 @@ tcpdump -i eth0 port 21
             A message was intercepted that was encrypted using ROT13,
             a simple substitution cipher that shifts each letter 13
             positions through the alphabet. Decrypt the message below.
+            Hint: 
+            A → N
+            B → O
+            C → P
+            D → Q ... and so on.
         </div>
 
         <div class="terminal">
@@ -1464,7 +1469,7 @@ ufw deny 3389/tcp
             <strong>Scenario:</strong>
             You are performing an authorized vulnerability assessment
             of a Windows file server. Run a vulnerability scan against
-            the target to identify exploitable weaknesses.
+            the target to identify exploitable weaknesses. Will you need to update or patch this vunerability?
         </div>
 
         <div class="terminal">
@@ -1488,7 +1493,7 @@ nmap --script vuln 10.10.10.15
 
         <input id="answerInput22" class="terminal-input" placeholder="Type the remediation action...">
 
-        <button onclick="checkOpenAnswer(22, ['patch', 'update', 'disable smbv1', 'disable smb v1'])">Submit Answer</button>
+        <button onclick="checkOpenAnswer(22, ['patch', 'patching', 'update', 'disable smbv1', 'disable smb v1'])">Submit Answer</button>
 
         <div id="feedback22" class="feedback"></div>
 
