@@ -167,7 +167,7 @@
 
 <header>
     <h1>Security+ Practice Exam</h1>
-    <p>100 Question Bank • 20 Random Questions Per Attempt</p>
+    <p>101 Question Bank • 20 Random Questions Per Attempt</p>
 </header>
 
 
@@ -185,7 +185,7 @@
 
             <p>
                 This practice exam contains a bank of
-                <strong>100 Security+ questions</strong>.
+                <strong>101 Security+ questions</strong>.
             </p>
 
             <p>
@@ -200,7 +200,7 @@
 
             <ul>
                 <li>20 questions per attempt</li>
-                <li>100-question question bank</li>
+                <li>101-question question bank</li>
                 <li>Random question selection</li>
                 <li>Random answer selection</li>
                 <li>Score calculated automatically</li>
@@ -296,7 +296,7 @@
 /* ============================================================
    SECURITY+ QUESTION BANK
 
-   100 ORIGINAL PRACTICE QUESTIONS
+   101 ORIGINAL PRACTICE QUESTIONS
 
    correctAnswer represents the ORIGINAL answer index.
 
@@ -806,18 +806,18 @@ const questionBank = [
         explanation: "Restricted data is highly sensitive information that requires strict access controls like Social Security numbers."
     },
 
-{
-        question: "Which protocol resolves hostnames into IP addresses?",
-        answers: [
-            "DHCP",
-            "SSH",
-            "DNS",
-            "SMTP"
-        ],
-        correctAnswer: 2,
-        domain: "Security Architecture",
-        explanation: "DNS translates domain names and hostnames into IP addresses."
-    },
+    {
+    question: "A company has an asset valued at $40,000. A security incident is expected to cause an exposure factor of 25%. The incident is expected to occur twice per year. What is the Annualized Loss Expectancy (ALE)?",
+    answers: [
+        "$5,000",
+        "$10,000",
+        "$20,000",
+        "$40,000"
+    ],
+    correctAnswer: 1,
+    domain: "Security Architecture",
+    explanation: "First calculate the Single Loss Expectancy (SLE): $40,000 × 25% = $10,000. Then calculate ALE: $10,000 × 2 = $20,000. Therefore, the correct answer is $20,000."
+},
 
 {
         question: "Which technology can isolate applications from the underlying operating system?",
@@ -1275,16 +1275,16 @@ const questionBank = [
     },
 
 {
-        question: "What does MFA require?",
+        question: "What is a SLA?",
         answers: [
-            "Two usernames",
-            "Two or more authentication factors",
-            "Two passwords",
-            "Two computers"
+            "Formal document outlining a mutual agreement between parties",
+            "Defines the expected level of service, such as uptime or response times, and the consequences if those expectations aren't met.",
+            "Establishes the overall terms that will govern future work between two parties, so those terms don't need to be renegotiated for every project.",
+            "the specific tasks, deliverables, and timeline for a particular project under an existing agreement."
         ],
         correctAnswer: 1,
         domain: "Identity and Access Management",
-        explanation: "Multi-factor authentication requires two or more different authentication factor categories."
+        explanation: "Service Level Agreement (SLA) is the expected level of service, such as uptime or response times, and the consequences if those expectations aren't met."
     },
 
 {
@@ -1561,16 +1561,16 @@ const questionBank = [
     },
 
 {
-        question: "What is risk mitigation?",
+        question: "Penetration tests are also categorized by ____?",
         answers: [
-            "Reducing the likelihood or impact of a risk",
-            "Increasing vulnerabilities",
-            "Ignoring every risk",
-            "Removing all employees"
+            "how much information the testing team is given beforehand.",
+            "full information about the systems and architecture in advance, similar to how an insider might approach an attack.",
+            "Ignoring every risk.",
+            "giving testers limited information."
         ],
         correctAnswer: 0,
         domain: "Security Program Management",
-        explanation: "Risk mitigation uses controls or other actions to reduce the likelihood or impact of a risk."
+        explanation: "Penetration tests are also categorized by how much information the testing team is given beforehand. A known environment test provides testers with full information about the systems and architecture in advance, similar to how an insider might approach an attack. A partially known environment test gives testers limited information, simulating an attacker with some inside knowledge. An unknown environment test gives testers no advance information, closely simulating a real external attacker starting from scratch."
     },
 
 {
@@ -1610,6 +1610,19 @@ const questionBank = [
         correctAnswer: 0,
         domain: "Security Program Management",
         explanation: "A BIA identifies critical business functions and analyzes the effects of disruptions."
+    },
+
+    {
+        question: "What is Model evaluation in AI?",
+        answers: [
+            "Model evaluation is the process of testing an AI or machine-learning model to determine how accurately, reliably, and effectively it performs its intended task.",
+            "Model evaluation is the iterative process of defining, building, and refining a mathematical machine to solve a problem.",
+            "Model evaluation is the cleaning, and transforming raw data into a clear format.",
+            "Model evaluation is the process of gathering relevant information from various sources to use for analysis, training, or decision-making."
+        ],
+        correctAnswer: 0,
+        domain: "Security Program Management",
+        explanation: "Model evaluation is the process of testing an AI or machine-learning model to determine how accurately, reliably, and effectively it performs its intended task."
     }
 
 ];
@@ -1668,7 +1681,7 @@ function shuffle(array) {
 function startQuiz() {
 
     /*
-     * Select 20 unique questions from the 100-question bank.
+     * Select 20 unique questions from the 101-question bank.
      */
 
     selectedQuestions =
