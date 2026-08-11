@@ -238,7 +238,7 @@
 
 <header>
     <h1>Security+ Interactive Labs</h1>
-    <p>5 Randomly Selected Hands-On Labs (from a pool of 23)</p>
+    <p>5 Randomly Selected Hands-On Labs (from a pool of 26)</p>
 </header>
 
 <div class="container">
@@ -1551,6 +1551,290 @@ nmap --script vuln 10.10.10.22
     </div>
 
 
+
+    <!-- ================================================= -->
+    <!-- LAB 24 - NETWORK DIAGRAM / SECURITY ARCHITECTURE -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab24">
+
+        <div class="lab-number" id="labNum24">LAB</div>
+
+        <h2>Network Diagram: Security Architecture</h2>
+
+        <div class="instructions">
+            <strong>Scenario:</strong>
+            You are reviewing a small enterprise network design. Place the
+            security controls in the locations that best enforce segmentation,
+            protect public-facing services, and protect sensitive internal data.
+        </div>
+
+        <div class="log-box">
+                         INTERNET
+                            |
+                     [ Perimeter Zone ]
+                            |
+                    +-------+-------+
+                    |               |
+                 Web Server       Firewall
+                    |               |
+                    +-------+-------+
+                            |
+                         LAN / Users
+                            |
+                    +-------+-------+
+                    |               |
+                 Workstations   Database Server
+                                  (Sensitive Data)
+        </div>
+
+        <p><strong>Configure the architecture:</strong></p>
+
+        <table class="config-table">
+            <tr>
+                <th>Security decision</th>
+                <th>Your selection</th>
+            </tr>
+            <tr>
+                <td>Where should the public-facing web server be placed?</td>
+                <td>
+                    <select id="archWeb24" class="terminal-input" style="color:#222;background:white;">
+                        <option value="">Select...</option>
+                        <option value="lan">Internal LAN</option>
+                        <option value="dmz">DMZ / screened subnet</option>
+                        <option value="db">Database network</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>What control should separate the Internet from the internal network?</td>
+                <td>
+                    <select id="archControl24" class="terminal-input" style="color:#222;background:white;">
+                        <option value="">Select...</option>
+                        <option value="firewall">Firewall</option>
+                        <option value="hub">Network hub</option>
+                        <option value="switch">Unmanaged switch</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Where should the sensitive database be placed?</td>
+                <td>
+                    <select id="archDb24" class="terminal-input" style="color:#222;background:white;">
+                        <option value="">Select...</option>
+                        <option value="dmz">Public DMZ</option>
+                        <option value="internet">Directly on the Internet</option>
+                        <option value="internal">Protected internal network</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <button onclick="checkArchitecture24()">Validate Architecture</button>
+
+        <div id="feedback24" class="feedback"></div>
+
+        <p class="small">
+            Security+ focus: network segmentation, security zones, firewalls,
+            DMZ/screened subnets, and protecting sensitive resources.
+        </p>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 25 - ATTACK MITIGATION MATCHING -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab25">
+
+        <div class="lab-number" id="labNum25">LAB</div>
+
+        <h2>Attack Mitigation Matching</h2>
+
+        <div class="instructions">
+            <strong>Scenario:</strong>
+            Match each attack or vulnerability with the most appropriate
+            mitigation. Select the control that would most directly reduce
+            the risk in each situation.
+        </div>
+
+        <table class="config-table">
+            <tr>
+                <th>Attack / Vulnerability</th>
+                <th>Best mitigation</th>
+            </tr>
+
+            <tr>
+                <td>Phishing / credential theft</td>
+                <td>
+                    <select id="mit25a" class="terminal-input" style="color:#222;background:white;">
+                        <option value="">Select...</option>
+                        <option value="mfa">Enable MFA</option>
+                        <option value="patch">Patch vulnerable software</option>
+                        <option value="segment">Network segmentation</option>
+                        <option value="waf">Deploy a WAF</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Unpatched software vulnerability</td>
+                <td>
+                    <select id="mit25b" class="terminal-input" style="color:#222;background:white;">
+                        <option value="">Select...</option>
+                        <option value="mfa">Enable MFA</option>
+                        <option value="patch">Apply security patches/updates</option>
+                        <option value="segment">Network segmentation</option>
+                        <option value="waf">Deploy a WAF</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Compromised web application input</td>
+                <td>
+                    <select id="mit25c" class="terminal-input" style="color:#222;background:white;">
+                        <option value="">Select...</option>
+                        <option value="mfa">Enable MFA</option>
+                        <option value="patch">Apply security patches/updates</option>
+                        <option value="segment">Network segmentation</option>
+                        <option value="waf">Deploy a WAF</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Lateral movement after endpoint compromise</td>
+                <td>
+                    <select id="mit25d" class="terminal-input" style="color:#222;background:white;">
+                        <option value="">Select...</option>
+                        <option value="mfa">Enable MFA</option>
+                        <option value="patch">Apply security patches/updates</option>
+                        <option value="segment">Network segmentation</option>
+                        <option value="waf">Deploy a WAF</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <button onclick="checkMitigation25()">Check Matches</button>
+
+        <div id="feedback25" class="feedback"></div>
+
+        <p class="small">
+            Security+ focus: mitigation techniques, identity controls,
+            segmentation, patch management, and application security.
+        </p>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LAB 26 - SECURE WIRELESS CONFIGURATION -->
+    <!-- ================================================= -->
+
+    <div class="lab" id="lab26">
+
+        <div class="lab-number" id="labNum26">LAB</div>
+
+        <h2>Configuring Secure Wireless Settings</h2>
+
+        <div class="instructions">
+            <strong>Scenario:</strong>
+            You are hardening a business wireless access point. Replace
+            insecure defaults with settings appropriate for a modern
+            enterprise environment.
+        </div>
+
+        <div class="log-box">
+SSID: Company-Staff
+Current wireless configuration:
+
+Security: Open
+Encryption: None
+Authentication: Shared default password
+Management: HTTP
+Guest access: Same network as employees
+        </div>
+
+        <table class="config-table">
+            <tr>
+                <th>Wireless setting</th>
+                <th>Secure configuration</th>
+            </tr>
+
+            <tr>
+                <td>Wireless security</td>
+                <td>
+                    <select id="wifiSecurity26" class="terminal-input" style="color:#222;background:white;">
+                        <option value="">Select...</option>
+                        <option value="open">Open / None</option>
+                        <option value="wep">WEP</option>
+                        <option value="wpa3">WPA3</option>
+                        <option value="wpa2">WPA2</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Encryption</td>
+                <td>
+                    <select id="wifiEncrypt26" class="terminal-input" style="color:#222;background:white;">
+                        <option value="">Select...</option>
+                        <option value="none">None</option>
+                        <option value="tkip">TKIP</option>
+                        <option value="aes">AES / CCMP</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Administrator management</td>
+                <td>
+                    <select id="wifiMgmt26" class="terminal-input" style="color:#222;background:white;">
+                        <option value="">Select...</option>
+                        <option value="http">HTTP</option>
+                        <option value="https">HTTPS</option>
+                        <option value="telnet">Telnet</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Guest network</td>
+                <td>
+                    <select id="wifiGuest26" class="terminal-input" style="color:#222;background:white;">
+                        <option value="">Select...</option>
+                        <option value="same">Same LAN as employees</option>
+                        <option value="isolated">Separate isolated guest network</option>
+                        <option value="none">Disable all guest access</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <button onclick="checkWireless26()">Apply Secure Configuration</button>
+
+        <div id="feedback26" class="feedback"></div>
+
+        <p class="small">
+            Security+ focus: wireless security, secure protocols, encryption,
+            authentication, and network segmentation.
+        </p>
+
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+
+    </div>
+
+
     <!-- ================================================= -->
     <!-- RESULTS -->
     <!-- ================================================= -->
@@ -1576,7 +1860,7 @@ nmap --script vuln 10.10.10.22
 
 <script>
 
-const TOTAL_LAB_POOL = 23;
+const TOTAL_LAB_POOL = 26;
 const LABS_PER_SESSION = 5;
 
 let score = 0;
@@ -1653,7 +1937,16 @@ const explanations = {
     "MS17-010 (EternalBlue) is a critical SMBv1 remote code execution vulnerability. Remediation involves applying the vendor security patch and/or disabling the outdated SMBv1 protocol so the flaw can no longer be exploited.",
 
     23:
-    "Outdated web server software can carry known, publicly documented vulnerabilities (CVEs). Updating or patching Apache to a fixed version removes the vulnerable code path and closes off the exploit."
+    "Outdated web server software can carry known, publicly documented vulnerabilities (CVEs). Updating or patching Apache to a fixed version removes the vulnerable code path and closes off the exploit.",
+
+    24:
+        "A DMZ/screened subnet is appropriate for public-facing services, while a firewall controls traffic between security zones. Sensitive databases should remain on a protected internal network rather than being exposed directly to untrusted networks.",
+
+    25:
+        "MFA reduces the impact of stolen credentials, patching/remediation addresses known software vulnerabilities, a WAF helps protect web applications from malicious HTTP input, and network segmentation limits lateral movement between systems.",
+
+    26:
+        "Modern wireless security should use WPA3 where supported (or WPA2 when required), strong encryption such as AES/CCMP, HTTPS for management, and a separate isolated guest network. These controls reduce unauthorized access, interception, and lateral movement."
 };
 
 
@@ -2150,6 +2443,106 @@ function checkMFA(labId) {
 
     feedback.style.display = "block";
 
+}
+
+
+function checkArchitecture24() {
+
+    const web = document.getElementById("archWeb24").value;
+    const control = document.getElementById("archControl24").value;
+    const db = document.getElementById("archDb24").value;
+    const feedback = document.getElementById("feedback24");
+
+    if (!web || !control || !db) {
+        feedback.style.display = "block";
+        feedback.className = "feedback incorrect";
+        feedback.innerHTML = "<strong>Please configure all three decisions first.</strong>";
+        return;
+    }
+
+    if (answered[24]) return;
+    answered[24] = true;
+
+    const correct = web === "dmz" && control === "firewall" && db === "internal";
+
+    feedback.className = correct ? "feedback correct" : "feedback incorrect";
+    feedback.innerHTML =
+        (correct ? "<strong>Correct!</strong><br><br>" : "<strong>Not quite.</strong><br><br>") +
+        explanations[24];
+    feedback.style.display = "block";
+
+    if (correct) score++;
+}
+
+
+function checkMitigation25() {
+
+    const values = [
+        document.getElementById("mit25a").value,
+        document.getElementById("mit25b").value,
+        document.getElementById("mit25c").value,
+        document.getElementById("mit25d").value
+    ];
+
+    const feedback = document.getElementById("feedback25");
+
+    if (values.some(function(v) { return !v; })) {
+        feedback.style.display = "block";
+        feedback.className = "feedback incorrect";
+        feedback.innerHTML = "<strong>Please complete every match first.</strong>";
+        return;
+    }
+
+    if (answered[25]) return;
+    answered[25] = true;
+
+    const correct =
+        values[0] === "mfa" &&
+        values[1] === "patch" &&
+        values[2] === "waf" &&
+        values[3] === "segment";
+
+    feedback.className = correct ? "feedback correct" : "feedback incorrect";
+    feedback.innerHTML =
+        (correct ? "<strong>Correct!</strong><br><br>" : "<strong>Not quite.</strong><br><br>") +
+        explanations[25];
+    feedback.style.display = "block";
+
+    if (correct) score++;
+}
+
+
+function checkWireless26() {
+
+    const security = document.getElementById("wifiSecurity26").value;
+    const encryption = document.getElementById("wifiEncrypt26").value;
+    const management = document.getElementById("wifiMgmt26").value;
+    const guest = document.getElementById("wifiGuest26").value;
+    const feedback = document.getElementById("feedback26");
+
+    if (!security || !encryption || !management || !guest) {
+        feedback.style.display = "block";
+        feedback.className = "feedback incorrect";
+        feedback.innerHTML = "<strong>Please configure every wireless setting first.</strong>";
+        return;
+    }
+
+    if (answered[26]) return;
+    answered[26] = true;
+
+    const correct =
+        security === "wpa3" &&
+        encryption === "aes" &&
+        management === "https" &&
+        guest === "isolated";
+
+    feedback.className = correct ? "feedback correct" : "feedback incorrect";
+    feedback.innerHTML =
+        (correct ? "<strong>Correct!</strong><br><br>" : "<strong>Not quite.</strong><br><br>") +
+        explanations[26];
+    feedback.style.display = "block";
+
+    if (correct) score++;
 }
 
 
