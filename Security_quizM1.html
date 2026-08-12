@@ -355,18 +355,8 @@ Hacktivism is the use of hacking techniques to promote political or social cause
 </div>
 
 <p id="realWorldExampleConclusion">
-This event highlights why organizations must implement strong cybersecurity practices such as:
+This event highlights why organizations must implement strong cybersecurity practices such as strong authentication, regular software updates, encryption of sensitive data, continuous monitoring, and Employee security awareness training.
 </p>
-
-
-<p id="practiceStrongAuthentication">Strong authentication</p>
-<p id="practiceRegularUpdates">Regular software updates</p>
-<p id="practiceEncryption">Encryption of sensitive data</p>
-<p id="practiceMonitoring">Continuous monitoring</p>
-<p id="practiceAwarenessTraining">Employee security awareness training</p>
-
-
-</ul>
 
 <div class="buttons">
 
@@ -411,7 +401,7 @@ Next →
     
     <h2 id="introRansomeware">Case Study: Ransomware Attack</h2>
     
-    <p id="ransomwareIntro"></p>
+    <p id="ransomwarethemeat">
     Ransomware is malicious software that encrypts files or locks computer systems until a ransom is paid. It is one of the most damaging forms of cybercrime because it can completely disrupt business operations.
     </p>
     
@@ -1231,19 +1221,14 @@ Next →
                    document.getElementById('realWorldExampleDetails').innerText + ' ' +
                    document.getElementById('hacktivismTerm').innerText + ' ' +
                    document.getElementById('hacktivismDefinition').innerText + ' ' +
-                   document.getElementById('realWorldExampleConclusion').innerText; + ' ' +
-                   document.getElementById('practiceStrongAuthentication').innerText; + ' ' +
-                   document.getElementById('practiceRegularUpdates').innerText; + ' ' +
-                   document.getElementById('practiceEncryption').innerText; + ' ' +
-                   document.getElementById('practiceMonitoring').innerText; + ' ' +
-                   document.getElementById('practiceAwarenessTraining').innerText;
+                   document.getElementById('realWorldExampleConclusion').innerText; + ' ' 
         const speech = new SpeechSynthesisUtterance(textToRead);
         window.speechSynthesis.speak(speech);
     });
 
     readAloudButton3.addEventListener('click', () => {
         const textToRead = document.getElementById('introRansomeware').innerText + ' ' +
-                   document.getElementById('ransomwareIntro').innerText + ' ' +
+                   document.getElementById('ransomwarethemeat').innerText + ' ' +
                    document.getElementById('internshipExperience').innerText + ' ' +
                    document.getElementById('incidentDetails').innerText + ' ' +
                    document.getElementById('cybersecurityAwareness').innerText;

@@ -291,10 +291,10 @@ You will learn multiple types of vulnerabilities that can be exploited by attack
 
 <strong>Learning Objective</strong>
 
-<br id="learningObjectiveBreak"><br>
+<p id="learningObjectiveBreak">
 
 Understand why cybersecurity matters and recognize the role each person plays in protecting information and systems.
-
+</p>
 </div>
 
 <div class="buttons">
@@ -351,14 +351,8 @@ Organized Crime in cybersecurity is a structured group ran like a business to ma
 </div>
 
 <p id="realWorldExampleConclusion">
-Attackers are motivated by multiple different factors these are:
+Attackers are motivated by multiple different factors these are data (data exfiltration), espionage, disrupt service, blackmail, money, personal beliefs, war, revenge or even ethical reasons.
 </p>
-
-<p id="cybersecurityPracticesList">
-    Data (data exfiltration), espionage, disrupt service, blackmail, money, personal beliefs, war, revenge or even ethical reasons.
-</p>
-
-</ul>
 
 <div class="buttons">
 
@@ -403,7 +397,7 @@ Next →
     
     <h2 id="introRansomeware">Threat Vectors and Attack Surfaces</h2>
     
-    <p id="ransomwareIntro"></p>
+    <p id="themeat">
     An attack vector is a specific pathway or method a threat actor uses to gain unauthorized access to a system, network or data. Common Vectors include phishing emails, compromised credentials, software vulnerabilities, misconfigured cloud services, and insider threats.
     </p>
     
@@ -463,15 +457,24 @@ Next →
         <p id="malwareIntro"><strong>From:</strong> Supportservice@account-upddt-secure.com</p>
         <p id="threatHeader"><strong>SUBJECT:</strong> Click here to apply to this Software Developer position</p>
         <p id="descriptionHeader">Dear applicant,</p>
-        <p id="malwareProtectionTips">We saw that your skills match well with our job description with Amazon at our Software Developer position.</p>
-        <p id="malwareProtectionTips2">If <strong>yOu</strong> want to join a strong team and learn valuable skills in your <strong>feild</strong> then apply here: <a href="https://clickhere" target="_blank">Https://clickhere</a></p>
-        <p id="malwareProtectionTips3">Thanks for your time and I hope to hear back from you soon!</p>
+        <p id="malwareProtectionTips">
+        We saw that your skills match well with our job description with Amazon at our Software Developer position.<br><br>
+        If <strong>yOu</strong> want to join a strong team and learn valuable skills in your <strong>feild</strong> then apply here: <a href="#" class="phishing-example" aria-label="Example suspicious link">freeCandy.org</a> <br><br> Thanks for your time and I hope to hear back from you soon!
+        </p>
+          <script>
+            document.querySelectorAll(".phishing-example").forEach((link) => {
+              link.addEventListener("click", (event) => {
+                event.preventDefault();
+                alert("Good catch. This is a simulated suspicious link.");
+              });
+            });
+          </script>
     
     <div class="infoBox">
     
     <strong>Remember:</strong>
     
-    <p id="mProtectionTips"></p>
+    <p id="mProtectionTips">
     Always check your email carefully for urgency, spelling errors, and never click on links in emails. If you never contacted the person before then be extra careful, not everyone is your friend online.
     </p>
     
@@ -641,11 +644,11 @@ Next →
     </p>
     
     <p id="pkiIntro">
-    Least privilege technique is a technique that give users only the permissions that they need to do their job and nothing more.Also decommissioning devices is a good way to keep devices up to date when updates become unavilable. 
+    Least privilege technique is a technique that give users only the permissions that they need to do their job and nothing more.Also decommissioning devices is a good way to keep devices up to date when updates become unavailable. 
     </p>
     
     <p id="pkiUsage">
-    You can also use host-based firewalls, HIPS (host based intrusion prevention) to block unwanted atttackers. Disable unused ports, change passwords regularly, and remove unnesscessary software.
+    You can also use host-based firewalls, HIPS (host based intrusion prevention) to block unwanted atttackers. Disable unused ports, change passwords regularly, and remove unnecessary software.
     </p>
     
     <div class="buttons">
@@ -679,7 +682,7 @@ Next →
     
     <h2 id="changeManagementTitle">Given an scenario, analyze indicators of malicious activity.</h2>
     
-    <p id="changeManagementIntro"></p>
+    <p id="changeManagementIntro">
     Organizations use several layers of security controls to reduce cyber risk. No single control can stop every attack, so companies combine multiple approaches to create a strong defense.
     </p>
     
@@ -886,15 +889,14 @@ Next →
                    document.getElementById('realWorldExampleDetails').innerText + ' ' +
                    document.getElementById('hacktivismTerm').innerText + ' ' +
                    document.getElementById('hacktivismDefinition').innerText + ' ' +
-                   document.getElementById('realWorldExampleConclusion').innerText; + ' ' +
-                   document.getElementById('cybersecurityPracticesList').innerText;
+                   document.getElementById('realWorldExampleConclusion').innerText; + ' '
         const speech = new SpeechSynthesisUtterance(textToRead);
         window.speechSynthesis.speak(speech);
     });
 
     readAloudButton3.addEventListener('click', () => {
         const textToRead = document.getElementById('introRansomeware').innerText + ' ' +
-                   document.getElementById('ransomwareIntro').innerText + ' ' +
+                   document.getElementById('themeat').innerText + ' ' +
                    document.getElementById('internshipExperience').innerText + ' ' +
                    document.getElementById('incidentDetails').innerText + ' ' +
                    document.getElementById('cybersecurityAwareness').innerText;
@@ -908,8 +910,6 @@ Next →
                    document.getElementById('threatHeader').innerText + ' ' +
                    document.getElementById('descriptionHeader').innerText + ' ' +
                    document.getElementById('malwareProtectionTips').innerText; ' ' +
-                   document.getElementById('malwareProtectionTips2').innerText; ' ' +
-                   document.getElementById('malwareProtectionTips3').innerText; ' ' +
                    document.getElementById('mProtectionTips').innerText;
         const speech = new SpeechSynthesisUtterance(textToRead);
         window.speechSynthesis.speak(speech);
@@ -919,29 +919,8 @@ Next →
         const textToRead = document.getElementById('findingSecurityRisksTitle').innerText + ' ' +
                    document.getElementById('findingSecurityRisksIntro').innerText;
                    const table = document.getElementById('securityToolsTable');
-
-const rows = table.querySelectorAll('tr');
-
-rows.forEach((row, index) => {
-    const cells = row.querySelectorAll('th, td');
-
-    if (index === 0) {
-        textToRead += 'The table contains two columns: ';
-    }
-
-    cells.forEach(cell => {
-        textToRead += cell.innerText + '. ';
-    });
-});
-
-const speech = new SpeechSynthesisUtterance(textToRead);
-
-speech.rate = 0.95;
-speech.pitch = 1;
-speech.volume = 1;
-
-window.speechSynthesis.cancel();
-window.speechSynthesis.speak(speech);
+        const speech = new SpeechSynthesisUtterance(textToRead);
+        window.speechSynthesis.speak(speech);
 });
 
     readAloudButton6.addEventListener('click', () => {
@@ -964,31 +943,9 @@ window.speechSynthesis.speak(speech);
 
     readAloudButton8.addEventListener('click', () => {
         const textToRead = document.getElementById('changeManagementTitle').innerText + ' ' +
-                   document.getElementById('changeManagementIntro').innerText + ' ' +
-                   const table = document.getElementById('changeManagementBenefits');
-
-const rows = table.querySelectorAll('tr');
-
-rows.forEach((row, index) => {
-    const cells = row.querySelectorAll('th, td');
-
-    if (index === 0) {
-        textToRead += 'The table contains two columns: ';
-    }
-
-    cells.forEach(cell => {
-        textToRead += cell.innerText + '. ';
-    });
-});
-
-const speech = new SpeechSynthesisUtterance(textToRead);
-
-speech.rate = 0.95;
-speech.pitch = 1;
-speech.volume = 1;
-
-window.speechSynthesis.cancel();
-window.speechSynthesis.speak(speech);
+                   document.getElementById('changeManagementIntro').innerText + ' '
+        const speech = new SpeechSynthesisUtterance(textToRead);
+        window.speechSynthesis.speak(speech);
 });
 
     readAloudButton9.addEventListener('click', () => {

@@ -355,18 +355,8 @@ Network infranstructure is the hardware and software resources of an entire netw
 </div>
 
 <p id="realWorldExampleConclusion">
-Considerations you need to consider before you pick what infranstructure you want to use are:
+Considerations you need to consider before you pick what infranstructure you want to use are availability, resilience/responsiveness, cost, scalability/ease of deployment, and compute power/risk transference.
 </p>
-
-<ul id="cybersecurityPracticesList" style="margin-left:30px; line-height:2; margin-bottom:25px;">
-    <li id="practiceStrongAuthentication">Availability</li>
-    <li id="practiceRegularUpdates">Resilience/Responsiveness</li>
-    <li id="practiceEncryption">Cost</li>
-    <li id="practiceMonitoring">Scalability/Ease of deployment</li>
-    <li id="practiceAwarenessTraining">Compute power/risk transference</li>
-</ul>
-
-</ul>
 
 <div class="buttons">
 
@@ -411,8 +401,8 @@ Next →
     
     <h2 id="introRansomeware">Architecture and infrastructure concepts</h2>
     
-    <p id="ransomwareIntro"></p>
-    An network infranstructure needs to be physically isolated from the internet to prevent ransomware, or other cyber attacks. air-gapping is a common way to disconnect system from the network, wifi everything even wired connections. You use this to protect important information or running essental systems like industrial control systems for power plants, water grids, etc.
+    <p id="ransomwareIntro">
+    An network infranstructure needs to be physically isolated from the internet to prevent ransomware, or other cyber attacks. Air-gapping is a common way to disconnect system from the network, wifi everything even wired connections. You use this to protect important information or running essential systems like industrial control systems for power plants, water grids, etc.
     </p>
     
     <p id="internshipExperience">
@@ -444,10 +434,8 @@ Next →
     </div>
     
     <p id="cybersecurityAwareness">
-    <p id="icsSecurity"></p>
     Industrial control systems (ICS) are used to control and monitor industrial processes in critical infrastructure sectors such as energy, water, transportation, and manufacturing. ICS are often connected to the internet or other networks, making them vulnerable to cyber attacks. To protect ICS from cyber threats, organizations can implement security measures such as network segmentation, access controls, intrusion detection systems, and regular security assessments. Supervisory Control and Data Acquisition (SCADA) systems, a subset of ICS, also require robust security to ensure the integrity and availability of critical operations.
     An embedded system is a specialized computing system designed to perform a specific task or set of tasks. It is typically a combination of hardware and software, where the software is embedded into the hardware. Examples include microwave ovens, smart thermostats, and automotive control systems. Embedded systems often have real-time constraints and are optimized for efficiency and reliability. Security in embedded systems is crucial, especially in applications where they control critical functions or handle sensitive data. Measures such as secure boot, encryption, and regular firmware updates can help protect embedded systems from cyber threats. An RTOS is an operating system designed to manage hardware resources and run applications in real-time. It ensures that tasks are executed within strict timing constraints, which is critical for time-sensitive applications.
-    </p>
     </p>
     
     <div class="buttons">
@@ -666,7 +654,7 @@ Next →
     
     <h2 id="securityControlsTitle">Given a scenario, apply security principles to secure enterprise infranstructure.</h2>
     
-    <p id="securityControlsIntro">
+    <p id="securityControlsIntro2">
     To secure enterprise infranstructure, you need to understand where devices are placed, security zones, and analyze attack surfaces which are all entry points on your network. You should always monitor all devices connected to your infranstructure.
     </p>
     
@@ -744,8 +732,6 @@ Next →
     
     </header>
     
-    <hr>
-    
     <h2 id="cryptographyTitle">Explain the importance of resilience and recovery in security architecture.</h2>
     
     <p id="cryptographyIntro">
@@ -757,7 +743,7 @@ Next →
     </p>
     
     <div class="infoBox" id="pkiTechnologiesBox">
-        <strong id="pkiTechnologiesTitle">Resilience and recovery</strong>
+        <p id="pkiTechnologiesTitle">Resilience and recovery</p>
         <ul id="pkiTechnologiesList" style="margin-top:15px; margin-left:25px; line-height:2;">
             <li id="digitalCertificates">Simulations/fail overs</li>
             <li id="certificateAuthorities">Capacity planning</li>
@@ -767,7 +753,7 @@ Next →
     </div>
     
     <p id="pkiUsage">
-    Platfrom diversity is essential for resilience and recovery in security architecture. By using a variety of platforms, organizations can reduce the risk of a single point of failure and ensure that critical systems remain operational even in the event of an attack or outage. This approach enhances overall system reliability and helps maintain business continuity.
+    Platform diversity is essential for resilience and recovery in security architecture. By using a variety of platforms, organizations can reduce the risk of a single point of failure and ensure that critical systems remain operational even in the event of an attack or outage. This approach enhances overall system reliability and helps maintain business continuity.
     </p>
     
     <div class="buttons">
@@ -799,19 +785,19 @@ Next →
     
     <hr>
     
-    <h2 id="securityControlsTitle1">How security architecture can relate to securing your own device.</h2>
+    <h2 id="changeManagementTitle">How security architecture can relate to securing your own device.</h2>
     
-    <p id="securityControlsIntro"></p>
+    <p id="changeManagementIntro">
     Multi-cloud platforms are a combination of public and private cloud services from different providers. They offer flexibility, scalability, and redundancy for organizations. However, they also introduce security challenges, such as inconsistent security policies, increased attack surfaces, and complex management. To secure multi-cloud environments, organizations should implement unified security policies, use encryption and access controls, monitor for threats across all platforms, and ensure compliance with relevant regulations.
     </p>
-    <p id="personalApp">Knowing these security vulnerabilities can inform you of how to protect your device. For instance, you might consider installing a reliable anti-virus tool on your phone to detect and prevent malware. Additionally, enabling two-factor authentication (2FA) can add an extra layer of security to your accounts, making it harder for unauthorized users to gain access. Regularly updating your device's operating system and applications ensures that you have the latest security patches to protect against known vulnerabilities. Lastly, being cautious about the apps you download and the permissions you grant can significantly reduce the risk of exposing your device to potential threats.</p>
-    <p id="archandInfra">
+    <p id="changeManagementBenefits">Knowing these security vulnerabilities can inform you of how to protect your device. For instance, you might consider installing a reliable anti-virus tool on your phone to detect and prevent malware. Additionally, enabling two-factor authentication (2FA) can add an extra layer of security to your accounts, making it harder for unauthorized users to gain access. Regularly updating your device's operating system and applications ensures that you have the latest security patches to protect against known vulnerabilities. Lastly, being cautious about the apps you download and the permissions you grant can significantly reduce the risk of exposing your device to potential threats.</p>
+    <p id="stepHeader">
     Just as security architecture involves layers of protection, your device benefits from multiple security measures like firewalls, antivirus software, and regular updates. By understanding concepts like network segmentation, encryption, and access controls, you can apply these strategies to secure your personal devices effectively.
     </p>
     
     <div class="infoBox" id="defenseInDepthBox">
-        <strong id="defenseInDepthTitle">Security Architecture</strong>
-        <p id="defenseInDepthDescription1" style="margin-top:12px;">
+        <p id="descriptionHeader">Security Architecture</p>
+        <p id="whyItMattersTitle" style="margin-top:12px;">
         Security architecture principles can be applied to personal devices by implementing a multi-layered security approach. This includes using strong passwords, enabling biometric authentication, keeping software up to date, and being cautious of phishing attempts. By combining these measures, you create a robust defense against potential threats.
         </p>
     
@@ -1038,11 +1024,9 @@ Next →
     });
 
     readAloudButton6.addEventListener('click', () => {
-        const textToRead = document.getElementById('securityControlsTitle1').innerText + ' ' +
-                   document.getElementById('securityControlsIntro').innerText + ' ' +
-                   document.getElementById('personalApp').innerText + ' ' +
-                   document.getElementById('archandInfra').innerText + ' ' +
-                   document.getElementById('defenseInDepthDescription1').innerText;
+        const textToRead = document.getElementById('securityControlsTitle').innerText + ' ' +
+                   document.getElementById('securityControlsIntro2').innerText + ' ' +
+                   document.getElementById('defenseInDepthDescription').innerText;
         const speech = new SpeechSynthesisUtterance(textToRead);
         window.speechSynthesis.speak(speech);
     });
@@ -1051,10 +1035,8 @@ Next →
         const textToRead = document.getElementById('cryptographyTitle').innerText + ' ' +
                    document.getElementById('cryptographyIntro').innerText + ' ' +
                    document.getElementById('pkiIntro').innerText + ' ' +
-                   document.getElementById('keyHeader').innerText + ' ' +
-                   document.getElementById('purposeHeader').innerText + ' ' +
                    document.getElementById('pkiTechnologiesTitle').innerText + ' ' +
-                   document.getElementById('pkiTechnologiesList').innerText + ' ' +
+                   Array.from(document.getElementById('pkiTechnologiesList').children).map(item => item.innerText).join(' ') + ' ' +
                    document.getElementById('pkiUsage').innerText;
         const speech = new SpeechSynthesisUtterance(textToRead);
         window.speechSynthesis.speak(speech);
@@ -1066,8 +1048,7 @@ Next →
                    document.getElementById('changeManagementBenefits').innerText + ' ' +
                    document.getElementById('stepHeader').innerText + ' ' +
                    document.getElementById('descriptionHeader').innerText + ' ' +
-                   document.getElementById('whyItMattersTitle').innerText + ' ' +
-                   document.getElementById('whyItMattersDescription').innerText;
+                   document.getElementById('whyItMattersTitle').innerText + ' ' 
         const speech = new SpeechSynthesisUtterance(textToRead);
         window.speechSynthesis.speak(speech);
     });
