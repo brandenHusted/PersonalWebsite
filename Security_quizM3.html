@@ -968,99 +968,49 @@ Next →
     });
 
     // Read aloud functionality
-    readAloudButton1.addEventListener('click', () => {
-        const textToRead = document.getElementById('welcomeText').innerText + ' ' +
-                           document.getElementById('cybersecurityScope').innerText + ' ' +
-                           document.getElementById('humanMistakes').innerText + ' ' +
-                           document.getElementById('learningObjectiveBreak').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
+    // Reads the current page once, including all table headers (<th>) and
+    // table cells (<td>) without repeating table content.
+    document.querySelectorAll('[id^="readAloud"]').forEach((button) => {
+        button.addEventListener('click', () => {
+            const page = button.closest('.module');
+            if (!page) return;
 
-    readAloudButton2.addEventListener('click', () => {
-        const textToRead = document.getElementById('realWorldExampleTitle').innerText + ' ' +
-                   document.getElementById('realWorldExampleIntro').innerText + ' ' +
-                   document.getElementById('realWorldExampleDetails').innerText + ' ' +
-                   document.getElementById('hacktivismTerm').innerText + ' ' +
-                   document.getElementById('hacktivismDefinition').innerText + ' ' +
-                   document.getElementById('realWorldExampleConclusion').innerText; + ' ' +
-                   document.getElementById('practiceStrongAuthentication').innerText; + ' ' +
-                   document.getElementById('practiceRegularUpdates').innerText; + ' ' +
-                   document.getElementById('practiceEncryption').innerText; + ' ' +
-                   document.getElementById('practiceMonitoring').innerText; + ' ' +
-                   document.getElementById('practiceAwarenessTraining').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
+            // Stop any speech that is already playing.
+            window.speechSynthesis.cancel();
 
-    readAloudButton3.addEventListener('click', () => {
-        const textToRead = document.getElementById('introRansomeware').innerText + ' ' +
-                   document.getElementById('ransomwareIntro').innerText + ' ' +
-                   document.getElementById('internshipExperience').innerText + ' ' +
-                   document.getElementById('incidentDetails').innerText + ' ' +
-                   document.getElementById('cybersecurityAwareness').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
+            // Work from a clone so the visible page is never changed.
+            const content = page.cloneNode(true);
 
-    readAloudButton4.addEventListener('click', () => {
-        const textToRead = document.getElementById('commonMalwareTypes').innerText + ' ' +
-                   document.getElementById('malwareIntro').innerText + ' ' +
-                   document.getElementById('threatHeader').innerText + ' ' +
-                   document.getElementById('descriptionHeader').innerText + ' ' +
-                   document.getElementById('malwareProtectionTips').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
+            // Remove controls and non-reading elements.
+            content.querySelectorAll(
+                '.buttons, header, img, progress, script, hr'
+            ).forEach((element) => element.remove());
 
-    readAloudButton5.addEventListener('click', () => {
-        const textToRead = document.getElementById('findingSecurityRisksTitle').innerText + ' ' +
-                   document.getElementById('findingSecurityRisksIntro').innerText + ' ' +
-                   document.getElementById('toolHeader').innerText + ' ' +
-                   document.getElementById('purposeHeader').innerText + ' ' +
-                   document.getElementById('securityTipBox').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
+            // Convert each table into one text block. This makes the table
+            // part of the normal page text exactly once, while preserving
+            // the order of every <tr>, <th>, and <td>.
+            content.querySelectorAll('table').forEach((table) => {
+                const rows = Array.from(table.querySelectorAll('tr'))
+                    .map((row) => row.innerText.replace(/\s+/g, ' ').trim())
+                    .filter(Boolean)
+                    .join('. ');
 
-    readAloudButton6.addEventListener('click', () => {
-        const textToRead = document.getElementById('securityControlsTitle').innerText + ' ' +
-                   document.getElementById('securityControlsIntro2').innerText + ' ' +
-                   document.getElementById('defenseInDepthDescription').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
+                const tableText = document.createElement('span');
+                tableText.textContent = rows ? ' ' + rows + ' ' : '';
+                table.replaceWith(tableText);
+            });
 
-    readAloudButton7.addEventListener('click', () => {
-        const textToRead = document.getElementById('cryptographyTitle').innerText + ' ' +
-                   document.getElementById('cryptographyIntro').innerText + ' ' +
-                   document.getElementById('pkiIntro').innerText + ' ' +
-                   document.getElementById('pkiTechnologiesTitle').innerText + ' ' +
-                   Array.from(document.getElementById('pkiTechnologiesList').children).map(item => item.innerText).join(' ') + ' ' +
-                   document.getElementById('pkiUsage').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
+            // Read the resulting page exactly once.
+            const textToRead = content.innerText
+                .replace(/\s+/g, ' ')
+                .trim();
 
-    readAloudButton8.addEventListener('click', () => {
-        const textToRead = document.getElementById('changeManagementTitle').innerText + ' ' +
-                   document.getElementById('changeManagementIntro').innerText + ' ' +
-                   document.getElementById('changeManagementBenefits').innerText + ' ' +
-                   document.getElementById('stepHeader').innerText + ' ' +
-                   document.getElementById('descriptionHeader').innerText + ' ' +
-                   document.getElementById('whyItMattersTitle').innerText + ' ' 
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
+            if (!textToRead) return;
 
-    readAloudButton9.addEventListener('click', () => {
-        const textToRead = document.getElementById('congratulationsTitle').innerText + ' ' +
-                   document.getElementById('completionMessage').innerText + ' ' +
-                   document.getElementById('understandingIntro').innerText + ' ' +
-                   Array.from(document.getElementById('understandingList').children).map(item => item.innerText).join(' ') + ' ' +
-                   document.getElementById('continueLearningTitle').innerText + ' ' +
-                   document.getElementById('continueLearningMessage').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
+            const speech = new SpeechSynthesisUtterance(textToRead);
+            speech.rate = 1;
+            speech.pitch = 1;
+            window.speechSynthesis.speak(speech);
+        });
     });
 </script>
