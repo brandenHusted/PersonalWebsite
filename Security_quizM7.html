@@ -1,873 +1,751 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Cybersecurity Awareness Training</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Cybersecurity Awareness Training
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   * {
+    box-sizing: border-box;
 }
 
-body{
-
-font-family:'Roboto',sans-serif;
-
-background:#edf2f7;
-
-color:#333;
-
-padding:40px;
-
+html {
+    scroll-behavior: smooth;
 }
 
-.module{
-
-max-width:950px;
-
-margin:auto;
-
-background:white;
-
-padding:40px;
-
-border-radius:15px;
-
-box-shadow:0 10px 35px rgba(0,0,0,.15);
-
-animation:fadeIn .5s ease;
-
+body {
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #edf2f7;
+    color: #333;
 }
 
-@keyframes fadeIn{
-
-from{
-
-opacity:0;
-transform:translateY(15px);
-
+.module {
+    width: min(950px, 100%);
+    margin: 0 auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
 }
 
-to{
-
-opacity:1;
-transform:translateY(0);
-
+header {
+    margin-bottom: 30px;
+    text-align: center;
 }
 
+header h1 {
+    color: #003366;
 }
 
-header{
-
-margin-bottom:35px;
-text-align:center;
-
+header h3 {
+    color: #666;
+    font-weight: 400;
 }
 
-header h1{
-
-font-size:34px;
-
-color:#003366;
-
-margin-bottom:10px;
-
+h2 {
+    color: #005792;
 }
 
-header h3{
-
-font-weight:400;
-color:#666;
-
+p {
+    font-size: 17px;
+    line-height: 1.8;
 }
 
-hr{
-
-border:none;
-
-height:2px;
-
-background:#d8dde5;
-
-margin:30px 0;
-
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 25px auto;
 }
 
-h2{
-
-color:#005792;
-
-margin-bottom:20px;
-
+table {
+    width: 100%;
+    margin: 25px 0;
+    border-collapse: collapse;
 }
 
-p{
-
-margin-bottom:18px;
-
-font-size:17px;
-
-line-height:1.8;
-
+th,
+td {
+    padding: 12px;
+    border: 1px solid #d9d9d9;
+    text-align: left;
+    line-height: 1.6;
 }
 
-img{
-
-display:block;
-
-margin:25px auto;
-
-max-width:100%;
-
-border-radius:10px;
-
-box-shadow:0 6px 20px rgba(0,0,0,.15);
-
+th {
+    background: #005792;
+    color: #fff;
 }
 
-.infoBox{
-
-background:#eef7ff;
-
-border-left:6px solid #0078D4;
-
-padding:18px;
-
-margin:25px 0;
-
-border-radius:8px;
-
+tr:nth-child(even) {
+    background: #f7f9fc;
 }
 
-.progress{
-
-margin-top:15px;
-
+.infoBox {
+    margin: 25px 0;
+    padding: 18px;
+    background: #eef7ff;
+    border-left: 6px solid #0078d4;
+    border-radius: 8px;
 }
 
-progress{
-
-width:100%;
-height:18px;
-
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 35px;
 }
 
-.buttons{
-
-display:flex;
-
-justify-content:space-between;
-
-margin-top:35px;
-
+button {
+    padding: 12px 24px;
+    border: 0;
+    border-radius: 8px;
+    background: #005792;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-button{
-
-background:#005792;
-
-color:white;
-
-padding:12px 28px;
-
-font-size:16px;
-
-border:none;
-
-border-radius:8px;
-
-cursor:pointer;
-
-transition:.3s;
-
+button:hover {
+    background: #003b66;
 }
 
-button:hover{
-
-background:#003b66;
-
-transform:translateY(-2px);
-
+button:focus-visible {
+    outline: 3px solid #ffbf47;
+    outline-offset: 3px;
 }
 
-a{
-
-color:#005792;
-
-font-weight:bold;
-
+button.reading {
+    background: #8b1e1e;
 }
 
-table{
-
-width:100%;
-
-border-collapse:collapse;
-
-margin-top:25px;
-
+progress {
+    width: 100%;
+    height: 18px;
 }
 
-th{
-
-background:#005792;
-
-color:white;
-
-padding:14px;
-
+a {
+    color: #005792;
+    font-weight: 700;
 }
 
-td{
+@media (max-width: 700px) {
+    body {
+        padding: 15px 10px;
+    }
 
-padding:14px;
+    .module {
+        padding: 24px 18px;
+    }
 
-border-bottom:1px solid #ddd;
+    .buttons {
+        flex-wrap: wrap;
+    }
 
+    button {
+        flex: 1 1 150px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
 }
-
-tr:nth-child(even){
-
-background:#f7f9fc;
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div id="M1Page1" class="module">
-
-<header>
-
-<h1>Cybersecurity Awareness Training</h1>
-
-<h3>Module 7 • How AI can Effect your Security Enviroment</h3>
-
-<div class="progress">
-
-<progress value="1" max="9"></progress>
-
-<p>Page 1 of 9</p>
-
-</div>
-
-</header>
-
-<img src="images/awareness.png" alt="Cybersecurity Awareness">
-
-<hr>
-
-<h2>Welcome</h2>
-
-<p id="welcomeText">
-Welcome to Module Seven of the Cybersecurity Awareness Training course.
+  </style>
+ </head>
+ <body>
+  <div class="module" id="M1Page1">
+   <header>
+    <h1>
+     Cybersecurity Awareness Training
+    </h1>
+    <h3>
+     Module 7 &bull; How AI can Effect your Security Enviroment
+    </h3>
+    <div class="progress">
+     <progress max="6" value="1">
+     </progress>
+     <p id="page1Paragraph1">
+      Page 1 of 6
+     </p>
+    </div>
+   </header>
+   <img alt="Cybersecurity Awareness" src="images/awareness.png"/>
+   <hr/>
+   <h2>
+    Welcome
+   </h2>
+   <p id="welcomeText">
+    Welcome to Module Seven of the Cybersecurity Awareness Training course.
 In this module you'll learn the importance of automation and orchestration related to secure operations. If you are given a scenario you will be able to modify enterprise capabilities to enhance security.
-</p>
-
-<p id="cybersecurityScope">
-You will also be able to implement and maintain identity and access management.
-</p>
-
-<p id="humanMistakes">
-You will learn the positives and negetives of how AI can and will effect how you work and what you look for working in Cyber Security from someone who has worked in the feild himself.
-</p>
-
-<div class="infoBox">
-
-<strong>Learning Objective</strong>
-
-<br id="learningObjectiveBreak"><br>
-
-Understand why cybersecurity matters and recognize the role each person plays in protecting information and systems.
-
-</div>
-
-<img src="images/BasicCyberSecurityIMG.png" alt="Basic Cybersecurity">
-
-<div class="buttons">
-
-<button id="readAloud1">
-🔊 Read Aloud
-</button>
-
-<button id="next1">
-Next →
-</button>
-
-</div>
-
-</div>
-
-<!-- ====================================================== -->
-
-<div id="M1Page2" class="module" style="display:none;">
-
-<header>
-
-<h1>Cybersecurity Awareness Training</h1>
-
-<h3>Module 1 • Security Fundamentals</h3>
-
-<div class="progress">
-
-<progress value="2" max="9"></progress>
-
-<p>Page 2 of 9</p>
-
-</div>
-
-</header>
-
-<hr>
-
-<h2 id="realWorldExampleTitle">Explain the importance of automation and orchestration related to secure operations</h2>
-
-<h2 id="automationUseCases">Use Cases of Automation and Scripting</h2>
-
-<p id="automationUseCasesList">
-Automation and scripting support a wide range of security and IT operations tasks. User provisioning automates the creation and configuration of user accounts, ensuring new employees get consistent access without manual setup errors. Resource provisioning automates the deployment of infrastructure, such as servers or cloud resources, according to predefined, secure configurations. Guard rails are automated controls that prevent users or systems from taking risky actions, such as blocking a misconfigured deployment before it goes live. Security groups can be automatically applied to control access to resources based on defined rules rather than manual assignment. Ticket creation can be automated so that alerts or detected issues automatically generate a record for tracking, reducing the chance something gets missed. Escalation processes can automatically route unresolved issues to the appropriate team or level of authority based on severity or time elapsed. Enabling and disabling services and access can be automated, such as instantly revoking access when an employee is offboarded. Continuous integration and testing automates the process of testing code changes as they are made, catching security issues earlier in development. Integrations and application programming interfaces (APIs) allow different security tools to communicate and share data automatically, enabling coordinated responses across systems.
-</p>
-
-<h2 id="automationBenefits">Benefits</h2>
-
-<p id="automationBenefitsList">
-Automation offers several advantages over manual processes. Efficiency and time savings come from eliminating repetitive manual tasks, freeing staff to focus on more complex work. Enforcing baselines ensures configurations stay consistent across systems without relying on manual checks. Standard infrastructure configurations reduce the chance of human error introducing misconfigurations. Scaling in a secure manner allows an organization to grow its infrastructure without a proportional increase in security risk or manual oversight. Employee retention can improve when automation removes repetitive, low-value tasks that contribute to burnout. Reaction time improves because automated systems can respond to threats far faster than a human could. Automation also acts as a workforce multiplier, allowing a smaller security team to accomplish what would otherwise require significantly more staff.
-</p>
-
-<h2 id="automationConsiderations">Other Considerations</h2>
-
-<p id="automationConsiderationsList">
-Automation isn't without tradeoffs. Complexity increases as automated systems and scripts are added, which can make troubleshooting more difficult when something goes wrong. Cost includes the investment needed to build, license, and maintain automation tools and scripts. A single point of failure can be introduced if too much relies on one automated system or script that isn't properly monitored or maintained. Technical debt can accumulate when automation scripts are written quickly without proper documentation or long-term planning, making them harder to maintain later. Ongoing supportability requires that someone continues to understand, maintain, and update automated processes over time, since automation that no one can maintain eventually becomes a liability rather than a benefit.
-</p>
-
-<div class="buttons">
-
-<button id="readAloud2">
-
-🔊 Read Aloud
-
-</button>
-
-<button id="next2">
-
-Next →
-
-</button>
-
-</div>
-
-</div>
-
-<!-- ====================================================== -->
-<!-- PAGE 3 -->
-
-<div id="M1Page3" class="module" style="display:none;">
-
-    <header>
-    
-    <h1>Cybersecurity Awareness Training</h1>
-    
-    <h3>Module 1 • Security Fundamentals</h3>
-    
-    <div class="progress">
-    
-    <progress value="3" max="9"></progress>
-    
-    <p>Page 3 of 9</p>
-    
-    </div>
-    
-    </header>
-    
-    <hr>
-    
-    <h2 id="introRansomeware">Given a scenario, use data sources to support an investigation.</h2>
-    
-    <h2 id="logData">Log Data</h2>
-
-<p id="logDataTypes">
-Different systems generate different types of logs, each providing a different view into the security posture of an environment. Firewall logs record allowed and denied traffic based on firewall rules, useful for identifying blocked attacks or misconfigured rules. Application logs record events within a specific application, such as errors, user actions, or authentication attempts, helping identify issues at the software level. Endpoint logs capture activity on individual devices, such as processes running or files accessed, which can reveal signs of compromise on a specific machine. OS-specific security logs record security-relevant events at the operating system level, such as login attempts, privilege escalations, or policy changes. IPS/IDS logs record traffic and events flagged by intrusion detection and prevention systems, providing detail on potential attacks that were detected or blocked. Network logs capture broader traffic and connection data across the network, useful for tracing how an attacker moved between systems. Metadata refers to data about the data itself, such as timestamps, file sizes, or sender information, which can provide useful context even when the content of a log entry doesn't tell the whole story.
-</p>
-
-<h2 id="dataSources">Data Sources</h2>
-
-<p id="dataSourcesTypes">
-Beyond raw logs, several other data sources support security monitoring and investigation. Vulnerability scans provide point-in-time snapshots of known weaknesses across systems, feeding into the broader vulnerability management process. Automated reports compile data from various tools into a regular, digestible format, saving analysts from manually pulling information every time. Dashboards provide a real-time, visual summary of security data, allowing teams to quickly spot trends or anomalies without digging through raw logs. Packet captures record the actual data traveling across the network at a granular level, which is especially useful during a deep investigation when logs alone don't provide enough detail about what happened.
-</p>
-    <div class="buttons">
-    <button id="readAloud3">
-            🔊 Read Aloud
+   </p>
+   <p id="cybersecurityScope">
+    You will also be able to implement and maintain identity and access management.
+   </p>
+   <p id="humanMistakes">
+    You will learn the positives and negetives of how AI can and will effect how you work and what you look for working in Cyber Security from someone who has worked in the feild himself.
+   </p>
+   <div class="infoBox">
+    <strong>
+     Learning Objective
+    </strong>
+    <br id="learningObjectiveBreak"/>
+    <br/>
+    Understand why cybersecurity matters and recognize the role each person plays in protecting information and systems.
+   </div>
+   <img alt="Basic Cybersecurity" src="images/BasicCyberSecurityIMG.png"/>
+   <div class="buttons">
+    <button class="read-aloud" id="readAloud1" type="button">
+     🔊 Read Aloud
     </button>
-    <div></div>
-    
+    <button id="next1">
+     Next &rarr;
+    </button>
+   </div>
+  </div>
+  <!-- ====================================================== -->
+  <div class="module" id="M1Page2" style="display:none;">
+   <header>
+    <h1>
+     Cybersecurity Awareness Training
+    </h1>
+    <h3>
+     Module 1 &bull; Security Fundamentals
+    </h3>
+    <div class="progress">
+     <progress max="6" value="2">
+     </progress>
+     <p id="page2Paragraph1">
+      Page 2 of 6
+     </p>
+    </div>
+   </header>
+   <hr/>
+   <h2 id="realWorldExampleTitle">
+    Explain the importance of automation and orchestration related to secure operations
+   </h2>
+   <h2 id="automationUseCases">
+    Use Cases of Automation and Scripting
+   </h2>
+   <p id="automationUseCasesList">
+    Automation and scripting support a wide range of security and IT operations tasks. User provisioning automates the creation and configuration of user accounts, ensuring new employees get consistent access without manual setup errors. Resource provisioning automates the deployment of infrastructure, such as servers or cloud resources, according to predefined, secure configurations. Guard rails are automated controls that prevent users or systems from taking risky actions, such as blocking a misconfigured deployment before it goes live. Security groups can be automatically applied to control access to resources based on defined rules rather than manual assignment. Ticket creation can be automated so that alerts or detected issues automatically generate a record for tracking, reducing the chance something gets missed. Escalation processes can automatically route unresolved issues to the appropriate team or level of authority based on severity or time elapsed. Enabling and disabling services and access can be automated, such as instantly revoking access when an employee is offboarded. Continuous integration and testing automates the process of testing code changes as they are made, catching security issues earlier in development. Integrations and application programming interfaces (APIs) allow different security tools to communicate and share data automatically, enabling coordinated responses across systems.
+   </p>
+   <h2 id="automationBenefits">
+    Benefits
+   </h2>
+   <p id="automationBenefitsList">
+    Automation offers several advantages over manual processes. Efficiency and time savings come from eliminating repetitive manual tasks, freeing staff to focus on more complex work. Enforcing baselines ensures configurations stay consistent across systems without relying on manual checks. Standard infrastructure configurations reduce the chance of human error introducing misconfigurations. Scaling in a secure manner allows an organization to grow its infrastructure without a proportional increase in security risk or manual oversight. Employee retention can improve when automation removes repetitive, low-value tasks that contribute to burnout. Reaction time improves because automated systems can respond to threats far faster than a human could. Automation also acts as a workforce multiplier, allowing a smaller security team to accomplish what would otherwise require significantly more staff.
+   </p>
+   <h2 id="automationConsiderations">
+    Other Considerations
+   </h2>
+   <p id="automationConsiderationsList">
+    Automation isn't without tradeoffs. Complexity increases as automated systems and scripts are added, which can make troubleshooting more difficult when something goes wrong. Cost includes the investment needed to build, license, and maintain automation tools and scripts. A single point of failure can be introduced if too much relies on one automated system or script that isn't properly monitored or maintained. Technical debt can accumulate when automation scripts are written quickly without proper documentation or long-term planning, making them harder to maintain later. Ongoing supportability requires that someone continues to understand, maintain, and update automated processes over time, since automation that no one can maintain eventually becomes a liability rather than a benefit.
+   </p>
+   <div class="buttons">
+    <button class="read-aloud" id="readAloud2" type="button">
+     🔊 Read Aloud
+    </button>
+    <button id="next2">
+     Next &rarr;
+    </button>
+   </div>
+  </div>
+  <!-- ====================================================== -->
+  <!-- PAGE 3 -->
+  <div class="module" id="M1Page3" style="display:none;">
+   <header>
+    <h1>
+     Cybersecurity Awareness Training
+    </h1>
+    <h3>
+     Module 1 &bull; Security Fundamentals
+    </h3>
+    <div class="progress">
+     <progress max="6" value="3">
+     </progress>
+     <p id="page3Paragraph1">
+      Page 3 of 6
+     </p>
+    </div>
+   </header>
+   <hr/>
+   <h2 id="introRansomeware">
+    Given a scenario, use data sources to support an investigation.
+   </h2>
+   <h2 id="logData">
+    Log Data
+   </h2>
+   <p id="logDataTypes">
+    Different systems generate different types of logs, each providing a different view into the security posture of an environment. Firewall logs record allowed and denied traffic based on firewall rules, useful for identifying blocked attacks or misconfigured rules. Application logs record events within a specific application, such as errors, user actions, or authentication attempts, helping identify issues at the software level. Endpoint logs capture activity on individual devices, such as processes running or files accessed, which can reveal signs of compromise on a specific machine. OS-specific security logs record security-relevant events at the operating system level, such as login attempts, privilege escalations, or policy changes. IPS/IDS logs record traffic and events flagged by intrusion detection and prevention systems, providing detail on potential attacks that were detected or blocked. Network logs capture broader traffic and connection data across the network, useful for tracing how an attacker moved between systems. Metadata refers to data about the data itself, such as timestamps, file sizes, or sender information, which can provide useful context even when the content of a log entry doesn't tell the whole story.
+   </p>
+   <h2 id="dataSources">
+    Data Sources
+   </h2>
+   <p id="dataSourcesTypes">
+    Beyond raw logs, several other data sources support security monitoring and investigation. Vulnerability scans provide point-in-time snapshots of known weaknesses across systems, feeding into the broader vulnerability management process. Automated reports compile data from various tools into a regular, digestible format, saving analysts from manually pulling information every time. Dashboards provide a real-time, visual summary of security data, allowing teams to quickly spot trends or anomalies without digging through raw logs. Packet captures record the actual data traveling across the network at a granular level, which is especially useful during a deep investigation when logs alone don't provide enough detail about what happened.
+   </p>
+   <div class="buttons">
+    <button class="read-aloud" id="readAloud3" type="button">
+     🔊 Read Aloud
+    </button>
+    <div>
+    </div>
     <button id="next3">
-    
-    Next →
-    
+     Next &rarr;
     </button>
-    
-    </div>
-    
-    </div>
-    
-    <!-- ====================================================== -->
-    <!-- PAGE 4 -->
-    
-    <div id="M1Page4" class="module" style="display:none;">
-    
-    <header>
-    
-    <h1>Cybersecurity Awareness Training</h1>
-    
-    <h3>Module 1 • Security Fundamentals</h3>
-    
+   </div>
+  </div>
+  <!-- ====================================================== -->
+  <!-- PAGE 4 -->
+  <div class="module" id="M1Page4" style="display:none;">
+   <header>
+    <h1>
+     Cybersecurity Awareness Training
+    </h1>
+    <h3>
+     Module 1 &bull; Security Fundamentals
+    </h3>
     <div class="progress">
-    
-    <progress value="4" max="9"></progress>
-    
-    <p>Page 4 of 9</p>
-    
+     <progress max="6" value="4">
+     </progress>
+     <p id="page4Paragraph1">
+      Page 4 of 6
+     </p>
     </div>
-    
-    </header>
-    
-    <hr>
-    
-    <h2 id="commonMalwareTypes">AI and the effects of cybersecurity professionals.</h2>
-    
-    <p id="malwareIntro">
-    Artifical intelligence is transforming cybersecurity from a human domianted feild to an AI vs AI battleground. It is important to explain the importance of security throughout the life cycle of AI so when your AI fights you understand its attack patterns and how to keep your AI running smoothly. 
+   </header>
+   <hr/>
+   <h2 id="commonMalwareTypes">
+    AI and the effects of cybersecurity professionals.
+   </h2>
+   <p id="malwareIntro">
+    Artifical intelligence is transforming cybersecurity from a human domianted feild to an AI vs AI battleground. It is important to explain the importance of security throughout the life cycle of AI so when your AI fights you understand its attack patterns and how to keep your AI running smoothly.
+   </p>
+   <table>
+    <tr>
+     <th id="threatHeader">
+      Tool
+     </th>
+     <th id="descriptionHeader">
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td id="ransomwareThreat">
+      Data preparation
+     </td>
+     <td id="ransomwareDescription">
+      The process of gathering, cleaning, and transforming raw data into a clear format.
+     </td>
+    </tr>
+    <tr>
+     <td id="trojanHorseThreat">
+      Model development/selection
+     </td>
+     <td id="trojanHorseDescription">
+      The structured, iterative process of defining, building, and refining a mathematical machine to solve a problem.
+     </td>
+    </tr>
+    <tr>
+     <td id="virusThreat">
+      Model evaluation
+     </td>
+     <td id="virusDescription">
+      Model evaluation is the process of testing an AI or machine-learning model to determine how accurately, reliably, and effectively it performs its intended task.
+     </td>
+    </tr>
+    <tr>
+     <td id="wormThreat">
+      Deployment
+     </td>
+     <td id="wormDescription">
+      AI deployment is the process of putting an AI model into a real-world environment where it can be used to perform its intended task, such as analyzing data, making predictions, or automating decisions.
+     </td>
+    </tr>
+    <tr>
+     <td id="spywareThreat">
+      Validation
+     </td>
+     <td id="spywareDescription">
+      Validation is the process of testing an AI model or system to make sure it performs as expected and produces accurate, reliable results before or during its use.
+     </td>
+    </tr>
+    <tr>
+     <td id="keyloggerThreat">
+      Data collection
+     </td>
+     <td id="keyloggerDescription">
+      Data collection is the process of gathering relevant information from various sources to use for analysis, training, or decision-making.
+     </td>
+    </tr>
+    <tr>
+     <td id="rootkitThreat">
+      Monitoring and maintenance
+     </td>
+     <td id="rootkitDescription">
+      Use humans to actively watch and act on what the AI outputs and change or update when nessesary.
+     </td>
+    </tr>
+    <tr>
+     <td id="logicBombThreat">
+      Feedback and iteration
+     </td>
+     <td id="logicBombDescription">
+      Feedback and iteration is the process of collecting feedback on an AI system&rsquo;s performance, identifying areas for improvement, and repeatedly updating or refining the system based on that feedback.
+     </td>
+    </tr>
+    <tr>
+     <td id="bloatwareThreat">
+      Buisness use case
+     </td>
+     <td id="bloatwareDescription">
+      Align with corporate objectives.
+     </td>
+    </tr>
+   </table>
+   <div class="infoBox">
+    <strong>
+     Remember:
+    </strong>
+    <p id="malwareProtectionTips">
     </p>
-    
-    <table>
-    
-    <tr>
-    
-    <th id="threatHeader">Tool</th>
-    <th id="descriptionHeader">Description</th>
-    </tr>
-    
-    <tr>
-    <td id="ransomwareThreat">Data preparation</td>
-    <td id="ransomwareDescription">The process of gathering, cleaning, and transforming raw data into a clear format.</td>
-    </tr>
-    
-    <tr>
-    <td id="trojanHorseThreat">Model development/selection</td>
-    <td id="trojanHorseDescription">The structured, iterative process of defining, building, and refining a mathematical machine to solve a problem.</td>
-    </tr>
-    
-    <tr>
-    <td id="virusThreat">Model evaluation</td>
-    <td id="virusDescription">Model evaluation is the process of testing an AI or machine-learning model to determine how accurately, reliably, and effectively it performs its intended task.</td>
-    </tr>
-    
-    <tr>
-    <td id="wormThreat">Deployment</td>
-    <td id="wormDescription">AI deployment is the process of putting an AI model into a real-world environment where it can be used to perform its intended task, such as analyzing data, making predictions, or automating decisions.</td>
-    </tr>
-    
-    <tr>
-    <td id="spywareThreat">Validation</td>
-    <td id="spywareDescription">Validation is the process of testing an AI model or system to make sure it performs as expected and produces accurate, reliable results before or during its use.</td>
-    </tr>
-    
-    <tr>
-    <td id="keyloggerThreat">Data collection</td>
-    <td id="keyloggerDescription">Data collection is the process of gathering relevant information from various sources to use for analysis, training, or decision-making.</td>
-    </tr>
-    
-    <tr>
-    <td id="rootkitThreat">Monitoring and maintenance</td>
-    <td id="rootkitDescription">Use humans to actively watch and act on what the AI outputs and change or update when nessesary.</td>
-    </tr>
-    
-    <tr>
-    <td id="logicBombThreat">Feedback and iteration</td>
-    <td id="logicBombDescription">Feedback and iteration is the process of collecting feedback on an AI system’s performance, identifying areas for improvement, and repeatedly updating or refining the system based on that feedback.</td>
-    </tr>
-    
-    <tr>
-    <td id="bloatwareThreat">Buisness use case</td>
-    <td id="bloatwareDescription">Align with corporate objectives.</td>
-    </tr>
-    
-    </tr>
-    
-    </table>
-    
-    <div class="infoBox">
-    
-    <strong>Remember:</strong>
-    
-    <p id="malwareProtectionTips"></p>
     AI is a helpful tool not a do all solution for every problem.
-    </p>
-    
-    </div>
-    
-    <div class="buttons">
-    <button id="readAloud4">
-
-            🔊 Read Aloud
+   </div>
+   <div class="buttons">
+    <button class="read-aloud" id="readAloud4" type="button">
+     🔊 Read Aloud
     </button>
-    <div></div>
-    
+    <div>
+    </div>
     <button id="next4">
-    
-    Next →
-    
+     Next &rarr;
     </button>
-    
-    </div>
-    
-    </div>
-    
-    <!-- ====================================================== -->
-    <!-- PAGE 5 -->
-    
-    <div id="M1Page5" class="module" style="display:none;">
-
-    <header>
-
-    <h1>Cybersecurity Awareness Training</h1>
-
-    <h3>Module 1 • Security Fundamentals</h3>
-
+   </div>
+  </div>
+  <!-- ====================================================== -->
+  <!-- PAGE 5 -->
+  <div class="module" id="M1Page5" style="display:none;">
+   <header>
+    <h1>
+     Cybersecurity Awareness Training
+    </h1>
+    <h3>
+     Module 1 &bull; Security Fundamentals
+    </h3>
     <div class="progress">
-
-    <progress value="5" max="9"></progress>
-
-    <p>Page 5 of 9</p>
-
+     <progress max="6" value="5">
+     </progress>
+     <p id="page5Paragraph1">
+      Page 5 of 6
+     </p>
     </div>
-
-    </header>
-
-    <hr>
-
-    <h2 id="findingSecurityRisksTitle">The downsides to using AI.</h2>
-
-    <p id="findingSecurityRisksIntro">
-        Some common downsides of using AI include:
-    </p>
-
-    <table id="securityToolsTable">
-
+   </header>
+   <hr/>
+   <h2 id="findingSecurityRisksTitle">
+    The downsides to using AI.
+   </h2>
+   <p id="findingSecurityRisksIntro">
+    Some common downsides of using AI include:
+   </p>
+   <table id="securityToolsTable">
     <tr id="securityToolsHeaderRow">
-        <th id="toolHeader">Downside</th>
-        <th id="purposeHeader">Why</th>
+     <th id="toolHeader">
+      Downside
+     </th>
+     <th id="purposeHeader">
+      Why
+     </th>
     </tr>
-
     <tr id="virusTotalRow">
-        <td id="virusTotalTool">Bias</td>
-        <td id="virusTotalPurpose">AI can produce unfair or biased results if it is trained on biased data.</td>
+     <td id="virusTotalTool">
+      Bias
+     </td>
+     <td id="virusTotalPurpose">
+      AI can produce unfair or biased results if it is trained on biased data.
+     </td>
     </tr>
-
     <tr id="urlReputationRow">
-        <td id="urlReputationTool">Privacy concerns</td>
-        <td id="urlReputationPurpose">AI systems may process large amounts of personal or sensitive data.</td>
+     <td id="urlReputationTool">
+      Privacy concerns
+     </td>
+     <td id="urlReputationPurpose">
+      AI systems may process large amounts of personal or sensitive data.
+     </td>
     </tr>
-
     <tr id="networkMonitoringRow">
-        <td id="networkMonitoringTool">Overreliance/cost</td>
-        <td id="networkMonitoringPurpose">Developing, training, and maintaining AI systems can require significant computing resources and money and people will forget critical thinking skills.</td>
+     <td id="networkMonitoringTool">
+      Overreliance/cost
+     </td>
+     <td id="networkMonitoringPurpose">
+      Developing, training, and maintaining AI systems can require significant computing resources and money and people will forget critical thinking skills.
+     </td>
     </tr>
-
-    </table>
-
-    <div class="infoBox" id="securityTipBox">
-        <strong id="securityTipTitle">Security Tip</strong>
-        <ul id="securityTipList" style="margin-top:15px; margin-left:25px; line-height:2;">
-            <li id="verifyWebsiteTip">AI is a tool and should only be used when "needed".</li>
-            <li id="scanDownloadsTip">Protect your personal data by not posting in to chatgtp.</li>
-            <li id="monitorNetworkTip">Critical thinking skills are important.</li>
-            <li id="updateSoftwareTip">Think about the buisness benefits of AI and the potential risks.</li>
-            <li id="browserWarningsTip">Check your facts with other sources.</li>
-        </ul>
+   </table>
+   <div class="infoBox" id="securityTipBox">
+    <strong id="securityTipTitle">
+     Security Tip
+    </strong>
+    <ul id="securityTipList" style="margin-top:15px; margin-left:25px; line-height:2;">
+     <li id="verifyWebsiteTip">
+      AI is a tool and should only be used when "needed".
+     </li>
+     <li id="scanDownloadsTip">
+      Protect your personal data by not posting in to chatgtp.
+     </li>
+     <li id="monitorNetworkTip">
+      Critical thinking skills are important.
+     </li>
+     <li id="updateSoftwareTip">
+      Think about the buisness benefits of AI and the potential risks.
+     </li>
+     <li id="browserWarningsTip">
+      Check your facts with other sources.
+     </li>
+    </ul>
+   </div>
+   <div class="buttons">
+    <button class="read-aloud" id="readAloud5" type="button">
+     🔊 Read Aloud
+    </button>
+    <button id="next5">
+     Next &rarr;
+    </button>
+   </div>
+  </div>
+  <!-- ====================================================== -->
+  <!-- PAGE 6 -->
+  <!-- ====================================================== -->
+  <!-- PAGE 9 -->
+  <div class="module" id="M1Page6" style="display:none;">
+   <header>
+    <h1>
+     🎉 Module Complete
+    </h1>
+    <h3>
+     Cybersecurity Awareness Training
+    </h3>
+    <div class="progress">
+     <progress max="6" value="6">
+     </progress>
+     <p id="page6Paragraph1">
+      Page 6 of 6
+     </p>
     </div>
-
+   </header>
+   <hr/>
+   <div class="infoBox">
+    <h2 id="congratulationsTitle" style="margin-bottom:15px;">
+     Congratulations!
+    </h2>
+    <p id="completionMessage">
+     You have successfully completed
+     <strong>
+      Module 1: Security Fundamentals.
+     </strong>
+    </p>
+    <p id="understandingIntro">
+     You now understand:
+    </p>
+    <ul id="understandingList" style="margin-left:30px; line-height:2;">
+     <li id="cybersecurityImportance">
+      Why cybersecurity is important
+     </li>
+     <li id="commonThreats">
+      Common cyber threats
+     </li>
+     <li id="ransomwareAttacks">
+      Ransomware attacks
+     </li>
+     <li id="malwareTypes">
+      Types of malware
+     </li>
+     <li id="securityControls">
+      Security controls
+     </li>
+     <li id="cryptographyAndPKI">
+      Cryptography and PKI
+     </li>
+     <li id="changeManagement">
+      Change management
+     </li>
+    </ul>
+    <h2 id="continueLearningTitle">
+     Continue Learning
+    </h2>
+    <p id="continueLearningMessage">
+     Cybersecurity is constantly evolving. Continue building your knowledge through trusted learning resources.
+    </p>
+    <p id="page6Paragraph2">
+     <a href="https://niccs.cisa.gov/audience/cybersecurity-beginners" target="_blank">
+      Cybersecurity Beginner Resources (CISA)
+     </a>
+    </p>
     <div class="buttons">
-        <button id="readAloud5">
-            🔊 Read Aloud
-        </button>
-        <button id="next5">
-            Next →
-        </button>
+     <div>
+     </div>
+     <button id="next9" onclick="window.location.href='Security_quiz.html';">
+      End
+     </button>
     </div>
+   </div>
+  </div>
+  <script>
+   document.addEventListener("DOMContentLoaded", function () {
+    const synth = window.speechSynthesis;
+    const pages = Array.from(document.querySelectorAll(".module"));
 
-    </div>
+    function stopReading() {
+        synth.cancel();
 
-<!-- ====================================================== -->
-<!-- PAGE 6 -->
+        document.querySelectorAll(".read-aloud").forEach(function (button) {
+            button.textContent = "🔊 Read Aloud";
+            button.classList.remove("reading");
+            button.setAttribute("aria-pressed", "false");
+        });
+    }
 
-<!-- ====================================================== -->
-    <!-- PAGE 9 -->
-    
-    <div id="M1Page6" class="module" style="display:none;">
-    
-        <header>
-        
-        <h1>🎉 Module Complete</h1>
-        
-        <h3>Cybersecurity Awareness Training</h3>
-        
-        <div class="progress">
-        
-        <progress value="9" max="9"></progress>
-        
-        <p>Page 9 of 9</p>
-        
-        </div>
-        
-        </header>
-        
-        <hr>
-        
-        <div class="infoBox">
-        
-        <h2 id="congratulationsTitle" style="margin-bottom:15px;">Congratulations!</h2>
-        
-        <p id="completionMessage">
-        You have successfully completed <strong>Module 1: Security Fundamentals.</strong>
-        </p>
-        
-        <p id="understandingIntro">
-        You now understand:
-        </p>
-        
-        <ul id="understandingList" style="margin-left:30px; line-height:2;">
-            <li id="cybersecurityImportance">Why cybersecurity is important</li>
-            <li id="commonThreats">Common cyber threats</li>
-            <li id="ransomwareAttacks">Ransomware attacks</li>
-            <li id="malwareTypes">Types of malware</li>
-            <li id="securityControls">Security controls</li>
-            <li id="cryptographyAndPKI">Cryptography and PKI</li>
-            <li id="changeManagement">Change management</li>
-        </ul>
-        
-        <h2 id="continueLearningTitle">Continue Learning</h2>
-        
-        <p id="continueLearningMessage">
-        Cybersecurity is constantly evolving. Continue building your knowledge through trusted learning resources.
-        </p>
-        <p>
-        
-        <a href="https://niccs.cisa.gov/audience/cybersecurity-beginners" target="_blank">
-        
-        Cybersecurity Beginner Resources (CISA)
-        
-        </a>
-        
-        </p>
-        
-        <div class="buttons">
-        
-        <div></div>
-        
-        <button id="next9" onclick="window.location.href='Security_quiz.html';">
-        
-        End
-        
-        </button>
-        
-        </div>
-        
-        </div>
-    
-    </body>
-    
-    </html>           
-<script>
-    // Get references to the "Next" button and sections
-    const nextButton1 = document.getElementById('next1');
-    const nextButton2 = document.getElementById('next2');
-    const nextButton3 = document.getElementById('next3');
-    const nextButton4 = document.getElementById('next4');
-    const nextButton5 = document.getElementById('next5');
-    const nextButton6 = document.getElementById('next6');
-    const nextButton7 = document.getElementById('next7');
-    const nextButton8 = document.getElementById('next8');
-    const nextButton9 = document.getElementById('next9');
+    function getPageText(page) {
+        return Array.from(
+            page.querySelectorAll("h1, h2, h3, p, li, th, td, strong")
+        )
+        .filter(function (element) {
+            return !element.closest(".buttons");
+        })
+        .map(function (element) {
+            return element.innerText.trim();
+        })
+        .filter(Boolean)
+        .join(". ");
+    }
 
-    //read aloud
-    const readAloudButton1 = document.getElementById('readAloud1');
-    const readAloudButton2 = document.getElementById('readAloud2');
-    const readAloudButton3 = document.getElementById('readAloud3');
-    const readAloudButton4 = document.getElementById('readAloud4');
-    const readAloudButton5 = document.getElementById('readAloud5');
-    const readAloudButton6 = document.getElementById('readAloud6');
-    const readAloudButton7 = document.getElementById('readAloud7');
-    const readAloudButton8 = document.getElementById('readAloud8');
-    const readAloudButton9 = document.getElementById('readAloud9');
-    
-    // element for each page section
-    const section1 = document.getElementById('M1Page1');
-    const section2 = document.getElementById('M1Page2');
-    const section3 = document.getElementById('M1Page3');
-    const section4 = document.getElementById('M1Page4');
-    const section5 = document.getElementById('M1Page5');
-    const section6 = document.getElementById('M1Page6');
-    const section7 = document.getElementById('M1Page7');
-    const section8 = document.getElementById('M1Page8');
-    const section9 = document.getElementById('M1Page9');
+    function readPage(page, button) {
+        if (synth.speaking) {
+            stopReading();
+            return;
+        }
 
-    // Hide section1 and show section2 when "Next" is clicked
-    nextButton1.addEventListener('click', () => {
-        section1.style.display = 'none';
-        section2.style.display = 'block';
+        const text = getPageText(page);
+
+        if (!text) {
+            console.warn("No readable text found.");
+            return;
+        }
+
+        synth.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = 0.95;
+        utterance.pitch = 1;
+        utterance.volume = 1;
+
+        button.textContent = "⏹ Stop Reading";
+        button.classList.add("reading");
+        button.setAttribute("aria-pressed", "true");
+
+        utterance.onend = function () {
+            button.textContent = "🔊 Read Aloud";
+            button.classList.remove("reading");
+            button.setAttribute("aria-pressed", "false");
+        };
+
+        utterance.onerror = function () {
+            button.textContent = "🔊 Read Aloud";
+            button.classList.remove("reading");
+            button.setAttribute("aria-pressed", "false");
+        };
+
+        synth.speak(utterance);
+    }
+
+    pages.forEach(function (page, index) {
+        const readButton = page.querySelector(".read-aloud");
+
+        if (readButton) {
+            readButton.type = "button";
+            readButton.setAttribute("aria-label", "Read this page aloud");
+            readButton.setAttribute("aria-pressed", "false");
+
+            readButton.addEventListener("click", function () {
+                readPage(page, readButton);
+            });
+        }
+
+        const next = page.querySelector("[id^='next']");
+        const back = page.querySelector("[id^='back']");
+
+        if (next) {
+            next.type = "button";
+            next.removeAttribute("onclick");
+            next.addEventListener("click", function () {
+                showPage(index + 1);
+            });
+        }
+
+        next9.addEventListener('click', () => {
+    window.location.href = 'Security_quiz.html';
+});
+
+        if (back) {
+            back.type = "button";
+            back.removeAttribute("onclick");
+            back.addEventListener("click", function () {
+                showPage(index - 1);
+            });
+        }
     });
 
-    nextButton2.addEventListener('click', () => {
-        section2.style.display = 'none';
-        section3.style.display = 'block';
+    function showPage(index) {
+        if (index < 0 || index >= pages.length) return;
+
+        stopReading();
+
+        pages.forEach(function (page, pageIndex) {
+            page.style.display = pageIndex === index ? "block" : "none";
+        });
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    if (pages.length) {
+        showPage(0);
+    }
+
+    document.querySelectorAll(".flip-card").forEach(function (card) {
+        const inner = card.querySelector(".flip-card-inner");
+        if (!inner) return;
+
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("role", "button");
+
+        function flip() {
+            inner.style.transform =
+                inner.style.transform === "rotateY(180deg)"
+                    ? "rotateY(0deg)"
+                    : "rotateY(180deg)";
+        }
+
+        card.addEventListener("click", flip);
+
+        card.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                flip();
+            }
+        });
     });
 
-    nextButton3.addEventListener('click', () => {
-        section3.style.display = 'none';
-        section4.style.display = 'block';
-    });
-
-    nextButton4.addEventListener('click', () => {
-        section4.style.display = 'none';
-        section5.style.display = 'block';
-    });
-
-    nextButton5.addEventListener('click', () => {
-        section5.style.display = 'none';
-        section6.style.display = 'block';
-    });
-
-    nextButton6.addEventListener('click', () => {
-        section6.style.display = 'none';
-        section7.style.display = 'block';
-    });
-
-    nextButton7.addEventListener('click', () => {
-        section7.style.display = 'none';
-        section8.style.display = 'block';
-    });
-
-    nextButton8.addEventListener('click', () => {
-        section8.style.display = 'none';
-        section9.style.display = 'block';
-    });
-
-    // Read aloud functionality
-    readAloudButton1.addEventListener('click', () => {
-        const textToRead = document.getElementById('welcomeText').innerText + ' ' +
-                           document.getElementById('cybersecurityScope').innerText + ' ' +
-                           document.getElementById('humanMistakes').innerText + ' ' +
-                           document.getElementById('learningObjectiveBreak').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton2.addEventListener('click', () => {
-        const textToRead = document.getElementById('realWorldExampleTitle').innerText + ' ' +
-                   document.getElementById('realWorldExampleIntro').innerText + ' ' +
-                   document.getElementById('realWorldExampleDetails').innerText + ' ' +
-                   document.getElementById('hacktivismTerm').innerText + ' ' +
-                   document.getElementById('hacktivismDefinition').innerText + ' ' +
-                   document.getElementById('realWorldExampleConclusion').innerText; + ' ' +
-                   document.getElementById('practiceStrongAuthentication').innerText; + ' ' +
-                   document.getElementById('practiceRegularUpdates').innerText; + ' ' +
-                   document.getElementById('practiceEncryption').innerText; + ' ' +
-                   document.getElementById('practiceMonitoring').innerText; + ' ' +
-                   document.getElementById('practiceAwarenessTraining').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton3.addEventListener('click', () => {
-        const textToRead = document.getElementById('introRansomeware').innerText + ' ' +
-                   document.getElementById('ransomwareIntro').innerText + ' ' +
-                   document.getElementById('internshipExperience').innerText + ' ' +
-                   document.getElementById('incidentDetails').innerText + ' ' +
-                   document.getElementById('cybersecurityAwareness').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton4.addEventListener('click', () => {
-        const textToRead = document.getElementById('commonMalwareTypes').innerText + ' ' +
-                   document.getElementById('malwareIntro').innerText + ' ' +
-                   document.getElementById('threatHeader').innerText + ' ' +
-                   document.getElementById('descriptionHeader').innerText + ' ' +
-                   document.getElementById('malwareProtectionTips').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton5.addEventListener('click', () => {
-        const textToRead = document.getElementById('findingSecurityRisksTitle').innerText + ' ' +
-                   document.getElementById('findingSecurityRisksIntro').innerText + ' ' +
-                   document.getElementById('toolHeader').innerText + ' ' +
-                   document.getElementById('purposeHeader').innerText + ' ' +
-                   document.getElementById('securityTipBox').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton6.addEventListener('click', () => {
-        const textToRead = document.getElementById('securityControlsTitle').innerText + ' ' +
-                   document.getElementById('securityControlsIntro').innerText + ' ' +
-                   document.getElementById('controlTypeHeader').innerText + ' ' +
-                   document.getElementById('examplesHeader').innerText + ' ' +
-                   document.getElementById('purposeHeader').innerText + ' ' +
-                   document.getElementById('defenseInDepthDescription').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton7.addEventListener('click', () => {
-        const textToRead = document.getElementById('cryptographyTitle').innerText + ' ' +
-                   document.getElementById('cryptographyIntro').innerText + ' ' +
-                   document.getElementById('pkiIntro').innerText + ' ' +
-                   document.getElementById('keyHeader').innerText + ' ' +
-                   document.getElementById('purposeHeader').innerText + ' ' +
-                   document.getElementById('pkiTechnologiesTitle').innerText + ' ' +
-                   document.getElementById('pkiTechnologiesList').innerText + ' ' +
-                   document.getElementById('pkiUsage').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton8.addEventListener('click', () => {
-        const textToRead = document.getElementById('changeManagementTitle').innerText + ' ' +
-                   document.getElementById('changeManagementIntro').innerText + ' ' +
-                   document.getElementById('changeManagementBenefits').innerText + ' ' +
-                   document.getElementById('stepHeader').innerText + ' ' +
-                   document.getElementById('descriptionHeader').innerText + ' ' +
-                   document.getElementById('whyItMattersTitle').innerText + ' ' +
-                   document.getElementById('whyItMattersDescription').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton9.addEventListener('click', () => {
-        const textToRead = document.getElementById('congratulationsTitle').innerText + ' ' +
-                   document.getElementById('completionMessage').innerText + ' ' +
-                   document.getElementById('understandingIntro').innerText + ' ' +
-                   Array.from(document.getElementById('understandingList').children).map(item => item.innerText).join(' ') + ' ' +
-                   document.getElementById('continueLearningTitle').innerText + ' ' +
-                   document.getElementById('continueLearningMessage').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-</script>
+    window.addEventListener("beforeunload", stopReading);
+});
+  </script>
+ </body>
+</html>

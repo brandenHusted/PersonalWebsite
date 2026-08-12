@@ -1,932 +1,569 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Cybersecurity Awareness Training</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Cybersecurity Awareness Training
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   * {
+    box-sizing: border-box;
 }
 
-body{
-
-font-family:'Roboto',sans-serif;
-
-background:#edf2f7;
-
-color:#333;
-
-padding:40px;
-
+html {
+    scroll-behavior: smooth;
 }
 
-.module{
-
-max-width:950px;
-
-margin:auto;
-
-background:white;
-
-padding:40px;
-
-border-radius:15px;
-
-box-shadow:0 10px 35px rgba(0,0,0,.15);
-
-animation:fadeIn .5s ease;
-
+body {
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #edf2f7;
+    color: #333;
 }
 
-@keyframes fadeIn{
-
-from{
-
-opacity:0;
-transform:translateY(15px);
-
+.module {
+    width: min(950px, 100%);
+    margin: 0 auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
 }
 
-to{
-
-opacity:1;
-transform:translateY(0);
-
+header {
+    margin-bottom: 30px;
+    text-align: center;
 }
 
+header h1 {
+    color: #003366;
 }
 
-header{
-
-margin-bottom:35px;
-text-align:center;
-
+header h3 {
+    color: #666;
+    font-weight: 400;
 }
 
-header h1{
-
-font-size:34px;
-
-color:#003366;
-
-margin-bottom:10px;
-
+h2 {
+    color: #005792;
 }
 
-header h3{
-
-font-weight:400;
-color:#666;
-
+p {
+    font-size: 17px;
+    line-height: 1.8;
 }
 
-hr{
-
-border:none;
-
-height:2px;
-
-background:#d8dde5;
-
-margin:30px 0;
-
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 25px auto;
 }
 
-h2{
-
-color:#005792;
-
-margin-bottom:20px;
-
+table {
+    width: 100%;
+    margin: 25px 0;
+    border-collapse: collapse;
 }
 
-p{
-
-margin-bottom:18px;
-
-font-size:17px;
-
-line-height:1.8;
-
+th,
+td {
+    padding: 12px;
+    border: 1px solid #d9d9d9;
+    text-align: left;
+    line-height: 1.6;
 }
 
-img{
-
-display:block;
-
-margin:25px auto;
-
-max-width:100%;
-
-border-radius:10px;
-
-box-shadow:0 6px 20px rgba(0,0,0,.15);
-
+th {
+    background: #005792;
+    color: #fff;
 }
 
-.infoBox{
-
-background:#eef7ff;
-
-border-left:6px solid #0078D4;
-
-padding:18px;
-
-margin:25px 0;
-
-border-radius:8px;
-
+tr:nth-child(even) {
+    background: #f7f9fc;
 }
 
-.progress{
-
-margin-top:15px;
-
+.infoBox {
+    margin: 25px 0;
+    padding: 18px;
+    background: #eef7ff;
+    border-left: 6px solid #0078d4;
+    border-radius: 8px;
 }
 
-progress{
-
-width:100%;
-height:18px;
-
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 35px;
 }
 
-.buttons{
-
-display:flex;
-
-justify-content:space-between;
-
-margin-top:35px;
-
+button {
+    padding: 12px 24px;
+    border: 0;
+    border-radius: 8px;
+    background: #005792;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-button{
-
-background:#005792;
-
-color:white;
-
-padding:12px 28px;
-
-font-size:16px;
-
-border:none;
-
-border-radius:8px;
-
-cursor:pointer;
-
-transition:.3s;
-
+button:hover {
+    background: #003b66;
 }
 
-button:hover{
-
-background:#003b66;
-
-transform:translateY(-2px);
-
+button:focus-visible {
+    outline: 3px solid #ffbf47;
+    outline-offset: 3px;
 }
 
-a{
-
-color:#005792;
-
-font-weight:bold;
-
+button.reading {
+    background: #8b1e1e;
 }
 
-table{
-
-width:100%;
-
-border-collapse:collapse;
-
-margin-top:25px;
-
+progress {
+    width: 100%;
+    height: 18px;
 }
 
-th{
-
-background:#005792;
-
-color:white;
-
-padding:14px;
-
+a {
+    color: #005792;
+    font-weight: 700;
 }
 
-td{
+@media (max-width: 700px) {
+    body {
+        padding: 15px 10px;
+    }
 
-padding:14px;
+    .module {
+        padding: 24px 18px;
+    }
 
-border-bottom:1px solid #ddd;
+    .buttons {
+        flex-wrap: wrap;
+    }
 
+    button {
+        flex: 1 1 150px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
 }
-
-tr:nth-child(even){
-
-background:#f7f9fc;
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div id="M1Page1" class="module">
-
-<header>
-
-<h1>Cybersecurity Awareness Training</h1>
-
-<h3>Module 6 • Incident Reporting and Response</h3>
-
-<div class="progress">
-
-<progress value="1" max="9"></progress>
-
-<p>Page 1 of 9</p>
-
-</div>
-
-</header>
-
-<img src="images/awareness.png" alt="Cybersecurity Awareness">
-
-<hr>
-
-<h2>Welcome</h2>
-
-<p id="welcomeText">
-Welcome to Module six of the cybersecurity awareness training course.
+  </style>
+ </head>
+ <body>
+  <div class="module" id="M1Page1">
+   <header>
+    <h1>
+     Cybersecurity Awareness Training
+    </h1>
+    <h3>
+     Module 6 &bull; Incident Reporting and Response
+    </h3>
+    <div class="progress">
+     <progress max="6" value="1">
+     </progress>
+     <p id="page1Paragraph1">
+      Page 1 of 6
+     </p>
+    </div>
+   </header>
+   <img alt="Cybersecurity Awareness" src="images/awareness.png"/>
+   <hr/>
+   <h2>
+    Welcome
+   </h2>
+   <p id="welcomeText">
+    Welcome to Module six of the cybersecurity awareness training course.
 In this module you'll learn how to implement security awareness practices.
-</p>
-
-<p id="cybersecurityScope">
-You will learn common computer security techniques, and how to alert and monitor traffic with tools.
-</p>
-
-<p id="humanMistakes">
-You will learn appropiate incident response activites and use data to support an investigation.
-</p>
-
-<div class="infoBox">
-
-<strong>Learning Objective</strong>
-
-<br id="learningObjectiveBreak"><br>
-
-Understand why cybersecurity matters and recognize the role each person plays in protecting information and systems.
-
-</div>
-
-<img src="images/BasicCyberSecurityIMG.png" alt="Basic Cybersecurity">
-
-<div class="buttons">
-
-<button id="readAloud1">
-🔊 Read Aloud
-</button>
-
-<button id="next1">
-Next →
-</button>
-
-</div>
-
-</div>
-
-<!-- ====================================================== -->
-
-<div id="M1Page2" class="module" style="display:none;">
-
-<header>
-
-<h1>Cybersecurity Awareness Training</h1>
-
-<h3>Module 6 • Incident Reporting and Response</h3>
-
-<div class="progress">
-
-<progress value="2" max="9"></progress>
-
-<p>Page 2 of 9</p>
-
-</div>
-
-</header>
-
-<h2 id="realWorldExampleTitle">Explain security alerting and monitoring concepts and tools.</h2>
-
-<h2 id="monitoringComputingResources">Monitoring Computing Resources</h2>
-
-<p id="whatGetsMonitored">
-Effective monitoring covers several layers of an organization's technology environment. Systems monitoring tracks the health and behavior of individual devices, such as servers and workstations. Applications monitoring tracks the performance and security of the software running on those systems, catching issues like unusual access patterns or errors that could indicate a problem. Infrastructure monitoring covers the underlying network and hardware that everything else depends on, such as switches, routers, and cloud resources.
-</p>
-
-<h2 id="monitoringActivities">Monitoring Activities</h2>
-
-<p id="coreMonitoringActivities">
-Several activities make up the day-to-day work of monitoring. Log aggregation collects log data from many different sources into a central location, making it easier to search and correlate events across the environment. Alerting notifies security personnel automatically when monitoring tools detect something that matches a defined rule or threshold. Scanning actively checks systems for vulnerabilities, misconfigurations, or malware. Reporting summarizes monitoring data and findings for stakeholders, supporting both day-to-day decisions and long-term planning. Archiving retains historical log and monitoring data for a defined period, which supports investigations and compliance requirements even after the data is no longer actively needed.
-</p>
-
-<p id="alertResponse">
-Alert response and remediation involves acting on and validating alerts once they are generated. Quarantine isolates an affected system or file to prevent a threat from spreading further while it is investigated. Alert tuning adjusts the rules and thresholds that generate alerts, reducing false positives and ensuring the team's attention stays focused on legitimate threats rather than noise.
-</p>
-
-<h2 id="monitoringTools">Tools</h2>
-
-<p id="monitoringToolsOverview">
-A variety of tools support monitoring activities. The Security Content Automation Protocol (SCAP) is a standardized way to automate vulnerability management and policy compliance checks. Benchmarks provide standardized configuration guidelines, such as those from CIS, that systems can be measured against. Agents and agentless approaches refer to whether monitoring software is installed directly on a device (agent-based) or checks the device remotely without local software (agentless), each with different tradeoffs in visibility and overhead. Security information and event management (SIEM) platforms aggregate and correlate log data from across the environment to detect and alert on potential threats in near real time. Antivirus software detects and blocks known malicious software. Data loss prevention (DLP) tools monitor and restrict the movement of sensitive data to prevent it from leaving the organization improperly. Simple Network Management Protocol (SNMP) traps are automatic alerts sent by network devices when a significant event occurs, without needing to be polled first. NetFlow captures metadata about network traffic patterns, helping identify unusual or suspicious communication between systems. Vulnerability scanners automatically check systems for known weaknesses.
-</p>
-
-<div class="buttons">
-
-<button id="readAloud2">
-
-🔊 Read Aloud
-
-</button>
-
-<button id="next2">
-
-Next →
-
-</button>
-
-</div>
-
-</div>
-
-<!-- ====================================================== -->
-<!-- PAGE 3 -->
-
-<div id="M1Page3" class="module" style="display:none;">
-
-    <header>
-    
-    <h1>Cybersecurity Awareness Training</h1>
-    
-    <h3>Module 6 • Incident Reporting and Response</h3>
-    
+   </p>
+   <p id="cybersecurityScope">
+    You will learn common computer security techniques, and how to alert and monitor traffic with tools.
+   </p>
+   <p id="humanMistakes">
+    You will learn appropiate incident response activites and use data to support an investigation.
+   </p>
+   <div class="infoBox">
+    <strong>
+     Learning Objective
+    </strong>
+    <br id="learningObjectiveBreak"/>
+    <br/>
+    Understand why cybersecurity matters and recognize the role each person plays in protecting information and systems.
+   </div>
+   <img alt="Basic Cybersecurity" src="images/BasicCyberSecurityIMG.png"/>
+   <div class="buttons">
+    <button class="read-aloud" id="readAloud1" type="button">
+     🔊 Read Aloud
+    </button>
+    <button id="next1">
+     Next &rarr;
+    </button>
+   </div>
+  </div>
+  <!-- ====================================================== -->
+  <div class="module" id="M1Page2" style="display:none;">
+   <header>
+    <h1>
+     Cybersecurity Awareness Training
+    </h1>
+    <h3>
+     Module 6 &bull; Incident Reporting and Response
+    </h3>
     <div class="progress">
-    
-    <progress value="3" max="9"></progress>
-    
-    <p>Page 3 of 9</p>
-    
+     <progress max="6" value="2">
+     </progress>
+     <p id="page2Paragraph1">
+      Page 2 of 6
+     </p>
     </div>
-    
-    </header>
-    
-    <hr>
-    
-    <h2 id="introRansomeware">Given a scenario, modify enterprise capabilities to enhance security.</h2>
-    
-    <h2 id="firewalls">Firewall</h2>
-
-    <p id="firewallComponents">
+   </header>
+   <h2 id="realWorldExampleTitle">
+    Explain security alerting and monitoring concepts and tools.
+   </h2>
+   <h2 id="monitoringComputingResources">
+    Monitoring Computing Resources
+   </h2>
+   <p id="whatGetsMonitored">
+    Effective monitoring covers several layers of an organization's technology environment. Systems monitoring tracks the health and behavior of individual devices, such as servers and workstations. Applications monitoring tracks the performance and security of the software running on those systems, catching issues like unusual access patterns or errors that could indicate a problem. Infrastructure monitoring covers the underlying network and hardware that everything else depends on, such as switches, routers, and cloud resources.
+   </p>
+   <h2 id="monitoringActivities">
+    Monitoring Activities
+   </h2>
+   <p id="coreMonitoringActivities">
+    Several activities make up the day-to-day work of monitoring. Log aggregation collects log data from many different sources into a central location, making it easier to search and correlate events across the environment. Alerting notifies security personnel automatically when monitoring tools detect something that matches a defined rule or threshold. Scanning actively checks systems for vulnerabilities, misconfigurations, or malware. Reporting summarizes monitoring data and findings for stakeholders, supporting both day-to-day decisions and long-term planning. Archiving retains historical log and monitoring data for a defined period, which supports investigations and compliance requirements even after the data is no longer actively needed.
+   </p>
+   <p id="alertResponse">
+    Alert response and remediation involves acting on and validating alerts once they are generated. Quarantine isolates an affected system or file to prevent a threat from spreading further while it is investigated. Alert tuning adjusts the rules and thresholds that generate alerts, reducing false positives and ensuring the team's attention stays focused on legitimate threats rather than noise.
+   </p>
+   <h2 id="monitoringTools">
+    Tools
+   </h2>
+   <p id="monitoringToolsOverview">
+    A variety of tools support monitoring activities. The Security Content Automation Protocol (SCAP) is a standardized way to automate vulnerability management and policy compliance checks. Benchmarks provide standardized configuration guidelines, such as those from CIS, that systems can be measured against. Agents and agentless approaches refer to whether monitoring software is installed directly on a device (agent-based) or checks the device remotely without local software (agentless), each with different tradeoffs in visibility and overhead. Security information and event management (SIEM) platforms aggregate and correlate log data from across the environment to detect and alert on potential threats in near real time. Antivirus software detects and blocks known malicious software. Data loss prevention (DLP) tools monitor and restrict the movement of sensitive data to prevent it from leaving the organization improperly. Simple Network Management Protocol (SNMP) traps are automatic alerts sent by network devices when a significant event occurs, without needing to be polled first. NetFlow captures metadata about network traffic patterns, helping identify unusual or suspicious communication between systems. Vulnerability scanners automatically check systems for known weaknesses.
+   </p>
+   <div class="buttons">
+    <button class="read-aloud" id="readAloud2" type="button">
+     🔊 Read Aloud
+    </button>
+    <button id="next2">
+     Next &rarr;
+    </button>
+   </div>
+  </div>
+  <!-- ====================================================== -->
+  <!-- PAGE 3 -->
+  <div class="module" id="M1Page3" style="display:none;">
+   <header>
+    <h1>
+     Cybersecurity Awareness Training
+    </h1>
+    <h3>
+     Module 6 &bull; Incident Reporting and Response
+    </h3>
+    <div class="progress">
+     <progress max="6" value="3">
+     </progress>
+     <p id="page3Paragraph1">
+      Page 3 of 6
+     </p>
+    </div>
+   </header>
+   <hr/>
+   <h2 id="introRansomeware">
+    Given a scenario, modify enterprise capabilities to enhance security.
+   </h2>
+   <h2 id="firewalls">
+    Firewall
+   </h2>
+   <p id="firewallComponents">
     Firewalls control traffic entering and leaving a network based on defined criteria. Rules specify what traffic is allowed or denied, typically evaluated in order from most to least specific. Access lists (ACLs) define which specific IP addresses, networks, or users are permitted or denied access. Ports and protocols determine which types of traffic are allowed through, such as blocking unused ports to reduce the attack surface. Screened subnets, often called DMZs, place public-facing systems like web servers on a separate network segment, isolating them from the internal network so that if they are compromised, the attacker doesn't gain direct access to internal resources.
-    </p>
-    
-    <h2 id="idsIps">IDS/IPS</h2>
-    
-    <p id="idsIpsDetails">
+   </p>
+   <h2 id="idsIps">
+    IDS/IPS
+   </h2>
+   <p id="idsIpsDetails">
     Intrusion detection systems (IDS) and intrusion prevention systems (IPS) monitor network traffic for malicious activity, with IPS able to actively block detected threats rather than only alerting on them. Trend-based detection looks for patterns of behavior over time that deviate from the norm, which can catch novel or previously unseen attacks. Signature-based detection compares traffic against a database of known attack patterns, making it fast and reliable against known threats but less effective against new ones.
-    </p>
-    
-    <h2 id="webFilter">Web Filter</h2>
-    
-    <p id="webFilterMethods">
+   </p>
+   <h2 id="webFilter">
+    Web Filter
+   </h2>
+   <p id="webFilterMethods">
     Web filtering controls what websites and content users can access. Agent-based filtering installs software directly on a device to enforce filtering rules regardless of network location. Centralized proxy filtering routes all web traffic through a central point where filtering rules are applied before traffic reaches the user. URL scanning checks web addresses against known malicious sites before allowing access. Content categorization sorts websites into categories, such as social media or gambling, so policies can be applied by category rather than listing individual sites. Block rules explicitly deny access to specific sites or categories. Reputation-based filtering blocks sites based on a known history of malicious activity, similar to how threat intelligence feeds are used elsewhere in security operations.
-    </p>
-    
-    <h2 id="operatingSystemSecurity">Operating System Security</h2>
-    
-    <p id="osSecurityTools">
+   </p>
+   <h2 id="operatingSystemSecurity">
+    Operating System Security
+   </h2>
+   <p id="osSecurityTools">
     Operating system security tools help enforce configuration and access controls directly at the OS level. Group Policy, used primarily in Windows environments, allows administrators to centrally configure and enforce security settings across many devices at once. SELinux (Security-Enhanced Linux) adds mandatory access controls to Linux systems, restricting what processes and users can do beyond standard file permissions.
-    </p>
-    
-    <h2 id="secureProtocols">Implementation of Secure Protocols</h2>
-    
-    <p id="secureProtocolImplementation">
+   </p>
+   <h2 id="secureProtocols">
+    Implementation of Secure Protocols
+   </h2>
+   <p id="secureProtocolImplementation">
     Implementing secure protocols involves several deliberate choices. Protocol selection means choosing secure versions of communication protocols, such as using HTTPS instead of HTTP. Port selection involves configuring services to run on appropriate, often non-default, ports to reduce exposure to automated attacks. Transport method refers to how data is actually carried between systems, and ensuring that method includes encryption so data can't be easily intercepted in transit.
-    </p>
-    
-    <h2 id="dnsFiltering">DNS Filtering</h2>
-    
-    <p id="dnsFilteringDetails">
+   </p>
+   <h2 id="dnsFiltering">
+    DNS Filtering
+   </h2>
+   <p id="dnsFilteringDetails">
     DNS filtering blocks access to malicious or unwanted domains at the DNS resolution stage, preventing a user's device from ever connecting to a dangerous site even before a web filter would catch it.
-    </p>
-    
-    <h2 id="emailSecurity">Email Security</h2>
-    
-    <p id="emailSecurityProtocols">
+   </p>
+   <h2 id="emailSecurity">
+    Email Security
+   </h2>
+   <p id="emailSecurityProtocols">
     Several protocols work together to prevent email spoofing and phishing. Domain-based Message Authentication, Reporting, and Conformance (DMARC) tells receiving mail servers what to do with messages that fail authentication checks, and provides reporting back to the domain owner. DomainKeys Identified Mail (DKIM) adds a digital signature to outgoing email, allowing the receiving server to verify the message wasn't altered in transit. Sender Policy Framework (SPF) specifies which mail servers are authorized to send email on behalf of a domain, helping receiving servers detect spoofed sender addresses. An email gateway sits between the internet and an organization's mail server, filtering spam, malware, and phishing attempts before they reach user inboxes.
-    </p>
-    
-    <h2 id="fileIntegrityMonitoring">File Integrity Monitoring</h2>
-    
-    <p id="fileIntegrityMonitoringDetails">
+   </p>
+   <h2 id="fileIntegrityMonitoring">
+    File Integrity Monitoring
+   </h2>
+   <p id="fileIntegrityMonitoringDetails">
     File integrity monitoring (FIM) tracks changes to critical files and system configurations, alerting administrators when unauthorized or unexpected modifications occur, which can indicate a compromise or misconfiguration.
-    </p>
-    
-    <h2 id="dlp">Data Loss Prevention (DLP)</h2>
-    
-    <p id="dlpDetails">
+   </p>
+   <h2 id="dlp">
+    Data Loss Prevention (DLP)
+   </h2>
+   <p id="dlpDetails">
     Data loss prevention (DLP) tools monitor, detect, and block sensitive data from leaving the organization improperly, whether through email, removable media, or cloud uploads, helping prevent both accidental leaks and intentional data theft.
-    </p>
-    
-    <h2 id="nac">Network Access Control (NAC)</h2>
-    
-    <p id="nacDetails">
+   </p>
+   <h2 id="nac">
+    Network Access Control (NAC)
+   </h2>
+   <p id="nacDetails">
     Network access control (NAC) verifies that a device meets security requirements, such as having up-to-date antivirus or patches, before allowing it to connect to the network, helping prevent unsecured or compromised devices from gaining access.
-    </p>
-    
-    <h2 id="edrXdr">EDR/XDR</h2>
-    
-    <p id="edrXdrDetails">
+   </p>
+   <h2 id="edrXdr">
+    EDR/XDR
+   </h2>
+   <p id="edrXdrDetails">
     Endpoint detection and response (EDR) monitors individual devices for suspicious activity and can respond automatically, such as isolating a compromised endpoint. Extended detection and response (XDR) expands on this by correlating data across endpoints, networks, and other sources for broader visibility into an attack that might span multiple systems.
-    </p>
-    
-    <h2 id="userBehaviorAnalytics">User Behavior Analytics</h2>
-    
-    <p id="userBehaviorAnalyticsDetails">
+   </p>
+   <h2 id="userBehaviorAnalytics">
+    User Behavior Analytics
+   </h2>
+   <p id="userBehaviorAnalyticsDetails">
     User behavior analytics (UBA) establishes a baseline of normal user activity and then flags deviations from that baseline, such as a user suddenly accessing systems or data they never have before, which can indicate a compromised account or insider threat.
-    </p>
-    
-    <div class="buttons">
-    <button id="readAloud3">
-            🔊 Read Aloud
+   </p>
+   <div class="buttons">
+    <button class="read-aloud" id="readAloud3" type="button">
+     🔊 Read Aloud
     </button>
-    <div></div>
-    
+    <div>
+    </div>
     <button id="next3">
-    
-    Next →
-    
+     Next &rarr;
     </button>
-    
-    </div>
-    
-    </div>
-    
-    <!-- ====================================================== -->
-    <!-- PAGE 4 -->
-    
-    <div id="M1Page4" class="module" style="display:none;">
-    
-    <header>
-    
-    <h1>Cybersecurity Awareness Training</h1>
-    
-    <h3>Module 6 • Incident Reporting and Response</h3>
-    
+   </div>
+  </div>
+  <!-- ====================================================== -->
+  <!-- PAGE 4 -->
+  <div class="module" id="M1Page4" style="display:none;">
+   <header>
+    <h1>
+     Cybersecurity Awareness Training
+    </h1>
+    <h3>
+     Module 6 &bull; Incident Reporting and Response
+    </h3>
     <div class="progress">
-    
-    <progress value="4" max="9"></progress>
-    
-    <p>Page 4 of 9</p>
-    
+     <progress max="6" value="4">
+     </progress>
+     <p id="page4Paragraph1">
+      Page 4 of 6
+     </p>
     </div>
-    
-    </header>
-    
-    <hr>
-    
-    <h2 id="commonMalwareTypes">Explain appropiate incident response activities.</h2>
-
-<p id="irProcessSteps">
-Incident response typically follows a defined set of phases. Preparation involves establishing the plans, tools, and training needed before an incident occurs, so the team isn't figuring things out for the first time during a real event. Detection involves identifying that a security incident may be occurring, often through monitoring tools or user reports. Analysis involves investigating the detected activity to confirm it is a genuine incident and understand its scope and impact. Containment involves limiting the spread of the incident to prevent further damage, such as isolating an affected system. Eradication involves removing the root cause of the incident, such as deleting malware or closing the vulnerability that was exploited. Recovery involves restoring affected systems and services back to normal operation. Lessons learned involves reviewing the incident afterward to identify what worked, what didn't, and what changes should be made to prevent a similar incident in the future.
-</p>
-
-<h2 id="incidentResponseTraining">Training</h2>
-
-<p id="irTrainingDetails">
-Training ensures that everyone involved in incident response, from technical staff to leadership, understands their role and responsibilities before an actual incident occurs, reducing confusion and delays when a real event happens.
-</p>
-
-<h2 id="incidentResponseTesting">Testing</h2>
-
-<p id="irTestingMethods">
-Testing validates that an incident response plan actually works in practice. A tabletop exercise is a discussion-based session where participants walk through how they would respond to a hypothetical scenario, without actually taking real technical action. A simulation goes a step further by actually carrying out response actions in a controlled environment, providing a more realistic test of the plan and the team's readiness.
-</p>
-
-<h2 id="rootCauseAnalysis">Root Cause Analysis</h2>
-
-<p id="rootCauseAnalysisDetails">
-Root cause analysis identifies the underlying reason an incident occurred, rather than just addressing its immediate symptoms, so the organization can fix the actual weakness and prevent the same type of incident from happening again.
-</p>
-
-<h2 id="threatHunting">Threat Hunting</h2>
-
-<p id="threatHuntingDetails">
-Threat hunting involves proactively searching for signs of malicious activity that may have gone undetected by automated tools, rather than waiting for an alert to trigger. This assumes that some threats may already be present in the environment and looks for subtle indicators that confirm or rule that out.
-</p>
-
-<h2 id="digitalForensics">Digital Forensics</h2>
-
-<p id="digitalForensicsProcess">
+   </header>
+   <hr/>
+   <h2 id="commonMalwareTypes">
+    Explain appropiate incident response activities.
+   </h2>
+   <p id="irProcessSteps">
+    Incident response typically follows a defined set of phases. Preparation involves establishing the plans, tools, and training needed before an incident occurs, so the team isn't figuring things out for the first time during a real event. Detection involves identifying that a security incident may be occurring, often through monitoring tools or user reports. Analysis involves investigating the detected activity to confirm it is a genuine incident and understand its scope and impact. Containment involves limiting the spread of the incident to prevent further damage, such as isolating an affected system. Eradication involves removing the root cause of the incident, such as deleting malware or closing the vulnerability that was exploited. Recovery involves restoring affected systems and services back to normal operation. Lessons learned involves reviewing the incident afterward to identify what worked, what didn't, and what changes should be made to prevent a similar incident in the future.
+   </p>
+   <h2 id="incidentResponseTraining">
+    Training
+   </h2>
+   <p id="irTrainingDetails">
+    Training ensures that everyone involved in incident response, from technical staff to leadership, understands their role and responsibilities before an actual incident occurs, reducing confusion and delays when a real event happens.
+   </p>
+   <h2 id="incidentResponseTesting">
+    Testing
+   </h2>
+   <p id="irTestingMethods">
+    Testing validates that an incident response plan actually works in practice. A tabletop exercise is a discussion-based session where participants walk through how they would respond to a hypothetical scenario, without actually taking real technical action. A simulation goes a step further by actually carrying out response actions in a controlled environment, providing a more realistic test of the plan and the team's readiness.
+   </p>
+   <h2 id="rootCauseAnalysis">
+    Root Cause Analysis
+   </h2>
+   <p id="rootCauseAnalysisDetails">
+    Root cause analysis identifies the underlying reason an incident occurred, rather than just addressing its immediate symptoms, so the organization can fix the actual weakness and prevent the same type of incident from happening again.
+   </p>
+   <h2 id="threatHunting">
+    Threat Hunting
+   </h2>
+   <p id="threatHuntingDetails">
+    Threat hunting involves proactively searching for signs of malicious activity that may have gone undetected by automated tools, rather than waiting for an alert to trigger. This assumes that some threats may already be present in the environment and looks for subtle indicators that confirm or rule that out.
+   </p>
+   <h2 id="digitalForensics">
+    Digital Forensics
+   </h2>
+   <p id="digitalForensicsProcess">
     Digital forensics involves collecting, preserving, and analyzing digital evidence in a way that maintains its integrity and legal validity. A legal hold requires relevant data to be preserved because it may be needed for litigation or an investigation, preventing it from being deleted or altered during normal business operations. Preservation ensures that evidence remains unaltered and protected from damage or loss throughout the investigation, while acquisition is the process of collecting evidence, such as creating a forensic image of a hard drive, without modifying the original data. Chain of custody documents who has handled the evidence and when, from initial collection through its final use, helping ensure the evidence can be trusted and remains admissible if needed for legal proceedings. E-discovery is the process of identifying, collecting, and producing electronic evidence in response to a legal request, such as during litigation. Finally, reportings document the findings of the forensic investigation in a clear, accurate, and defensible format.
-
-</p>
-    
-    <div class="buttons">
-    <button id="readAloud4">
-
-            🔊 Read Aloud
+   </p>
+   <div class="buttons">
+    <button class="read-aloud" id="readAloud4" type="button">
+     🔊 Read Aloud
     </button>
-    <div></div>
-    
+    <div>
+    </div>
     <button id="next4">
-    
-    Next →
-    
+     Next &rarr;
     </button>
-    
-    </div>
-    
-    </div>
-    
-<!-- ====================================================== -->
-<!-- PAGE 5 -->
-
-<div id="M1Page5" class="module" style="display:none;">
-
-    <header>
-    
-    <h1>Cybersecurity Awareness Training</h1>
-    
-    <h3>Module 1 • Security Fundamentals</h3>
-    
+   </div>
+  </div>
+  <!-- ====================================================== -->
+  <!-- PAGE 5 -->
+  <div class="module" id="M1Page5" style="display:none;">
+   <header>
+    <h1>
+     Cybersecurity Awareness Training
+    </h1>
+    <h3>
+     Module 1 &bull; Security Fundamentals
+    </h3>
     <div class="progress">
-    
-    <progress value="6" max="9"></progress>
-    
-    <p>Page 6 of 9</p>
-    
+     <progress max="6" value="5">
+     </progress>
+     <p id="page5Paragraph1">
+      Page 5 of 6
+     </p>
     </div>
-    
-    </header>
-    
-    <hr>
-    
-    <h2 id="securityControlsTitle">Ticket Practice</h2>
-    
-    <p id="securityControlsIntro"></p>
-    In this lab you will be given a ticket from the IT Security team and you will have to figure out how to help this unfortunate user.
-    </p>
-    <title>SOC Investigation Lab</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        .soc-lab {
-             background: #0b1120;
-             color: #e5e7eb;
-}
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 35px 20px;
-        }
-
-        .header {
-            background: #111827;
-            border: 1px solid #374151;
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 25px;
-        }
-
-        .lab-label {
-            display: inline-block;
-            background: #7f1d1d;
-            color: #fecaca;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        h1 {
-            margin: 0 0 10px;
-            font-size: 32px;
-        }
-
-        .subtitle {
-            color: #9ca3af;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        .ticket {
-            background: #111827;
-            border: 1px solid #374151;
-            border-radius: 16px;
-            overflow: hidden;
-            margin-bottom: 25px;
-        }
-
-        .ticket-header {
-            padding: 20px 25px;
-            background: #1f2937;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .ticket-id {
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .severity {
-            background: #7f1d1d;
-            color: #fecaca;
-            padding: 7px 13px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .ticket-body {
-            padding: 25px;
-        }
-
-        .ticket-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .field {
-            background: #0b1120;
-            padding: 15px;
-            border-radius: 9px;
-        }
-
-        .field-label {
-            color: #6b7280;
-            font-size: 12px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-
-        .field-value {
-            font-weight: bold;
-        }
-
-        .instruction {
-            background: #172554;
-            border-left: 4px solid #3b82f6;
-            padding: 18px;
-            border-radius: 8px;
-            line-height: 1.6;
-        }
-
-        .section {
-            background: #111827;
-            border: 1px solid #374151;
-            border-radius: 16px;
-            padding: 25px;
-            margin-bottom: 25px;
-        }
-
-        h2 {
-            margin-top: 0;
-            font-size: 23px;
-        }
-
-        .log-container {
-            background: #050914;
-            border: 1px solid #374151;
-            border-radius: 10px;
-            overflow: auto;
-        }
-
-        .log {
-            margin: 0;
-            padding: 20px;
-            font-family: Consolas, monospace;
-            font-size: 13px;
-            line-height: 1.7;
-            white-space: pre-wrap;
-            color: #d1d5db;
-        }
-
-        .question {
-            margin-bottom: 22px;
-        }
-
-        .question label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #4b5563;
-            background: #0b1120;
-            color: white;
-            font-size: 15px;
-        }
-
-        textarea {
-            min-height: 110px;
-            resize: vertical;
-        }
-
-        button {
-            border: none;
-            border-radius: 8px;
-            padding: 13px 22px;
-            background: #2563eb;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 15px;
-        }
-
-        button:hover {
-            background: #1d4ed8;
-        }
-
-        .result {
-            margin-top: 20px;
-            padding: 18px;
-            border-radius: 9px;
-            display: none;
-            line-height: 1.6;
-        }
-
-        .correct {
-            display: block;
-            background: #064e3b;
-            color: #a7f3d0;
-        }
-
-        .incorrect {
-            display: block;
-            background: #7f1d1d;
-            color: #fecaca;
-        }
-
-        .hint {
-            margin-top: 15px;
-            color: #9ca3af;
-            font-size: 14px;
-        }
-
-        .footer-note {
-            color: #6b7280;
-            font-size: 13px;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 700px) {
-            .ticket-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .ticket-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-    </style>
-<div class="soc-lab">
-
-<div class="container">
-
-    <!-- LAB INTRO -->
-    <div class="header">
-        <span class="lab-label">SOC INVESTIGATION LAB</span>
-
-        <h1>Suspicious Script Execution</h1>
-
-        <p class="subtitle">
-            In this lab, you are a member of the IT Security team.
+   </header>
+   <hr/>
+   <h2 id="securityControlsTitle">
+    Ticket Practice
+   </h2>
+   <p id="securityControlsIntro">
+   </p>
+   In this lab you will be given a ticket from the IT Security team and you will have to figure out how to help this unfortunate user.
+   <title>
+    SOC Investigation Lab
+   </title>
+   <div class="soc-lab">
+    <div class="container">
+     <!-- LAB INTRO -->
+     <div class="header">
+      <span class="lab-label">
+       SOC INVESTIGATION LAB
+      </span>
+      <h1>
+       Suspicious Script Execution
+      </h1>
+      <p class="subtitle" id="page5Paragraph2">
+       In this lab, you are a member of the IT Security team.
             You have received a security ticket involving suspicious
             script activity on a company workstation. Review the ticket
             and SIEM log evidence, determine what happened, and decide
             how the incident should be handled.
-        </p>
-    </div>
-
-
-    <!-- TICKET -->
-    <div class="ticket">
-
-        <div class="ticket-header">
-            <div class="ticket-id">
-                Ticket #SEC-2026-0817
-            </div>
-
-            <div class="severity">
-                MEDIUM
-            </div>
+      </p>
+     </div>
+     <!-- TICKET -->
+     <div class="ticket">
+      <div class="ticket-header">
+       <div class="ticket-id">
+        Ticket #SEC-2026-0817
+       </div>
+       <div class="severity">
+        MEDIUM
+       </div>
+      </div>
+      <div class="ticket-body">
+       <div class="ticket-grid">
+        <div class="field">
+         <div class="field-label">
+          Reported By
+         </div>
+         <div class="field-value">
+          Branden Husted
+         </div>
         </div>
-
-        <div class="ticket-body">
-
-            <div class="ticket-grid">
-
-                <div class="field">
-                    <div class="field-label">Reported By</div>
-                    <div class="field-value">
-                        Branden Husted
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="field-label">Source</div>
-                    <div class="field-value">
-                        Rapid7 SIEM
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="field-label">Affected User</div>
-                    <div class="field-value">
-                        Patrick Alpers
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="field-label">Affected Host</div>
-                    <div class="field-value">
-                        WIN-IT-0427
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="field-label">Detection Time</div>
-                    <div class="field-value">
-                        2026-08-07 10:42:17 AM
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="field-label">Detection</div>
-                    <div class="field-value">
-                        Suspicious Script Execution
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="instruction">
-                <strong>Your task:</strong><br>
-                Investigate the available evidence and determine what
+        <div class="field">
+         <div class="field-label">
+          Source
+         </div>
+         <div class="field-value">
+          Rapid7 SIEM
+         </div>
+        </div>
+        <div class="field">
+         <div class="field-label">
+          Affected User
+         </div>
+         <div class="field-value">
+          Patrick Alpers
+         </div>
+        </div>
+        <div class="field">
+         <div class="field-label">
+          Affected Host
+         </div>
+         <div class="field-value">
+          WIN-IT-0427
+         </div>
+        </div>
+        <div class="field">
+         <div class="field-label">
+          Detection Time
+         </div>
+         <div class="field-value">
+          2026-08-07 10:42:17 AM
+         </div>
+        </div>
+        <div class="field">
+         <div class="field-label">
+          Detection
+         </div>
+         <div class="field-value">
+          Suspicious Script Execution
+         </div>
+        </div>
+       </div>
+       <div class="instruction">
+        <strong>
+         Your task:
+        </strong>
+        <br/>
+        Investigate the available evidence and determine what
                 security issue may have occurred. Identify the suspicious
                 behavior, determine whether the activity appears malicious,
                 and recommend an appropriate response.
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- SIEM LOG -->
-    <div class="section">
-
-        <h2>📋 Rapid7 SIEM Event</h2>
-
-        <p>
-            The following event was collected from the endpoint and
+       </div>
+      </div>
+     </div>
+     <!-- SIEM LOG -->
+     <div class="section">
+      <h2>
+       📋 Rapid7 SIEM Event
+      </h2>
+      <p id="page5Paragraph3">
+       The following event was collected from the endpoint and
             correlated by the SIEM.
-        </p>
-
-        <div class="log-container">
-<pre class="log">{
+      </p>
+      <div class="log-container">
+       <pre class="log">{
   "timestamp": "2026-08-07T10:42:17.394Z",
   "product": "RAPID7_SIEM",
   "event_type": "SuspiciousScriptExecution",
@@ -992,450 +629,335 @@ Threat hunting involves proactively searching for signs of malicious activity th
       "investigation_required": true
   }
 }</pre>
-        </div>
-
-        <p class="footer-note">
-            Note: This is a simulated SIEM event created for training purposes.
-        </p>
-
-    </div>
-
-
-    <!-- INVESTIGATION -->
-    <div class="section">
-
-        <h2>🔎 Investigation</h2>
-
-        <p>
-            Use the evidence above to answer the following questions.
-            Do not simply look for a keyword—consider how the different
+      </div>
+      <p class="footer-note" id="page5Paragraph4">
+       Note: This is a simulated SIEM event created for training purposes.
+      </p>
+     </div>
+     <!-- INVESTIGATION -->
+     <div class="section">
+      <h2>
+       🔎 Investigation
+      </h2>
+      <p id="page5Paragraph5">
+       Use the evidence above to answer the following questions.
+            Do not simply look for a keyword&mdash;consider how the different
             pieces of evidence relate to one another.
-        </p>
-
-        <div class="question">
-
-            <label for="issue">
-                1. What is the primary security issue?
-            </label>
-
-            <select id="issue">
-                <option value="">Select an answer...</option>
-                <option value="malware">
-                    Suspicious PowerShell execution potentially associated
+      </p>
+      <div class="question">
+       <label for="issue">
+        1. What is the primary security issue?
+       </label>
+       <select id="issue">
+        <option value="">
+         Select an answer...
+        </option>
+        <option value="malware">
+         Suspicious PowerShell execution potentially associated
                     with malware
-                </option>
-
-                <option value="update">
-                    A normal Windows update
-                </option>
-
-                <option value="network">
-                    A network connectivity problem
-                </option>
-
-                <option value="password">
-                    A password expiration issue
-                </option>
-            </select>
-
-        </div>
-
-
-        <div class="question">
-
-            <label for="indicators">
-                2. Which indicators are most concerning?
-            </label>
-
-            <textarea id="indicators"
-                placeholder="Explain which log entries make the activity suspicious..."></textarea>
-
-        </div>
-
-
-        <div class="question">
-
-            <label for="response">
-                3. What should the security team consider doing next?
-            </label>
-
-            <textarea id="response"
-                placeholder="Describe the appropriate security response..."></textarea>
-
-        </div>
-
-
-        <button onclick="checkInvestigation()">
-            Submit Investigation
-        </button>
-
-        <div id="result" class="result"></div>
-
-    </div>
-
-
-    <!-- HINT -->
-    <div class="section">
-
-        <h2>💡 Need a Hint?</h2>
-
-        <p>
-            Look closely at the relationship between:
-        </p>
-
-        <ul>
-            <li>PowerShell</li>
-            <li>Execution Policy Bypass</li>
-            <li>The temporary directory</li>
-            <li>The script file</li>
-            <li>Cursor.exe as the parent process</li>
-            <li>The outbound HTTPS connection</li>
-        </ul>
-
-        <button onclick="showHint()">
-            Reveal Hint
-        </button>
-
-        <div id="hint" class="result">
-            The individual indicators may not prove malicious activity
+        </option>
+        <option value="update">
+         A normal Windows update
+        </option>
+        <option value="network">
+         A network connectivity problem
+        </option>
+        <option value="password">
+         A password expiration issue
+        </option>
+       </select>
+      </div>
+      <div class="question">
+       <label for="indicators">
+        2. Which indicators are most concerning?
+       </label>
+       <textarea id="indicators" placeholder="Explain which log entries make the activity suspicious..."></textarea>
+      </div>
+      <div class="question">
+       <label for="response">
+        3. What should the security team consider doing next?
+       </label>
+       <textarea id="response" placeholder="Describe the appropriate security response..."></textarea>
+      </div>
+      
+      <div class="result" id="result">
+      </div>
+     </div>
+     <!-- HINT -->
+     <div class="section">
+      <h2>
+       💡 Need a Hint?
+      </h2>
+      <p id="page5Paragraph6">
+       Look closely at the relationship between:
+      </p>
+      <ul>
+       <li>
+        PowerShell
+       </li>
+       <li>
+        Execution Policy Bypass
+       </li>
+       <li>
+        The temporary directory
+       </li>
+       <li>
+        The script file
+       </li>
+       <li>
+        Cursor.exe as the parent process
+       </li>
+       <li>
+        The outbound HTTPS connection
+       </li>
+      </ul>
+      <div class="result" id="hint">
+       The individual indicators may not prove malicious activity
             by themselves. However, the combination of a script executing
             from a user's temporary directory, an execution-policy bypass,
             and an outbound network connection should cause the analyst
             to investigate whether the script was downloaded or executed
             as part of potentially malicious activity.
-        </div>
-
+      </div>
+     </div>
     </div>
-
-</div>
-
-
-    
     <div class="infoBox" id="defenseInDepthBox">
-        <strong id="defenseInDepthTitle">Defense in Depth</strong>
-        <p id="defenseInDepthDescription" style="margin-top:12px;">
-        Watch for small details that can tell you where a compromise or alert was generated at.
-        </p>
-    
+     <strong id="defenseInDepthTitle">
+      Defense in Depth
+     </strong>
+     <p id="defenseInDepthDescription" style="margin-top:12px;">
+      Watch for small details that can tell you where a compromise or alert was generated at.
+     </p>
     </div>
-</div>
-    
-    <div class="buttons">
-    
+   </div>
+   <div class="buttons">
     <button id="next5">
-    Next →
+     Next &rarr;
     </button>
-    
-    </div>
-    
-    </div>
-    
-    
-    <!-- ====================================================== -->
-    <!-- PAGE 6 -->
-    
-    <div id="M1Page6" class="module" style="display:none;">
-    
-    <header>
-    
-    <h1>🎉 Module Complete</h1>
-    
-    <h3>Cybersecurity Awareness Training</h3>
-    
+   </div>
+  </div>
+  <!-- ====================================================== -->
+  <!-- PAGE 6 -->
+  <div class="module" id="M1Page6" style="display:none;">
+   <header>
+    <h1>
+     🎉 Module Complete
+    </h1>
+    <h3>
+     Cybersecurity Awareness Training
+    </h3>
     <div class="progress">
-    
-    <progress value="9" max="9"></progress>
-    
-    <p>Page 9 of 9</p>
-    
+     <progress max="6" value="6">
+     </progress>
+     <p id="page6Paragraph1">
+      Page 6 of 6
+     </p>
     </div>
-    
-    </header>
-    
-    <hr>
-    
-    <div class="infoBox">
-    
-    <h2 id="congratulationsTitle" style="margin-bottom:15px;">Congratulations!</h2>
-    
+   </header>
+   <hr/>
+   <div class="infoBox">
+    <h2 id="congratulationsTitle" style="margin-bottom:15px;">
+     Congratulations!
+    </h2>
     <p id="completionMessage">
-    You have successfully completed <strong>Module 1: Security Fundamentals.</strong>
+     You have successfully completed
+     <strong>
+      Module 1: Security Fundamentals.
+     </strong>
     </p>
-    
     <p id="understandingIntro">
-    You now understand:
+     You now understand:
     </p>
-    
     <ul id="understandingList" style="margin-left:30px; line-height:2;">
-        <li id="cybersecurityImportance">Why cybersecurity is important</li>
-        <li id="commonThreats">Common cyber threats</li>
-        <li id="ransomwareAttacks">Ransomware attacks</li>
-        <li id="malwareTypes">Types of malware</li>
-        <li id="securityControls">Security controls</li>
-        <li id="cryptographyAndPKI">Cryptography and PKI</li>
-        <li id="changeManagement">Change management</li>
+     <li id="cybersecurityImportance">
+      Why cybersecurity is important
+     </li>
+     <li id="commonThreats">
+      Common cyber threats
+     </li>
+     <li id="ransomwareAttacks">
+      Ransomware attacks
+     </li>
+     <li id="malwareTypes">
+      Types of malware
+     </li>
+     <li id="securityControls">
+      Security controls
+     </li>
+     <li id="cryptographyAndPKI">
+      Cryptography and PKI
+     </li>
+     <li id="changeManagement">
+      Change management
+     </li>
     </ul>
-    
-    <h2 id="continueLearningTitle">Continue Learning</h2>
-    
+    <h2 id="continueLearningTitle">
+     Continue Learning
+    </h2>
     <p id="continueLearningMessage">
-    Cybersecurity is constantly evolving. Continue building your knowledge through trusted learning resources.
+     Cybersecurity is constantly evolving. Continue building your knowledge through trusted learning resources.
     </p>
-    <p>
-    
-    <a href="https://niccs.cisa.gov/audience/cybersecurity-beginners" target="_blank">
-    
-    Cybersecurity Beginner Resources (CISA)
-    
-    </a>
-    
+    <p id="page6Paragraph2">
+     <a href="https://niccs.cisa.gov/audience/cybersecurity-beginners" target="_blank">
+      Cybersecurity Beginner Resources (CISA)
+     </a>
     </p>
-    
     <div class="buttons">
-    
-    <div></div>
-    
-    <button id="next9" onclick="window.location.href='Security_quiz.html';">
-    
-    End
-    
-    </button>
-    
+     <div>
+     </div>
+     <button id="next9" onclick="window.location.href='Security_quiz.html';">
+      End
+     </button>
     </div>
-    
-    </div>
-    
-    </body>
-    
-    </html>           
-<script>
-    // Get references to the "Next" button and sections
-    const nextButton1 = document.getElementById('next1');
-    const nextButton2 = document.getElementById('next2');
-    const nextButton3 = document.getElementById('next3');
-    const nextButton4 = document.getElementById('next4');
-    const nextButton5 = document.getElementById('next5');
-    const nextButton6 = document.getElementById('next6');
-    const nextButton7 = document.getElementById('next7');
-    const nextButton8 = document.getElementById('next8');
-    const nextButton9 = document.getElementById('next9');
+   </div>
+  </div>
+  <script>
+   document.addEventListener("DOMContentLoaded", function () {
+    const synth = window.speechSynthesis;
+    const pages = Array.from(document.querySelectorAll(".module"));
 
-    //read aloud
-    const readAloudButton1 = document.getElementById('readAloud1');
-    const readAloudButton2 = document.getElementById('readAloud2');
-    const readAloudButton3 = document.getElementById('readAloud3');
-    const readAloudButton4 = document.getElementById('readAloud4');
-    const readAloudButton5 = document.getElementById('readAloud5');
-    const readAloudButton6 = document.getElementById('readAloud6');
-    const readAloudButton7 = document.getElementById('readAloud7');
-    const readAloudButton8 = document.getElementById('readAloud8');
-    const readAloudButton9 = document.getElementById('readAloud9');
-    
-    // element for each page section
-    const section1 = document.getElementById('M1Page1');
-    const section2 = document.getElementById('M1Page2');
-    const section3 = document.getElementById('M1Page3');
-    const section4 = document.getElementById('M1Page4');
-    const section5 = document.getElementById('M1Page5');
-    const section6 = document.getElementById('M1Page6');
-    const section7 = document.getElementById('M1Page7');
-    const section8 = document.getElementById('M1Page8');
-    const section9 = document.getElementById('M1Page9');
+    function stopReading() {
+        synth.cancel();
 
-    // Hide section1 and show section2 when "Next" is clicked
-    nextButton1.addEventListener('click', () => {
-        section1.style.display = 'none';
-        section2.style.display = 'block';
-    });
-
-    nextButton2.addEventListener('click', () => {
-        section2.style.display = 'none';
-        section3.style.display = 'block';
-    });
-
-    nextButton3.addEventListener('click', () => {
-        section3.style.display = 'none';
-        section4.style.display = 'block';
-    });
-
-    nextButton4.addEventListener('click', () => {
-        section4.style.display = 'none';
-        section5.style.display = 'block';
-    });
-
-    nextButton5.addEventListener('click', () => {
-        section5.style.display = 'none';
-        section6.style.display = 'block';
-    });
-
-function checkInvestigation() {
-
-    const issue = document.getElementById("issue").value;
-    const indicators =
-        document.getElementById("indicators").value.trim();
-
-    const response =
-        document.getElementById("response").value.trim();
-
-    const result =
-        document.getElementById("result");
-
-    if (!issue || !indicators || !response) {
-
-        result.className = "result incorrect";
-
-        result.innerHTML =
-            "<strong>Investigation incomplete.</strong><br>" +
-            "Answer all three questions before submitting.";
-
-        return;
+        document.querySelectorAll(".read-aloud").forEach(function (button) {
+            button.textContent = "🔊 Read Aloud";
+            button.classList.remove("reading");
+            button.setAttribute("aria-pressed", "false");
+        });
     }
 
-    if (issue === "malware") {
-
-        result.className = "result correct";
-
-        result.innerHTML =
-            "<strong>✓ Investigation Complete</strong><br><br>" +
-
-            "You correctly identified the primary issue as " +
-            "suspicious PowerShell execution that may be associated " +
-            "with malicious activity.<br><br>" +
-
-            "<strong>Key indicators:</strong> Execution Policy Bypass, " +
-            "script execution from a temporary directory, script " +
-            "download activity, and an outbound HTTPS connection.<br><br>" +
-
-            "<strong>Analyst takeaway:</strong> These indicators do not " +
-            "automatically prove that malware was installed, but they " +
-            "provide enough evidence to justify further investigation " +
-            "and containment if malicious activity is confirmed.";
+    function getPageText(page) {
+        return Array.from(
+            page.querySelectorAll("h1, h2, h3, p, li, th, td, strong")
+        )
+        .filter(function (element) {
+            return !element.closest(".buttons");
+        })
+        .map(function (element) {
+            return element.innerText.trim();
+        })
+        .filter(Boolean)
+        .join(". ");
     }
 
-    else {
+    function readPage(page, button) {
+        if (synth.speaking) {
+            stopReading();
+            return;
+        }
 
-        result.className = "result incorrect";
+        const text = getPageText(page);
 
-        result.innerHTML =
-            "<strong>⚠ Re-evaluate the evidence.</strong><br><br>" +
+        if (!text) {
+            console.warn("No readable text found.");
+            return;
+        }
 
-            "Review the PowerShell command line and the behavioral " +
-            "indicators in the SIEM event. Pay particular attention " +
-            "to the Execution Policy Bypass and the script's location.";
+        synth.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = 0.95;
+        utterance.pitch = 1;
+        utterance.volume = 1;
+
+        button.textContent = "⏹ Stop Reading";
+        button.classList.add("reading");
+        button.setAttribute("aria-pressed", "true");
+
+        utterance.onend = function () {
+            button.textContent = "🔊 Read Aloud";
+            button.classList.remove("reading");
+            button.setAttribute("aria-pressed", "false");
+        };
+
+        utterance.onerror = function () {
+            button.textContent = "🔊 Read Aloud";
+            button.classList.remove("reading");
+            button.setAttribute("aria-pressed", "false");
+        };
+
+        synth.speak(utterance);
     }
-}
 
+    pages.forEach(function (page, index) {
+        const readButton = page.querySelector(".read-aloud");
 
-function showHint() {
+        if (readButton) {
+            readButton.type = "button";
+            readButton.setAttribute("aria-label", "Read this page aloud");
+            readButton.setAttribute("aria-pressed", "false");
 
-    const hint = document.getElementById("hint");
+            readButton.addEventListener("click", function () {
+                readPage(page, readButton);
+            });
+        }
 
-    hint.className = "result correct";
+        const next = page.querySelector("[id^='next']");
+        const back = page.querySelector("[id^='back']");
 
-}
+        if (next) {
+            next.type = "button";
+            next.removeAttribute("onclick");
+            next.addEventListener("click", function () {
+                showPage(index + 1);
+            });
+        }
 
+        next9.addEventListener('click', () => {
+    window.location.href = 'Security_quiz.html';
+});
 
-
-    // Read aloud functionality
-    readAloudButton1.addEventListener('click', () => {
-        const textToRead = document.getElementById('welcomeText').innerText + ' ' +
-                           document.getElementById('cybersecurityScope').innerText + ' ' +
-                           document.getElementById('humanMistakes').innerText + ' ' +
-                           document.getElementById('learningObjectiveBreak').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
+        if (back) {
+            back.type = "button";
+            back.removeAttribute("onclick");
+            back.addEventListener("click", function () {
+                showPage(index - 1);
+            });
+        }
     });
 
-    readAloudButton2.addEventListener('click', () => {
-        const textToRead = document.getElementById('realWorldExampleTitle').innerText + ' ' +
-                   document.getElementById('realWorldExampleIntro').innerText + ' ' +
-                   document.getElementById('realWorldExampleDetails').innerText + ' ' +
-                   document.getElementById('hacktivismTerm').innerText + ' ' +
-                   document.getElementById('hacktivismDefinition').innerText + ' ' +
-                   document.getElementById('realWorldExampleConclusion').innerText; + ' ' +
-                   document.getElementById('practiceStrongAuthentication').innerText; + ' ' +
-                   document.getElementById('practiceRegularUpdates').innerText; + ' ' +
-                   document.getElementById('practiceEncryption').innerText; + ' ' +
-                   document.getElementById('practiceMonitoring').innerText; + ' ' +
-                   document.getElementById('practiceAwarenessTraining').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
+    function showPage(index) {
+        if (index < 0 || index >= pages.length) return;
+
+        stopReading();
+
+        pages.forEach(function (page, pageIndex) {
+            page.style.display = pageIndex === index ? "block" : "none";
+        });
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    if (pages.length) {
+        showPage(0);
+    }
+
+    document.querySelectorAll(".flip-card").forEach(function (card) {
+        const inner = card.querySelector(".flip-card-inner");
+        if (!inner) return;
+
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("role", "button");
+
+        function flip() {
+            inner.style.transform =
+                inner.style.transform === "rotateY(180deg)"
+                    ? "rotateY(0deg)"
+                    : "rotateY(180deg)";
+        }
+
+        card.addEventListener("click", flip);
+
+        card.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                flip();
+            }
+        });
     });
 
-    readAloudButton3.addEventListener('click', () => {
-        const textToRead = document.getElementById('introRansomeware').innerText + ' ' +
-                   document.getElementById('ransomwareIntro').innerText + ' ' +
-                   document.getElementById('internshipExperience').innerText + ' ' +
-                   document.getElementById('incidentDetails').innerText + ' ' +
-                   document.getElementById('cybersecurityAwareness').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton4.addEventListener('click', () => {
-        const textToRead = document.getElementById('commonMalwareTypes').innerText + ' ' +
-                   document.getElementById('malwareIntro').innerText + ' ' +
-                   document.getElementById('threatHeader').innerText + ' ' +
-                   document.getElementById('descriptionHeader').innerText + ' ' +
-                   document.getElementById('malwareProtectionTips').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton5.addEventListener('click', () => {
-        const textToRead = document.getElementById('findingSecurityRisksTitle').innerText + ' ' +
-                   document.getElementById('findingSecurityRisksIntro').innerText + ' ' +
-                   document.getElementById('toolHeader').innerText + ' ' +
-                   document.getElementById('purposeHeader').innerText + ' ' +
-                   document.getElementById('securityTipBox').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton6.addEventListener('click', () => {
-        const textToRead = document.getElementById('securityControlsTitle').innerText + ' ' +
-                   document.getElementById('securityControlsIntro').innerText + ' ' +
-                   document.getElementById('controlTypeHeader').innerText + ' ' +
-                   document.getElementById('examplesHeader').innerText + ' ' +
-                   document.getElementById('purposeHeader').innerText + ' ' +
-                   document.getElementById('defenseInDepthDescription').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton7.addEventListener('click', () => {
-        const textToRead = document.getElementById('cryptographyTitle').innerText + ' ' +
-                   document.getElementById('cryptographyIntro').innerText + ' ' +
-                   document.getElementById('pkiIntro').innerText + ' ' +
-                   document.getElementById('keyHeader').innerText + ' ' +
-                   document.getElementById('purposeHeader').innerText + ' ' +
-                   document.getElementById('pkiTechnologiesTitle').innerText + ' ' +
-                   document.getElementById('pkiTechnologiesList').innerText + ' ' +
-                   document.getElementById('pkiUsage').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton8.addEventListener('click', () => {
-        const textToRead = document.getElementById('changeManagementTitle').innerText + ' ' +
-                   document.getElementById('changeManagementIntro').innerText + ' ' +
-                   document.getElementById('changeManagementBenefits').innerText + ' ' +
-                   document.getElementById('stepHeader').innerText + ' ' +
-                   document.getElementById('descriptionHeader').innerText + ' ' +
-                   document.getElementById('whyItMattersTitle').innerText + ' ' +
-                   document.getElementById('whyItMattersDescription').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton9.addEventListener('click', () => {
-        const textToRead = document.getElementById('congratulationsTitle').innerText + ' ' +
-                   document.getElementById('completionMessage').innerText + ' ' +
-                   document.getElementById('understandingIntro').innerText + ' ' +
-                   Array.from(document.getElementById('understandingList').children).map(item => item.innerText).join(' ') + ' ' +
-                   document.getElementById('continueLearningTitle').innerText + ' ' +
-                   document.getElementById('continueLearningMessage').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-</script>
+    window.addEventListener("beforeunload", stopReading);
+});
+  </script>
+ </body>
+</html>

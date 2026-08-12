@@ -1,952 +1,785 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Cybersecurity Awareness Training</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Cybersecurity Awareness Training
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   * {
+    box-sizing: border-box;
 }
 
-body{
-
-font-family:'Roboto',sans-serif;
-
-background:#edf2f7;
-
-color:#333;
-
-padding:40px;
-
+html {
+    scroll-behavior: smooth;
 }
 
-.module{
-
-max-width:950px;
-
-margin:auto;
-
-background:white;
-
-padding:40px;
-
-border-radius:15px;
-
-box-shadow:0 10px 35px rgba(0,0,0,.15);
-
-animation:fadeIn .5s ease;
-
+body {
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #edf2f7;
+    color: #333;
 }
 
-@keyframes fadeIn{
-
-from{
-
-opacity:0;
-transform:translateY(15px);
-
+.module {
+    width: min(950px, 100%);
+    margin: 0 auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
 }
 
-to{
-
-opacity:1;
-transform:translateY(0);
-
+header {
+    margin-bottom: 30px;
+    text-align: center;
 }
 
+header h1 {
+    color: #003366;
 }
 
-header{
-
-margin-bottom:35px;
-text-align:center;
-
+header h3 {
+    color: #666;
+    font-weight: 400;
 }
 
-header h1{
-
-font-size:34px;
-
-color:#003366;
-
-margin-bottom:10px;
-
+h2 {
+    color: #005792;
 }
 
-header h3{
-
-font-weight:400;
-color:#666;
-
+p {
+    font-size: 17px;
+    line-height: 1.8;
 }
 
-hr{
-
-border:none;
-
-height:2px;
-
-background:#d8dde5;
-
-margin:30px 0;
-
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 25px auto;
 }
 
-h2{
-
-color:#005792;
-
-margin-bottom:20px;
-
+table {
+    width: 100%;
+    margin: 25px 0;
+    border-collapse: collapse;
 }
 
-p{
-
-margin-bottom:18px;
-
-font-size:17px;
-
-line-height:1.8;
-
+th,
+td {
+    padding: 12px;
+    border: 1px solid #d9d9d9;
+    text-align: left;
+    line-height: 1.6;
 }
 
-img{
-
-display:block;
-
-margin:25px auto;
-
-max-width:100%;
-
-border-radius:10px;
-
-box-shadow:0 6px 20px rgba(0,0,0,.15);
-
+th {
+    background: #005792;
+    color: #fff;
 }
 
-.infoBox{
-
-background:#eef7ff;
-
-border-left:6px solid #0078D4;
-
-padding:18px;
-
-margin:25px 0;
-
-border-radius:8px;
-
+tr:nth-child(even) {
+    background: #f7f9fc;
 }
 
-.progress{
-
-margin-top:15px;
-
+.infoBox {
+    margin: 25px 0;
+    padding: 18px;
+    background: #eef7ff;
+    border-left: 6px solid #0078d4;
+    border-radius: 8px;
 }
 
-progress{
-
-width:100%;
-height:18px;
-
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 35px;
 }
 
-.buttons{
-
-display:flex;
-
-justify-content:space-between;
-
-margin-top:35px;
-
+button {
+    padding: 12px 24px;
+    border: 0;
+    border-radius: 8px;
+    background: #005792;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-button{
-
-background:#005792;
-
-color:white;
-
-padding:12px 28px;
-
-font-size:16px;
-
-border:none;
-
-border-radius:8px;
-
-cursor:pointer;
-
-transition:.3s;
-
+button:hover {
+    background: #003b66;
 }
 
-button:hover{
-
-background:#003b66;
-
-transform:translateY(-2px);
-
+button:focus-visible {
+    outline: 3px solid #ffbf47;
+    outline-offset: 3px;
 }
 
-a{
-
-color:#005792;
-
-font-weight:bold;
-
+button.reading {
+    background: #8b1e1e;
 }
 
-table{
-
-width:100%;
-
-border-collapse:collapse;
-
-margin-top:25px;
-
+progress {
+    width: 100%;
+    height: 18px;
 }
 
-th{
-
-background:#005792;
-
-color:white;
-
-padding:14px;
-
+a {
+    color: #005792;
+    font-weight: 700;
 }
 
-td{
+@media (max-width: 700px) {
+    body {
+        padding: 15px 10px;
+    }
 
-padding:14px;
+    .module {
+        padding: 24px 18px;
+    }
 
-border-bottom:1px solid #ddd;
+    .buttons {
+        flex-wrap: wrap;
+    }
 
+    button {
+        flex: 1 1 150px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
 }
-
-tr:nth-child(even){
-
-background:#f7f9fc;
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div id="M1Page1" class="module">
-
-<header>
-
-<h1>Cybersecurity Awareness Training</h1>
-
-<h3>Module 5 • Security Program Management</h3>
-
-<div class="progress">
-
-<progress value="1" max="9"></progress>
-
-<p>Page 1 of 9</p>
-
-</div>
-
-</header>
-
-<img src="images/awareness.png" alt="Cybersecurity Awareness">
-
-<hr>
-
-<h2>Welcome</h2>
-
-<p id="welcomeText">
-Welcome to Module five of the Cybersecurity Awareness Training course.
-In this module you'll learn about Rapid7 and Mimecast. You will summarize elements of security goverance, risk management process, and third party assessment and management.
-</p>
-
-<p id="cybersecurityScope">
-You will be able to summarize elements of effective security compliance and purposes of audits and assessments
-</p>
-
-<p id="humanMistakes">
-You will be able to understand how these email platforms work and how they keep secure.
-</p>
-
-<div class="infoBox">
-
-<strong>Learning Objective</strong>
-
-<br id="learningObjectiveBreak"><br>
-
-Understand why cybersecurity matters and recognize the role each person plays in protecting information and systems.
-
-</div>
-
-<img src="images/BasicCyberSecurityIMG.png" alt="Basic Cybersecurity">
-
-<div class="buttons">
-
-<button id="readAloud1">
-🔊 Read Aloud
-</button>
-
-<button id="next1">
-Next →
-</button>
-
-</div>
-
-</div>
-
-<!-- ====================================================== -->
-
-<div id="M1Page2" class="module" style="display:none;">
-
-<header>
-
-<h1>Cybersecurity Awareness Training</h1>
-
-<h3>Module 5 • Security Program Management</h3>
-
-<div class="progress">
-
-<progress value="2" max="9"></progress>
-
-<p>Page 2 of 9</p>
-
-</div>
-
-</header>
-
-<h2 id="realWorldExampleTitle">Summarize elements of effective security goverance.</h2>
-
-<h2 id="policies">Policies</h2>
-
-<p id="corePolicies">
-An acceptable use policy (AUP) defines how employees are permitted to use company systems, networks, and devices, and what behavior is prohibited. Information security policies establish the overall rules and expectations for protecting an organization's data and systems, and typically serve as the foundation that more specific standards and procedures are built from. Business continuity policies outline how an organization keeps critical operations running during a disruption, while disaster recovery policies focus specifically on restoring IT systems and data after an outage or disaster. Incident response policies define how an organization detects, responds to, and recovers from security incidents. The software development lifecycle (SDLC) policy governs how security is built into software from planning through deployment and maintenance, rather than added on afterward. Change management policies establish how changes to systems or configurations are proposed, reviewed, and approved before implementation, reducing the risk of unintended outages or vulnerabilities.
-</p>
-
-<h2 id="standards">Standards</h2>
-
-<p id="securityStandards">
-Standards provide specific, measurable requirements that support an organization's broader policies. Password standards define requirements like minimum length, complexity, and rotation schedules. Access control standards define how permissions are granted, reviewed, and revoked, often following principles like least privilege. Physical security standards cover requirements such as badge access, locked server rooms, and visitor logging. Encryption standards specify which algorithms and key lengths are acceptable for protecting data both at rest and in transit.
-</p>
-
-<h2 id="procedures">Procedures</h2>
-
-<p id="operationalProcedures">
-Procedures are the detailed, step-by-step instructions for carrying out a policy or standard. Change management procedures outline the specific steps for submitting, testing, and approving a change before it goes live. Onboarding and offboarding procedures define how user accounts and access are provisioned when someone joins the organization and revoked when they leave, which is critical for preventing former employees from retaining access. Playbooks provide predefined, step-by-step response plans for specific scenarios, such as responding to a ransomware infection or a phishing campaign, so teams aren't improvising during an active incident.
-</p>
-
-<h2 id="externalConsiderations">External Considerations</h2>
-
-<p id="externalFactors">
-Organizations don't create policy in a vacuum; external factors shape what is required. Regulatory considerations involve requirements imposed by government bodies, such as data protection rules. Legal considerations involve contractual obligations or liability concerns tied to how data and systems are handled. Industry considerations reflect standards common to a specific sector, such as healthcare or finance, which often have their own compliance frameworks. Local and regional considerations account for rules that vary by state or municipality, while national considerations reflect country-wide laws. Global considerations come into play for organizations operating across multiple countries, where they may need to comply with several differing legal frameworks at once, such as data privacy laws that vary by region.
-</p>
-
-<h2 id="monitoringAndRevision">Monitoring and Revision</h2>
-
-<p id="monitoringRevision">
-Policies, standards, and procedures are not static documents. Monitoring and revision means regularly reviewing them to confirm they are still being followed and still reflect current threats, technology, and business needs, then updating them as necessary rather than letting them become outdated.
-</p>
-
-<h2 id="governanceStructures">Types of Governance Structures</h2>
-
-<p id="governanceStructureTypes">
-Governance structures determine who is responsible for creating and enforcing policy. Boards typically consist of senior leadership or executives who set high-level direction and approve major policy decisions. Committees are smaller groups, often cross-departmental, focused on specific areas like risk or compliance. Government entities may impose governance requirements externally, particularly for regulated industries. Governance can also be centralized, where one group makes decisions for the entire organization, or decentralized, where individual departments or business units have more autonomy over their own policies.
-</p>
-
-<h2 id="rolesAndResponsibilities">Roles and Responsibilities for Systems and Data</h2>
-
-<p id="dataRoles">
-Different roles carry different levels of responsibility for data throughout its lifecycle. Owners are typically senior individuals accountable for a specific system or dataset and for ensuring it is properly protected. Controllers determine the purposes and means of processing data, essentially deciding why and how data is used. Processors handle data on behalf of a controller, following their instructions rather than making independent decisions about its use. Custodians and stewards are responsible for the day-to-day handling, storage, and technical protection of data, carrying out the practical work that owners and controllers are ultimately accountable for.
-</p>
-
-<div class="buttons">
-
-<button id="readAloud2">
-
-🔊 Read Aloud
-
-</button>
-
-<button id="next2">
-
-Next →
-
-</button>
-
-</div>
-
-</div>
-
-<!-- ====================================================== -->
-<!-- PAGE 3 -->
-
-<div id="M1Page3" class="module" style="display:none;">
-
-    <header>
-    
-    <h1>Cybersecurity Awareness Training</h1>
-    
-    <h3>Module 5 • Security Program Management</h3>
-    
+  </style>
+ </head>
+ <body>
+  <div class="module" id="M1Page1">
+   <header>
+    <h1>
+     Cybersecurity Awareness Training
+    </h1>
+    <h3>
+     Module 5 &bull; Security Program Management
+    </h3>
     <div class="progress">
-    
-    <progress value="3" max="9"></progress>
-    
-    <p>Page 3 of 9</p>
-    
+     <progress max="7" value="1">
+     </progress>
+     <p id="page1Paragraph1">
+      Page 1 of 7
+     </p>
     </div>
-    
-    </header>
-    <h2>How to handle risk in cybersecurity.</h2>
-    <h2 id="riskAssessment">Assessment</h2>
-
-<p id="assessmentTypes">
-Risk assessments can be performed in different ways depending on the situation. An ad hoc assessment is performed on an as-needed basis, often in response to a specific event or concern rather than on a schedule. A recurring assessment is performed on a set, repeating schedule, such as annually or quarterly. A one-time assessment is performed a single time, often to evaluate a specific new system or project before it launches. Continuous assessment involves ongoing, real-time evaluation of risk rather than checking in at fixed intervals, which allows an organization to catch emerging risks as they develop.
-</p>
-
-<h2 id="riskAnalysis">Risk Analysis</h2>
-
-<p id="qualitativeAndQuantitative">
-Risk analysis can be approached qualitatively or quantitatively. Qualitative analysis assesses risk using descriptive categories, such as low, medium, or high, based on judgment and experience rather than hard numbers. Quantitative analysis assigns actual numerical values to risk, allowing for more precise cost-based decision-making.
-</p>
-
-<p id="quantitativeCalculations">
-Quantitative risk analysis relies on a few key calculations. Single loss expectancy (SLE) estimates the monetary loss expected from a single occurrence of a risk event. Annualized rate of occurrence (ARO) estimates how many times a given risk event is expected to occur in a year. Annualized loss expectancy (ALE) multiplies SLE by ARO to estimate the total expected monetary loss from that risk over the course of a year, which helps justify how much should reasonably be spent on mitigating it.
-</p>
-<img src="images/ALE.png" alt="Cybersecurity Awareness">
-<p id="riskFactors">
-Several factors feed into both qualitative and quantitative analysis. Probability and likelihood both refer to how likely a risk event is to occur, though probability is often expressed as a statistical value while likelihood may be described more generally. Exposure factor measures the percentage of an asset's value that would be lost if the risk event occurred. Impact refers to the overall consequence to the organization if the risk is realized, considering factors beyond just financial loss, such as reputational or operational damage.
-</p>
-
-<h2 id="riskRegister">Risk Register</h2>
-
-<p id="riskRegisterComponents">
-A risk register is a document used to track identified risks and how they are being managed. Key risk indicators are metrics used to signal that a risk is increasing or approaching an unacceptable level before it becomes a serious problem. Risk owners are the individuals assigned responsibility for monitoring and managing a specific risk. Risk threshold defines the level at which a risk becomes unacceptable and requires action.
-</p>
-
-<h2 id="riskToleranceAndAppetite">Risk Tolerance and Risk Appetite</h2>
-
-<p id="toleranceVsAppetite">
-Risk tolerance refers to the acceptable level of variation an organization can withstand around a specific risk before it becomes a concern. Risk appetite refers to the broader amount and type of risk an organization is willing to pursue or accept in order to meet its objectives. An organization's risk appetite can be expansionary, meaning it is willing to accept more risk in pursuit of growth or opportunity, conservative, meaning it prefers to minimize risk even at the cost of potential gains, or neutral, meaning it balances risk and opportunity without leaning strongly in either direction.
-</p>
-
-<h2 id="riskManagementStrategies">Risk Management Strategies</h2>
-
-<p id="riskStrategies">
-Organizations generally respond to identified risks in one of a few ways. Transferring risk shifts the financial impact to another party, such as through purchasing insurance. Accepting risk means acknowledging a risk and choosing not to take further action, often because the cost of mitigation outweighs the potential impact; this can take the form of an exemption, where a system is excused from a requirement entirely, or an exception, where a temporary deviation is approved with conditions. Avoiding risk means eliminating the activity or system that introduces the risk altogether. Mitigating risk means taking action to reduce either the likelihood or impact of the risk without eliminating the underlying activity entirely.
-</p>
-
-<h2 id="riskReporting">Risk Reporting</h2>
-
-<p id="riskReportingSummary">
-Risk reporting involves communicating identified risks, their potential impact, and the organization's response to relevant stakeholders, ensuring that decision-makers have the information needed to prioritize resources and approve risk management strategies.
-</p>
-
-<h2 id="businessImpactAnalysis">Business Impact Analysis</h2>
-
-<p id="biaMetrics">
-A business impact analysis identifies how disruptions would affect critical business functions and helps set recovery priorities. Recovery time objective (RTO) defines the maximum acceptable amount of time a system can be down before it must be restored. Recovery point objective (RPO) defines the maximum acceptable amount of data loss, measured in time, such as how much data an organization can afford to lose since the last backup. Mean time to repair (MTTR) measures the average time it takes to repair a system after a failure. Mean time between failures (MTBF) measures the average amount of time a system is expected to operate before it fails, giving organizations a sense of a system's overall reliability.
-</p>
-    
-    <div class="buttons">
-    <button id="readAloud3">
-            🔊 Read Aloud
+   </header>
+   <img alt="Cybersecurity Awareness" src="images/awareness.png"/>
+   <hr/>
+   <h2>
+    Welcome
+   </h2>
+   <p id="welcomeText">
+    Welcome to Module five of the Cybersecurity Awareness Training course.
+In this module you'll learn about Rapid7 and Mimecast. You will summarize elements of security governance, risk management process, and third party assessment and management.
+   </p>
+   <p id="cybersecurityScope">
+    You will be able to summarize elements of effective security compliance and purposes of audits and assessments
+   </p>
+   <p id="humanMistakes">
+    You will be able to understand how these email platforms work and how they keep secure.
+   </p>
+   <div class="infoBox">
+    <strong>
+     Learning Objective
+    </strong>
+    <br id="learningObjectiveBreak"/>
+    <br/>
+    Understand why cybersecurity matters and recognize the role each person plays in protecting information and systems.
+   </div>
+   <img alt="Basic Cybersecurity" src="images/BasicCyberSecurityIMG.png"/>
+   <div class="buttons">
+    <button class="read-aloud" id="readAloud1" type="button">
+     🔊 Read Aloud
     </button>
-    <div></div>
-    
+    <button id="next1">
+     Next &rarr;
+    </button>
+   </div>
+  </div>
+  <!-- ====================================================== -->
+  <div class="module" id="M1Page2" style="display:none;">
+   <header>
+    <h1>
+     Cybersecurity Awareness Training
+    </h1>
+    <h3>
+     Module 5 &bull; Security Program Management
+    </h3>
+    <div class="progress">
+     <progress max="7" value="2">
+     </progress>
+     <p id="page2Paragraph1">
+      Page 2 of 7
+     </p>
+    </div>
+   </header>
+   <h2 id="realWorldExampleTitle">
+    Summarize elements of effective security governance.
+   </h2>
+   <h2 id="policies">
+    Policies
+   </h2>
+   <p id="corePolicies">
+    An acceptable use policy (AUP) defines how employees are permitted to use company systems, networks, and devices, and what behavior is prohibited. Information security policies establish the overall rules and expectations for protecting an organization's data and systems, and typically serve as the foundation that more specific standards and procedures are built from. Business continuity policies outline how an organization keeps critical operations running during a disruption, while disaster recovery policies focus specifically on restoring IT systems and data after an outage or disaster. Incident response policies define how an organization detects, responds to, and recovers from security incidents. The software development lifecycle (SDLC) policy governs how security is built into software from planning through deployment and maintenance, rather than added on afterward. Change management policies establish how changes to systems or configurations are proposed, reviewed, and approved before implementation, reducing the risk of unintended outages or vulnerabilities.
+   </p>
+   <h2 id="standards">
+    Standards
+   </h2>
+   <p id="securityStandards">
+    Standards provide specific, measurable requirements that support an organization's broader policies. Password standards define requirements like minimum length, complexity, and rotation schedules. Access control standards define how permissions are granted, reviewed, and revoked, often following principles like least privilege. Physical security standards cover requirements such as badge access, locked server rooms, and visitor logging. Encryption standards specify which algorithms and key lengths are acceptable for protecting data both at rest and in transit.
+   </p>
+   <h2 id="procedures">
+    Procedures
+   </h2>
+   <p id="operationalProcedures">
+    Procedures are the detailed, step-by-step instructions for carrying out a policy or standard. Change management procedures outline the specific steps for submitting, testing, and approving a change before it goes live. Onboarding and offboarding procedures define how user accounts and access are provisioned when someone joins the organization and revoked when they leave, which is critical for preventing former employees from retaining access. Playbooks provide predefined, step-by-step response plans for specific scenarios, such as responding to a ransomware infection or a phishing campaign, so teams aren't improvising during an active incident.
+   </p>
+   <h2 id="externalConsiderations">
+    External Considerations
+   </h2>
+   <p id="externalFactors">
+    Organizations don't create policy in a vacuum; external factors shape what is required. Regulatory considerations involve requirements imposed by government bodies, such as data protection rules. Legal considerations involve contractual obligations or liability concerns tied to how data and systems are handled. Industry considerations reflect standards common to a specific sector, such as healthcare or finance, which often have their own compliance frameworks. Local and regional considerations account for rules that vary by state or municipality, while national considerations reflect country-wide laws. Global considerations come into play for organizations operating across multiple countries, where they may need to comply with several differing legal frameworks at once, such as data privacy laws that vary by region.
+   </p>
+   <h2 id="monitoringAndRevision">
+    Monitoring and Revision
+   </h2>
+   <p id="monitoringRevision">
+    Policies, standards, and procedures are not static documents. Monitoring and revision means regularly reviewing them to confirm they are still being followed and still reflect current threats, technology, and business needs, then updating them as necessary rather than letting them become outdated.
+   </p>
+   <h2 id="governanceStructures">
+    Types of Governance Structures
+   </h2>
+   <p id="governanceStructureTypes">
+    Governance structures determine who is responsible for creating and enforcing policy. Boards typically consist of senior leadership or executives who set high-level direction and approve major policy decisions. Committees are smaller groups, often cross-departmental, focused on specific areas like risk or compliance. Government entities may impose governance requirements externally, particularly for regulated industries. Governance can also be centralized, where one group makes decisions for the entire organization, or decentralized, where individual departments or business units have more autonomy over their own policies.
+   </p>
+   <h2 id="rolesAndResponsibilities">
+    Roles and Responsibilities for Systems and Data
+   </h2>
+   <p id="dataRoles">
+    Different roles carry different levels of responsibility for data throughout its lifecycle. Owners are typically senior individuals accountable for a specific system or dataset and for ensuring it is properly protected. Controllers determine the purposes and means of processing data, essentially deciding why and how data is used. Processors handle data on behalf of a controller, following their instructions rather than making independent decisions about its use. Custodians and stewards are responsible for the day-to-day handling, storage, and technical protection of data, carrying out the practical work that owners and controllers are ultimately accountable for.
+   </p>
+   <div class="buttons">
+    <button class="read-aloud" id="readAloud2" type="button">
+     🔊 Read Aloud
+    </button>
+    <button id="next2">
+     Next &rarr;
+    </button>
+   </div>
+  </div>
+  <!-- ====================================================== -->
+  <!-- PAGE 3 -->
+  <div class="module" id="M1Page3" style="display:none;">
+   <header>
+    <h1>
+     Cybersecurity Awareness Training
+    </h1>
+    <h3>
+     Module 5 &bull; Security Program Management
+    </h3>
+    <div class="progress">
+     <progress max="7" value="3">
+     </progress>
+     <p id="page3Paragraph1">
+      Page 3 of 7
+     </p>
+    </div>
+   </header>
+   <h2>
+    How to handle risk in cybersecurity.
+   </h2>
+   <h2 id="riskAssessment">
+    Assessment
+   </h2>
+   <p id="assessmentTypes">
+    Risk assessments can be performed in different ways depending on the situation. An ad hoc assessment is performed on an as-needed basis, often in response to a specific event or concern rather than on a schedule. A recurring assessment is performed on a set, repeating schedule, such as annually or quarterly. A one-time assessment is performed a single time, often to evaluate a specific new system or project before it launches. Continuous assessment involves ongoing, real-time evaluation of risk rather than checking in at fixed intervals, which allows an organization to catch emerging risks as they develop.
+   </p>
+   <h2 id="riskAnalysis">
+    Risk Analysis
+   </h2>
+   <p id="qualitativeAndQuantitative">
+    Risk analysis can be approached qualitatively or quantitatively. Qualitative analysis assesses risk using descriptive categories, such as low, medium, or high, based on judgment and experience rather than hard numbers. Quantitative analysis assigns actual numerical values to risk, allowing for more precise cost-based decision-making.
+   </p>
+   <p id="quantitativeCalculations">
+    Quantitative risk analysis relies on a few key calculations. Single loss expectancy (SLE) estimates the monetary loss expected from a single occurrence of a risk event. Annualized rate of occurrence (ARO) estimates how many times a given risk event is expected to occur in a year. Annualized loss expectancy (ALE) multiplies SLE by ARO to estimate the total expected monetary loss from that risk over the course of a year, which helps justify how much should reasonably be spent on mitigating it.
+   </p>
+   <img alt="Cybersecurity Awareness" src="images/ALE.png"/>
+   <p id="riskFactors">
+    Several factors feed into both qualitative and quantitative analysis. Probability and likelihood both refer to how likely a risk event is to occur, though probability is often expressed as a statistical value while likelihood may be described more generally. Exposure factor measures the percentage of an asset's value that would be lost if the risk event occurred. Impact refers to the overall consequence to the organization if the risk is realized, considering factors beyond just financial loss, such as reputational or operational damage.
+   </p>
+   <h2 id="riskRegister">
+    Risk Register
+   </h2>
+   <p id="riskRegisterComponents">
+    A risk register is a document used to track identified risks and how they are being managed. Key risk indicators are metrics used to signal that a risk is increasing or approaching an unacceptable level before it becomes a serious problem. Risk owners are the individuals assigned responsibility for monitoring and managing a specific risk. Risk threshold defines the level at which a risk becomes unacceptable and requires action.
+   </p>
+   <h2 id="riskToleranceAndAppetite">
+    Risk Tolerance and Risk Appetite
+   </h2>
+   <p id="toleranceVsAppetite">
+    Risk tolerance refers to the acceptable level of variation an organization can withstand around a specific risk before it becomes a concern. Risk appetite refers to the broader amount and type of risk an organization is willing to pursue or accept in order to meet its objectives. An organization's risk appetite can be expansionary, meaning it is willing to accept more risk in pursuit of growth or opportunity, conservative, meaning it prefers to minimize risk even at the cost of potential gains, or neutral, meaning it balances risk and opportunity without leaning strongly in either direction.
+   </p>
+   <h2 id="riskManagementStrategies">
+    Risk Management Strategies
+   </h2>
+   <p id="riskStrategies">
+    Organizations generally respond to identified risks in one of a few ways. Transferring risk shifts the financial impact to another party, such as through purchasing insurance. Accepting risk means acknowledging a risk and choosing not to take further action, often because the cost of mitigation outweighs the potential impact; this can take the form of an exemption, where a system is excused from a requirement entirely, or an exception, where a temporary deviation is approved with conditions. Avoiding risk means eliminating the activity or system that introduces the risk altogether. Mitigating risk means taking action to reduce either the likelihood or impact of the risk without eliminating the underlying activity entirely.
+   </p>
+   <h2 id="riskReporting">
+    Risk Reporting
+   </h2>
+   <p id="riskReportingSummary">
+    Risk reporting involves communicating identified risks, their potential impact, and the organization's response to relevant stakeholders, ensuring that decision-makers have the information needed to prioritize resources and approve risk management strategies.
+   </p>
+   <h2 id="businessImpactAnalysis">
+    Business Impact Analysis
+   </h2>
+   <p id="biaMetrics">
+    A business impact analysis identifies how disruptions would affect critical business functions and helps set recovery priorities. Recovery time objective (RTO) defines the maximum acceptable amount of time a system can be down before it must be restored. Recovery point objective (RPO) defines the maximum acceptable amount of data loss, measured in time, such as how much data an organization can afford to lose since the last backup. Mean time to repair (MTTR) measures the average time it takes to repair a system after a failure. Mean time between failures (MTBF) measures the average amount of time a system is expected to operate before it fails, giving organizations a sense of a system's overall reliability.
+   </p>
+   <div class="buttons">
+    <button class="read-aloud" id="readAloud3" type="button">
+     🔊 Read Aloud
+    </button>
+    <div>
+    </div>
     <button id="next3">
-    
-    Next →
-    
+     Next &rarr;
     </button>
-    
-    </div>
-    
-    </div>
-    
-    <!-- ====================================================== -->
-    <!-- PAGE 4 -->
-    
-    <div id="M1Page4" class="module" style="display:none;">
-    
-    <header>
-    
-    <h1>Cybersecurity Awareness Training</h1>
-    
-    <h3>Module 5 • Security Program Management</h3>
-    
+   </div>
+  </div>
+  <!-- ====================================================== -->
+  <!-- PAGE 4 -->
+  <div class="module" id="M1Page4" style="display:none;">
+   <header>
+    <h1>
+     Cybersecurity Awareness Training
+    </h1>
+    <h3>
+     Module 5 &bull; Security Program Management
+    </h3>
     <div class="progress">
-    
-    <progress value="4" max="9"></progress>
-    
-    <p>Page 4 of 9</p>
-    
+     <progress max="7" value="4">
+     </progress>
+     <p id="page4Paragraph1">
+      Page 4 of 7
+     </p>
     </div>
-    
-    </header>
-    <h2>Third-Party Risk Management</h2>
-    <h2 id="vendorAssessment">Vendor Assessment</h2>
-
-<p id="vendorAssessmentMethods">
-Before and during a vendor relationship, organizations use several methods to evaluate a third party's security posture. Penetration testing may be performed against the vendor's systems, either by the organization or by the vendor itself, to identify exploitable weaknesses. A right-to-audit clause is a contractual provision that gives the organization the legal ability to audit a vendor's security practices directly. Evidence of internal audits allows a vendor to demonstrate they regularly review their own controls without requiring a full external audit. Independent assessments involve a neutral third party evaluating the vendor's security, providing an unbiased view that carries more credibility than a vendor's self-reported claims. Supply chain analysis examines the vendor's own suppliers and partners, since a vendor's security is only as strong as the weakest link in everything that supports it.
-</p>
-
-<h2 id="vendorSelection">Vendor Selection</h2>
-
-<p id="vendorSelectionCriteria">
-When choosing a vendor, due diligence involves thoroughly researching and verifying a vendor's reputation, financial stability, and security practices before entering into an agreement. Conflict of interest considerations ensure that the vendor, or anyone involved in selecting them, does not have competing interests that could compromise the integrity of the decision or the relationship.
-</p>
-
-<h2 id="agreementTypes">Agreement Types</h2>
-
-<p id="agreementTypesOverview">
-Different agreements serve different purposes when formalizing a vendor relationship. A service-level agreement (SLA) defines the expected level of service, such as uptime or response times, and the consequences if those expectations aren't met. A memorandum of agreement (MOA) is a formal document outlining a mutual agreement between parties, often with more binding detail than an MOU. A memorandum of understanding (MOU) expresses a general intent to work together but is typically less formal and less legally binding than other agreement types. A master service agreement (MSA) establishes the overall terms that will govern future work between two parties, so those terms don't need to be renegotiated for every project. A work order (WO) or statement of work (SOW) defines the specific tasks, deliverables, and timeline for a particular project under an existing MSA. A non-disclosure agreement (NDA) legally obligates parties to keep shared information confidential. A business partners agreement (BPA) outlines the terms of a business partnership, including responsibilities and how profits or losses are handled.
-</p>
-
-<h2 id="vendorMonitoring">Vendor Monitoring</h2>
-
-<p id="vendorMonitoringDetails">
-Vendor monitoring involves the ongoing tracking of a vendor's performance and security posture throughout the relationship, rather than relying only on the assessment done before signing an agreement. This helps ensure a vendor continues to meet security expectations as circumstances change over time.
-</p>
-
-<h2 id="questionnaires">Questionnaires</h2>
-
-<p id="questionnairesDetails">
-Questionnaires are standardized sets of security-related questions sent to vendors to gather information about their practices, policies, and controls, offering a structured and comparable way to evaluate multiple vendors.
-</p>
-
-<h2 id="rulesOfEngagement">Rules of Engagement</h2>
-
-<p id="rulesOfEngagementDetails">
-Rules of engagement define the boundaries and expectations for activities such as penetration testing or security assessments involving a vendor, including what systems can be tested, what methods are permitted, and how findings will be reported, ensuring the activity stays authorized and controlled.
-</p>
-    
-    <div class="buttons">
-    <button id="readAloud4">
-
-            🔊 Read Aloud
+   </header>
+   <h2>
+    Third-Party Risk Management
+   </h2>
+   <h2 id="vendorAssessment">
+    Vendor Assessment
+   </h2>
+   <p id="vendorAssessmentMethods">
+    Before and during a vendor relationship, organizations use several methods to evaluate a third party's security posture. Penetration testing may be performed against the vendor's systems, either by the organization or by the vendor itself, to identify exploitable weaknesses. A right-to-audit clause is a contractual provision that gives the organization the legal ability to audit a vendor's security practices directly. Evidence of internal audits allows a vendor to demonstrate they regularly review their own controls without requiring a full external audit. Independent assessments involve a neutral third party evaluating the vendor's security, providing an unbiased view that carries more credibility than a vendor's self-reported claims. Supply chain analysis examines the vendor's own suppliers and partners, since a vendor's security is only as strong as the weakest link in everything that supports it.
+   </p>
+   <h2 id="vendorSelection">
+    Vendor Selection
+   </h2>
+   <p id="vendorSelectionCriteria">
+    When choosing a vendor, due diligence involves thoroughly researching and verifying a vendor's reputation, financial stability, and security practices before entering into an agreement. Conflict of interest considerations ensure that the vendor, or anyone involved in selecting them, does not have competing interests that could compromise the integrity of the decision or the relationship.
+   </p>
+   <h2 id="agreementTypes">
+    Agreement Types
+   </h2>
+   <p id="agreementTypesOverview">
+    Different agreements serve different purposes when formalizing a vendor relationship. A service-level agreement (SLA) defines the expected level of service, such as uptime or response times, and the consequences if those expectations aren't met. A memorandum of agreement (MOA) is a formal document outlining a mutual agreement between parties, often with more binding detail than an MOU. A memorandum of understanding (MOU) expresses a general intent to work together but is typically less formal and less legally binding than other agreement types. A master service agreement (MSA) establishes the overall terms that will govern future work between two parties, so those terms don't need to be renegotiated for every project. A work order (WO) or statement of work (SOW) defines the specific tasks, deliverables, and timeline for a particular project under an existing MSA. A non-disclosure agreement (NDA) legally obligates parties to keep shared information confidential. A business partners agreement (BPA) outlines the terms of a business partnership, including responsibilities and how profits or losses are handled.
+   </p>
+   <h2 id="vendorMonitoring">
+    Vendor Monitoring
+   </h2>
+   <p id="vendorMonitoringDetails">
+    Vendor monitoring involves the ongoing tracking of a vendor's performance and security posture throughout the relationship, rather than relying only on the assessment done before signing an agreement. This helps ensure a vendor continues to meet security expectations as circumstances change over time.
+   </p>
+   <h2 id="questionnaires">
+    Questionnaires
+   </h2>
+   <p id="questionnairesDetails">
+    Questionnaires are standardized sets of security-related questions sent to vendors to gather information about their practices, policies, and controls, offering a structured and comparable way to evaluate multiple vendors.
+   </p>
+   <h2 id="rulesOfEngagement">
+    Rules of Engagement
+   </h2>
+   <p id="rulesOfEngagementDetails">
+    Rules of engagement define the boundaries and expectations for activities such as penetration testing or security assessments involving a vendor, including what systems can be tested, what methods are permitted, and how findings will be reported, ensuring the activity stays authorized and controlled.
+   </p>
+   <div class="buttons">
+    <button class="read-aloud" id="readAloud4" type="button">
+     🔊 Read Aloud
     </button>
-    <div></div>
-    
+    <div>
+    </div>
     <button id="next4">
-    
-    Next →
-    
+     Next &rarr;
     </button>
-    
-    </div>
-    
-    </div>
-    
-    <!-- ====================================================== -->
-    <!-- PAGE 5 -->
-    
-    <div id="M1Page5" class="module" style="display:none;">
-
-    <header>
-
-    <h1>Cybersecurity Awareness Training</h1>
-
-    <h3>Module 5 • Security Program Management</h3>
-
+   </div>
+  </div>
+  <!-- ====================================================== -->
+  <!-- PAGE 5 -->
+  <div class="module" id="M1Page5" style="display:none;">
+   <header>
+    <h1>
+     Cybersecurity Awareness Training
+    </h1>
+    <h3>
+     Module 5 &bull; Security Program Management
+    </h3>
     <div class="progress">
-
-    <progress value="5" max="9"></progress>
-
-    <p>Page 5 of 9</p>
-
+     <progress max="7" value="5">
+     </progress>
+     <p id="page5Paragraph1">
+      Page 5 of 7
+     </p>
     </div>
-
-    </header>
-
-    <hr>
-
-    <h2 id="findingSecurityRisksTitle">Summarize elements of effective security compliance.</h2>
-
-<p id="complianceReporting">
-Compliance reporting communicates an organization's adherence to relevant laws, regulations, and standards to different audiences. Internal reporting shares compliance status with leadership and internal stakeholders to support decision-making and resource allocation. External reporting shares compliance status with regulators, auditors, customers, or other outside parties, often to satisfy a legal or contractual obligation.
-</p>
-
-<p id="nonComplianceConsequences">
-Failing to meet compliance requirements can carry serious consequences. Fines are monetary penalties imposed by regulators for violations. Sanctions may include restrictions on business activities imposed by a governing body. Reputational damage occurs when non-compliance becomes public, eroding customer or partner trust. Loss of license can prevent an organization from legally operating in a particular industry or region. Contractual impacts can include penalties, termination of agreements, or loss of business if a partner's compliance requirements are not met.
-</p>
-
-<p id="complianceMonitoring">
-Compliance monitoring ensures requirements continue to be met on an ongoing basis rather than just at a single point in time. Due diligence and due care refer to taking reasonable, informed steps to identify and address compliance gaps, and to acting responsibly once a gap is known. Attestation and acknowledgement involve individuals or organizations formally confirming they understand and are following required policies, which can be reviewed internally or verified externally. Automation is increasingly used to continuously check systems against compliance requirements rather than relying solely on periodic manual reviews.
-</p>
-
-<p id="privacyConsiderations">
-Privacy requirements carry their own legal implications that vary depending on scope. National and global regulations may impose different requirements depending on where data originates or is processed, while local and regional rules can add another layer of obligation within a specific area. A data subject is the individual whose personal data is being collected or processed. The distinction between controller and processor matters for privacy just as it does for general data governance: the controller decides why and how data is used, while the processor handles it on the controller's behalf. Ownership defines who is accountable for specific data within the organization. Data inventory and retention practices track what personal data an organization holds and for how long, since keeping data longer than necessary increases risk. The right to be forgotten allows individuals to request that their personal data be deleted, a requirement found in privacy regulations such as the GDPR (General Data Protection Regulation).
-</p>
-
-<h2 id="typesOfAuditsAndAssessments">Types and Purposes of Audits and Assessments</h2>
-
-<p id="attestation">
-Attestation is a formal declaration, often signed by a responsible party, confirming that certain controls or practices are in place and functioning as claimed.
-</p>
-
-<p id="internalAudits">
-Internal audits are conducted by people within the organization. Compliance audits check whether the organization is meeting specific regulatory or policy requirements. An audit committee, often made up of senior leadership or board members, oversees the audit process and ensures findings are addressed. Self-assessments involve a team or department evaluating its own practices against a standard, often as preparation before a more formal audit occurs.
-</p>
-
-<p id="externalAudits">
-External audits are conducted by parties outside the organization. Regulatory audits are performed by a governing body to confirm compliance with applicable laws. Examinations are formal reviews, often conducted by a regulator, evaluating specific practices in detail. Assessments performed externally can evaluate security posture more broadly than a strict compliance check. Independent third-party audits are conducted by a neutral outside organization, providing a level of objectivity that internal reviews cannot offer on their own.
-</p>
-
-<h2 id="penetrationTestingTypes">Penetration Testing</h2>
-
-<p id="pentestScopeTypes">
-Penetration testing can be scoped differently depending on the goal. Physical penetration testing evaluates the security of physical locations, such as attempting to gain unauthorized building access. Offensive testing focuses on actively simulating attacker behavior to find exploitable weaknesses. Defensive testing focuses on evaluating how well existing security controls detect and respond to an attack. Integrated testing combines both offensive and defensive perspectives, often involving collaboration between the testing team and the organization's own security team to improve detection and response simultaneously.
-</p>
-
-<p id="pentestKnowledgeLevels">
-Penetration tests are also categorized by how much information the testing team is given beforehand. A known environment test provides testers with full information about the systems and architecture in advance, similar to how an insider might approach an attack. A partially known environment test gives testers limited information, simulating an attacker with some inside knowledge. An unknown environment test gives testers no advance information, closely simulating a real external attacker starting from scratch.
-</p>
-
-<p id="reconnaissance">
-Reconnaissance is the information-gathering phase that typically precedes an attack or penetration test. Passive reconnaissance gathers information without directly interacting with the target's systems, such as reviewing public records or social media. Active reconnaissance involves directly interacting with the target's systems, such as scanning ports or probing services, which carries a higher chance of detection.
-</p>
-
-    <div class="buttons">
-        <button id="readAloud5">
-            🔊 Read Aloud
-        </button>
-        <button id="next5">
-            Next →
-        </button>
-    </div>
-
-    </div>
-
-<!-- ====================================================== -->
-<!-- PAGE 6 -->
-
-<div id="M1Page6" class="module" style="display:none;">
-
-    <header>
-    
-    <h1>Cybersecurity Awareness Training</h1>
-    
-    <h3>Module 5 • Security Program Management</h3>
-    
+   </header>
+   <hr/>
+   <h2 id="findingSecurityRisksTitle">
+    Summarize elements of effective security compliance.
+   </h2>
+   <p id="complianceReporting">
+    Compliance reporting communicates an organization's adherence to relevant laws, regulations, and standards to different audiences. Internal reporting shares compliance status with leadership and internal stakeholders to support decision-making and resource allocation. External reporting shares compliance status with regulators, auditors, customers, or other outside parties, often to satisfy a legal or contractual obligation.
+   </p>
+   <p id="nonComplianceConsequences">
+    Failing to meet compliance requirements can carry serious consequences. Fines are monetary penalties imposed by regulators for violations. Sanctions may include restrictions on business activities imposed by a governing body. Reputational damage occurs when non-compliance becomes public, eroding customer or partner trust. Loss of license can prevent an organization from legally operating in a particular industry or region. Contractual impacts can include penalties, termination of agreements, or loss of business if a partner's compliance requirements are not met.
+   </p>
+   <p id="complianceMonitoring">
+    Compliance monitoring ensures requirements continue to be met on an ongoing basis rather than just at a single point in time. Due diligence and due care refer to taking reasonable, informed steps to identify and address compliance gaps, and to acting responsibly once a gap is known. Attestation and acknowledgement involve individuals or organizations formally confirming they understand and are following required policies, which can be reviewed internally or verified externally. Automation is increasingly used to continuously check systems against compliance requirements rather than relying solely on periodic manual reviews.
+   </p>
+   <p id="privacyConsiderations">
+    Privacy requirements carry their own legal implications that vary depending on scope. National and global regulations may impose different requirements depending on where data originates or is processed, while local and regional rules can add another layer of obligation within a specific area. A data subject is the individual whose personal data is being collected or processed. The distinction between controller and processor matters for privacy just as it does for general data governance: the controller decides why and how data is used, while the processor handles it on the controller's behalf. Ownership defines who is accountable for specific data within the organization. Data inventory and retention practices track what personal data an organization holds and for how long, since keeping data longer than necessary increases risk. The right to be forgotten allows individuals to request that their personal data be deleted, a requirement found in privacy regulations such as the GDPR (General Data Protection Regulation).
+   </p>
+   <h2 id="typesOfAuditsAndAssessments">
+    Types and Purposes of Audits and Assessments
+   </h2>
+   <p id="attestation">
+    Attestation is a formal declaration, often signed by a responsible party, confirming that certain controls or practices are in place and functioning as claimed.
+   </p>
+   <p id="internalAudits">
+    Internal audits are conducted by people within the organization. Compliance audits check whether the organization is meeting specific regulatory or policy requirements. An audit committee, often made up of senior leadership or board members, oversees the audit process and ensures findings are addressed. Self-assessments involve a team or department evaluating its own practices against a standard, often as preparation before a more formal audit occurs.
+   </p>
+   <p id="externalAudits">
+    External audits are conducted by parties outside the organization. Regulatory audits are performed by a governing body to confirm compliance with applicable laws. Examinations are formal reviews, often conducted by a regulator, evaluating specific practices in detail. Assessments performed externally can evaluate security posture more broadly than a strict compliance check. Independent third-party audits are conducted by a neutral outside organization, providing a level of objectivity that internal reviews cannot offer on their own.
+   </p>
+   <h2 id="penetrationTestingTypes">
+    Penetration Testing
+   </h2>
+   <p id="pentestScopeTypes">
+    Penetration testing can be scoped differently depending on the goal. Physical penetration testing evaluates the security of physical locations, such as attempting to gain unauthorized building access. Offensive testing focuses on actively simulating attacker behavior to find exploitable weaknesses. Defensive testing focuses on evaluating how well existing security controls detect and respond to an attack. Integrated testing combines both offensive and defensive perspectives, often involving collaboration between the testing team and the organization's own security team to improve detection and response simultaneously.
+   </p>
+   <p id="pentestKnowledgeLevels">
+    Penetration tests are also categorized by how much information the testing team is given beforehand. A known environment test provides testers with full information about the systems and architecture in advance, similar to how an insider might approach an attack. A partially known environment test gives testers limited information, simulating an attacker with some inside knowledge. An unknown environment test gives testers no advance information, closely simulating a real external attacker starting from scratch.
+   </p>
+   <p id="reconnaissance">
+    Reconnaissance is the information-gathering phase that typically precedes an attack or penetration test. Passive reconnaissance gathers information without directly interacting with the target's systems, such as reviewing public records or social media. Active reconnaissance involves directly interacting with the target's systems, such as scanning ports or probing services, which carries a higher chance of detection.
+   </p>
+   <div class="buttons">
+    <button class="read-aloud" id="readAloud5" type="button">
+     🔊 Read Aloud
+    </button>
+    <button id="next5">
+     Next &rarr;
+    </button>
+   </div>
+  </div>
+  <!-- ====================================================== -->
+  <!-- PAGE 6 -->
+  <div class="module" id="M1Page6" style="display:none;">
+   <header>
+    <h1>
+     Cybersecurity Awareness Training
+    </h1>
+    <h3>
+     Module 5 &bull; Security Program Management
+    </h3>
     <div class="progress">
-    
-    <progress value="6" max="9"></progress>
-    
-    <p>Page 6 of 9</p>
-    
+     <progress max="7" value="6">
+     </progress>
+     <p id="page6Paragraph1">
+      Page 6 of 7
+     </p>
     </div>
-    
-    </header>
-    
-    <h2 id="phishingCampaigns">Phishing Campaigns</h2>
-
-<p id="recognizingAndRespondingToPhishing">
-Recognizing a phishing attempt involves training users to spot common warning signs, such as unexpected requests for sensitive information, mismatched sender addresses, suspicious links, or urgent language designed to pressure quick action. Responding to reported suspicious messages involves having a clear process for users to forward or flag potential phishing emails to the security team, who can then investigate, block similar messages organization-wide, and alert other employees if a real threat is confirmed.
-</p>
-
-<h2 id="anomalousBehaviorRecognition">Anomalous Behavior Recognition</h2>
-
-<p id="behaviorCategories">
-Training users to recognize anomalous behavior helps catch threats that technical controls alone might miss. Risky behavior refers to actions that increase the chance of a security incident, even if not malicious, such as using weak passwords or connecting to unsecured networks. Unexpected behavior refers to activity that deviates from a user's normal patterns, such as logging in at unusual hours or accessing systems they don't normally use, which can indicate a compromised account. Unintentional behavior refers to mistakes made without malicious intent, such as accidentally emailing sensitive data to the wrong recipient, which still needs to be recognized and addressed even though there was no intent to cause harm.
-</p>
-
-<h2 id="userGuidanceAndTraining">User Guidance and Training</h2>
-
-<p id="trainingTopics">
-Effective security awareness programs cover a range of topics. Policies and handbooks give employees a clear, written reference for expected behavior and security requirements. Situational awareness training helps employees stay alert to their surroundings and recognize potential threats in the moment, such as noticing someone tailgating into a secure area. Insider threat training helps employees understand the risks posed by employees or contractors misusing their legitimate access, whether intentionally or not. Password management training covers best practices like using unique, complex passwords and password managers. Removable media and cable training addresses the risks of using unknown USB drives or cables, which can be used to introduce malware. Social engineering training teaches employees to recognize manipulation tactics used to trick them into giving up information or access. Operational security (OPSEC) training teaches employees to be mindful of what information they share, even in seemingly harmless contexts, since small details can be pieced together by an attacker. Training on hybrid and remote work environments addresses the unique risks of working outside a traditional office, such as securing home networks and using company devices safely in public spaces.
-</p>
-
-<h2 id="reportingAndMonitoring">Reporting and Monitoring</h2>
-
-<p id="reportingAndMonitoringDetails">
-Reporting and monitoring track how well the security awareness program is working. Initial reporting establishes a baseline understanding of employee awareness, often through early testing or surveys. Recurring reporting tracks awareness levels over time, showing whether training is improving employee behavior or if certain risks are persisting.
-</p>
-
-<h2 id="programDevelopmentAndExecution">Development and Execution</h2>
-
-<p id="developmentAndExecution">
-Development involves designing the security awareness program itself, including choosing topics, formats, and frequency based on the organization's specific risks and workforce. Execution involves actually delivering the training to employees and ensuring participation is tracked, so the organization can confirm the program is reaching everyone it needs to.
-</p>
-    
-    <div class="buttons">
-        <button id="readAloud6">🔊 Read Aloud</button>
-        <button id="next6">Next →</button>
-    </div>
-    
-</div>
-
-    
-    <!-- ====================================================== -->
-    <!-- PAGE 7 -->
-    
-    <div id="M1Page7" class="module" style="display:none;">
-    
-    <header>
-    
-    <h1>🎉 Module Complete</h1>
-    
-    <h3>Cybersecurity Awareness Training</h3>
-    
+   </header>
+   <h2 id="phishingCampaigns">
+    Phishing Campaigns
+   </h2>
+   <p id="recognizingAndRespondingToPhishing">
+    Recognizing a phishing attempt involves training users to spot common warning signs, such as unexpected requests for sensitive information, mismatched sender addresses, suspicious links, or urgent language designed to pressure quick action. Responding to reported suspicious messages involves having a clear process for users to forward or flag potential phishing emails to the security team, who can then investigate, block similar messages organization-wide, and alert other employees if a real threat is confirmed.
+   </p>
+   <h2 id="anomalousBehaviorRecognition">
+    Anomalous Behavior Recognition
+   </h2>
+   <p id="behaviorCategories">
+    Training users to recognize anomalous behavior helps catch threats that technical controls alone might miss. Risky behavior refers to actions that increase the chance of a security incident, even if not malicious, such as using weak passwords or connecting to unsecured networks. Unexpected behavior refers to activity that deviates from a user's normal patterns, such as logging in at unusual hours or accessing systems they don't normally use, which can indicate a compromised account. Unintentional behavior refers to mistakes made without malicious intent, such as accidentally emailing sensitive data to the wrong recipient, which still needs to be recognized and addressed even though there was no intent to cause harm.
+   </p>
+   <h2 id="userGuidanceAndTraining">
+    User Guidance and Training
+   </h2>
+   <p id="trainingTopics">
+    Effective security awareness programs cover a range of topics. Policies and handbooks give employees a clear, written reference for expected behavior and security requirements. Situational awareness training helps employees stay alert to their surroundings and recognize potential threats in the moment, such as noticing someone tailgating into a secure area. Insider threat training helps employees understand the risks posed by employees or contractors misusing their legitimate access, whether intentionally or not. Password management training covers best practices like using unique, complex passwords and password managers. Removable media and cable training addresses the risks of using unknown USB drives or cables, which can be used to introduce malware. Social engineering training teaches employees to recognize manipulation tactics used to trick them into giving up information or access. Operational security (OPSEC) training teaches employees to be mindful of what information they share, even in seemingly harmless contexts, since small details can be pieced together by an attacker. Training on hybrid and remote work environments addresses the unique risks of working outside a traditional office, such as securing home networks and using company devices safely in public spaces.
+   </p>
+   <h2 id="reportingAndMonitoring">
+    Reporting and Monitoring
+   </h2>
+   <p id="reportingAndMonitoringDetails">
+    Reporting and monitoring track how well the security awareness program is working. Initial reporting establishes a baseline understanding of employee awareness, often through early testing or surveys. Recurring reporting tracks awareness levels over time, showing whether training is improving employee behavior or if certain risks are persisting.
+   </p>
+   <h2 id="programDevelopmentAndExecution">
+    Development and Execution
+   </h2>
+   <p id="developmentAndExecution">
+    Development involves designing the security awareness program itself, including choosing topics, formats, and frequency based on the organization's specific risks and workforce. Execution involves actually delivering the training to employees and ensuring participation is tracked, so the organization can confirm the program is reaching everyone it needs to.
+   </p>
+   <div class="buttons">
+    <button class="read-aloud" id="readAloud6" type="button">
+     🔊 Read Aloud
+    </button>
+    <button id="next6">
+     Next &rarr;
+    </button>
+   </div>
+  </div>
+  <!-- ====================================================== -->
+  <!-- PAGE 7 -->
+  <div class="module" id="M1Page7" style="display:none;">
+   <header>
+    <h1>
+     🎉 Module Complete
+    </h1>
+    <h3>
+     Cybersecurity Awareness Training
+    </h3>
     <div class="progress">
-    
-    <progress value="9" max="9"></progress>
-    
-    <p>Page 9 of 9</p>
-    
+     <progress max="7" value="7">
+     </progress>
+     <p id="page7Paragraph1">
+      Page 7 of 7
+     </p>
     </div>
-    
-    </header>
-    
-    <hr>
-    
-    <div class="infoBox">
-    
-    <h2 id="congratulationsTitle" style="margin-bottom:15px;">Congratulations!</h2>
-    
+   </header>
+   <hr/>
+   <div class="infoBox">
+    <h2 id="congratulationsTitle" style="margin-bottom:15px;">
+     Congratulations!
+    </h2>
     <p id="completionMessage">
-    You have successfully completed <strong>Module 1: Security Fundamentals.</strong>
+     You have successfully completed
+     <strong>
+      Module 1: Security Fundamentals.
+     </strong>
     </p>
-    
     <p id="understandingIntro">
-    You now understand:
+     You now understand:
     </p>
-    
     <ul id="understandingList" style="margin-left:30px; line-height:2;">
-        <li id="cybersecurityImportance">Why cybersecurity is important</li>
-        <li id="commonThreats">Common cyber threats</li>
-        <li id="ransomwareAttacks">Ransomware attacks</li>
-        <li id="malwareTypes">Types of malware</li>
-        <li id="securityControls">Security controls</li>
-        <li id="cryptographyAndPKI">Cryptography and PKI</li>
-        <li id="changeManagement">Change management</li>
+     <li id="cybersecurityImportance">
+      Why cybersecurity is important
+     </li>
+     <li id="commonThreats">
+      Common cyber threats
+     </li>
+     <li id="ransomwareAttacks">
+      Ransomware attacks
+     </li>
+     <li id="malwareTypes">
+      Types of malware
+     </li>
+     <li id="securityControls">
+      Security controls
+     </li>
+     <li id="cryptographyAndPKI">
+      Cryptography and PKI
+     </li>
+     <li id="changeManagement">
+      Change management
+     </li>
     </ul>
-    
-    <h2 id="continueLearningTitle">Continue Learning</h2>
-    
+    <h2 id="continueLearningTitle">
+     Continue Learning
+    </h2>
     <p id="continueLearningMessage">
-    Cybersecurity is constantly evolving. Continue building your knowledge through trusted learning resources.
+     Cybersecurity is constantly evolving. Continue building your knowledge through trusted learning resources.
     </p>
-    <p>
-    
-    <a href="https://niccs.cisa.gov/audience/cybersecurity-beginners" target="_blank">
-    
-    Cybersecurity Beginner Resources (CISA)
-    
-    </a>
-    
+    <p id="page7Paragraph2">
+     <a href="https://niccs.cisa.gov/audience/cybersecurity-beginners" target="_blank">
+      Cybersecurity Beginner Resources (CISA)
+     </a>
     </p>
-    
     <div class="buttons">
+     <div>
+     </div>
+     <button id="next9" onclick="window.location.href='Security_quiz.html';">
     
-    <div></div>
-    
-    <button id="next9" onclick="window.location.href='Security_quiz.html';">
-    
-    End
-    
+        End
+        
     </button>
-    
     </div>
-    
-    </div>
-    
-    </body>
-    
-    </html>           
-<script>
-    // Get references to the "Next" button and sections
-    const nextButton1 = document.getElementById('next1');
-    const nextButton2 = document.getElementById('next2');
-    const nextButton3 = document.getElementById('next3');
-    const nextButton4 = document.getElementById('next4');
-    const nextButton5 = document.getElementById('next5');
-    const nextButton6 = document.getElementById('next6');
-    const nextButton7 = document.getElementById('next7');
-    const nextButton8 = document.getElementById('next8');
-    const nextButton9 = document.getElementById('next9');
+   </div>
+  </div>
+  <script>
+   document.addEventListener("DOMContentLoaded", function () {
+    const synth = window.speechSynthesis;
+    const pages = Array.from(document.querySelectorAll(".module"));
 
-    //read aloud
-    const readAloudButton1 = document.getElementById('readAloud1');
-    const readAloudButton2 = document.getElementById('readAloud2');
-    const readAloudButton3 = document.getElementById('readAloud3');
-    const readAloudButton4 = document.getElementById('readAloud4');
-    const readAloudButton5 = document.getElementById('readAloud5');
-    const readAloudButton6 = document.getElementById('readAloud6');
-    const readAloudButton7 = document.getElementById('readAloud7');
-    const readAloudButton8 = document.getElementById('readAloud8');
-    const readAloudButton9 = document.getElementById('readAloud9');
-    
-    // element for each page section
-    const section1 = document.getElementById('M1Page1');
-    const section2 = document.getElementById('M1Page2');
-    const section3 = document.getElementById('M1Page3');
-    const section4 = document.getElementById('M1Page4');
-    const section5 = document.getElementById('M1Page5');
-    const section6 = document.getElementById('M1Page6');
-    const section7 = document.getElementById('M1Page7');
-    const section8 = document.getElementById('M1Page8');
-    const section9 = document.getElementById('M1Page9');
+    function stopReading() {
+        synth.cancel();
 
-    // Hide section1 and show section2 when "Next" is clicked
-    nextButton1.addEventListener('click', () => {
-        section1.style.display = 'none';
-        section2.style.display = 'block';
+        document.querySelectorAll(".read-aloud").forEach(function (button) {
+            button.textContent = "🔊 Read Aloud";
+            button.classList.remove("reading");
+            button.setAttribute("aria-pressed", "false");
+        });
+    }
+
+    function getPageText(page) {
+        return Array.from(
+            page.querySelectorAll("h1, h2, h3, p, li, th, td, strong")
+        )
+        .filter(function (element) {
+            return !element.closest(".buttons");
+        })
+        .map(function (element) {
+            return element.innerText.trim();
+        })
+        .filter(Boolean)
+        .join(". ");
+    }
+
+    function readPage(page, button) {
+        if (synth.speaking) {
+            stopReading();
+            return;
+        }
+
+        const text = getPageText(page);
+
+        if (!text) {
+            console.warn("No readable text found.");
+            return;
+        }
+
+        synth.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = 0.95;
+        utterance.pitch = 1;
+        utterance.volume = 1;
+
+        button.textContent = "⏹ Stop Reading";
+        button.classList.add("reading");
+        button.setAttribute("aria-pressed", "true");
+
+        utterance.onend = function () {
+            button.textContent = "🔊 Read Aloud";
+            button.classList.remove("reading");
+            button.setAttribute("aria-pressed", "false");
+        };
+
+        utterance.onerror = function () {
+            button.textContent = "🔊 Read Aloud";
+            button.classList.remove("reading");
+            button.setAttribute("aria-pressed", "false");
+        };
+
+        synth.speak(utterance);
+    }
+
+    pages.forEach(function (page, index) {
+        const readButton = page.querySelector(".read-aloud");
+
+        if (readButton) {
+            readButton.type = "button";
+            readButton.setAttribute("aria-label", "Read this page aloud");
+            readButton.setAttribute("aria-pressed", "false");
+
+            readButton.addEventListener("click", function () {
+                readPage(page, readButton);
+            });
+        }
+
+        const next = page.querySelector("[id^='next']");
+        const back = page.querySelector("[id^='back']");
+
+        if (next) {
+            next.type = "button";
+            next.removeAttribute("onclick");
+            next.addEventListener("click", function () {
+                showPage(index + 1);
+            });
+        }
+
+        next9.addEventListener('click', () => {
+    window.location.href = 'Security_quiz.html';
+});
+
+        if (back) {
+            back.type = "button";
+            back.removeAttribute("onclick");
+            back.addEventListener("click", function () {
+                showPage(index - 1);
+            });
+        }
     });
 
-    nextButton2.addEventListener('click', () => {
-        section2.style.display = 'none';
-        section3.style.display = 'block';
+    function showPage(index) {
+        if (index < 0 || index >= pages.length) return;
+
+        stopReading();
+
+        pages.forEach(function (page, pageIndex) {
+            page.style.display = pageIndex === index ? "block" : "none";
+        });
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    if (pages.length) {
+        showPage(0);
+    }
+
+    document.querySelectorAll(".flip-card").forEach(function (card) {
+        const inner = card.querySelector(".flip-card-inner");
+        if (!inner) return;
+
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("role", "button");
+
+        function flip() {
+            inner.style.transform =
+                inner.style.transform === "rotateY(180deg)"
+                    ? "rotateY(0deg)"
+                    : "rotateY(180deg)";
+        }
+
+        card.addEventListener("click", flip);
+
+        card.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                flip();
+            }
+        });
     });
 
-    nextButton3.addEventListener('click', () => {
-        section3.style.display = 'none';
-        section4.style.display = 'block';
-    });
-
-    nextButton4.addEventListener('click', () => {
-        section4.style.display = 'none';
-        section5.style.display = 'block';
-    });
-
-    nextButton5.addEventListener('click', () => {
-        section5.style.display = 'none';
-        section6.style.display = 'block';
-    });
-
-    nextButton6.addEventListener('click', () => {
-        section6.style.display = 'none';
-        section7.style.display = 'block';
-    });
-
-    nextButton7.addEventListener('click', () => {
-        section7.style.display = 'none';
-        section8.style.display = 'block';
-    });
-
-    nextButton8.addEventListener('click', () => {
-        section8.style.display = 'none';
-        section9.style.display = 'block';
-    });
-
-    // Read aloud functionality
-    readAloudButton1.addEventListener('click', () => {
-        const textToRead = document.getElementById('welcomeText').innerText + ' ' +
-                           document.getElementById('cybersecurityScope').innerText + ' ' +
-                           document.getElementById('humanMistakes').innerText + ' ' +
-                           document.getElementById('learningObjectiveBreak').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton2.addEventListener('click', () => {
-        const textToRead = document.getElementById('realWorldExampleTitle').innerText + ' ' +
-                   document.getElementById('realWorldExampleIntro').innerText + ' ' +
-                   document.getElementById('realWorldExampleDetails').innerText + ' ' +
-                   document.getElementById('hacktivismTerm').innerText + ' ' +
-                   document.getElementById('hacktivismDefinition').innerText + ' ' +
-                   document.getElementById('realWorldExampleConclusion').innerText; + ' ' +
-                   document.getElementById('practiceStrongAuthentication').innerText; + ' ' +
-                   document.getElementById('practiceRegularUpdates').innerText; + ' ' +
-                   document.getElementById('practiceEncryption').innerText; + ' ' +
-                   document.getElementById('practiceMonitoring').innerText; + ' ' +
-                   document.getElementById('practiceAwarenessTraining').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton3.addEventListener('click', () => {
-        const textToRead = document.getElementById('introRansomeware').innerText + ' ' +
-                   document.getElementById('ransomwareIntro').innerText + ' ' +
-                   document.getElementById('internshipExperience').innerText + ' ' +
-                   document.getElementById('incidentDetails').innerText + ' ' +
-                   document.getElementById('cybersecurityAwareness').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton4.addEventListener('click', () => {
-        const textToRead = document.getElementById('commonMalwareTypes').innerText + ' ' +
-                   document.getElementById('malwareIntro').innerText + ' ' +
-                   document.getElementById('threatHeader').innerText + ' ' +
-                   document.getElementById('descriptionHeader').innerText + ' ' +
-                   document.getElementById('malwareProtectionTips').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton5.addEventListener('click', () => {
-        const textToRead = document.getElementById('findingSecurityRisksTitle').innerText + ' ' +
-                   document.getElementById('findingSecurityRisksIntro').innerText + ' ' +
-                   document.getElementById('toolHeader').innerText + ' ' +
-                   document.getElementById('purposeHeader').innerText + ' ' +
-                   document.getElementById('securityTipBox').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton6.addEventListener('click', () => {
-        const textToRead = document.getElementById('securityControlsTitle').innerText + ' ' +
-                   document.getElementById('securityControlsIntro').innerText + ' ' +
-                   document.getElementById('controlTypeHeader').innerText + ' ' +
-                   document.getElementById('examplesHeader').innerText + ' ' +
-                   document.getElementById('purposeHeader').innerText + ' ' +
-                   document.getElementById('defenseInDepthDescription').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton7.addEventListener('click', () => {
-        const textToRead = document.getElementById('cryptographyTitle').innerText + ' ' +
-                   document.getElementById('cryptographyIntro').innerText + ' ' +
-                   document.getElementById('pkiIntro').innerText + ' ' +
-                   document.getElementById('keyHeader').innerText + ' ' +
-                   document.getElementById('purposeHeader').innerText + ' ' +
-                   document.getElementById('pkiTechnologiesTitle').innerText + ' ' +
-                   document.getElementById('pkiTechnologiesList').innerText + ' ' +
-                   document.getElementById('pkiUsage').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton8.addEventListener('click', () => {
-        const textToRead = document.getElementById('changeManagementTitle').innerText + ' ' +
-                   document.getElementById('changeManagementIntro').innerText + ' ' +
-                   document.getElementById('changeManagementBenefits').innerText + ' ' +
-                   document.getElementById('stepHeader').innerText + ' ' +
-                   document.getElementById('descriptionHeader').innerText + ' ' +
-                   document.getElementById('whyItMattersTitle').innerText + ' ' +
-                   document.getElementById('whyItMattersDescription').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton9.addEventListener('click', () => {
-        const textToRead = document.getElementById('congratulationsTitle').innerText + ' ' +
-                   document.getElementById('completionMessage').innerText + ' ' +
-                   document.getElementById('understandingIntro').innerText + ' ' +
-                   Array.from(document.getElementById('understandingList').children).map(item => item.innerText).join(' ') + ' ' +
-                   document.getElementById('continueLearningTitle').innerText + ' ' +
-                   document.getElementById('continueLearningMessage').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-</script>
+    window.addEventListener("beforeunload", stopReading);
+});
+  </script>
+ </body>
+</html>
