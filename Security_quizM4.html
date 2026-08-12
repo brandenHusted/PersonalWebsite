@@ -287,10 +287,10 @@ You will learn how to identify potential security risks, implement appropriate s
 
 <strong>Learning Objective</strong>
 
-<br id="learningObjectiveBreak"><br>
+<p id="learningObjectiveBreak">
 
 When you complete this module, you will be able to explain the security implications of proper hardware, software, and data asset management, as well as identify and implement appropriate security controls in software development.
-
+</p>
 </div>
 
 <img src="images/BasicCyberSecurityIMG.png" alt="Basic Cybersecurity">
@@ -338,9 +338,8 @@ To obtain proper hardware we use the acquisition/procurement process to ensure t
 </p>
 
 <p id="realWorldExampleDetails">
-For security reasons companies should have ways to track ownership of data and protect/classify data. We can track assets through tools like ServiceNow, Samanage or any ticketing software. Knowing how to solve tickets is equally important to knowing how to track assets. When a ticket is created, it is important to follow the proper steps to resolve the issue and ensure that the asset is properly tracked and managed. This includes identifying the asset, documenting its location and status, and updating the asset management system accordingly.
+For security reasons companies should have ways to track ownership of data and protect/classify data. We can track assets through tools like ServiceNow, Samanage or any ticketing software. Knowing how to solve tickets is equally important to knowing how to track assets. When a ticket is created, it is important to follow the proper steps to resolve the issue and ensure that the asset is properly tracked and managed. This includes identifying the asset, documenting its location and status, and updating the asset management system accordingly. <br><br> If you were given a ticket, what would be the first 5 steps you would do?
 </p>
-<p>If you were given a ticket, what would be the first 5 steps you would do?</p>
 
 <div class="flip-card">
     <div class="flip-card-inner">
@@ -419,9 +418,10 @@ For security reasons companies should have ways to track ownership of data and p
 Enumeration is a process of counting a list of items or details to collect to complete a ticket.
 </p>
 </div>
-
+<p id="bonus">Proper asset management is also important when developing secure platforms. Before software is developed, organizations need to understand what systems, hardware, software, applications, and data the platform will interact with. Knowing what assets exist helps developers identify which components need to be protected and what security requirements should be built into the platform.
+For example, if an application stores sensitive information, developers should consider security requirements such as access controls, encryption, secure authentication, and proper data handling during the development process. Just as organizations track hardware and data throughout their lifecycle, software should also be managed throughout its lifecycle by securely developing, testing, updating, and eventually decommissioning it.</p>
 <p id="realWorldExampleConclusion">
-To get rid of decommissioned hardware, organizations should follow secure disposal procedures, such as data wiping or physical destruction, to ensure that sensitive information cannot be recovered by unauthorized individuals. If users want to keep their data but the operating system needs to be reset then that process would be called data rentention.
+To get rid of decommissioned hardware, organizations should follow secure disposal procedures, such as data wiping or physical destruction, to ensure that sensitive information cannot be recovered by unauthorized individuals. If users need to keep their data while an operating system is reset or replaced, organizations must have appropriate data retention procedures to ensure that the required information is preserved and properly protected.
 </p>
 
 <div class="buttons">
@@ -480,7 +480,7 @@ Next →
     </p>
     <img src="images/rapid7.png" alt="Rapid7 Logo" style="display:block; margin: 20px auto; max-width: 200px;">
     <p id="cybersecurityAwareness">
-    People on the dark web (hidden part of the internet that search engines do not index) may try to find vulnerabilities and steal company information and it is very hard to track these people down. To prevent this practice you can use swift detection and damage control. Hackers can hack into OSINTs very fast. Our best safeguard is to swiftly find any malicous behaviour and eliminate risk as fast as possible.
+    People on the dark web (hidden part of the internet that search engines do not index) may try to find vulnerabilities and steal company information and it is very hard to track these people down. To prevent this practice you can use swift detection and damage control. Hackers can hack into OSINTs very fast. Our best safeguard is to swiftly find any malicious behaviour and eliminate risk as fast as possible.
     </p>
     <img src="images/darkweb.png" alt="Dark Web" style="display:block; margin: 50px auto; max-width: 200px;">
     <div class="buttons">
@@ -531,15 +531,15 @@ Next →
     Here is a video that explains Penetration Testing: <b><a href="https://www.youtube.com/watch?v=TA0TbzyU8GY" target="_blank">Penetration Testing Video</a></b>
     </p>
     
-    <p>System and process audits are structured reviews of systems or workflows against a defined standard, such as internal policy or a compliance framework. These audits can catch configuration or process gaps that automated scans might miss.</p>
+    <p id="threatHeader">System and process audits are structured reviews of systems or workflows against a defined standard, such as internal policy or a compliance framework. These audits can catch configuration or process gaps that automated scans might miss.</p>
     
-    <p id="malwareProtectionTips"></p>
+    <p id="malwareProtectionTips">
     Responsible disclosure programs provide a formal channel for outside researchers or ethical hackers to report vulnerabilities they discover, rather than exposing them publicly or selling them. Bug bounty programs are a common form of this, where organizations pay researchers for verified findings, which incentivizes responsible reporting over public disclosure or exploitation.
     </p>
     <img src="images/bugBount.png" alt="Bug Bounty" style="display:block; margin: 20px auto; max-width: 400px;">
-    <p>Once a vulnerability is identified, it must be confirmed before action is taken. A false positive occurs when a scanner flags something as vulnerable when it is not, which wastes remediation effort if not caught. A false negative occurs when a scanner misses an actual vulnerability, which is more dangerous because it creates false confidence in the security of a system.</p>
+    <p id = "Threat134">Once a vulnerability is identified, it must be confirmed before action is taken. A false positive occurs when a scanner flags something as vulnerable when it is not, which wastes remediation effort if not caught. A false negative occurs when a scanner misses an actual vulnerability, which is more dangerous because it creates false confidence in the security of a system.</p>
 
-    <p>Not every vulnerability can be remediated immediately, so organizations prioritize based on several factors. The Common Vulnerability Scoring System (CVSS) provides a standardized severity score from 0 to 10 based on factors like attack vector and potential impact. The Common Vulnerabilities and Exposures (CVE) system assigns a standardized identifier to each known vulnerability so it can be referenced consistently across different tools and organizations.</p>
+    <p id = "Threat678">Not every vulnerability can be remediated immediately, so organizations prioritize based on several factors. The Common Vulnerability Scoring System (CVSS) provides a standardized severity score from 0 to 10 based on factors like attack vector and potential impact. The Common Vulnerabilities and Exposures (CVE) system assigns a standardized identifier to each known vulnerability so it can be referenced consistently across different tools and organizations.</p>
     
     <div class="buttons">
     <button id="readAloud4">
@@ -633,7 +633,7 @@ Next →
     
     <hr>
     
-    <h2 id="securityControlsTitle">Given a scenerio, apply common security techniques to computing resources.</h2>
+    <h2 id="securityControlsTitle1">Given a scenario, apply common security techniques to computing resources.</h2>
     
     <p id="securityControlsIntro">
         A secure baseline is a defined set of security configurations that a system should meet before it is considered acceptable for use. Establishing a baseline means determining what those secure settings should be, often based on vendor guidance, industry standards, or frameworks like CIS Benchmarks. Deploying the baseline means applying those configurations consistently across all relevant systems, often through automated tools rather than manual setup. Maintaining the baseline means continuously monitoring systems to ensure they have not drifted from the approved configuration over time, and correcting any deviations that are found.
@@ -681,7 +681,7 @@ Sandboxing involves running an application or piece of code in an isolated envir
     
     <div class="infoBox" id="defenseInDepthBox">
         <strong id="defenseInDepthTitle">Remember:</strong>
-        <p id="defenseInDepthDescription" style="margin-top:12px;">
+        <p id="defenseInDepthDescription1" style="margin-top:12px;">
             Wi-Fi Protected Access 3 (WPA3) is the current standard for securing wireless networks.
         </p>
     </div>
@@ -743,167 +743,7 @@ Sandboxing involves running an application or piece of code in an isolated envir
     </div>
     
 </div>
-<!-- ====================================================== -->
-<!-- PAGE 6 -->
 
-<div id="M1Page6" class="module" style="display:none;">
-
-    <header>
-    
-    <h1>Cybersecurity Awareness Training</h1>
-    
-    <h3>Module 4 • How to Develop/Code Secure Platforms</h3>
-    
-    <div class="progress">
-    
-    <progress value="6" max="9"></progress>
-    
-    <p>Page 6 of 9</p>
-    
-    </div>
-    
-    </header>
-    
-    <hr>
-    
-    <h2 id="securityControlsTitle">Types of Security Controls</h2>
-    
-    <p id="securityControlsIntro"></p>
-    Organizations use several layers of security controls to reduce cyber risk. No single control can stop every attack, so companies combine multiple approaches to create a strong defense.
-    </p>
-    
-    <table id="securityControlsTable">
-    
-    <tr id="securityControlsHeaderRow">
-        <th id="controlTypeHeader">Control Type</th>
-        <th id="examplesHeader">Examples</th>
-        <th id="purposeHeader">Purpose</th>
-    </tr>
-    
-    <tr id="technicalControlRow">
-        <td id="technicalControlType"><strong>Technical</strong></td>
-        <td id="technicalExamples">Firewalls, Antivirus, Encryption, MFA</td>
-        <td id="technicalPurpose">Protect systems using technology.</td>
-    </tr>
-    
-    <tr id="managerialControlRow">
-        <td id="managerialControlType"><strong>Managerial</strong></td>
-        <td id="managerialExamples">Security Policies, Risk Assessments, Audits</td>
-        <td id="managerialPurpose">Guide security planning and governance.</td>
-    </tr>
-    
-    <tr id="operationalControlRow">
-        <td id="operationalControlType"><strong>Operational</strong></td>
-        <td id="operationalExamples">Security Awareness Training, Incident Response</td>
-        <td id="operationalPurpose">Improve daily security procedures.</td>
-    </tr>
-    
-    <tr id="physicalControlRow">
-        <td id="physicalControlType"><strong>Physical</strong></td>
-        <td id="physicalExamples">Badge Readers, Cameras, Locks, Biometrics</td>
-        <td id="physicalPurpose">Protect facilities and equipment.</td>
-    </tr>
-    
-    </table>
-    
-    <div class="infoBox" id="defenseInDepthBox">
-        <strong id="defenseInDepthTitle">Defense in Depth</strong>
-        <p id="defenseInDepthDescription" style="margin-top:12px;">
-        Good cybersecurity relies on multiple layers of protection rather than a single security solution.
-        </p>
-    
-    </div>
-    
-    <div class="buttons">
-    
-    <div></div>
-    
-    <button id="next6">
-    Next →
-    </button>
-    
-    </div>
-    
-    </div>
-    
-    <!-- ====================================================== -->
-    <!-- PAGE 7 -->
-    
-    <div id="M1Page7" class="module" style="display:none;">
-    
-    <header>
-    
-    <h1>Cybersecurity Awareness Training</h1>
-    
-    <h3>Module 1 • Security Fundamentals</h3>
-    
-    <div class="progress">
-    
-    <progress value="7" max="9"></progress>
-    
-    <p>Page 7 of 9</p>
-    
-    </div>
-    
-    </header>
-    
-    <hr>
-    
-    <h2 id="cryptographyTitle">Cryptography and Public Key Infrastructure (PKI)</h2>
-    
-    <p id="cryptographyIntro">
-    Encryption protects sensitive information by converting readable data into an unreadable format that only authorized users can access.
-    </p>
-    
-    <p id="pkiIntro">
-    One of the most widely used cryptographic systems is <strong id="pkiStrong">Public Key Infrastructure (PKI)</strong>, which uses two mathematically related keys.
-    </p>
-    
-    <table id="pkiTable">
-    
-    <tr id="pkiTableHeaderRow">
-        <th id="keyHeader">Key</th>
-        <th id="purposeHeader">Purpose</th>
-    </tr>
-    
-    <tr id="publicKeyRow">
-        <td id="publicKey">Public Key</td>
-        <td id="publicKeyPurpose">Encrypts data and verifies digital signatures. It can be shared freely.</td>
-    </tr>
-    
-    <tr id="privateKeyRow">
-        <td id="privateKey">Private Key</td>
-        <td id="privateKeyPurpose">Decrypts encrypted data and creates digital signatures. It must remain secret.</td>
-    </tr>
-    
-    </table>
-    
-    <div class="infoBox" id="pkiTechnologiesBox">
-        <strong id="pkiTechnologiesTitle">Common PKI Technologies</strong>
-        <ul id="pkiTechnologiesList" style="margin-top:15px; margin-left:25px; line-height:2;">
-            <li id="digitalCertificates">Digital Certificates</li>
-            <li id="certificateAuthorities">Certificate Authorities (CA)</li>
-            <li id="hardwareSecurityModules">Hardware Security Modules (HSM)</li>
-            <li id="trustedPlatformModules">Trusted Platform Modules (TPM)</li>
-        </ul>
-    </div>
-    
-    <p id="pkiUsage">
-    PKI helps secure websites, email communication, VPN connections, software updates, and many other everyday technologies.
-    </p>
-    
-    <div class="buttons">
-    
-    <div></div>
-    
-    <button id="next7">
-    Next →
-    </button>
-    
-    </div>
-    
-    </div>
-    
     <!-- ====================================================== -->
     <!-- PAGE 8 -->
     
@@ -1408,7 +1248,6 @@ function validateAge() {
     readAloudButton1.addEventListener('click', () => {
         const textToRead = document.getElementById('welcomeText').innerText + ' ' +
                            document.getElementById('cybersecurityScope').innerText + ' ' +
-                           document.getElementById('humanMistakes').innerText + ' ' +
                            document.getElementById('learningObjectiveBreak').innerText;
         const speech = new SpeechSynthesisUtterance(textToRead);
         window.speechSynthesis.speak(speech);
@@ -1420,12 +1259,8 @@ function validateAge() {
                    document.getElementById('realWorldExampleDetails').innerText + ' ' +
                    document.getElementById('hacktivismTerm').innerText + ' ' +
                    document.getElementById('hacktivismDefinition').innerText + ' ' +
-                   document.getElementById('realWorldExampleConclusion').innerText; + ' ' +
-                   document.getElementById('practiceStrongAuthentication').innerText; + ' ' +
-                   document.getElementById('practiceRegularUpdates').innerText; + ' ' +
-                   document.getElementById('practiceEncryption').innerText; + ' ' +
-                   document.getElementById('practiceMonitoring').innerText; + ' ' +
-                   document.getElementById('practiceAwarenessTraining').innerText;
+                   document.getElementById('bonus').innerText + ' ' +
+                   document.getElementById('realWorldExampleConclusion').innerText; + ' '
         const speech = new SpeechSynthesisUtterance(textToRead);
         window.speechSynthesis.speak(speech);
     });
@@ -1444,8 +1279,9 @@ function validateAge() {
         const textToRead = document.getElementById('commonMalwareTypes').innerText + ' ' +
                    document.getElementById('malwareIntro').innerText + ' ' +
                    document.getElementById('threatHeader').innerText + ' ' +
-                   document.getElementById('descriptionHeader').innerText + ' ' +
-                   document.getElementById('malwareProtectionTips').innerText;
+                   document.getElementById('malwareProtectionTips').innerText + ' ' +
+                   document.getElementById('Threat134').innerText + ' ' +
+                   document.getElementById('Threat678').innerText + ' ' 
         const speech = new SpeechSynthesisUtterance(textToRead);
         window.speechSynthesis.speak(speech);
     });
@@ -1453,20 +1289,30 @@ function validateAge() {
     readAloudButton5.addEventListener('click', () => {
         const textToRead = document.getElementById('findingSecurityRisksTitle').innerText + ' ' +
                    document.getElementById('findingSecurityRisksIntro').innerText + ' ' +
-                   document.getElementById('toolHeader').innerText + ' ' +
-                   document.getElementById('purposeHeader').innerText + ' ' +
-                   document.getElementById('securityTipBox').innerText;
+                   document.getElementById('remediationOptions').innerText + ' ' +
+                   document.getElementById('validationSteps').innerText + ' ' +
+                   document.getElementById('reportingSummary').innerText;
         const speech = new SpeechSynthesisUtterance(textToRead);
         window.speechSynthesis.speak(speech);
     });
 
     readAloudButton6.addEventListener('click', () => {
-        const textToRead = document.getElementById('securityControlsTitle').innerText + ' ' +
+        const textToRead = document.getElementById('securityControlsTitle1').innerText + ' ' +
                    document.getElementById('securityControlsIntro').innerText + ' ' +
-                   document.getElementById('controlTypeHeader').innerText + ' ' +
-                   document.getElementById('examplesHeader').innerText + ' ' +
-                   document.getElementById('purposeHeader').innerText + ' ' +
-                   document.getElementById('defenseInDepthDescription').innerText;
+                   document.getElementById('hardeningTargets').innerText + ' ' +
+                   document.getElementById('hardeningTargetsOverview').innerText + ' ' +
+                   document.getElementById('wirelessDevices').innerText + ' ' +
+                   document.getElementById('installationConsiderations').innerText + ' ' +
+                   document.getElementById('mobileSolutions').innerText + ' ' +
+                   document.getElementById('mdmAndDeploymentModels').innerText + ' ' +
+                   document.getElementById('connectionMethods').innerText + ' ' +
+                   document.getElementById('wirelessSecuritySettings').innerText + ' ' +
+                   document.getElementById('wirelessSecurityConfig').innerText + ' ' +
+                   document.getElementById('applicationSecurity').innerText + ' ' +
+                   document.getElementById('appSecurityPractices').innerText + ' ' +
+                   document.getElementById('sandboxingAndMonitoring').innerText + ' ' +
+                   document.getElementById('sandboxingAndMonitoringDetails').innerText + ' ' +
+                   document.getElementById('defenseInDepthDescription1').innerText;
         const speech = new SpeechSynthesisUtterance(textToRead);
         window.speechSynthesis.speak(speech);
     });
@@ -1475,23 +1321,9 @@ function validateAge() {
         const textToRead = document.getElementById('cryptographyTitle').innerText + ' ' +
                    document.getElementById('cryptographyIntro').innerText + ' ' +
                    document.getElementById('pkiIntro').innerText + ' ' +
-                   document.getElementById('keyHeader').innerText + ' ' +
-                   document.getElementById('purposeHeader').innerText + ' ' +
-                   document.getElementById('pkiTechnologiesTitle').innerText + ' ' +
-                   document.getElementById('pkiTechnologiesList').innerText + ' ' +
-                   document.getElementById('pkiUsage').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
-    });
-
-    readAloudButton8.addEventListener('click', () => {
-        const textToRead = document.getElementById('changeManagementTitle').innerText + ' ' +
-                   document.getElementById('changeManagementIntro').innerText + ' ' +
-                   document.getElementById('changeManagementBenefits').innerText + ' ' +
-                   document.getElementById('stepHeader').innerText + ' ' +
-                   document.getElementById('descriptionHeader').innerText + ' ' +
-                   document.getElementById('whyItMattersTitle').innerText + ' ' +
-                   document.getElementById('whyItMattersDescription').innerText;
+                   document.getElementById('pkiUsage').innerText + ' ' +
+                   document.getElementById('maintainingSecurePlatforms').innerText + ' ' +
+                   document.getElementById('sandboxingInDevelopment').innerText + ' '
         const speech = new SpeechSynthesisUtterance(textToRead);
         window.speechSynthesis.speak(speech);
     });
