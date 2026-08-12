@@ -596,14 +596,14 @@ Next →
     
     <hr>
     
-    <h2 id="securityControlsTitle">More attack surfaces</h2>
+    <h2 id="securityControlsfight">More attack surfaces</h2>
     
-    <p id="securityControlsIntro">
+    <p id="securityControlsIntrofight">
     Some more attack surfaces are unsupported systems and applications, open service ports, default credentials, managed service providers, and unsecure networks like wireless, wired, and bluetooth.
     </p>
     
     <p id = "securitycon"> In cybersecurity agent based systems are  modeled on a pull communication style. The client is the central server that pulls data from agents on demmand. Agentless Security is the same but without agents or bots carring out the scanning of the network for you, this operates in a push communication style. You push associated software to a remote system on a periodic basis. </p>
-    <p id = "con">Types of Human vectors would be phishing, vishing, smishing, disinformation, impersonation, pretexting, watering hole, Typosquatting, etc.</p>
+    <p id = "consent">Types of Human vectors would be phishing, vishing, smishing, disinformation, impersonation, pretexting, watering hole, Typosquatting, etc.</p>
     <div class="buttons">
         <button id="readAloud6">🔊 Read Aloud</button>
         <button id="next6">Next →</button>
@@ -677,13 +677,13 @@ Next →
     
     <hr>
     
-    <h2 id="securityControlsTitle">Given an scenario, analyze indicators of malicious activity.</h2>
+    <h2 id="changeManagementTitle">Given an scenario, analyze indicators of malicious activity.</h2>
     
-    <p id="securityControlsIntro"></p>
+    <p id="changeManagementIntro"></p>
     Organizations use several layers of security controls to reduce cyber risk. No single control can stop every attack, so companies combine multiple approaches to create a strong defense.
     </p>
     
-    <table id="securityControlsTable">
+    <table id="changeManagementBenefits">
     
     <tr id="securityControlsHeaderRow">
         <th id="controlTypeHeader">Attacks</th>
@@ -918,15 +918,37 @@ Next →
     readAloudButton5.addEventListener('click', () => {
         const textToRead = document.getElementById('findingSecurityRisksTitle').innerText + ' ' +
                    document.getElementById('findingSecurityRisksIntro').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
+                   const table = document.getElementById('securityToolsTable');
+
+const rows = table.querySelectorAll('tr');
+
+rows.forEach((row, index) => {
+    const cells = row.querySelectorAll('th, td');
+
+    if (index === 0) {
+        textToRead += 'The table contains two columns: ';
+    }
+
+    cells.forEach(cell => {
+        textToRead += cell.innerText + '. ';
     });
+});
+
+const speech = new SpeechSynthesisUtterance(textToRead);
+
+speech.rate = 0.95;
+speech.pitch = 1;
+speech.volume = 1;
+
+window.speechSynthesis.cancel();
+window.speechSynthesis.speak(speech);
+});
 
     readAloudButton6.addEventListener('click', () => {
-        const textToRead = document.getElementById('securityControlsTitle').innerText + ' ' +
-                   document.getElementById('securityControlsIntro').innerText + ' ' +
+        const textToRead = document.getElementById('securityControlsfight').innerText + ' ' +
+                   document.getElementById('securityControlsIntrofight').innerText + ' ' +
                    document.getElementById('securitycon').innerText + ' ' +
-                   document.getElementById('con').innerText;
+                   document.getElementById('consent').innerText;
         const speech = new SpeechSynthesisUtterance(textToRead);
         window.speechSynthesis.speak(speech);
     });
@@ -943,20 +965,36 @@ Next →
     readAloudButton8.addEventListener('click', () => {
         const textToRead = document.getElementById('changeManagementTitle').innerText + ' ' +
                    document.getElementById('changeManagementIntro').innerText + ' ' +
-                   document.getElementById('changeManagementBenefits').innerText + ' ' +
-                   document.getElementById('stepHeader').innerText + ' ' +
-                   document.getElementById('descriptionHeader').innerText + ' ' +
-                   document.getElementById('whyItMattersTitle').innerText + ' ' +
-                   document.getElementById('whyItMattersDescription').innerText;
-        const speech = new SpeechSynthesisUtterance(textToRead);
-        window.speechSynthesis.speak(speech);
+                   const table = document.getElementById('changeManagementBenefits');
+
+const rows = table.querySelectorAll('tr');
+
+rows.forEach((row, index) => {
+    const cells = row.querySelectorAll('th, td');
+
+    if (index === 0) {
+        textToRead += 'The table contains two columns: ';
+    }
+
+    cells.forEach(cell => {
+        textToRead += cell.innerText + '. ';
     });
+});
+
+const speech = new SpeechSynthesisUtterance(textToRead);
+
+speech.rate = 0.95;
+speech.pitch = 1;
+speech.volume = 1;
+
+window.speechSynthesis.cancel();
+window.speechSynthesis.speak(speech);
+});
 
     readAloudButton9.addEventListener('click', () => {
         const textToRead = document.getElementById('congratulationsTitle').innerText + ' ' +
                    document.getElementById('completionMessage').innerText + ' ' +
                    document.getElementById('understandingIntro').innerText + ' ' +
-                   Array.from(document.getElementById('understandingList').children).map(item => item.innerText).join(' ') + ' ' +
                    document.getElementById('continueLearningTitle').innerText + ' ' +
                    document.getElementById('continueLearningMessage').innerText;
         const speech = new SpeechSynthesisUtterance(textToRead);
