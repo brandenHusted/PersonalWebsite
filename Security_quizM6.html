@@ -241,6 +241,7 @@ In this module you'll learn how to implement security awareness practices.
    <p id="coreMonitoringActivities">
     Several activities make up the day-to-day work of monitoring. Log aggregation collects log data from many different sources into a central location, making it easier to search and correlate events across the environment. Alerting notifies security personnel automatically when monitoring tools detect something that matches a defined rule or threshold. Scanning actively checks systems for vulnerabilities, misconfigurations, or malware. Reporting summarizes monitoring data and findings for stakeholders, supporting both day-to-day decisions and long-term planning. Archiving retains historical log and monitoring data for a defined period, which supports investigations and compliance requirements even after the data is no longer actively needed.
    </p>
+   <img alt="logs" src="images/securitylogs.jpeg"/>
    <p id="alertResponse">
     Alert response and remediation involves acting on and validating alerts once they are generated. Quarantine isolates an affected system or file to prevent a threat from spreading further while it is investigated. Alert tuning adjusts the rules and thresholds that generate alerts, reducing false positives and ensuring the team's attention stays focused on legitimate threats rather than noise.
    </p>
@@ -321,8 +322,9 @@ In this module you'll learn how to implement security awareness practices.
     Email Security
    </h2>
    <p id="emailSecurityProtocols">
-    Several protocols work together to prevent email spoofing and phishing. Domain-based Message Authentication, Reporting, and Conformance (DMARC) tells receiving mail servers what to do with messages that fail authentication checks, and provides reporting back to the domain owner. DomainKeys Identified Mail (DKIM) adds a digital signature to outgoing email, allowing the receiving server to verify the message wasn't altered in transit. Sender Policy Framework (SPF) specifies which mail servers are authorized to send email on behalf of a domain, helping receiving servers detect spoofed sender addresses. An email gateway sits between the internet and an organization's mail server, filtering spam, malware, and phishing attempts before they reach user inboxes.
+    Several protocols work together to prevent email spoofing and phishing. Domain-based Message Authentication, Reporting, and Conformance (DMARC) tells receiving mail servers what to do with messages that fail authentication checks, and provides reporting back to the domain owner. DomainKeys Identified Mail (DKIM) adds a digital signature to outgoing email, allowing the receiving server to verify the message wasn't altered in transit. Sender Policy Framework (SPF) specifies which mail servers are authorized to send email on behalf of a domain, helping receiving servers detect spoofed sender addresses. An email gateway sits between the internet and an organization's mail server, filtering spam, malware, and phishing attempts before they reach user inboxes. Mimecast is a commercial email security service that provides advanced threat protection, including phishing detection, malware scanning, and data loss prevention for email communications.
    </p>
+   <img alt="email security" src="images/mimecast.jpeg"/>
    <h2 id="fileIntegrityMonitoring">
     File Integrity Monitoring
    </h2>
@@ -455,9 +457,6 @@ In this module you'll learn how to implement security awareness practices.
    <p id="securityControlsIntro">
    </p>
    In this lab you will be given a ticket from the IT Security team and you will have to figure out how to help this unfortunate user.
-   <title>
-    SOC Investigation Lab
-   </title>
    <div class="soc-lab">
     <div class="container">
      <!-- LAB INTRO -->
@@ -627,7 +626,7 @@ In this module you'll learn how to implement security awareness practices.
 }</pre>
       </div>
       <p class="footer-note" id="page5Paragraph4">
-       Note: This is a simulated SIEM event created for training purposes.
+       Note: This is a simulated SIEM event created for training purposes. All answers are not graded, but you should provide a complete and thorough investigation report.
       </p>
      </div>
      <!-- INVESTIGATION -->
@@ -719,10 +718,10 @@ In this module you'll learn how to implement security awareness practices.
     </div>
     <div class="infoBox" id="defenseInDepthBox">
      <strong id="defenseInDepthTitle">
-      Defense in Depth
+      Hints (Try for yourself first!)
      </strong>
      <p id="defenseInDepthDescription" style="margin-top:12px;">
-      Watch for small details that can tell you where a compromise or alert was generated at.
+      Watch for small details that can tell you where a compromise or alert was generated at. (Answers: Suspicious Powershell, powershell.exe -ExecutionPolicy Bypass -File, isolate the infected IP from the network (185.199.108.153). )
      </p>
     </div>
    </div>
