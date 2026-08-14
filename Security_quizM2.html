@@ -244,6 +244,13 @@ background:#f7f9fc;
 
 }
 
+.memory {
+        background: #f8fafc;
+        border-left: 5px solid #64748b;
+        padding: 15px;
+        margin-top: 15px;
+    }
+
 </style>
 
 </head>
@@ -400,7 +407,7 @@ Next →
     <p id="themeat">
     An attack vector is a specific pathway or method a threat actor uses to gain unauthorized access to a system, network or data. Common Vectors include phishing emails, compromised credentials, software vulnerabilities, misconfigured cloud services, and insider threats.
     </p>
-    
+    <img src="images/threatVector.png" alt="Attack Vectors"></img>
     <p id="internshipExperience">
     Attacks can hide malicious code in images using steganography, files you click on and run, in voice calls they can grab your information using social engineering. Vulnerable software and devices laying around can also be attack surfaces.
     </p>
@@ -564,7 +571,203 @@ Next →
     </tr>
 
     </table>
+    <p> Go into more detail about the topics above below: </p>
+    <!--
+    <details> creates the dropdown/expandable section.
+    When the user clicks it, the content inside becomes visible.
+-->
+    <details>
+        <!--
+        <summary> is the clickable title of the dropdown.
+        This is what the user sees before clicking.
+    -->
+        <summary><h2>1. Application Vulnerabilities</h2></summary>
+        <table>
+            <tr>
+                <th>Term</th>
+                <th>Definition</th>
+                <th>Specific Example</th>
+            </tr>
+            <tr>
+                <td><strong>Memory Injection</strong></td>
+                <td>An attacker places malicious code or data into a program's memory so the program executes or processes it in an unintended way.</td>
+                <td>An attacker exploits a vulnerable application to inject shellcode into memory, causing the application to execute commands controlled by the attacker.</td>
+            </tr>
+            <tr>
+                <td><strong>Buffer Overflow</strong></td>
+                <td>Occurs when a program writes more data into a memory buffer than the buffer can hold, potentially overwriting nearby memory.</td>
+                <td>A program allocates 10 bytes for a username but accepts 1,000 bytes. The extra data overwrites memory and could allow an attacker to execute code.</td>
+            </tr>
+            <tr>
+                <td><strong>Malicious Updates</strong></td>
+                <td>An attacker compromises an application's update mechanism and distributes malicious software disguised as a legitimate update.</td>
+                <td>An attacker compromises a software vendor's update server and distributes an update containing malware to thousands of customers.</td>
+            </tr>
+            <tr>
+                <td><strong>Race Condition</strong></td>
+                <td>A security problem that occurs when the outcome depends on the timing or order of two or more operations.</td>
+                <td>A website checks whether a user has permission to download a file, but before the download occurs, the attacker changes the file or permissions.</td>
+            </tr>
+            <tr>
+                <td><strong>TOC/TOU (Time of Check/Time of Use)</strong></td>
+                <td>A specific type of race condition where something is checked for safety or permission and then changes before it is actually used.</td>
+                <td>A program checks that a file is safe. Before the program opens it, an attacker replaces it with a symbolic link to a sensitive file.</td>
+            </tr>
+        </table>
+        <div class="memory">
+            <strong>Easy way to remember TOC/TOU:</strong><br>
+            Check → Change → Use<br><br>
+            The system says, "This is safe." The attacker changes it. The system then uses the changed version.
+        </div>
+    </details>
 
+    <details>
+        <summary><h2>2. Web-Based Vulnerabilities</h2></summary>
+        <table>
+            <tr>
+                <th>Term</th>
+                <th>Definition</th>
+                <th>Specific Example</th>
+            </tr>
+            <tr>
+                <td><strong>SQL Injection (SQLi)</strong></td>
+                <td>An attacker inserts malicious SQL commands into an application's input so the database performs unintended actions.</td>
+                <td>A login form expects a username, but an attacker manipulates the input so the application's SQL query returns unauthorized account information.</td>
+            </tr>
+            <tr>
+                <td><strong>Cross-Site Scripting (XSS)</strong></td>
+                <td>An attacker injects malicious JavaScript into a webpage that is then executed in another user's browser.</td>
+                <td>Someone posts a malicious script into a vulnerable comment box. When another user views the comment, the browser executes the attacker's script.</td>
+            </tr>
+            <tr>
+                <td><strong>Credential Stuffing</strong></td>
+                <td>An attacker uses stolen username/password combinations from one breach to attempt logins on other websites.</td>
+                <td>Someone's password was leaked from a gaming website. The attacker tries that same email/password combination on other websites.</td>
+            </tr>
+        </table>
+        <div class="memory">
+            <strong>SQL Injection vs. XSS:</strong><br>
+            SQL Injection → attacks the database<br>
+            XSS → attacks the user's browser
+        </div>
+    </details>
+
+    <details>
+        <summary><h2>3. Hardware Vulnerabilities</h2></summary>
+        <table>
+            <thead>
+                <tr>
+                    <th>Term</th>
+                    <th>Definition</th>
+                    <th>Specific Example</th>
+                </tr>
+            </thead>
+            <tr>
+                <td><strong>Firmware</strong></td>
+                <td>Software embedded directly into hardware that controls how the hardware operates. Firmware can contain vulnerabilities that attackers exploit.</td>
+                <td>A router has outdated firmware containing a vulnerability that allows an attacker to remotely execute commands.</td>
+            </tr>
+            <tr>
+                <td><strong>End-of-Life (EOL)</strong></td>
+                <td>Hardware or software that the manufacturer no longer supports or provides security updates for.</td>
+                <td>A company continues using an operating system after official support has ended, leaving newly discovered vulnerabilities potentially unpatched.</td>
+            </tr>
+            <tr>
+                <td><strong>Legacy</strong></td>
+                <td>Older hardware or software that is still being used even though newer technology is available.</td>
+                <td>A bank still operates a 15-year-old server application because replacing it would be expensive and complicated.</td>
+            </tr>
+        </table>
+        <div class="memory">
+            <strong>EOL vs. Legacy:</strong><br>
+            Legacy → Old technology still being used.<br>
+            EOL → The manufacturer has stopped officially supporting it.
+        </div>
+    </details>
+
+    <details>
+        <summary><h2>4. Virtualization Vulnerabilities</h2></summary>
+        <table>
+            <thead>
+                <tr>
+                    <th>Term</th>
+                    <th>Definition</th>
+                    <th>Specific Example</th>
+                </tr>
+            </thead>
+            <tr>
+                <td><strong>Virtual Machine Escape</strong></td>
+                <td>An attack where someone inside a virtual machine breaks out of the VM and gains access to the host or potentially other VMs.</td>
+                <td>An attacker compromises a VM and exploits a hypervisor vulnerability to execute code on the physical host.</td>
+            </tr>
+            <tr>
+                <td><strong>Resource Reuse</strong></td>
+                <td>Sensitive information from one user, process, or VM remains in a resource that is later given to another user, process, or VM.</td>
+                <td>A cloud provider gives a new customer a virtual disk that previously belonged to another customer, but the old customer's data was not properly erased.</td>
+            </tr>
+        </table>
+        <div class="memory">
+            <strong>VM Escape:</strong><br>
+            Normally: Attacker → VM<br>
+            VM escape attempts: Attacker → VM → Hypervisor/Host → Other systems
+        </div>
+    </details>
+
+    <details>
+        <summary><h2>5. Supply Chain Vulnerabilities</h2></summary>
+        <table>
+            <tr>
+                <th>Term</th>
+                <th>Definition</th>
+                <th>Specific Example</th>
+            </tr>
+            <tr>
+                <td><strong>Service Provider</strong></td>
+                <td>A third-party company that provides services your organization depends on. If that provider is compromised, your organization may also be affected.</td>
+                <td>A company's payroll provider is hacked, exposing employee information belonging to the company's customers.</td>
+            </tr>
+            <tr>
+                <td><strong>Hardware Provider</strong></td>
+                <td>A company that supplies physical equipment. A compromised or tampered device can introduce security risks before it reaches your organization.</td>
+                <td>A malicious component is secretly added to a network device during manufacturing or distribution.</td>
+            </tr>
+            <tr>
+                <td><strong>Software Provider</strong></td>
+                <td>A company that develops software your organization uses. A compromise of the vendor can result in malicious software being distributed to customers.</td>
+                <td>An attacker compromises a software vendor's build or update infrastructure and distributes a malicious update to customers.</td>
+            </tr>
+        </table>
+        <div class="memory">
+            <strong>Supply Chain Attack:</strong><br>
+            You trust Company A → Company A trusts Company B → Company B gets compromised → You are affected.
+        </div>
+    </details>
+
+    <details>
+        <summary><h2>6. Mobile Device Vulnerabilities</h2></summary>
+        <table>
+            <tr>
+                <th>Term</th>
+                <th>Definition</th>
+                <th>Specific Example</th>
+            </tr>
+            <tr>
+                <td><strong>Side Loading</strong></td>
+                <td>Installing an application from outside the device's official or approved app store/distribution system.</td>
+                <td>An Android user downloads an APK from an unknown website instead of Google Play and unknowingly installs malware.</td>
+            </tr>
+            <tr>
+                <td><strong>Jailbreaking</strong></td>
+                <td>Removing or bypassing restrictions imposed by the mobile device manufacturer or operating system so the user can obtain greater control over the device.</td>
+                <td>An iPhone user jailbreaks the device to install software that Apple normally does not allow.</td>
+            </tr>
+        </table>
+        <div class="memory">
+            <strong>Side Loading vs. Jailbreaking:</strong><br>
+            Side loading → Install an app from somewhere other than the official store.<br>
+            Jailbreaking → Remove OS restrictions to gain additional control.
+        </div>
+    </details>
     <div class="buttons">
         <button id="readAloud5">
             🔊 Read Aloud
@@ -644,13 +847,13 @@ Next →
     </p>
     
     <p id="pkiIntro">
-    Least privilege technique is a technique that give users only the permissions that they need to do their job and nothing more.Also decommissioning devices is a good way to keep devices up to date when updates become unavailable. 
+    Least privilege technique is a technique that give users only the permissions that they need to do their job and nothing more. Also decommissioning devices is a good way to keep devices up to date when updates become unavailable. 
     </p>
     
     <p id="pkiUsage">
     You can also use host-based firewalls, HIPS (host based intrusion prevention) to block unwanted atttackers. Disable unused ports, change passwords regularly, and remove unnecessary software.
     </p>
-    
+    <img src="images/HIPS.png" alt="HIPS Techniques"></img>
     <div class="buttons">
         <button id="readAloud7">🔊 Read Aloud</button>
         <button id="next7">Next →</button>
@@ -716,7 +919,7 @@ Next →
     </table>
     
     <div class="infoBox" id="defenseInDepthBox">
-        <strong id="defenseInDepthTitle">indicators in Depth</strong>
+        <strong id="defenseInDepthTitle">Indicators in Depth</strong>
         <p id="defenseInDepthDescription" style="margin-top:12px;">
         Indicators of attack are, account lockout, concurrent session usage, blocked content, out of cycle logging, resource consumption, etc.
         </p>
