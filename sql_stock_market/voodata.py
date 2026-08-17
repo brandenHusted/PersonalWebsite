@@ -1,10 +1,11 @@
-# run this code with 'python voodata.py' in terminal and it will show you VOO stock data.
-import pandas as pd
+from flask import Flask, jsonify
+from flask_cors import CORS
 import pyodbc
-import matplotlib.pyplot as plt
 
-# Connect to SQL Server
-connect = pyodbc.connect(
+app = Flask(__name__)
+CORS(app)
+
+connection_string = (
     'Driver={ODBC Driver 18 for SQL Server};'
     'Server=localhost;'
     'Database=VOOStockAnalysis;'
@@ -12,37 +13,43 @@ connect = pyodbc.connect(
     'TrustServerCertificate=yes;'
 )
 
-# Get VOO data from SQL Server
-query = """
-SELECT
-    [Date],
-    [Close]
-FROM VOO_Stock_Data
-ORDER BY [Date];
-"""
 
-data = pd.read_sql(query, connect)
+@app.route("/api/voo")
+def get_voo():
 
-# Close SQL connection
-connect.close()
+    connect = pyodbc.connect(connection_string)
+    cursor = connect.cursor()
 
-# Make sure Date is a datetime
-data["Date"] = pd.to_datetime(data["Date"])
+    cursor.execute("""
+        SELECT
+            [Date],
+            [Close]
+        FROM VOO_Stock_Data
+        WHERE [Date] IS NOT NULL
+          AND [Close] IS NOT NULL
+        ORDER BY [Date];
+    """)
 
-# Create graph
-plt.figure(figsize=(12, 6))
+    rows = cursor.fetchall()
 
-plt.plot(
-    data["Date"],
-    data["Close"],
-    label="VOO Closing Price"
-)
+    data = []
 
-plt.title("VOO Stock Price (2016-2024)")
-plt.xlabel("Date")
-plt.ylabel("Price ($)")
-plt.legend()
-plt.grid(True)
+    for row in rows:
+        data.append({
+            "date": row[0].strftime("%Y-%m-%d"),
+            "close": float(row[1])
+        })
 
-plt.tight_layout()
-plt.show()
+    cursor.close()
+    connect.close()
+
+    return jsonify(data)
+
+
+@app.route("/")
+def home():
+    return "VOO API is running. Go to /api/voo"
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
