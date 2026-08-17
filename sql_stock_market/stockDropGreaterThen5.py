@@ -78,6 +78,10 @@ WHERE Percent_Change <= -5;
 # Read SQL results
 results = pd.read_sql_query(query, connect)
 
+# Display the results in the terminal
+print("Stocks that dropped more than 5%:")
+print(results[['TradeDate', 'Ticker', 'ClosePrice', 'Percent_Change']])
+
 # Plot the results
 plt.figure(figsize=(10, 6))
 plt.plot(results['TradeDate'], results['ClosePrice'], marker='o', linestyle='-', color='red')
