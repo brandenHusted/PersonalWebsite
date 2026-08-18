@@ -431,7 +431,7 @@ To get rid of decommissioned hardware, organizations should follow secure dispos
 🔊 Read Aloud
 
 </button>
-<button id="back1">
+<button id="back2">
     Back
 </button>
 <button id="next2">
@@ -490,7 +490,7 @@ Next →
             🔊 Read Aloud
     </button>
     <div></div>
-    <button id="back2">
+    <button id="back3">
         Back
     </button>
     <button id="next3">
@@ -1189,9 +1189,6 @@ function validateAge() {
     const nextButton7 = document.getElementById('next7');
     const nextButton8 = document.getElementById('next8');
     const nextButton9 = document.getElementById('next9');
-
-    //back buttons
-    const backButton2 = document.getElementById('back2');
     //read aloud
     const readAloudButton1 = document.getElementById('readAloud1');
     const readAloudButton2 = document.getElementById('readAloud2');
@@ -1256,52 +1253,43 @@ function validateAge() {
     });
 
      // back buttons
-const backButton1 = document.getElementById('back1');
+const backButton2 = document.getElementById('back2');
+const backButton3 = document.getElementById('back3');
 const backButton4 = document.getElementById('back4');
 const backButton5 = document.getElementById('back5');
 const backButton6 = document.getElementById('back6');
 const backButton7 = document.getElementById('back7');
-const backButton8 = document.getElementById('back8');
 
-backButton1.addEventListener('click', () => {
+// Back button functionality
+backButton2.addEventListener('click', () => {
         section2.style.display = 'none';
         section1.style.display = 'block';
     });
 
-backButton2.addEventListener('click', () => {
+    backButton3.addEventListener('click', () => {
         section3.style.display = 'none';
         section2.style.display = 'block';
     });
 
-backButton3.addEventListener('click', () => {
-    section3.style.display = 'none';
-    section2.style.display = 'block';
-});
+    backButton4.addEventListener('click', () => {
+        section4.style.display = 'none';
+        section3.style.display = 'block';
+    });
 
-backButton4.addEventListener('click', () => {
-    section4.style.display = 'none';
-    section3.style.display = 'block';
-});
+    backButton5.addEventListener('click', () => {
+        section5.style.display = 'none';
+        section4.style.display = 'block';
+    });
 
-backButton5.addEventListener('click', () => {
-    section5.style.display = 'none';
-    section4.style.display = 'block';
-});
+    backButton6.addEventListener('click', () => {
+        section6.style.display = 'none';
+        section5.style.display = 'block';
+    });
 
-backButton6.addEventListener('click', () => {
-    section6.style.display = 'none';
-    section5.style.display = 'block';
-});
-
-backButton7.addEventListener('click', () => {
-    section7.style.display = 'none';
-    section6.style.display = 'block';
-});
-
-backButton8.addEventListener('click', () => {
-    section8.style.display = 'none';
-    section7.style.display = 'block';
-});
+    backButton7.addEventListener('click', () => {
+        section7.style.display = 'none';
+        section6.style.display = 'block';
+    });
 
     // Read aloud functionality
     readAloudButton1.addEventListener('click', () => {
