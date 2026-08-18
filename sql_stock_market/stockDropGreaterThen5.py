@@ -1,10 +1,13 @@
-import pandas as pd
-import yfinance as yf
+from flask import Flask, jsonify
+from flask_cors import CORS
 import pyodbc
-import matplotlib.pyplot as plt
+import pandas as pd
 
-# Connect to SQL Server
-connect = pyodbc.connect(
+app = Flask(__name__)
+CORS(app)
+
+# SQL Server connection
+connection_string = (
     'Driver={ODBC Driver 18 for SQL Server};'
     'Server=localhost;'
     'Database=StockMarketDB;'
@@ -12,85 +15,90 @@ connect = pyodbc.connect(
     'TrustServerCertificate=yes;'
 )
 
-cursor = connect.cursor()
 
-# Download Apple stock data
-data = yf.download(
-    "AAPL",
-    start="2020-01-01",
-    end="2023-01-01"
-)
+# ==============================
+# APPLE STOCK DROPS > 5%
+# ==============================
 
-# Fix yfinance MultiIndex columns
-if isinstance(data.columns, pd.MultiIndex):
-    data.columns = data.columns.get_level_values(0)
+@app.route("/api/stock-drops")
+def get_stock_drops():
 
-# Save CSV
-data.to_csv("AAPL_stock_data.csv")
+    try:
 
-print("Data downloaded and saved to AAPL_stock_data.csv")
+        connect = pyodbc.connect(connection_string)
 
-# Insert stock data into SQL Server
-for index, row in data.iterrows():
-    cursor.execute("""
-        INSERT INTO DailySTOCKDATA 
-        (TradeDate, Ticker, OpenPrice, HighPrice, LowPrice, ClosePrice, Volume)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-    """,
-    (
-        index.date(),
-        "AAPL",
-        float(row["Open"]),
-        float(row["High"]),
-        float(row["Low"]),
-        float(row["Close"]),
-        int(row["Volume"])
-    ))
+        query = """
+        SELECT *
+        FROM
+        (
+            SELECT
+                TradeDate,
+                Ticker,
+                ClosePrice,
 
-connect.commit()
+                (
+                    (
+                        ClosePrice -
+                        LAG(ClosePrice) OVER (
+                            PARTITION BY Ticker
+                            ORDER BY TradeDate
+                        )
+                    )
+                    /
+                    LAG(ClosePrice) OVER (
+                        PARTITION BY Ticker
+                        ORDER BY TradeDate
+                    )
+                ) * 100 AS Percent_Change
 
-# Find stock drops greater than 5%
-query = """
-SELECT *
-FROM
-(
-    SELECT
-        TradeDate,
-        Ticker,
-        ClosePrice,
-        ((ClosePrice - LAG(ClosePrice) OVER (
-            PARTITION BY Ticker 
-            ORDER BY TradeDate
-        )) 
-        /
-        LAG(ClosePrice) OVER (
-            PARTITION BY Ticker 
-            ORDER BY TradeDate
-        )) * 100 AS Percent_Change
+            FROM DailySTOCKDATA
 
-    FROM DailySTOCKDATA
+            WHERE Ticker = 'AAPL'
 
-) StockChanges
+        ) StockChanges
 
-WHERE Percent_Change <= -5;
-"""
+        WHERE Percent_Change <= -5
 
-# Read SQL results
-results = pd.read_sql_query(query, connect)
+        ORDER BY TradeDate;
+        """
 
-# Display the results in the terminal
-print("Stocks that dropped more than 5%:")
-print(results[['TradeDate', 'Ticker', 'ClosePrice', 'Percent_Change']])
+        results = pd.read_sql_query(
+            query,
+            connect
+        )
 
-# Plot the results
-plt.figure(figsize=(10, 6))
-plt.plot(results['TradeDate'], results['ClosePrice'], marker='o', linestyle='-', color='red')
-plt.title('Stock Drops Greater Than 5%')
-plt.xlabel('Trade Date')
-plt.ylabel('Close Price')
-plt.xticks(rotation=45)
-plt.grid()
-plt.tight_layout()
-plt.show()
+        connect.close()
 
-connect.close()
+        data = results.to_dict(
+            orient="records"
+        )
+
+        return jsonify(data)
+
+    except Exception as e:
+
+        return jsonify({
+            "error": str(e)
+        }), 500
+
+
+# ==============================
+# HOME
+# ==============================
+
+@app.route("/")
+def home():
+
+    return """
+    Stock Market API is running.
+
+    Available endpoints:
+    /api/stock-drops
+    """
+
+
+if __name__ == "__main__":
+
+    app.run(
+        debug=True
+    )

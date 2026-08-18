@@ -1,11 +1,12 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
 import pyodbc
+import pandas as pd
 
 app = Flask(__name__)
 CORS(app)
 
-connection_string = (
+voo_connection_string = (
     'Driver={ODBC Driver 18 for SQL Server};'
     'Server=localhost;'
     'Database=VOOStockAnalysis;'
@@ -13,37 +14,47 @@ connection_string = (
     'TrustServerCertificate=yes;'
 )
 
-
 @app.route("/api/voo")
 def get_voo():
 
-    connect = pyodbc.connect(connection_string)
-    cursor = connect.cursor()
+    try:
 
-    cursor.execute("""
-        SELECT
-            [Date],
-            [Close]
-        FROM VOO_Stock_Data
-        WHERE [Date] IS NOT NULL
-          AND [Close] IS NOT NULL
-        ORDER BY [Date];
-    """)
+        connect = pyodbc.connect(
+            voo_connection_string
+        )
 
-    rows = cursor.fetchall()
+        cursor = connect.cursor()
 
-    data = []
+        cursor.execute("""
+            SELECT
+                [Date],
+                [Close]
+            FROM dbo.VOO_Stock_Data
+            WHERE [Date] IS NOT NULL
+              AND [Close] IS NOT NULL
+            ORDER BY [Date];
+        """)
 
-    for row in rows:
-        data.append({
-            "date": row[0].strftime("%Y-%m-%d"),
-            "close": float(row[1])
-        })
+        rows = cursor.fetchall()
 
-    cursor.close()
-    connect.close()
+        data = [
+            {
+                "date": row[0].strftime("%Y-%m-%d"),
+                "close": float(row[1])
+            }
+            for row in rows
+        ]
 
-    return jsonify(data)
+        cursor.close()
+        connect.close()
+
+        return jsonify(data)
+
+    except Exception as e:
+
+        return jsonify({
+            "error": str(e)
+        }), 500
 
 
 @app.route("/")
@@ -53,3 +64,4 @@ def home():
 
 if __name__ == "__main__":
     app.run(debug=True)
+

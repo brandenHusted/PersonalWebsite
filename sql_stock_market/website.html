@@ -1,86 +1,554 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>VOO Stock Analysis</title>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Stock Market Analysis</title>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            text-align: center;
+
+            margin: 40px;
+
+            background: #f5f5f5;
+
+        }
+
+        h1 {
+
+            margin-bottom: 10px;
+
+        }
+
+        .description {
+
+            color: #555;
+
+            margin-bottom: 30px;
+
+        }
+
+        button {
+
+            padding: 12px 25px;
+
+            margin: 10px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #2563eb;
+
+            color: white;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+        }
+
+        button:hover {
+
+            background: #1d4ed8;
+
+        }
+
+        button:disabled {
+
+            background: #999;
+
+            cursor: not-allowed;
+
+        }
+
+        #mainPage {
+
+            display: block;
+
+        }
+
+        #graphPage {
+
+            display: none;
+
+        }
+
+        #chartContainer {
+
+            max-width: 1000px;
+
+            margin: 30px auto;
+
+            background: white;
+
+            padding: 20px;
+
+            border-radius: 12px;
+
+        }
+
+        #errorMessage {
+
+            color: red;
+
+            margin-top: 20px;
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <h1>VOO Stock Price (run voodata.py to see graph)</h1>
 
-    <canvas id="vooChart"></canvas>
+<!-- ========================= -->
+<!-- MAIN PAGE -->
+<!-- ========================= -->
 
-    <script>
+<div id="mainPage">
 
-        async function loadVOO() {
+    <h1>Stock Market Analysis (run voodata.py from git respository or stockDropGreaterThen5.py but not both at the same time)</h1>
 
-            const response = await fetch(
-                "http://127.0.0.1:5000/api/voo"
+    <p class="description">
+
+        Choose a stock analysis to view.
+
+    </p>
+
+
+    <button
+        id="vooButton"
+        onclick="showVOO()"
+    >
+
+        View VOO Graph
+
+    </button>
+
+
+    <button
+        id="appleButton"
+        onclick="showApple()"
+    >
+
+        View Apple Drops > 5%
+
+    </button>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- GRAPH PAGE -->
+<!-- ========================= -->
+
+<div id="graphPage">
+
+    <h1 id="graphTitle">
+        Stock Graph
+    </h1>
+
+
+    <div id="chartContainer">
+
+        <canvas id="stockChart"></canvas>
+
+    </div>
+
+
+    <div id="errorMessage"></div>
+
+
+    <button
+        onclick="returnToMain()"
+    >
+
+        ← Back to Main Page
+
+    </button>
+
+</div>
+
+
+
+<script>
+
+
+let stockChart = null;
+
+
+
+// ====================================
+// SHOW VOO
+// ====================================
+
+async function showVOO() {
+
+    disableButtons();
+
+    showGraphPage();
+
+    document.getElementById(
+        "graphTitle"
+    ).textContent = "VOO Stock Price";
+
+
+    try {
+
+        const response = await fetch(
+            "http://127.0.0.1:5000/api/voo"
+        );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "VOO API request failed"
             );
 
-            const data = await response.json();
+        }
 
-            const dates = data.map(row => row.date);
-            const prices = data.map(row => row.close);
 
-            const ctx = document
-                .getElementById("vooChart")
-                .getContext("2d");
+        const data = await response.json();
 
-            new Chart(ctx, {
 
-                type: "line",
+        if (data.error) {
 
-                data: {
+            throw new Error(
+                data.error
+            );
 
-                    labels: dates,
+        }
 
-                    datasets: [{
-                        label: "VOO Closing Price",
-                        data: prices,
+
+        const dates = data.map(
+            row => row.date
+        );
+
+
+        const prices = data.map(
+            row => row.close
+        );
+
+
+        createChart(
+
+            dates,
+
+            prices,
+
+            "VOO Closing Price"
+
+        );
+
+    }
+
+    catch (error) {
+
+        showError(error);
+
+    }
+
+}
+
+
+
+// ====================================
+// SHOW APPLE
+// ====================================
+
+async function showApple() {
+
+    disableButtons();
+
+    showGraphPage();
+
+    document.getElementById(
+        "graphTitle"
+    ).textContent = "Apple Stock Drops Greater Than 5%";
+
+
+    try {
+
+        const response = await fetch(
+            "http://127.0.0.1:5000/api/stock-drops"
+        );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Apple stock API request failed"
+            );
+
+        }
+
+
+        const data = await response.json();
+
+
+        if (data.error) {
+
+            throw new Error(
+                data.error
+            );
+
+        }
+
+
+        const dates = data.map(
+            row => {
+
+                return new Date(
+                    row.TradeDate
+                ).toLocaleDateString();
+
+            }
+        );
+
+
+        const drops = data.map(
+            row => Number(
+                row.Percent_Change
+            )
+        );
+
+
+        createChart(
+
+            dates,
+
+            drops,
+
+            "AAPL Daily % Change"
+
+        );
+
+    }
+
+    catch (error) {
+
+        showError(error);
+
+    }
+
+}
+
+
+
+// ====================================
+// CREATE CHART
+// ====================================
+
+function createChart(
+    labels,
+    values,
+    label
+) {
+
+
+    const ctx = document
+        .getElementById(
+            "stockChart"
+        )
+        .getContext("2d");
+
+
+    if (stockChart) {
+
+        stockChart.destroy();
+
+    }
+
+
+    stockChart = new Chart(
+        ctx,
+        {
+
+            type: "line",
+
+            data: {
+
+                labels: labels,
+
+                datasets: [
+
+                    {
+
+                        label: label,
+
+                        data: values,
+
                         borderWidth: 2,
-                        pointRadius: 0
-                    }]
 
-                },
+                        pointRadius: 3,
 
-                options: {
+                        tension: 0.2
 
-                    responsive: true,
+                    }
 
-                    scales: {
+                ]
 
-                        x: {
-                            title: {
-                                display: true,
-                                text: "Date"
-                            }
-                        },
+            },
 
-                        y: {
-                            title: {
-                                display: true,
-                                text: "Price ($)"
-                            }
+            options: {
+
+                responsive: true,
+
+                scales: {
+
+                    x: {
+
+                        title: {
+
+                            display: true,
+
+                            text: "Date"
+
+                        }
+
+                    },
+
+                    y: {
+
+                        title: {
+
+                            display: true,
+
+                            text: "Value"
+
                         }
 
                     }
 
                 }
 
-            });
+            }
 
         }
+    );
 
-        loadVOO();
+}
 
-    </script>
+
+
+// ====================================
+// SHOW GRAPH PAGE
+// ====================================
+
+function showGraphPage() {
+
+    document.getElementById(
+        "mainPage"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "graphPage"
+    ).style.display = "block";
+
+}
+
+
+
+// ====================================
+// DISABLE BOTH BUTTONS
+// ====================================
+
+function disableButtons() {
+
+    document.getElementById(
+        "vooButton"
+    ).disabled = true;
+
+
+    document.getElementById(
+        "appleButton"
+    ).disabled = true;
+
+}
+
+
+
+// ====================================
+// BACK TO MAIN
+// ====================================
+
+function returnToMain() {
+
+
+    if (stockChart) {
+
+        stockChart.destroy();
+
+        stockChart = null;
+
+    }
+
+
+    document.getElementById(
+        "graphPage"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "mainPage"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "vooButton"
+    ).disabled = false;
+
+
+    document.getElementById(
+        "appleButton"
+    ).disabled = false;
+
+
+    document.getElementById(
+        "errorMessage"
+    ).textContent = "";
+
+}
+
+
+
+// ====================================
+// ERROR HANDLING
+// ====================================
+
+function showError(error) {
+
+    document.getElementById(
+        "errorMessage"
+    ).textContent =
+        "Error loading graph: " +
+        error.message;
+
+}
+
+</script>
+
 
 </body>
 
