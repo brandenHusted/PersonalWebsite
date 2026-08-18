@@ -253,6 +253,9 @@ In this module you'll learn the importance of automation and orchestration relat
     <button class="read-aloud" id="readAloud2" type="button">
      🔊 Read Aloud
     </button>
+    <button id="back2">
+        Back
+    </button>
     <button id="next2">
      Next &rarr;
     </button>
@@ -298,6 +301,9 @@ In this module you'll learn the importance of automation and orchestration relat
     </button>
     <div>
     </div>
+    <button id="back3">
+        Back
+    </button>
     <button id="next3">
      Next &rarr;
     </button>
@@ -424,6 +430,9 @@ In this module you'll learn the importance of automation and orchestration relat
     </button>
     <div>
     </div>
+    <button id="back4">
+        Back
+    </button>
     <button id="next4">
      Next &rarr;
     </button>
@@ -513,6 +522,9 @@ In this module you'll learn the importance of automation and orchestration relat
    <div class="buttons">
     <button class="read-aloud" id="readAloud5" type="button">
      🔊 Read Aloud
+    </button>
+    <button id="back5">
+        Back
     </button>
     <button id="next5">
      Next &rarr;
@@ -740,6 +752,33 @@ In this module you'll learn the importance of automation and orchestration relat
     });
 
     window.addEventListener("beforeunload", stopReading);
+
+     // back buttons
+const backButton2 = document.getElementById('back2');
+const backButton3 = document.getElementById('back3');
+const backButton4 = document.getElementById('back4');
+const backButton5 = document.getElementById('back5');
+
+// Hide the current section and show the previous section when "Back" is clicked
+backButton2.addEventListener('click', () => {
+    section2.style.display = 'none';
+    section1.style.display = 'block';
+});
+
+backButton3.addEventListener('click', () => {
+    section3.style.display = 'none';
+    section2.style.display = 'block';
+});
+
+backButton4.addEventListener('click', () => {
+    section4.style.display = 'none';
+    section3.style.display = 'block';
+});
+
+backButton5.addEventListener('click', () => {
+    section5.style.display = 'none';
+    section4.style.display = 'block';
+});
 });
   </script>
  </body>
