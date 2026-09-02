@@ -125,7 +125,7 @@
 
 <div id="mainPage">
 
-    <h1>Stock Market Analysis (run voodata.py from git respository or stockDropGreaterThen5.py but not both at the same time)</h1>
+    <h1>Stock Market Analysis (run voodata.py from git respository or stockDropGreaterThen5.py but not both at the same time and this works only with localhost)</h1>
 
     <p class="description">
 
@@ -195,8 +195,6 @@
 
 let stockChart = null;
 
-
-
 // ====================================
 // SHOW VOO
 // ====================================
@@ -230,7 +228,7 @@ async function showVOO() {
 
         const data = await response.json();
 
-
+        console.log(data); // Log the data for debugging
         if (data.error) {
 
             throw new Error(
@@ -542,7 +540,7 @@ function showError(error) {
     document.getElementById(
         "errorMessage"
     ).textContent =
-        "Error loading graph: " +
+        "(You can not have two programs running at once) Error loading graph: " +
         error.message;
 
 }

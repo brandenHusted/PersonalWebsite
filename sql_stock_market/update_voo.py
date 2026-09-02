@@ -41,6 +41,7 @@ connection_string = (
     'TrustServerCertificate=yes;'
 )
 
+# connect to data base and use cursor to execute SQL commands
 connect = pyodbc.connect(connection_string)
 cursor = connect.cursor()
 
@@ -72,7 +73,6 @@ for _, row in data.iterrows():
         """,
         trade_date
     )
-
     exists = cursor.fetchone()[0]
 
 
