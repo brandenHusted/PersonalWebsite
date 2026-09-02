@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 import pyodbc
 import pandas as pd
-
+# runs daily to update the VOO stock data in the SQL Server database, and this Flask app serves that data through an API endpoint.
 app = Flask(__name__)
 CORS(app)
 
