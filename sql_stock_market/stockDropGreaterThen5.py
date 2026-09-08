@@ -4,6 +4,7 @@ import pyodbc
 import pandas as pd
 
 app = Flask(__name__)
+# enables cross-origin resource sharing (CORS) for the Flask application, allowing it to handle requests from different origins.
 CORS(app)
 
 # SQL Server connection
