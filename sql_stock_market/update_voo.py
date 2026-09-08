@@ -69,7 +69,7 @@ try:
     )
 
     log("Connecting to SQL Server...")
-
+    # Connect python to databases
     connect = pyodbc.connect(connection_string)
     cursor = connect.cursor()
 
