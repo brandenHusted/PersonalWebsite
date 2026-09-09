@@ -2818,7 +2818,7 @@ const questionBank = [
             "Physicial security controls on the company server"
         ],
         correctAnswer: 2,
-        domain: "Security Operations",
+        domain: "General Security Concepts",
         explanation: "IDS (intrusion detection system)."
     },
 
@@ -2831,9 +2831,10 @@ const questionBank = [
             "Warn the user directly about the potential phishing attempt"
         ],
         correctAnswer: 2,
-        domain: "Security Operations",
+        domain: "General Security Concepts",
         explanation: "We are unsure if this is a real threat so we would then inform the IT department."
     },
+
 
     {
         question: "Your company is developing a new mobile app that will allow customers to securely access their account information. The app will transmit sensitive data such as social security numbers and credit card details. Which of the following cryptographic techniques would be most appropriate to ensure the confidentiality and integrity of the communication between the app and the company's servers?",
@@ -2844,9 +2845,48 @@ const questionBank = [
             "AES"
         ],
         correctAnswer: 2,
+        domain: "General Security Concepts",
+        explanation: "MD5 turns data into a 32-character hexadecimal string and DSA is a hashing algorithm. AES will not secure communications alone because it is a one way function although SSL secure socket layer is the best for this question."
+    },
+    
+    {
+        question: "Your company recently deployed a new web application for customer self-service. The application allows users to reset their passwords and update account information. Which of the following is most likely to be a vulnerability that could be exploited as an attack vector to gain unauthorized access to user accounts?",
+        answers: [
+            "Weak password requirements for user accounts.",
+            "Lack of a firewall on the web server.",
+            "Outdated operating system on employee workstations.",
+            "Physical security weaknesses in the server room."
+        ],
+        correctAnswer: 0,
+        domain: "General Security Concepts",
+        explanation: "Users can set up weak passwords."
+    },
+
+    {
+        question: "A company is developing a new mobile app to allow customers to remotely manage their accounts. The app will transmit sensitive financial data. To ensure data security during transmission, which of the following security protocols would be most appropriate to implement?",
+        answers: [
+            "SSL",
+            "SSH",
+            "FTPS",
+            "TLS"
+        ],
+        correctAnswer: 3,
+        domain: "General Security Concepts",
+        explanation: "(FTPS is not secure in real time) TLS (Transport Layer Security) is the most appropriate protocol for securing data transmission in a mobile app, as it provides encryption and integrity for sensitive financial data."
+    },
+
+    {
+        question: "A company is implementing a new cloud-based service for managing customer support tickets. The service integrates with the company's internal CRM system containing sensitive customer data. To effectively assess the security risks associated with this integration, which of the following should be the primary focus for the security team?",
+        answers: [
+            "Analyzing the security posture of the cloud service provider.",
+            "Conducting vulnerability scans on the internal CRM system.",
+            "Reviewing the access controls for the customer support ticketing system.",
+            "Implementing data encryption for customer data at rest within the cloud service."
+        ],
+        correctAnswer: 2,
         domain: "Security Operations",
-        explanation: "MD5 and DSA and AES will not secure communications alone although SSL secure socket layer does."
-    }
+        explanation: "Reviewing access controls for the ticketing system is the most critical as it directly addresses how the integration with the CRM system might introduce vulnerabilities."
+    },
 
 ];
 
