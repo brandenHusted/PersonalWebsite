@@ -1207,11 +1207,11 @@ const questionBank = [
         question: "Which is an example of something you know?",
         answers: [
             "Fingerprint",
-            "Password",
             "Smart card",
+            "Password",
             "Security key"
         ],
-        correctAnswer: 1,
+        correctAnswer: 2,
         domain: "Identity and Access Management",
         explanation: "Passwords and PINs are knowledge-based authentication factors."
     },
@@ -1219,12 +1219,12 @@ const questionBank = [
     {
         question: "What is single sign-on designed to provide?",
         answers: [
-            "One authentication event for access to multiple authorized applications",
             "One password for every user",
             "No authentication",
-            "Only physical access"
+            "Only physical access",
+            "One authentication event for access to multiple authorized applications"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Identity and Access Management",
         explanation: "SSO allows users to authenticate once and access multiple authorized applications."
     },
@@ -1232,12 +1232,12 @@ const questionBank = [
     {
         question: "What does RBAC use to determine access?",
         answers: [
-            "Job roles",
             "Random selection",
+            "Job roles",
             "Computer brand",
             "Screen resolution"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Identity and Access Management",
         explanation: "Role-based access control assigns permissions based on a user's organizational role."
     },
@@ -1245,12 +1245,12 @@ const questionBank = [
     {
         question: "What is the purpose of account lockout policies?",
         answers: [
-            "Slow or prevent repeated unauthorized authentication attempts",
             "Increase storage space",
             "Disable encryption",
-            "Improve Wi-Fi speed"
+            "Improve Wi-Fi speed",
+            "Slow or prevent repeated unauthorized authentication attempts"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Identity and Access Management",
         explanation: "Account lockout policies can temporarily lock an account after repeated failed authentication attempts."
     },
@@ -1258,12 +1258,12 @@ const questionBank = [
     {
         question: "What is privileged access management designed to control?",
         answers: [
-            "Highly privileged accounts and administrative access",
             "Printer settings only",
             "Guest Wi-Fi only",
-            "Public websites"
+            "Public websites",
+            "Highly privileged accounts and administrative access"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Identity and Access Management",
         explanation: "PAM controls, monitors, and protects highly privileged accounts."
     },
@@ -1271,12 +1271,12 @@ const questionBank = [
     {
         question: "What is provisioning?",
         answers: [
-            "Creating and configuring access for a user or system",
             "Deleting backups",
             "Scanning ports",
-            "Encrypting a hard drive"
+            "Encrypting a hard drive",
+            "Creating and configuring access for a user or system"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Identity and Access Management",
         explanation: "Provisioning creates accounts and grants the appropriate access needed by users or systems."
     },
@@ -1284,12 +1284,12 @@ const questionBank = [
     {
         question: "What is deprovisioning?",
         answers: [
-            "Removing access when it is no longer needed",
             "Creating a new account",
             "Adding privileges",
-            "Installing software"
+            "Installing software",
+            "Removing access when it is no longer needed"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Identity and Access Management",
         explanation: "Deprovisioning removes accounts or access when users leave an organization or no longer require permissions."
     },
@@ -1297,12 +1297,12 @@ const questionBank = [
     {
         question: "Which access control model assigns permissions based on attributes such as department, location, or device security status?",
         answers: [
-            "ABAC",
             "RBAC",
             "DAC",
-            "MAC only"
+            "MAC only",
+            "ABAC"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Identity and Access Management",
         explanation: "Attribute-based access control makes authorization decisions using attributes about users, resources, and environmental conditions."
     },
@@ -1450,12 +1450,12 @@ const questionBank = [
     {
         question: "What is the primary purpose of a security policy?",
         answers: [
-            "Define organizational security expectations and requirements",
             "Install antivirus software",
+            "Define organizational security expectations and requirements",
             "Configure every workstation",
             "Replace backups"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Program Management",
         explanation: "Security policies establish organizational expectations and requirements for protecting information and systems."
     },
@@ -1463,12 +1463,12 @@ const questionBank = [
     {
         question: "What does risk assessment identify?",
         answers: [
-            "Threats, vulnerabilities, likelihood, and potential impact",
             "Only employee salaries",
+            "Threats, vulnerabilities, likelihood, and potential impact",
             "Only software licenses",
             "Only physical locations"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Program Management",
         explanation: "Risk assessments evaluate threats, vulnerabilities, likelihood, and potential impact."
     },
@@ -1476,12 +1476,12 @@ const questionBank = [
     {
         question: "What is risk mitigation?",
         answers: [
-            "Reducing the likelihood or impact of a risk",
             "Ignoring every risk",
+            "Reducing the likelihood or impact of a risk",
             "Removing all employees",
             "Increasing vulnerabilities"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Program Management",
         explanation: "Risk mitigation uses controls or other actions to reduce the likelihood or impact of a risk."
     },
@@ -1489,12 +1489,12 @@ const questionBank = [
     {
         question: "What does risk acceptance mean?",
         answers: [
-            "The organization knowingly chooses to tolerate a risk",
             "The organization eliminates the risk",
+            "The organization knowingly chooses to tolerate a risk",
             "The organization transfers the risk to insurance",
             "The organization hides the risk"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Program Management",
         explanation: "Risk acceptance occurs when an organization decides that the cost of addressing a risk is not justified or otherwise chooses to tolerate it."
     },
@@ -1502,12 +1502,12 @@ const questionBank = [
     {
         question: "What is risk transfer?",
         answers: [
-            "Moving some financial or operational impact of a risk to another party",
             "Deleting the risk",
+            "Moving some financial or operational impact of a risk to another party",
             "Ignoring the risk",
             "Increasing the risk"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Program Management",
         explanation: "Risk transfer shifts some consequences of a risk to another party, such as through insurance or contracts."
     },
@@ -1515,12 +1515,12 @@ const questionBank = [
     {
         question: "What is a business impact analysis designed to determine?",
         answers: [
-            "The effect of disruptions on business operations",
             "The strength of passwords",
+            "The effect of disruptions on business operations",
             "The number of firewalls",
             "The speed of a processor"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Program Management",
         explanation: "A BIA identifies critical business functions and analyzes the effects of disruptions."
     },
@@ -1528,12 +1528,12 @@ const questionBank = [
     {
         question: "What does RTO stand for?",
         answers: [
-            "Recovery Time Objective",
             "Risk Transfer Operation",
+            "Recovery Time Objective",
             "Remote Technology Operation",
             "Recovery Testing Organization"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Program Management",
         explanation: "Recovery Time Objective defines the target amount of time within which a service should be restored after a disruption."
     },
@@ -1541,12 +1541,12 @@ const questionBank = [
     {
         question: "What does RPO define?",
         answers: [
-            "The maximum acceptable amount of data loss measured in time",
             "The maximum number of administrators",
+            "The maximum acceptable amount of data loss measured in time",
             "The number of backup servers",
             "The number of security policies"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Program Management",
         explanation: "Recovery Point Objective defines the amount of data loss an organization can tolerate, expressed as a period of time."
     },
@@ -1554,12 +1554,12 @@ const questionBank = [
     {
         question: "What is a disaster recovery plan used for?",
         answers: [
-            "Restoring critical systems after a major disruption",
             "Creating employee passwords",
+            "Restoring critical systems after a major disruption",
             "Scanning emails",
             "Replacing vulnerability management"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Program Management",
         explanation: "Disaster recovery plans define how critical systems and services will be restored following a major disruption."
     },
@@ -1567,12 +1567,12 @@ const questionBank = [
     {
         question: "Why should disaster recovery plans be tested?",
         answers: [
-            "To identify weaknesses before a real disaster occurs",
             "To eliminate the need for backups",
+            "To identify weaknesses before a real disaster occurs",
             "To avoid documenting procedures",
             "To increase network traffic"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Program Management",
         explanation: "Testing identifies gaps and weaknesses so the organization can improve its recovery capabilities."
     },
@@ -1585,12 +1585,12 @@ const questionBank = [
     {
         question: "What is data classification used for?",
         answers: [
-            "Determining how information should be handled and protected",
             "Increasing CPU speed",
+            "Determining how information should be handled and protected",
             "Removing user accounts",
             "Configuring Wi-Fi"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Operations",
         explanation: "Data classification assigns sensitivity levels that help determine appropriate security controls."
     },
@@ -1599,11 +1599,11 @@ const questionBank = [
         question: "Which data should generally receive the strongest protection?",
         answers: [
             "Public information",
-            "Highly sensitive confidential information",
             "Marketing slogans",
+            "Highly sensitive confidential information",
             "Public press releases"
         ],
-        correctAnswer: 1,
+        correctAnswer: 2,
         domain: "Security Operations",
         explanation: "Highly sensitive information generally requires stronger controls because unauthorized disclosure could cause significant harm."
     },
@@ -1611,12 +1611,12 @@ const questionBank = [
     {
         question: "What is data at rest?",
         answers: [
-            "Data stored on a device or storage system",
             "Data traveling across a network",
+            "Data stored on a device or storage system",
             "Data being actively transmitted",
             "Data being deleted"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Operations",
         explanation: "Data at rest refers to information stored on devices, databases, disks, or other storage."
     },
@@ -1624,12 +1624,12 @@ const questionBank = [
     {
         question: "What is data in transit?",
         answers: [
+            "Archived data",
             "Data being transmitted between systems",
             "Data stored on a hard drive",
-            "Archived data",
             "Deleted data"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Operations",
         explanation: "Data in transit is information moving between systems or network locations."
     },
@@ -1637,12 +1637,12 @@ const questionBank = [
     {
         question: "Which security control can prevent unauthorized USB devices from being used on endpoints?",
         answers: [
-            "Device control",
             "DNS",
+            "Device control",
             "NTP",
             "DHCP"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Operations",
         explanation: "Device control policies can restrict or manage removable media and other peripheral devices."
     },
@@ -1650,12 +1650,12 @@ const questionBank = [
     {
         question: "What is secure disposal intended to accomplish?",
         answers: [
-            "Prevent sensitive information from being recovered from discarded media",
             "Increase storage capacity",
+            "Prevent sensitive information from being recovered from discarded media",
             "Improve network speed",
             "Create user accounts"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Operations",
         explanation: "Secure disposal prevents sensitive information from being recovered from retired equipment or media."
     },
@@ -1746,12 +1746,12 @@ const questionBank = [
     {
         question: "Which protocol allows a client to retrieve email while keeping messages synchronized on the server?",
         answers: [
-            "IMAP",
             "SMTP",
             "FTP",
+            "IMAP",
             "SSH"
         ],
-        correctAnswer: 0,
+        correctAnswer: 2,
         domain: "Security Architecture",
         explanation: "IMAP allows clients to access and synchronize messages stored on the mail server."
     },
@@ -1772,12 +1772,12 @@ const questionBank = [
     {
         question: "What is LDAP commonly used for?",
         answers: [
-            "Directory services and identity information",
             "Encrypting hard drives",
+            "Directory services and identity information",
             "Blocking malware",
             "Packet capture"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Identity and Access Management",
         explanation: "LDAP is commonly used to access and manage directory information such as users and groups."
     },
@@ -1850,12 +1850,12 @@ const questionBank = [
     {
         question: "What is an insider threat?",
         answers: [
-            "A threat originating from someone with authorized organizational access",
             "Only an internet-based attack",
             "A hardware failure",
+            "A threat originating from someone with authorized organizational access",
             "A DNS server"
         ],
-        correctAnswer: 0,
+        correctAnswer: 2,
         domain: "Threats, Vulnerabilities & Mitigations",
         explanation: "Insider threats involve authorized individuals or entities misusing their access, intentionally or unintentionally."
     },
@@ -1902,12 +1902,12 @@ const questionBank = [
     {
         question: "Why should unused services be disabled?",
         answers: [
-            "They can provide unnecessary attack surfaces",
             "They always increase performance",
             "They prevent backups",
+            "They can provide unnecessary attack surfaces",
             "They eliminate authentication"
         ],
-        correctAnswer: 0,
+        correctAnswer: 2,
         domain: "Security Operations",
         explanation: "Unused services can expose unnecessary ports and vulnerabilities, so disabling them reduces the attack surface."
     },
@@ -1941,12 +1941,12 @@ const questionBank = [
     {
         question: "What is a change management process designed to prevent?",
         answers: [
-            "Unauthorized or poorly planned changes from causing problems",
             "Security awareness",
             "Data encryption",
-            "User authentication"
+            "User authentication",
+            "Unauthorized or poorly planned changes",
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Security Program Management",
         explanation: "Change management evaluates, approves, documents, and tracks changes to reduce operational and security risks."
     },
@@ -1993,12 +1993,12 @@ const questionBank = [
     {
         question: "Which document defines specific security requirements between a customer and service provider?",
         answers: [
-            "Service-level agreement",
             "Password policy",
             "Incident ticket",
+            "Service-level agreement",
             "Asset tag"
         ],
-        correctAnswer: 0,
+        correctAnswer: 2,
         domain: "Security Program Management",
         explanation: "A service-level agreement can define service expectations, responsibilities, availability requirements, and other contractual commitments."
     },
@@ -2019,12 +2019,12 @@ const questionBank = [
     {
         question: "Which security principle assumes that network location alone should not determine whether access is trusted?",
         answers: [
-            "Zero trust",
             "Open access",
+            "Zero trust",
             "Implicit trust",
             "Single sign-on"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "General Security Concepts",
         explanation: "Zero trust does not automatically trust users or systems based solely on their network location."
     },
@@ -2123,12 +2123,12 @@ const questionBank = [
     {
         question: "What is a firewall rule's purpose?",
         answers: [
-            "Allow or deny traffic based on defined criteria",
             "Encrypt all stored files",
+            "Allow or deny traffic based on defined criteria",
             "Create backups",
             "Manage employee payroll"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Architecture",
         explanation: "Firewall rules determine whether traffic is permitted or denied based on criteria such as addresses, ports, and protocols."
     },
@@ -2162,12 +2162,12 @@ const questionBank = [
     {
         question: "What is key rotation?",
         answers: [
-            "Replacing cryptographic keys on a regular or event-driven basis",
             "Deleting all encryption",
             "Changing usernames",
-            "Rotating a physical server"
+            "Rotating a physical server",
+            "Replacing cryptographic keys on a regular or event-driven basis"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Cryptography",
         explanation: "Key rotation replaces cryptographic keys to limit the potential impact if a key is compromised."
     },
@@ -2175,12 +2175,12 @@ const questionBank = [
     {
         question: "What is the purpose of salting a password before hashing it?",
         answers: [
-            "Make precomputed password attacks more difficult",
-            "Make passwords reversible",
             "Allow plaintext storage",
-            "Remove the need for authentication"
+            "Remove the need for authentication",
+            "Make passwords reversible",
+            "Make precomputed password attacks more difficult"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Cryptography",
         explanation: "A unique salt changes the input to the hash function, making precomputed rainbow-table attacks much less effective."
     },
@@ -2188,12 +2188,12 @@ const questionBank = [
     {
         question: "Which principle states that systems should be designed to remain secure even when some security controls fail?",
         answers: [
-            "Defense in depth",
             "Single point of failure",
             "Implicit trust",
-            "Open access"
+            "Open access",
+            "Defense in depth"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "General Security Concepts",
         explanation: "Defense in depth uses multiple independent layers so a single failed control does not necessarily result in compromise."
     },
@@ -2201,12 +2201,12 @@ const questionBank = [
     {
         question: "What is the purpose of a security group in an identity system?",
         answers: [
-            "Organize users or systems so permissions can be assigned efficiently",
             "Encrypt files",
             "Block malware",
-            "Configure DNS"
+            "Configure DNS",
+            "Organize users or systems"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Identity and Access Management",
         explanation: "Groups allow administrators to organize identities and assign permissions to groups instead of individual users."
     },
@@ -2214,12 +2214,12 @@ const questionBank = [
     {
         question: "Which principle helps prevent an administrator from using a powerful account for everyday tasks?",
         answers: [
-            "Least privilege",
             "Non-repudiation",
             "Availability",
-            "Data masking"
+            "Data masking",
+            "Least privilege"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Identity and Access Management",
         explanation: "Least privilege encourages users and administrators to operate with only the permissions needed for their current task."
     },
@@ -2227,12 +2227,12 @@ const questionBank = [
     {
         question: "What is data masking?",
         answers: [
-            "Hiding or replacing sensitive data with a non-sensitive representation",
-            "Deleting all databases",
             "Encrypting network traffic",
-            "Blocking a firewall port"
+            "Blocking a firewall port",
+            "Deleting all databases",
+            "Hiding or replacing sensitive data with a non-sensitive representation"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Cryptography",
         explanation: "Data masking hides sensitive information while preserving enough structure for approved uses such as testing."
     },
@@ -2240,12 +2240,12 @@ const questionBank = [
     {
         question: "What is the primary purpose of privacy controls?",
         answers: [
-            "Protect information about individuals and control how personal data is handled",
             "Increase CPU performance",
             "Replace firewalls",
-            "Disable authentication"
+            "Disable authentication",
+            "Protect information about individuals and control how personal data is handled"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Security Program Management",
         explanation: "Privacy controls help organizations properly collect, use, store, share, and protect personal information."
     },
@@ -2253,12 +2253,12 @@ const questionBank = [
     {
         question: "Why is asset inventory important to security?",
         answers: [
-            "You cannot effectively protect systems you do not know exist",
             "It eliminates all vulnerabilities",
             "It replaces authentication",
-            "It prevents every phishing attack"
+            "It prevents every phishing attack",
+            "You cannot effectively protect systems you do not know exist"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Security Operations",
         explanation: "Organizations need to know what assets exist so they can assess, monitor, patch, and protect them."
     },
@@ -2266,12 +2266,12 @@ const questionBank = [
     {
         question: "What is an attack surface?",
         answers: [
-            "The collection of potential points an attacker could use to compromise a system",
             "A physical desk",
             "A backup schedule",
-            "A password list"
+            "A password list",
+            "The collection of potential points an attacker could use to compromise a system"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Threats, Vulnerabilities & Mitigations",
         explanation: "The attack surface consists of the systems, services, interfaces, and other points that could potentially be exploited."
     },
@@ -2279,12 +2279,12 @@ const questionBank = [
     {
         question: "Which action generally reduces an organization's attack surface?",
         answers: [
-            "Disabling unnecessary services",
             "Adding unnecessary ports",
             "Giving users administrator access",
-            "Installing unapproved applications"
+            "Installing unapproved applications",
+            "Disabling unnecessary services"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Security Operations",
         explanation: "Removing unnecessary services, applications, accounts, and ports reduces opportunities for attackers."
     },
@@ -2292,12 +2292,12 @@ const questionBank = [
     {
         question: "What is vulnerability remediation?",
         answers: [
-            "Fixing or mitigating a known security weakness",
             "Creating a new vulnerability",
             "Ignoring vulnerabilities",
-            "Publishing passwords"
+            "Publishing passwords",
+            "Fixing or mitigating a known security weakness"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Security Operations",
         explanation: "Remediation addresses vulnerabilities through actions such as patching, configuration changes, or compensating controls."
     },
@@ -2305,12 +2305,12 @@ const questionBank = [
     {
         question: "What is a compensating control?",
         answers: [
-            "An alternative control used when the preferred control cannot be implemented",
             "A deleted security control",
             "A type of malware",
-            "An employee benefit"
+            "An employee benefit",
+            "An alternative control used when the preferred control cannot be implemented"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Security Operations",
         explanation: "A compensating control provides an alternative method of reducing risk when the primary control is unavailable or impractical."
     },
@@ -2318,12 +2318,12 @@ const questionBank = [
     {
         question: "What is the purpose of continuous monitoring?",
         answers: [
-            "Detect changes and security issues on an ongoing basis",
             "Perform a single annual scan only",
             "Disable security alerts",
-            "Remove logs"
+            "Remove logs",
+            "Detect changes and security issues on an ongoing basis"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Security Operations",
         explanation: "Continuous monitoring provides ongoing visibility into security posture, system changes, and potential threats."
     },
@@ -2331,12 +2331,12 @@ const questionBank = [
     {
         question: "Which process determines whether a security alert represents an actual security incident?",
         answers: [
-            "Alert triage",
             "Data destruction",
             "Asset disposal",
-            "Password rotation"
+            "Password rotation",
+            "Alert triage"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Security Operations",
         explanation: "Security analysts perform alert triage to determine the relevance, severity, and legitimacy of alerts."
     },
@@ -2344,12 +2344,12 @@ const questionBank = [
     {
         question: "What is the purpose of threat intelligence?",
         answers: [
-            "Provide information about threats, attackers, and indicators that can improve defenses",
             "Replace backups",
             "Create user accounts",
-            "Increase CPU speed"
+            "Increase CPU speed",
+            "Provide information about threats, attackers, and indicators that can improve defenses"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Threats, Vulnerabilities & Mitigations",
         explanation: "Threat intelligence provides information about threats, tactics, indicators, and adversaries that can support defensive decisions."
     },
@@ -2370,12 +2370,12 @@ const questionBank = [
     {
         question: "Which activity involves searching systems for known indicators of compromise?",
         answers: [
-            "Threat hunting",
             "Data classification",
             "Asset disposal",
-            "Change approval"
+            "Change approval",
+            "Threat hunting",
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Security Operations",
         explanation: "Threat hunting proactively searches an environment for evidence of malicious activity that may not have triggered an existing alert."
     },
@@ -2396,7 +2396,7 @@ const questionBank = [
     {
         question: "What is the purpose of lessons learned after an incident?",
         answers: [
-            "Identify improvements that can reduce the chance or impact of future incidents",
+            "Identify improvements",
             "Delete evidence",
             "Disable monitoring",
             "Avoid documenting the incident"
@@ -2409,12 +2409,12 @@ const questionBank = [
     {
         question: "What is a security control's residual risk?",
         answers: [
-            "The risk remaining after controls have been applied",
             "The risk before controls exist",
             "The cost of a firewall",
+            "The risk remaining after controls have been applied",
             "The number of vulnerabilities"
         ],
-        correctAnswer: 0,
+        correctAnswer: 2,
         domain: "Security Program Management",
         explanation: "Residual risk is the amount of risk remaining after security controls and mitigations are implemented."
     },
@@ -2435,12 +2435,12 @@ const questionBank = [
     {
         question: "Why should security policies be reviewed periodically?",
         answers: [
-            "Threats, technologies, regulations, and business requirements can change",
             "Passwords stop working after one year",
+            "Threats, technologies, regulations, and business requirements can change",
             "Firewalls automatically expire",
             "All security controls stop functioning"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Program Management",
         explanation: "Security policies should remain aligned with changing threats, technology, regulations, and organizational requirements."
     },
@@ -2448,12 +2448,12 @@ const questionBank = [
     {
         question: "What is the primary purpose of a business continuity plan?",
         answers: [
-            "Maintain or restore critical business functions during disruptions",
             "Create passwords",
             "Scan network ports",
-            "Install antivirus"
+            "Install antivirus",
+            "Maintain or restore critical business functions during disruptions"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Security Program Management",
         explanation: "Business continuity planning focuses on maintaining critical business operations during and after disruptions."
     },
@@ -2565,12 +2565,12 @@ const questionBank = [
     {
         question: "What is BYOD?",
         answers: [
-            "Bring Your Own Device",
             "Backup Your Online Data",
+            "Bring Your Own Device",
             "Block Your Own Domain",
             "Build Your Online Database"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Operations",
         explanation: "BYOD refers to employees using personally owned devices for organizational work."
     },
@@ -2578,12 +2578,12 @@ const questionBank = [
     {
         question: "What is the main security concern with BYOD?",
         answers: [
-            "Organization data may exist on devices the organization does not fully control",
             "Devices cannot connect to Wi-Fi",
             "Users cannot use passwords",
+            "Organization data may exist on devices the organization does not fully control",
             "It automatically disables encryption"
         ],
-        correctAnswer: 0,
+        correctAnswer: 2,
         domain: "Security Operations",
         explanation: "BYOD can make it harder to enforce organizational security controls because the hardware is personally owned."
     },
@@ -2591,12 +2591,12 @@ const questionBank = [
     {
         question: "What is the purpose of a secure baseline configuration?",
         answers: [
-            "Provide a known, approved secure configuration for systems",
             "Allow unlimited changes",
             "Disable security updates",
+            "Provide a known, approved secure configuration for systems",
             "Create malware samples"
         ],
-        correctAnswer: 0,
+        correctAnswer: 2,
         domain: "Security Operations",
         explanation: "A secure baseline provides an approved configuration that can be used to harden systems and identify unauthorized changes."
     },
@@ -2604,12 +2604,12 @@ const questionBank = [
     {
         question: "Which approach is generally safest when configuring a firewall?",
         answers: [
-            "Deny traffic by default and explicitly allow required traffic",
             "Allow all traffic by default",
+            "Deny traffic by default and explicitly allow required traffic",
             "Disable logging",
             "Allow every inbound port"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Architecture",
         explanation: "A default-deny approach minimizes unnecessary exposure by permitting only traffic that is explicitly required."
     },
@@ -2617,12 +2617,12 @@ const questionBank = [
     {
         question: "What is a proxy server?",
         answers: [
-            "An intermediary that makes requests on behalf of another system",
             "A password hashing algorithm",
+            "An intermediary that makes requests on behalf of another system",
             "A backup device",
             "A physical access card"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Architecture",
         explanation: "A proxy acts as an intermediary between clients and other systems or services."
     },
@@ -2810,1446 +2810,42 @@ const questionBank = [
     },
 
     {
-        question: "Which metric represents the percentage of true positive detections among all actual positive cases?",
+        question: "You are a security analyst at a company that recently transitioned to a cloud-based storage solution for its financial data. This new solution allows employees to access the data from any internet-connected device. However,you are concerned about the potential security risks associated with remote access. Which of the following controls would be most effective in detecting unauthorized access attempts to the financial data in the cloud?",
         answers: [
-            "True positive rate",
-            "False positive rate",
-            "Recovery point",
-            "Mean time to repair"
+            "MFA",
+            "Data encryption",
+            "IDS installed on company network",
+            "Physicial security controls on the company server"
         ],
-        correctAnswer: 0,
+        correctAnswer: 2,
         domain: "Security Operations",
-        explanation: "The true positive rate measures how effectively a detection system identifies actual positive cases."
+        explanation: "IDS (intrusion detection system)."
     },
 
     {
-        question: "What does MTTR commonly measure?",
+        question: "You notice a user's laptop displaying a suspicious website while walking by their cubicle. The company policy requires employees to report any suspected phishing attempts. What is the most important action to immediately take next?",
         answers: [
-            "Mean time to repair or recover from an issue",
-            "Maximum time to rotate passwords",
-            "Minimum time to scan ports",
-            "Mean total threat rating"
+            "Close the website on the user's laptop yourself",
+            "Take a screenshot of the website and disconnect the laptop from the network",
+            "Inform the IT department about the suspicious website",
+            "Warn the user directly about the potential phishing attempt"
         ],
-        correctAnswer: 0,
+        correctAnswer: 2,
         domain: "Security Operations",
-        explanation: "MTTR commonly measures the average time required to repair or recover from an issue."
+        explanation: "We are unsure if this is a real threat so we would then inform the IT department."
     },
 
     {
-        question: "What does MTBF measure?",
+        question: "Your company is developing a new mobile app that will allow customers to securely access their account information. The app will transmit sensitive data such as social security numbers and credit card details. Which of the following cryptographic techniques would be most appropriate to ensure the confidentiality and integrity of the communication between the app and the company's servers?",
         answers: [
-            "Mean time between failures",
-            "Maximum threat blocking frequency",
-            "Mean total backup files",
-            "Minimum time before firewall"
+            "MD5",
+            "DSA",
+            "SSL",
+            "AES"
         ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Mean Time Between Failures measures the average operating time between failures."
-    },
-
-    {
-        question: "What is the purpose of security metrics?",
-        answers: [
-            "Measure security performance and support informed decisions",
-            "Eliminate every vulnerability",
-            "Replace security policies",
-            "Disable monitoring"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Security metrics provide measurable information that can be used to evaluate security performance and make decisions."
-    },
-
-    {
-        question: "What is a key benefit of automating repetitive security tasks?",
-        answers: [
-            "It can improve consistency and reduce manual workload",
-            "It guarantees no attacks will occur",
-            "It eliminates the need for security staff",
-            "It disables security controls"
-        ],
-        correctAnswer: 0,
+        correctAnswer: 2,
         domain: "Security Operations",
-        explanation: "Automation can perform repetitive tasks consistently and allow security personnel to focus on more complex work."
-    },
-
-    {
-        question: "What is orchestration in security operations?",
-        answers: [
-            "Coordinating multiple security tools and processes into an automated workflow",
-            "Replacing all security tools with one firewall",
-            "Deleting security alerts",
-            "Creating passwords"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Security orchestration coordinates multiple tools and processes, often as part of automated incident response workflows."
-    },
-
-    {
-        question: "What does SOAR stand for?",
-        answers: [
-            "Security Orchestration, Automation, and Response",
-            "Secure Operations and Risk",
-            "System Operations and Recovery",
-            "Security Organization Access Registry"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "SOAR stands for Security Orchestration, Automation, and Response."
-    },
-
-    {
-        question: "What is the primary goal of security incident documentation?",
-        answers: [
-            "Create an accurate record for investigation, response, reporting, and improvement",
-            "Hide security events",
-            "Delete evidence",
-            "Avoid communicating with management"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Accurate documentation supports investigations, communication, compliance, lessons learned, and future response efforts."
-    },
-
-    {
-        question: "What should an organization do with a discovered vulnerability that cannot immediately be patched?",
-        answers: [
-            "Apply an appropriate compensating mitigation and track the risk",
-            "Ignore it permanently",
-            "Publish administrator passwords",
-            "Disable all monitoring"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "When immediate patching is impossible, compensating controls can reduce risk while remediation is planned."
-    },
-
-    {
-        question: "What is secure configuration drift?",
-        answers: [
-            "A system gradually deviating from its approved configuration",
-            "A type of malware",
-            "A network attack",
-            "A backup method"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Configuration drift occurs when systems change over time and no longer match their approved baseline."
-    },
-
-    {
-        question: "Which technology can help detect configuration drift?",
-        answers: [
-            "Configuration monitoring",
-            "DHCP only",
-            "Email forwarding",
-            "DNS caching"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Configuration monitoring can compare systems against approved baselines and identify unauthorized changes."
-    },
-
-    {
-        question: "Why should organizations maintain an inventory of software?",
-        answers: [
-            "To identify installed applications that may require updates or security review",
-            "To increase CPU speed",
-            "To disable authentication",
-            "To replace network segmentation"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Software inventories help organizations identify applications, vulnerabilities, licensing concerns, and unauthorized software."
-    },
-
-    {
-        question: "What is shadow IT?",
-        answers: [
-            "Technology or services used without proper organizational approval",
-            "A backup system",
-            "A firewall rule",
-            "A type of encryption"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Shadow IT occurs when employees or departments use technology or services outside approved organizational processes."
-    },
-
-    {
-        question: "What security issue can shadow IT create?",
-        answers: [
-            "Unknown systems or services may contain unmanaged security risks",
-            "It always improves security",
-            "It eliminates vulnerabilities",
-            "It prevents phishing"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Unapproved technology may not receive organizational security controls, monitoring, patching, or data protection."
-    },
-
-    {
-        question: "What is the purpose of a data retention policy?",
-        answers: [
-            "Define how long data should be kept and when it should be securely disposed of",
-            "Require all data to be kept forever",
-            "Disable backups",
-            "Encrypt every network packet"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Data retention policies establish how long information should be retained and when it should be securely disposed of."
-    },
-
-    {
-        question: "What is data minimization?",
-        answers: [
-            "Collecting and retaining only the data that is necessary",
-            "Keeping every piece of information forever",
-            "Removing all security controls",
-            "Encrypting only backups"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Data minimization reduces privacy and security risk by limiting unnecessary collection and retention of information."
-    },
-
-    {
-        question: "Which control is most directly designed to prevent unauthorized physical access to a server room?",
-        answers: [
-            "Badge reader",
-            "Email filter",
-            "SIEM",
-            "Antivirus"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Badge readers control physical entry and can restrict access to authorized personnel."
-    },
-
-    {
-        question: "What is the purpose of CCTV in physical security?",
-        answers: [
-            "Monitor and record activity",
-            "Encrypt network traffic",
-            "Patch servers",
-            "Authenticate users remotely"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "CCTV systems provide video monitoring and recording that can help detect and investigate physical security events."
-    },
-
-    {
-        question: "What is the primary purpose of a UPS?",
-        answers: [
-            "Provide temporary power during an electrical interruption",
-            "Filter network traffic",
-            "Encrypt files",
-            "Authenticate users"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "An uninterruptible power supply provides temporary power and can protect equipment during power disruptions."
-    },
-
-    {
-        question: "Which environmental control helps protect servers from excessive heat?",
-        answers: [
-            "HVAC",
-            "Firewall",
-            "SIEM",
-            "MFA"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "HVAC systems regulate temperature and humidity to protect equipment and maintain appropriate environmental conditions."
-    },
-
-    {
-        question: "What is the purpose of redundancy?",
-        answers: [
-            "Provide additional components or systems so failure of one does not necessarily cause an outage",
-            "Reduce availability",
-            "Remove backups",
-            "Disable authentication"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "Redundancy improves availability by providing alternate components or systems if one fails."
-    },
-
-    {
-        question: "What does high availability attempt to provide?",
-        answers: [
-            "Minimal service interruption",
-            "Maximum password length",
-            "Zero network traffic",
-            "No authentication"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "High availability designs aim to keep services operational with minimal interruption."
-    },
-
-    {
-        question: "What is a single point of failure?",
-        answers: [
-            "A component whose failure can cause the entire service to fail",
-            "A backup server",
-            "A redundant system",
-            "A security policy"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "A single point of failure is a component that can cause a significant outage if it fails."
-    },
-
-    {
-        question: "Which design reduces the risk of a single point of failure?",
-        answers: [
-            "Redundancy",
-            "Centralizing everything on one server",
-            "Removing backups",
-            "Disabling failover"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "Redundant components provide alternate resources if a primary component fails."
-    },
-
-    {
-        question: "What is failover?",
-        answers: [
-            "Automatically or manually switching to a backup system when the primary fails",
-            "Deleting a server",
-            "Blocking a user",
-            "Encrypting a file"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "Failover transfers operations to an alternate system when the primary system becomes unavailable."
-    },
-
-    {
-        question: "What is load balancing?",
-        answers: [
-            "Distributing workloads across multiple systems",
-            "Encrypting traffic",
-            "Deleting logs",
-            "Creating passwords"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "Load balancing distributes workloads across multiple systems to improve performance, scalability, and availability."
-    },
-
-    {
-        question: "Why can load balancing improve availability?",
-        answers: [
-            "Traffic can be redirected to healthy systems when one becomes unavailable",
-            "It eliminates authentication",
-            "It prevents all malware",
-            "It removes the need for backups"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "Load balancers can distribute traffic and redirect requests away from unhealthy systems."
-    },
-
-    {
-        question: "What is microsegmentation?",
-        answers: [
-            "Creating very granular security boundaries between workloads or systems",
-            "Increasing physical server size",
-            "Removing network controls",
-            "Encrypting only email"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "Microsegmentation applies granular network security controls between individual workloads or groups of workloads."
-    },
-
-    {
-        question: "What is an endpoint?",
-        answers: [
-            "A device such as a workstation, laptop, or server connected to a network",
-            "Only a router",
-            "Only a firewall",
-            "Only a database"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Endpoints include network-connected devices such as workstations, laptops, servers, and mobile devices."
-    },
-
-    {
-        question: "What is the purpose of endpoint protection software?",
-        answers: [
-            "Detect and help prevent malicious activity on endpoints",
-            "Replace all network security",
-            "Create physical barriers",
-            "Manage building HVAC"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Endpoint protection helps detect and prevent malware and other malicious activity on endpoint devices."
-    },
-
-    {
-        question: "Which security practice helps protect administrator accounts from compromise?",
-        answers: [
-            "MFA and privileged access controls",
-            "Shared administrator passwords",
-            "Permanent administrator privileges for everyone",
-            "Disabling logs"
-        ],
-        correctAnswer: 0,
-        domain: "Identity and Access Management",
-        explanation: "MFA and privileged access controls provide additional protection for highly sensitive administrative accounts."
-    },
-
-    {
-        question: "What is password complexity designed to accomplish?",
-        answers: [
-            "Make passwords harder to guess",
-            "Make passwords easier to share",
-            "Allow plaintext storage",
-            "Remove the need for MFA"
-        ],
-        correctAnswer: 0,
-        domain: "Identity and Access Management",
-        explanation: "Password complexity requirements can increase the difficulty of guessing passwords."
-    },
-
-    {
-        question: "Why are password managers useful?",
-        answers: [
-            "They can generate and securely store unique passwords",
-            "They eliminate all phishing attacks",
-            "They disable encryption",
-            "They provide physical access"
-        ],
-        correctAnswer: 0,
-        domain: "Identity and Access Management",
-        explanation: "Password managers can generate and securely store unique passwords, reducing password reuse."
-    },
-
-    {
-        question: "What is password reuse a security concern?",
-        answers: [
-            "A compromised password can potentially provide access to multiple services",
-            "It makes passwords impossible to remember",
-            "It improves security",
-            "It prevents credential stuffing"
-        ],
-        correctAnswer: 0,
-        domain: "Identity and Access Management",
-        explanation: "Password reuse allows attackers who obtain one password to potentially access other accounts."
-    },
-
-    {
-        question: "Which technology can provide hardware-backed key storage on many modern computers?",
-        answers: [
-            "TPM",
-            "DNS",
-            "DHCP",
-            "SMTP"
-        ],
-        correctAnswer: 0,
-        domain: "Cryptography",
-        explanation: "A Trusted Platform Module can provide hardware-backed cryptographic key storage and security functions."
-    },
-
-    {
-        question: "What is full-disk encryption designed to protect?",
-        answers: [
-            "Data stored on a device if the storage media is accessed without authorization",
-            "Only network traffic",
-            "Only DNS queries",
-            "Only email headers"
-        ],
-        correctAnswer: 0,
-        domain: "Cryptography",
-        explanation: "Full-disk encryption protects stored data, especially if a device is lost or stolen."
-    },
-
-    {
-        question: "What is the main purpose of secure deletion?",
-        answers: [
-            "Make deleted sensitive data difficult or impossible to recover",
-            "Improve internet speed",
-            "Create user accounts",
-            "Increase disk capacity only"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Secure deletion prevents sensitive information from being recovered from storage after disposal or deletion."
-    },
-
-    {
-        question: "Which concept means security should be considered throughout the development lifecycle?",
-        answers: [
-            "Secure software development",
-            "Open development",
-            "Unmanaged development",
-            "Shadow IT"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Secure software development integrates security practices throughout planning, coding, testing, deployment, and maintenance."
-    },
-
-    {
-        question: "What is code review used for?",
-        answers: [
-            "Identify defects and security issues in source code",
-            "Increase monitor resolution",
-            "Replace authentication",
-            "Delete source code"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Code reviews allow developers and security professionals to identify bugs, insecure patterns, and vulnerabilities before deployment."
-    },
-
-    {
-        question: "What is static application security testing?",
-        answers: [
-            "Analyzing source or compiled code without executing the application",
-            "Testing only physical servers",
-            "Scanning network cables",
-            "Monitoring users"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "SAST analyzes application code for vulnerabilities without requiring the application to execute."
-    },
-
-    {
-        question: "What is dynamic application security testing?",
-        answers: [
-            "Testing an application while it is running",
-            "Reviewing source code only",
-            "Testing physical security",
-            "Encrypting databases"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "DAST tests a running application from the outside to identify vulnerabilities in its behavior."
-    },
-
-    {
-        question: "What is dependency management important for?",
-        answers: [
-            "Identifying vulnerabilities in third-party software components",
-            "Managing employee vacations",
-            "Replacing firewalls",
-            "Deleting logs"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Applications often depend on third-party libraries, so organizations need to track and update those components when vulnerabilities are discovered."
-    },
-
-    {
-        question: "What is the primary purpose of security testing before software deployment?",
-        answers: [
-            "Identify and fix security weaknesses before they reach production",
-            "Guarantee software has no bugs",
-            "Disable authentication",
-            "Avoid code review"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Security testing before deployment helps identify vulnerabilities while they are easier and less expensive to fix."
-    },
-
-    {
-        question: "What is an acceptable use policy?",
-        answers: [
-            "Defines appropriate use of organizational technology and resources",
-            "Defines encryption algorithms",
-            "Creates network routes",
-            "Stores passwords"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "An acceptable use policy establishes how employees may appropriately use organizational systems and resources."
-    },
-
-    {
-        question: "What is a password policy?",
-        answers: [
-            "Rules governing password creation and use",
-            "A firewall configuration",
-            "A backup schedule",
-            "A physical access system"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Password policies define requirements for creating, protecting, and managing passwords."
-    },
-
-    {
-        question: "Why is phishing simulation useful?",
-        answers: [
-            "It helps measure and improve employee resistance to phishing attacks",
-            "It guarantees employees will never be attacked",
-            "It replaces email security",
-            "It removes the need for MFA"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Phishing simulations can identify awareness gaps and provide targeted training."
-    },
-
-    {
-        question: "What is the primary goal of security awareness programs?",
-        answers: [
-            "Reduce human-related security risk",
-            "Eliminate all malware",
-            "Replace firewalls",
-            "Increase CPU performance"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Security awareness programs help employees understand threats and make safer security decisions."
-    },
-
-    {
-        question: "What is the purpose of a data loss prevention system?",
-        answers: [
-            "Help detect and prevent unauthorized transmission or disclosure of sensitive information",
-            "Increase internet speed",
-            "Replace all backups",
-            "Create user accounts"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "DLP systems monitor sensitive information and can help prevent unauthorized movement or disclosure."
-    },
-
-    {
-        question: "What is email filtering designed to help prevent?",
-        answers: [
-            "Malicious or unwanted email from reaching users",
-            "Hard drive failure",
-            "Physical theft",
-            "CPU overheating"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Email security systems can identify spam, phishing, malware, and other malicious messages."
-    },
-
-    {
-        question: "Which email authentication technology helps domain owners specify how receiving servers should handle messages that fail authentication checks?",
-        answers: [
-            "DMARC",
-            "DHCP",
-            "NTP",
-            "SSH"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "DMARC allows domain owners to publish policies for handling messages that fail authentication checks and provides reporting capabilities."
-    },
-
-    {
-        question: "Which technology helps verify that an email was authorized by the sending domain?",
-        answers: [
-            "DKIM",
-            "DHCP",
-            "FTP",
-            "SNMP"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "DKIM uses a cryptographic signature to help verify that an email was authorized by the sending domain and was not modified in transit."
-    },
-
-    {
-        question: "Which email security technology identifies servers authorized to send email for a domain?",
-        answers: [
-            "SPF",
-            "SSH",
-            "LDAP",
-            "NTP"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "SPF uses DNS records to identify mail servers authorized to send email on behalf of a domain."
-    },
-
-    {
-        question: "What is the primary purpose of security logging?",
-        answers: [
-            "Create a record of events that can support monitoring and investigation",
-            "Increase network speed",
-            "Replace authentication",
-            "Prevent every attack"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Security logs provide evidence of events that can be used for detection, investigation, auditing, and troubleshooting."
-    },
-
-    {
-        question: "Why should logs be protected from unauthorized modification?",
-        answers: [
-            "Attackers could alter evidence and hide their activity",
-            "Logs would use less storage",
-            "Systems would run faster",
-            "Passwords would become stronger"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Protecting logs preserves their integrity and helps prevent attackers from hiding evidence of malicious activity."
-    },
-
-    {
-        question: "What is log retention?",
-        answers: [
-            "How long logs are stored",
-            "How quickly logs are generated",
-            "How many passwords are stored",
-            "How many firewalls exist"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Log retention defines how long logs are preserved for security, operational, legal, or compliance purposes."
-    },
-
-    {
-        question: "What is the purpose of time synchronization in security monitoring?",
-        answers: [
-            "Allow events from different systems to be accurately correlated",
-            "Increase CPU performance",
-            "Prevent all malware",
-            "Encrypt hard drives"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Accurate timestamps make it easier to reconstruct and correlate events across multiple systems."
-    },
-
-    {
-        question: "What is an incident response plan?",
-        answers: [
-            "A documented process for detecting, responding to, and recovering from security incidents",
-            "A list of employee salaries",
-            "A firewall rule",
-            "A backup device"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "An incident response plan defines responsibilities, procedures, communication, and actions for handling security incidents."
-    },
-
-    {
-        question: "What is the primary purpose of incident containment?",
-        answers: [
-            "Limit the damage and prevent further spread",
-            "Delete all evidence",
-            "Restore every system immediately",
-            "Publish the incident publicly"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Containment limits the scope and impact of an incident while the organization investigates and eradicates the threat."
-    },
-
-    {
-        question: "Which phase occurs after containment when responding to a malware incident?",
-        answers: [
-            "Eradication",
-            "Preparation",
-            "Identification",
-            "Policy creation"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "After containment, eradication focuses on removing the threat and its persistence mechanisms."
-    },
-
-    {
-        question: "What is recovery validation?",
-        answers: [
-            "Confirming restored systems are secure and functioning correctly",
-            "Deleting backups",
-            "Creating malware",
-            "Removing authentication"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Recovery validation confirms that systems restored after an incident are operational and appropriately secured."
-    },
-
-    {
-        question: "What is hacktivism?",
-        answers: [
-            "The use of hacking techniques to promote a political or social cause",
-            "A formal audit of security controls",
-            "A type of encrypted backup",
-            "A vendor risk assessment method"
-        ],
-        correctAnswer: 0,
-        domain: "General Security Concepts",
-        explanation: "Hacktivism is the use of hacking to further political or social goals rather than personal financial gain."
-    },
-
-    {
-        question: "Which threat actor typically works on behalf of a government and often has significant funding and advanced capabilities?",
-        answers: [
-            "Nation-state actor",
-            "Script kiddie",
-            "Hacktivist",
-            "Insider threat"
-        ],
-        correctAnswer: 0,
-        domain: "General Security Concepts",
-        explanation: "Nation-state actors are government-sponsored and typically possess substantial resources and advanced technical skill."
-    },
-
-    {
-        question: "Which threat actor operates as a structured, business-like group primarily motivated by financial gain?",
-        answers: [
-            "Organized crime",
-            "Nation-state actor",
-            "Hacktivist",
-            "Shadow IT"
-        ],
-        correctAnswer: 0,
-        domain: "General Security Concepts",
-        explanation: "Organized crime groups function similarly to businesses and are typically motivated by profit."
-    },
-
-    {
-        question: "What is an insider threat?",
-        answers: [
-            "A security risk that originates from someone within the organization",
-            "An external attacker using a botnet",
-            "A vulnerability scanner",
-            "A type of firewall rule"
-        ],
-        correctAnswer: 0,
-        domain: "General Security Concepts",
-        explanation: "An insider threat comes from employees, contractors, or others with legitimate internal access."
-    },
-
-    {
-        question: "In a formal change management process, what typically must occur before a change is deployed to production?",
-        answers: [
-            "Review and management approval",
-            "Immediate implementation without documentation",
-            "Deletion of the previous configuration",
-            "Notifying customers only after the change is live"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Change management requires a change to be reviewed and formally approved before it is implemented, reducing the risk of unplanned outages."
-    },
-
-    {
-        question: "In data governance, who is typically accountable for a specific system or dataset and for ensuring it is properly protected?",
-        answers: [
-            "The data owner",
-            "The data processor",
-            "The data custodian",
-            "The data subject"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "The data owner is usually a senior individual accountable for a dataset or system, even though day-to-day handling may be delegated."
-    },
-
-    {
-        question: "In privacy and data governance, what is the difference between a data controller and a data processor?",
-        answers: [
-            "The controller decides why and how data is used, while the processor handles data on the controller's behalf",
-            "The processor owns the data and the controller only stores it",
-            "They are two names for the same role",
-            "The controller only exists in criminal investigations"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "The controller determines the purpose and means of processing, while the processor acts on the controller's instructions."
-    },
-
-    {
-        question: "Who is typically responsible for the day-to-day handling, storage, and technical protection of data?",
-        answers: [
-            "A data custodian/steward",
-            "A data subject",
-            "An auditor",
-            "A penetration tester"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Custodians and stewards carry out the practical, day-to-day work of protecting data on behalf of owners and controllers."
-    },
-
-    {
-        question: "What is pretexting?",
-        answers: [
-            "Creating a fabricated scenario to persuade a victim into providing information or access",
-            "Sending mass unsolicited email",
-            "Scanning a network for open ports",
-            "Encrypting files for ransom"
-        ],
-        correctAnswer: 0,
-        domain: "Threats, Vulnerabilities & Mitigations",
-        explanation: "Pretexting involves inventing a believable false scenario to manipulate a target, a common social engineering technique."
-    },
-
-    {
-        question: "What is typosquatting?",
-        answers: [
-            "Registering domain names that closely resemble legitimate ones to trick users",
-            "A method of encrypting typed passwords",
-            "A type of firewall misconfiguration",
-            "A backup verification technique"
-        ],
-        correctAnswer: 0,
-        domain: "Threats, Vulnerabilities & Mitigations",
-        explanation: "Typosquatting relies on common misspellings of legitimate domains to lure users to malicious sites."
-    },
-
-    {
-        question: "What is a watering hole attack?",
-        answers: [
-            "Compromising a website frequently visited by the intended victims to infect them",
-            "Flooding a server with traffic until it crashes",
-            "Intercepting traffic between two systems",
-            "Guessing a password through repeated attempts"
-        ],
-        correctAnswer: 0,
-        domain: "Threats, Vulnerabilities & Mitigations",
-        explanation: "In a watering hole attack, an attacker compromises a site the target audience is known to visit rather than attacking them directly."
-    },
-
-    {
-        question: "What does a time-of-check to time-of-use (TOC/TOU) vulnerability describe?",
-        answers: [
-            "A race condition where a resource changes between when it is checked and when it is used",
-            "A password that has expired",
-            "An outdated firmware version",
-            "A firewall rule applied in the wrong order"
-        ],
-        correctAnswer: 0,
-        domain: "Threats, Vulnerabilities & Mitigations",
-        explanation: "TOC/TOU flaws are race conditions where the state of a resource changes between validation and use, potentially allowing exploitation."
-    },
-
-    {
-        question: "What is a virtual machine (VM) escape?",
-        answers: [
-            "An attacker breaking out of an isolated virtual machine to access the host system",
-            "A backup process that fails to complete",
-            "A user logging out of a remote desktop session",
-            "A method of encrypting virtual disks"
-        ],
-        correctAnswer: 0,
-        domain: "Threats, Vulnerabilities & Mitigations",
-        explanation: "VM escape occurs when an attacker exploits a hypervisor vulnerability to break out of a guest VM and access the host or other VMs."
-    },
-
-    {
-        question: "What is sideloading in the context of mobile device vulnerabilities?",
-        answers: [
-            "Installing an application from a source other than an official app store",
-            "Updating a device's operating system automatically",
-            "Encrypting a device's storage",
-            "Backing up a device to the cloud"
-        ],
-        correctAnswer: 0,
-        domain: "Threats, Vulnerabilities & Mitigations",
-        explanation: "Sideloading bypasses official app store vetting, increasing the risk of installing malicious applications."
-    },
-
-    {
-        question: "What is directory traversal?",
-        answers: [
-            "An attack that manipulates file paths to access files outside an intended directory",
-            "A method of organizing log files",
-            "A type of network segmentation",
-            "A backup rotation strategy"
-        ],
-        correctAnswer: 0,
-        domain: "Threats, Vulnerabilities & Mitigations",
-        explanation: "Directory traversal exploits insufficient input validation to access files or directories outside the application's intended scope."
-    },
-
-    {
-        question: "What is a downgrade attack?",
-        answers: [
-            "Forcing a system to use a weaker, less secure version of a protocol or algorithm",
-            "Reducing a user's account privileges",
-            "Removing outdated software from a system",
-            "Lowering the priority of a firewall rule"
-        ],
-        correctAnswer: 0,
-        domain: "Threats, Vulnerabilities & Mitigations",
-        explanation: "Downgrade attacks trick a system into using an older, weaker protocol version so the attacker can more easily exploit known weaknesses."
-    },
-
-    {
-        question: "In cryptography, what is a collision?",
-        answers: [
-            "When two different inputs produce the same hash output",
-            "When two users share the same password",
-            "When two firewalls block the same traffic",
-            "When two certificates expire simultaneously"
-        ],
-        correctAnswer: 0,
-        domain: "Cryptography",
-        explanation: "A hash collision occurs when two different inputs generate an identical hash value, which undermines the integrity guarantees of the hash function."
-    },
-
-    {
-        question: "What does signature-based detection rely on to identify threats?",
-        answers: [
-            "A database of known attack patterns",
-            "Real-time behavioral baselines only",
-            "Employee reporting exclusively",
-            "Manual log review with no automation"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Signature-based detection compares traffic or files against known attack signatures, making it fast against known threats but weaker against novel ones."
-    },
-
-    {
-        question: "What does the Common Vulnerability Scoring System (CVSS) provide?",
-        answers: [
-            "A standardized numerical score representing the severity of a vulnerability",
-            "A list of every patch ever released",
-            "A vendor's financial risk rating",
-            "An employee's security clearance level"
-        ],
-        correctAnswer: 0,
-        domain: "Threats, Vulnerabilities & Mitigations",
-        explanation: "CVSS scores vulnerabilities from 0 to 10 based on factors like attack vector and potential impact, helping prioritize remediation."
-    },
-
-    {
-        question: "What does a CVE identifier represent?",
-        answers: [
-            "A standardized, unique identifier for a publicly known vulnerability",
-            "A certificate revocation entry",
-            "A compliance violation code",
-            "An internal ticket number"
-        ],
-        correctAnswer: 0,
-        domain: "Threats, Vulnerabilities & Mitigations",
-        explanation: "Common Vulnerabilities and Exposures (CVE) assigns a consistent identifier to a known vulnerability so it can be referenced across tools and organizations."
-    },
-
-    {
-        question: "What is steganography?",
-        answers: [
-            "Hiding data or malicious code within another file, such as an image",
-            "A method of encrypting network traffic",
-            "A type of two-factor authentication",
-            "A technique for compressing log files"
-        ],
-        correctAnswer: 0,
-        domain: "Threats, Vulnerabilities & Mitigations",
-        explanation: "Steganography conceals information inside another file so it isn't obvious that hidden data or code is present."
-    },
-
-    {
-        question: "What is the key difference between a hot site, a warm site, and a cold site in disaster recovery?",
-        answers: [
-            "A hot site can activate almost immediately, a warm site needs some preparation, and a cold site requires significant time to become operational",
-            "They differ only in their physical temperature control systems",
-            "A cold site is always cheaper to operate long-term than a hot site",
-            "Warm sites are only used for cloud-based recovery"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "Hot, warm, and cold sites represent decreasing levels of readiness, with hot sites able to take over almost instantly and cold sites needing the most setup time."
-    },
-
-    {
-        question: "What is SASE (Secure Access Service Edge)?",
-        answers: [
-            "A cloud-based framework that combines networking and security functions into a single platform",
-            "A physical firewall appliance",
-            "A type of encryption algorithm",
-            "A password policy standard"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "SASE converges networking and security services, such as SD-WAN and security controls, into a unified, cloud-delivered platform."
-    },
-
-    {
-        question: "What is the primary purpose of a jump server?",
-        answers: [
-            "To provide a secure, controlled point for managing and accessing devices in a separate security zone",
-            "To serve web content directly to the public internet",
-            "To store backup copies of production databases",
-            "To balance traffic across multiple web servers"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "A jump server acts as a controlled gateway for administrators to reach systems in a more sensitive network zone, reducing direct exposure."
-    },
-
-    {
-        question: "What does 802.1X provide in network security?",
-        answers: [
-            "Port-based network access control that authenticates devices before granting network access",
-            "A wireless encryption cipher",
-            "A method for compressing network traffic",
-            "A type of VPN protocol"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "802.1X authenticates a device before it is allowed onto the network, commonly used with wired and wireless networks."
-    },
-
-    {
-        question: "What is the current recommended standard for securing Wi-Fi networks?",
-        answers: [
-            "WPA3",
-            "WEP",
-            "WPA",
-            "Open authentication"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "WPA3 is the current Wi-Fi security standard, offering stronger encryption and better protection against offline password-guessing attacks than older standards."
-    },
-
-    {
-        question: "In mobile device deployment models, what does BYOD stand for and mean?",
-        answers: [
-            "Bring Your Own Device — employees use personal devices for work",
-            "Buy Your Own Domain — a licensing model for cloud services",
-            "Back Up Your Data — a mandatory backup policy",
-            "Block Your Own Data — a DLP configuration"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "BYOD allows employees to use their own personal devices for work, which is cost-effective but can be harder to secure and manage."
-    },
-
-    {
-        question: "Which mobile deployment model provides company-owned devices that employees are also permitted to use for personal purposes?",
-        answers: [
-            "COPE (Corporate-Owned, Personally Enabled)",
-            "BYOD (Bring Your Own Device)",
-            "CYOD (Choose Your Own Device)",
-            "MDM (Mobile Device Management)"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "COPE devices are owned and provisioned by the company but employees may also use them personally, giving the organization more control than BYOD."
-    },
-
-    {
-        question: "What best describes ICS/SCADA systems?",
-        answers: [
-            "Systems used to control and monitor industrial processes in sectors like energy, water, and manufacturing",
-            "Cloud-based office productivity applications",
-            "A type of consumer mobile operating system",
-            "A framework for managing employee passwords"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "Industrial control systems (ICS), including SCADA, manage critical infrastructure processes and often rely heavily on network isolation for protection since frequent patching is difficult."
-    },
-
-    {
-        question: "What does 'data in use' refer to?",
-        answers: [
-            "Data that is actively being processed by an application or system",
-            "Data stored on a disconnected backup tape",
-            "Data that has been permanently deleted",
-            "Data waiting in an unopened email"
-        ],
-        correctAnswer: 0,
-        domain: "Security Architecture",
-        explanation: "Data in use is actively being processed in memory or by an application, as opposed to data at rest or in transit."
-    },
-
-    {
-        question: "What is the Security Content Automation Protocol (SCAP) used for?",
-        answers: [
-            "Standardizing and automating vulnerability management and policy compliance checks",
-            "Encrypting email attachments",
-            "Managing physical badge access",
-            "Load balancing web traffic"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "SCAP provides a standardized way to automate vulnerability management, measurement, and policy compliance evaluation."
-    },
-
-    {
-        question: "What does NetFlow data help security teams do?",
-        answers: [
-            "Identify unusual or suspicious communication patterns between systems on the network",
-            "Encrypt data at rest",
-            "Manage user password resets",
-            "Physically secure a data center"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "NetFlow captures metadata about network traffic flows, helping analysts spot unusual communication patterns that may indicate an attack."
-    },
-
-    {
-        question: "What is the purpose of DNS filtering?",
-        answers: [
-            "Blocking access to malicious or unwanted domains at the DNS resolution stage",
-            "Encrypting DNS queries only",
-            "Assigning IP addresses to new devices",
-            "Load balancing DNS servers"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "DNS filtering prevents a device from ever resolving and connecting to a known malicious domain, stopping threats before a web filter would."
-    },
-
-    {
-        question: "What is the role of an email gateway?",
-        answers: [
-            "Filtering spam, malware, and phishing attempts before they reach user inboxes",
-            "Encrypting hard drives on end-user devices",
-            "Managing DNS records for a domain",
-            "Storing archived incident tickets"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "An email gateway sits between the internet and an organization's mail server, filtering malicious or unwanted email before delivery."
-    },
-
-    {
-        question: "What does Network Access Control (NAC) verify before allowing a device onto the network?",
-        answers: [
-            "That the device meets security requirements, such as up-to-date antivirus and patches",
-            "That the device has a valid warranty",
-            "That the device is manufactured by an approved vendor",
-            "That the device's screen resolution meets a minimum standard"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "NAC checks a device's security posture, such as patch level and antivirus status, before granting it network access."
-    },
-
-    {
-        question: "What does user behavior analytics (UBA) primarily do?",
-        answers: [
-            "Establishes a baseline of normal user activity and flags deviations from it",
-            "Encrypts user credentials at rest",
-            "Manages user password complexity requirements",
-            "Automatically provisions new user accounts"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "UBA builds a baseline of typical user behavior and flags anomalies, such as unusual access patterns, that may indicate a compromised account."
-    },
-
-    {
-        question: "What is file integrity monitoring (FIM) used for?",
-        answers: [
-            "Tracking changes to critical files and configurations to detect unauthorized modifications",
-            "Compressing large files for storage",
-            "Assigning file permissions to new users",
-            "Backing up files to removable media"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "FIM alerts administrators when unexpected changes occur to important files, which can indicate a compromise or misconfiguration."
-    },
-
-    {
-        question: "What is a legal hold in digital forensics?",
-        answers: [
-            "A requirement to preserve relevant data because it may be needed for litigation or investigation",
-            "A court order to seize a suspect's device",
-            "A method of encrypting evidence",
-            "A step in the chain of custody that transfers ownership of evidence"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "A legal hold prevents relevant data from being deleted or altered because it may be needed for a legal proceeding."
-    },
-
-    {
-        question: "What is e-discovery?",
-        answers: [
-            "The process of identifying, collecting, and producing electronic evidence in response to a legal request",
-            "A vulnerability scanning technique",
-            "A method of discovering new devices on a network",
-            "A type of penetration test"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "E-discovery involves locating and producing electronic evidence, typically as part of litigation or a legal investigation."
-    },
-
-    {
-        question: "What is the difference between passive and active reconnaissance?",
-        answers: [
-            "Passive reconnaissance gathers information without directly interacting with the target, while active reconnaissance directly interacts with target systems",
-            "Passive reconnaissance is illegal while active reconnaissance is always authorized",
-            "They are two names for the same technique",
-            "Active reconnaissance only applies to physical penetration tests"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Passive reconnaissance relies on publicly available information, while active reconnaissance directly probes the target, carrying a higher chance of detection."
-    },
-
-    {
-        question: "In penetration testing, what is a 'known environment' test?",
-        answers: [
-            "A test where testers are given full information about the systems and architecture in advance",
-            "A test performed without any authorization",
-            "A test that only evaluates physical security",
-            "A test performed entirely by automated tools with no human involvement"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "A known environment (white box) test gives testers complete information beforehand, similar to how an insider might approach an attack."
-    },
-
-    {
-        question: "In risk analysis, what does Annualized Loss Expectancy (ALE) represent?",
-        answers: [
-            "The total expected monetary loss from a risk over the course of a year, calculated as SLE multiplied by ARO",
-            "The one-time cost of a security incident",
-            "The number of employees affected by a breach",
-            "The percentage of assets that are encrypted"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "ALE is calculated by multiplying Single Loss Expectancy (SLE) by Annualized Rate of Occurrence (ARO) to estimate yearly expected loss from a risk."
-    },
-
-    {
-        question: "What does Single Loss Expectancy (SLE) estimate?",
-        answers: [
-            "The monetary loss expected from a single occurrence of a risk event",
-            "The number of times a risk occurs each year",
-            "The total annual security budget",
-            "The average time to detect an incident"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "SLE estimates how much money would be lost from one occurrence of a specific risk event."
-    },
-
-    {
-        question: "What does an organization's risk appetite describe?",
-        answers: [
-            "The broader amount and type of risk the organization is willing to accept to meet its objectives",
-            "The exact dollar amount budgeted for security tools",
-            "The number of vulnerabilities currently unpatched",
-            "The length of a company's incident response plan"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Risk appetite reflects how much risk an organization is willing to pursue or accept, which can be expansionary, conservative, or neutral."
-    },
-
-    {
-        question: "Which document expresses a general intent to work together but is typically less formal and less legally binding than other vendor agreements?",
-        answers: [
-            "Memorandum of understanding (MOU)",
-            "Service-level agreement (SLA)",
-            "Master service agreement (MSA)",
-            "Non-disclosure agreement (NDA)"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "An MOU expresses mutual intent to collaborate but is generally less binding than agreements like an MSA or SLA."
-    },
-
-    {
-        question: "What does a master service agreement (MSA) establish?",
-        answers: [
-            "The overall terms that will govern future work between two parties, so terms don't need renegotiating for every project",
-            "The specific tasks and deliverables for a single project",
-            "A legal obligation to keep shared information confidential",
-            "The uptime guarantee for a specific service"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "An MSA sets the overarching terms of a business relationship, allowing individual projects to be governed by a work order or SOW without renegotiating everything."
-    },
-
-    {
-        question: "Which of the following is a potential consequence of failing to meet regulatory compliance requirements?",
-        answers: [
-            "Fines, sanctions, and reputational damage",
-            "Automatic promotion of the compliance officer",
-            "A mandatory increase in the IT budget",
-            "Immediate dissolution of the organization"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "Non-compliance can lead to financial penalties, restrictions on business activities, and damage to an organization's reputation."
-    },
-
-    {
-        question: "What privacy right, established under regulations like the GDPR, allows individuals to request that their personal data be deleted?",
-        answers: [
-            "The right to be forgotten",
-            "The right to due process",
-            "The right to remediation",
-            "The right to attestation"
-        ],
-        correctAnswer: 0,
-        domain: "Security Program Management",
-        explanation: "The right to be forgotten allows individuals to request deletion of their personal data, a requirement found in privacy regulations such as the GDPR."
-    },
-
-    {
-        question: "In artificial intelligence system development, what is the purpose of the model evaluation stage?",
-        answers: [
-            "Testing an AI model to determine how accurately and reliably it performs its intended task",
-            "Physically installing servers to host the model",
-            "Writing the company's acceptable use policy",
-            "Assigning user permissions for the model's dataset"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Model evaluation tests an AI or machine-learning model's accuracy, reliability, and effectiveness before or after deployment."
-    },
-
-    {
-        question: "Which of these is a commonly cited downside of using AI systems in an organization?",
-        answers: [
-            "AI can produce biased or unfair results if trained on biased data",
-            "AI systems never require monitoring once deployed",
-            "AI eliminates the need for any data governance",
-            "AI cannot process personal information"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "AI models trained on biased data can produce unfair or inaccurate outputs, which is one of several risks organizations must manage."
-    },
-
-    {
-        question: "Why is overreliance on AI considered a security and business risk?",
-        answers: [
-            "It can lead to reduced critical thinking and unquestioned trust in AI-generated output",
-            "AI systems are always more expensive than manual processes",
-            "AI cannot be used for any security operations tasks",
-            "AI systems are immune to bias"
-        ],
-        correctAnswer: 0,
-        domain: "Security Operations",
-        explanation: "Overreliance on AI can erode critical thinking skills and lead to blind trust in outputs that may be inaccurate or manipulated."
+        explanation: "MD5 and DSA and AES will not secure communications alone although SSL secure socket layer does."
     }
 
 ];
