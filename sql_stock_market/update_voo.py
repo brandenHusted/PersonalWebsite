@@ -2,13 +2,9 @@ import yfinance as yf
 import pyodbc
 from datetime import datetime
 from pathlib import Path
-from flask import Flask, jsonify
-from flask_cors import CORS
-# runs daily to update the VOO stock data in the SQL Server database, and this Flask app serves that data through an API endpoint.
-# We use yfinance to fetch the latest VOO stock data, pyodbc to connect to the SQL Server database, and Flask to create a web server that can serve the data via an API endpoint. The script also includes logging functionality to keep track of the update process.
+# runs daily to update the VOO stock data in the SQL Server database.
+# We use yfinance to fetch the latest VOO stock data, pyodbc to connect to the SQL Server database and show everything in terminal when ran. The script also includes logging functionality to keep track of the update process.
 # Windows task manager is used to schedule this script to run daily, ensuring that the VOO stock data in the database is always up-to-date.
-app = Flask(__name__)
-CORS(app)
 # --------------------------------------------------
 # LOGGING SETUP
 # --------------------------------------------------
