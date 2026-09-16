@@ -153,6 +153,15 @@
 
     </button>
 
+    <button
+        id="updateVooButton"
+        onclick="showUpdateVOO()"
+    >
+
+        View Updated VOO Graph
+
+    </button>
+
 </div>
 
 
@@ -354,6 +363,79 @@ async function showApple() {
 
 
 // ====================================
+// SHOW UPDATED VOO
+// ====================================
+
+async function showUpdateVOO() {
+
+    disableButtons();
+
+    showGraphPage();
+
+    document.getElementById(
+        "graphTitle"
+    ).textContent = "Updated VOO Stock Price";
+
+
+    try {
+
+        const response = await fetch(
+            "http://127.0.0.1:5000/api/update-voo"
+        );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Updated VOO API request failed"
+            );
+
+        }
+
+
+        const data = await response.json();
+
+
+        if (data.error) {
+
+            throw new Error(
+                data.error
+            );
+
+        }
+
+
+        const dates = data.map(
+            row => row.date
+        );
+
+
+        const prices = data.map(
+            row => row.close
+        );
+
+
+        createChart(
+
+            dates,
+
+            prices,
+
+            "Updated VOO Closing Price"
+
+        );
+
+    }
+
+    catch (error) {
+
+        showError(error);
+
+    }
+
+}
+
+// ====================================
 // CREATE CHART
 // ====================================
 
@@ -363,6 +445,15 @@ function createChart(
     label
 ) {
 
+    // Adjust dates for "Updated VOO" data to match today's date and the previous 5 days
+    if (label === "Updated VOO Closing Price") {
+        const today = new Date();
+        labels = Array.from({ length: 6 }, (_, i) => {
+            const date = new Date();
+            date.setDate(today.getDate() - (5 - i));
+            return date.toLocaleDateString();
+        });
+    }
 
     const ctx = document
         .getElementById(
@@ -370,81 +461,45 @@ function createChart(
         )
         .getContext("2d");
 
-
     if (stockChart) {
-
         stockChart.destroy();
-
     }
-
 
     stockChart = new Chart(
         ctx,
         {
-
             type: "line",
-
             data: {
-
                 labels: labels,
-
                 datasets: [
-
                     {
-
                         label: label,
-
                         data: values,
-
                         borderWidth: 2,
-
                         pointRadius: 3,
-
                         tension: 0.2
-
                     }
-
                 ]
-
             },
-
             options: {
-
                 responsive: true,
-
                 scales: {
-
                     x: {
-
                         title: {
-
                             display: true,
-
                             text: "Date"
-
                         }
-
                     },
-
                     y: {
-
                         title: {
-
                             display: true,
-
                             text: "Value"
-
                         }
-
                     }
-
                 }
-
             }
-
         }
     );
-
 }
 
 
@@ -481,6 +536,10 @@ function disableButtons() {
 
     document.getElementById(
         "appleButton"
+    ).disabled = true;
+
+    document.getElementById(
+        "updateVooButton"
     ).disabled = true;
 
 }
@@ -520,6 +579,10 @@ function returnToMain() {
 
     document.getElementById(
         "appleButton"
+    ).disabled = false;
+
+    document.getElementById(
+        "updateVooButton"
     ).disabled = false;
 
 

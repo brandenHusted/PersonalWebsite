@@ -61,3 +61,327 @@
 2026-09-14 14:41:26 - VOO update completed successfully
 2026-09-14 14:41:26 - Finished at 2026-09-14 14:41:26
 2026-09-14 14:41:26 - ==================================================
+2026-09-16 08:14:33 - ==================================================
+2026-09-16 08:14:33 - Starting VOO update
+2026-09-16 08:14:33 - Downloading VOO stock data...
+2026-09-16 08:14:38 - Downloaded 5 rows of data
+2026-09-16 08:14:38 - Connecting to SQL Server...
+2026-09-16 08:14:38 - Connected to SQL Server successfully
+2026-09-16 08:14:38 - 2026-09-09 already exists
+2026-09-16 08:14:38 - 2026-09-10 already exists
+2026-09-16 08:14:38 - Inserted new data for 2026-09-11
+2026-09-16 08:14:38 - Inserted new data for 2026-09-14
+2026-09-16 08:14:38 - Inserted new data for 2026-09-15
+2026-09-16 08:14:38 - Database changes committed
+2026-09-16 08:14:38 - Rows inserted: 3
+2026-09-16 08:14:38 - Rows already existing: 2
+2026-09-16 08:14:38 - VOO update completed successfully
+2026-09-16 08:14:38 - Finished at 2026-09-16 08:14:38
+2026-09-16 08:14:38 - ==================================================
+2026-09-16 08:18:37 - ============================================================
+2026-09-16 08:18:37 - Starting VOO update
+2026-09-16 08:18:37 - Downloading VOO stock data...
+2026-09-16 08:18:37 - Downloaded 5 rows of data
+2026-09-16 08:18:37 - Connecting to SQL Server...
+2026-09-16 08:18:38 - Connected to SQL Server successfully
+2026-09-16 08:18:38 - 2026-09-09 already exists
+2026-09-16 08:18:38 - 2026-09-10 already exists
+2026-09-16 08:18:38 - 2026-09-11 already exists
+2026-09-16 08:18:38 - 2026-09-14 already exists
+2026-09-16 08:18:38 - 2026-09-15 already exists
+2026-09-16 08:18:38 - Database changes committed
+2026-09-16 08:18:38 - Rows inserted: 0
+2026-09-16 08:18:38 - Rows already existing: 5
+2026-09-16 08:18:38 - VOO update completed successfully
+2026-09-16 08:18:38 - Finished at 2026-09-16 08:18:38
+2026-09-16 08:18:38 - ============================================================
+2026-09-16 08:24:22 - ============================================================
+2026-09-16 08:24:22 - Starting VOO update
+2026-09-16 08:24:22 - Downloading VOO stock data...
+2026-09-16 08:24:26 - Downloaded 5 rows of data
+2026-09-16 08:24:26 - Connecting to SQL Server...
+2026-09-16 08:24:27 - Connected to SQL Server successfully
+2026-09-16 08:24:27 - 2026-09-09 already exists
+2026-09-16 08:24:27 - 2026-09-10 already exists
+2026-09-16 08:24:27 - 2026-09-11 already exists
+2026-09-16 08:24:27 - 2026-09-14 already exists
+2026-09-16 08:24:27 - 2026-09-15 already exists
+2026-09-16 08:24:27 - Database changes committed
+2026-09-16 08:24:27 - Rows inserted: 0
+2026-09-16 08:24:27 - Rows already existing: 5
+2026-09-16 08:24:27 - VOO update completed successfully
+2026-09-16 08:24:27 - Finished at 2026-09-16 08:24:27
+2026-09-16 08:24:27 - ============================================================
+2026-09-16 08:28:19 - ============================================================
+2026-09-16 08:28:19 - Starting VOO update
+2026-09-16 08:28:19 - Downloading VOO stock data...
+2026-09-16 08:28:19 - Downloaded 5 rows of data
+2026-09-16 08:28:19 - Connecting to SQL Server...
+2026-09-16 08:28:20 - Connected to SQL Server successfully
+2026-09-16 08:28:20 - 2026-09-09 already exists
+2026-09-16 08:28:20 - 2026-09-10 already exists
+2026-09-16 08:28:20 - 2026-09-11 already exists
+2026-09-16 08:28:20 - 2026-09-14 already exists
+2026-09-16 08:28:20 - 2026-09-15 already exists
+2026-09-16 08:28:20 - Database changes committed
+2026-09-16 08:28:20 - Rows inserted: 0
+2026-09-16 08:28:20 - Rows already existing: 5
+2026-09-16 08:28:20 - VOO update completed successfully
+2026-09-16 08:28:20 - Finished at 2026-09-16 08:28:20
+2026-09-16 08:28:20 - ============================================================
+2026-09-16 08:29:52 - ============================================================
+2026-09-16 08:29:52 - Starting VOO update
+2026-09-16 08:29:52 - Downloading VOO stock data...
+2026-09-16 08:29:53 - Downloaded 5 rows of data
+2026-09-16 08:29:53 - Connecting to SQL Server...
+2026-09-16 08:29:53 - Connected to SQL Server successfully
+2026-09-16 08:29:53 - 2026-09-09 already exists
+2026-09-16 08:29:53 - 2026-09-10 already exists
+2026-09-16 08:29:53 - 2026-09-11 already exists
+2026-09-16 08:29:53 - 2026-09-14 already exists
+2026-09-16 08:29:53 - 2026-09-15 already exists
+2026-09-16 08:29:53 - Database changes committed
+2026-09-16 08:29:53 - Rows inserted: 0
+2026-09-16 08:29:53 - Rows already existing: 5
+2026-09-16 08:29:53 - VOO update completed successfully
+2026-09-16 08:29:53 - Finished at 2026-09-16 08:29:53
+2026-09-16 08:29:53 - ============================================================
+2026-09-16 08:30:20 - ============================================================
+2026-09-16 08:30:20 - Starting VOO update
+2026-09-16 08:30:20 - Downloading VOO stock data...
+2026-09-16 08:30:21 - Downloaded 5 rows of data
+2026-09-16 08:30:21 - Connecting to SQL Server...
+2026-09-16 08:30:21 - Connected to SQL Server successfully
+2026-09-16 08:30:21 - 2026-09-09 already exists
+2026-09-16 08:30:21 - 2026-09-10 already exists
+2026-09-16 08:30:21 - 2026-09-11 already exists
+2026-09-16 08:30:21 - 2026-09-14 already exists
+2026-09-16 08:30:21 - 2026-09-15 already exists
+2026-09-16 08:30:21 - Database changes committed
+2026-09-16 08:30:21 - Rows inserted: 0
+2026-09-16 08:30:21 - Rows already existing: 5
+2026-09-16 08:30:21 - VOO update completed successfully
+2026-09-16 08:30:21 - Finished at 2026-09-16 08:30:21
+2026-09-16 08:30:21 - ============================================================
+2026-09-16 08:30:40 - ============================================================
+2026-09-16 08:30:40 - Starting VOO update
+2026-09-16 08:30:40 - Downloading VOO stock data...
+2026-09-16 08:30:41 - Downloaded 5 rows of data
+2026-09-16 08:30:41 - Connecting to SQL Server...
+2026-09-16 08:30:41 - Connected to SQL Server successfully
+2026-09-16 08:30:41 - 2026-09-09 already exists
+2026-09-16 08:30:41 - 2026-09-10 already exists
+2026-09-16 08:30:41 - 2026-09-11 already exists
+2026-09-16 08:30:41 - 2026-09-14 already exists
+2026-09-16 08:30:41 - 2026-09-15 already exists
+2026-09-16 08:30:41 - Database changes committed
+2026-09-16 08:30:41 - Rows inserted: 0
+2026-09-16 08:30:41 - Rows already existing: 5
+2026-09-16 08:30:41 - VOO update completed successfully
+2026-09-16 08:30:41 - Finished at 2026-09-16 08:30:41
+2026-09-16 08:30:41 - ============================================================
+2026-09-16 08:31:08 - ============================================================
+2026-09-16 08:31:08 - Starting VOO update
+2026-09-16 08:31:08 - Downloading VOO stock data...
+2026-09-16 08:31:09 - Downloaded 5 rows of data
+2026-09-16 08:31:09 - Connecting to SQL Server...
+2026-09-16 08:31:09 - Connected to SQL Server successfully
+2026-09-16 08:31:09 - 2026-09-09 already exists
+2026-09-16 08:31:09 - 2026-09-10 already exists
+2026-09-16 08:31:09 - 2026-09-11 already exists
+2026-09-16 08:31:09 - 2026-09-14 already exists
+2026-09-16 08:31:09 - 2026-09-15 already exists
+2026-09-16 08:31:09 - Database changes committed
+2026-09-16 08:31:09 - Rows inserted: 0
+2026-09-16 08:31:09 - Rows already existing: 5
+2026-09-16 08:31:09 - VOO update completed successfully
+2026-09-16 08:31:09 - Finished at 2026-09-16 08:31:09
+2026-09-16 08:31:09 - ============================================================
+2026-09-16 08:32:16 - ============================================================
+2026-09-16 08:32:16 - Starting VOO update
+2026-09-16 08:32:16 - Downloading VOO stock data...
+2026-09-16 08:32:16 - Downloaded 5 rows of data
+2026-09-16 08:32:16 - Connecting to SQL Server...
+2026-09-16 08:32:16 - Connected to SQL Server successfully
+2026-09-16 08:32:16 - 2026-09-09 already exists
+2026-09-16 08:32:16 - 2026-09-10 already exists
+2026-09-16 08:32:16 - 2026-09-11 already exists
+2026-09-16 08:32:16 - 2026-09-14 already exists
+2026-09-16 08:32:16 - 2026-09-15 already exists
+2026-09-16 08:32:16 - Database changes committed
+2026-09-16 08:32:16 - Rows inserted: 0
+2026-09-16 08:32:16 - Rows already existing: 5
+2026-09-16 08:32:16 - VOO update completed successfully
+2026-09-16 08:32:16 - Finished at 2026-09-16 08:32:16
+2026-09-16 08:32:16 - ============================================================
+2026-09-16 08:34:21 - ============================================================
+2026-09-16 08:34:21 - Starting VOO update
+2026-09-16 08:34:21 - Downloading VOO stock data...
+2026-09-16 08:34:22 - Downloaded 5 rows of data
+2026-09-16 08:34:22 - Connecting to SQL Server...
+2026-09-16 08:34:22 - Connected to SQL Server successfully
+2026-09-16 08:34:22 - 2026-09-09 already exists
+2026-09-16 08:34:22 - 2026-09-10 already exists
+2026-09-16 08:34:22 - 2026-09-11 already exists
+2026-09-16 08:34:22 - 2026-09-14 already exists
+2026-09-16 08:34:22 - 2026-09-15 already exists
+2026-09-16 08:34:22 - ERROR: name 'column_width' is not defined
+2026-09-16 08:34:22 - VOO update failed
+2026-09-16 08:34:22 - Finished at 2026-09-16 08:34:22
+2026-09-16 08:34:22 - ============================================================
+2026-09-16 08:35:07 - ============================================================
+2026-09-16 08:35:07 - Starting VOO update
+2026-09-16 08:35:07 - Downloading VOO stock data...
+2026-09-16 08:35:07 - Downloaded 5 rows of data
+2026-09-16 08:35:07 - Connecting to SQL Server...
+2026-09-16 08:35:07 - Connected to SQL Server successfully
+2026-09-16 08:35:07 - 2026-09-09 already exists
+2026-09-16 08:35:07 - 2026-09-10 already exists
+2026-09-16 08:35:07 - 2026-09-11 already exists
+2026-09-16 08:35:07 - 2026-09-14 already exists
+2026-09-16 08:35:07 - 2026-09-15 already exists
+2026-09-16 08:35:07 - Database changes committed
+2026-09-16 08:35:07 - Rows inserted: 0
+2026-09-16 08:35:07 - Rows already existing: 5
+2026-09-16 08:35:07 - VOO update completed successfully
+2026-09-16 08:35:07 - Finished at 2026-09-16 08:35:07
+2026-09-16 08:35:07 - ============================================================
+2026-09-16 08:42:00 - ============================================================
+2026-09-16 08:42:00 - Starting VOO update
+2026-09-16 08:42:00 - Downloading VOO stock data...
+2026-09-16 08:42:01 - Downloaded 5 rows of data
+2026-09-16 08:42:01 - Connecting to SQL Server...
+2026-09-16 08:42:01 - Connected to SQL Server successfully
+2026-09-16 08:42:01 - 2026-09-09 already exists
+2026-09-16 08:42:01 - 2026-09-10 already exists
+2026-09-16 08:42:01 - 2026-09-11 already exists
+2026-09-16 08:42:01 - 2026-09-14 already exists
+2026-09-16 08:42:01 - 2026-09-15 already exists
+2026-09-16 08:42:01 - Database changes committed
+2026-09-16 08:42:01 - Rows inserted: 0
+2026-09-16 08:42:01 - Rows already existing: 5
+2026-09-16 08:42:01 - VOO update completed successfully
+2026-09-16 08:42:01 - Finished at 2026-09-16 08:42:01
+2026-09-16 08:42:01 - ============================================================
+2026-09-16 08:51:32 - ============================================================
+2026-09-16 08:51:32 - Starting VOO update
+2026-09-16 08:51:32 - Downloading VOO stock data...
+2026-09-16 08:51:32 - Downloaded 5 rows of data
+2026-09-16 08:51:32 - Connecting to SQL Server...
+2026-09-16 08:51:32 - Connected to SQL Server successfully
+2026-09-16 08:51:32 - 2026-09-09 already exists
+2026-09-16 08:51:32 - 2026-09-10 already exists
+2026-09-16 08:51:32 - 2026-09-11 already exists
+2026-09-16 08:51:32 - 2026-09-14 already exists
+2026-09-16 08:51:32 - 2026-09-15 already exists
+2026-09-16 08:51:32 - Database changes committed
+2026-09-16 08:51:32 - Rows inserted: 0
+2026-09-16 08:51:32 - Rows already existing: 5
+2026-09-16 08:51:32 - VOO update completed successfully
+2026-09-16 08:51:32 - Finished at 2026-09-16 08:51:32
+2026-09-16 08:51:32 - ============================================================
+2026-09-16 08:53:09 - ============================================================
+2026-09-16 08:53:09 - Starting VOO update
+2026-09-16 08:53:09 - Downloading VOO stock data...
+2026-09-16 08:53:10 - Downloaded 5 rows of data
+2026-09-16 08:53:10 - Connecting to SQL Server...
+2026-09-16 08:53:10 - Connected to SQL Server successfully
+2026-09-16 08:53:10 - 2026-09-09 already exists
+2026-09-16 08:53:10 - 2026-09-10 already exists
+2026-09-16 08:53:10 - 2026-09-11 already exists
+2026-09-16 08:53:10 - 2026-09-14 already exists
+2026-09-16 08:53:10 - 2026-09-15 already exists
+2026-09-16 08:53:10 - Database changes committed
+2026-09-16 08:53:10 - Rows inserted: 0
+2026-09-16 08:53:10 - Rows already existing: 5
+2026-09-16 08:53:10 - VOO update completed successfully
+2026-09-16 08:53:10 - Finished at 2026-09-16 08:53:10
+2026-09-16 08:53:10 - ============================================================
+2026-09-16 08:59:51 - ============================================================
+2026-09-16 08:59:51 - Starting VOO update
+2026-09-16 08:59:51 - Downloading VOO stock data...
+2026-09-16 08:59:52 - Downloaded 5 rows of data
+2026-09-16 08:59:52 - Connecting to SQL Server...
+2026-09-16 08:59:52 - Connected to SQL Server successfully
+2026-09-16 08:59:52 - 2026-09-09 already exists
+2026-09-16 08:59:52 - 2026-09-10 already exists
+2026-09-16 08:59:52 - 2026-09-11 already exists
+2026-09-16 08:59:52 - 2026-09-14 already exists
+2026-09-16 08:59:52 - 2026-09-15 already exists
+2026-09-16 08:59:52 - Database changes committed
+2026-09-16 08:59:52 - Rows inserted: 0
+2026-09-16 08:59:52 - Rows already existing: 5
+2026-09-16 08:59:52 - VOO update completed successfully
+2026-09-16 08:59:52 - Finished at 2026-09-16 08:59:52
+2026-09-16 08:59:52 - ============================================================
+2026-09-16 09:14:39 - Starting VOO update
+2026-09-16 09:14:39 - Downloading VOO stock data...
+2026-09-16 09:14:39 - Downloaded 5 rows of data
+2026-09-16 09:14:39 - 2026-09-09 already exists
+2026-09-16 09:14:39 - 2026-09-10 already exists
+2026-09-16 09:14:39 - 2026-09-11 already exists
+2026-09-16 09:14:39 - 2026-09-14 already exists
+2026-09-16 09:14:39 - 2026-09-15 already exists
+2026-09-16 09:14:39 - Database update successful — inserted 0, existing 5
+2026-09-16 09:25:09 - Starting VOO update
+2026-09-16 09:25:09 - Downloading VOO stock data...
+2026-09-16 09:25:09 - Downloaded 5 rows of data
+2026-09-16 09:25:09 - 2026-09-09 already exists
+2026-09-16 09:25:09 - 2026-09-10 already exists
+2026-09-16 09:25:09 - 2026-09-11 already exists
+2026-09-16 09:25:09 - 2026-09-14 already exists
+2026-09-16 09:25:09 - 2026-09-15 already exists
+2026-09-16 09:25:09 - Database update successful — inserted 0, existing 5
+2026-09-16 09:25:36 - Starting VOO update
+2026-09-16 09:25:36 - Downloading VOO stock data...
+2026-09-16 09:25:36 - Downloaded 5 rows of data
+2026-09-16 09:25:36 - 2026-09-09 already exists
+2026-09-16 09:25:36 - 2026-09-10 already exists
+2026-09-16 09:25:36 - 2026-09-11 already exists
+2026-09-16 09:25:36 - 2026-09-14 already exists
+2026-09-16 09:25:36 - 2026-09-15 already exists
+2026-09-16 09:25:36 - Database update successful — inserted 0, existing 5
+2026-09-16 09:31:55 - Starting VOO update
+2026-09-16 09:31:55 - Downloading VOO stock data...
+2026-09-16 09:31:55 - Downloaded 5 rows of data
+2026-09-16 09:31:55 - 2026-09-10 already exists
+2026-09-16 09:31:55 - 2026-09-11 already exists
+2026-09-16 09:31:55 - 2026-09-14 already exists
+2026-09-16 09:31:55 - 2026-09-15 already exists
+2026-09-16 09:31:55 - Inserted new data for 2026-09-16
+2026-09-16 09:31:55 - Database update successful — inserted 1, existing 4
+2026-09-16 09:32:33 - Starting VOO update
+2026-09-16 09:32:33 - Downloading VOO stock data...
+2026-09-16 09:32:34 - Downloaded 5 rows of data
+2026-09-16 09:32:34 - 2026-09-10 already exists
+2026-09-16 09:32:34 - 2026-09-11 already exists
+2026-09-16 09:32:34 - 2026-09-14 already exists
+2026-09-16 09:32:34 - 2026-09-15 already exists
+2026-09-16 09:32:34 - 2026-09-16 already exists
+2026-09-16 09:32:34 - Database update successful — inserted 0, existing 5
+2026-09-16 09:32:52 - Starting VOO update
+2026-09-16 09:32:52 - Downloading VOO stock data...
+2026-09-16 09:32:52 - Downloaded 5 rows of data
+2026-09-16 09:32:52 - 2026-09-10 already exists
+2026-09-16 09:32:52 - 2026-09-11 already exists
+2026-09-16 09:32:52 - 2026-09-14 already exists
+2026-09-16 09:32:52 - 2026-09-15 already exists
+2026-09-16 09:32:52 - 2026-09-16 already exists
+2026-09-16 09:32:52 - Database update successful — inserted 0, existing 5
+2026-09-16 09:33:43 - ============================================================
+2026-09-16 09:33:43 - Starting VOO update
+2026-09-16 09:33:43 - Downloading VOO stock data...
+2026-09-16 09:33:44 - Downloaded 5 rows of data
+2026-09-16 09:33:44 - Connecting to SQL Server...
+2026-09-16 09:33:44 - Connected to SQL Server successfully
+2026-09-16 09:33:44 - 2026-09-10 already exists
+2026-09-16 09:33:44 - 2026-09-11 already exists
+2026-09-16 09:33:44 - 2026-09-14 already exists
+2026-09-16 09:33:44 - 2026-09-15 already exists
+2026-09-16 09:33:44 - 2026-09-16 already exists
+2026-09-16 09:33:44 - Database changes committed
+2026-09-16 09:33:44 - Rows inserted: 0
+2026-09-16 09:33:44 - Rows already existing: 5
+2026-09-16 09:33:44 - VOO update completed successfully
+2026-09-16 09:33:44 - Finished at 2026-09-16 09:33:44
+2026-09-16 09:33:44 - ============================================================
