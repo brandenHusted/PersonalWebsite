@@ -167,7 +167,7 @@
 
 <header>
     <h1>Security+ Practice Exam</h1>
-    <p>20 Random Questions Per Attempt</p>
+    <p>80 Random Questions Per Attempt</p>
 </header>
 
 
@@ -190,7 +190,7 @@
 
             <p>
                 Each attempt randomly selects
-                <strong>20 questions</strong>.
+                <strong>80 questions</strong>.
             </p>
 
             <p>
@@ -199,7 +199,7 @@
             </p>
 
             <ul>
-                <li>20 questions per attempt</li>
+                <li>80 questions per attempt</li>
                 <li>Random question selection</li>
                 <li>Score calculated automatically</li>
                 <li>Explanations provided after the exam</li>
@@ -222,7 +222,7 @@
     <div id="quizPage" class="page">
 
         <div class="question-number" id="progressText">
-            Question 1 of 20
+            Question 1 of 80
         </div>
 
         <div class="progress-container">
@@ -2945,7 +2945,7 @@ const questionBank = [
    QUIZ VARIABLES
 ============================================================ */
 
-const QUESTIONS_PER_QUIZ = 20;
+const QUESTIONS_PER_QUIZ = 80;
 
 let selectedQuestions = [];
 
@@ -2994,7 +2994,7 @@ function shuffle(array) {
 function startQuiz() {
 
     /*
-     * Select 20 unique questions from the question bank.
+     * Select 80 unique questions from the question bank.
      */
 
     selectedQuestions =
@@ -3506,7 +3506,7 @@ function showPage(pageId) {
 /* ============================================================
    SAFETY CHECK
 
-   Make sure the question bank contains at least 20 questions.
+   Make sure the question bank contains at least 80 questions.
 ============================================================ */
 
 if (questionBank.length < QUESTIONS_PER_QUIZ) {
