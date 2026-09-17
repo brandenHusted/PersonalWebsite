@@ -15,6 +15,7 @@ log_folder = script_folder / "logs"
 log_folder.mkdir(exist_ok=True)
 
 log_file = log_folder / "voo_update.log"
+# for graph later
 column_width = 8
 
 def log(message):
