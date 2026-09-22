@@ -90,77 +90,40 @@ def get_voo_data():
 
 @app.route('/api/update-voo', methods=['GET'])
 def update_voo_data():
-    """
-    Run the same download-and-insert logic as update_voo.py, then return
-    the full VOO price history so the site can chart it right away.
-    """
     try:
-        log("Starting VOO update")
+        log("Downloading latest VOO data...")
 
-        # Download VOO data
-        log("Downloading VOO stock data...")
-        data = yf.download("VOO", period="5d", interval="1d", auto_adjust=False)
+        data = yf.download(
+            "VOO",
+            period="6d",
+            interval="1d",
+            auto_adjust=False
+        )
+
         data = data.reset_index()
 
-        # Fix newer yfinance MultiIndex columns
         if hasattr(data.columns, "nlevels") and data.columns.nlevels > 1:
             data.columns = data.columns.get_level_values(0)
 
-        log(f"Downloaded {len(data)} rows of data")
-
-        # Connect to the database
-        connection = get_database_connection()
-        cursor = connection.cursor()
-
-        inserted_count = 0
-        existing_count = 0
+        results = []
 
         for _, row in data.iterrows():
-            trade_date = row["Date"].date()
-            open_price = float(row["Open"])
-            high_price = float(row["High"])
-            low_price = float(row["Low"])
-            close_price = float(row["Close"])
-            volume = int(row["Volume"])
+            results.append({
+                "date": row["Date"].strftime("%Y-%m-%d"),
+                "open": float(row["Open"]),
+                "high": float(row["High"]),
+                "low": float(row["Low"]),
+                "close": float(row["Close"]),
+                "volume": int(row["Volume"])
+            })
 
-            cursor.execute(
-                """
-                SELECT COUNT(*)
-                FROM dbo.VOO_Stock_Data
-                WHERE [Date] = ?
-                """,
-                trade_date
-            )
+        log(f"Downloaded {len(results)} rows of current VOO data")
 
-            exists = cursor.fetchone()[0]
-
-            if exists == 0:
-                cursor.execute(
-                    """
-                    INSERT INTO dbo.VOO_Stock_Data
-                    ([Date], [Open], [High], [Low], [Close], [Volume])
-                    VALUES (?, ?, ?, ?, ?, ?)
-                    """,
-                    trade_date, open_price, high_price, low_price, close_price, volume
-                )
-                log(f"Inserted new data for {trade_date}")
-                inserted_count += 1
-            else:
-                log(f"{trade_date} already exists")
-                existing_count += 1
-
-        connection.commit()
-        cursor.close()
-        connection.close()
-
-        log(f"Database update successful — inserted {inserted_count}, existing {existing_count}")
-
-        # Hand back the full, refreshed series so the site can chart it
-        return jsonify(fetch_all_voo_rows())
+        return jsonify(results)
 
     except Exception as e:
         log(f"ERROR: {str(e)}")
-        return jsonify({"error": "Failed to update data"}), 500
+        return jsonify({"error": "Failed to download VOO data"}), 500
 
 # --------------------------------------------------
 # MAIN ENTRY POINT

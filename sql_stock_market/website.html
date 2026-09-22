@@ -414,7 +414,6 @@ async function showUpdateVOO() {
             row => row.close
         );
 
-
         createChart(
 
             dates,
@@ -475,10 +474,12 @@ function createChart(
                     {
                         label: label,
                         data: values,
+                        borderColor: "rgba(255, 99, 132, 1)",
                         borderWidth: 2,
                         pointRadius: 3,
                         tension: 0.2
-                    }
+                    },
+                    
                 ]
             },
             options: {
