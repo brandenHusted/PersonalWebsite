@@ -125,7 +125,7 @@
 
 <div id="mainPage">
 
-    <h1>Stock Market Analysis (run voodata.py from git respository or stockDropGreaterThen5.py but not both at the same time and this works only with localhost)</h1>
+    <h1>Stock Market Analysis (This only works on local host http://127.0.0.1:5000 and to run the two voo graphs run voo_update_js.py and view apple drops > 5 run stockDropGreaterThen5.py and to see volume and high/low of AAPL run volume_high_low.py from GitHub.)</h1>
 
     <p class="description">
 
@@ -159,6 +159,15 @@
     >
 
         View Updated VOO Graph
+
+    </button>
+
+    <button
+        id="VolumeHighAAPLButton"
+        onclick="VolumeAAPL()"
+    >
+
+        View Volume and High/Low of AAPL
 
     </button>
 
@@ -222,7 +231,7 @@ async function showVOO() {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:5000/api/voo"
+            "http://127.0.0.1:5000/api/voo" // Ensure this endpoint exists on your server and is running
         );
 
 
@@ -297,16 +306,20 @@ async function showApple() {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:5000/api/stock-drops"
+            "http://127.0.0.1:5000/api/stock-drops" // Ensure this endpoint exists on your server and is running
         );
 
 
         if (!response.ok) {
-
+            const errorText = await response.text();
+            console.error("API Request Failed:", {
+                status: response.status,
+                statusText: response.statusText,
+                body: errorText
+            });
             throw new Error(
-                "Apple stock API request failed"
+                `Apple stock API request failed with status ${response.status}: ${response.statusText}`
             );
-
         }
 
 
@@ -380,7 +393,7 @@ async function showUpdateVOO() {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:5000/api/update-voo"
+            "http://127.0.0.1:5000/api/update-voo" // Ensure this endpoint exists on your server and is running
         );
 
 
@@ -435,13 +448,112 @@ async function showUpdateVOO() {
 }
 
 // ====================================
+// SHOW Volume and High of AAPL
+// ====================================
+
+async function VolumeAAPL() {
+
+disableButtons();
+
+showGraphPage();
+
+document.getElementById(
+    "graphTitle"
+).textContent = "Apple Stock Volume, Daily High, and Daily Low";
+
+
+try {
+
+    const response = await fetch(
+        "http://127.0.0.1:5000/api/volume/" // Ensure this endpoint exists on your server and is running
+    );
+
+
+    if (!response.ok) {
+
+        throw new Error(
+            "Apple stock API request failed"
+        );
+
+    }
+
+
+    const data = await response.json();
+
+
+    if (data.error) {
+
+        throw new Error(
+            data.error
+        );
+
+    }
+
+
+    const dates = data.map(
+        row => {
+
+            return new Date(
+                row.TradeDate
+            ).toLocaleDateString();
+
+        }
+    );
+
+
+    const drops = data.map(
+        row => Number(
+            row.Volume
+        )
+    );
+
+    const highDay = data.map(
+        row => Number(
+            row.HighPrice
+        )
+    );
+
+    const lowDay = data.map(
+        row => Number(
+            row.LowPrice
+        )
+    );
+
+
+    createChart(
+
+        dates,
+
+        drops,
+
+        "AAPL Volume",
+
+        highDay,
+
+        lowDay
+
+    );
+
+}
+
+catch (error) {
+
+    showError(error);
+
+}
+
+}
+
+// ====================================
 // CREATE CHART
 // ====================================
 
 function createChart(
     labels,
     values,
-    label
+    label,
+    highDay,
+    lowDay
 ) {
 
     // Adjust dates for "Updated VOO" data to match today's date and the previous 5 days
@@ -455,35 +567,61 @@ function createChart(
     }
 
     const ctx = document
-        .getElementById(
-            "stockChart"
-        )
+        .getElementById("stockChart")
         .getContext("2d");
 
     if (stockChart) {
         stockChart.destroy();
     }
 
-    stockChart = new Chart(
-        ctx,
-        {
+    // AAPL chart with Volume, Daily High, and Daily Low
+    if (label === "AAPL Volume" && highDay && lowDay) {
+
+        stockChart = new Chart(ctx, {
             type: "line",
+
             data: {
                 labels: labels,
+
                 datasets: [
                     {
-                        label: label,
+                        label: "AAPL Volume",
                         data: values,
-                        borderColor: "rgba(255, 99, 132, 1)",
+                        borderColor: "blue",
                         borderWidth: 2,
                         pointRadius: 3,
-                        tension: 0.2
+                        tension: 0.2,
+                        yAxisID: "yVolume"
                     },
-                    
+                    {
+                        label: "AAPL Daily High",
+                        data: highDay,
+                        borderColor: "green",
+                        borderWidth: 2,
+                        pointRadius: 3,
+                        tension: 0.2,
+                        yAxisID: "yPrice"
+                    },
+                    {
+                        label: "AAPL Daily Low",
+                        data: lowDay,
+                        borderColor: "red",
+                        borderWidth: 2,
+                        pointRadius: 3,
+                        tension: 0.2,
+                        yAxisID: "yPrice"
+                    }
                 ]
             },
+
             options: {
                 responsive: true,
+
+                interaction: {
+                    mode: "index",
+                    intersect: false
+                },
+
                 scales: {
                     x: {
                         title: {
@@ -491,21 +629,78 @@ function createChart(
                             text: "Date"
                         }
                     },
-                    y: {
+
+                    yVolume: {
+                        type: "linear",
+                        position: "left",
                         title: {
                             display: true,
-                            text: "Value"
+                            text: "Volume"
+                        }
+                    },
+
+                    yPrice: {
+                        type: "linear",
+                        position: "right",
+                        title: {
+                            display: true,
+                            text: "Price ($)"
+                        },
+
+                        grid: {
+                            drawOnChartArea: false
                         }
                     }
                 }
             }
+        });
+
+        return;
+    }
+
+    // Normal single-series charts
+    stockChart = new Chart(ctx, {
+        type: "line",
+
+        data: {
+            labels: labels,
+
+            datasets: [
+                {
+                    label: label,
+                    data: values,
+                    borderColor: "blue",
+                    borderWidth: 2,
+                    pointRadius: 3,
+                    tension: 0.2
+                }
+            ]
+        },
+
+        options: {
+            responsive: true,
+
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: "Date"
+                    }
+                },
+
+                y: {
+                    title: {
+                        display: true,
+                        text: "Value"
+                    }
+                }
+            }
         }
-    );
+    });
 }
 
 
 
-// ====================================
 // SHOW GRAPH PAGE
 // ====================================
 
@@ -541,6 +736,10 @@ function disableButtons() {
 
     document.getElementById(
         "updateVooButton"
+    ).disabled = true;
+
+    document.getElementById(
+        "VolumeHighAAPLButton"
     ).disabled = true;
 
 }
@@ -586,6 +785,9 @@ function returnToMain() {
         "updateVooButton"
     ).disabled = false;
 
+    document.getElementById(
+        "VolumeHighAAPLButton"
+    ).disabled = false;
 
     document.getElementById(
         "errorMessage"

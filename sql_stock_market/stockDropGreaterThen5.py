@@ -21,21 +21,31 @@ connection_string = (
 # APPLE STOCK DROPS > 5%
 # ==============================
 
-@app.route("/api/stock-drops")
+@app.route("/api/stock-drops/", methods=["GET"])
 def get_stock_drops():
+    """Return AAPL trading days where the closing price dropped 5% or more."""
 
     try:
-
         connect = pyodbc.connect(connection_string)
 
         query = """
-        SELECT *
+        SELECT
+            TradeDate,
+            Ticker,
+            ClosePrice,
+            HighPrice,
+            LowPrice,
+            Volume,
+            Percent_Change
         FROM
         (
             SELECT
                 TradeDate,
                 Ticker,
                 ClosePrice,
+                HighPrice,
+                LowPrice,
+                Volume,
 
                 (
                     (
@@ -55,7 +65,6 @@ def get_stock_drops():
             FROM DailySTOCKDATA
 
             WHERE Ticker = 'AAPL'
-
         ) StockChanges
 
         WHERE Percent_Change <= -5
@@ -70,6 +79,10 @@ def get_stock_drops():
 
         connect.close()
 
+        # Convert dates to strings so Flask can return them as JSON
+        if "TradeDate" in results.columns:
+            results["TradeDate"] = results["TradeDate"].astype(str)
+
         data = results.to_dict(
             orient="records"
         )
@@ -81,7 +94,6 @@ def get_stock_drops():
         return jsonify({
             "error": str(e)
         }), 500
-
 
 # ==============================
 # HOME
