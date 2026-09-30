@@ -605,9 +605,9 @@ const questionBank = [
         question: "What is tailgating?",
         answers: [
             "Following an authorized person into a secured area",
-            "Stealing network traffic",
-            "Scanning ports",
-            "Encrypting files"
+            "Stealing network traffic after looking over another employees computer",
+            "Scanning ports that are known ports used in a companies network",
+            "Letting an unauthorized person into your office"
         ],
         correctAnswer: 0,
         domain: "Threats, Vulnerabilities & Mitigations",
@@ -645,7 +645,7 @@ const questionBank = [
         answers: [
             "A vulnerability that has never existed",
             "A vulnerability with no available patch or limited vendor response",
-            "A vulnerability that only affects mobile phones",
+            "A vulnerability that only affects critical devices",
             "A vulnerability that has already been completely fixed"
         ],
         correctAnswer: 1,
@@ -766,9 +766,9 @@ const questionBank = [
         question: "What is network segmentation designed to accomplish?",
         answers: [
             "Increase monitor brightness",
-            "Separate networks or systems to limit access and attack spread",
-            "Disable authentication",
-            "Remove encryption"
+            "Limit access and attack spread",
+            "Faster authentication",
+            "Better network speed"
         ],
         correctAnswer: 1,
         domain: "Security Architecture",
@@ -937,16 +937,16 @@ const questionBank = [
     },
 
     {
-        question: "What is the purpose of vulnerability scanning?",
+        question: "A company needs a storage configuration that provides fault tolerance if any two drives fail, striping for improved read performance, no requirement for maximum usable capacity, and the organization has 8 identical drives. Which RAID configuration BEST meets these requirements",
         answers: [
-            "Identify potential security weaknesses",
-            "Guarantee that systems are secure",
-            "Replace backups",
-            "Encrypt all files"
+            "RAID 5",
+            "RAID 6",
+            "RAID 10",
+            "RAID 2"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         domain: "Security Operations",
-        explanation: "Vulnerability scanning identifies known weaknesses so organizations can prioritize remediation."
+        explanation: "RAID 6 uses dual parity, so it can survive any two drive failures (Memorize RAID 0,1,5,6,10)."
     },
 
     {
@@ -1067,16 +1067,16 @@ const questionBank = [
     },
 
     {
-        question: "What is a deny list?",
+        question: "A Company has 4 drives and needs maximum performance while also ensuring that the system can survive the failure of one drive. The company is willing to sacrifice 50% of the total storage capacity. Which RAID configuration should they use?",
         answers: [
-            "A list of explicitly prohibited items",
-            "A list of approved applications",
-            "A list of backup files",
-            "A list of employees"
+            "RAID 0",
+            "RAID 1",
+            "RAID 5",
+            "RAID 10"
         ],
-        correctAnswer: 0,
+        correctAnswer: 3,
         domain: "Security Operations",
-        explanation: "A deny list identifies items that are specifically prohibited."
+        explanation: "RAID 10 combines mirroring so you can use 50% storage capacity and improved performance from all other RAID versions."
     },
 
     {
@@ -1134,7 +1134,7 @@ const questionBank = [
     {
         question: "Which security technology commonly blocks unauthorized applications from executing?",
         answers: [
-            "Application allow listing",
+            "An allow listing",
             "DNS",
             "DHCP",
             "NTP"
@@ -1179,8 +1179,8 @@ const questionBank = [
         question: "What does MFA require?",
         answers: [
             "Two or more authentication factors",
-            "Two passwords",
-            "Two usernames",
+            "A password and a username",
+            "A Fingerprint and a retinal scan",
             "Two computers"
         ],
         correctAnswer: 0,
@@ -2353,19 +2353,6 @@ const questionBank = [
     },
 
     {
-        question: "What is an indicator of compromise?",
-        answers: [
-            "Evidence suggesting that a system may have been compromised",
-            "A backup policy",
-            "A software license",
-            "A firewall warranty"
-        ],
-        correctAnswer: 0,
-        domain: "Threats, Vulnerabilities & Mitigations",
-        explanation: "Indicators of compromise can include suspicious files, domains, IP addresses, hashes, processes, or other evidence associated with malicious activity."
-    },
-
-    {
         question: "Which activity involves searching systems for known indicators of compromise?",
         answers: [
             "Data classification",
@@ -2446,9 +2433,9 @@ const questionBank = [
     {
         question: "What is the primary purpose of a business continuity plan?",
         answers: [
-            "Create passwords",
-            "Scan network ports",
-            "Install antivirus",
+            "Create passwords and use MFA after an attack happens",
+            "File paperwork and report all issues to business",
+            "Install antivirus to protect against cybersecurity threats",
             "Maintain or restore critical business functions during disruptions"
         ],
         correctAnswer: 3,
@@ -2461,8 +2448,8 @@ const questionBank = [
         answers: [
             "Business continuity focuses on maintaining operations, while disaster recovery focuses on restoring systems and services",
             "They are always exactly the same",
-            "Disaster recovery only applies to passwords",
-            "Business continuity only applies to firewalls"
+            "Disaster recovery only applies to firewalls and physical assets and business continuity is all about profit",
+            "A disaster can happen and the business can continue on likewise a business can not continue if there is no disaster"
         ],
         correctAnswer: 0,
         domain: "Security Program Management",
@@ -2652,12 +2639,12 @@ const questionBank = [
     },
 
     {
-        question: "What is rate limiting used for?",
+        question: "Which of the following best describes the purpose of rate limiting in a security context?",
         answers: [
-            "Restrict how many requests a user or system can make within a period",
-            "Increase CPU speed",
-            "Disable encryption",
-            "Create backups"
+            "To restrict the number of requests a user or system can make within a defined time frame",
+            "To enhance system performance by optimizing CPU usage",
+            "To ensure encryption protocols are applied to all data transmissions",
+            "To create redundant backups for disaster recovery purposes"
         ],
         correctAnswer: 0,
         domain: "Security Architecture",
@@ -2665,16 +2652,16 @@ const questionBank = [
     },
 
     {
-        question: "What is a replay attack?",
+        question: "Which of the following best describes a replay attack?",
         answers: [
-            "Capturing valid communication and retransmitting it later",
-            "Deleting a database",
-            "Scanning ports",
-            "Encrypting a hard drive"
+            "Intercepting and retransmitting valid communication to gain unauthorized access",
+            "Encrypting intercepted data to prevent detection",
+            "Scanning open ports to identify vulnerabilities",
+            "Deleting sensitive data from a database"
         ],
         correctAnswer: 0,
         domain: "Threats, Vulnerabilities & Mitigations",
-        explanation: "A replay attack captures valid authentication or communication data and attempts to reuse it later."
+        explanation: "A replay attack involves capturing valid communication data and retransmitting it to impersonate a legitimate user or system."
     },
 
     {
@@ -2730,16 +2717,16 @@ const questionBank = [
     },
 
     {
-        question: "What is the purpose of vulnerability prioritization?",
+        question: "When addressing vulnerabilities, what is the primary goal of prioritization?",
         answers: [
-            "Determine which vulnerabilities should be addressed first based on risk",
-            "Fix vulnerabilities randomly",
-            "Ignore critical vulnerabilities",
-            "Disable vulnerability scanning"
+            "To allocate resources effectively based on the potential impact and likelihood of exploitation",
+            "To address vulnerabilities in alphabetical order",
+            "To focus only on vulnerabilities with high risk",
+            "To delay remediation until all vulnerabilities are identified"
         ],
         correctAnswer: 0,
         domain: "Security Operations",
-        explanation: "Prioritization helps organizations focus remediation resources on vulnerabilities that represent the greatest risk."
+        explanation: "Prioritization ensures that resources are directed toward vulnerabilities that pose the highest risk, considering both impact and likelihood."
     },
 
     {
