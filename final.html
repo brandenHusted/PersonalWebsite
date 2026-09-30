@@ -2938,6 +2938,62 @@ const questionBank = [
         explanation: "Reflected cross-site scripting is when  a script is supplied in a query string and echoed straight back in response."
     },
 
+    {
+        question: "An administrator is managing a Public Key Infrastructure (PKI) environment for an internal web application. They need to ensure that clients can verify whether a specific server certificate has been revoked prior to its standard expiration date without relying solely on long update cycles. Which component or mechanism of PKI is specifically queried to obtain real-time validation of a single certificate's status?",
+        answers: [
+            "Registration Authority (RA)",
+            "Certificate Revocation List (CRL)",
+            "Online Certificate Status Protocol (OCSP)",
+            "Key Distrbution Center (KDC)"
+            
+        ],
+        correctAnswer: 2,
+        domain: "Security Operations",
+        explanation: "OCSP (Online Certificate Status Protocol) is a protocol used for obtaining the revocation status of an X.509 digital certificate in real-time, allowing clients to check if a certificate is still valid or has been revoked."
+    },
+
+    {
+        question: "During a vunerability scan, a security analyst identifies legacy internal servers running an obsolete service that relies on the unpatched SMBv1 protocol. Due to strict operational dependencies, these servers cannot be patched or taken offline for the next six months. Which of the following is the most effective immediate compensating or mitigating control?",
+        answers: [
+            "Deploying a HIDS",
+            "Enabling full-disk encryption on all server drives",
+            "Installing a honneypot in the production zone",
+            "Implementing strict network segmentation and firewall rules to restrict access"
+            
+        ],
+        correctAnswer: 3,
+        domain: "Security Operations",
+        explanation: "Using strict network segmentation and firewall rules will be the best answer for protecting these legacy servers."
+    },
+
+    {
+        question: "An incident response team receives an alert that a critical user workstation is infected with active ransomware. The malware is currently encrypting local files and attempting to spread across adjacent SMB shares on the corporate network. According to standard incident response phases, what must the team perform immediately?",
+        answers: [
+            "Containment",
+            "Eradication",
+            "Lessons Learned",
+            "Forensic Imaging"
+            
+        ],
+        correctAnswer: 0,
+        domain: "Security Operations",
+        explanation: "Isolating the infected host via containment prevents lateral movement in the network."
+    },
+
+    {
+        question: "A healthcare organization is preparing to migrate sensitive electronic Protected Health Information to a third-party cloud service provider. To legally bind the cloud vendor to specific privacy, security safeguard implementations, and compliance mandates required under HIPAA regulations, which specific agreement must be established prior to data migration?",
+        answers: [
+            "Business Associate Agreement (BAA)",
+            "Service Level Agreement (SLA)",
+            "Interconnection Security Agreement (ISA)",
+            "Memorandum of Understanding (MOU)"
+            
+        ],
+        correctAnswer: 0,
+        domain: "Security Operations",
+        explanation: "A BAA  is a legal contract required under HIPAA between a covered entity and a business associate to ensure proper safeguarding and regulatory compliance for Protected Health Information."
+    },
+
 ];
 
 

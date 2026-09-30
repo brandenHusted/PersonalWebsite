@@ -752,3 +752,29 @@
 2026-09-23 10:14:22 - Downloaded 5 rows of current VOO data
 2026-09-23 10:58:06 - Downloading latest VOO data...
 2026-09-23 10:58:07 - Downloaded 5 rows of current VOO data
+2026-09-23 14:41:21 - ============================================================
+2026-09-23 14:41:21 - Starting VOO update
+2026-09-23 14:41:21 - Downloading VOO stock data...
+2026-09-23 14:41:25 - Downloaded 4 rows of data
+2026-09-23 14:41:25 - Connecting to SQL Server...
+2026-09-23 14:41:25 - Connected to SQL Server successfully
+2026-09-23 14:41:25 - 2026-09-17 already exists
+2026-09-23 14:41:25 - 2026-09-18 already exists
+2026-09-23 14:41:25 - 2026-09-21 already exists
+2026-09-23 14:41:25 - 2026-09-23 already exists
+2026-09-23 14:41:25 - Database changes committed
+2026-09-23 14:41:25 - Rows inserted: 0
+2026-09-23 14:41:25 - Rows already existing: 4
+2026-09-23 14:41:25 - VOO update completed successfully
+2026-09-23 14:41:25 - Finished at 2026-09-23 14:41:25
+2026-09-23 14:41:25 - ============================================================
+2026-09-28 11:36:20 - ============================================================
+2026-09-28 11:36:20 - Starting VOO update
+2026-09-28 11:36:20 - Downloading VOO stock data...
+2026-09-28 11:36:25 - Downloaded 0 rows of data
+2026-09-28 11:36:25 - Connecting to SQL Server...
+2026-09-28 11:36:25 - Connected to SQL Server successfully
+2026-09-28 11:36:25 - ERROR: min() iterable argument is empty
+2026-09-28 11:36:25 - VOO update failed
+2026-09-28 11:36:25 - Finished at 2026-09-28 11:36:25
+2026-09-28 11:36:25 - ============================================================
