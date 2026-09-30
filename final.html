@@ -3000,6 +3000,12 @@ let randomizedAnswers = [];
 
 let score = 0;
 
+/*
+ * Ensure no repeat questions by shuffling the question bank
+ * and selecting the first 80 unique questions.
+ */
+selectedQuestions = shuffle(questionBank).slice(0, QUESTIONS_PER_QUIZ);
+
 
 /* ============================================================
    SHUFFLE FUNCTION
