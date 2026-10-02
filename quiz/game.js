@@ -2268,8 +2268,14 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', (event) => {
       event.preventDefault();
       const song = event.target.getAttribute('data-song');
-      music.src = song;
-      music.play();
+      if (song) {
+        music.src = song;
+        music.play().catch(() => {});
+      } else {
+        music.pause();
+        music.removeAttribute('src');
+        music.load();
+      }
       dropupContent.style.display = 'none'; // Close the menu after selection
     });
   });
@@ -2284,7 +2290,7 @@ document.addEventListener('DOMContentLoaded', () => {
    // Event listener for the "Play" button
    playButton.addEventListener('click', () => {
      if (music.paused) {
-       music.play();
+       music.play().catch(() => {});
      } else {
       music.pause();
      }
@@ -2315,26 +2321,45 @@ document.addEventListener('DOMContentLoaded', () => {
     return array;
   }
   
-  function getFilteredQuestions() {
-    let allQuestions = [];
-    // Get questions based on the selected difficulty
-    // added all field for all questions
-    allQuestions = quizData[savedDifficulty];
-    // Filter based on category
-    if (savedCategory !== 'all') {
-      allQuestions = allQuestions.filter(question => question.category === savedCategory);
+  const DIFFICULTY_LEVELS = ['easy', 'medium', 'hard'];
+
+  // Returns questions for a difficulty. Any value that is not easy/medium/hard
+  // (e.g. "all", null, or something unexpected) returns every question.
+  function getQuestionsForDifficulty(level) {
+    const key = (level || '').toString().trim().toLowerCase();
+    if (DIFFICULTY_LEVELS.includes(key)) {
+      return quizData[key];
     }
-    // Shuffle combined questions
+    return DIFFICULTY_LEVELS.flatMap(d => quizData[d] || []);
+  }
+
+  function getFilteredQuestions() {
+    // Copy so shuffling/popping never modifies quizData itself
+    let allQuestions = [...getQuestionsForDifficulty(savedDifficulty)];
+    const cat = (savedCategory || '').toString().trim();
+    if (cat && cat.toLowerCase() !== 'all') {
+      const filtered = allQuestions.filter(question => question.category === cat);
+      if (filtered.length > 0) {
+        allQuestions = filtered;
+      } else {
+        console.warn('No questions found for category "' + cat + '"; using all categories.');
+      }
+    }
     return shuffleArray(allQuestions);
   }
-  
+
   let questionsPool = getFilteredQuestions();
   
   // Function to load a question and its answers
   function loadQuestion() {
     if (questionsPool.length === 0) {
-      // Used for when all questions is pressed for the quiz.
-      questionsPool = shuffleArray(quizData[difficulty]);
+      // Refill when the pool runs out
+      questionsPool = getFilteredQuestions();
+    }
+    if (questionsPool.length === 0) {
+      questionText.textContent = 'Sorry, no questions could be loaded. Please go back and pick again.';
+      answersContainer.innerHTML = '';
+      return;
     }
     const currentQuestion = questionsPool.pop();
     questionText.textContent = currentQuestion.question;
