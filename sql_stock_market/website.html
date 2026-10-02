@@ -15,6 +15,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <!-- Chatbot database -->
+    <script src="./chat_data.js"></script>
+
     <style>
 
         body {
@@ -111,6 +114,346 @@
 
         }
 
+        /* =========================
+           VOO PERSONAL AI CHATBOT
+           ========================= */
+
+        #chatbotContainer {
+
+            max-width: 1000px;
+
+            margin: 35px auto;
+
+            background: white;
+
+            padding: 24px;
+
+            border-radius: 12px;
+
+            box-sizing: border-box;
+
+            text-align: left;
+
+        }
+
+        #chatbotContainer h2 {
+
+            text-align: center;
+
+            margin-top: 0;
+
+            margin-bottom: 8px;
+
+        }
+
+        #chatbotDescription {
+
+            text-align: center;
+
+            color: #555;
+
+            margin-bottom: 18px;
+
+        }
+
+        #chatMessages {
+
+            height: 280px;
+
+            overflow-y: auto;
+
+            border: 1px solid #ddd;
+
+            border-radius: 8px;
+
+            padding: 14px;
+
+            background: #fafafa;
+
+            margin-bottom: 14px;
+
+        }
+
+        .chatMessage {
+
+            margin: 8px 0;
+
+            line-height: 1.45;
+
+        }
+
+        .chatYou {
+
+            color: #1d4ed8;
+
+        }
+
+        .chatBot {
+
+            color: #222;
+
+        }
+
+        #chatInputRow {
+
+            display: flex;
+
+            gap: 10px;
+
+            align-items: center;
+
+        }
+
+        #chatInput {
+
+            flex: 1;
+
+            padding: 12px;
+
+            border: 1px solid #bbb;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+
+            box-sizing: border-box;
+
+        }
+
+        #chatSendButton {
+
+            margin: 0;
+
+            white-space: nowrap;
+
+        }
+
+        #chatQuickQuestions {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 14px;
+
+        }
+
+        .quickQuestion {
+
+            margin: 0;
+
+            padding: 8px 12px;
+
+            font-size: 14px;
+
+            background: #e5e7eb;
+
+            color: #111827;
+
+        }
+
+        .quickQuestion:hover {
+
+            background: #d1d5db;
+
+        }
+
+        #chatStatus {
+
+            margin-top: 10px;
+
+            font-size: 13px;
+
+            color: #666;
+
+            min-height: 18px;
+
+        }
+
+        /* =========================
+           AAPL PERSONAL AI CHATBOT
+           ========================= */
+
+        #AAPLchatbotContainer {
+
+            max-width: 1000px;
+
+            margin: 35px auto;
+
+            background: white;
+
+            padding: 24px;
+
+            border-radius: 12px;
+
+            box-sizing: border-box;
+
+            text-align: left;
+
+        }
+
+        #AAPLchatbotContainer h2 {
+
+            text-align: center;
+
+            margin-top: 0;
+
+            margin-bottom: 8px;
+
+        }
+
+        #AAPLchatbotDescription {
+
+            text-align: center;
+
+            color: #555;
+
+            margin-bottom: 18px;
+
+        }
+
+        #AAPLchatMessages {
+
+            height: 280px;
+
+            overflow-y: auto;
+
+            border: 1px solid #ddd;
+
+            border-radius: 8px;
+
+            padding: 14px;
+
+            background: #fafafa;
+
+            margin-bottom: 14px;
+
+        }
+
+        .AAPLchatMessage {
+
+            margin: 8px 0;
+
+            line-height: 1.45;
+
+        }
+
+        #AAPLchatInputRow {
+
+            display: flex;
+
+            gap: 10px;
+
+            align-items: center;
+
+        }
+
+        #AAPLchatInput {
+
+            flex: 1;
+
+            padding: 12px;
+
+            border: 1px solid #bbb;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+
+            box-sizing: border-box;
+
+        }
+
+        #AAPLchatSendButton {
+
+            margin: 0;
+
+            white-space: nowrap;
+
+        }
+
+        #AAPLchatQuickQuestions {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 14px;
+
+        }
+
+        #AAPLchatQuickQuestions .quickQuestion {
+
+            margin: 0;
+
+            padding: 8px 12px;
+
+            font-size: 14px;
+
+            background: #e5e7eb;
+
+            color: #111827;
+
+        }
+
+        #AAPLchatQuickQuestions .quickQuestion:hover {
+
+            background: #d1d5db;
+
+        }
+
+        #AAPLchatStatus {
+
+            margin-top: 10px;
+
+            font-size: 13px;
+
+            color: #666;
+
+            min-height: 18px;
+
+        }
+
+        @media (max-width: 700px) {
+
+            #chatInputRow {
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+            }
+
+            #chatSendButton {
+
+                width: 100%;
+
+                margin: 0;
+
+            }
+
+            #AAPLchatInputRow {
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+            }
+
+            #AAPLchatSendButton {
+
+                width: 100%;
+
+                margin: 0;
+
+            }
+
+        }
+
     </style>
 
 </head>
@@ -125,7 +468,10 @@
 
 <div id="mainPage">
 
-    <h1>Stock Market Analysis (This only works on local host http://127.0.0.1:5000 and to run the two voo graphs run voo_update_js.py and view apple drops > 5 run stockDropGreaterThen5.py and to see volume and high/low of AAPL run volume_high_low.py from GitHub.)</h1>
+    <h1>
+        Stock Market Analysis
+        (This only works on local host http://127.0.0.1:5000 and to run the two voo graphs run voo_update_js.py and view apple drops > 5 run stockDropGreaterThen5.py and to see volume and high/low of AAPL run volume_high_low.py from GitHub.)
+    </h1>
 
     <p class="description">
 
@@ -136,7 +482,7 @@
 
     <button
         id="vooButton"
-        onclick="showVOO()"
+        onclick="showVOO(); showAIVOO();"
     >
 
         View VOO Graph
@@ -146,25 +492,27 @@
 
     <button
         id="appleButton"
-        onclick="showApple()"
+        onclick="showApple(); showAIAAPL();"
     >
 
         View Apple Drops > 5%
 
     </button>
 
+
     <button
         id="updateVooButton"
-        onclick="showUpdateVOO()"
+        onclick="showUpdateVOO(); showAIVOO();"
     >
 
         View Updated VOO Graph
 
     </button>
 
+
     <button
         id="VolumeHighAAPLButton"
-        onclick="VolumeAAPL()"
+        onclick="VolumeAAPL(); showAIAAPL();"
     >
 
         View Volume and High/Low of AAPL
@@ -174,6 +522,244 @@
 </div>
 
 
+<!-- ========================= -->
+<!-- PERSONAL AI CHATBOT VOO -->
+<!-- ========================= -->
+
+<div id="chatbotContainer" style="display: none;">
+
+    <h2>Personal Investment Assistant with Personal AI database incorporated — VOO</h2>
+
+    <p id="chatbotDescription">
+
+        Ask questions about VOO or your stock data.
+
+    </p>
+
+    <div id="chatMessages">
+
+        <div class="chatMessage chatBot">
+
+            <b>Chatbot:</b>
+
+            Hi! I can answer questions using my personal AI responses
+            and, for VOO questions, the data returned by your SQL-backed
+            VOO API.
+
+        </div>
+
+    </div>
+
+    <div id="chatInputRow">
+
+        <input
+            type="text"
+            id="chatInput"
+            placeholder="Type your question here..."
+            autocomplete="off"
+        >
+
+        <button
+            id="chatSendButton"
+            onclick="askPersonalAI()"
+        >
+
+            Ask
+
+        </button>
+
+    </div>
+
+    <div id="chatQuickQuestions">
+
+        <button
+            class="quickQuestion"
+            onclick="askQuickQuestion('What is VOO?')"
+        >
+
+            What is VOO?
+
+        </button>
+
+        <button
+            class="quickQuestion"
+            onclick="askQuickQuestion('How is VOO doing recently?')"
+        >
+
+            Recent VOO performance
+
+        </button>
+
+        <button
+            class="quickQuestion"
+            onclick="askQuickQuestion('What is the latest VOO price?')"
+        >
+
+            Latest VOO price
+
+        </button>
+
+        <button
+            class="quickQuestion"
+            onclick="askQuickQuestion('What is the highest VOO closing price in my data?')"
+        >
+
+            Highest VOO close
+
+        </button>
+
+        <button
+            class="quickQuestion"
+            onclick="askQuickQuestion('What is the lowest VOO closing price in my data?')"
+        >
+
+            Lowest VOO close
+
+        </button>
+
+        <button
+            class="quickQuestion"
+            onclick="askQuickQuestion('What is VOO volume?')"
+        >
+
+            VOO volume
+
+        </button>
+
+        <button
+            class="quickQuestion"
+            onclick="askQuickQuestion('Explain VOO moving averages')"
+        >
+
+            Explain moving averages
+
+        </button>
+
+    </div>
+
+    <div id="chatStatus"></div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- PERSONAL AI CHATBOT AAPL -->
+<!-- ========================= -->
+
+<div id="AAPLchatbotContainer" style="display: none;">
+
+    <h2>Personal Investment Assistant no personal AI incorporated — AAPL</h2>
+
+    <p id="AAPLchatbotDescription">
+
+        Ask questions about AAPL, Apple stock drops, volume, daily highs, or daily lows.
+
+    </p>
+
+    <div id="AAPLchatMessages">
+
+        <div class="AAPLchatMessage chatBot">
+
+            <b>Chatbot:</b>
+
+            Hi! I can answer questions using your two AAPL APIs:
+            stock drops greater than 5%, and AAPL volume, daily high, and daily low data.
+
+        </div>
+
+    </div>
+
+    <div id="AAPLchatInputRow">
+
+        <input
+            type="text"
+            id="AAPLchatInput"
+            placeholder="Ask a question about AAPL..."
+            autocomplete="off"
+        >
+
+        <button
+            id="AAPLchatSendButton"
+            onclick="askAAPLPersonalAI()"
+        >
+
+            Ask
+
+        </button>
+
+    </div>
+
+    <div id="AAPLchatQuickQuestions">
+
+        <button
+            class="quickQuestion"
+            onclick="askAAPLQuickQuestion('What is AAPL?')"
+        >
+
+            What is AAPL?
+
+        </button>
+
+        <button
+            class="quickQuestion"
+            onclick="askAAPLQuickQuestion('Show me the AAPL drops greater than 5%')"
+        >
+
+            AAPL drops > 5%
+
+        </button>
+
+        <button
+            class="quickQuestion"
+            onclick="askAAPLQuickQuestion('What is the largest AAPL drop in my data?')"
+        >
+
+            Largest AAPL drop
+
+        </button>
+
+        <button
+            class="quickQuestion"
+            onclick="askAAPLQuickQuestion('What is the latest AAPL volume?')"
+        >
+
+            Latest AAPL volume
+
+        </button>
+
+        <button
+            class="quickQuestion"
+            onclick="askAAPLQuickQuestion('What is the highest daily price for AAPL?')"
+        >
+
+            Highest AAPL price
+
+        </button>
+
+        <button
+            class="quickQuestion"
+            onclick="askAAPLQuickQuestion('What is the lowest daily price for AAPL?')"
+        >
+
+            Lowest AAPL price
+
+        </button>
+
+        <button
+            class="quickQuestion"
+            onclick="askAAPLQuickQuestion('What was the AAPL volume on the latest date?')"
+        >
+
+            Latest volume
+
+        </button>
+
+    </div>
+
+    <div id="AAPLchatStatus"></div>
+
+</div>
+
 
 <!-- ========================= -->
 <!-- GRAPH PAGE -->
@@ -182,7 +768,9 @@
 <div id="graphPage">
 
     <h1 id="graphTitle">
+
         Stock Graph
+
     </h1>
 
 
@@ -196,9 +784,7 @@
     <div id="errorMessage"></div>
 
 
-    <button
-        onclick="returnToMain()"
-    >
+    <button onclick="returnToMain()">
 
         ← Back to Main Page
 
@@ -207,11 +793,1560 @@
 </div>
 
 
-
 <script>
 
 
+// ====================================
+// PERSONAL AI CHATBOT
+// ====================================
+
+function chatbotLevenshteinDistance(a, b) {
+
+    const an = a.length;
+
+    const bn = b.length;
+
+    if (an === 0) return bn;
+
+    if (bn === 0) return an;
+
+    const matrix = [];
+
+    for (let i = 0; i <= an; i++) {
+
+        matrix[i] = [i];
+
+    }
+
+    for (let j = 1; j <= bn; j++) {
+
+        matrix[0][j] = j;
+
+    }
+
+    for (let i = 1; i <= an; i++) {
+
+        for (let j = 1; j <= bn; j++) {
+
+            matrix[i][j] =
+                a[i - 1] === b[j - 1]
+                    ? matrix[i - 1][j - 1]
+                    : Math.min(
+                        matrix[i - 1][j - 1] + 1,
+                        matrix[i][j - 1] + 1,
+                        matrix[i - 1][j] + 1
+                    );
+
+        }
+
+    }
+
+    return matrix[an][bn];
+
+}
+
+
+// ====================================
+// PERSONAL AI HYBRID MATCHING
+// ====================================
+
+function personalAIHybridMatching(userInput) {
+
+    const userKeywords = userInput
+        .toLowerCase()
+        .replace(/[?!.,]/g, "")
+        .split(/\s+/)
+        .filter(Boolean);
+
+    let bestIndex = -1;
+
+    let bestScore = 0;
+
+    personalAIKeywords.forEach((keywords, index) => {
+
+        const exactMatches = userKeywords.filter(uk =>
+            [...keywords].some(qk => qk === uk)
+        ).length;
+
+        const fuzzyMatches = userKeywords.filter(uk =>
+            [...keywords].some(qk => {
+
+                const distance =
+                    chatbotLevenshteinDistance(uk, qk);
+
+                return distance <= 1 && qk.length > 2;
+
+            })
+        ).length;
+
+        const totalMatches =
+            exactMatches + fuzzyMatches;
+
+        if (totalMatches > bestScore) {
+
+            bestScore = totalMatches;
+
+            bestIndex = index;
+
+        }
+
+    });
+
+    return bestScore >= 1 ? bestIndex : -1;
+
+}
+
+
+// ====================================
+// FORMAT MONEY
+// ====================================
+
+function formatMoney(value) {
+
+    const number = Number(value);
+
+    if (!Number.isFinite(number)) {
+
+        return "unavailable";
+
+    }
+
+    return number.toLocaleString("en-US", {
+
+        style: "currency",
+
+        currency: "USD"
+
+    });
+
+}
+
+
+// ====================================
+// FORMAT NUMBER
+// ====================================
+
+function formatNumber(value) {
+
+    const number = Number(value);
+
+    if (!Number.isFinite(number)) {
+
+        return "unavailable";
+
+    }
+
+    return number.toLocaleString("en-US");
+
+}
+
+
+// ====================================
+// NORMALIZE VOO DATA
+// ====================================
+
+function normalizeVOOData(data) {
+
+    if (!Array.isArray(data)) {
+
+        return [];
+
+    }
+
+    return data
+        .map(row => ({
+
+            date:
+                row.date ??
+                row.Date ??
+                row.tradeDate ??
+                row.TradeDate,
+
+            close:
+                Number(
+                    row.close ??
+                    row.Close ??
+                    row.closing_price
+                ),
+
+            volume:
+                Number(
+                    row.volume ??
+                    row.Volume
+                )
+
+        }))
+        .filter(row =>
+            row.date &&
+            Number.isFinite(row.close)
+        )
+        .sort((a, b) =>
+            new Date(a.date) - new Date(b.date)
+        );
+
+}
+
+
+// ====================================
+// GET VOO DATA
+// ====================================
+
+async function getVOODataForAI() {
+
+    const response = await fetch(
+        "http://127.0.0.1:5000/api/voo"
+    );
+
+    if (!response.ok) {
+
+        throw new Error(
+            "Could not load VOO data."
+        );
+
+    }
+
+    const data = await response.json();
+
+    if (data.error) {
+
+        throw new Error(data.error);
+
+    }
+
+    return normalizeVOOData(data);
+
+}
+
+
+// ====================================
+// CHECK VOO QUESTION
+// ====================================
+
+function isVOODataQuestion(input) {
+
+    const text = input.toLowerCase();
+
+    const vooWords = [
+
+        "voo",
+        "vanguard",
+        "s&p 500",
+        "s&p",
+        "etf"
+
+    ];
+
+    const dataWords = [
+
+        "price",
+        "close",
+        "closing",
+        "recent",
+        "recently",
+        "today",
+        "latest",
+        "performance",
+        "highest",
+        "high",
+        "lowest",
+        "low",
+        "volume",
+        "data",
+        "database",
+        "change",
+        "gain",
+        "loss",
+        "return",
+        "moving average",
+        "sma"
+
+    ];
+
+    return vooWords.some(word =>
+        text.includes(word)
+    ) &&
+    dataWords.some(word =>
+        text.includes(word)
+    );
+
+}
+
+
+// ====================================
+// ANSWER VOO QUESTION
+// ====================================
+
+async function answerVOOQuestion(userInput) {
+
+    const data =
+        await getVOODataForAI();
+
+    if (data.length === 0) {
+
+        return "I found no VOO records in the data returned by your API.";
+
+    }
+
+    const latest =
+        data[data.length - 1];
+
+
+    if (isLatestPriceQuestion(userInput)) {
+
+        return (
+
+            "According to the latest VOO record returned by your SQL-backed " +
+            "data, the closing price is " +
+            formatMoney(latest.close) +
+            " on " +
+            new Date(latest.date).toLocaleDateString() +
+            "."
+
+        );
+
+    }
+
+
+    if (isHighestQuestion(userInput)) {
+
+        const highest =
+            data.reduce(
+                (best, row) =>
+                    row.close > best.close ? row : best,
+                data[0]
+            );
+
+        return (
+
+            "The highest VOO closing price in the data returned by your " +
+            "API is " +
+            formatMoney(highest.close) +
+            " on " +
+            new Date(highest.date).toLocaleDateString() +
+            "."
+
+        );
+
+    }
+
+
+    if (isLowestQuestion(userInput)) {
+
+        const lowest =
+            data.reduce(
+                (best, row) =>
+                    row.close < best.close ? row : best,
+                data[0]
+            );
+
+        return (
+
+            "The lowest VOO closing price in the data returned by your " +
+            "API is " +
+            formatMoney(lowest.close) +
+            " on " +
+            new Date(lowest.date).toLocaleDateString() +
+            "."
+
+        );
+
+    }
+
+
+    if (isRecentPerformanceQuestion(userInput)) {
+
+        const recent =
+            data.slice(-5);
+
+        if (recent.length < 2) {
+
+            return "There are not enough VOO records in the returned data to calculate recent performance.";
+
+        }
+
+        const first =
+            recent[0].close;
+
+        const last =
+            recent[recent.length - 1].close;
+
+        const change =
+            ((last - first) / first) * 100;
+
+        const direction =
+            change > 0
+                ? "increased"
+                : change < 0
+                    ? "decreased"
+                    : "was unchanged";
+
+        return (
+
+            "Based on the most recent " +
+            recent.length +
+            " VOO records returned by your SQL-backed API, VOO " +
+            direction +
+            " by " +
+            Math.abs(change).toFixed(2) +
+            "%, from " +
+            formatMoney(first) +
+            " to " +
+            formatMoney(last) +
+            ". This is a historical observation, not a prediction."
+
+        );
+
+    }
+
+
+    if (isVolumeQuestion(userInput)) {
+
+        const rowsWithVolume =
+            data.filter(row =>
+                Number.isFinite(row.volume)
+            );
+
+        if (rowsWithVolume.length === 0) {
+
+            return "The VOO records returned by your API do not currently contain usable volume data.";
+
+        }
+
+        const latestVolume =
+            rowsWithVolume[
+                rowsWithVolume.length - 1
+            ];
+
+        return (
+
+            "The latest VOO volume in the returned data is approximately " +
+            formatNumber(latestVolume.volume) +
+            " shares on " +
+            new Date(latestVolume.date).toLocaleDateString() +
+            "."
+
+        );
+
+    }
+
+
+    return (
+
+        "I can use your VOO data to answer questions about recent prices, " +
+        "highest and lowest closing prices, performance, and volume. " +
+        "Try asking one of those."
+
+    );
+
+}
+
+
+// ====================================
+// AAPL API #1
+// STOCK DROPS GREATER THAN 5%
+// ====================================
+
+async function getAAPLDropData() {
+
+    const response = await fetch(
+        "http://127.0.0.1:5000/api/stock-drops/"
+    );
+
+    if (!response.ok) {
+
+        throw new Error(
+            "Could not load AAPL stock-drop data."
+        );
+
+    }
+
+    const data = await response.json();
+
+    if (data.error) {
+
+        throw new Error(data.error);
+
+    }
+
+    if (!Array.isArray(data)) {
+
+        return [];
+
+    }
+
+    return data
+        .map(row => ({
+
+            date:
+                row.TradeDate ??
+                row.tradeDate ??
+                row.date ??
+                row.Date,
+
+            percentChange:
+                Number(
+                    row.Percent_Change ??
+                    row.percent_change ??
+                    row.percentChange
+                )
+
+        }))
+        .filter(row =>
+            row.date &&
+            Number.isFinite(row.percentChange)
+        )
+        .sort((a, b) =>
+            new Date(a.date) -
+            new Date(b.date)
+        );
+
+}
+
+
+// ====================================
+// AAPL API #2
+// VOLUME / HIGH / LOW
+// ====================================
+
+async function getAAPLVolumeData() {
+
+    const response = await fetch(
+        "http://127.0.0.1:5000/api/volume/"
+    );
+
+    if (!response.ok) {
+
+        throw new Error(
+            "Could not load AAPL volume data."
+        );
+
+    }
+
+    const data = await response.json();
+
+    if (data.error) {
+
+        throw new Error(data.error);
+
+    }
+
+    if (!Array.isArray(data)) {
+
+        return [];
+
+    }
+
+    return data
+        .map(row => ({
+
+            date:
+                row.TradeDate ??
+                row.tradeDate ??
+                row.date ??
+                row.Date,
+
+            volume:
+                Number(
+                    row.Volume ??
+                    row.volume
+                ),
+
+            high:
+                Number(
+                    row.HighPrice ??
+                    row.highPrice ??
+                    row.High ??
+                    row.high
+                ),
+
+            low:
+                Number(
+                    row.LowPrice ??
+                    row.lowPrice ??
+                    row.Low ??
+                    row.low
+                )
+
+        }))
+        .filter(row =>
+            row.date
+        )
+        .sort((a, b) =>
+            new Date(a.date) -
+            new Date(b.date)
+        );
+
+}
+
+
+// ====================================
+// CHECK AAPL QUESTION
+// ====================================
+
+function isAAPLDataQuestion(input) {
+
+    const text =
+        input.toLowerCase();
+
+    const aaplWords = [
+
+        "aapl",
+        "apple"
+
+    ];
+
+    const dataWords = [
+
+        "drop",
+        "drops",
+        "fall",
+        "fell",
+        "decline",
+        "declined",
+        "loss",
+        "losses",
+        "5%",
+        "greater than 5",
+        "more than 5",
+        "volume",
+        "high",
+        "highest",
+        "low",
+        "lowest",
+        "recent",
+        "recently",
+        "latest",
+        "today",
+        "data",
+        "database",
+        "price"
+
+    ];
+
+    return aaplWords.some(word =>
+        text.includes(word)
+    ) &&
+    dataWords.some(word =>
+        text.includes(word)
+    );
+
+}
+
+
+// ====================================
+// CHECK AAPL DROP QUESTION
+// ====================================
+
+function isAAPLDropQuestion(input) {
+
+    const text =
+        input.toLowerCase();
+
+    return (
+
+        text.includes("drop") ||
+        text.includes("drops") ||
+        text.includes("fall") ||
+        text.includes("fell") ||
+        text.includes("decline") ||
+        text.includes("declined") ||
+        text.includes("loss") ||
+        text.includes("losses") ||
+        text.includes("5%")
+
+    );
+
+}
+
+
+// ====================================
+// CHECK AAPL VOLUME QUESTION
+// ====================================
+
+function isAAPLVolumeQuestion(input) {
+
+    const text =
+        input.toLowerCase();
+
+    return (
+
+        text.includes("volume") ||
+        text.includes("shares traded") ||
+        text.includes("trading volume")
+
+    );
+
+}
+
+
+// ====================================
+// CHECK AAPL HIGH QUESTION
+// ====================================
+
+function isAAPLHighQuestion(input) {
+
+    const text =
+        input.toLowerCase();
+
+    return (
+
+        text.includes("high") ||
+        text.includes("highest")
+
+    );
+
+}
+
+
+// ====================================
+// CHECK AAPL LOW QUESTION
+// ====================================
+
+function isAAPLLowQuestion(input) {
+
+    const text =
+        input.toLowerCase();
+
+    return (
+
+        text.includes("low") ||
+        text.includes("lowest")
+
+    );
+
+}
+
+
+// ====================================
+// ANSWER AAPL QUESTION
+// ====================================
+
+async function answerAAPLQuestion(userInput) {
+
+    const text =
+        userInput.toLowerCase();
+
+
+    // ====================================
+    // AAPL DROP DATABASE
+    // ====================================
+
+    if (isAAPLDropQuestion(userInput)) {
+
+        const dropData =
+            await getAAPLDropData();
+
+        if (dropData.length === 0) {
+
+            return (
+                "I found no AAPL stock-drop records in " +
+                "/api/stock-drops/."
+            );
+
+        }
+
+
+        const largestDrop =
+            dropData.reduce(
+                (worst, row) =>
+                    row.percentChange < worst.percentChange
+                        ? row
+                        : worst,
+                dropData[0]
+            );
+
+
+        if (
+            text.includes("largest") ||
+            text.includes("biggest") ||
+            text.includes("worst")
+        ) {
+
+            return (
+
+                "The largest AAPL drop in the data returned by " +
+                "/api/stock-drops/ was " +
+                Math.abs(largestDrop.percentChange).toFixed(2) +
+                "% on " +
+                new Date(
+                    largestDrop.date
+                ).toLocaleDateString() +
+                "."
+
+            );
+
+        }
+
+
+        if (
+            text.includes("latest") ||
+            text.includes("most recent") ||
+            text.includes("recent")
+        ) {
+
+            const latestDrop =
+                dropData[
+                    dropData.length - 1
+                ];
+
+            return (
+
+                "The latest AAPL drop in the data returned by " +
+                "/api/stock-drops/ was " +
+                Math.abs(latestDrop.percentChange).toFixed(2) +
+                "% on " +
+                new Date(
+                    latestDrop.date
+                ).toLocaleDateString() +
+                "."
+
+            );
+
+        }
+
+
+        return (
+
+            "Your /api/stock-drops/ endpoint contains " +
+            dropData.length +
+            " AAPL stock-drop records. " +
+            "These are the AAPL records in your database that meet " +
+            "your greater-than-5% drop criteria."
+
+        );
+
+    }
+
+
+    // ====================================
+    // AAPL VOLUME DATABASE
+    // ====================================
+
+    if (isAAPLVolumeQuestion(userInput)) {
+
+        const volumeData =
+            await getAAPLVolumeData();
+
+        if (volumeData.length === 0) {
+
+            return (
+                "I found no AAPL volume records in " +
+                "/api/volume/."
+            );
+
+        }
+
+
+        const rowsWithVolume =
+            volumeData.filter(row =>
+                Number.isFinite(row.volume)
+            );
+
+
+        if (rowsWithVolume.length === 0) {
+
+            return (
+                "The /api/volume/ endpoint did not return usable " +
+                "Volume values."
+            );
+
+        }
+
+
+        const latest =
+            rowsWithVolume[
+                rowsWithVolume.length - 1
+            ];
+
+
+        if (
+            text.includes("highest") ||
+            text.includes("largest")
+        ) {
+
+            const highestVolume =
+                rowsWithVolume.reduce(
+                    (highest, row) =>
+                        row.volume > highest.volume
+                            ? row
+                            : highest,
+                    rowsWithVolume[0]
+                );
+
+            return (
+
+                "The highest AAPL trading volume in the data returned " +
+                "by /api/volume/ was " +
+                formatNumber(highestVolume.volume) +
+                " shares on " +
+                new Date(
+                    highestVolume.date
+                ).toLocaleDateString() +
+                "."
+
+            );
+
+        }
+
+
+        return (
+
+            "The latest AAPL trading volume returned by " +
+            "/api/volume/ is approximately " +
+            formatNumber(latest.volume) +
+            " shares on " +
+            new Date(
+                latest.date
+            ).toLocaleDateString() +
+            "."
+
+        );
+
+    }
+
+
+    // ====================================
+    // AAPL HIGH DATABASE
+    // ====================================
+
+    if (isAAPLHighQuestion(userInput)) {
+
+        const volumeData =
+            await getAAPLVolumeData();
+
+        if (volumeData.length === 0) {
+
+            return (
+                "I found no AAPL high-price records in " +
+                "/api/volume/."
+            );
+
+        }
+
+
+        const rowsWithHigh =
+            volumeData.filter(row =>
+                Number.isFinite(row.high)
+            );
+
+
+        if (rowsWithHigh.length === 0) {
+
+            return (
+                "The /api/volume/ endpoint did not return usable " +
+                "HighPrice values."
+            );
+
+        }
+
+
+        const highest =
+            rowsWithHigh.reduce(
+                (best, row) =>
+                    row.high > best.high
+                        ? row
+                        : best,
+                rowsWithHigh[0]
+            );
+
+
+        const latest =
+            rowsWithHigh[
+                rowsWithHigh.length - 1
+            ];
+
+
+        if (
+            text.includes("highest") ||
+            text.includes("highest price") ||
+            text.includes("maximum")
+        ) {
+
+            return (
+
+                "The highest AAPL daily high in the data returned by " +
+                "/api/volume/ is " +
+                formatMoney(highest.high) +
+                " on " +
+                new Date(
+                    highest.date
+                ).toLocaleDateString() +
+                "."
+
+            );
+
+        }
+
+
+        return (
+
+            "The latest AAPL daily high returned by /api/volume/ is " +
+            formatMoney(latest.high) +
+            " on " +
+            new Date(
+                latest.date
+            ).toLocaleDateString() +
+            "."
+
+        );
+
+    }
+
+
+    // ====================================
+    // AAPL LOW DATABASE
+    // ====================================
+
+    if (isAAPLLowQuestion(userInput)) {
+
+        const volumeData =
+            await getAAPLVolumeData();
+
+        if (volumeData.length === 0) {
+
+            return (
+                "I found no AAPL low-price records in " +
+                "/api/volume/."
+            );
+
+        }
+
+
+        const rowsWithLow =
+            volumeData.filter(row =>
+                Number.isFinite(row.low)
+            );
+
+
+        if (rowsWithLow.length === 0) {
+
+            return (
+                "The /api/volume/ endpoint did not return usable " +
+                "LowPrice values."
+            );
+
+        }
+
+
+        const lowest =
+            rowsWithLow.reduce(
+                (best, row) =>
+                    row.low < best.low
+                        ? row
+                        : best,
+                rowsWithLow[0]
+            );
+
+
+        const latest =
+            rowsWithLow[
+                rowsWithLow.length - 1
+            ];
+
+
+        if (
+            text.includes("lowest") ||
+            text.includes("minimum")
+        ) {
+
+            return (
+
+                "The lowest AAPL daily low in the data returned by " +
+                "/api/volume/ is " +
+                formatMoney(lowest.low) +
+                " on " +
+                new Date(
+                    lowest.date
+                ).toLocaleDateString() +
+                "."
+
+            );
+
+        }
+
+
+        return (
+
+            "The latest AAPL daily low returned by /api/volume/ is " +
+            formatMoney(latest.low) +
+            " on " +
+            new Date(
+                latest.date
+            ).toLocaleDateString() +
+            "."
+
+        );
+
+    }
+
+
+    // ====================================
+    // GENERAL AAPL RESPONSE
+    // ====================================
+
+    return (
+
+        "I can use your two AAPL databases. " +
+        "I can answer questions about AAPL drops greater than 5% " +
+        "using /api/stock-drops/, and AAPL volume, daily highs, " +
+        "and daily lows using /api/volume/. " +
+        "Try asking about the largest drop, latest drop, volume, " +
+        "highest daily price, or lowest daily price."
+
+    );
+
+}
+
+
+// ====================================
+// ADD VOO CHAT MESSAGE
+// ====================================
+
+function addChatMessage(
+    sender,
+    message,
+    className
+) {
+
+    const chatMessages =
+        document.getElementById(
+            "chatMessages"
+        );
+
+    const messageElement =
+        document.createElement("div");
+
+    messageElement.className =
+        "chatMessage " +
+        className;
+
+    const senderElement =
+        document.createElement("b");
+
+    senderElement.textContent =
+        sender + ": ";
+
+    const messageText =
+        document.createElement("span");
+
+    messageText.textContent =
+        message;
+
+    messageElement.appendChild(
+        senderElement
+    );
+
+    messageElement.appendChild(
+        messageText
+    );
+
+    chatMessages.appendChild(
+        messageElement
+    );
+
+    chatMessages.scrollTop =
+        chatMessages.scrollHeight;
+
+}
+
+
+// ====================================
+// ADD AAPL CHAT MESSAGE
+// ====================================
+
+function addAAPLChatMessage(
+    sender,
+    message,
+    className
+) {
+
+    const chatMessages =
+        document.getElementById(
+            "AAPLchatMessages"
+        );
+
+    const messageElement =
+        document.createElement("div");
+
+    messageElement.className =
+        "AAPLchatMessage " +
+        className;
+
+    const senderElement =
+        document.createElement("b");
+
+    senderElement.textContent =
+        sender + ": ";
+
+    const messageText =
+        document.createElement("span");
+
+    messageText.textContent =
+        message;
+
+    messageElement.appendChild(
+        senderElement
+    );
+
+    messageElement.appendChild(
+        messageText
+    );
+
+    chatMessages.appendChild(
+        messageElement
+    );
+
+    chatMessages.scrollTop =
+        chatMessages.scrollHeight;
+
+}
+
+
+// ====================================
+// VOO AI
+// ====================================
+
+async function askPersonalAI() {
+
+    const input =
+        document.getElementById(
+            "chatInput"
+        );
+
+    const userInput =
+        input.value.trim();
+
+    if (!userInput) {
+
+        return;
+
+    }
+
+    addChatMessage(
+        "You",
+        userInput,
+        "chatYou"
+    );
+
+    input.value = "";
+
+    const status =
+        document.getElementById(
+            "chatStatus"
+        );
+
+    status.textContent =
+        "Thinking...";
+
+
+    try {
+
+        let chatbotResponse = "";
+
+
+        if (isVOODataQuestion(userInput)) {
+
+            chatbotResponse =
+                await answerVOOQuestion(
+                    userInput
+                );
+
+        } else {
+
+            let closestMatchIndex =
+                personalAIHybridMatching(
+                    userInput
+                );
+
+
+            if (closestMatchIndex === -1) {
+
+                let smallestDistance =
+                    Infinity;
+
+
+                personalAIQuestions.forEach(
+                    (question, index) => {
+
+                        const distance =
+                            chatbotLevenshteinDistance(
+                                userInput.toLowerCase(),
+                                question.toLowerCase()
+                            );
+
+
+                        if (
+                            distance <
+                            smallestDistance &&
+                            distance <= 10
+                        ) {
+
+                            smallestDistance =
+                                distance;
+
+                            closestMatchIndex =
+                                index;
+
+                        }
+
+                    }
+                );
+
+            }
+
+
+            if (closestMatchIndex !== -1) {
+
+                chatbotResponse =
+                    personalAIResponses[
+                        closestMatchIndex
+                    ];
+
+            } else {
+
+                chatbotResponse =
+                    "I'm sorry, I didn't quite understand. " +
+                    "Try asking me about VOO, its recent performance, " +
+                    "latest price, highest or lowest closing price, " +
+                    "volume, or a basic investing concept.";
+
+            }
+
+        }
+
+
+        addChatMessage(
+            "Chatbot",
+            chatbotResponse,
+            "chatBot"
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Personal AI error:",
+            error
+        );
+
+
+        addChatMessage(
+            "Chatbot",
+            "I couldn't retrieve the VOO data right now. " +
+            "Make sure your Flask server is running and that " +
+            "/api/voo is available.",
+            "chatBot"
+        );
+
+
+    } finally {
+
+        status.textContent = "";
+
+    }
+
+}
+
+
+// ====================================
+// AAPL AI
+// ====================================
+
+async function askAAPLPersonalAI() {
+
+    const input =
+        document.getElementById(
+            "AAPLchatInput"
+        );
+
+    const userInput =
+        input.value.trim();
+
+    if (!userInput) {
+
+        return;
+
+    }
+
+    addAAPLChatMessage(
+        "You",
+        userInput,
+        "chatYou"
+    );
+
+    input.value = "";
+
+    const status =
+        document.getElementById(
+            "AAPLchatStatus"
+        );
+
+    status.textContent =
+        "Thinking...";
+
+
+    try {
+
+        let chatbotResponse = "";
+
+
+        // Questions about AAPL data
+        if (
+            isAAPLDataQuestion(
+                userInput
+            )
+        ) {
+
+            chatbotResponse =
+                await answerAAPLQuestion(
+                    userInput
+                );
+
+        }
+
+
+        // General AAPL question
+        else if (
+            userInput
+                .toLowerCase()
+                .includes("aapl") ||
+            userInput
+                .toLowerCase()
+                .includes("apple")
+        ) {
+
+            chatbotResponse =
+
+                "AAPL is Apple's stock ticker symbol. " +
+                "For your personal stock data, I can retrieve " +
+                "AAPL drops greater than 5% from /api/stock-drops/ " +
+                "and volume, daily high, and daily low information " +
+                "from /api/volume/.";
+
+        }
+
+
+        else {
+
+            chatbotResponse =
+
+                "I can answer AAPL questions about your stock data. " +
+                "Try asking about AAPL drops greater than 5%, " +
+                "the largest drop, trading volume, highest daily price, " +
+                "or lowest daily price.";
+
+        }
+
+
+        addAAPLChatMessage(
+            "Chatbot",
+            chatbotResponse,
+            "chatBot"
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "AAPL Personal AI error:",
+            error
+        );
+
+
+        addAAPLChatMessage(
+            "Chatbot",
+            "I couldn't retrieve the AAPL data right now. " +
+            "Make sure your Flask server is running and that " +
+            "/api/stock-drops/ and /api/volume/ are available.",
+            "chatBot"
+        );
+
+
+    } finally {
+
+        status.textContent = "";
+
+    }
+
+}
+
+
+// ====================================
+// VOO QUICK QUESTION
+// ====================================
+
+function askQuickQuestion(question) {
+
+    document.getElementById(
+        "chatInput"
+    ).value = question;
+
+    askPersonalAI();
+
+}
+
+
+// ====================================
+// AAPL QUICK QUESTION
+// ====================================
+
+function askAAPLQuickQuestion(question) {
+
+    document.getElementById(
+        "AAPLchatInput"
+    ).value = question;
+
+    askAAPLPersonalAI();
+
+}
+
+
+// ====================================
+// ENTER KEY - VOO
+// ====================================
+
+document.getElementById(
+    "chatInput"
+).addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+
+            askPersonalAI();
+
+        }
+
+    }
+);
+
+
+// ====================================
+// ENTER KEY - AAPL
+// ====================================
+
+document.getElementById(
+    "AAPLchatInput"
+).addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+
+            askAAPLPersonalAI();
+
+        }
+
+    }
+);
+
+
+// ====================================
+// STOCK CHART
+// ====================================
+
 let stockChart = null;
+
 
 // ====================================
 // SHOW VOO
@@ -225,14 +2360,16 @@ async function showVOO() {
 
     document.getElementById(
         "graphTitle"
-    ).textContent = "VOO Stock Price";
+    ).textContent =
+        "VOO Stock Price";
 
 
     try {
 
-        const response = await fetch(
-            "http://127.0.0.1:5000/api/voo" // Ensure this endpoint exists on your server and is running
-        );
+        const response =
+            await fetch(
+                "http://127.0.0.1:5000/api/voo"
+            );
 
 
         if (!response.ok) {
@@ -244,9 +2381,13 @@ async function showVOO() {
         }
 
 
-        const data = await response.json();
+        const data =
+            await response.json();
 
-        console.log(data); // Log the data for debugging
+
+        console.log(data);
+
+
         if (data.error) {
 
             throw new Error(
@@ -256,36 +2397,32 @@ async function showVOO() {
         }
 
 
-        const dates = data.map(
-            row => row.date
-        );
+        const dates =
+            data.map(
+                row => row.date
+            );
 
 
-        const prices = data.map(
-            row => row.close
-        );
+        const prices =
+            data.map(
+                row => row.close
+            );
 
 
         createChart(
-
             dates,
-
             prices,
-
             "VOO Closing Price"
-
         );
 
-    }
 
-    catch (error) {
+    } catch (error) {
 
         showError(error);
 
     }
 
 }
-
 
 
 // ====================================
@@ -300,30 +2437,46 @@ async function showApple() {
 
     document.getElementById(
         "graphTitle"
-    ).textContent = "Apple Stock Drops Greater Than 5%";
+    ).textContent =
+        "Apple Stock Drops Greater Than 5%";
 
 
     try {
 
-        const response = await fetch(
-            "http://127.0.0.1:5000/api/stock-drops" // Ensure this endpoint exists on your server and is running
-        );
+        const response =
+            await fetch(
+                "http://127.0.0.1:5000/api/stock-drops/"
+            );
 
 
         if (!response.ok) {
-            const errorText = await response.text();
-            console.error("API Request Failed:", {
-                status: response.status,
-                statusText: response.statusText,
-                body: errorText
-            });
+
+            const errorText =
+                await response.text();
+
+            console.error(
+                "API Request Failed:",
+                {
+                    status:
+                        response.status,
+
+                    statusText:
+                        response.statusText,
+
+                    body:
+                        errorText
+                }
+            );
+
             throw new Error(
                 `Apple stock API request failed with status ${response.status}: ${response.statusText}`
             );
+
         }
 
 
-        const data = await response.json();
+        const data =
+            await response.json();
 
 
         if (data.error) {
@@ -335,44 +2488,38 @@ async function showApple() {
         }
 
 
-        const dates = data.map(
-            row => {
+        const dates =
+            data.map(row => {
 
                 return new Date(
                     row.TradeDate
                 ).toLocaleDateString();
 
-            }
-        );
+            });
 
 
-        const drops = data.map(
-            row => Number(
-                row.Percent_Change
-            )
-        );
+        const drops =
+            data.map(row =>
+                Number(
+                    row.Percent_Change
+                )
+            );
 
 
         createChart(
-
             dates,
-
             drops,
-
             "AAPL Daily % Change"
-
         );
 
-    }
 
-    catch (error) {
+    } catch (error) {
 
         showError(error);
 
     }
 
 }
-
 
 
 // ====================================
@@ -387,14 +2534,16 @@ async function showUpdateVOO() {
 
     document.getElementById(
         "graphTitle"
-    ).textContent = "Updated VOO Stock Price";
+    ).textContent =
+        "Updated VOO Stock Price";
 
 
     try {
 
-        const response = await fetch(
-            "http://127.0.0.1:5000/api/update-voo" // Ensure this endpoint exists on your server and is running
-        );
+        const response =
+            await fetch(
+                "http://127.0.0.1:5000/api/update-voo"
+            );
 
 
         if (!response.ok) {
@@ -406,7 +2555,8 @@ async function showUpdateVOO() {
         }
 
 
-        const data = await response.json();
+        const data =
+            await response.json();
 
 
         if (data.error) {
@@ -418,28 +2568,26 @@ async function showUpdateVOO() {
         }
 
 
-        const dates = data.map(
-            row => row.date
-        );
+        const dates =
+            data.map(
+                row => row.date
+            );
 
 
-        const prices = data.map(
-            row => row.close
-        );
+        const prices =
+            data.map(
+                row => row.close
+            );
+
 
         createChart(
-
             dates,
-
             prices,
-
             "Updated VOO Closing Price"
-
         );
 
-    }
 
-    catch (error) {
+    } catch (error) {
 
         showError(error);
 
@@ -447,102 +2595,146 @@ async function showUpdateVOO() {
 
 }
 
+
 // ====================================
-// SHOW Volume and High of AAPL
+// SHOW VOLUME AND HIGH/LOW OF AAPL
 // ====================================
 
 async function VolumeAAPL() {
 
-disableButtons();
+    disableButtons();
 
-showGraphPage();
+    showGraphPage();
 
-document.getElementById(
-    "graphTitle"
-).textContent = "Apple Stock Volume, Daily High, and Daily Low";
-
-
-try {
-
-    const response = await fetch(
-        "http://127.0.0.1:5000/api/volume/" // Ensure this endpoint exists on your server and is running
-    );
+    document.getElementById(
+        "graphTitle"
+    ).textContent =
+        "Apple Stock Volume, Daily High, and Daily Low";
 
 
-    if (!response.ok) {
+    try {
 
-        throw new Error(
-            "Apple stock API request failed"
-        );
-
-    }
-
-
-    const data = await response.json();
+        const response =
+            await fetch(
+                "http://127.0.0.1:5000/api/volume/"
+            );
 
 
-    if (data.error) {
+        if (!response.ok) {
 
-        throw new Error(
-            data.error
-        );
-
-    }
-
-
-    const dates = data.map(
-        row => {
-
-            return new Date(
-                row.TradeDate
-            ).toLocaleDateString();
+            throw new Error(
+                "Apple stock API request failed"
+            );
 
         }
-    );
 
 
-    const drops = data.map(
-        row => Number(
-            row.Volume
-        )
-    );
-
-    const highDay = data.map(
-        row => Number(
-            row.HighPrice
-        )
-    );
-
-    const lowDay = data.map(
-        row => Number(
-            row.LowPrice
-        )
-    );
+        const data =
+            await response.json();
 
 
-    createChart(
+        if (data.error) {
 
-        dates,
+            throw new Error(
+                data.error
+            );
 
-        drops,
+        }
 
-        "AAPL Volume",
 
-        highDay,
+        const dates =
+            data.map(row => {
 
-        lowDay
+                return new Date(
+                    row.TradeDate
+                ).toLocaleDateString();
 
-    );
+            });
+
+
+        const volume =
+            data.map(row =>
+                Number(
+                    row.Volume
+                )
+            );
+
+
+        const highDay =
+            data.map(row =>
+                Number(
+                    row.HighPrice
+                )
+            );
+
+
+        const lowDay =
+            data.map(row =>
+                Number(
+                    row.LowPrice
+                )
+            );
+
+
+        createChart(
+            dates,
+            volume,
+            "AAPL Volume",
+            highDay,
+            lowDay
+        );
+
+
+    } catch (error) {
+
+        showError(error);
+
+    }
 
 }
 
-catch (error) {
 
-    showError(error);
+// ====================================
+// SHOW VOO AI
+// ====================================
+
+function showAIVOO() {
+
+    const chatbotContainer =
+        document.getElementById(
+            "chatbotContainer"
+        );
+
+    chatbotContainer.style.display =
+        "block";
+
+    chatbotContainer.scrollIntoView({
+        behavior: "smooth"
+    });
 
 }
 
+
+// ====================================
+// SHOW AAPL AI
+// ====================================
+
+function showAIAAPL() {
+
+    const chatbotContainer =
+        document.getElementById(
+            "AAPLchatbotContainer"
+        );
+
+    chatbotContainer.style.display =
+        "block";
+
+    chatbotContainer.scrollIntoView({
+        behavior: "smooth"
+    });
+
 }
+
 
 // ====================================
 // CREATE CHART
@@ -556,151 +2748,335 @@ function createChart(
     lowDay
 ) {
 
-    // Adjust dates for "Updated VOO" data to match today's date and the previous 5 days
-    if (label === "Updated VOO Closing Price") {
-        const today = new Date();
-        labels = Array.from({ length: 6 }, (_, i) => {
-            const date = new Date();
-            date.setDate(today.getDate() - (5 - i));
-            return date.toLocaleDateString();
-        });
+
+    // Updated VOO dates
+    if (
+        label ===
+        "Updated VOO Closing Price"
+    ) {
+
+        const today =
+            new Date();
+
+        labels =
+            Array.from(
+                { length: 6 },
+                (_, i) => {
+
+                    const date =
+                        new Date();
+
+                    date.setDate(
+                        today.getDate() -
+                        (5 - i)
+                    );
+
+                    return date.toLocaleDateString();
+
+                }
+            );
+
     }
 
-    const ctx = document
-        .getElementById("stockChart")
-        .getContext("2d");
+
+    const ctx =
+        document
+            .getElementById(
+                "stockChart"
+            )
+            .getContext("2d");
+
 
     if (stockChart) {
+
         stockChart.destroy();
+
     }
 
-    // AAPL chart with Volume, Daily High, and Daily Low
-    if (label === "AAPL Volume" && highDay && lowDay) {
 
-        stockChart = new Chart(ctx, {
-            type: "line",
+    // ====================================
+    // AAPL VOLUME / HIGH / LOW
+    // ====================================
 
-            data: {
-                labels: labels,
+    if (
+        label === "AAPL Volume" &&
+        highDay &&
+        lowDay
+    ) {
 
-                datasets: [
-                    {
-                        label: "AAPL Volume",
-                        data: values,
-                        borderColor: "blue",
-                        borderWidth: 2,
-                        pointRadius: 3,
-                        tension: 0.2,
-                        yAxisID: "yVolume"
+        stockChart =
+            new Chart(
+                ctx,
+                {
+
+                    type: "line",
+
+                    data: {
+
+                        labels: labels,
+
+                        datasets: [
+
+                            {
+
+                                label:
+                                    "AAPL Volume",
+
+                                data:
+                                    values,
+
+                                borderColor:
+                                    "blue",
+
+                                borderWidth:
+                                    2,
+
+                                pointRadius:
+                                    3,
+
+                                tension:
+                                    0.2,
+
+                                yAxisID:
+                                    "yVolume"
+
+                            },
+
+                            {
+
+                                label:
+                                    "AAPL Daily High",
+
+                                data:
+                                    highDay,
+
+                                borderColor:
+                                    "green",
+
+                                borderWidth:
+                                    2,
+
+                                pointRadius:
+                                    3,
+
+                                tension:
+                                    0.2,
+
+                                yAxisID:
+                                    "yPrice"
+
+                            },
+
+                            {
+
+                                label:
+                                    "AAPL Daily Low",
+
+                                data:
+                                    lowDay,
+
+                                borderColor:
+                                    "red",
+
+                                borderWidth:
+                                    2,
+
+                                pointRadius:
+                                    3,
+
+                                tension:
+                                    0.2,
+
+                                yAxisID:
+                                    "yPrice"
+
+                            }
+
+                        ]
+
                     },
-                    {
-                        label: "AAPL Daily High",
-                        data: highDay,
-                        borderColor: "green",
-                        borderWidth: 2,
-                        pointRadius: 3,
-                        tension: 0.2,
-                        yAxisID: "yPrice"
-                    },
-                    {
-                        label: "AAPL Daily Low",
-                        data: lowDay,
-                        borderColor: "red",
-                        borderWidth: 2,
-                        pointRadius: 3,
-                        tension: 0.2,
-                        yAxisID: "yPrice"
-                    }
-                ]
-            },
 
-            options: {
-                responsive: true,
+                    options: {
 
-                interaction: {
-                    mode: "index",
-                    intersect: false
-                },
+                        responsive:
+                            true,
 
-                scales: {
-                    x: {
-                        title: {
-                            display: true,
-                            text: "Date"
-                        }
-                    },
+                        interaction: {
 
-                    yVolume: {
-                        type: "linear",
-                        position: "left",
-                        title: {
-                            display: true,
-                            text: "Volume"
-                        }
-                    },
+                            mode:
+                                "index",
 
-                    yPrice: {
-                        type: "linear",
-                        position: "right",
-                        title: {
-                            display: true,
-                            text: "Price ($)"
+                            intersect:
+                                false
+
                         },
 
-                        grid: {
-                            drawOnChartArea: false
+                        scales: {
+
+                            x: {
+
+                                title: {
+
+                                    display:
+                                        true,
+
+                                    text:
+                                        "Date"
+
+                                }
+
+                            },
+
+                            yVolume: {
+
+                                type:
+                                    "linear",
+
+                                position:
+                                    "left",
+
+                                title: {
+
+                                    display:
+                                        true,
+
+                                    text:
+                                        "Volume"
+
+                                }
+
+                            },
+
+                            yPrice: {
+
+                                type:
+                                    "linear",
+
+                                position:
+                                    "right",
+
+                                title: {
+
+                                    display:
+                                        true,
+
+                                    text:
+                                        "Price ($)"
+
+                                },
+
+                                grid: {
+
+                                    drawOnChartArea:
+                                        false
+
+                                }
+
+                            }
+
                         }
+
                     }
+
                 }
-            }
-        });
+            );
 
         return;
+
     }
 
-    // Normal single-series charts
-    stockChart = new Chart(ctx, {
-        type: "line",
 
-        data: {
-            labels: labels,
+    // ====================================
+    // NORMAL SINGLE-SERIES CHART
+    // ====================================
 
-            datasets: [
-                {
-                    label: label,
-                    data: values,
-                    borderColor: "blue",
-                    borderWidth: 2,
-                    pointRadius: 3,
-                    tension: 0.2
-                }
-            ]
-        },
+    stockChart =
+        new Chart(
+            ctx,
+            {
 
-        options: {
-            responsive: true,
+                type:
+                    "line",
 
-            scales: {
-                x: {
-                    title: {
-                        display: true,
-                        text: "Date"
-                    }
+                data: {
+
+                    labels:
+                        labels,
+
+                    datasets: [
+
+                        {
+
+                            label:
+                                label,
+
+                            data:
+                                values,
+
+                            borderColor:
+                                "blue",
+
+                            borderWidth:
+                                2,
+
+                            pointRadius:
+                                3,
+
+                            tension:
+                                0.2
+
+                        }
+
+                    ]
+
                 },
 
-                y: {
-                    title: {
-                        display: true,
-                        text: "Value"
+                options: {
+
+                    responsive:
+                        true,
+
+                    scales: {
+
+                        x: {
+
+                            title: {
+
+                                display:
+                                    true,
+
+                                text:
+                                    "Date"
+
+                            }
+
+                        },
+
+                        y: {
+
+                            title: {
+
+                                display:
+                                    true,
+
+                                text:
+                                    "Value"
+
+                            }
+
+                        }
+
                     }
+
                 }
+
             }
-        }
-    });
+        );
+
 }
 
 
-
+// ====================================
 // SHOW GRAPH PAGE
 // ====================================
 
@@ -708,42 +3084,48 @@ function showGraphPage() {
 
     document.getElementById(
         "mainPage"
-    ).style.display = "none";
+    ).style.display =
+        "none";
 
 
     document.getElementById(
         "graphPage"
-    ).style.display = "block";
+    ).style.display =
+        "block";
 
 }
 
 
-
 // ====================================
-// DISABLE BOTH BUTTONS
+// DISABLE BUTTONS
 // ====================================
 
 function disableButtons() {
 
     document.getElementById(
         "vooButton"
-    ).disabled = true;
+    ).disabled =
+        true;
 
 
     document.getElementById(
         "appleButton"
-    ).disabled = true;
+    ).disabled =
+        true;
+
 
     document.getElementById(
         "updateVooButton"
-    ).disabled = true;
+    ).disabled =
+        true;
+
 
     document.getElementById(
         "VolumeHighAAPLButton"
-    ).disabled = true;
+    ).disabled =
+        true;
 
 }
-
 
 
 // ====================================
@@ -751,7 +3133,6 @@ function disableButtons() {
 // ====================================
 
 function returnToMain() {
-
 
     if (stockChart) {
 
@@ -764,37 +3145,58 @@ function returnToMain() {
 
     document.getElementById(
         "graphPage"
-    ).style.display = "none";
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "chatbotContainer"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "AAPLchatbotContainer"
+    ).style.display =
+        "none";
 
 
     document.getElementById(
         "mainPage"
-    ).style.display = "block";
+    ).style.display =
+        "block";
 
 
     document.getElementById(
         "vooButton"
-    ).disabled = false;
+    ).disabled =
+        false;
 
 
     document.getElementById(
         "appleButton"
-    ).disabled = false;
+    ).disabled =
+        false;
+
 
     document.getElementById(
         "updateVooButton"
-    ).disabled = false;
+    ).disabled =
+        false;
+
 
     document.getElementById(
         "VolumeHighAAPLButton"
-    ).disabled = false;
+    ).disabled =
+        false;
+
 
     document.getElementById(
         "errorMessage"
-    ).textContent = "";
+    ).textContent =
+        "";
 
 }
-
 
 
 // ====================================
@@ -806,6 +3208,7 @@ function showError(error) {
     document.getElementById(
         "errorMessage"
     ).textContent =
+
         "(You can not have two programs running at once) Error loading graph: " +
         error.message;
 
