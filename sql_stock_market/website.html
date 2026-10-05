@@ -159,6 +159,17 @@
             background: #d1d5db;
         }
 
+        .quickQuestion:disabled {
+            background: #e5e7eb;
+            color: #9ca3af;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .quickQuestion:disabled:hover {
+            background: #e5e7eb;
+        }
+
         #chatStatus,
         #AAPLchatStatus {
             margin-top: 10px;
@@ -294,14 +305,14 @@
     <h2>Personal Investment Assistant - AAPL</h2>
 
     <p id="AAPLchatbotDescription">
-        Ask questions about AAPL or your Apple stock data.
+        Ask questions about your AAPL database. Quick questions automatically match the AAPL analysis you selected.
     </p>
 
     <div id="AAPLchatMessages">
         <div class="AAPLchatMessage chatBot">
             <b>Chatbot:</b>
-            Hi! I can answer questions using your AAPL
-            /api/stock-drops/ and /api/volume/ endpoints.
+            Hi! I can answer questions using your AAPL /api/stock-drops/ and /api/volume/ database endpoints.
+            Quick questions automatically match the AAPL analysis you selected.
         </div>
     </div>
 
@@ -318,50 +329,23 @@
     </div>
 
     <div id="AAPLchatQuickQuestions">
-        <button class="quickQuestion"
-                onclick="askAAPLQuickQuestion('What is AAPL?')">
-            What is AAPL?
-        </button>
 
-        <button class="quickQuestion"
-                onclick="askAAPLQuickQuestion('What is the latest AAPL price?')">
-            Latest AAPL price
-        </button>
+        <!-- /api/stock-drops/ questions -->
+        <button class="quickQuestion AAPLdropQuestion" onclick="askAAPLQuickQuestion('What is the biggest AAPL drop in my database?')">Biggest AAPL drop</button>
+        <button class="quickQuestion AAPLdropQuestion" onclick="askAAPLQuickQuestion('What is the smallest AAPL drop in my database?')">Smallest AAPL drop</button>
+        <button class="quickQuestion AAPLdropQuestion" onclick="askAAPLQuickQuestion('What is the latest AAPL percentage change in my database?')">Latest % change</button>
+        <button class="quickQuestion AAPLdropQuestion" onclick="askAAPLQuickQuestion('What is the largest AAPL percentage gain in my database?')">Largest % gain</button>
+        <button class="quickQuestion AAPLdropQuestion" onclick="askAAPLQuickQuestion('What is the average AAPL percentage change in my database?')">Average % change</button>
+        <button class="quickQuestion AAPLdropQuestion" onclick="askAAPLQuickQuestion('How many AAPL stock drops are in my database?')">Number of drops</button>
+        <button class="quickQuestion AAPLdropQuestion" onclick="askAAPLQuickQuestion('What date had the biggest AAPL drop?')">Date of biggest drop</button>
 
-        <button class="quickQuestion"
-                onclick="askAAPLQuickQuestion('What is the highest AAPL closing price in my data?')">
-            Highest AAPL close
-        </button>
-
-        <button class="quickQuestion"
-                onclick="askAAPLQuickQuestion('What is the lowest AAPL closing price in my data?')">
-            Lowest AAPL close
-        </button>
-
-        <button class="quickQuestion"
-                onclick="askAAPLQuickQuestion('What is the highest AAPL daily high?')">
-            Highest AAPL high
-        </button>
-
-        <button class="quickQuestion"
-                onclick="askAAPLQuickQuestion('What is the lowest AAPL daily low?')">
-            Lowest AAPL low
-        </button>
-
-        <button class="quickQuestion"
-                onclick="askAAPLQuickQuestion('What is AAPL volume?')">
-            AAPL volume
-        </button>
-
-        <button class="quickQuestion"
-                onclick="askAAPLQuickQuestion('What is the biggest AAPL drop?')">
-            Biggest AAPL drop
-        </button>
-
-        <button class="quickQuestion"
-                onclick="askAAPLQuickQuestion('How is AAPL doing recently?')">
-            Recent AAPL performance
-        </button>
+        <!-- /api/volume/ questions -->
+        <button class="quickQuestion AAPLvolumeQuestion" onclick="askAAPLQuickQuestion('What is the latest AAPL price?')">Latest AAPL price</button>
+        <button class="quickQuestion AAPLvolumeQuestion" onclick="askAAPLQuickQuestion('What is the highest AAPL closing price in my data?')">Highest AAPL close</button>
+        <button class="quickQuestion AAPLvolumeQuestion" onclick="askAAPLQuickQuestion('What is the lowest AAPL closing price in my data?')">Lowest AAPL close</button>
+        <button class="quickQuestion AAPLvolumeQuestion" onclick="askAAPLQuickQuestion('What is the highest AAPL daily high?')">Highest AAPL high</button>
+        <button class="quickQuestion AAPLvolumeQuestion" onclick="askAAPLQuickQuestion('What is the lowest AAPL daily low?')">Lowest AAPL low</button>
+        <button class="quickQuestion AAPLvolumeQuestion" onclick="askAAPLQuickQuestion('What is the latest AAPL volume?')">Latest volume</button>
     </div>
 
     <div id="AAPLchatStatus"></div>
@@ -1032,6 +1016,68 @@ function isAAPLRecentPerformanceQuestion(input) {
     );
 }
 
+let AAPLAIDataMode = "drops";
+
+function isAAPLSmallestDropQuestion(input) {
+    const text = input.toLowerCase();
+    return (text.includes("smallest") || text.includes("lowest") || text.includes("least")) &&
+           (text.includes("drop") || text.includes("decline") || text.includes("loss") || text.includes("percentage"));
+}
+function isAAPLLatestPercentChangeQuestion(input) {
+    const text = input.toLowerCase();
+    return (text.includes("latest") || text.includes("most recent") || text.includes("last")) &&
+           (text.includes("percent") || text.includes("percentage") || text.includes("%") || text.includes("change"));
+}
+function isAAPLHighestGainQuestion(input) {
+    const text = input.toLowerCase();
+    return (text.includes("largest") || text.includes("highest") || text.includes("biggest") || text.includes("maximum")) &&
+           (text.includes("gain") || text.includes("increase") || text.includes("positive") || text.includes("percentage"));
+}
+function isAAPLHighestVolumeQuestion(input) {
+    const text = input.toLowerCase();
+
+    return (
+        text.includes("volume") &&
+        (
+            text.includes("highest") ||
+            text.includes("maximum") ||
+            text.includes("max")
+        )
+    );
+}
+
+function isAAPLLowestVolumeQuestion(input) {
+    const text = input.toLowerCase();
+
+    return (
+        text.includes("volume") &&
+        (
+            text.includes("lowest") ||
+            text.includes("minimum") ||
+            text.includes("min")
+        )
+    );
+}
+
+function isAAPLVolumeQuestion(input) {
+    return input.toLowerCase().includes("volume");
+}
+function isAAPLDatabaseCountQuestion(input) {
+    const text = input.toLowerCase();
+    return (text.includes("how many") || text.includes("number of") || text.includes("count")) &&
+           (text.includes("drop") || text.includes("record") || text.includes("row") || text.includes("data"));
+}
+function isAAPLAveragePercentChangeQuestion(input) {
+    const text = input.toLowerCase();
+    return (text.includes("average") || text.includes("mean")) &&
+           (text.includes("percent") || text.includes("percentage") || text.includes("%") || text.includes("change") || text.includes("drop"));
+}
+function isAAPLDateOfBiggestDropQuestion(input) {
+    const text = input.toLowerCase();
+    return text.includes("date") &&
+           (text.includes("biggest drop") || text.includes("largest drop") || text.includes("worst drop"));
+}
+
 /* ============================================================
    AAPL AI
    ============================================================ */
@@ -1090,251 +1136,189 @@ async function askAAPLPersonalAI() {
 async function answerAAPLQuestion(userInput) {
     const text = userInput.toLowerCase();
 
-    /*
-     * AAPL close/high/low/volume questions use /api/volume/.
-     * AAPL drop questions use /api/stock-drops/.
-     *
-     * This keeps the two databases/endpoints separate while
-     * allowing one AAPL chatbot to use both.
-     */
+    // /api/stock-drops/: date, percentChange, close
+    // /api/volume/: date, close, high, low, volume
 
-    if (isAAPLLatestPriceQuestion(userInput)) {
-        const rawData = await getAAPLVolumeData();
-        const data = normalizeAAPLVolumeData(rawData);
-
-        const usable = data.filter(row =>
-            Number.isFinite(row.close)
-        );
-
-        if (usable.length === 0) {
-            return "I found no usable AAPL closing-price records in /api/volume/.";
-        }
-
-        const latest = usable[usable.length - 1];
-
-        return (
-            "According to your /api/volume/ data, the latest AAPL " +
-            "closing price is " +
-            formatMoney(latest.close) +
-            " on " +
-            safeDate(latest.date) +
-            "."
-        );
+    // -------- /api/stock-drops/ questions --------
+    if (isAAPLDateOfBiggestDropQuestion(userInput) ||
+        text.includes("biggest drop") || text.includes("largest drop") || text.includes("worst drop")) {
+        const data = normalizeAAPLDropData(await getAAPLDropData()).filter(r => Number.isFinite(r.percentChange));
+        if (!data.length) return "I found no usable AAPL percentage-change records in /api/stock-drops/.";
+        const row = data.reduce((worst, r) => r.percentChange < worst.percentChange ? r : worst, data[0]);
+        return "The biggest AAPL drop in your /api/stock-drops/ data was " +
+            formatPercent(row.percentChange) + " on " + safeDate(row.date) +
+            ". The closing price recorded for that date was " + formatMoney(row.close) + ".";
     }
 
-    if (isAAPLHighestCloseQuestion(userInput)) {
-        const rawData = await getAAPLVolumeData();
-        const data = normalizeAAPLVolumeData(rawData);
-
-        const usable = data.filter(row =>
-            Number.isFinite(row.close)
-        );
-
-        if (usable.length === 0) {
-            return "I found no usable AAPL closing-price records in /api/volume/.";
-        }
-
-        const highest = usable.reduce(
-            (best, row) =>
-                row.close > best.close ? row : best,
-            usable[0]
-        );
-
-        return (
-            "The highest AAPL closing price in your /api/volume/ " +
-            "data is " +
-            formatMoney(highest.close) +
-            " on " +
-            safeDate(highest.date) +
-            "."
-        );
+    if (isAAPLSmallestDropQuestion(userInput)) {
+        const data = normalizeAAPLDropData(await getAAPLDropData()).filter(r => Number.isFinite(r.percentChange));
+        if (!data.length) return "I found no usable AAPL percentage-change records in /api/stock-drops/.";
+        const row = data.reduce((best, r) => r.percentChange > best.percentChange ? r : best, data[0]);
+        return "The smallest AAPL drop in your /api/stock-drops/ data was " +
+            formatPercent(row.percentChange) + " on " + safeDate(row.date) +
+            ". The closing price recorded for that date was " + formatMoney(row.close) + ".";
     }
 
-    if (isAAPLLowestCloseQuestion(userInput)) {
-        const rawData = await getAAPLVolumeData();
-        const data = normalizeAAPLVolumeData(rawData);
-
-        const usable = data.filter(row =>
-            Number.isFinite(row.close)
-        );
-
-        if (usable.length === 0) {
-            return "I found no usable AAPL closing-price records in /api/volume/.";
-        }
-
-        const lowest = usable.reduce(
-            (best, row) =>
-                row.close < best.close ? row : best,
-            usable[0]
-        );
-
-        return (
-            "The lowest AAPL closing price in your /api/volume/ " +
-            "data is " +
-            formatMoney(lowest.close) +
-            " on " +
-            safeDate(lowest.date) +
-            "."
-        );
+    if (isAAPLLatestPercentChangeQuestion(userInput)) {
+        const data = normalizeAAPLDropData(await getAAPLDropData()).filter(r => Number.isFinite(r.percentChange));
+        if (!data.length) return "I found no usable AAPL percentage-change records in /api/stock-drops/.";
+        const row = data[data.length - 1];
+        return "The latest AAPL percentage change in your /api/stock-drops/ data is " +
+            formatPercent(row.percentChange) + " on " + safeDate(row.date) +
+            ". The closing price was " + formatMoney(row.close) + ".";
     }
 
-    if (isAAPLHighestDailyHighQuestion(userInput)) {
-        const rawData = await getAAPLVolumeData();
-        const data = normalizeAAPLVolumeData(rawData);
-
-        const usable = data.filter(row =>
-            Number.isFinite(row.high)
-        );
-
-        if (usable.length === 0) {
-            return "I found no usable AAPL daily-high records in /api/volume/.";
-        }
-
-        const highest = usable.reduce(
-            (best, row) =>
-                row.high > best.high ? row : best,
-            usable[0]
-        );
-
-        return (
-            "The highest AAPL daily high in your /api/volume/ " +
-            "data is " +
-            formatMoney(highest.high) +
-            " on " +
-            safeDate(highest.date) +
-            "."
-        );
+    if (isAAPLHighestGainQuestion(userInput)) {
+        const data = normalizeAAPLDropData(await getAAPLDropData()).filter(r => Number.isFinite(r.percentChange));
+        if (!data.length) return "I found no usable AAPL percentage-change records in /api/stock-drops/.";
+        const row = data.reduce((best, r) => r.percentChange > best.percentChange ? r : best, data[0]);
+        return "The largest positive AAPL percentage change in your /api/stock-drops/ data is " +
+            formatPercent(row.percentChange) + " on " + safeDate(row.date) +
+            ". The closing price was " + formatMoney(row.close) + ".";
     }
 
-    if (isAAPLLowestDailyLowQuestion(userInput)) {
-        const rawData = await getAAPLVolumeData();
-        const data = normalizeAAPLVolumeData(rawData);
-
-        const usable = data.filter(row =>
-            Number.isFinite(row.low)
-        );
-
-        if (usable.length === 0) {
-            return "I found no usable AAPL daily-low records in /api/volume/.";
-        }
-
-        const lowest = usable.reduce(
-            (best, row) =>
-                row.low < best.low ? row : best,
-            usable[0]
-        );
-
-        return (
-            "The lowest AAPL daily low in your /api/volume/ " +
-            "data is " +
-            formatMoney(lowest.low) +
-            " on " +
-            safeDate(lowest.date) +
-            "."
-        );
+    if (isAAPLAveragePercentChangeQuestion(userInput)) {
+        const data = normalizeAAPLDropData(await getAAPLDropData()).filter(r => Number.isFinite(r.percentChange));
+        if (!data.length) return "I found no usable AAPL percentage-change records in /api/stock-drops/.";
+        const average = data.reduce((sum, r) => sum + r.percentChange, 0) / data.length;
+        return "The average AAPL percentage change across " + data.length +
+            " records in your /api/stock-drops/ data is " + formatPercent(average) + ".";
     }
 
-    if (isAAPLVolumeQuestion(userInput)) {
-        const rawData = await getAAPLVolumeData();
-        const data = normalizeAAPLVolumeData(rawData);
-
-        const usable = data.filter(row =>
-            Number.isFinite(row.volume)
-        );
-
-        if (usable.length === 0) {
-            return "I found no usable AAPL volume records in /api/volume/.";
-        }
-
-        const latest = usable[usable.length - 1];
-
-        return (
-            "The latest AAPL volume in your /api/volume/ data is " +
-            formatNumber(latest.volume) +
-            " shares on " +
-            safeDate(latest.date) +
-            "."
-        );
+    if (isAAPLDatabaseCountQuestion(userInput)) {
+        const data = normalizeAAPLDropData(await getAAPLDropData());
+        return "Your /api/stock-drops/ endpoint currently returned " + formatNumber(data.length) + " AAPL records.";
     }
 
     if (isAAPLDropQuestion(userInput)) {
-        const rawData = await getAAPLDropData();
-        const data = normalizeAAPLDropData(rawData);
+        const data = normalizeAAPLDropData(await getAAPLDropData()).filter(r => Number.isFinite(r.percentChange));
+        if (!data.length) return "I found no usable AAPL percentage-change records in /api/stock-drops/.";
+        const row = data.reduce((worst, r) => r.percentChange < worst.percentChange ? r : worst, data[0]);
+        return "The biggest AAPL percentage drop in your /api/stock-drops/ data is " +
+            formatPercent(row.percentChange) + " on " + safeDate(row.date) + ".";
+    }
 
-        const usable = data.filter(row =>
-            Number.isFinite(row.percentChange)
-        );
+    // -------- /api/volume/ questions --------
+    if (isAAPLLatestPriceQuestion(userInput)) {
+        const data = normalizeAAPLVolumeData(await getAAPLVolumeData()).filter(r => Number.isFinite(r.close));
+        if (!data.length) return "I found no usable AAPL closing-price records in /api/volume/.";
+        const row = data[data.length - 1];
+        return "According to your /api/volume/ data, the latest AAPL closing price is " +
+            formatMoney(row.close) + " on " + safeDate(row.date) + ".";
+    }
 
-        if (usable.length === 0) {
-            return "I found no usable AAPL percentage-change records in /api/stock-drops/.";
-        }
+    if (isAAPLHighestCloseQuestion(userInput)) {
+        const data = normalizeAAPLVolumeData(await getAAPLVolumeData()).filter(r => Number.isFinite(r.close));
+        if (!data.length) return "I found no usable AAPL closing-price records in /api/volume/.";
+        const row = data.reduce((best, r) => r.close > best.close ? r : best, data[0]);
+        return "The highest AAPL closing price in your /api/volume/ data is " +
+            formatMoney(row.close) + " on " + safeDate(row.date) + ".";
+    }
 
-        const biggestDrop = usable.reduce(
-            (worst, row) =>
-                row.percentChange < worst.percentChange
-                    ? row
-                    : worst,
-            usable[0]
-        );
+    if (isAAPLLowestCloseQuestion(userInput)) {
+        const data = normalizeAAPLVolumeData(await getAAPLVolumeData()).filter(r => Number.isFinite(r.close));
+        if (!data.length) return "I found no usable AAPL closing-price records in /api/volume/.";
+        const row = data.reduce((best, r) => r.close < best.close ? r : best, data[0]);
+        return "The lowest AAPL closing price in your /api/volume/ data is " +
+            formatMoney(row.close) + " on " + safeDate(row.date) + ".";
+    }
 
-        return (
-            "The biggest AAPL percentage drop in your " +
-            "/api/stock-drops/ data is " +
-            formatPercent(biggestDrop.percentChange) +
-            " on " +
-            safeDate(biggestDrop.date) +
-            "."
-        );
+    if (isAAPLHighestDailyHighQuestion(userInput)) {
+        const data = normalizeAAPLVolumeData(await getAAPLVolumeData()).filter(r => Number.isFinite(r.high));
+        if (!data.length) return "I found no usable AAPL daily-high records in /api/volume/.";
+        const row = data.reduce((best, r) => r.high > best.high ? r : best, data[0]);
+        return "The highest AAPL daily high in your /api/volume/ data is " +
+            formatMoney(row.high) + " on " + safeDate(row.date) + ".";
+    }
+
+    if (isAAPLLowestDailyLowQuestion(userInput)) {
+        const data = normalizeAAPLVolumeData(await getAAPLVolumeData()).filter(r => Number.isFinite(r.low));
+        if (!data.length) return "I found no usable AAPL daily-low records in /api/volume/.";
+        const row = data.reduce((best, r) => r.low < best.low ? r : best, data[0]);
+        return "The lowest AAPL daily low in your /api/volume/ data is " +
+            formatMoney(row.low) + " on " + safeDate(row.date) + ".";
+    }
+
+    if (isAAPLHighestVolumeQuestion(userInput)) {
+    const rawData = await getAAPLVolumeData();
+    const data = normalizeAAPLVolumeData(rawData);
+
+    const usable = data.filter(row =>
+        Number.isFinite(row.volume)
+    );
+
+    if (usable.length === 0) {
+        return "I found no usable AAPL volume records in /api/volume/.";
+    }
+
+    const highest = usable.reduce(
+        (best, row) =>
+            row.volume > best.volume ? row : best,
+        usable[0]
+    );
+
+    return (
+        "The highest AAPL trading volume in your /api/volume/ data is " +
+        formatNumber(highest.volume) +
+        " shares on " +
+        safeDate(highest.date) +
+        "."
+    );
+}
+
+if (isAAPLLowestVolumeQuestion(userInput)) {
+    const rawData = await getAAPLVolumeData();
+    const data = normalizeAAPLVolumeData(rawData);
+
+    const usable = data.filter(row =>
+        Number.isFinite(row.volume)
+    );
+
+    if (usable.length === 0) {
+        return "I found no usable AAPL volume records in /api/volume/.";
+    }
+
+    const lowest = usable.reduce(
+        (best, row) =>
+            row.volume < best.volume ? row : best,
+        usable[0]
+    );
+
+    return (
+        "The lowest AAPL trading volume in your /api/volume/ data is " +
+        formatNumber(lowest.volume) +
+        " shares on " +
+        safeDate(lowest.date) +
+        "."
+    );
+}
+
+    if (isAAPLVolumeQuestion(userInput)) {
+        const data = normalizeAAPLVolumeData(await getAAPLVolumeData()).filter(r => Number.isFinite(r.volume));
+        if (!data.length) return "I found no usable AAPL volume records in /api/volume/.";
+        const row = data[data.length - 1];
+        return "The latest AAPL volume in your /api/volume/ data is " +
+            formatNumber(row.volume) + " shares on " + safeDate(row.date) + ".";
     }
 
     if (isAAPLRecentPerformanceQuestion(userInput)) {
-        const rawData = await getAAPLVolumeData();
-        const data = normalizeAAPLVolumeData(rawData);
-
-        const usable = data.filter(row =>
-            Number.isFinite(row.close)
-        );
-
-        if (usable.length < 2) {
-            return "There are not enough AAPL closing-price records in /api/volume/ to calculate recent performance.";
-        }
-
-        const recent = usable.slice(-5);
-
+        const data = normalizeAAPLVolumeData(await getAAPLVolumeData()).filter(r => Number.isFinite(r.close));
+        if (data.length < 2) return "There are not enough AAPL closing-price records in /api/volume/ to calculate recent performance.";
+        const recent = data.slice(-5);
         const first = recent[0].close;
         const last = recent[recent.length - 1].close;
-
         const change = ((last - first) / first) * 100;
-
-        const direction =
-            change > 0
-                ? "increased"
-                : change < 0
-                    ? "decreased"
-                    : "was unchanged";
-
-        return (
-            "Based on the most recent " +
-            recent.length +
-            " AAPL records in your /api/volume/ data, " +
-            "AAPL " +
-            direction +
-            " by " +
-            Math.abs(change).toFixed(2) +
-            "%, from " +
-            formatMoney(first) +
-            " to " +
-            formatMoney(last) +
-            ". This is a historical calculation, not a prediction."
-        );
+        const direction = change > 0 ? "increased" : change < 0 ? "decreased" : "was unchanged";
+        return "Based on the most recent " + recent.length +
+            " AAPL records in your /api/volume/ data, AAPL " + direction +
+            " by " + Math.abs(change).toFixed(2) + "%, from " +
+            formatMoney(first) + " to " + formatMoney(last) +
+            ". This is a historical calculation, not a prediction.";
     }
 
-    return (
-        "I can use your AAPL data to answer questions about the " +
-        "latest price, highest and lowest closing prices, daily high, " +
-        "daily low, volume, recent performance, and the biggest " +
-        "percentage drop."
-    );
+    return "I can use your AAPL database data from /api/stock-drops/ and /api/volume/. " +
+        "Try asking about a percentage drop/change, highest or lowest drop, average percentage change, " +
+        "number of records, price, close, daily high, daily low, volume, or recent performance.";
 }
 
 /* ============================================================
@@ -1570,6 +1554,26 @@ function showAIVOO() {
     });
 }
 
+function updateAAPLQuickQuestions() {
+    const dropQuestions = document.querySelectorAll(".AAPLdropQuestion");
+    const volumeQuestions = document.querySelectorAll(".AAPLvolumeQuestion");
+    const usingDrops = AAPLAIDataMode === "drops";
+
+    dropQuestions.forEach(button => {
+        button.disabled = !usingDrops;
+        button.title = usingDrops
+            ? "Uses the AAPL /api/stock-drops/ database"
+            : "Not available while viewing AAPL volume/high-low data";
+    });
+
+    volumeQuestions.forEach(button => {
+        button.disabled = usingDrops;
+        button.title = usingDrops
+            ? "Not available while viewing AAPL stock-drop data"
+            : "Uses the AAPL /api/volume/ database";
+    });
+}
+
 function showAIAAPL() {
     hideAllAI();
 
@@ -1577,6 +1581,7 @@ function showAIAAPL() {
         document.getElementById("AAPLchatbotContainer");
 
     chatbotContainer.style.display = "block";
+    updateAAPLQuickQuestions();
 
     chatbotContainer.scrollIntoView({
         behavior: "smooth"
@@ -1627,6 +1632,7 @@ async function showVOO() {
 }
 
 async function showApple() {
+    AAPLAIDataMode = "drops";
     disableButtons();
     showGraphPage();
 
@@ -1730,6 +1736,7 @@ async function showUpdateVOO() {
 }
 
 async function VolumeAAPL() {
+    AAPLAIDataMode = "volume";
     disableButtons();
     showGraphPage();
 
