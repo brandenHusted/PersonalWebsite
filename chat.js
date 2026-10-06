@@ -422,6 +422,56 @@ const questions = [
 "What is Branden's philosophy on software development?",
 "Does Branden have experience with blockchain technology?",
 "What advice would Branden give to aspiring developers?",
+"What is Python used for?",
+"What is object-oriented programming?",
+"What is recursion?",
+"What is Big O notation?",
+"What is a linked list?",
+"What is the difference between an array and a linked list?",
+"What is a hash table?",
+"What is a stack data structure?",
+"What is a queue data structure?",
+"What is binary search?",
+"What is depth-first search?",
+"What is dynamic programming?",
+"What is an API key?",
+"What is JSON?",
+"What is a SQL join?",
+"What is the difference between SQL and NoSQL?",
+"What is a primary key?",
+"What is an IP address?",
+"What is DNS?",
+"What is the cloud?",
+"What is a bug in programming?",
+"What is pair programming?",
+"What is a code review?",
+"What is an IDE?",
+"What is the command line?",
+"What is open source software?",
+"What is an algorithm?",
+"What is a variable in programming?",
+"What is a loop in programming?",
+"What is a function in programming?",
+"What is the difference between frontend and backend?",
+"What is full stack development?",
+"What is React?",
+"What is a CSS selector?",
+"What is semantic HTML?",
+"What is web accessibility?",
+"What is a cookie in a web browser?",
+"What is a regular expression?",
+"What is the difference between a compiler and an interpreter?",
+"What is artificial intelligence?",
+"What is a chatbot?",
+"What is natural language processing?",
+"What is a neural network?",
+"What is Levenshtein distance?",
+"What is a unit test?",
+"What is refactoring?",
+"What is the difference between a process and a thread?",
+"What is a deadlock?",
+"What is Git used for?",
+"What is a pull request?",
 
 ];
 
@@ -974,6 +1024,56 @@ That should be all the changes needed to be successful at having two pages in a 
 "Branden believes in writing clean, maintainable code, following design patterns, continuous learning, collaboration, and building solutions that genuinely solve user problems.",
 "Branden is aware of blockchain technology and understands its potential applications in various industries, though his current focus is on web development.",
 "Branden would advise aspiring developers to start with the fundamentals, build projects consistently, don't be afraid to fail and learn from mistakes, seek mentorship, contribute to open-source, and always stay curious about new technologies.",
+"Python is used for web development, data analysis, automation, artificial intelligence, scripting, and game development, thanks to its simple syntax and huge library ecosystem.",
+"Object-oriented programming organizes code into objects that bundle data and behavior together. Its core ideas are encapsulation, inheritance, polymorphism, and abstraction.",
+"Recursion is when a function calls itself to solve smaller pieces of a problem. Every recursive function needs a base case so it knows when to stop.",
+"Big O notation describes how an algorithm's running time or memory use grows as the input gets larger. For example, O(n) grows linearly while O(n squared) grows much faster.",
+"A linked list is a data structure where each element stores a value and a pointer to the next element. It makes inserting and removing items easy but makes random access slower than an array.",
+"Arrays store items in contiguous memory and allow fast access by index, while linked lists connect items with pointers and allow fast insertions and deletions.",
+"A hash table stores key-value pairs and uses a hash function to turn each key into an index, which gives average lookups in constant time.",
+"A stack is a last-in, first-out structure. You push items on top and pop them off the top, like a stack of plates.",
+"A queue is a first-in, first-out structure. Items are added at the back and removed from the front, like a line at a store.",
+"Binary search finds an item in a sorted list by repeatedly checking the middle element and discarding the half that cannot contain the target. It runs in O(log n) time.",
+"Depth-first search explores a graph or tree by going as deep as possible along one branch before backtracking. It is usually implemented with recursion or a stack.",
+"Dynamic programming solves big problems by breaking them into overlapping subproblems and storing the results so each subproblem is only solved once.",
+"An API key is a unique string that identifies your application when it calls an API. Keep it secret and store it in an environment variable rather than in your code.",
+"JSON stands for JavaScript Object Notation. It is a lightweight text format for exchanging data using key-value pairs and arrays, and it is easy for both humans and machines to read.",
+"A SQL join combines rows from two or more tables based on a related column. Common types are inner join, left join, right join, and full outer join.",
+"SQL databases store data in structured tables with a fixed schema, while NoSQL databases use flexible models like documents, key-value pairs, or graphs and often scale out more easily.",
+"A primary key is a column, or set of columns, that uniquely identifies each row in a database table. It cannot be empty or duplicated.",
+"An IP address is a numerical label that identifies a device on a network so data knows where to be sent. IPv4 and IPv6 are the two versions in use.",
+"DNS, the Domain Name System, translates human-friendly domain names like example.com into the IP addresses computers use to find each other.",
+"The cloud means using computing resources like servers, storage, and databases over the internet from a provider instead of running them on your own hardware.",
+"A bug is a mistake in code that causes a program to behave in an unexpected or incorrect way. Finding and fixing bugs is called debugging.",
+"Pair programming is when two developers work together at one computer. One writes the code while the other reviews each line, which helps catch mistakes and share knowledge.",
+"A code review is when teammates examine each other's code before it is merged. It improves quality, catches bugs early, and helps everyone learn.",
+"An IDE, or integrated development environment, is a program that combines a code editor, debugger, and build tools in one place. Examples include Visual Studio Code, IntelliJ, and PyCharm.",
+"The command line is a text-based interface where you control your computer by typing commands. Developers use it for running programs, managing files, and using tools like Git.",
+"Open source software has publicly available source code that anyone can read, use, modify, and share under its license.",
+"An algorithm is a step-by-step set of instructions for solving a problem or completing a task.",
+"A variable is a named place in memory that stores a value your program can read and change while it runs.",
+"A loop repeats a block of code until a condition is met. Common types are for loops and while loops.",
+"A function is a reusable block of code that performs a specific task. It can take inputs called parameters and return an output.",
+"The frontend is the part of an app users see and interact with in the browser, while the backend is the server-side code and database that handle logic and data behind the scenes.",
+"Full stack development means working on both the frontend and the backend of an application, including the user interface, server logic, and database.",
+"React is a JavaScript library for building user interfaces out of reusable components. It updates the page efficiently when your data changes.",
+"A CSS selector tells the browser which HTML elements a style rule applies to. Examples include element names, classes with a dot, and IDs with a hash.",
+"Semantic HTML uses tags like header, nav, main, and article that describe the meaning of the content. It improves accessibility and helps search engines understand your page.",
+"Web accessibility means designing websites so people with disabilities can use them. This includes alt text for images, keyboard navigation, good color contrast, and screen reader support.",
+"A cookie is a small piece of data a website stores in your browser to remember things like login sessions and preferences.",
+"A regular expression, or regex, is a pattern used to search for and match text. It is handy for validating input and finding or replacing strings.",
+"A compiler translates the whole program into machine code before it runs, while an interpreter reads and executes the code line by line as it runs.",
+"Artificial intelligence is the field of building computer systems that can perform tasks that normally need human intelligence, such as understanding language, recognizing images, and making decisions.",
+"A chatbot is a program that simulates conversation with people. Some use fixed rules and keyword matching, while others use machine learning models.",
+"Natural language processing is a branch of AI that helps computers understand, interpret, and generate human language.",
+"A neural network is a machine learning model made of layers of connected nodes, loosely inspired by the brain, that learns patterns from data.",
+"Levenshtein distance counts the minimum number of single-character edits, such as insertions, deletions, and substitutions, needed to turn one word into another. It is used to tolerate typos.",
+"A unit test checks that one small piece of code, like a single function, works as expected. Running unit tests automatically helps catch bugs when code changes.",
+"Refactoring means restructuring existing code to make it cleaner and easier to maintain without changing what it does.",
+"A process is a running program with its own memory space, while a thread is a lighter unit of execution inside a process that shares the process's memory.",
+"A deadlock happens when two or more processes each wait for a resource the other holds, so none of them can ever continue.",
+"Git is a version control system that tracks changes to your files, lets you work on features in branches, and makes it easy to collaborate and roll back mistakes.",
+"A pull request is a proposal to merge your changes into another branch on a platform like GitHub. Teammates can review, comment on, and approve it before it is merged.",
 ];
 /* Algorithm that runs Keyword Matching first to run 
 in 0(N) time and if questions does not match then my code 
@@ -1046,7 +1146,64 @@ function hybridMatching(userInput) {
   return bestScore >= 1 ? bestIndex : -1;
 }
 
-// SINGLE, CLEAN EVENT LISTENER
+// Add SpeechRecognition and SpeechSynthesis support
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new SpeechRecognition();
+const synth = window.speechSynthesis;
+
+// Configure SpeechRecognition
+recognition.lang = 'en-US';
+recognition.interimResults = false;
+
+
+// Voice Input Button (must be created BEFORE it is used below)
+const voiceInputButton = document.createElement("button");
+voiceInputButton.textContent = "🎤 Speak";
+voiceInputButton.type = submitButton.type || "button";
+if (submitButton.className) voiceInputButton.className = submitButton.className;
+
+// Create a container that holds the Ask and Speak buttons side by side
+const buttonContainer = document.createElement("div");
+buttonContainer.style.display = "flex";
+buttonContainer.style.alignItems = "center";
+buttonContainer.style.gap = "10px";
+buttonContainer.style.marginTop = "10px";
+
+// Remove existing margins so the gap controls the spacing
+submitButton.style.margin = "0";
+voiceInputButton.style.margin = "0";
+
+// Put the container where the Ask button already is, then move both buttons into it
+submitButton.parentNode.insertBefore(buttonContainer, submitButton);
+buttonContainer.appendChild(submitButton);
+buttonContainer.appendChild(voiceInputButton);
+
+// Start voice recognition when the button is clicked
+voiceInputButton.addEventListener("click", () => {
+  recognition.start();
+});
+
+// Handle voice input
+recognition.addEventListener("result", (event) => {
+  const userInput = event.results[0][0].transcript.trim();
+  userInputField.value = userInput;
+  submitButton.click(); // Trigger the chatbot response
+});
+
+// Handle recognition errors
+recognition.addEventListener("error", (event) => {
+  console.error("Speech recognition error:", event.error);
+  alert("Sorry, I couldn't understand you. Please try again.");
+});
+
+// Add SpeechSynthesis for chatbot responses
+function speakResponse(response) {
+  const utterance = new SpeechSynthesisUtterance(response);
+  utterance.lang = 'en-US';
+  synth.speak(utterance);
+}
+
+// Modify the submit button event listener to include speech synthesis
 submitButton.addEventListener("click", function () {
   const userInput = userInputField.value.trim();
   
@@ -1086,10 +1243,10 @@ submitButton.addEventListener("click", function () {
     if (userResponse && userResponse.trim() !== "") {
       responses.push(userResponse.trim());
       chatbotResponse = "Thank you! I'll remember that.";
-      askButton.style.border = "2px solid green"; // Green for success
+      submitButton.style.border = "2px solid green"; // Green for success
     } else {
       chatbotResponse = "It seems you didn't provide an answer. Please try again.";
-      askButton.style.border = "2px solid red"; // Red for failure
+      submitButton.style.border = "2px solid red"; // Red for failure
     }
   }
 
@@ -1098,4 +1255,7 @@ submitButton.addEventListener("click", function () {
   userInputField.innerHTML += `<p>\n<b>Chatbot:</b> ${chatbotResponse}</p>`;
   textArea.value = userInput + "\n\nChatbot: " + chatbotResponse;
   userInputField.value = "";
+
+  // Speak the chatbot's response
+  speakResponse(chatbotResponse);
 });
