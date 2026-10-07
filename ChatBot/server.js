@@ -4,7 +4,9 @@ const express = require("express");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 const path = require("path");
+const crypto = require("crypto");
 const { findMatch, responses } = require("./brain");
+const { handleQuiz, startQuiz, getQuizForMarker } = require("./quiz");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -46,6 +48,22 @@ app.use("/api/ask", (req, res, next) => {
   next();
 });
 
+// Give each visitor a random session id (cookie) so the quiz can remember
+// their question number and score. No cookie-parser needed.
+function getSessionId(req, res) {
+  const match = /(?:^|;\s*)sid=([a-f0-9-]{36})/.exec(req.headers.cookie || "");
+  if (match) return match[1];
+
+  const id = crypto.randomUUID();
+  res.cookie("sid", id, {
+    httpOnly: true,
+    sameSite: "lax",
+    secure: process.env.NODE_ENV === "production",
+    maxAge: 60 * 60 * 1000
+  });
+  return id;
+}
+
 app.post("/api/ask", askLimiter, (req, res) => {
   // Never trust the browser. Validate and cap the question server-side.
   if (typeof req.body?.question !== "string") {
@@ -58,7 +76,21 @@ app.post("/api/ask", askLimiter, (req, res) => {
     return res.status(400).json({ error: "Empty question." });
   }
 
+  // Quiz first: handles "START SECURITY+ QUIZ" and answers (A/B/C/D)
+  // while a quiz is in progress. Returns null when it isn't a quiz message.
+  const quizReply = handleQuiz(getSessionId(req, res), text);
+  if (quizReply !== null) {
+    return res.json({ answer: quizReply });
+  }
+
   const idx = findMatch(text);
+
+  // If brain.js matched the quiz question, its response is a marker
+  // that tells us to start the quiz instead of sending text.
+  const quizKey = idx === -1 ? null : getQuizForMarker(responses[idx]);
+  if (quizKey) {
+    return res.json({ answer: startQuiz(getSessionId(req, res), quizKey) });
+  }
 
   // Only send one answer back. The question/response database
   // stays on the server.

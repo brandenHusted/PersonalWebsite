@@ -1,280 +1,696 @@
+Run 'npm start' in ChatBot folder from GitHub and go to http://localhost:3000/ to see the chatbot in action.
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>HAL — Heuristically Programmed Algorithmic Computer</title>
-  <p>Run 'npm start' in the ChatBot folder and go to http://localhost:3000 to run project</p>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Oswald:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Oswald:wght@700&family=Roboto:wght@300&display=swap"
+    rel="stylesheet">
+
   <style>
+
     :root {
       --bg: #050608;
       --panel: #0a0d11;
-      --panel-2: #0e1217;
       --line: #252a30;
       --text: #e7e9eb;
       --muted: #8c939b;
       --red: #ff2638;
-      --red-dim: #7d101a;
       --white: #f4f4f2;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    html, body { min-height: 100%; }
+    html,
+    body {
+      min-height: 100%;
+    }
 
     body {
       background:
-        radial-gradient(circle at 50% 15%, rgba(255,38,56,.055), transparent 32%),
-        linear-gradient(180deg, #090b0e 0%, var(--bg) 60%, #020304 100%);
+        radial-gradient(
+          circle at 50% 15%,
+          rgba(255, 38, 56, .055),
+          transparent 32%
+        ),
+        linear-gradient(
+          180deg,
+          #090b0e 0%,
+          var(--bg) 60%,
+          #020304 100%
+        );
+
       color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
       letter-spacing: .02em;
     }
 
+    #halEyeContainer {
+    position: fixed;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 240px;
+    text-align: center;
+    z-index: 5;
+    pointer-events: none;
+}
+
+#halCanvas {
+    width: 240px;
+    height: 240px;
+    display: block;
+}
+
+.hal-label {
+    margin-top: -5px;
+    font-size: 17px;
+    letter-spacing: 5px;
+    color: #ddd;
+}
+
+.hal-label b {
+    color: #ff2020;
+}
+
+.hal-status {
+    margin-top: 10px;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #777;
+}
+
+.hal-status span {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 7px;
+    border-radius: 50%;
+    background: #ff2020;
+    box-shadow: 0 0 10px #ff2020;
+    animation: statusPulse 2s infinite;
+}
+
+@keyframes statusPulse {
+    0%, 100% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1000px) {
+    #halEyeContainer {
+        display: none;
+    }
+}
+    /* =========================
+       HEADER
+       ========================= */
+
     header {
-      height: 68px;
-      padding: 0 34px;
+      height: 54px;
+      padding: 0 24px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(5,6,8,.96);
+
+      background: rgba(5, 6, 8, .96);
       border-bottom: 1px solid var(--line);
+
       position: sticky;
       top: 0;
       z-index: 10;
     }
 
-    #home { display: flex; align-items: center; gap: 14px; }
-    #home a { text-decoration: none; }
+    #home {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #home a {
+      text-decoration: none;
+    }
 
     #home h4 {
       color: var(--white);
-      font-size: 15px;
+      font-size: 12px;
       font-weight: 600;
-      letter-spacing: .08em;
+      letter-spacing: .07em;
       text-transform: uppercase;
     }
 
-    #home img { display: none; }
-
     #pages {
       display: flex;
-      gap: 26px;
+      gap: 20px;
       list-style: none;
     }
 
     #pages a {
       color: var(--muted);
       text-decoration: none;
-      font-size: 13px;
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: .12em;
+      letter-spacing: .1em;
       transition: color .2s ease;
     }
 
-    #pages a:hover { color: var(--white); }
+    #pages a:hover {
+      color: var(--white);
+    }
+
+
+    /* =========================
+       HAL IMAGE
+       ========================= */
+
+    .hal-image {
+      position: fixed;
+
+      left: 35px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      width: 180px;
+      height: 180px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      z-index: 2;
+    }
+
+    .hal-image img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+
+      filter:
+        drop-shadow(0 0 8px rgba(255, 38, 56, .35));
+
+      transition:
+        transform .2s ease,
+        filter .2s ease;
+    }
+
+    /* HAL reacts while speaking */
+
+    .hal-image.speaking img {
+      transform: scale(1.04);
+
+      filter:
+        drop-shadow(0 0 14px rgba(255, 38, 56, .75));
+    }
+
+
+    /* =========================
+       MAIN
+       ========================= */
 
     .flex {
-      width: min(900px, 92%);
-      min-height: calc(100vh - 68px);
+      width: min(760px, 92%);
+
+      min-height: calc(100vh - 54px);
+
       margin: auto;
-      padding: 70px 0 60px;
+
+      padding: 32px 0 30px;
+
       display: flex;
       flex-direction: column;
+
       align-items: center;
     }
 
-    .flex > div:first-child { text-align: center; }
+    .flex > div:first-child {
+      text-align: center;
+    }
+
+
+    /* =========================
+       HAL TITLE
+       ========================= */
 
     h1 {
       border: 0;
+
       padding: 0;
-      margin: 0 0 12px;
+
+      margin: 0 0 6px;
+
       color: var(--white);
-      font-size: clamp(34px, 6vw, 58px);
+
+      font-size: clamp(30px, 5vw, 46px);
+
       font-weight: 300;
-      letter-spacing: .18em;
+
+      letter-spacing: .15em;
+
       text-transform: uppercase;
     }
 
     .flex > div:first-child::after {
-      content: "HEURISTICALLY PROGRAMMED ALGORITHMIC COMPUTER";
+      content:
+        "HEURISTICALLY PROGRAMMED ALGORITHMIC COMPUTER";
+
       display: block;
+
       color: var(--muted);
-      font-size: 10px;
-      letter-spacing: .24em;
-      margin-bottom: 48px;
+
+      font-size: 8px;
+
+      letter-spacing: .18em;
+
+      margin-bottom: 25px;
     }
 
+
+    /* =========================
+       INPUT
+       ========================= */
+
     .input {
-      width: min(720px, 100%);
+      width: min(650px, 100%);
+
       display: flex;
+
       flex-direction: column;
-      gap: 16px;
-      margin-bottom: 26px;
+
+      gap: 10px;
+
+      margin-bottom: 16px;
     }
 
     #ans {
       width: 100%;
-      max-width: none;
-      height: 54px;
-      padding: 0 18px;
+
+      height: 44px;
+
+      padding: 0 15px;
+
       background: var(--panel);
+
       color: var(--white);
+
       border: 1px solid #343a41;
+
       border-radius: 2px;
+
       outline: none;
-      font-size: 15px;
-      transition: border-color .2s, box-shadow .2s;
+
+      font-size: 14px;
+
+      transition:
+        border-color .2s,
+        box-shadow .2s;
     }
 
-    #ans::placeholder { color: #6f767d; }
+    #ans::placeholder {
+      color: #6f767d;
+    }
 
     #ans:focus {
       border-color: #8b9299;
-      box-shadow: 0 0 0 1px rgba(255,255,255,.04);
+
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.04);
     }
+
+
+    /* =========================
+       BUTTONS
+       ========================= */
 
     .button-group {
       display: flex;
+
       justify-content: center;
+
       align-items: center;
-      gap: 10px;
+
+      gap: 8px;
     }
 
     .btn,
     button {
-      min-width: 105px;
-      padding: 11px 24px;
+      min-width: 95px;
+
+      padding: 9px 20px;
+
       margin: 0;
+
       background: #14181d;
+
       color: var(--white);
+
       border: 1px solid #454b52;
+
       border-radius: 2px;
+
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
+
+      font-size: 11px;
+
       font-weight: 600;
-      letter-spacing: .12em;
+
+      letter-spacing: .1em;
+
       text-transform: uppercase;
+
       cursor: pointer;
+
       transition: all .2s ease;
     }
 
     .btn:hover,
     button:hover {
       background: #1b2026;
+
       border-color: #70777e;
-      transform: none;
-      box-shadow: none;
     }
 
     .btn:active,
-    button:active { background: #0f1216; }
+    button:active {
+      background: #0f1216;
+    }
+
+
+    /* =========================
+       RESULT
+       ========================= */
 
     #result {
-      width: min(720px, 100%);
+      width: min(650px, 100%);
+
       margin-top: 0;
     }
 
     textarea {
       display: block;
+
       width: 100%;
-      height: 300px;
-      padding: 22px;
-      background: linear-gradient(180deg, #0b0e12, #080a0d);
+
+      height: 220px;
+
+      padding: 17px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #0b0e12,
+          #080a0d
+        );
+
       color: #dfe2e5;
+
       border: 1px solid #30353b;
+
       border-radius: 2px;
+
       outline: none;
+
       resize: vertical;
+
       font-family: "Courier New", monospace;
-      font-size: 14px;
-      line-height: 1.7;
-      box-shadow: inset 0 0 30px rgba(0,0,0,.3);
+
+      font-size: 13px;
+
+      line-height: 1.55;
+
+      box-shadow:
+        inset 0 0 25px rgba(0,0,0,.3);
     }
 
     textarea:focus {
       border-color: #555c64;
-      box-shadow: inset 0 0 30px rgba(0,0,0,.3);
     }
 
+
+    /* =========================
+       WARNING
+       ========================= */
+
     .warning-section {
-      width: min(720px, 100%);
-      margin-top: 28px;
-      padding: 15px 18px;
+      width: min(650px, 100%);
+
+      margin-top: 16px;
+
+      padding: 11px 14px;
+
       background: #0b0d10;
+
       border: 1px solid #2b3035;
+
       border-left: 3px solid var(--red);
+
       border-radius: 2px;
     }
 
     .warning-section h2 {
       color: #aeb3b8;
-      font-size: 11px;
-      line-height: 1.7;
+
+      font-size: 9px;
+
+      line-height: 1.5;
+
       text-align: left;
+
       margin: 0;
-      max-width: none;
     }
 
     .warning-section h2:first-child {
       color: var(--red);
-      font-size: 10px;
-      letter-spacing: .15em;
+
+      font-size: 9px;
+
+      letter-spacing: .13em;
+
       text-transform: uppercase;
-      margin-bottom: 4px;
+
+      margin-bottom: 3px;
     }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 1000px) {
+
+      /* Hide HAL image when screen is too narrow */
+
+      .hal-image {
+        display: none;
+      }
+
+    }
+
 
     @media (max-width: 650px) {
-      header { padding: 0 18px; }
-      #home h4 { font-size: 11px; }
-      #pages { gap: 14px; }
-      #pages a { font-size: 10px; }
-      .flex { padding-top: 50px; }
-      h1 { letter-spacing: .1em; }
-      .flex > div:first-child::after { letter-spacing: .12em; }
-      textarea { height: 230px; }
+
+      header {
+        height: 50px;
+
+        padding: 0 14px;
+      }
+
+      #home h4 {
+        font-size: 9px;
+      }
+
+      #pages {
+        gap: 12px;
+      }
+
+      #pages a {
+        font-size: 9px;
+      }
+
+      .flex {
+        width: 94%;
+
+        padding-top: 24px;
+      }
+
+      h1 {
+        font-size: 32px;
+
+        letter-spacing: .1em;
+      }
+
+      .flex > div:first-child::after {
+        font-size: 7px;
+
+        letter-spacing: .1em;
+
+        margin-bottom: 20px;
+      }
+
+      #ans {
+        height: 42px;
+
+        font-size: 13px;
+      }
+
+      textarea {
+        height: 180px;
+      }
+
+      .warning-section {
+        margin-top: 12px;
+      }
+
     }
+
   </style>
+
 </head>
+
+
 <body>
+
+  <!-- HEADER -->
+
   <header>
+
     <div id="home">
-      <a href="../../index.html"></a>
-        <h4>Branden: CompTIA Network+ Certified</h4>
+
+      <a href="../../index.html">
+
+        <h4>
+          Branden: CompTIA Network+ Certified
+        </h4>
+
       </a>
-      <img src="../../images/OIP.webp" alt="Network Logo" style="width:30px; height:30px; margin-left:10px;">
-  </div>
+
+    </div>
+
+
     <ul id="pages">
-      <li><a href="../../index.html">Home</a></li>
-      <li><a href="../../connect.html">About</a></li>
+
+      <li>
+        <a href="../../index.html">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a href="../../connect.html">
+          About
+        </a>
+      </li>
+
     </ul>
+
   </header>
 
+
+  <!-- MAIN -->
+
   <div class="flex">
+
+
+    <!-- TITLE -->
+
     <div>
-      <h1>HAL</h1>
+
+      <h1>
+        HAL
+      </h1>
+
     </div>
+
+
+    <!-- INPUT -->
 
     <div class="input">
-      <input type="text" id="ans" placeholder="How can I assist you?" required />
+
+      <input
+        type="text"
+        id="ans"
+        placeholder="How can I assist you?"
+        required
+      />
+
+
       <div class="button-group">
-        <button class="btn" id="submitButton">Ask</button>
+
+        <button
+          class="btn"
+          id="submitButton">
+
+          Ask
+
+        </button>
+
       </div>
+
     </div>
+
+
+    <!-- RESPONSE -->
 
     <div id="result">
-      <textarea placeholder="HAL system responses will appear here..." readonly></textarea>
+
+      <textarea
+        placeholder="HAL system responses will appear here..."
+        readonly>
+      </textarea>
+
     </div>
+
+
+    <!-- WARNING -->
 
     <div class="warning-section">
-      <h2>⚠️ Warning:</h2>
-      <h2>This chatbot was made to automate simple processes that I struggle with and help with school. <strong>Do not use this to cheat on school assignments.</strong></h2>
+
+      <h2>
+        ⚠️ Warning:
+      </h2>
+
+      <h2>
+
+        This chatbot was made to automate simple processes
+        that I struggle with and help with school.
+
+        <strong>
+          Do not use this to cheat on school assignments.
+        </strong>
+
+      </h2>
+
     </div>
+
+
   </div>
 
+
+  <!-- CHATBOT JAVASCRIPT -->
+
   <script src="chat.js"></script>
+
+
 </body>
+
 </html>
+
+
+
