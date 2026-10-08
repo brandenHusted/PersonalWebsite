@@ -31,7 +31,7 @@ const askLimiter = rateLimit({
 });
 
 // Optional same-origin protection.
-// Set ALLOWED_ORIGIN to your real site, for example:
+// Set ALLOWED_ORIGIN to real site, for example:
 // ALLOWED_ORIGIN=https://www.yourdomain.com
 app.use("/api/ask", (req, res, next) => {
   const allowedOrigin = process.env.ALLOWED_ORIGIN;

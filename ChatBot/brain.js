@@ -1292,6 +1292,24 @@ const questionKeywordIndex = questions.map(q =>
   new Set(q.toLowerCase().split(/\s+/))
 );
 
+/**
+ * Calculates the Levenshtein distance between two strings.
+ * The Levenshtein distance is a measure of the difference between two sequences,
+ * defined as the minimum number of single-character edits (insertions, deletions, or substitutions)
+ * required to change one string into the other.
+ *
+ * @example
+ * levenshteinDistance("kitten", "sitting"); // Returns 3
+ *
+ * @description
+ * The function uses a dynamic programming approach to calculate the distance.
+ * It initializes a matrix where matrix[i][j] represents the distance between
+ * the first i characters of string `a` and the first j characters of string `b`.
+ *
+ * - If either string is empty, the distance is the length of the other string.
+ * - The matrix is filled row by row, with each cell representing the minimum
+ *   cost of transforming the substring of `a` to the substring of `b`.
+ */
 function levenshteinDistance(a, b) {
   const an = a.length;
   const bn = b.length;
@@ -1317,19 +1335,23 @@ function levenshteinDistance(a, b) {
 }
 
 function hybridMatching(userInput) {
+  // Convert the user input to lowercase and split it into an array of words (keywords) using whitespace as the delimiter.
   const userKeywords = userInput.toLowerCase().split(/\s+/);
-  let bestIndex = -1;
-  let bestScore = 0;
+  // Initialize variables to track the best matching index and the highest score.
+  let bestIndex = -1; // The bestIndex variable is used to store the index of the question that best matches the user's input based on the hybrid matching algorithm.
+  let bestScore = 0; // The bestScore variable in the hybridMatching function is used to track the highest number of matches (both exact and fuzzy) between the user's input and the keywords associated with each question.
 
   questionKeywordIndex.forEach((keywords, index) => {
+    // Count the number of exact matches between user keywords and the current question's keywords.
     const exactMatches = userKeywords.filter(uk =>
-      [...keywords].some(qk => qk === uk)
+      [...keywords].some(qk => qk === uk) // Check if any keyword in the set matches the user keyword exactly.
     ).length;
 
+    // Count the number of fuzzy matches (close matches) using the Levenshtein distance.
     const fuzzyMatches = userKeywords.filter(uk =>
       [...keywords].some(qk => {
-        const distance = levenshteinDistance(uk, qk);
-        return distance <= 1 && qk.length > 2;
+        const distance = levenshteinDistance(uk, qk); // Calculate the Levenshtein distance between the user keyword and question keyword.
+        return distance <= 1 && qk.length > 2; // Consider it a match if the distance is 1 or less and the keyword is longer than 2 characters.
       })
     ).length;
 
@@ -1340,13 +1362,14 @@ function hybridMatching(userInput) {
       bestIndex = index;
     }
   });
-
+  // If the best score is at least 1, return the index of the best match; otherwise, return -1 (no match found).
   return bestScore >= 1 ? bestIndex : -1;
 }
 
 function findMatch(userInput) {
   let closestMatchIndex = hybridMatching(userInput);
 
+  // If no match is found using hybrid matching, fall back to finding the closest match
   if (closestMatchIndex === -1) {
     let smallestDistance = Infinity;
 
