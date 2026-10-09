@@ -5,7 +5,7 @@ const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 const path = require("path");
 const crypto = require("crypto");
-const { findMatch, responses } = require("./brain");
+const { getReply } = require("./brain");
 const { handleQuiz, startQuiz, getQuizForMarker } = require("./quiz");
 
 const app = express();
@@ -76,30 +76,42 @@ app.post("/api/ask", askLimiter, (req, res) => {
     return res.status(400).json({ error: "Empty question." });
   }
 
+  // Get the session id once so a new visitor doesn't get two different ids
+  // in the same request.
+  const sid = getSessionId(req, res);
+
   // Quiz first: handles "START SECURITY+ QUIZ" and answers (A/B/C/D)
   // while a quiz is in progress. Returns null when it isn't a quiz message.
-  const quizReply = handleQuiz(getSessionId(req, res), text);
+  // No suggestion is added here so the quiz flow isn't interrupted.
+  const quizReply = handleQuiz(sid, text);
   if (quizReply !== null) {
     return res.json({ answer: quizReply });
   }
 
-  const idx = findMatch(text);
+  // getReply returns { index, response, suggestion }:
+  //   response   -> the matched entry from the responses list (or null)
+  //   suggestion -> a random entry from the questions list
+  const { response, suggestion } = getReply(text);
 
-  // If brain.js matched the quiz question, its response is a marker
+  // If brain.js matched a quiz question, its response is a marker
   // that tells us to start the quiz instead of sending text.
-  const quizKey = idx === -1 ? null : getQuizForMarker(responses[idx]);
+  const quizKey = response === null ? null : getQuizForMarker(response);
   if (quizKey) {
-    return res.json({ answer: startQuiz(getSessionId(req, res), quizKey) });
+    return res.json({ answer: startQuiz(sid, quizKey) });
   }
 
-  // Only send one answer back. The question/response database
-  // stays on the server.
-  const answer =
-    idx === -1
+  const baseAnswer =
+    response === null
       ? "I'm sorry, I didn't quite understand. Could you try asking another question?"
-      : responses[idx];
+      : response;
 
-  res.json({ answer });
+  // Every normal reply ends with a suggested question.
+  const answer = `${baseAnswer}\n\nIf you need help try this: "${suggestion}"`;
+
+  // Only send one answer back. The question/response database
+  // stays on the server. `suggestion` is also sent on its own in case
+  // you want to render it as a clickable button later.
+  res.json({ answer, suggestion });
 });
 
 // Serve only your public website files.

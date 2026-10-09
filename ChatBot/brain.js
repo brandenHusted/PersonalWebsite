@@ -571,7 +571,8 @@ const questions = [
 "What is a security policy?",
 "You are investigating a workstation making connections to an unknown external IP. What should you examine first?",
 "Can you give me a 5-question CompTIA Security+ quiz?",
-"Can you give me a quiz on CompTIA Network+?"
+"Can you give me a quiz on CompTIA Network+?",
+"What is the purpose of HAL?"
 
 ];
 
@@ -1278,7 +1279,8 @@ That should be all the changes needed to be successful at having two pages in a 
 "Start by identifying the process responsible for the connection. On a Windows workstation, examine active network connections, the associated process or executable, DNS activity, endpoint security telemetry, and relevant logs. Tools such as EDR/XDR, SIEM data, PowerShell, or netstat can help determine whether the connection is legitimate or suspicious.",
 "Absolutely. I can give you a 10-question CompTIA Security+ practice quiz covering multiple Security+ domains. It can include knowledge questions, scenario-based questions, and PBQ-style questions. Say \"START SECURITY+ QUIZ\" when you are ready.",
 "[[START_SECURITY_QUIZ]]",
-"[[START_NETWORK_QUIZ]]"
+"[[START_NETWORK_QUIZ]]",
+"The purpose of HAL is to remind me of information I have learned from college and retain my information. HAL was evolved a bit from the main goal although most of my knowledge from Computer science is kept in HAL's database."
 
 ];
 
@@ -1366,10 +1368,17 @@ function hybridMatching(userInput) {
   return bestScore >= 1 ? bestIndex : -1;
 }
 
+function getRandomSuggestion(excludeIndex) {
+  let idx;
+  do {
+    idx = Math.floor(Math.random() * questions.length);
+  } while (idx === excludeIndex && questions.length > 1);
+  return questions[idx];
+}
+
 function findMatch(userInput) {
   let closestMatchIndex = hybridMatching(userInput);
 
-  // If no match is found using hybrid matching, fall back to finding the closest match
   if (closestMatchIndex === -1) {
     let smallestDistance = Infinity;
 
@@ -1378,7 +1387,6 @@ function findMatch(userInput) {
         userInput.toLowerCase(),
         question.toLowerCase()
       );
-
       if (distance < smallestDistance && distance <= 10) {
         smallestDistance = distance;
         closestMatchIndex = index;
@@ -1389,7 +1397,22 @@ function findMatch(userInput) {
   return closestMatchIndex;
 }
 
+function getReply(userInput) {
+  const index = findMatch(userInput);
+  const response = index === -1 ? null : responses[index];   // <-- responses, not questions
+
+  // Don't suggest anything when the match is a quiz trigger.
+  const isQuizMarker = response !== null && response.startsWith("[[START_");
+
+  return {
+    index,
+    response,
+    suggestion: isQuizMarker ? null : getRandomSuggestion(index)
+  };
+}
+
 module.exports = {
   findMatch,
+  getReply,
   responses
 };
