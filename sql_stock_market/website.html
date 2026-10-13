@@ -106,6 +106,7 @@
         .AAPLchatMessage {
             margin: 8px 0;
             line-height: 1.45;
+            white-space: pre-wrap;
         }
 
         .chatYou {
@@ -114,6 +115,14 @@
 
         .chatBot {
             color: #222;
+        }
+
+        .chatBotAI {
+            color: #14532d;
+        }
+
+        .chatBotError {
+            color: #b91c1c;
         }
 
         #chatInputRow,
@@ -306,13 +315,14 @@
 
     <p id="AAPLchatbotDescription">
         Ask questions about your AAPL database. Quick questions automatically match the AAPL analysis you selected.
+        Open-ended questions (for example "Why do stocks drop?") are answered by ChatGPT using your data as context.
     </p>
 
     <div id="AAPLchatMessages">
         <div class="AAPLchatMessage chatBot">
             <b>Chatbot:</b>
             Hi! I can answer questions using your AAPL /api/stock-drops/ and /api/volume/ database endpoints.
-            Quick questions automatically match the AAPL analysis you selected.
+            Quick questions automatically match the AAPL analysis you selected, and anything else goes to ChatGPT.
         </div>
     </div>
 
@@ -922,6 +932,20 @@ function isAAPLLatestPriceQuestion(input) {
     );
 }
 
+/*
+   FIX: the old versions used !text.includes("high") / !text.includes("low"),
+   but "highest" contains "high" and "lowest" contains "low", so the
+   "highest/lowest close" questions never matched and were answered as
+   daily high/low instead. These helpers check for the standalone words.
+*/
+function mentionsDailyHigh(text) {
+    return text.includes("daily high") || /\bhigh\b/.test(text);
+}
+
+function mentionsDailyLow(text) {
+    return text.includes("daily low") || /\blow\b/.test(text);
+}
+
 function isAAPLHighestCloseQuestion(input) {
     const text = input.toLowerCase();
 
@@ -936,7 +960,7 @@ function isAAPLHighestCloseQuestion(input) {
             text.includes("closing") ||
             text.includes("price")
         ) &&
-        !text.includes("high")
+        !mentionsDailyHigh(text)
     );
 }
 
@@ -954,7 +978,7 @@ function isAAPLLowestCloseQuestion(input) {
             text.includes("closing") ||
             text.includes("price")
         ) &&
-        !text.includes("low")
+        !mentionsDailyLow(text)
     );
 }
 
@@ -967,10 +991,7 @@ function isAAPLHighestDailyHighQuestion(input) {
             text.includes("maximum") ||
             text.includes("max")
         ) &&
-        (
-            text.includes("daily high") ||
-            text.includes("high")
-        )
+        mentionsDailyHigh(text)
     );
 }
 
@@ -983,15 +1004,8 @@ function isAAPLLowestDailyLowQuestion(input) {
             text.includes("minimum") ||
             text.includes("min")
         ) &&
-        (
-            text.includes("daily low") ||
-            text.includes("low")
-        )
+        mentionsDailyLow(text)
     );
-}
-
-function isAAPLVolumeQuestion(input) {
-    return input.toLowerCase().includes("volume");
 }
 
 function isAAPLDropQuestion(input) {
@@ -1079,6 +1093,114 @@ function isAAPLDateOfBiggestDropQuestion(input) {
 }
 
 /* ============================================================
+   CHATGPT (through your Flask server: POST /api/chat)
+   The OpenAI key stays on the server, never in this file.
+   ============================================================ */
+
+// Builds a short text summary of your AAPL data to send to ChatGPT as context.
+async function buildAAPLContext() {
+    const lines = [];
+
+    try {
+        const drops = normalizeAAPLDropData(await getAAPLDropData())
+            .filter(r => Number.isFinite(r.percentChange));
+
+        if (drops.length) {
+            const worst = drops.reduce(
+                (a, r) => r.percentChange < a.percentChange ? r : a,
+                drops[0]
+            );
+            const avg =
+                drops.reduce((s, r) => s + r.percentChange, 0) / drops.length;
+
+            lines.push(
+                "Stock-drops data (days AAPL dropped more than 5%): " +
+                drops.length + " records. " +
+                "Biggest drop " + formatPercent(worst.percentChange) +
+                " on " + safeDate(worst.date) + ". " +
+                "Average % change " + formatPercent(avg) + "."
+            );
+
+            lines.push(
+                "Most recent drop records: " +
+                drops.slice(-5)
+                    .map(r => safeDate(r.date) + ": " + formatPercent(r.percentChange))
+                    .join("; ")
+            );
+        }
+    } catch (e) {
+        console.warn("No drop data for ChatGPT context", e);
+    }
+
+    try {
+        const vol = normalizeAAPLVolumeData(await getAAPLVolumeData());
+
+        if (vol.length) {
+            const last = vol[vol.length - 1];
+
+            lines.push(
+                "Volume data: " + vol.length + " records. " +
+                "Latest (" + safeDate(last.date) + "): " +
+                "close " + formatMoney(last.close) +
+                ", high " + formatMoney(last.high) +
+                ", low " + formatMoney(last.low) +
+                ", volume " + formatNumber(last.volume) + "."
+            );
+        }
+    } catch (e) {
+        console.warn("No volume data for ChatGPT context", e);
+    }
+
+    return lines.join("\n");
+}
+
+async function askChatGPT(question) {
+    document.getElementById("AAPLchatStatus").textContent =
+        "Asking ChatGPT...";
+
+    try {
+        const context = await buildAAPLContext();
+
+        const response = await fetch("http://127.0.0.1:5000/api/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ question, context })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok || data.error) {
+            throw new Error(data.error || "ChatGPT request failed");
+        }
+
+        return data.answer;
+
+    } catch (error) {
+        // Tag the error so the UI can show a ChatGPT-specific message.
+        error.fromChatGPT = true;
+        throw error;
+    }
+}
+
+function isOpenEndedQuestion(input) {
+    const text = input.toLowerCase();
+
+    return [
+        "why",
+        "explain",
+        "should",
+        "compare",
+        "what does",
+        "how does",
+        "summarize",
+        "summary",
+        "opinion",
+        "trend",
+        "risk"
+    ].some(word => text.includes(word));
+}
+
+/* ============================================================
    AAPL AI
    ============================================================ */
 
@@ -1105,13 +1227,13 @@ async function askAAPLPersonalAI() {
     status.textContent = "Thinking...";
 
     try {
-        const chatbotResponse =
+        const result =
             await answerAAPLQuestion(userInput);
 
         addAAPLChatMessage(
-            "Chatbot",
-            chatbotResponse,
-            "chatBot"
+            result.source === "chatgpt" ? "ChatGPT" : "Chatbot",
+            result.text,
+            result.source === "chatgpt" ? "chatBotAI" : "chatBot"
         );
 
     } catch (error) {
@@ -1120,21 +1242,54 @@ async function askAAPLPersonalAI() {
             error
         );
 
-        addAAPLChatMessage(
-            "Chatbot",
-            "I couldn't retrieve the AAPL data right now. " +
-            "Make sure your Flask server is running and that " +
-            "/api/stock-drops/ and /api/volume/ are available.",
-            "chatBot"
-        );
+        if (error.fromChatGPT) {
+            addAAPLChatMessage(
+                "Chatbot",
+                "I couldn't get an answer from ChatGPT: " + error.message +
+                ". Check that your Flask server is running, the /api/chat " +
+                "route exists, and OPENAI_API_KEY is set.",
+                "chatBotError"
+            );
+        } else {
+            addAAPLChatMessage(
+                "Chatbot",
+                "I couldn't retrieve the AAPL data right now. " +
+                "Make sure your Flask server is running and that " +
+                "/api/stock-drops/ and /api/volume/ are available.",
+                "chatBotError"
+            );
+        }
 
     } finally {
         status.textContent = "";
     }
 }
 
+/*
+   Returns { text, source } where source is "local" (your own rules)
+   or "chatgpt" (answered by the OpenAI API through Flask).
+*/
 async function answerAAPLQuestion(userInput) {
     const text = userInput.toLowerCase();
+
+    // Open-ended questions go straight to ChatGPT so the keyword
+    // matching below doesn't intercept things like "why did AAPL drop?"
+    if (isOpenEndedQuestion(userInput)) {
+        return { text: await askChatGPT(userInput), source: "chatgpt" };
+    }
+
+    const local = await answerAAPLQuestionLocally(userInput, text);
+
+    if (local !== null) {
+        return { text: local, source: "local" };
+    }
+
+    // Nothing in your rules matched: fall back to ChatGPT.
+    return { text: await askChatGPT(userInput), source: "chatgpt" };
+}
+
+// Your original rule-based answers. Returns null when nothing matches.
+async function answerAAPLQuestionLocally(userInput, text) {
 
     // /api/stock-drops/: date, percentChange, close
     // /api/volume/: date, close, high, low, volume
@@ -1240,58 +1395,40 @@ async function answerAAPLQuestion(userInput) {
     }
 
     if (isAAPLHighestVolumeQuestion(userInput)) {
-    const rawData = await getAAPLVolumeData();
-    const data = normalizeAAPLVolumeData(rawData);
+        const data = normalizeAAPLVolumeData(await getAAPLVolumeData())
+            .filter(row => Number.isFinite(row.volume));
 
-    const usable = data.filter(row =>
-        Number.isFinite(row.volume)
-    );
+        if (data.length === 0) {
+            return "I found no usable AAPL volume records in /api/volume/.";
+        }
 
-    if (usable.length === 0) {
-        return "I found no usable AAPL volume records in /api/volume/.";
+        const highest = data.reduce(
+            (best, row) => row.volume > best.volume ? row : best,
+            data[0]
+        );
+
+        return "The highest AAPL trading volume in your /api/volume/ data is " +
+            formatNumber(highest.volume) + " shares on " +
+            safeDate(highest.date) + ".";
     }
 
-    const highest = usable.reduce(
-        (best, row) =>
-            row.volume > best.volume ? row : best,
-        usable[0]
-    );
+    if (isAAPLLowestVolumeQuestion(userInput)) {
+        const data = normalizeAAPLVolumeData(await getAAPLVolumeData())
+            .filter(row => Number.isFinite(row.volume));
 
-    return (
-        "The highest AAPL trading volume in your /api/volume/ data is " +
-        formatNumber(highest.volume) +
-        " shares on " +
-        safeDate(highest.date) +
-        "."
-    );
-}
+        if (data.length === 0) {
+            return "I found no usable AAPL volume records in /api/volume/.";
+        }
 
-if (isAAPLLowestVolumeQuestion(userInput)) {
-    const rawData = await getAAPLVolumeData();
-    const data = normalizeAAPLVolumeData(rawData);
+        const lowest = data.reduce(
+            (best, row) => row.volume < best.volume ? row : best,
+            data[0]
+        );
 
-    const usable = data.filter(row =>
-        Number.isFinite(row.volume)
-    );
-
-    if (usable.length === 0) {
-        return "I found no usable AAPL volume records in /api/volume/.";
+        return "The lowest AAPL trading volume in your /api/volume/ data is " +
+            formatNumber(lowest.volume) + " shares on " +
+            safeDate(lowest.date) + ".";
     }
-
-    const lowest = usable.reduce(
-        (best, row) =>
-            row.volume < best.volume ? row : best,
-        usable[0]
-    );
-
-    return (
-        "The lowest AAPL trading volume in your /api/volume/ data is " +
-        formatNumber(lowest.volume) +
-        " shares on " +
-        safeDate(lowest.date) +
-        "."
-    );
-}
 
     if (isAAPLVolumeQuestion(userInput)) {
         const data = normalizeAAPLVolumeData(await getAAPLVolumeData()).filter(r => Number.isFinite(r.volume));
@@ -1316,9 +1453,8 @@ if (isAAPLLowestVolumeQuestion(userInput)) {
             ". This is a historical calculation, not a prediction.";
     }
 
-    return "I can use your AAPL database data from /api/stock-drops/ and /api/volume/. " +
-        "Try asking about a percentage drop/change, highest or lowest drop, average percentage change, " +
-        "number of records, price, close, daily high, daily low, volume, or recent performance.";
+    // No local rule matched.
+    return null;
 }
 
 /* ============================================================

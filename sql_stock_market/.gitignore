@@ -1,0 +1,12 @@
+
+# Environment variables and API keys
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+
+# Local logs
+logs/

@@ -2,11 +2,14 @@
 import yfinance as yf
 import pandas as pd
 import pyodbc
-
+import os
+import requests
 from datetime import datetime, timedelta
 from pathlib import Path
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
+from dotenv import load_dotenv
+load_dotenv()
 
 # --------------------------------------------------
 # FLASK APP SETUP
@@ -48,7 +51,54 @@ def log(message):
     with open(log_file, "a", encoding="utf-8") as file:
         file.write(formatted_message + "\n")
 
+# --------------------------------------------------
+# Use External API for Chatbot Responses (OpenAI GPT)
+# --------------------------------------------------
+@app.route("/api/chat", methods=["POST"])
+def chat():
+    body = request.get_json(silent=True) or {}
+    question = (body.get("question") or "").strip()
+    context = body.get("context") or ""
 
+    if not question:
+        return jsonify({"error": "No question provided"}), 400
+
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if not api_key:
+        return jsonify({"error": "OPENAI_API_KEY is not set on the server"}), 500
+
+    system_prompt = (
+        "You are a stock-data assistant for an AAPL dashboard. "
+        "Use the data summary provided to answer. If the data doesn't "
+        "contain the answer, say so, then answer from general knowledge. "
+        "Do not give personalized financial advice or predictions. "
+        "Keep answers under 150 words."
+    )
+
+    try:
+        r = requests.post(
+            "https://api.openai.com/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": "gpt-4o-mini",  # swap for whichever model you want
+                "messages": [
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user",
+                     "content": f"AAPL data summary:\n{context}\n\nQuestion: {question}"},
+                ],
+                "max_tokens": 400,
+            },
+            timeout=30,
+        )
+        r.raise_for_status()
+        answer = r.json()["choices"][0]["message"]["content"]
+        return jsonify({"answer": answer})
+    except requests.RequestException as e:
+        return jsonify({"error": f"OpenAI request failed: {e}"}), 502
+    
 # --------------------------------------------------
 # UPDATE SQL SERVER WITH MISSING AAPL DATA
 # --------------------------------------------------

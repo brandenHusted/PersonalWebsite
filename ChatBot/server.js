@@ -1,3 +1,4 @@
+// node.js using express.js
 require("dotenv").config();
 
 const express = require("express");
@@ -15,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 // this lets Express/rate-limit identify the original client IP.
 app.set("trust proxy", 1);
 
-// Security headers.
+// Security headers. uses 13 to 15 different headers to protect against common web vulnerabilities. See https://helmetjs.github.io/
 app.use(helmet());
 
 // Only accept small JSON requests.
