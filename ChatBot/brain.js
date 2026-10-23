@@ -572,7 +572,49 @@ const questions = [
 "You are investigating a workstation making connections to an unknown external IP. What should you examine first?",
 "Can you give me a 5-question CompTIA Security+ quiz?",
 "Can you give me a quiz on CompTIA Network+?",
-"What is the purpose of HAL?"
+"What is the purpose of HAL?",
+  "What is Big O notation?",
+  "What is the difference between a stack and a queue?",
+  "What is a linked list?",
+  "What is a binary search tree?",
+  "What is a hash table collision?",
+  "What is the difference between breadth-first search and depth-first search?",
+  "What is Dijkstra's shortest path algorithm?",
+  "What is dynamic programming?",
+  "What is the difference between merge sort and quicksort?",
+  "What is a base case in recursion?",
+  "What is database normalization?",
+  "What are the ACID properties in database transactions?",
+  "What is a primary key versus a foreign key?",
+  "What is the difference between an INNER JOIN and a LEFT JOIN in SQL?",
+  "What is a database index?",
+  "What is virtual memory?",
+  "What is a page fault in an operating system?",
+  "What is CPU scheduling?",
+  "What is a race condition in concurrent programming?",
+  "What is a mutex?",
+  "What is a system call?",
+  "What is garbage collection in programming languages?",
+  "What is the difference between RAM and cache memory?",
+  "What is the difference between a CPU and a GPU?",
+  "What is an instruction set architecture?",
+  "What is a finite state machine?",
+  "What are logic gates used for?",
+  "What is the software development life cycle?",
+  "What is continuous integration and continuous delivery?",
+  "What is a merge conflict in Git?",
+  "What is the purpose of the SOLID principles?",
+  "What is the difference between integration testing and unit testing?",
+  "What is technical debt in software engineering?",
+  "What is a design pattern in software development?",
+  "What happens during a DNS lookup?",
+  "What is the difference between TCP and UDP?",
+  "What is a REST API?",
+  "What is the purpose of TLS in network communication?",
+  "What is a mathematical proof by induction?",
+  "What is a regular expression in automata theory?",
+  "What is the difference between a deterministic and nondeterministic finite automaton?"
+
 
 ];
 
@@ -1280,47 +1322,210 @@ That should be all the changes needed to be successful at having two pages in a 
 "Absolutely. I can give you a 10-question CompTIA Security+ practice quiz covering multiple Security+ domains. It can include knowledge questions, scenario-based questions, and PBQ-style questions. Say \"START SECURITY+ QUIZ\" when you are ready.",
 "[[START_SECURITY_QUIZ]]",
 "[[START_NETWORK_QUIZ]]",
-"The purpose of HAL is to remind me of information I have learned from college and retain my information. HAL was evolved a bit from the main goal although most of my knowledge from Computer science is kept in HAL's database."
+"The purpose of HAL is to remind me of information I have learned from college and retain my information. HAL was evolved a bit from the main goal although most of my knowledge from Computer science is kept in HAL's database.",
+  "Big O notation describes how an algorithm's time or memory requirements grow as its input size increases. For example, O(n) grows linearly, while O(n squared) grows quadratically.",
+  "A stack uses last-in, first-out ordering, so the most recently added item is removed first. A queue uses first-in, first-out ordering, so the earliest added item is removed first.",
+  "A linked list is a data structure made of nodes. Each node stores data and a reference to another node, allowing elements to be connected without requiring contiguous memory.",
+  "A binary search tree is a tree where each node has at most two children, with smaller values typically placed on the left and larger values on the right. Its performance depends on how balanced the tree is.",
+  "A hash table collision occurs when two different keys map to the same storage location. Common solutions include chaining, which stores multiple entries together, and open addressing, which searches for another available location.",
+  "Breadth-first search explores a graph level by level, typically using a queue. Depth-first search follows one path as far as possible before backtracking, typically using recursion or a stack.",
+  "Dijkstra's algorithm finds shortest paths from a starting vertex to other vertices in a weighted graph when edge weights are nonnegative. It repeatedly selects the closest unprocessed vertex.",
+  "Dynamic programming solves problems by storing the results of smaller overlapping subproblems instead of repeatedly calculating them. It can use memoization or tabulation.",
+  "Merge sort divides data into smaller sections, sorts them, and merges the results; it generally runs in O(n log n) time. Quicksort partitions around a pivot and is often fast in practice, but its worst-case time is O(n squared).",
+  "A base case is the condition that stops a recursive function from calling itself again. Without a reachable base case, recursion may continue until the program runs out of stack space.",
+  "Database normalization organizes tables and relationships to reduce duplicated data and prevent insertion, update, and deletion anomalies. Common normal forms include first, second, and third normal form.",
+  "ACID stands for Atomicity, Consistency, Isolation, and Durability. These properties help ensure database transactions either complete reliably or leave the database in a valid state.",
+  "A primary key uniquely identifies each row in a table. A foreign key references a key in another table, helping enforce relationships between records.",
+  "An INNER JOIN returns rows that have matching values in both tables. A LEFT JOIN returns every row from the left table and includes matching right-table values when available, using NULL when no match exists.",
+  "A database index is an auxiliary structure that helps the database find rows more quickly. Indexes can improve read performance but require storage and can slow down some insertions, updates, and deletions.",
+  "Virtual memory gives programs the appearance of a large, private memory space by using address translation and storage techniques. It allows the operating system to manage physical memory efficiently.",
+  "A page fault occurs when a process accesses a virtual memory page that is not currently mapped to physical memory in the required way. The operating system handles the fault, potentially loading the page from storage.",
+  "CPU scheduling is the operating system's process of deciding which ready process or thread should use the CPU next. Algorithms include round-robin, priority scheduling, and shortest-job-first.",
+  "A race condition occurs when a program's result depends on the unpredictable timing or ordering of concurrent operations. Synchronization can help prevent inconsistent results.",
+  "A mutex, or mutual exclusion lock, allows only one thread at a time to access a protected section of code or shared resource. Correct locking helps prevent data races.",
+  "A system call is a controlled request from a program to the operating system for a service such as reading a file, creating a process, or communicating over a network.",
+  "Garbage collection automatically identifies and reclaims memory that a program can no longer reach. It reduces manual memory-management work, although it can introduce runtime overhead.",
+  "RAM holds data and instructions currently used by running programs, while cache is smaller, faster memory that keeps frequently or recently needed data close to the CPU.",
+  "A CPU executes general-purpose program instructions and coordinates system operations. A GPU contains many processing units designed to handle large numbers of parallel operations efficiently.",
+  "An instruction set architecture defines the machine instructions, registers, data types, and other programmer-visible behaviors supported by a processor.",
+  "A finite state machine is a computational model with a limited set of states and transitions triggered by inputs or events. It is useful for modeling protocols, user interfaces, and control systems.",
+  "Logic gates perform Boolean operations on binary inputs. Common gates include AND, OR, NOT, XOR, NAND, and NOR, and they are fundamental building blocks of digital circuits.",
+  "The software development life cycle is a structured process for planning, designing, building, testing, deploying, and maintaining software. Teams may use approaches such as Agile or Waterfall.",
+  "Continuous integration automatically builds and tests code changes as developers integrate them. Continuous delivery keeps software ready for release, while continuous deployment automatically releases qualifying changes to production.",
+  "A Git merge conflict occurs when Git cannot automatically reconcile competing changes, such as edits to the same part of a file. A developer must review the changes, resolve the conflict, and complete the merge.",
+  "The SOLID principles are five object-oriented design guidelines intended to make software easier to maintain and extend: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion.",
+  "Unit testing checks individual functions or components in isolation. Integration testing checks whether multiple components work together correctly.",
+  "Technical debt is the future maintenance cost created by choosing a quick or less-than-ideal solution instead of a more sustainable one. It can be reasonable when understood and managed, but it accumulates interest through future changes.",
+  "A design pattern is a reusable approach to a recurring software design problem. Examples include Factory, Observer, Strategy, and Model-View-Controller.",
+  "A DNS lookup translates a domain name, such as example.com, into a record such as an IP address. The resolver may check its cache or query DNS servers to obtain the answer.",
+  "TCP provides a reliable, ordered byte stream with connection management and retransmission. UDP sends datagrams without guaranteeing delivery or order, which can be useful for latency-sensitive applications.",
+  "A REST API is a web API style that commonly exposes resources through URLs and uses HTTP methods such as GET, POST, PUT, PATCH, and DELETE. Well-designed APIs define clear request and response formats.",
+  "TLS protects network communication through encryption and integrity checks and can authenticate a server using certificates. HTTPS uses TLS to secure HTTP traffic.",
+  "A proof by induction demonstrates a statement for a sequence of cases by proving a base case and then showing that if the statement holds for one case, it holds for the next case.",
+  "In automata theory, a regular expression describes a pattern or set of strings over an alphabet. Regular expressions can represent exactly the regular languages recognized by finite automata.",
+  "A deterministic finite automaton has exactly one defined next state for each state and input symbol. A nondeterministic finite automaton can allow multiple possible transitions or transitions that consume no input; both recognize the regular languages."
+
 
 ];
 
+
 /*
- * Keyword matching first, then Levenshtein distance as a fallback.
- * This keeps the original matching approach from the browser version,
- * but the questions/responses never have to be sent to the browser.
+ * Local semantic search for HAL.
+ * Uses a local Hugging Face model. No paid API key required.
  */
 
-const questionKeywordIndex = questions.map(q =>
-  new Set(q.toLowerCase().split(/\s+/))
+let embeddingPipelinePromise = null;
+let questionEmbeddingsPromise = null;
+
+/* The provided code snippet demonstrates how the pipeline function works in the context of loading and preparing machine learning models for specific tasks. Let me break it down step by step:
+
+Purpose of pipeline
+The pipeline function is designed to:
+
+Load a pre-trained machine learning model.
+Optionally load associated components like tokenizers or processors.
+Return a pipeline object that can perform a specific task (e.g., feature extraction, text classification). */
+async function getEmbeddingPipeline() {
+  if (!embeddingPipelinePromise) {
+    embeddingPipelinePromise = import("@huggingface/transformers")
+      .then(({ pipeline }) =>
+        pipeline("feature-extraction", "Xenova/all-MiniLM-L6-v2")
+      )
+      .catch(error => {
+        embeddingPipelinePromise = null;
+        throw error;
+      });
+  }
+
+  return embeddingPipelinePromise;
+}
+
+// Converts text into a numerical embedding vector that represents its semantic meaning.
+// Mean pooling combines the model's token representations into one vector, and normalization
+// scales the vector to unit length so embeddings can be compared consistently.
+// This allows HAL to match questions with similar meanings even when they use different words.
+async function createEmbedding(text) {
+  const extractor = await getEmbeddingPipeline();
+
+  const output = await extractor(text, {
+    pooling: "mean",
+    normalize: true
+  });
+
+  return Array.from(output.data);
+}
+
+// Calculate and cache embeddings for all stored questions.
+// Embeddings turn questions into numerical vectors so HAL can compare
+// their meanings, even when users phrase questions differently.
+async function getQuestionEmbeddings() {
+  // Check whether the embeddings have already been calculated or are
+  // currently being calculated. Reusing the Promise prevents HAL from
+  // repeating the same work every time a user sends a message.
+  if (!questionEmbeddingsPromise) {
+    questionEmbeddingsPromise = (async () => {
+      // Load or retrieve the text-embedding model used to convert
+      // questions into numerical vectors.
+      const extractor = await getEmbeddingPipeline();
+      const vectors = [];
+      // Process 16 questions at a time instead of all questions at once.
+      // Batching helps manage memory usage and processing time.
+      const batchSize = 16;
+
+      for (let i = 0; i < questions.length; i += batchSize) {
+        // Get the current group of up to 16 questions.
+        const batch = questions.slice(i, i + batchSize);
+        // Convert the current batch of questions into embeddings.
+        // "mean" pooling combines token representations into one vector
+        // per question, while normalization makes the vectors easier
+        // to compare consistently.
+        const output = await extractor(batch, {
+          pooling: "mean",
+          normalize: true
+        });
+        // Get the dimensions of the model's output so we can determine
+        // how many numbers belong to each question's embedding.
+        const dimensions = output.dims;
+        const vectorSize = dimensions[dimensions.length - 1];
+        // Extract each question's embedding from the batch output.
+        for (let j = 0; j < batch.length; j++) {
+          const start = j * vectorSize;
+          const end = start + vectorSize;
+
+          vectors.push(
+            Array.from(output.data.slice(start, end))
+          );
+        }
+      }
+
+      return vectors;
+    })().catch(error => {
+      // If embedding generation fails, clear the cached Promise.
+      // This allows a future call to try the process again.
+      questionEmbeddingsPromise = null;
+      throw error;
+    });
+  }
+
+  return questionEmbeddingsPromise;
+}
+
+// Find the question with the closest semantic meaning.
+async function findSemanticMatch(userInput) {
+  const text = userInput.trim();
+
+  if (!text) return -1;
+
+  const [queryVector, storedVectors] = await Promise.all([
+    createEmbedding(text),
+    getQuestionEmbeddings()
+  ]);
+
+  let bestIndex = -1;
+  let bestScore = -1;
+
+  for (let i = 0; i < storedVectors.length; i++) {
+    const storedVector = storedVectors[i];
+    let score = 0;
+
+    // Normalized vectors allow cosine similarity via dot product.
+    for (let j = 0; j < queryVector.length; j++) {
+      score += queryVector[j] * storedVector[j];
+    }
+
+    if (score > bestScore) {
+      bestScore = score;
+      bestIndex = i;
+    }
+  }
+
+  return bestScore >= 0.50 ? bestIndex : -1;
+}
+
+/*
+ * Existing keyword and fuzzy matching.
+ */
+
+const questionKeywordIndex = questions.map(question =>
+  new Set(question.toLowerCase().split(/\s+/))
 );
 
-/**
- * Calculates the Levenshtein distance between two strings.
- * The Levenshtein distance is a measure of the difference between two sequences,
- * defined as the minimum number of single-character edits (insertions, deletions, or substitutions)
- * required to change one string into the other.
- *
- * @example
- * levenshteinDistance("kitten", "sitting"); // Returns 3
- *
- * @description
- * The function uses a dynamic programming approach to calculate the distance.
- * It initializes a matrix where matrix[i][j] represents the distance between
- * the first i characters of string `a` and the first j characters of string `b`.
- *
- * - If either string is empty, the distance is the length of the other string.
- * - The matrix is filled row by row, with each cell representing the minimum
- *   cost of transforming the substring of `a` to the substring of `b`.
- */
 function levenshteinDistance(a, b) {
   const an = a.length;
   const bn = b.length;
+
   if (an === 0) return bn;
   if (bn === 0) return an;
 
   const matrix = [];
-  for (let i = 0; i <= an; i++) matrix[i] = [i];
-  for (let j = 1; j <= bn; j++) matrix[0][j] = j;
+
+  for (let i = 0; i <= an; i++) {
+    matrix[i] = [i];
+  }
+
+  for (let j = 1; j <= bn; j++) {
+    matrix[0][j] = j;
+  }
 
   for (let i = 1; i <= an; i++) {
     for (let j = 1; j <= bn; j++) {
@@ -1333,28 +1538,26 @@ function levenshteinDistance(a, b) {
           );
     }
   }
+
   return matrix[an][bn];
 }
 
 function hybridMatching(userInput) {
-  // Convert the user input to lowercase and split it into an array of words (keywords) using whitespace as the delimiter.
   const userKeywords = userInput.toLowerCase().split(/\s+/);
-  // Initialize variables to track the best matching index and the highest score.
-  let bestIndex = -1; // The bestIndex variable is used to store the index of the question that best matches the user's input based on the hybrid matching algorithm.
-  let bestScore = 0; // The bestScore variable in the hybridMatching function is used to track the highest number of matches (both exact and fuzzy) between the user's input and the keywords associated with each question.
+  let bestIndex = -1;
+  let bestScore = 0;
 
   questionKeywordIndex.forEach((keywords, index) => {
-    // Count the number of exact matches between user keywords and the current question's keywords.
+    const keywordList = [...keywords];
+
     const exactMatches = userKeywords.filter(uk =>
-      [...keywords].some(qk => qk === uk) // Check if any keyword in the set matches the user keyword exactly.
+      keywordList.some(qk => qk === uk)
     ).length;
 
-    // Count the number of fuzzy matches (close matches) using the Levenshtein distance.
     const fuzzyMatches = userKeywords.filter(uk =>
-      [...keywords].some(qk => {
-        const distance = levenshteinDistance(uk, qk); // Calculate the Levenshtein distance between the user keyword and question keyword.
-        return distance <= 1 && qk.length > 2; // Consider it a match if the distance is 1 or less and the keyword is longer than 2 characters.
-      })
+      keywordList.some(qk =>
+        levenshteinDistance(uk, qk) <= 1 && qk.length > 2
+      )
     ).length;
 
     const totalMatches = exactMatches + fuzzyMatches;
@@ -1364,19 +1567,24 @@ function hybridMatching(userInput) {
       bestIndex = index;
     }
   });
-  // If the best score is at least 1, return the index of the best match; otherwise, return -1 (no match found).
+
   return bestScore >= 1 ? bestIndex : -1;
 }
 
 function getRandomSuggestion(excludeIndex) {
+  if (questions.length === 0) return null;
+
   let idx;
+
   do {
     idx = Math.floor(Math.random() * questions.length);
   } while (idx === excludeIndex && questions.length > 1);
+
   return questions[idx];
 }
 
 function findMatch(userInput) {
+  const normalizedInput = userInput.toLowerCase().trim();
   let closestMatchIndex = hybridMatching(userInput);
 
   if (closestMatchIndex === -1) {
@@ -1387,7 +1595,10 @@ function findMatch(userInput) {
         userInput.toLowerCase(),
         question.toLowerCase()
       );
-      if (distance < smallestDistance && distance <= 10) {
+
+      const maxDistance = Math.max(2, Math.floor(normalizedInput.length * 0.25));
+
+      if (distance < smallestDistance && distance <= maxDistance) {
         smallestDistance = distance;
         closestMatchIndex = index;
       }
@@ -1397,12 +1608,27 @@ function findMatch(userInput) {
   return closestMatchIndex;
 }
 
-function getReply(userInput) {
-  const index = findMatch(userInput);
-  const response = index === -1 ? null : responses[index];   // <-- responses, not questions
+/*
+ * Main reply function.
+ * Tries existing matching first, then semantic matching.
+ */
 
-  // Don't suggest anything when the match is a quiz trigger.
-  const isQuizMarker = response !== null && response.startsWith("[[START_");
+async function getReply(userInput) {
+  let index = findMatch(userInput);
+
+  if (index === -1) {
+    try {
+      index = await findSemanticMatch(userInput);
+    } catch (error) {
+      console.error("HAL semantic search failed:", error);
+      index = -1;
+    }
+  }
+
+  const response = index === -1 ? null : responses[index];
+
+  const isQuizMarker =
+    response !== null && response.startsWith("[[START_");
 
   return {
     index,
@@ -1413,6 +1639,8 @@ function getReply(userInput) {
 
 module.exports = {
   findMatch,
+  findSemanticMatch,
   getReply,
   responses
 };
+
