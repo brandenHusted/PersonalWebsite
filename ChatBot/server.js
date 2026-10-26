@@ -116,8 +116,17 @@ app.post("/api/ask", askLimiter, async (req, res, next) => {
       return res.json({ answer: quizReply });
     }
 
-    // IMPORTANT: getReply is asynchronous, so wait for its result.
-    const { response, suggestion } = await getReply(text);
+    
+    // Read the selected agent from the frontend.
+    const requestedAgentId =
+      typeof req.body.agentId === "string"
+        ? req.body.agentId.toLowerCase()
+        : "auto";
+
+    // Pass the selected agent to brain.js. Important for agent to respond correctly.
+    const { response, suggestion, fallback } = await getReply(text, {
+      agentId: requestedAgentId
+    });
 
     // Start the quiz if a quiz trigger was matched.
     const quizKey =
@@ -130,10 +139,9 @@ app.post("/api/ask", askLimiter, async (req, res, next) => {
     }
 
     // Build the chatbot's response.
-    const baseAnswer =
-      response === null
-        ? "I'm sorry, I didn't quite understand. Could you try asking another question?"
-        : response;
+const baseAnswer =
+response ?? fallback ??
+"I'm sorry, I didn't quite understand. Could you try asking another question?";
 
     // Avoid adding a suggestion if none was returned.
     const answer = suggestion

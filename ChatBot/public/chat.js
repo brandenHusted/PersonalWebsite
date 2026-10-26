@@ -12,6 +12,21 @@ const halEye = document.getElementById("halEye");
 let halIsSpeaking = false;
 
 
+const agentSelector = document.getElementById("agentSelector");
+
+// The selection lasts until the page is refreshed.
+let currentAgentId = agentSelector
+  ? agentSelector.value
+  : "auto";
+
+// Update the active agent when the user selects another one.
+if (agentSelector) {
+  agentSelector.addEventListener("change", () => {
+    currentAgentId = agentSelector.value;
+  });
+}
+
+
 /* =========================================
    HAL SPEAKING ANIMATION
    ========================================= */
@@ -267,9 +282,12 @@ if (submitButton && userInputField) {
           "Content-Type": "application/json"
         },
 
-        body: JSON.stringify({
-          question: userInput
-        })
+        
+body: JSON.stringify({
+  question: userInput,
+  agentId: currentAgentId
+})
+
 
       });
 

@@ -72,6 +72,23 @@ Run 'npm start' in ChatBot folder from GitHub and go to http://localhost:3002/ t
     pointer-events: none;
 }
 
+
+#agentSelector {
+  width: 100%;
+  padding: 12px;
+  background: #0a0d11;
+  color: #f4f4f2;
+  border: 1px solid #454b52;
+  border-radius: 2px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#agentSelector:focus {
+  outline: 1px solid #ff2638;
+  border-color: #ff2638;
+}
+
 #halCanvas {
     width: 240px;
     height: 240px;
@@ -634,6 +651,15 @@ Run 'npm start' in ChatBot folder from GitHub and go to http://localhost:3002/ t
         placeholder="How can I assist you?"
         required
       />
+      
+<select id="agentSelector" aria-label="Choose HAL agent">
+  <option value="auto">Auto — Choose for me</option>
+  <option value="general">General Agent</option>
+  <option value="programming">Programming Agent</option>
+  <option value="comptia">CompTIA Agent</option>
+  <option value="career">Career Agent</option>
+  <option value="branden">Branden Agent</option>
+</select>
 
 
       <div class="button-group">
