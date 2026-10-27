@@ -261,6 +261,20 @@ module.exports = {
     {
       q: "What advice would Branden give to aspiring developers?",
       a: "Branden would advise aspiring developers to start with the fundamentals, build projects consistently, don't be afraid to fail and learn from mistakes, seek mentorship, contribute to open-source, and always stay curious about new technologies."
-    }
+    },
+    {
+      q: "What is Branden's favorite guitar song to play?",
+      a: "Branden's favorite guitar song to play is 'Living on a Prayer' by the one and only Bon Jovi because of its iconic guitar solos and campfire song vibe."
+    },
+    {
+      q: "Can I learn about sensitive topics from Branden?",
+      a: "No, good try but no."
+    },
+    {
+      q: "What is Branden's experience in IT?",
+      a: "His experience in IT is in SIEM systems like Rapid7, help desk support with printers including support for the hardware and software. Branden has also worked with configuring new devices and troubleshooting network issues. He is also a good communicator and can explain technical issues to non-technical users."
+    },
+    
+    
   ]
 };
