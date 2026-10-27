@@ -415,6 +415,58 @@ const questionBank = [
     },
 
     {
+        question: "You need to configure authentication for a wireless network that supports certificate-based authentication and create a secure tunnel. What protocol do you use?",
+        answers: [
+            "EAP-TLS",
+            "EAP-TTLS",
+            "PEAP",
+            "EAP-FAST"
+        ],
+        correctAnswer: 0,
+        domain: "General Security Concepts",
+        explanation: "Correct. Uses certificates for both client and server authentication."
+    },
+
+     {
+  question: "A security analyst discovers that an attacker has generated two different files that produce the same cryptographic hash value. The attacker exploits this weakness to substitute a malicious document for a legitimate one while preserving the expected hash. Which type of cryptographic attack is most directly associated with finding two distinct inputs that produce the same hash output?",
+  answers: [
+    "Collision attack",
+    "Birthday attack",
+    "Rainbow table attack",
+    "Downgrade attack"
+    ],
+    correctAnswer: 1,
+    domain: "General Security Concepts",
+    explanation: "It exploits the birthday paradox to find two different inputs with the same hash value more efficiently than brute-forcing every possible hash output."
+    },
+
+     {
+  question: "A company wants employees to sign in to corporate applications without passwords, using phishing-resistant authentication and public-key cryptography. Which technology best meets this requirement?",
+  answers: [
+    "FIDO2",
+    "TOTP",
+    "PAP",
+    "CHAP"
+    ],
+    correctAnswer: 0,
+    domain: "General Security Concepts",
+    explanation: "FIDO2 is correct because it uses public-key cryptography and can provide phishing-resistant authentication."
+    },
+
+    {
+  question: "An enterprise web server uses RSA for key transport during the TLS handshake, securely storing the server's long-term private key. An advanced persistent threat (APT) passively records all encrypted HTTPS traffic from this server for months. Eventually, through a critical security misconfiguration, the server's long-term RSA private key is exfiltrated by the attacker. What cryptographic property, if it has been properly configured using Ephemeral Diffie-Hellman instead of static RSA key transport, would have protected the historically intercepted session data from being decrypted?",
+  answers: [
+    "",
+    "TOTP",
+    "PAP",
+    "CHAP"
+    ],
+    correctAnswer: 0,
+    domain: "General Security Concepts",
+    explanation: "FIDO2 is correct because it uses public-key cryptography and can provide phishing-resistant authentication."
+    },
+
+    {
         question: "What is the primary goal of zero trust?",
         answers: [
             "Trust users inside the network",
