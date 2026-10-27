@@ -238,7 +238,7 @@
 
 <header>
     <h1>Security+ Interactive Labs</h1>
-    <p>5 Randomly Selected Hands-On Labs (from a pool of 23)</p>
+    <p>5 Randomly Selected Hands-On Labs (from a pool of 27)</p>
 </header>
 
 <div class="container">
@@ -1679,6 +1679,133 @@ Similarity: Closely resembles "payroll-portal.company.com"
     </div>
 
 
+
+    <!-- ================================================= -->
+    <!-- LAB 26 - ADVANCED FIREWALL RULE ANALYSIS -->
+    <!-- ================================================= -->
+    <div class="lab" id="lab26">
+        <div class="lab-number" id="labNum26">LAB</div>
+        <h2>Advanced Firewall Simulation: Rule Order, Scope &amp; Implicit Deny</h2>
+        <div class="instructions">
+            <strong>Security+ performance-based practice — difficult scenario:</strong>
+            A company publishes a customer portal but must keep its database private.
+            The firewall evaluates rules from top to bottom and stops at the first match.
+            Existing stateful return traffic is allowed automatically. You must identify
+            the smallest safe rule set that meets the requirements without opening broad access.
+        </div>
+
+        <div class="log-box">Interfaces:
+WAN: untrusted Internet
+DMZ: 172.16.20.0/24
+APP: 10.20.30.0/24
+DB: 10.20.40.0/24
+Admin VPN pool: 10.99.0.0/24
+
+Required flows:
+1. Internet clients -> 172.16.20.10 TCP/443 (public portal)
+2. 172.16.20.10 -> 10.20.30.15 TCP/8443 (application API)
+3. 10.20.30.15 -> 10.20.40.25 TCP/5432 (database)
+4. Admin VPN 10.99.0.0/24 -> 10.20.30.15 TCP/22 (SSH administration)
+5. No Internet-originated access to DB or SSH.
+6. All other traffic must be denied and logged.</div>
+
+        <p><strong>Current rules (top to bottom):</strong></p>
+        <table class="config-table">
+            <tr><th>Priority</th><th>Source</th><th>Destination</th><th>Service</th><th>Action</th></tr>
+            <tr><td>10</td><td>Any</td><td>Any</td><td>Any</td><td>ALLOW</td></tr>
+            <tr><td>20</td><td>172.16.20.10</td><td>10.20.40.25</td><td>TCP/5432</td><td>ALLOW</td></tr>
+            <tr><td>30</td><td>Any</td><td>172.16.20.10</td><td>TCP/443</td><td>ALLOW</td></tr>
+            <tr><td>Default</td><td>Any</td><td>Any</td><td>Any</td><td>DENY (not logged)</td></tr>
+        </table>
+
+        <p><strong>Task 1:</strong> Which is the most important first correction to make?</p>
+        <label class="answer-option"><input type="radio" name="q26a" value="wrong"> Move rule 20 above rule 10; the broad allow can remain.</label>
+        <label class="answer-option"><input type="radio" name="q26a" value="correct"> Remove the broad rule 10, then use explicit least-privilege permits and a logged deny for all remaining traffic.</label>
+        <label class="answer-option"><input type="radio" name="q26a" value="wrong"> Change every ALLOW to DENY and rely on users to request access.</label>
+        <label class="answer-option"><input type="radio" name="q26a" value="wrong"> Allow all traffic from the DMZ because it is an internal network.</label>
+        <button onclick="gradeNamedTask(26, 'a')">Check Task 1</button>
+        <div id="feedback26a" class="feedback"></div>
+
+        <p><strong>Task 2:</strong> Select the best rule order after removing rule 10. Choose the sequence that allows only the required flows and logs everything else.</p>
+        <label class="answer-option"><input type="radio" name="q26b" value="wrong"> Any -> Any allow; then block Internet -> DB.</label>
+        <label class="answer-option"><input type="radio" name="q26b" value="wrong"> Internet -> DB TCP/5432 allow; Internet -> portal TCP/443 allow; deny remaining traffic.</label>
+        <label class="answer-option"><input type="radio" name="q26b" value="correct"> Permit Internet -> DMZ portal TCP/443; permit portal -> app TCP/8443; permit app -> DB TCP/5432; permit Admin VPN -> app TCP/22; then deny and log all other traffic.</label>
+        <label class="answer-option"><input type="radio" name="q26b" value="wrong"> Permit any source to the database on TCP/5432, then deny Internet traffic.</label>
+        <button onclick="checkFirewallSequence()">Check Task 2</button>
+        <div id="feedback26b" class="feedback"></div>
+
+        <p><strong>Task 3:</strong> A test packet arrives from 203.0.113.50 to 10.20.40.25 TCP/5432. What should happen?</p>
+        <label class="answer-option"><input type="radio" name="q26c" value="wrong"> Allow, because the database port is required by the application.</label>
+        <label class="answer-option"><input type="radio" name="q26c" value="correct"> Deny and log; the source is not the approved application server.</label>
+        <label class="answer-option"><input type="radio" name="q26c" value="wrong"> Allow if the packet uses TCP.</label>
+        <label class="answer-option"><input type="radio" name="q26c" value="wrong"> Silently drop it without logging, even though the policy requires logging.</label>
+        <button onclick="checkFirewallPacket()">Check Task 3</button>
+        <div id="feedback26c" class="feedback"></div>
+
+        <div class="instructions"><strong>Scoring note:</strong> This is a multi-part lab. You must answer all three tasks correctly to earn the lab point.</div>
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+    </div>
+
+    <!-- ================================================= -->
+    <!-- LAB 27 - SECURITY CONTROL CLASSIFICATION -->
+    <!-- ================================================= -->
+    <div class="lab" id="lab27">
+        <div class="lab-number" id="labNum27">LAB</div>
+        <h2>Security Controls: Technical, Managerial, Operational &amp; Physical</h2>
+        <div class="instructions">
+            <strong>Security+ scenario-based practice:</strong>
+            A company is reviewing controls after an audit. For each situation, identify
+            the control category that best describes the control itself—not merely the
+            technology or department involved. Some controls can support multiple goals,
+            but select the primary category described in each scenario.
+        </div>
+
+        <div class="log-box">Audit findings:
+A. A firewall enforces a rule that blocks inbound SMB from the Internet.
+B. Management formally approves a risk assessment and signs the risk treatment plan.
+C. A security guard verifies visitor badges and escorts contractors through the office.
+D. A locked server-room door uses a badge reader and prevents unauthorized entry.
+E. The security team follows a documented procedure for reviewing alerts and escalating incidents.
+F. An organization-wide policy defines acceptable use and is approved by executive leadership.</div>
+
+        <p><strong>Task 1:</strong> Control A—what is the primary control category?</p>
+        <label class="answer-option"><input type="radio" name="q27a" value="wrong"> Managerial</label>
+        <label class="answer-option"><input type="radio" name="q27a" value="correct"> Technical</label>
+        <label class="answer-option"><input type="radio" name="q27a" value="wrong"> Operational</label>
+        <label class="answer-option"><input type="radio" name="q27a" value="wrong"> Physical</label>
+        <button onclick="gradeNamedTask(27, 'a')">Check Task 1</button>
+        <div id="feedback27a" class="feedback"></div>
+
+        <p><strong>Task 2:</strong> Controls B and F—what category best fits formal risk acceptance and executive-approved policy?</p>
+        <label class="answer-option"><input type="radio" name="q27b" value="wrong"> Technical</label>
+        <label class="answer-option"><input type="radio" name="q27b" value="correct"> Managerial</label>
+        <label class="answer-option"><input type="radio" name="q27b" value="wrong"> Physical</label>
+        <label class="answer-option"><input type="radio" name="q27b" value="wrong"> Corrective only; they cannot be managerial controls</label>
+        <button onclick="checkControlManagerial()">Check Task 2</button>
+        <div id="feedback27b" class="feedback"></div>
+
+        <p><strong>Task 3:</strong> Controls C and E—what categories best fit guard/visitor procedures and the team's incident-review procedure, respectively?</p>
+        <label class="answer-option"><input type="radio" name="q27c" value="wrong"> Technical, then physical</label>
+        <label class="answer-option"><input type="radio" name="q27c" value="correct"> Physical, then operational</label>
+        <label class="answer-option"><input type="radio" name="q27c" value="wrong"> Managerial, then technical</label>
+        <label class="answer-option"><input type="radio" name="q27c" value="wrong"> Operational, then managerial</label>
+        <button onclick="checkControlOperational()">Check Task 3</button>
+        <div id="feedback27c" class="feedback"></div>
+
+        <p><strong>Task 4 — harder distinction:</strong> A badge reader is a technical device, but in this scenario its purpose is to restrict entry to a server room. Which category should you choose on an exam question asking for the primary control category based on its purpose?</p>
+        <label class="answer-option"><input type="radio" name="q27d" value="wrong"> Managerial, because access rules are approved by management</label>
+        <label class="answer-option"><input type="radio" name="q27d" value="wrong"> Operational, because an employee uses it</label>
+        <label class="answer-option"><input type="radio" name="q27d" value="correct"> Physical, because it protects a physical space</label>
+        <label class="answer-option"><input type="radio" name="q27d" value="wrong"> Technical in every context, regardless of its purpose</label>
+        <button onclick="checkControlPhysical()">Check Task 4</button>
+        <div id="feedback27d" class="feedback"></div>
+
+        <div class="instructions"><strong>Exam tip:</strong> Classify by the control's primary function and context. A technical mechanism can implement a physical access control; the categories describe different aspects of a control, so read the wording carefully.</div>
+        <button class="secondary" onclick="goBack()">Back</button>
+        <button onclick="goNext()">Next Lab</button>
+    </div>
+
     <!-- ================================================= -->
     <!-- RESULTS -->
     <!-- ================================================= -->
@@ -1704,13 +1831,14 @@ Similarity: Closely resembles "payroll-portal.company.com"
 
 <script>
 
-const TOTAL_LAB_POOL = 25;
+const TOTAL_LAB_POOL = 27;
 const LABS_PER_SESSION = 5;
 
 let score = 0;
 let answered = {};
 let selectedLabs = [];
 let currentIndex = 0;
+let multiPartScores = {};
 
 const explanations = {
 
@@ -1787,7 +1915,13 @@ const explanations = {
     "Chain of custody documents who handled evidence, when, and what was done to it, from collection through storage. This traceability is what allows the evidence to be trusted and used if the incident results in legal action.",
 
     25:
-    "DNS filtering blocked resolution of the malicious domain before the workstation could connect to it. A newly registered domain that closely mimics a legitimate company URL is a classic typosquatting/phishing technique used to trick users into entering credentials."
+    "DNS filtering blocked resolution of the malicious domain before the workstation could connect to it. A newly registered domain that closely mimics a legitimate company URL is a classic typosquatting/phishing technique used to trick users into entering credentials.",
+
+    26:
+    "Firewall rules are evaluated top to bottom, so a broad allow rule defeats the intended restrictions. Remove it and permit only the required source/destination/service combinations, followed by a deny-and-log rule. The Internet must not be able to reach the database directly; only the approved application server should connect to TCP/5432.",
+
+    27:
+    "Technical controls are enforced by technology, such as firewalls. Managerial controls include governance, risk decisions, and policies. Operational controls rely on people and procedures, such as alert review and escalation. Physical controls protect facilities and tangible assets, such as guards, locks, and access barriers. Classify a control by its primary purpose and the question's wording."
 };
 
 
@@ -2074,38 +2208,90 @@ function checkAnswer(questionNumber) {
     }
 
 
-    if (answered[questionNumber]) {
-
+    // Labs 26 and 27 have multiple independently graded tasks.
+    if (questionNumber === 26 || questionNumber === 27) {
+        const suffix = questionNumber === 26 ? "a" : "a";
+        gradeMultiPart(questionNumber, suffix, selected, feedback);
         return;
-
     }
 
+    if (answered[questionNumber]) {
+        return;
+    }
 
     answered[questionNumber] = true;
 
-
     if (selected.value === "correct") {
-
         score++;
-
         feedback.className = "feedback correct";
-
         feedback.innerHTML =
             "<strong>Correct!</strong><br><br>" +
             explanations[questionNumber];
-
     } else {
-
         feedback.className = "feedback incorrect";
-
         feedback.innerHTML =
             "<strong>Incorrect.</strong><br><br>" +
             explanations[questionNumber];
-
     }
 
     feedback.style.display = "block";
 
+}
+
+
+
+function gradeMultiPart(labId, taskKey, selected, feedback) {
+    const key = labId + ":" + taskKey;
+    if (multiPartScores[key] !== undefined) return;
+    multiPartScores[key] = selected.value === "correct";
+    feedback.style.display = "block";
+    feedback.className = "feedback " + (selected.value === "correct" ? "correct" : "incorrect");
+    feedback.innerHTML = selected.value === "correct"
+        ? "<strong>Correct.</strong>"
+        : "<strong>Incorrect.</strong>";
+    updateMultiPartLabScore(labId);
+}
+
+function gradeNamedTask(labId, suffix, explanationSuffix = "") {
+    const selected = document.querySelector('input[name="q' + labId + suffix + '"]:checked');
+    const feedback = document.getElementById("feedback" + labId + suffix);
+    if (!selected) {
+        feedback.style.display = "block";
+        feedback.className = "feedback incorrect";
+        feedback.innerHTML = "<strong>Please select an answer first.</strong>";
+        return;
+    }
+    gradeMultiPart(labId, suffix, selected, feedback);
+    if (selected.value === "correct") {
+        feedback.innerHTML = "<strong>Correct!</strong><br><br>" + explanations[labId];
+    } else {
+        feedback.innerHTML = "<strong>Incorrect.</strong><br><br>" + explanations[labId];
+    }
+}
+
+function checkFirewallSequence() { gradeNamedTask(26, "b"); }
+function checkFirewallPacket() { gradeNamedTask(26, "c"); }
+function checkControlManagerial() { gradeNamedTask(27, "b"); }
+function checkControlOperational() { gradeNamedTask(27, "c"); }
+function checkControlPhysical() { gradeNamedTask(27, "d"); }
+
+function updateMultiPartLabScore(labId) {
+    const required = labId === 26 ? ["a", "b", "c"] : ["a", "b", "c", "d"];
+    const allAnswered = required.every(s => multiPartScores[labId + ":" + s] !== undefined);
+    if (!allAnswered || answered[labId]) return;
+    answered[labId] = true;
+    const allCorrect = required.every(s => multiPartScores[labId + ":" + s] === true);
+    if (allCorrect) score++;
+    const summary = document.createElement("p");
+    summary.className = "instructions";
+    summary.innerHTML = allCorrect
+        ? "<strong>Lab score: 1/1.</strong> All tasks correct."
+        : "<strong>Lab score: 0/1.</strong> Review the explanations, then restart the labs to try again.";
+    const lab = document.getElementById("lab" + labId);
+    const existing = document.getElementById("multiScore" + labId);
+    if (existing) existing.remove();
+    summary.id = "multiScore" + labId;
+    lab.insertBefore(summary, lab.querySelector(".secondary"));
 }
 
 
