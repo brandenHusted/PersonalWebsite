@@ -456,14 +456,27 @@ const questionBank = [
     {
   question: "An enterprise web server uses RSA for key transport during the TLS handshake, securely storing the server's long-term private key. An advanced persistent threat (APT) passively records all encrypted HTTPS traffic from this server for months. Eventually, through a critical security misconfiguration, the server's long-term RSA private key is exfiltrated by the attacker. What cryptographic property, if it has been properly configured using Ephemeral Diffie-Hellman instead of static RSA key transport, would have protected the historically intercepted session data from being decrypted?",
   answers: [
-    "",
-    "TOTP",
-    "PAP",
+    "AEAD",
+    "PFS",
+    "ECDSA",
     "CHAP"
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     domain: "General Security Concepts",
-    explanation: "FIDO2 is correct because it uses public-key cryptography and can provide phishing-resistant authentication."
+    explanation: "PFS (Perfect Forward Security) because it ensures that session keys derived from ephemeral key exchange parameters are not compromised even if the master key is comprimised at a later date."
+    },
+
+     {
+  question: "What port is known for worms to attack and is a big vulnerability?",
+  answers: [
+    "80",
+    "445",
+    "88",
+    "22"
+    ],
+    correctAnswer: 1,
+    domain: "General Security Concepts",
+    explanation: "445 (Server Message Block) is used for direct file sharing, printer sharing and active directory. Some of the most dangerous vunerabilities happened with worms under remote code execution with port 445."
     },
 
     {
