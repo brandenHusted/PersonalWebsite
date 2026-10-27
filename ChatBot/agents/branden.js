@@ -140,7 +140,7 @@ module.exports = {
     },
     {
       q: "What is Branden's experience with mobile development?",
-      a: "While primarily focused on web development, Branden is aware of mobile development trends and is interested in expanding his skills in cross-platform development."
+      a: "While primarily focused on web development, Branden is aware of mobile development trends and is interested in expanding his skills in cross-platform development. He has used REACT Native to build mobile applications."
     },
     {
       q: "How does Branden stay updated with technology?",
@@ -152,7 +152,7 @@ module.exports = {
     },
     {
       q: "Does Branden mentor other developers?",
-      a: "Branden is interested in helping others learn and grow in their coding journey, and he's open to mentoring junior developers and contributing to their growth."
+      a: "Branden is interested in helping others learn and grow in their coding journey, and he's open to mentoring junior developers and contributing to their growth, but no not at the moment."
     },
     {
       q: "What is Branden's approach to learning new technologies?",
@@ -168,7 +168,7 @@ module.exports = {
     },
     {
       q: "What challenges has Branden overcome in his career?",
-      a: "Branden has successfully overcome challenges including adapting to new frameworks, debugging complex issues, managing multiple projects simultaneously, and maintaining work-life balance."
+      a: "Branden has successfully overcome challenges including adapting to new frameworks (Samanage to ServiceNow for ticketing systems), debugging complex issues (ChatBot project), managing multiple projects simultaneously, and maintaining work-life balance."
     },
     {
       q: "Does Branden have experience with DevOps?",
@@ -176,7 +176,7 @@ module.exports = {
     },
     {
       q: "What is Branden's experience with testing and debugging?",
-      a: "Branden has experience with testing frameworks and debugging methodologies, understanding the importance of quality assurance in software development."
+      a: "Branden has experience with testing frameworks and debugging methodologies, understanding the importance of quality assurance in software development. In college he worked on a Lost and Found App where he remembered long nights of debugging and testing to ensure the app worked as intended."
     },
     {
       q: "How does Branden balance school and work?",
