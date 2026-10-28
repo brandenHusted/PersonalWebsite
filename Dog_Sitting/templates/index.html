@@ -1,4 +1,5 @@
 
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,7 +8,131 @@
   <meta name="description" content="Request local dog sitting, driveway shoveling, and neighborhood help.">
   <title>Neighborhood Help | Request a Service</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <style>
+    /* Welcome section with a dog-photo background */
+    .intro {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 70px 35px;
+      margin-bottom: 28px;
+      border-radius: 18px;
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(15, 35, 27, 0.78),
+          rgba(15, 35, 27, 0.32)
+        ),
+        url("https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1600&q=85");
+      background-size: cover;
+      background-position: center 35%;
+      color: white;
+    }
+
+    .intro h1 {
+      color: white;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin-top: 12px;
+      margin-bottom: 16px;
+    }
+
+    .intro p {
+      max-width: 650px;
+      line-height: 1.7;
+    }
+
+    .intro .eyebrow {
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      font-size: 0.8rem;
+    }
+
+    /* Dog photo gallery */
+    .dog-gallery {
+      margin-top: 48px;
+      margin-bottom: 35px;
+    }
+
+    .dog-gallery h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .dog-gallery-intro {
+      text-align: center;
+      margin: 0 auto 24px;
+      max-width: 550px;
+      line-height: 1.6;
+    }
+
+    .dog-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .dog-gallery figure {
+      margin: 0;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #f1f1f1;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    .dog-gallery img {
+      display: block;
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      transition: transform 0.25s ease;
+    }
+
+    .dog-gallery figure:hover img {
+      transform: scale(1.04);
+    }
+
+    .dog-gallery figcaption {
+      padding: 12px 8px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 700px) {
+      .intro {
+        padding: 48px 22px;
+        background-position: 58% center;
+      }
+
+      .dog-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .dog-gallery img {
+        height: 175px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .dog-gallery img {
+        height: 140px;
+      }
+
+      .dog-gallery figcaption {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .dog-gallery img {
+        transition: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <header class="site-header">
     <a class="brand" href="/">Neighborhood Help</a>
@@ -18,9 +143,11 @@
     <section class="intro">
       <p class="eyebrow">DOG SITTING · SNOW SHOVELING · LOCAL HELP</p>
       <h1>How can I help?</h1>
-      <p>Send a request with the details and preferred time. I’ll review it and contact you to confirm whether I’m available.</p>
     </section>
-
+    <p>
+      Send a request with the details and preferred time. I’ll review it
+      and contact you to confirm whether I’m available.
+    </p>
     <section class="form-card" aria-labelledby="form-heading">
       <h2 id="form-heading">Request a service</h2>
       <p class="muted">Your request is not confirmed until I approve it.</p>
@@ -116,8 +243,53 @@
       </form>
     </section>
 
+    <!-- Dog photos at the bottom of the page -->
+    <section class="dog-gallery" aria-labelledby="gallery-heading">
+      <h2 id="gallery-heading">A little more about our furry friends</h2>
+      <p class="dog-gallery-intro">
+        Every dog deserves care, attention, and a little extra love.
+        I’d be happy to hear about your pet!
+      </p>
+
+      <div class="dog-gallery-grid">
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80"
+            alt="Happy dog looking toward the camera"
+            loading="lazy"
+          >
+          <figcaption>Happy companions</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1551717743-49959800b1f6?auto=format&fit=crop&w=600&q=80"
+            alt="Dogs enjoying time together outdoors"
+            loading="lazy"
+          >
+          <figcaption>Playtime outdoors</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=600&q=80"
+            alt="Friendly dog with a cheerful expression"
+            loading="lazy"
+          >
+          <figcaption>Lots of attention</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="{{ url_for('static', filename='dog.jpg') }}" alt="Dog"
+            alt="Dog relaxing outside"
+            loading="lazy"
+          >
+          <figcaption>Time to relax</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <footer>Thanks for supporting neighborhood services!</footer>
   </main>
 </body>
 </html>
-

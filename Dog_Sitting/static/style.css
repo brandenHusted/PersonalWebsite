@@ -323,6 +323,9 @@ footer { padding: 25px 0; text-align: center; color: var(--muted); font-size: .8
   border-top: 1px solid #e5e7eb;
 }
 
+.intro .eyebrow {
+  color: #ffffff;
+}
 .status-form label {
   grid-column: 1 / -1;
   font-weight: 600;
