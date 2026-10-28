@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Booking Dashboard | Neighborhood Services</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="admin-header">
+        <div>
+            <h1>Booking Dashboard</h1>
+            <p>Review and manage customer requests.</p>
+        </div>
+
+        <div class="admin-header-actions">
+            <a class="secondary-button" href="{{ url_for('index') }}">
+                View Website
+            </a>
+
+            <form method="POST" action="{{ url_for('admin_logout') }}">
+                <button class="secondary-button" type="submit">
+                    Log Out
+                </button>
+            </form>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+                <div class="message {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endwith %}
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <span>Pending</span>
+                <strong>{{ counts.get('Pending', 0) }}</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Approved</span>
+                <strong>{{ counts.get('Approved', 0) }}</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Completed</span>
+                <strong>{{ counts.get('Completed', 0) }}</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Total Requests</span>
+                <strong>{{ counts.values() | sum }}</strong>
+            </div>
+        </section>
+
+        <section class="booking-section">
+            <div class="booking-section-heading">
+                <h2>Customer Requests</h2>
+
+                <form method="GET"
+                      action="{{ url_for('admin_dashboard') }}"
+                      class="filter-form">
+                    <label for="status-filter">Filter:</label>
+
+                    <select id="status-filter" name="status"
+                            onchange="this.form.submit()">
+                        <option value="All"
+                            {% if selected_status == 'All' %}selected{% endif %}>
+                            All Requests
+                        </option>
+
+                        {% for status in statuses %}
+                            <option value="{{ status }}"
+                                {% if selected_status == status %}selected{% endif %}>
+                                {{ status }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </div>
+
+            {% if bookings %}
+                <div class="booking-list">
+                    {% for booking in bookings %}
+                        <article class="booking-card">
+                            <div class="booking-card-top">
+                                <div>
+                                    <span class="booking-id">
+                                        Request #{{ booking.id }}
+                                    </span>
+                                    <h3>{{ booking.name }}</h3>
+                                </div>
+
+                                <span class="status status-{{ booking.status | lower }}">
+                                    {{ booking.status }}
+                                </span>
+                            </div>
+
+                            <div class="booking-details">
+                                <p>
+                                    <strong>Service:</strong>
+                                    {{ booking.service }}
+                                </p>
+
+                                <p>
+                                    <strong>Date:</strong>
+                                    {{ booking.service_date }}
+                                </p>
+
+                                <p>
+                                    <strong>Time:</strong>
+                                    {{ booking.service_time }}
+                                </p>
+
+                                <p>
+                                    <strong>Email:</strong>
+                                    <a href="mailto:{{ booking.email }}">
+                                        {{ booking.email }}
+                                    </a>
+                                </p>
+
+                                {% if booking.phone %}
+                                    <p>
+                                        <strong>Phone:</strong>
+                                        <a href="tel:{{ booking.phone }}">
+                                            {{ booking.phone }}
+                                        </a>
+                                    </p>
+                                {% endif %}
+
+                                {% if booking.details %}
+                                    <div class="customer-notes">
+                                        <strong>Customer details:</strong>
+                                        <p>{{ booking.details }}</p>
+                                    </div>
+                                {% endif %}
+
+                                <p class="submitted-date">
+                                    Submitted: {{ booking.created_at }}
+                                </p>
+                            </div>
+
+                            <form
+                                method="POST"
+                                action="{{ url_for(
+                                    'update_booking_status',
+                                    booking_id=booking.id
+                                ) }}"
+                                class="status-form"
+                            >
+                                <label for="status-{{ booking.id }}">
+                                    Update status
+                                </label>
+
+                                <select
+                                    id="status-{{ booking.id }}"
+                                    name="status"
+                                    required
+                                >
+                                    {% for status in statuses %}
+                                        <option value="{{ status }}"
+                                            {% if booking.status == status %}
+                                                selected
+                                            {% endif %}
+                                        >
+                                            {{ status }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+
+                                <input
+                                    type="hidden"
+                                    name="return_status"
+                                    value="{{ selected_status }}"
+                                >
+
+                                <button type="submit" class="primary-button">
+                                    Save Status
+                                </button>
+                            </form>
+
+                            {% if booking.status == 'Completed' %}
+                                <form
+                                    method="POST"
+                                    action="{{ url_for(
+                                        'delete_booking',
+                                        booking_id=booking.id
+                                    ) }}"
+                                    onsubmit="return confirm('Permanently remove this completed booking? This cannot be undone.');"
+                                    style="margin-top: 12px;"
+                                >
+                                    <input
+                                        type="hidden"
+                                        name="return_status"
+                                        value="{{ selected_status }}"
+                                    >
+
+                                    <button
+                                        type="submit"
+                                        class="secondary-button"
+                                    >
+                                        Remove Completed Booking
+                                    </button>
+                                </form>
+                            {% endif %}
+                        </article>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="empty-state">
+                    <h3>No requests found</h3>
+                    <p>
+                        New customer requests will appear here when someone
+                        submits the booking form.
+                    </p>
+                </div>
+            {% endif %}
+        </section>
+    </main>
+</body>
+</html>

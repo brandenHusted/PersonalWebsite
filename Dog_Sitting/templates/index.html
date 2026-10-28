@@ -1,0 +1,123 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Request local dog sitting, driveway shoveling, and neighborhood help.">
+  <title>Neighborhood Help | Request a Service</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Neighborhood Help</a>
+    <span class="header-note">Local help from a neighbor</span>
+  </header>
+
+  <main class="page">
+    <section class="intro">
+      <p class="eyebrow">DOG SITTING · SNOW SHOVELING · LOCAL HELP</p>
+      <h1>How can I help?</h1>
+      <p>Send a request with the details and preferred time. I’ll review it and contact you to confirm whether I’m available.</p>
+    </section>
+
+    <section class="form-card" aria-labelledby="form-heading">
+      <h2 id="form-heading">Request a service</h2>
+      <p class="muted">Your request is not confirmed until I approve it.</p>
+
+      <form method="post" action="/book">
+        <div class="field">
+          <label for="service">What do you need help with? <span>*</span></label>
+          <select id="service" name="service" required>
+            <option value="Dog sitting">Dog sitting</option>
+            <option value="Driveway shoveling">Driveway shoveling</option>
+            <option value="Other local help">Other local help</option>
+          </select>
+        </div>
+
+        <div class="two-columns">
+          <div class="field">
+            <label for="date">Preferred date <span>*</span></label>
+            <input
+              id="date"
+              name="date"
+              type="date"
+              min="{{ today }}"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="time">Preferred time <span>*</span></label>
+            <select id="time" name="time" required>
+              <option value="">Choose a time</option>
+              <option value="Early morning (6–9 AM)">Early morning (6–9 AM)</option>
+              <option value="Morning (9 AM–12 PM)">Morning (9 AM–12 PM)</option>
+              <option value="Afternoon (12–5 PM)">Afternoon (12–5 PM)</option>
+              <option value="Evening (5–9 PM)">Evening (5–9 PM)</option>
+              <option value="Flexible / discuss with me">Flexible / discuss with me</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="name">Your name <span>*</span></label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            maxlength="100"
+            required
+          >
+        </div>
+
+        <div class="two-columns">
+          <div class="field">
+            <label for="email">Email address <span>*</span></label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              maxlength="254"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone number <span>*</span></label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              maxlength="30"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="details">Tell me about the job <span>*</span></label>
+          <textarea
+            id="details"
+            name="details"
+            rows="5"
+            maxlength="2000"
+            required
+            placeholder="For dog sitting: dates, number of dogs, feeding/walking needs. For shoveling: driveway size and any sidewalks."
+          ></textarea>
+          <small>Don’t include door codes, payment information, or other sensitive details here.</small>
+        </div>
+
+        <button type="submit">Send booking request</button>
+        <p class="privacy-note">Your contact information is used to respond to this request. It is not displayed publicly.</p>
+      </form>
+    </section>
+
+    <footer>Thanks for supporting neighborhood services!</footer>
+  </main>
+</body>
+</html>
+

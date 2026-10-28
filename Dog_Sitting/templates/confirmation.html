@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request Received | Neighborhood Help</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="/">Neighborhood Help</a></header>
+  <main class="page">
+    <section class="form-card confirmation">
+      <div class="checkmark" aria-hidden="true">✓</div>
+      <h1>Request received!</h1>
+      <p>Your request for <strong>{{ service }}</strong> on <strong>{{ requested_date }}</strong> has been saved as pending.</p>
+      <p>I’ll review it and contact you to confirm availability. This is not a confirmed booking yet.</p>
+      <a class="button-link" href="/">Send another request</a>
+    </section>
+  </main>
+</body>
+</html>
