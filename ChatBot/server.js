@@ -10,6 +10,7 @@ const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 const path = require("path");
 const crypto = require("crypto");
+const mathAgent = require("./mathAgent");
 
 const { getReply } = require("./brain");
 const {
@@ -115,6 +116,25 @@ app.post("/api/ask", askLimiter, async (req, res, next) => {
     if (quizReply !== null) {
       return res.json({ answer: quizReply });
     }
+
+    // Check whether the user is asking for a math calculation.
+if (mathAgent.isMathQuestion(text)) {
+  try {
+      const answer = mathAgent.calculateMath(text);
+
+      return res.json({
+          answer,
+          agent: "Math Agent"
+      });
+
+  } catch (error) {
+      console.error("Math Agent error:", error);
+
+      return res.status(400).json({
+          error: "The Math Agent could not complete that calculation."
+      });
+  }
+}
 
     
     // Read the selected agent from the frontend.

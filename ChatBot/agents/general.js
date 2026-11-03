@@ -397,10 +397,6 @@ module.exports = {
     {
       q: "Can you do basic math?",
       a: "Yes, I can perform basic math operations such as addition, subtraction, multiplication, and division. For example, 2 + 2 equals 4. Though only predefined math questions are in my database."
-    },
-    {
-      q: "10+34",
-      a: "10 + 34 equals 44."
     }
   ]
 };
