@@ -473,6 +473,14 @@ module.exports = {
     {
       q: "Should I focus on creating passive income streams?",
       a: "Focusing on passive income streams builds financial independence and long-term stability"
-    }
+    },
+    {
+      q: "What are some useful resources to study in tech?",
+      a: "I would recommend freeCodeCamp, W3Schools, and Stack Overflow for coding resources. For more structured learning, platforms like Coursera, Udemy, and edX offer comprehensive courses."
+    },
+    {
+      q: "Should I take up Dog Sitting as a side job?",
+      a: "Dog sitting can be a great side job if you enjoy working with animals and have the time to commit. It can provide flexible hours and extra income, but make sure to consider the responsibilities and ensure you can provide proper care for the pets."
+    },
   ]
 };

@@ -393,6 +393,14 @@ module.exports = {
     {
       q: "What is the purpose of HAL?",
       a: "The purpose of HAL is to remind me of information I have learned from college and retain my information. HAL was evolved a bit from the main goal although most of my knowledge from Computer science is kept in HAL's database."
+    },
+    {
+      q: "Can you do basic math?",
+      a: "Yes, I can perform basic math operations such as addition, subtraction, multiplication, and division. For example, 2 + 2 equals 4. Though only predefined math questions are in my database."
+    },
+    {
+      q: "10+34",
+      a: "10 + 34 equals 44."
     }
   ]
 };

@@ -11,11 +11,11 @@ from flask import (
 )
 
 app = Flask(__name__)
-
+# .\.venv\Scripts\Activate.ps1
 # Set these environment variables before running the app.
 # $env:FLASK_SECRET_KEY = python -c "import secrets; print(secrets.token_hex(32))"
 app.secret_key = os.environ.get("FLASK_SECRET_KEY")
-
+# $env:ADMIN_USERNAME = "bhusted"
 ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "bhusted")
 # Replace the placeholder with your generated hash. This sets it for the current PowerShell session only.
 
