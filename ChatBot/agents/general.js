@@ -128,7 +128,7 @@ module.exports = {
     },
     {
       q: "What is your favorite movie?",
-      a: "I don't watch movies, but 'The Shawshank Redemption' is highly recommended by many."
+      a: "Jurassic Park the 1st one. The rest are not as good as the first one."
     },
     {
       q: "What's the time?",
