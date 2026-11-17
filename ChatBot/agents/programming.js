@@ -809,6 +809,56 @@ That should be all the changes needed to be successful at having two pages in a 
     {
       q: "What is the difference between a deterministic and nondeterministic finite automaton?",
       a: "A deterministic finite automaton has exactly one defined next state for each state and input symbol. A nondeterministic finite automaton can allow multiple possible transitions or transitions that consume no input; both recognize the regular languages."
-    }
+    },
+
+    {
+      q: "How do you print Hello World in JavaScript",
+      a: "You can use console.log() to display text in the console. Code:\nconsole.log(\"Hello World!\");"
+  },
+  {
+      q: "How do you create a square in JavaScript",
+      a: "You can use nested loops to print a square in the console. Code:\nfor (let i = 0; i < 5; i++) {\n    let row = \"\";\n    for (let j = 0; j < 5; j++) {\n        row += \"* \";\n    }\n    console.log(row);\n}"
+  },
+  {
+      q: "How do you create a function in JavaScript",
+      a: "You can use the function keyword to create reusable code. Code:\nfunction add(a, b) {\n    return a + b;\n}\n\nconsole.log(add(5, 3));\nThe output is 8."
+  },
+  {
+      q: "How do you create an array in JavaScript",
+      a: "An array stores multiple values in one variable. Code:\nlet fruits = [\"apple\", \"banana\", \"orange\"];\n\nfruits.forEach(function(fruit) {\n    console.log(fruit);\n});"
+  },
+  {
+      q: "How do you create a button in JavaScript",
+      a: "You can use JavaScript and HTML to create a button that responds to clicks. Code:\n<button id=\"myButton\">Click Me</button>\n\n<script>\ndocument.getElementById(\"myButton\").addEventListener(\"click\", function() {\n    alert(\"Button clicked!\");\n});\n</script>"
+  },
+  {
+      q: "How do you create a class in JavaScript",
+      a: "A JavaScript class is a blueprint for creating objects. Code:\nclass Car {\n    constructor(brand) {\n        this.brand = brand;\n    }\n\n    start() {\n        return this.brand + \" started\";\n    }\n}\n\nconst myCar = new Car(\"Toyota\");\nconsole.log(myCar.start());"
+  },
+
+  {
+    q: "How do you print Hello World in JavaScript",
+    a: "You can use console.log() to display text in the console. Code:\nconsole.log(\"Hello World!\");"
+},
+{
+    q: "How do you create a square in JavaScript",
+    a: "You can use nested loops to print a square in the console. Code:\nfor (let i = 0; i < 5; i++) {\n    let row = \"\";\n    for (let j = 0; j < 5; j++) {\n        row += \"* \";\n    }\n    console.log(row);\n}"
+},
+{
+    q: "How do you create a function in JavaScript",
+    a: "You can use the function keyword to create reusable code. Code:\nfunction add(a, b) {\n    return a + b;\n}\n\nconsole.log(add(5, 3));\nThe output is 8."
+},
+{
+    q: "How do you create an array in JavaScript",
+    a: "An array stores multiple values in one variable. Code:\nlet fruits = [\"apple\", \"banana\", \"orange\"];\n\nfruits.forEach(function(fruit) {\n    console.log(fruit);\n});"
+},
+{
+    q: "How do you create a button in JavaScript",
+    a: "You can use JavaScript and HTML to create a button that responds to clicks. Code:\n<button id=\"myButton\">Click Me</button>\n\n<script>\ndocument.getElementById(\"myButton\").addEventListener(\"click\", function() {\n    alert(\"Button clicked!\");\n});\n</script>"
+},
+{
+    q: "How do you create a class in JavaScript",
+    a: "A JavaScript class is a blueprint for creating objects. Code:\nclass Car {\n    constructor(brand) {\n        this.brand = brand;\n    }\n\n    start() {\n        return this.brand + \" started\";\n    }\n}\n\nconst myCar = new Car(\"Toyota\");\nconsole.log(myCar.start());"
+}
   ]
 };

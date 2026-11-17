@@ -713,6 +713,86 @@ module.exports = {
     {
       q: "What is the purpose of TLS in network communication?",
       a: "TLS protects network communication through encryption and integrity checks and can authenticate a server using certificates. HTTPS uses TLS to secure HTTP traffic."
-    }
+    },
+
+    {
+      q: "What is a Trusted Platform Module (TPM)?",
+      a: "A Trusted Platform Module is a physical or embedded security microchip on a computer's motherboard or processor that safely stores critical data like encryption keys, digital certificates, and passwords."
+    },
+
+    {
+      q: "What is a Rainbow Attack Table?",
+      a: "A rainbow attack table is a password-cracking method that uses precomputed tables of plaintext passwords and their matching cryptographic hashes to quickly reverse-engineer stolen password hashes."
+    },
+    
+    {
+      q: "What does IMAP mean?",
+      a: "IMAP (Internet Message Access Protocol) allows clients to access and synchronize messages stored on the mail server."
+    },
+
+    {
+      q: "What is Crypto-malware?",
+      a: "Crypto-malware is malicious software that secretly uses your device's processing power to mine cryptocurrency or locks your files to demand a crypto ransom."
+    },
+
+    {
+      q: "What is a Remote Access Trojain (RAT)?",
+      a: "An Remote Access Trojain is a type of malicious software that secretly grants an unauthorized person full remote administrative control over an infected computer or server."
+    },
+
+    {
+      q: "What does 802.1X mean?",
+      a: "802.1X is an Institute of Electrical and Electronics Engineers (IEEE) standard for port-based network access control (PNAC)."
+    },
+
+    {
+      q: "What is PaC",
+      a: "Policies as code."
+    },
+
+    {
+      q: "What is CASB",
+      a: "Cloud Assess Security Broker."
+    },
+
+    {
+      q: "What is PAM",
+      a: "Privilege Access Management."
+    },
+    {
+      q: "What is DKIM",
+      a: "Domain Keys Identified Mail. This is used on mimecast to safely secure emails"
+    },
+
+    {
+      q: "What is DKIM",
+      a: "Domain Keys Identified Mail. This is used on mimecast to safely secure emails"
+    },
+    {
+      q: "What is RAID 0",
+      a: "RAID 0 is disk striping. It splits data across two or more drives to improve read and write performance. It does not provide redundancy, so if one drive fails, all data in the RAID array can be lost."
+  },
+  {
+      q: "What is RAID 1",
+      a: "RAID 1 is disk mirroring. It copies the same data to two or more drives. It provides redundancy because if one drive fails, the other drive still has a copy of the data. Usable capacity is typically half of the combined capacity with two equal-sized drives."
+  },
+  {
+      q: "What is RAID 5",
+      a: "RAID 5 uses disk striping with distributed parity across at least three drives. It improves read performance and can tolerate one drive failure. If a drive fails, the array can rebuild the missing data using parity information."
+  },
+  {
+      q: "What is RAID 6",
+      a: "RAID 6 uses disk striping with double distributed parity across at least four drives. It can tolerate two drive failures at the same time, providing more redundancy than RAID 5. It has additional write overhead because it calculates and stores two sets of parity information."
+  },
+{
+    q: "What is Log4j?",
+    a: "Log4j is a popular Java-based logging library used in many applications and systems to log messages for debugging and monitoring purposes. It became widely known due to a critical security vulnerability (Log4Shell) that allowed remote code execution.",
+},
+
+{
+  q: "What is on port 445?",
+  a: "Server Message Block (SMB) protocol is commonly associated with port 445. It is used for file sharing, printer sharing, and other network services in Windows environments.",
+},
+
   ]
 };

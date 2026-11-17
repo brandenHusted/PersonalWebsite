@@ -482,5 +482,66 @@ module.exports = {
       q: "Should I take up Dog Sitting as a side job?",
       a: "Dog sitting can be a great side job if you enjoy working with animals and have the time to commit. It can provide flexible hours and extra income, but make sure to consider the responsibilities and ensure you can provide proper care for the pets."
     },
+
+    {
+      q: "How do you write a professional resume",
+      a: "A professional resume should include your contact information, professional summary, work experience, education, technical skills, and certifications. Use bullet points to describe accomplishments and responsibilities. Keep the formatting consistent and tailor your resume to the job description."
+  },
+  {
+      q: "What should you include in a cover letter",
+      a: "A cover letter should introduce you, explain why you are interested in the position, highlight relevant experience and skills, and explain how you could contribute to the company. Keep it professional and generally limit it to one page."
+  },
+  {
+      q: "How do you prepare for a job interview",
+      a: "Research the company, understand the job description, practice common interview questions, prepare examples of your accomplishments, and bring questions to ask the interviewer. Dress professionally and arrive early."
+  },
+  {
+      q: "What are common job interview questions",
+      a: "Common interview questions include: Tell me about yourself. What are your strengths and weaknesses? Why do you want to work here? Describe a difficult problem you solved. Where do you see yourself in five years? Why should we hire you?"
+  },
+  {
+      q: "How do you answer tell me about yourself in an interview",
+      a: "Give a brief professional introduction that covers your education, relevant experience, important skills, and career goals. Focus on information related to the position instead of giving your entire personal history."
+  },
+  {
+      q: "How do you answer what is your greatest weakness",
+      a: "Choose a genuine but manageable weakness and explain what you are doing to improve it. For example: I sometimes spend too much time troubleshooting a problem independently, but I am learning when to ask questions and collaborate with others."
+  },
+  {
+      q: "How do you negotiate a salary",
+      a: "Research the typical salary range for the position and location. Consider your experience, certifications, and skills. During negotiations, communicate your desired range professionally and support your request with your qualifications."
+  },
+  {
+      q: "How do you follow up after a job interview",
+      a: "Send a professional thank-you email within 24 hours. Thank the interviewer for their time, mention something specific from the conversation, reinforce your interest in the position, and express appreciation for the opportunity."
+  },
+  {
+      q: "What should you do if you do not meet every job requirement",
+      a: "Apply if you meet many of the important qualifications. Job descriptions often include preferred skills that can be learned on the job. Highlight your transferable skills, related experience, education, and willingness to learn."
+  },
+  {
+      q: "How do you explain employment gaps on a resume",
+      a: "Be honest and brief when explaining an employment gap. You can mention education, certification preparation, family responsibilities, personal development, or job searching when applicable. Focus on your readiness to work and relevant qualifications."
+  },
+  {
+    q: "How do you ask your manager for a promotion",
+    a: "Schedule a professional conversation with your manager. Explain your accomplishments, additional responsibilities, skills you have developed, and interest in advancing. Ask what specific goals or qualifications are needed to earn a promotion."
+},
+{
+    q: "How do you build a professional portfolio",
+    a: "A professional portfolio showcases your projects, technical skills, certifications, education, and accomplishments. Include project descriptions, technologies used, screenshots when appropriate, and links to source code such as GitHub repositories."
+},
+{
+    q: "Why is networking important for career development",
+    a: "Professional networking helps you build relationships with people in your industry. It can lead to mentorship, career advice, job referrals, professional opportunities, and learning about positions that may not be widely advertised."
+},
+{
+    q: "How do you set career goals",
+    a: "Set specific, measurable, achievable, relevant, and time-bound goals. For example, earn a certification within three months, complete a programming project, improve a technical skill, or apply for positions in a specific career field."
+},
+{
+    q: "How do you know when it is time to change jobs",
+    a: "Consider changing jobs when opportunities for growth are limited, compensation no longer meets your needs, the workplace is unhealthy, or another position better supports your long-term career goals. Evaluate the new opportunity carefully before leaving your current job."
+},
   ]
 };

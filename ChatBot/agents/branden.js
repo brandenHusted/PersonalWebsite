@@ -274,6 +274,11 @@ module.exports = {
       q: "What is Branden's experience in IT?",
       a: "His experience in IT is in SIEM systems like Rapid7, help desk support with printers including support for the hardware and software. Branden has also worked with configuring new devices and troubleshooting network issues. He is also a good communicator and can explain technical issues to non-technical users."
     },
+
+    {
+      q: "What is Branden's most favorite vacation he has went on?",
+      a: "Branden loved going to Epic Universe in Orlando, Florida because of the roller coasters and amazing food."
+    },
     
     
   ]

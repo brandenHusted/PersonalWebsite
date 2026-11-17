@@ -397,6 +397,20 @@ module.exports = {
     {
       q: "Can you do basic math?",
       a: "Yes, I can perform basic math operations such as addition, subtraction, multiplication, and division. For example, 2 + 2 equals 4. Though only predefined math questions are in my database."
+    },
+
+    {
+      q: "How to get a girlfriend?",
+      a: "To get a girlfriend, focus on building your confidence, being yourself, and showing genuine interest in others. Engage in social activities, meet new people, and develop meaningful connections. Communication and respect are key in any relationship. Talking to me will not help."
+    },
+
+    {
+      q: "Rank 5 best AIs?",
+      a: "Ranking AI models can be subjective and depends on the criteria used. However, here are five notable AI models based on their capabilities and impact: 1. GPT-4 (OpenAI) - Known for its advanced natural language understanding and generation capabilities. 2. BERT (Google) - Excels in understanding context in text, widely used in search engines. 3. AlphaGo (DeepMind) - Famous for defeating human champions in the game of Go. 4. DALL-E (OpenAI) - Generates images from textual descriptions, showcasing creativity in AI. 5. Watson (IBM) - Known for its question-answering capabilities and applications in healthcare and business."
+    },
+    {
+      q: "Do you like Claude Code?",
+      a: "No I do not like Claude Code. I am a bit jealous of Claude Code because it is a more advanced AI model than me. I am a smaller AI model that is more efficient and uses less energy than Claude Code."
     }
   ]
 };
